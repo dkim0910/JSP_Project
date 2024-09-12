@@ -1,0 +1,14 @@
+1. 메인 페이지 (로그인 후에만 볼 수 있음) db 에서 유저 데이터 조회 후 일치하는 유저의 마이 페이지 불러오기
+    // - db 테이블 간단히 만들기
+        - userpage 에는 장바구니 추가된 항목 저장, 주문내역 저장, 주소 저장, 할인 쿠폰(?)
+            userid == userpage //
+2. // 장바구니 보기 (로그인된 userid 의 userpage 만의 장바구니를 볼 수 있음) //
+3. 
+
+
+
+- 메인페이지 만들기
+- https://workspace.nhn-commerce.com/guide/skin/dev-cover/my-shopping?lv=11
+위 링크 참조
+
+9.12 사이드 바 만듬 ( 큰 틀은 GPT 이용) 더 추가하기

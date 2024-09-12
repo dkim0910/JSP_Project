@@ -1,0 +1,62 @@
+/* my_page_main_css.css */
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+#my_page_text{
+    font-weight: bold;
+    font-size: xxx-large;
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+}
+
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    width: 16%;
+    background-color: #f4f4f4;
+    padding: 20px;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.sidebar ul {
+    flex: 1;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.sidebar ul li {
+    margin-bottom: 10px;
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    color: #333;
+}
+
+.sidebar a.logout {
+    margin-top: auto;
+    color: #ff0000;
+    text-decoration: none;
+}
+
+.content {
+    flex: 1;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.content-section {
+    display: none; /* 기본적으로 모든 섹션 숨기기 */
+}
+
+.content-section.active {
+    display: block; /* active 클래스가 있는 섹션만 보이게 함 */
+}
