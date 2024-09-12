@@ -11,11 +11,15 @@ JSP project 3조
 - 페이지 스크롤하면 화면이 이미지에 맞게 움직이는거 (https://www.beanpole.com/index.bp)
 
 
+- 메인 페이지 / 손홍석
+- 장바구니 / 조유영
+- 로그인 (회원가입, 로그인화면(?)) / 김후리
+- 결제 / 김창범
+- 마이페이지 / 김민성
+- 카테고리 / 박정호
 
-- 요기요 - 주소 적으면 근처 맞집 불러오고 근처 맞집들을 카테고리(한식, 일식 등으로 분류)
-  https://velog.io/@gangintheremark/Google-Maps-API%EB%A5%BC-%EC%9D%B4%EC%9A%A9%ED%95%9C-%EB%A7%9B%EC%A7%91-%ED%91%9C%EC%8B%9C%ED%95%98%EA%B8%B0-%EC%BB%A4%EC%8A%A4%ED%85%80%EB%A7%88%EC%BB%A4
-  https://apis.map.kakao.com/web/sample/keywordList/
-  https://velog.io/@minami/%ED%8C%80%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-WE%ED%95%B4%EC%9A%94
-  https://its-blog.tistory.com/13
-  https://velog.io/@dongho18/eatGNU-%EC%A0%9C%EC%9E%91-%ED%9A%8C%EA%B3%A0
-  
+9월 24일에 1차 모임(?) 
+
+
+
+상세페이지 추가
