@@ -9,11 +9,14 @@
 <body>
     <header>
         <!-- 여기에는 나중에 메인 페이지 만들어지면 똑같은 테마로 헤더 만들기 -->
-
+        header 임<br/>
+        ...<br/>
+        ..<br/>
+        .<br/>
     </header>
     <div class="container">
         <nav class="sidebar">
-            <p id="my_page_text">마이페이지</p>
+            <p id="my_page_text" onclick="showContent('my_page')">마이페이지</p>
             <ul>
                     
                 <li><a href="#" onclick="showContent('my_info')">나의 정보</a></li> <!-- 여기에 정보 수정 넣기 -->
@@ -21,15 +24,56 @@
                 <li><a href="#" onclick="showContent('orders')">주문 보기</a></li> <!-- 여기에 주문 취소랑 주소 변경 등 넣기-->
                 <li><a href="#" onclick="showContent('membership')">멤버십</a></li>   <!-- 여기에 멤버십 포인트나 할인 이벤트 등 넣기 -->
             </ul>
-            <a href="#" onclick="showContent('logout')">로그 아웃</a> <!-- a 태그 말고 다시 로그인 페이지로 돌아가게끔 만들어 볼까? -->
+            <a href="#" onclick="showContent('logout')">로그 아웃</a> <!-- a 태그 말고 다시 로그인 페이지 or 메인페이지로 돌아가게끔 나중에 바꾸기 -->
         </nav>
         <main class="content">
             <!-- 여기에 처음 들어왔을때 화면 보여주기 -->
+            <div class="main_hello">
+                <form class="main_hello_box">
+                    <p class="left" >어서오세요 ~~~ 님</p>
+                    <div class="right-container">
+                        <p class="right">회원 등급 : 실버</p>
+                        <p class="right">잔여 포인트 : 1000p</p>
+                        <p class="right">주문 확인</p>  <!-- 눌루면 배송상태 나옴 (배송 중 배송 준비중 등) -->
+                    </div>
+                </form>
+            </div>
+
+            <div id="my_page" class="content-section" style="display:block;">
+            <h1>메인 페이지임</h1>
+            <p>주문 내역</p>
+            </div>
 
 
-            <div id="my_info" class="content-section">
+            <div id="my_info" class="content-section" style="display:none;">
                 <h2>나의 정보</h2>
-                <p>정보창임 (아이디 비번 전화번호 성별 주소지 등 회원가입할때 추가 했던거 여기서 볼 수 있음)</p>
+                <div>
+                    <p >나의 정보요~</p>
+                    아이디 : <p id="userid"></p>
+                    비번 : <p id="userpw"></p>
+                    이름 : <p ></p>
+                    집주소 : <p ></p>  <!-- 배송 위치 -->
+                    전화번호 : <p ></p>
+                    성별 : <p ></p>
+
+
+                    <div class="size-item">
+                        <span class="label">상의 사이즈:</span>
+                    </div>
+                    <div class="size-item">
+                        <span class="label">하의 사이즈:</span>
+                    </div>
+                    <div class="size-item">
+                        <span class="label">신발 사이즈:</span>
+                    </div>
+
+                    <br/>
+
+                        <div class="right-container2">
+                            <input type="button" id="update-size-shoes" class="custom-button" value="수정하기"/> <!-- 버튼 누루면 정보 수정 페이지로 이동 (만들 예정) -->
+                    </div>
+
+                </div>
             </div>
             <div id="orders" class="content-section" style="display:none;">
                 <h2>나의 주문</h2>
