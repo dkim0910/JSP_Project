@@ -11,3 +11,5 @@ function showContent(sectionId) {
         sectionToShow.style.display = 'block';
     }
 }
+
+

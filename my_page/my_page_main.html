@@ -13,6 +13,7 @@
         ...<br/>
         ..<br/>
         .<br/>
+        <!-- 여기에 나중에 메인페이지 오면 로그아웃, 장바구니 같은거 추가하기 -->
     </header>
     <div class="container">
         <nav class="sidebar">
@@ -23,8 +24,11 @@
                     
                 <li><a href="#" onclick="showContent('orders')">주문 보기</a></li> <!-- 여기에 주문 취소랑 주소 변경 등 넣기-->
                 <li><a href="#" onclick="showContent('membership')">멤버십</a></li>   <!-- 여기에 멤버십 포인트나 할인 이벤트 등 넣기 -->
+
             </ul>
+
             <a href="#" onclick="showContent('logout')">로그 아웃</a> <!-- a 태그 말고 다시 로그인 페이지 or 메인페이지로 돌아가게끔 나중에 바꾸기 -->
+        
         </nav>
         <main class="content">
             <!-- 여기에 처음 들어왔을때 화면 보여주기 -->
@@ -46,9 +50,10 @@
 
 
             <div id="my_info" class="content-section" style="display:none;">
-                <h2>나의 정보</h2>
+                <h2>나의 정보</h2> <!-- h2 태그 말고 class 줘서 크기 조절하기 다른 페이지도 같이 쓰게 (폰트랑 굵기 등 추가) -->
                 <div>
-                    <p >나의 정보요~</p>
+                    <p >나의 정보요~</p> <!-- 여기도 아래 처럼 div 넣고 다 안에다가 넣을까? p 태그는 좀 이상한데? -->
+
                     아이디 : <p id="userid"></p>
                     비번 : <p id="userpw"></p>
                     이름 : <p ></p>
@@ -57,7 +62,7 @@
                     성별 : <p ></p>
 
 
-                    <div class="size-item">
+                    <div class="size-item" > <!-- 여기 3개를 오른쪽으로 넘겨서 더 깔끔하게 보이게끔 해보기 , 폰트 키워서 화면좀 채워도 될듯 -->
                         <span class="label">상의 사이즈:</span>
                     </div>
                     <div class="size-item">
@@ -71,7 +76,7 @@
 
                         <div class="right-container2">
                             <input type="button" id="update-size-shoes" class="custom-button" value="수정하기"/> <!-- 버튼 누루면 정보 수정 페이지로 이동 (만들 예정) -->
-                    </div>
+                        </div>
 
                 </div>
             </div>
@@ -81,10 +86,14 @@
             </div>
             <div id="membership" class="content-section" style="display:none;">
                 <h2>나의 멤버십</h2>
-                <p>멤버십 보기임 (여기에 멤버십 포인트 보임)</p>
+                <p>멤버십 보기임 (여기에  멤버십 등급, 멤버십 포인트(?) 보임)</p> <!-- 멤버십 포인트는 나중에 시간 있음 DB에서 멤버십 등급이랑 포인트 시스템 추가 하기 -->
             </div>
         </main>
     </div>
 
     <script src="script.js"></script>
 </html>
+
+
+
+
