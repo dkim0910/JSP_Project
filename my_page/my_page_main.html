@@ -9,57 +9,54 @@
 <body>
     <header>
         <!-- 여기에는 나중에 메인 페이지 만들어지면 똑같은 테마로 헤더 만들기 -->
-        header 임<br/>
-        ...<br/>
-        ..<br/>
-        .<br/>
-        <!-- 여기에 나중에 메인페이지 오면 로그아웃, 장바구니 같은거 추가하기 -->
+        
+        <!-- 여기에 나중에 메인페이지 오면 로그아웃으로 가는 링크 및 장바구니 등 추가하기 -->
     </header>
     <div class="container">
         <nav class="sidebar">
-            <p id="my_page_text" onclick="showContent('my_page')">마이페이지</p>
+            <p id="my-page-text1" onclick="showContent('my-page')" class="my-page-text1">마이페이지</p>
             <ul>
+                <li><a href="#" onclick="showContent('my-info')" class="my-page-text">나의 정보</a></li> <!-- 여기에 정보 수정 넣기 -->
                     
-                <li><a href="#" onclick="showContent('my_info')">나의 정보</a></li> <!-- 여기에 정보 수정 넣기 -->
-                    
-                <li><a href="#" onclick="showContent('orders')">주문 보기</a></li> <!-- 여기에 주문 취소랑 주소 변경 등 넣기-->
-                <li><a href="#" onclick="showContent('membership')">멤버십</a></li>   <!-- 여기에 멤버십 포인트나 할인 이벤트 등 넣기 -->
+                <li><a href="#" onclick="showContent('orders')" class="my-page-text">주문 보기</a></li> <!-- 여기에 주문 취소랑 주소 변경 등 넣기-->
+                <li><a href="#" onclick="showContent('membership')" class="my-page-text">멤버십</a></li>   <!-- 여기에 멤버십 포인트나 할인 이벤트 등 넣기 -->
 
             </ul>
 
-            <a href="#" onclick="showContent('logout')">로그 아웃</a> <!-- a 태그 말고 다시 로그인 페이지 or 메인페이지로 돌아가게끔 나중에 바꾸기 -->
+            <a href="#" onclick="window.location.href='logout.html'">로그 아웃</a>
         
         </nav>
         <main class="content">
-            <!-- 여기에 처음 들어왔을때 화면 보여주기 -->
-            <div class="main_hello">
-                <form class="main_hello_box">
-                    <p class="left" >어서오세요 ~~~ 님</p>
-                    <div class="right-container">
-                        <p class="right">회원 등급 : 실버</p>
-                        <p class="right">잔여 포인트 : 1000p</p>
-                        <p class="right">주문 확인</p>  <!-- 눌루면 배송상태 나옴 (배송 중 배송 준비중 등) -->
-                    </div>
-                </form>
-            </div>
-
-            <div id="my_page" class="content-section" style="display:block;">
-            <h1>메인 페이지임</h1>
-            <p>주문 내역</p>
+            <!-- 처음 들어왔을때 보여주는 화면 -->
+            <div class="main-hello">
+                <p class="left">어서오세요 ~~~ 님</p> <!-- 여기 ~~~에 DB에서 가져온 username 삽입 -->
+                <div class="right-container">
+                    <p id="member-status" class="right">회원 등급: ~~~</p> <!-- member-status 라는게 화원 등급 설정임 (3번 구매하면 브론즈 5번 구매하면 실버 등 로직 추가하기) -->
+                    <p id="user-member-point" class="right">잔여 포인트: ~~~p</p>  <!-- user-member-point 라는게 잔여 포인트임 -->
+                    <p id="user-order-status" class="right"><a href="order-status.html">주문 확인</a></p> <!-- a 태그 말고 그냥 같은 페이지에서 보여주기 --> <!-- user-order-status 주문 확인 -->
+                </div>
             </div>
 
 
-            <div id="my_info" class="content-section" style="display:none;">
+
+            <!-- 메인페이지 내용 페이지-->
+            <div id="my-page" class="content-section" style="display:block;">
+                <h1>메인 페이지임</h1>
+                <p>주문 내역~~~</p>
+            </div>
+
+            <!-- 나의 정보 내용 페이지 -->
+            <div id="my-info" class="content-section" style="display:none;">
                 <h2>나의 정보</h2> <!-- h2 태그 말고 class 줘서 크기 조절하기 다른 페이지도 같이 쓰게 (폰트랑 굵기 등 추가) -->
                 <div>
-                    <p >나의 정보요~</p> <!-- 여기도 아래 처럼 div 넣고 다 안에다가 넣을까? p 태그는 좀 이상한데? -->
+                    <p >나의 정보</p> <!-- 여기도 아래 처럼 div 넣고 다 안에다가 넣을까? p 태그는 좀 이상한데? -->
 
-                    아이디 : <p id="userid"></p>
-                    비번 : <p id="userpw"></p>
-                    이름 : <p ></p>
-                    집주소 : <p ></p>  <!-- 배송 위치 -->
-                    전화번호 : <p ></p>
-                    성별 : <p ></p>
+                    아이디 : <p id="user-id">~~~</p>
+                    비번 : <p id="user-pw">~~~</p>
+                    이름 : <p id="user-name">~~~</p>
+                    집주소 : <p id="user-addr">~~~</p>  <!-- 배송 위치 -->
+                    전화번호 : <p id="user-phone-num">~~~</p>
+                    성별 : <p id="user-gender">~~~</p>
 
 
                     <div class="size-item" > <!-- 여기 3개를 오른쪽으로 넘겨서 더 깔끔하게 보이게끔 해보기 , 폰트 키워서 화면좀 채워도 될듯 -->
@@ -74,20 +71,36 @@
 
                     <br/>
 
-                        <div class="right-container2">
-                            <input type="button" id="update-size-shoes" class="custom-button" value="수정하기"/> <!-- 버튼 누루면 정보 수정 페이지로 이동 (만들 예정) -->
-                        </div>
+                    <div class="edit_my_info">
+                        <!-- 지금 새로운 페이지로 이동인데 별론가? 그냥 또 같은 페이지인데 수정하는 옵션으로 전환되게 끔 만드까? -->
+                        <input type="button" id="update-size-shoes" class="custom-button" value="수정하기" onclick="location.href='edit_my_info.html';" />
+                    </div>
+
+                    
+
 
                 </div>
             </div>
+
+            <!-- 나의 주문 페이지 -->
             <div id="orders" class="content-section" style="display:none;">
                 <h2>나의 주문</h2>
                 <p>주문 보기임 (주문 현황이나 주문 취소 등 있음 주문 했던 내역들도 있음)</p>
             </div>
+
+            <!-- 나의 멤버십 페이지 -->
             <div id="membership" class="content-section" style="display:none;">
                 <h2>나의 멤버십</h2>
                 <p>멤버십 보기임 (여기에  멤버십 등급, 멤버십 포인트(?) 보임)</p> <!-- 멤버십 포인트는 나중에 시간 있음 DB에서 멤버십 등급이랑 포인트 시스템 추가 하기 -->
             </div>
+
+
+            <!-- 더 추가할 페이지들 -->
+
+
+
+
+
         </main>
     </div>
 
