@@ -17,9 +17,13 @@
             <p id="my-page-text1" onclick="showContent('my-page')" class="my-page-text1">마이페이지</p>
             <ul>
                 <li><a href="#" onclick="showContent('my-info')" class="my-page-text">나의 정보</a></li> <!-- 여기에 정보 수정 넣기 -->
-                    
                 <li><a href="#" onclick="showContent('orders')" class="my-page-text">주문 보기</a></li> <!-- 여기에 주문 취소랑 주소 변경 등 넣기-->
                 <li><a href="#" onclick="showContent('membership')" class="my-page-text">멤버십</a></li>   <!-- 여기에 멤버십 포인트나 할인 이벤트 등 넣기 -->
+                <li><a href="#" onclick="showContent('')" class="my-page-text">고객센터 문의(?)</a></li>    <!-- ('') 안쪽에 더 추가해서 화면 더 만들기 -->
+                <li><a href="#" onclick="showContent('')" class="my-page-text">환불 및 교환(?)</a></li>
+                <li><a href="#" onclick="showContent('')" class="my-page-text">회원탈퇴(?) (DB에서 회원 삭제)</a></li>
+                <li><a href="#" onclick="showContent()" class="my-page-text"></a></li>  <!-- 추가 예정 -->
+
 
             </ul>
 
@@ -37,49 +41,55 @@
                 </div>
             </div>
 
-
-
             <!-- 메인페이지 내용 페이지-->
             <div id="my-page" class="content-section" style="display:block;">
                 <h1>메인 페이지임</h1>
-                <p>주문 내역~~~</p>
+                <p>주문 내역</p>
+                <!-- 나중에 여기에다가 주문현황 박스 만들기 박스 3개 정도 만들어서 가로로 해서 왼쪽은 고객센터 중간은 주문현황 오른쪽은 후기 이렇게 만들기 -->
+                <div class="main-container">
+                    <div class="main-box">고객센터<br/>
+                    <hr/>
+                        1 : 1 문의 내용
+                    </div>
+                    <div class="main-box">주문현황<br/>
+                    <hr/>
+                        옷 배송중... 예상 도착일은 5일후<br/>
+                        도착한 물품 있음 어쩌고...<br/>
+                        환불 버튼
+                        <input type="button" value="환불 하기(?) 아님 나중에 나의 주문현황에서만 되게끔 바뀔 예정 "/>    <!-- 버튼 누루면 환불 페이지로 이동하게끔 만들기? (나중에 나의 주문현황에서 환불, 문의, 교환 할수 있게 만들까?) -->
+                    </div>
+                    <div class="main-box">후기<br/>
+                    <hr/>
+                        후기1<br/>
+                        후기2<br/>
+                        후기3
+                    </div>
+                </div>
+            
             </div>
 
             <!-- 나의 정보 내용 페이지 -->
             <div id="my-info" class="content-section" style="display:none;">
                 <h2>나의 정보</h2> <!-- h2 태그 말고 class 줘서 크기 조절하기 다른 페이지도 같이 쓰게 (폰트랑 굵기 등 추가) -->
-                <div>
-                    <p >나의 정보</p> <!-- 여기도 아래 처럼 div 넣고 다 안에다가 넣을까? p 태그는 좀 이상한데? -->
+                    <div>
+                        <p id="user-id">아이디 : <span>~~~</span></p>
+                        <p id="user-pw"> 비번 : <span>~~~</span></p>
+                        <p id="user-name">이름 : <span>~~~</span></p>
+                        <p id="user-addr">집주소 : <span>~~~</span></p> <!-- 배송위치 바꾸는것도 추가하기 -->
+                        <p id="user-phone-num">전화번호 : <span>~~~</span></p>
+                        <p id="user-gender">성별 : <span>~~~</span></p>
+                        <p id="user-top-size">상의 사이즈 : <span>~~~</span></p>
+                        <p id="user-bottom-size">하의 사이즈 : <span>~~~</span></p>
+                        <p id="user-shoe-size">신발 사이즈 : <span>~~~</span></p>
 
-                    아이디 : <p id="user-id">~~~</p>
-                    비번 : <p id="user-pw">~~~</p>
-                    이름 : <p id="user-name">~~~</p>
-                    집주소 : <p id="user-addr">~~~</p>  <!-- 배송 위치 -->
-                    전화번호 : <p id="user-phone-num">~~~</p>
-                    성별 : <p id="user-gender">~~~</p>
-
-
-                    <div class="size-item" > <!-- 여기 3개를 오른쪽으로 넘겨서 더 깔끔하게 보이게끔 해보기 , 폰트 키워서 화면좀 채워도 될듯 -->
-                        <span class="label">상의 사이즈:</span>
-                    </div>
-                    <div class="size-item">
-                        <span class="label">하의 사이즈:</span>
-                    </div>
-                    <div class="size-item">
-                        <span class="label">신발 사이즈:</span>
                     </div>
 
-                    <br/>
+                <br/>
 
-                    <div class="edit_my_info">
-                        <!-- 지금 새로운 페이지로 이동인데 별론가? 그냥 또 같은 페이지인데 수정하는 옵션으로 전환되게 끔 만드까? -->
-                        <input type="button" id="update-size-shoes" class="custom-button" value="수정하기" onclick="location.href='edit_my_info.html';" />
+                    <div>
+                        <input type="button" id="update-size-shoes" class="custom-button" value="정보 수정하기" onclick="showContent()" />  <!-- edit-my-info 와서 보여주기 -->
                     </div>
 
-                    
-
-
-                </div>
             </div>
 
             <!-- 나의 주문 페이지 -->
