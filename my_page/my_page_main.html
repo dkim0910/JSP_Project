@@ -24,6 +24,8 @@
                     <li><a href="#" onclick="toggleBold(this); showContent('membership')" class="sidebar-options">멤버십</a></li>       <!-- 여기에 멤버십 포인트나 할인 이벤트 등 넣기 -->
                     <li><a href="#" onclick="toggleBold(this); showContent('helpcenter')" class="sidebar-options">고객센터</a></li>     <!-- 고객센터 페이지 만들기(같은 페이지임)-->
                     <li><a href="#" onclick="toggleBold(this); showContent('refunds')" class="sidebar-options">환불 및 교환</a></li>    <!-- 환불 및 교환 페이지 만들기(같은 페이지임) -->
+                    <li><a href="#" onclick="toggleBold(this); showContent('events')" class="sidebar-options">이벤트</a></li>           <!-- 이벤트 나오는 페이지 만들기 -->
+                    <li><a href="#" onclick="toggleBold(this); showContent('announcement')" class="sidebar-options">공지사항</a></li>   <!-- 공지사항 페이지 만들기 -->
                     <li><a href="#" onclick="toggleBold(this); showContent('byebye')" class="sidebar-options">회원 탈퇴</a></li>        <!-- 이건 나중에 DB에서 delete 문 날리고 새로운 페이지에서 성공했습니다 뜨게 하기 -->
 
                     <li><a href="#" onclick="toggleBold(this); showContent('')" class="sidebar-options"></a></li>          <!-- ('') 안쪽에 더 추가해서 화면 더 만들기 -->
@@ -35,10 +37,10 @@
         </nav>
 
 
-        <!-- 여기 아래부터 css 더 고치기  -->
-        <main class="content">
+        
+        <main class="main-hello">
             <!-- 처음 들어왔을때 보여주는 화면 박스 (어서오세요 박스)-->
-            <div class="main-hello">
+            <div class="hello">
                 <p class="left">어서오세요 ~~~ 님</p> <!-- 여기 ~~~에 DB에서 가져온 username 삽입 -->
                 <div class="right-container">
                     <p id="member-status" class="right">회원 등급: ~~~</p> <!-- member-status 라는게 화원 등급 설정임 (3번 구매하면 브론즈 5번 구매하면 실버 등 로직 추가하기) -->
@@ -48,9 +50,13 @@
 
             </div>
 
+            <!-- 위에 박스랑 아래 내용이랑 조금 공백 넣으려고 넣음 -->
+            <br/>
+            <hr/>
+
             <!-- 메인페이지 내용 페이지-->
-            <div id="my-page" class="content-section" style="display: block;">
-                <h1>메인 페이지</h1>
+            <div id="" class="content-section" style="display: block;">
+                <h1 id="main-page">메인 페이지</h1>
 
                 <p>주문 내역</p>
 
@@ -113,7 +119,7 @@
                 <br/>
 
                     <div>
-                        <a href="#" onclick="showContent('edit-my-info')" ><input type="button" id="update-size-shoes" class="custom-button" value="정보 수정하기"/></a>  <!-- edit-my-info 와서 보여주기 -->
+                        <a href="#" onclick="showContent('edit-my-info')" ><input type="button" id="" class="edit-button" value="정보 수정하기"/></a>  <!-- edit-my-info 와서 보여주기 -->
                     </div>
 
             </div>
@@ -140,11 +146,24 @@
                 <a href="https://chatgpt.com/" target="_blank"><p>AI 챗 봇이랑 대화하기</p></a>
             </div>
 
-            <!-- 환불 및 교환 -->
+            <!-- 환불 및 교환 페이지 -->
             <div id="refunds" class="content-section" style="display: none;">
                 <h2>환불 및 교환</h2>
                 <p>환불 안되요!!!</p>
             </div>
+
+            <!-- 이벤트 페이지 -->
+            <div id="events" class="content-section" style="display: none;">
+                <h2>이벤트 내용</h2>
+                <p>할인중</p>
+            </div>
+
+            <div id="announcement" class="content-section" style="display: none;">
+                <h2>공지사항</h2>
+                <p>섭종합니다</p>
+            </div>
+
+
 
             <!-- 회원 탈퇴 -->
             <div id="byebye" class="content-section" style="display: none;">
@@ -154,13 +173,13 @@
 
 
 
-            <!-- 정보 수정하기 -->
+            <!-- 정보 수정하기 페이지 -->
             <div id="edit-my-info" class="content-section" style="display: none;">
-                    <div class="container">
+                    <div class="edit-container">
                         <h1>정보 수정하기</h1>
                         <br/>
                         <form>
-                            <label for="name">이름</label>
+                            <label for="name" class="">이름</label>
                             <input type="text" id="name" name="name" placeholder="이름을 입력하세요">
                 
                             <label for="email">이메일</label>
@@ -168,10 +187,14 @@
                 
                             <label for="phone">전화번호</label>
                             <input type="tel" id="phone" name="phone" placeholder="전화번호를 입력하세요">
-                
-                            <button type="submit">수정하기</button>
+
+                        <div>
+                            <button type="submit" class="done-edit-button">수정하기</button>     <!-- 지금은 submit 하면 그냥 메인 페이지로 돌아가지는데 나중엔 DB update 하고 나의 정보 내용 페이지로 이동 -->
+                        </div>
+
+                        
                         </form>
-                        <div class="footer">수정이 완료된 후, 변경된 정보가 저장됩니다.</div>
+                        <div class="edit-container-footer">수정이 완료된 후, 변경된 정보가 저장됩니다</div>
                     </div>
             </div>
 

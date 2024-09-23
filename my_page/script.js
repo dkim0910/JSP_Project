@@ -7,7 +7,6 @@ function showContent(sectionId) {
     sections.forEach(function(section) {
         section.style.display = 'none';
     });
-
     // 선택된 섹션만 표시하기
     let sectionToShow = document.getElementById(sectionId);
     if (sectionToShow) {
@@ -19,12 +18,10 @@ function showContent(sectionId) {
 function toggleBold(selectedElement) {
     // 모든 .sidebar-options 요소를 선택
     const options = document.querySelectorAll('.sidebar-options');
-
     // 모든 요소에서 'bold' 클래스를 제거
     options.forEach(option => {
         option.classList.remove('bold');
     });
-
     // 클릭한 요소에 'bold' 클래스를 추가
     selectedElement.classList.add('bold');
 }

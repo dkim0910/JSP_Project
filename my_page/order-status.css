@@ -1,11 +1,17 @@
+/* 페이지 전체 */
+body{
 
-body {
+}
+
+/* 메인 주문리스트 페이지 (제목 같은건 안 들어감)*/
+.container {
     font-family: 'Arial', sans-serif;
     background-color: #f4f4f4;
     margin: 0;
     padding: 20px;
+    font-size: large;
+    height: 100vh;
 }
-
 .orderlist {
     max-width: 800px;
     margin: 0 auto;
@@ -15,39 +21,30 @@ body {
     padding: 20px;
 }
 
+/* 제목 */
 h1 {
     text-align: center;
     color: #333;
     margin-bottom: 20px;
 }
 
+/* 테이블 폰트 및 디자인 */
 table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 20px;
 }
-
 th, td {
     padding: 12px;
     text-align: left;
     border-bottom: 1px solid #ddd;
 }
-
 th {
     background-color: #007BFF;
     color: white;
 }
-
 tbody tr:hover {
     background-color: #f1f1f1;
-}
-
-tbody tr:nth-child(even) {
-    background-color: #f9f9f9;
-}
-
-tbody td {
-    color: #555;
 }
 
 

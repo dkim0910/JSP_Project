@@ -48,170 +48,182 @@ body {
     font-weight: normal;
 }
 .sidebar-options:hover {
-    color: #000000; 
+    color: #353535; 
     font-weight: bolder;
 
 }
-
-/* 클릭 시 사이드바 옵션들 볼드채로 유지되게하는 펑션에 들어가는 css */  /* @@@ 지금 호버하면 살짝 더 찐하게 보인다??? @@@ */
-.bold {
-    color: #000000; 
-    font-weight: bolder; 
-}
-
-
-
-/* 여기 아래 부터임 */
-
-
-
-
-
-
-#my_page_text{
-    font-weight: bold;
-    font-size: xxx-large;
-}
-
-
 .sidebar ul {
     flex: 1;
     padding: 0;
     margin: 0;
     list-style: none;
 }
-
 .sidebar ul li {
     margin-bottom: 10px;
 }
-
 .sidebar ul li a {
     text-decoration: none;
     color: #333;
 }
-
 .sidebar a.logout {
     margin-top: auto;
     color: #ff0000;
     text-decoration: none;
 }
 
-.content {
+/* 클릭 시 사이드바 옵션들 볼드채로 유지되게하는 펑션에 들어가는 css */
+.bold {
+    color: #000000; 
+    font-weight: bolder; 
+}
+
+/* 메인페이지 박스 '어서오세요' */
+.main-hello{
     flex: 1;
     padding: 20px;
     box-sizing: border-box;
-}
 
-.content-section {
+}
+.main-hello-section {
     display: none; /* 기본적으로 모든 섹션 숨기기 */
 }
-
-.content-section.active {
+.main-hello-section.active {
     display: block; /* active 클래스가 있는 섹션만 보이게 함 */
 }
 
-/* styles.css */
-.main-hello {
-    display: flex; /* Flexbox 레이아웃 사용 */
+/* 어서오세요 박스 안쪽 */
+.hello {
+    display: flex; 
     justify-content: space-between; /* 양쪽 끝으로 배치 */
-    align-items: center; /* 세로 중앙 정렬 */
-    padding: 20px; /* 여백 */
-    background-color: #646464; /* 배경색 */
+    align-items: center; 
+    padding: 20px; 
+    background-color: #646464; 
     border-radius: 5px; /* 둥근 모서리 */
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* 그림자 효과 */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); 
 }
-
-.main-hello-box {
-    display: flex;                  /* Flexbox 레이아웃을 사용 */
-    justify-content: space-between; /* 왼쪽과 오른쪽 요소를 양쪽 끝으로 정렬 */
+.hello-box {
+    display: flex;                  
+    justify-content: space-between; 
     align-items: flex-start;        /* 요소를 상단에 정렬 */
-    width: 100%;                     /* 컨테이너의 너비를 100%로 설정 */
+    width: 100%;                   
 }
 
+/* 어서오세요 왼쪽으로 */
 .left {
-    font-size: 37px;                /* 텍스트 크기 조정 */
-    color: #ffffff;                    /* 텍스트 색상 조정 */
+    font-size: 37px;       /* 텍스트 크기 조정 */
+    color: #ffffff;     /* 텍스트 색상 조정 */
 }
 
+/* 어서오세요 남어지 오른쪽으로 */
 .right-container {
     font-size: 20px;
-    display: flex; /* Flexbox 레이아웃 사용 */
+    display: flex; 
     flex-direction: column; /* 세로 방향으로 정렬 */
     align-items: flex-end; /* 오른쪽 정렬 */
     color: #ffffff;
 }
+.right {
+    font-size: 20px; 
+    margin: 5px 0;
+    text-align: right; 
+}
 
-.edit_my_info {
+/* 메인 마이페이지 폰트 */
+#my-page{
+    font-weight: bold;
+    font-size: xxx-large;
+}
+.main-container {
+    display: flex; 
+    justify-content: space-between; 
+    font-size: medium;
+}
+.main-box {
+    background-color: #ffffff;  /* 박스 배경색 */
+    border: 1px solid #ccc;     /* 테두리 */
+    border-radius: 5px;           /* 둥근 모서리 */
+    padding: 20px;                /* 내부 여백 */
+    width: 30%;                   /* 박스 너비 */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* 그림자 효과 */
+    text-align: center;           /* 텍스트 중앙 정렬 */
+    font-size: medium;
+}
+
+/* '정보수정' 버튼 누루면 오는 페이지 폰트 */
+.edit-my-info {
     display: flex;                  /* Flexbox 레이아웃을 사용 */
     flex-direction: column;         /* 세로 방향으로 정렬 */
     padding-right: 50%;
 }
+.edit-container{
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #495057;
+}
+.edit-container-footer {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+    color: #6c757d;
+}
 
-.right {
-    font-size: 20px; /* 폰트 크기 */
-    margin: 5px 0; /* 간격 추가 */
-    text-align: right; /* 텍스트 오른쪽 정렬 */
+/* '정보수정' 하기 버튼 폰트랑 디자인 */
+.edit-button{
+    font-family: 'Roboto', sans-serif;
+            font-size: 18px;
+            font-weight: bold;
+            color: #ffffff;
+            background-color: #28a745;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.1s ease;
+}
+.edit-button:hover{
+    background-color: #218838;
+}
+
+/* '정보수정하기' -> '수정하기' 버튼의 폰트랑 디자인 */
+.done-edit-button {
+    width: 100%;
+    padding: 12px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.1s;
+}
+.done-edit-button:hover {
+    background-color: #218838;
+}
+input[type="text"], input[type="email"], input[type="tel"] {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    transition: border-color 0.3s;
+}
+
+input[type="text"]:focus, input[type="email"]:focus, input[type="tel"]:focus {
+    border-color: #007BFF;
+    outline: none;
 }
 
 
-.size-item {
-    display: flex;          /* Flexbox 레이아웃을 사용 */
-    justify-content: space-between; /* 텍스트와 버튼을 양쪽 끝으로 정렬 */
-    align-items: center;    /* 수직 가운데 정렬 */
-    margin-bottom: 10px;    /* 항목 간의 여백 */
-}
 
-/* 기본 버튼 스타일 */
-.size-button {
-    background: linear-gradient(90deg, #ff7e5f, #feb47b); /* 그라디언트 배경 */
-    border: none;           /* 기본 테두리 제거 */
-    border-radius: 5px;    /* 둥근 모서리 */
-    color: white;           /* 텍스트 색상 */
-    font-size: 16px;        /* 텍스트 크기 조정 */
-    font-weight: bold;      /* 텍스트 굵게 */
-    padding: 12px 24px;    /* 버튼 여백 조정 */
-    cursor: pointer;        /* 포인터 커서 */
-    transition: all 0.3s ease; /* 부드러운 전환 효과 */
-    text-transform: uppercase; /* 텍스트 대문자 변환 */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* 기본 그림자 추가 */
-    outline: none;         /* 포커스 아웃라인 제거 */
-}
 
-/* 호버 상태 */
-.size-button:hover {
-    background: linear-gradient(90deg, #feb47b, #ff7e5f); /* 호버 시 배경 색상 변경 */
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* 호버 시 그림자 강화 */
-}
 
-/* 포커스 상태 */
-.size-button:focus {
-    outline: 2px solid #ff7e5f; /* 포커스 시 아웃라인 색상 변경 */
-    outline-offset: 2px; /* 아웃라인 위치 조정 */
-}
 
-/* 비활성화 상태 */
-.size-button:disabled {
-    background: #e0e0e0; /* 비활성화 시 배경 색상 */
-    color: #a0a0a0;     /* 비활성화 시 텍스트 색상 */
-    cursor: not-allowed; /* 비활성화 시 커서 모양 변경 */
-    box-shadow: none;   /* 비활성화 시 그림자 제거 */
-}
 
-.main-container {
-    display: flex; /* Flexbox 레이아웃 사용 */
-    justify-content: space-between; /* 박스 사이 간격 조정 */
-}
 
-.main-box {
-    background-color: #ffffff; /* 박스 배경색 */
-    border: 1px solid #ccc; /* 테두리 */
-    border-radius: 5px; /* 둥근 모서리 */
-    padding: 20px; /* 내부 여백 */
-    width: 30%; /* 박스 너비 */
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* 그림자 효과 */
-    text-align: center; /* 텍스트 중앙 정렬 */
-}
 
+
+/* 이 밑 버튼은 수정중임 */
 .center-container {
     text-align: center; /* 텍스트 중앙 정렬 */
 }
@@ -231,49 +243,8 @@ body {
     border-width: 3px; /* 클릭 시 테두리 두께 변화 */
 }
 
-label {
-    display: block;
-    margin-bottom: 8px;
-    font-weight: bold;
-    color: #495057;
-}
 
-input[type="text"], input[type="email"], input[type="tel"] {
-    width: 100%;
-    padding: 12px;
-    margin-bottom: 20px;
-    border: 1px solid #ced4da;
-    border-radius: 5px;
-    transition: border-color 0.3s;
-}
 
-input[type="text"]:focus, input[type="email"]:focus, input[type="tel"]:focus {
-    border-color: #007BFF;
-    outline: none;
-}
-
-button {
-    width: 100%;
-    padding: 12px;
-    background-color: #28a745;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s;
-}
-
-button:hover {
-    background-color: #218838;
-}
-
-.footer {
-    text-align: center;
-    margin-top: 20px;
-    font-size: 14px;
-    color: #6c757d;
-}
 
 
 
