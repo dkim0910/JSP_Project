@@ -39,12 +39,100 @@
                             김창범
                         </strong>
                         <span class="sheet-address-title-label" id="recipient-default" style="display: block;">
-                        기본 배송지
+                            기본 배송지
                         </span>
+                        <button class="sheet-address-title-button" type="button" id="button-address-register" style="display: none">
+                            배송지 등록
+                        </button>
+                        <button class="sheet-address-title-button" type="button" id="button-address-change" style>
+                            배송지 변경
+                        </button>
+                    </div>
+                    <span class="sheet-address" id="recipient-address" style>
+                        서울시 강남구 강남대로 1길 유신사빌딩
+                    </span>
+                    <span class="sheet-address-number" id="recipient-mobile" style>
+                        010-1234-1234
+                    </span>
+                    <button type="button" class="sheet-address-select" id="sheet-delivery-message">
+                        <span class="sheet-address-select-text-active" id="delivery-message-select-display">
+                            문 앞에 놔주세요
+                        </span>
+                        <div class="sheet-address-select-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                <path d="M3.2002 6.3999L7.78806 10.9878C7.90522 11.1049 8.09517 11.1049 8.21233 10.9878L12.8002 6.3999" stroke="var(--gray500)"></path>
+                            </svg>
+                        </div>
+                    </button>
+                </div>
+            </section>
+            <hr/>
+            <section class="sheet-section" id="sheet-section-product">
+                ::before
+                <div class="sheet-title">
+                    <h2 class="sheet-title-count">주문 상품 1개</h2>
+                </div>
+                <div class="sheet-order-product">
+                    <div class="sheet-order-product-cart item" data-goods-no="3997992" data-cart-id="1076429836">
+                        <div class="sheet-order-product-box">
+                            <div class="sheet-order-product-image-box">
+                                <img class="sheet-order-product-image" src="" alt="vintage washed Tee_BLUE">
+                            </div>
+                            <div class="sheet-order-product-information">
+                                <a class="sheet-order-product-brand" title="아디다쓔">아디다쓔</a>
+                                <a class="sheet-order-product-name" title="vintage washed Tee_BLUE">
+                                    vintage washed Tee_BLUE
+                                </a>
+                                <span class="sheet-order-product-option">XL / 1개</span>                                     
+                                <div class="sheet-order-product-price-box">
+                                    <strong class="sheet-order-product-price-coupon rolling-counter" id="display-product-price-coupon-box-1076429836" style="display: none">
+                                        <span class="rolling-number" id="display-product-price-coupon-1076429836">0</span>
+                                        <span>원</span>
+                                    </strong><!-- default : style="display: none" -->
+                                    <strong class="sheet-order-product-price-sale" id="display-product-price-1076429836">40,500원</strong>
+                                    <span class="sheet-order-product-price-origin" id="display-product-price-origin-1076429836">45,000원</span>
+                                    <span class="sheet-order-product-price-text-coupon" id="display-product-apply-coupon-1076429836" style="display: none">쿠폰적용가</span><!-- default : style="display: none" -->
+                                </div>
+                            </div>
+                        </div>
+                        <button type="button" class="sheet-order-product-coupon" id="button-product-apply-coupon-1076429836" onclick="Order.product.oepnCoupon.Popup(1076429836)">
+                            쿠폰사용
+                        </button>
                     </div>
                 </div>
             </section>
-
+            <hr/>
+            <section class="sheet-section" id="sheet-section-usepoint">
+                ::before
+                <div class="sheet-title">
+                    <h2 class="sheet-title-text">보유 적립금 사용</h2>
+                    <button type="button" class="sheet-title-bottomSheet" id="button-bottom-sheet-usepoint">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                            <circle cx="8" cy="8" r="6" stroke="black"></circle>
+                            <path d="M8 4.7998V6.2398" stroke="black" stroke-width="1.4"></path>
+                            <path d="M8 7.2002V11.6002" stroke="black" stroke-width="1.4"></path>
+                        </svg>
+                    </button>
+                </div>
+            </section>
+            <hr/>
+            <section class="sheet-section" id="sheet-section-payment-methond-types">
+                ::before
+                <div class="sheet-title">
+                    <h2 class="sheet-title-text">결제 수단</h2>
+                </div>
+                <div class="payment-method" id="payment-choice-TOSSPAY" >
+                    <input type="radio" id="button-payment-type-TOSSPAY"/>
+                </div>
+                <div id="payment_choice_TOSSPAY" class="payment-method ">
+                    <label class="payment-method__type" for="button-paykind-TOSSPAY">
+                        <div class="payment-method__logo">
+                            <img src="https://image.msscdn.net/musinsaUI/store/order/finance/logo-finance-toss.png" alt="토스페이 로고">
+                        </div>
+                        <span class="payment-method__name">토스페이</span>
+                    </label>
+                </div>
+            </section>
         </main>
 
     </body>
