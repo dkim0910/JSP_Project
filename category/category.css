@@ -1,113 +1,170 @@
 @charset "UTF-8";
-body{
-	background-color: #ebebeb;
+
+/* 페이지 기본 스타일 */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
-#commonLayoutHeader{
-	text-align: center;
+/* 상단 검색바 */
+#commonLayoutHeader {
+    background-color: #ffffff;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 0;   /* header 하단 마진 제거 */
 }
-.top-search-bar{
-	position: fixed; 				/* 화면에 고정 */
-	top: 0; 						/* 맨 위에 위치 */
-	width: 100%; 					/* 화면의 전체 너비 차지 */
-	background-color: #f8f9fa; 	
-	padding: 10px;
-	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* 하단 그림자 */
-	text-align: center; 
+
+.top-search-bar {
+    position: fixed;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-color: #f5f5f5;
+}
+
+#search {
+    width: 300px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
 }
 
 .search {
-    font-size: inherit;
+    margin-left: 10px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
     cursor: pointer;
-    background: none;
 }
 
-#search{
-	font-size: inherit;
-	background: none;
+.search:hover {
+    background-color: #0056b3;
 }
-/* ---------------------------------------------------------------------------- */
-#commonLayoutContents{
-	margin-top: 60px; /* 검색창 높이보다 살짝 더 큰 값으로 설정 */
-	margin-bottom: 60px;
+
+/* 메인 콘텐츠 */
+#commonLayoutContents {
+    margin-top: 100px;
+    margin-left: 110px;
+    margin-bottom: 100px;
+    padding: 20px;
 }
+
 .gender-select-button {
-    display: flex; 
-    gap: 10px; 
-  }
-  
+    display: flex;
+    justify-content: left;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
 .gender-select {
-	padding: 10px;
-	border: 1px solid #ccc;
-	cursor: pointer;
+    height: 25px;
+    padding: 10px 20px;
+    border: 1px solid #ddd;
+    background-color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s;
 }
 
-.left-goods-category{
-	position: fixed; 			/* 화면에 고정 */
-	top: 47px; 					/* 화면의 맨 위부터 */
-    bottom: 0; 					/* 화면의 맨 아래까지 */
-    left: 0; 					/* 화면 왼쪽에 위치 */
-    width: 100px; 
-    background-color: white; 
-    overflow-y: auto; 			/* 스크롤 가능하게 설정 (필요할 경우) */
-    padding: 10px; 				/* 내부 여백 */
-    box-sizing: border-box; 	/* padding 포함하여 너비 계산 */
+.gender-select.active,
+.gender-select:hover {
+    background-color: #007bff;
+    color: #fff;
 }
 
-.right-goods-category{
-	
+/* 좌측 카테고리 */
+.left-goods-category {
+    position: fixed;
+    top: 80px;
+    left: 0;
+    height: calc(100vh - 80px);
+    background-color: #f5f5f5;
 }
 
-.goods-category-real{
-	padding: 10px;
+.left-goods-category ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 0;
+}
+
+.left-goods-category li {
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.left-goods-category li:hover {
+    background-color: #ffffff;
+}
+
+/* 우측 상품 카테고리 */
+.right-goods-category {
+    margin: 0 auto;          /* 좌우 자동으로 균등하게 설정 */
+    padding: 20px;
+}
+
+.goods-category {
+    margin-bottom: 40px;
+}
+
+.goods-category-index {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.goods-category-real {
+    padding: 10px;
 	display: flex; 					/* Flexbox로 자식 요소들을 가로로 배치 */
 	align-items: center; 			/* 아이템들이 세로로 가운데에 정렬되도록 설정 */
 	justify-content: space-around; 	/* 버튼 간의 간격을 균등하게 분배 */
-	display: grid; 					/* Grid 레이아웃 사용 */
-    grid-template-columns: repeat(3, 1fr); /* 한 줄에 3개의 열을 배치 */
-    gap: 20px; 						/* 각 항목 사이의 간격 */
-    justify-items: center; 			/* 각 아이템을 가운데 정렬 */
-}
-/* ---------------------------------------------------------------------------- */
-#commonLayoutFab{
-	margin-bottom: 200px;
-}
-/* ---------------------------------------------------------------------------- */
-.under-menu{
-	position: fixed; 				/* 화면에 고정 */
-	bottom: 0; 						/* 맨 아래에 위치 */
-	width: 100%; 				
-	background-color: #f8f9fa; 	
-	padding: 10px;
-	box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); /* 상단 그림자 */
-	text-align: center; 
-	display: flex; 					/* Flexbox로 자식 요소들을 가로로 배치 */
-    justify-content: space-around; 	/* 버튼 간의 간격을 균등하게 분배 */
-    align-items: center; 			/* 아이템들이 세로로 가운데에 정렬되도록 설정 */
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    justify-items: center;
 }
 
-.menu-button, .goods{
-	display: flex;
-	flex-direction: column; 	/* 세로 방향으로 정렬 */
+.goods{
+    display: flex;
+    flex-direction: column; 	/* 세로 방향으로 정렬 */
 	align-items: center; 		/* 가로 중앙 정렬 */
 	text-decoration: none; 		/* 링크에서 밑줄 제거 */
-	padding: 10px;
-	border: 2px solid black;
-	border-radius: 10px; 		/* 둥근 모서리로 버튼처럼 보이도록 설정 */
-	background-color: #f0f0f0; 	/* 버튼의 배경색 */
-	cursor: pointer; 			/* 버튼처럼 클릭할 수 있는 커서로 변경 */
-	width: 120px; 				/* 버튼 크기 조정 */
+    color: #000;
+    transition: background-color 0.3s;
+}
+
+/* 하단 고정 메뉴 */
+.under-menu {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #fff;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0;
+}
+
+.menu-button {
+    display: flex;
+    flex-direction: column; 	/* 세로 방향으로 정렬 */
+	align-items: center; 		/* 가로 중앙 정렬 */
+	text-decoration: none; 		/* 링크에서 밑줄 제거 */
+    color: #000;
+    transition: background-color 0.3s;
+}
+
+.menu-button:hover {
+    background-color: #f0f0f0;
 }
 
 .menu-button svg {
-	margin-bottom: 10px; 		/* 아이콘과 텍스트 사이의 간격 */
+    margin-bottom: 5px;
 }
 
 .menu-button span {
-  	font-size: 16px;
-  	color: black;
-}
-
-.menu-button:hover, .goods {
- 	 background-color: #e0e0e0; /* 마우스를 올렸을 때의 색상 변경 */
+    font-size: 14px;
 }

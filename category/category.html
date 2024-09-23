@@ -1,187 +1,160 @@
 <!DOCTYPE html>
-<html>
+<html lang="ko">
 <head>
-	<meta charset="UTF-8">
-	<title>카테고리 페이지</title>
-	<!-- 페이지 제목 옆의 아이콘 -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>카테고리 페이지</title>
+    <!-- 페이지 제목 옆의 아이콘 -->
     <link href="https://image.msscdn.net/favicon_152.ico" rel="icon">
     <link rel="stylesheet" href="category.css">
 </head>
 <body>
-	<div id="__next">
+    <div id="__next">
         <div id="commonLayoutContainer">
-            <div id="commonSearchHome" class="mds-reset-container"></div>
-            
-            <!-- 맨 위의 검색창 부분 -->
+            <!-- 상단 검색창 영역 -->
             <header id="commonLayoutHeader">
-            	<div class="top-search-bar">
-	            	<input type="text" id="search" placeholder="검색할 상품을 입력하세요"/>
-	            	<button type="button" class="search">검색</button>
-            	</div>
-            
-            <hr/>
+                <div class="top-search-bar">
+                    <input type="text" id="search" placeholder="검색할 상품을 입력하세요" />
+                    <button type="button" class="search">검색</button>
+                </div>
             </header>
             
-            <!-- 중앙의 제품 목록 부분 -->
             <main id="commonLayoutContents">
-				<div class="gender-select-button">
-					<div class="gender-select" value="전체">전체</div>
-					<div class="gender-select" value="남성">남성</div>
-					<div class="gender-select" value="여성">여성</div>
-				</div>
-				<div class="left-goods-category">
-				카테고리 목록란
-				</div>
-				<div class="right-goods-category">
-					<div class="goods-category">
-						<div class="goods-category-index">
-						뷰티
-						</div>
-						<div class="goods-category-real">
-							<a href="~~~" class="goods">
-								<svg width="30" height="30">
-								  <circle cx="15" cy="15" r="10" stroke="black" stroke-width="3"  />
-								</svg>
-								<span>신상</span>
-							</a>
-							<a href="~~~" class="goods">
-								<svg width="30" height="30">
-								  <circle cx="15" cy="15" r="10" stroke="blue" stroke-width="3" fill="blue"/>
-								</svg>
-								<span>스킨케어</span>
-							</a>
-							<a href="~~~" class="goods">
-								<svg width="30" height="30">
-								  <circle cx="15" cy="15" r="10" stroke="red" stroke-width="3" fill="red"/>
-								</svg>
-								<span>선케어</span>
-							</a>
-							<a href="~~~" class="goods">
-								<svg width="30" height="30">
-								  <circle cx="15" cy="15" r="10" stroke="black" stroke-width="3"  />
-								</svg>
+                <!-- 성별 선택 버튼 -->
+                <!-- <div class="gender-select-button">
+                    <div class="gender-select active" height="100px">전체</div>
+                    <div class="gender-select" height="100px">남성</div>
+                    <div class="gender-select" height="100px">여성</div>
+                </div> -->
+
+                <!-- 좌측 카테고리 목록 -->
+                <div class="left-goods-category">
+                    <ul>
+                        <li>뷰티</li>
+                        <li>신발</li>
+                        <li>가방</li>
+                        <li>액세서리</li>
+                        <li>의류</li>
+                    </ul>
+                </div>
+
+                <!-- 우측 상품 카테고리 목록 -->
+                <div class="right-goods-category">
+                    <section class="goods-category">
+                        <h2 class="goods-category-index">뷰티</h2>
+                        <div class="goods-category-real">
+                            <a href="./detail.html" class="goods">
+                                <svg width="30" height="30">
+                                    <img src="https://image.msscdn.net/images/category_img/women/ITEM_104_17229989762667_big.png" width="80" height="80" alt="신상">
+                                </svg>
+                                <span><strong>신상</strong></span>
+                            </a>
+                            <a href="./page2.html" class="goods">
+                                <img src="https://image.msscdn.net/images/category_img/men/ITEM_104001_17164420025345_big.png" width="80" height="80" alt="신상">
+                                <span>스킨케어</span>
+                            </a>
+                            <a href="./page3.html" class="goods">
+                                <img src="https://image.msscdn.net/images/category_img/men/ITEM_104002_17164420028786_big.png" width="80" height="80" alt="신상">
+                                <span>선케어</span>
+                            </a>
+                            <a href="~~~" class="goods">
+								<img src="https://image.msscdn.net/images/category_img/men/ITEM_104003_17164420031582_big.png" width="80" height="80" alt="신상">
 								<span>클렌징</span>
 							</a>
 							<a href="~~~" class="goods">
-								<svg width="30" height="30">
-								  <circle cx="15" cy="15" r="10" stroke="blue" stroke-width="3" fill="blue"/>
-								</svg>
+								<img src="https://image.msscdn.net/images/category_img/men/ITEM_103004_17164420017705_big.png" width="80" height="80" alt="신상">
 								<span>메이크업</span>
 							</a>
 							<a href="~~~" class="goods">
-								<svg width="30" height="30">
-								  <circle cx="15" cy="15" r="10" stroke="red" stroke-width="3" fill="red"/>
-								</svg>
+								<img src="https://image.msscdn.net/images/category_img/men/ITEM_103004_17164420017705_big.png" width="80" height="80" alt="신상">
 								<span>프레그런스</span>
 							</a>
-						</div>
-					</div>
-				
-					<div class="goods-category">
-						<div class="goods-category-index">
-						신발
-						</div>
-						<div class="goods-category-real">
-							<a href="~~~" class="goods">
-								<img src="https://image.msscdn.net/images/category_img/women/ITEM_104_17229989762667_big.png" width="30" height="30">
-								<span>신상</span>
-							</a>
-							<a href="~~~" class="goods">
-								<svg width="30" height="30">
-								  <circle cx="15" cy="15" r="10" stroke="blue" stroke-width="3" fill="blue"/>
-								</svg>
-								<span>스니커즈</span>
-							</a>
-							<a href="~~~" class="goods">
-								<svg width="30" height="30">
-								  <circle cx="15" cy="15" r="10" stroke="red" stroke-width="3" fill="red"/>
-								</svg>
+                        </div>
+                    </section>
+
+                    <section class="goods-category">
+                        <h2 class="goods-category-index">신발</h2>
+                        <div class="goods-category-real">
+                            <a href="../page1.html" class="goods">
+                                <img src="https://image.msscdn.net/images/category_img/women/ITEM_104_17229989762667_big.png" width="80" height="80" alt="신상">
+                                <span>신상</span>
+                            </a>
+                            <a href="./detail2.html" class="goods">
+                                <img src="https://image.msscdn.net/images/category_img/men/ITEM_103004_17164420017705_big.png" width="80" height="80" alt="신상">
+                                <span><strong>스니커즈</strong></span>
+                            </a>
+                            <a href="~~~" class="goods">
+								<img src="https://image.msscdn.net/images/category_img/men/ITEM_103004_17164420017705_big.png" width="80" height="80" alt="신상">
 								<span>구두</span>
 							</a>
 							<a href="~~~" class="goods">
-								<svg width="30" height="30">
-								  <circle cx="15" cy="15" r="10" stroke="black" stroke-width="3"  />
-								</svg>
+								<img src="https://image.msscdn.net/images/category_img/men/ITEM_103004_17164420017705_big.png" width="80" height="80" alt="신상">
 								<span>샌들/슬리퍼</span>
 							</a>
 							<a href="~~~" class="goods">
-								<svg width="30" height="30">
-								  <circle cx="15" cy="15" r="10" stroke="blue" stroke-width="3" fill="blue"/>
-								</svg>
+								<img src="https://image.msscdn.net/images/category_img/men/ITEM_103004_17164420017705_big.png" width="80" height="80" alt="신상">
 								<span>부츠/워커</span>
 							</a>
 							<a href="~~~" class="goods">
-								<svg width="30" height="30">
-								  <circle cx="15" cy="15" r="10" stroke="red" stroke-width="3" fill="red"/>
-								</svg>
+								<img src="https://image.msscdn.net/images/category_img/men/ITEM_103004_17164420017705_big.png" width="80" height="80" alt="신상">
 								<span>스포츠화</span>
 							</a>
-						</div>
-					</div>
-					<p>
-			        ---------------------- 아래의 글은 페이지 스크롤을 위해 넣은 의미없는 글입니다 -------------------------------------
-			        Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, 
-			        totam rem aperiam eaque ipsa, quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt, explicabo. 
-			        Nemo enim ipsam voluptatem, quia voluptas sit, aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos, 
-			        qui ratione voluptatem sequi nesciunt, neque porro quisquam est, qui dolorem ipsum, quia dolor sit, amet, consectetur, 
-			        adipisci velit, sed quia non numquam eius modi tempora incidunt, ut labore et dolore magnam aliquam quaerat voluptatem. 
-			        Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, 
-			        nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit, qui in ea voluptate velit esse, 
-			        quam nihil molestiae consequatur, vel illum, qui dolorem eum fugiat, quo voluptas nulla pariatur? 
-			        [33] At vero eos et accusamus et iusto odio dignissimos ducimus, qui blanditiis praesentium voluptatum deleniti atque corrupti, 
-			        quos dolores et quas molestias excepturi sint, obcaecati cupiditate non provident, similique sunt in culpa, 
-			        qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. 
-			        Nam libero tempore, cum soluta nobis est eligendi optio, cumque nihil impedit, quo minus id, quod maxime placeat, facere possimus, 
-			        omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus 
-			        saepe eveniet, ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus,
-			         ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.
-			        </p>	
-			        <p>
-			        Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, 
-			        totam rem aperiam eaque ipsa, quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt, explicabo. 
-			        Nemo enim ipsam voluptatem, quia voluptas sit, aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos, 
-			        qui ratione voluptatem sequi nesciunt, neque porro quisquam est, qui dolorem ipsum, quia dolor sit, amet, consectetur, 
-			        adipisci velit, sed quia non numquam eius modi tempora incidunt, ut labore et dolore magnam aliquam quaerat voluptatem. 
-			        Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, 
-			        nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit, qui in ea voluptate velit esse, 
-			        quam nihil molestiae consequatur, vel illum, qui dolorem eum fugiat, quo voluptas nulla pariatur? 
-			        [33] At vero eos et accusamus et iusto odio dignissimos ducimus, qui blanditiis praesentium voluptatum deleniti atque corrupti, 
-			        quos dolores et quas molestias excepturi sint, obcaecati cupiditate non provident, similique sunt in culpa, 
-			        qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. 
-			        Nam libero tempore, cum soluta nobis est eligendi optio, cumque nihil impedit, quo minus id, quod maxime placeat, facere possimus, 
-			        omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus 
-			        saepe eveniet, ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus,
-			         ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.
-			        </p>	
-			       
-			        
-				</div>
-				
-		        	
-            <hr/>
+                        </div>
+                    </section>
+
+                    <section class="goods-category"></section>
+                        <h2 class="goods-category-index">가방</h2>
+                        <div class="goods-category-real">
+                            <a href="../page1.html" class="goods">
+                                <img src="https://image.msscdn.net/images/category_img/women/ITEM_104_17229989762667_big.png" width="80" height="80" alt="신상">
+                                <span>신상</span>
+                            </a>
+                            <a href="./detail2.html" class="goods">
+                                <img src="https://image.msscdn.net/images/category_img/men/ITEM_103004_17164420017705_big.png" width="80" height="80" alt="신상">
+                                <span><strong>백팩</strong></span>
+                            </a>
+                            <a href="~~~" class="goods">
+								<img src="https://image.msscdn.net/images/category_img/men/ITEM_103004_17164420017705_big.png" width="80" height="80" alt="신상">
+								<span>크로스 백</span>
+							</a>
+							<a href="~~~" class="goods">
+								<img src="https://image.msscdn.net/images/category_img/men/ITEM_103004_17164420017705_big.png" width="80" height="80" alt="신상">
+								<span>숄더백</span>
+							</a>
+							<a href="~~~" class="goods">
+								<img src="https://image.msscdn.net/images/category_img/men/ITEM_103004_17164420017705_big.png" width="80" height="80" alt="신상">
+								<span>토트백</span>
+							</a>
+							<a href="~~~" class="goods">
+								<img src="https://image.msscdn.net/images/category_img/men/ITEM_103004_17164420017705_big.png" width="80" height="80" alt="신상">
+								<span>에코백</span>
+							</a>
+                        </div>
+                    </section>
+
+                </div>
             </main>
             
-            <!-- 오른쪽 아래 편의기능(최상단으로 가기 등) 버튼 부분 -->
-            <aside id="commonLayoutFab">
-            	aside 
-            	
-            <hr/>
-            </aside>
-            
-            <!-- 아래의 메뉴 부분 -->
+            <!-- 고정된 하단 메뉴 -->
             <nav id="commonLayoutGnb">
-				<div class="under-menu">
-					<a href="https://~~~/menu" class="menu-button">
+                <div class="under-menu">
+                    <a href="https://~~~/menu" class="menu-button">
+                        <svg width="100" height="100">
+                            <circle cx="50" cy="50" r="40" stroke="black" stroke-width="3" />
+                        </svg>
+                        <span>카테고리</span>
+                    </a>
+                    <a href="https://~~~/menu" class="menu-button">
+                        <svg width="100" height="100">
+                            <circle cx="50" cy="50" r="40" stroke="black" stroke-width="3" />
+                        </svg>
+                        <span>스냅</span>
+                    </a>
+                    <a href="./category2.html" class="menu-button">
 						<svg width="100" height="100">
 						  <circle cx="50" cy="50" r="40" stroke="black" stroke-width="3"  />
 						</svg>
-						<span>카테고리</span>
-					</a>
-					<a href="https://~~~/menu" class="menu-button">
-						<svg width="100" height="100">
-						  <circle cx="50" cy="50" r="40" stroke="black" stroke-width="3"  />
-						</svg>
-						<span>스냅</span>
+						<span>홈</span>
 					</a>
 					<a href="https://~~~/menu" class="menu-button">
 						<svg width="100" height="100">
@@ -193,17 +166,11 @@
 						<svg width="100" height="100">
 						  <circle cx="50" cy="50" r="40" stroke="black" stroke-width="3"  />
 						</svg>
-						<span>무신사 홈</span>
-					</a>
-					<a href="https://~~~/menu" class="menu-button">
-						<svg width="100" height="100">
-						  <circle cx="50" cy="50" r="40" stroke="black" stroke-width="3"  />
-						</svg>
 						<span>마이페이지</span>
 					</a>
-				</div>            
+                </div>
             </nav>
-         </div>
+        </div>
     </div>
 </body>
 </html>
