@@ -1,17 +1,19 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>주문 내역</title>
-    <link rel="stylesheet" href="order-status.css"> <!-- CSS를 별도로 분리 가능 -->
+    <title>주문 내역 | 쇼핑하조</title>
+    <link rel="stylesheet" href="order-status.css">
 </head>
 <body>
-<!-- 이 페이지랑 .css .js 고치는중 (남은 개수만큼 선택하려고 하는데 안되네) -->
-<h1>DB에서 가져온 나의 주문 내역</h1>
+
+<!-- 지금은 그냥 테이블 수동으로 만드는거지만 나중에서는 <c: > 문 사용해서 데이터 있으면 계속 가지고 오게 만들어 보기 -->
+
 <div style="text-align: center;">
-    장바구니 조금만 손보면 될 것 같음
-    장바구니에서 저장한 것들을 구매한 것으로 변환해서
+    <h1>DB에서 가져온 나의 주문 내역</h1>
+        장바구니 조금만 손보면 될 것 같음
+        장바구니에서 저장한 것들을 구매한 것으로 변환해서
 </div>
 <div class="container">
     <div class="orderlist">
@@ -31,65 +33,63 @@
                     <td>#001</td>
                     <td>
                         <div class="product-info">
-                            <img src="path/to/imageA.jpg" alt="상품 A" class="product-image"/>
+                            <img src="https://image.msscdn.net/thumbnails/images/goods_img/20210826/2092852/2092852_17086532214128_big.jpg?w=1200" alt="이지 와이드 데님 팬츠 그레이" class="product-image" id=""/> <!-- id 값에 바지 카테고리로 가는 거 넣기 --> 
                             <div class="product-details">
+                                <p>이지 와이드 데님 팬츠 그레이</p>
                                 <p>₩20,000</p>
-                                <p>남은 수량: <span class="stock-quantity">10</span>개</p>
+                                <p>남은 수량: <span class="stock-quantity">1</span>개</p>   <!-- 저기 span 태그 안쪽 숫자가 남은 수량임 나중에 DB에서 남은 수량 가지고 와서 넣으면 될 듯 --> 
                             </div>
                         </div>
                     </td>
-                    <td>
-                        <select class="quantity" onchange="updateQuantity(this)">
-                            <!-- 옵션은 JavaScript로 동적으로 생성됩니다. -->
-                        </select>
-                    </td>
+                    <td></td>
                     <td>₩20,000</td>
-                    <td>2024-09-15</td>
+                    <td>2024-09-15 <br/><br/>
+                        <a href="refund.html"><input type="button" value="환불 및 교환하기"/></a>
+                    </td>
                 </tr>
                 <tr>
                     <td>#002</td>
                     <td>
                         <div class="product-info">
-                            <img src="path/to/imageB.jpg" alt="상품 B" class="product-image"/>
+                            <img src="https://image.msscdn.net/thumbnails/images/goods_img/20240311/3936910/3936910_17101188568662_big.jpg?w=1200" alt="여성 로고테이프 버클 버킷햇(L245AP506P) 네이비" class="product-image" id="" />
                             <div class="product-details">
-                                <p>₩15,000</p>
-                                <p>남은 수량: <span class="stock-quantity">5</span>개</p>
+                                <p>여성 로고테이프 버클 버킷햇(L245AP506P) 네이비</p>
+                                <p>₩15,000</p> 
+                                <p>남은 수량: <span class="stock-quantity">5</span>개</p>   
                             </div>
                         </div>
                     </td>
-                    <td>
-                        <select class="quantity" onchange="updateQuantity(this)">
-                            <!-- 옵션은 JavaScript로 동적으로 생성됩니다. -->
-                        </select>
-                    </td>
+                    <td></td>
                     <td>₩15,000</td>
-                    <td>2024-09-16</td>
+                    <td>2024-09-15 <br/><br/>
+                        <a href="refund.html"><input type="button" value="환불 및 교환하기"/></a>
+                    </td>
+                    
                 </tr>
                 <tr>
                     <td>#003</td>
                     <td>
                         <div class="product-info">
-                            <img src="path/to/imageC.jpg" alt="상품 C" class="product-image"/>
+                            <img src="https://image.msscdn.net/thumbnails/images/goods_img/20240326/3991058/3991058_17116184755452_big.jpg?w=1200" alt="[유튜버 PICK]FR-40S 프렌치 워크 5P 자켓_Military Navy" class="product-image" id="" />
                             <div class="product-details">
+                                <p>[유튜버 PICK]FR-40S 프렌치 워크 5P 자켓_Military Navy</p>
                                 <p>₩30,000</p>
                                 <p>남은 수량: <span class="stock-quantity">2</span>개</p>
                             </div>
                         </div>
                     </td>
-                    <td>
-                        <select class="quantity" onchange="updateQuantity(this)">
-                            <!-- 옵션은 JavaScript로 동적으로 생성됩니다. -->
-                        </select>
-                    </td>
+                    <td></td>
                     <td>₩30,000</td>
-                    <td>2024-09-17</td>
+                    <td>2024-09-17 <br/><br/>
+                        <a href="refund.html"><input type="button" value="환불 및 교환하기"/></a>
+                    </td>
                 </tr>
             </tbody>
         </table>
     </div>
 </div>
 
-<script src="script.js"></script> <!-- JavaScript를 별도로 분리 가능 -->
 
 </body>
+<script src="order-status.js"></script>
 </html>

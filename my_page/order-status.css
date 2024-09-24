@@ -1,16 +1,25 @@
-.container {
-    max-width: 800px;
-    margin: auto;
+
+body{
+    background-color:whitesmoke;
 }
+
+.container {
+    max-width: 100%; /* 최대 너비를 100%로 설정 */
+    margin: auto; /* 중앙 정렬 */
+    padding: 0 300px; /* 왼쪽과 오른쪽에 100px 패딩 추가 */
+}
+
 
 .orderlist {
     margin: 20px 0;
 }
 
 table {
-    width: 100%;
+    width: 100%; /* 테이블 너비를 100%로 설정 */
     border-collapse: collapse;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* 그림자 추가 */
 }
+
 
 th, td {
     padding: 10px;
@@ -27,7 +36,7 @@ th, td {
 }
 
 .product-image {
-    width: 100px;
+    width: 350px;
     height: auto;
     margin-bottom: 10px;
 }

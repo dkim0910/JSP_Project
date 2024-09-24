@@ -1,7 +1,7 @@
 function createQuantityOptions(stock) {
     const selectElement = document.createElement('select');
     selectElement.className = 'quantity';
-    selectElement.onchange = function (event) { updateQuantity(event.target); };
+    selectElement.onchange = updateQuantity; // this 사용 안 함
 
     for (let i = 0; i <= stock; i++) {
         const option = document.createElement('option');
@@ -13,7 +13,8 @@ function createQuantityOptions(stock) {
     return selectElement;
 }
 
-function updateQuantity(selectElement) {
+function updateQuantity(event) {
+    const selectElement = event.target;
     const quantity = selectElement.value;
     const row = selectElement.closest('tr');
     console.log(`주문 번호: ${row.cells[0].innerText}, 선택한 수량: ${quantity}`);
@@ -23,5 +24,5 @@ function updateQuantity(selectElement) {
 document.querySelectorAll('.orderlist tbody tr').forEach(row => {
     const stockQuantity = parseInt(row.querySelector('.stock-quantity').textContent);
     const selectElement = createQuantityOptions(stockQuantity);
-    row.querySelector('.quantity').replaceWith(selectElement);
+    row.cells[2].appendChild(selectElement);  // 수량 열에 드롭다운 추가
 });
