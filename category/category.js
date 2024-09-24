@@ -11,7 +11,7 @@ document.querySelectorAll('.left-goods-category li').forEach(function(li) {
     li.addEventListener('click', scrollToSection);
 });
 
-// Intersection Observer를 사용해 각 섹션의 가시성을 추적
+// 스크롤
 const sections = document.querySelectorAll('.goods-category');
 const navItems = document.querySelectorAll('.left-goods-category li');
 
@@ -41,7 +41,7 @@ $('#search-button').on('click', function() {
     search();  // 검색 함수 실행
 });
 
-// 엔터 키를 눌렀을 때도 검색 실행
+// 엔터 키를 눌렀을 시 검색
 $('#search').on('keydown', function(event) {
     if (event.key === 'Enter') {  // 엔터 키를 눌렀는지 확인
         search();  // 검색 함수 실행
