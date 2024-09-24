@@ -1,6 +1,12 @@
 @charset "UTF-8";
-*{
-    font-family: 'sans-serif' !important;
+body{
+    font-family: Pretendard, 'sans-serif' !important;
+    font-size: 14px;
+    line-height: inherit;
+    margin: 0;
+}
+html, body{
+    height: 100%;
 }
 /* ------주문서------ */
 .order_form-headline{
@@ -245,33 +251,23 @@ h2{
     display: flex;
     position: relative;
 }
-#button-payment-TOSSPAY::before {
-    background-color: white;
-    border: 1px solid #ccc ;
-    box-sizing: border-box;
-    content: "";
-    border-radius: 100%;
+input[type='radio'] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
     width: 16px;
     height: 16px;
-    display: block;
-    position: absolute;
-    top: 50%;
-    left: 0;
-    transform: translateY(-50%)
+    border: 2px solid #ccc;
+    border-radius: 50%;
+    outline: none;
+    cursor: pointer;
 }
-#button-payment-TOSSPAY::after {
-    content: "";
+input[type='radio']:checked{
     background-color: white;
-    border-radius: 100%;
-    width: 8px;
-    height: 8px;
-    display: block;
-    position: absolute;
-    top: 50%;
-    left: 4px;
-    transform: translateY(-50%)
+    border: 3px solid black;
+    box-shadow: 0 0 0 1.6px black;
 }
-.payment-method-types{
+.payment-method-choice{
     margin-left: 4px;
     font-size: 14px;
 }
@@ -287,6 +283,7 @@ div{
 }
 .paymentMethod-others{
     text-align: center;
+    width: 100%;
 }
 .paymentMethod-others-list{
     box-sizing: border-box;
@@ -297,6 +294,10 @@ div{
     display: flex;
     list-style: none;
     margin: 1px;
+}
+.paymentMethod-others-list li{
+    width: calc(50% - 2px);
+    margin-top: 8px;
 }
 #box-payment-method-type-CARD, #box-payment-method-type-VACCOUNT, #box-payment-method-type-PHONE, #box-payment-method-type-NAVERPAY{
     border: 1px solid #e0e0e0;

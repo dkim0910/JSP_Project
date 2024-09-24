@@ -14,11 +14,13 @@
     <body style="overflow: unset">
         <header>
             <div class="order_form-headline">
-                <button type="button" aria-label="이전 페이지로 이동" class="button-back-page">
-                    <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
-                        <path d="M16.1004 21.7L8.61252 14.2122C8.49537 14.095 8.49537 13.9051 8.61252 13.7879L16.1004 6.30005" stroke="currentColor" stroke-width="1.4"></path>
-                    </svg>
-                </button>               
+                <a href="https://www.naver.com">
+                    <button type="button" aria-label="이전 페이지로 이동" class="button-back-page">
+                        <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+                            <path d="M16.1004 21.7L8.61252 14.2122C8.49537 14.095 8.49537 13.9051 8.61252 13.7879L16.1004 6.30005" stroke="currentColor" stroke-width="1.4"></path>
+                        </svg>
+                    </button>               
+                </a>
                     <h2 class="order_form-headline-text">주문서</h2>
                     <div class="order_form-headline-inside"></div>               
             </div>
@@ -139,27 +141,27 @@
                 <div class="sheet-title">
                     <h2 class="sheet-title-text">결제 수단</h2>
                 </div>
-                <div class="payment-method-types">
+                <div class="payment-method-choice">
                     <label>
-                        <input type="radio" name="button-payment-type" id="button-payment-TOSSPAY"/>
+                        <input type="radio" name="button-payment-type" id="button-payment-TOSSPAY" class="payment-method-type-input"/>
                         <img src="payment_method_img/Toss-Symbol.png" class="payment-method-logo-TOSSPAY">
                         토스페이
                     </label>
                     <br/>
                     <label>
-                        <input type="radio" name="button-payment-type" id="button-payment-KAKAOPAY"/>
+                        <input type="radio" name="button-payment-type" id="button-payment-KAKAOPAY" class="payment-method-type-input"/>
                         <img src="payment_method_img/payment_icon_yellow_small.png" class="payment-method-logo-KAKAOPAY">
                         카카오페이
                     </label>
                     <br/>
                     <label>
-                        <input type="radio" name="button-payment-type" id="button-payment-PAYCO"/>
+                        <input type="radio" name="button-payment-type" id="button-payment-PAYCO" class="payment-method-type-input"/>
                         <img src="payment_method_img/1_PAYCO_Red.png" class="payment-method-logo-PAYCO">
                         페이코
                     </label>
                     <br/>
                     <label>
-                        <input type="radio" name="button-payment-type" id="button-payment-TOSSPAY"/>
+                        <input type="radio" name="button-payment-type" id="button-payment-TOSSPAY" class="payment-method-type-input"/>
                         기타 결제
                     </label>
                     <div class="payment-method-contents">
