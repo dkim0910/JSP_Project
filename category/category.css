@@ -32,7 +32,7 @@ body {
     font-size: 16px;
 }
 
-.search {
+#search-button {
     margin-left: 10px;
     padding: 10px 20px;
     background-color: #007bff;
