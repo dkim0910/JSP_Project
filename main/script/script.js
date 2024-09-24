@@ -53,10 +53,10 @@ function SwiperInit(selector) {
         speed: 800, // 전환 속도
         grabCursor: true,
         loop: true,
-        slidesPerView: 1, // 한 번에 하나의 슬라이드 표시
-        centeredSlides: true, // 슬라이드가 가운데 정렬
-        touchRatio: 1, // 드래그 감도
-        threshold: 10, // 드래그 시 최소 이동 거리
+        slidesPerView: 1,
+        centeredSlides: true, 
+        touchRatio: 1, 
+        threshold: 10, 
         on: {
             slideChangeTransitionStart: function () {
                 
