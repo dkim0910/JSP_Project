@@ -8,7 +8,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<form action="search_db.jsp">
+	<form action="if_find_db.jsp">
 		검색하실 회원의 ID
 		<input type="text" name="userid"/><br/>
 		
