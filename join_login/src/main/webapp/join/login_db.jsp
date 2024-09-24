@@ -9,9 +9,9 @@
 <title>Insert title here</title>
 </head>
 <body>
-<script>
-    location.href = '../login_main.html';
-</script>
+<!-- <script>
+    location.href = 'file:///c%3A/Users/user1/Documents/GitHub/JSP_Project/main/login_main.html';
+</script> -->
 	<%
 		TblMemberDAO2 mdao = new TblMemberDAO2();
 		String userid = request.getParameter("userid");
@@ -23,7 +23,7 @@
 			session.setAttribute("session_id", member);
 	%>
 		<script>
-			location.href = '../login_main.html';
+			location.href = 'localhost:8081/login_main.html';
 		</script>
 	<%} else { 								// 로그인 실패 %>
 		<script>
