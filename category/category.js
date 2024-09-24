@@ -7,7 +7,6 @@ function scrollToSection(event) {
     });
 }
 
-// 모든 <li> 요소에 이벤트 리스너 추가
 document.querySelectorAll('.left-goods-category li').forEach(function(li) {
     li.addEventListener('click', scrollToSection);
 });
@@ -36,3 +35,29 @@ window.addEventListener('scroll', () => {
         }
     });
 });
+
+// 검색 버튼 클릭 시 검색
+$('#search-button').on('click', function() {
+    search();  // 검색 함수 실행
+});
+
+// 엔터 키를 눌렀을 때도 검색 실행
+$('#search').on('keydown', function(event) {
+    if (event.key === 'Enter') {  // 엔터 키를 눌렀는지 확인
+        search();  // 검색 함수 실행
+    }
+});
+
+// 검색
+function search() {
+    let search_value = $('#search').val();
+    
+    // 각 .goods 요소의 name 속성을 순회하면서 확인
+    $('.goods').each(function() {
+        let name = $(this).attr('name');  // 각 요소의 name 속성값을 가져옴
+        if (name === search_value) {
+            let href = $(this).attr('href');
+            window.location.href = href;
+        }
+    });
+}
