@@ -124,7 +124,13 @@ h2{
     font-weight: 600;
     line-height: 24px;
 }
-
+.sheet-order-product{
+    margin-top: 4px;
+}
+.sheet-order-product-cartItem{
+    margin: 0 16px;
+    position: relative;
+}
 .sheet-order-product-box{
     gap: 0 12px;
     display: flex;
@@ -133,43 +139,43 @@ h2{
 .sheet-order-product-image{
     object-fit: contain;
     align-self: flex-start;
-    width: 80px;
-    height: 96px;
+    width: 120px;
+    height: 160px;
 }
 .sheet-order-product-brand{
     grid-area: brand;
-    font-size: 13px;
+    font-size: 15px;
     font-weight: 600;
-    line-height: 18px;
+    line-height: 30px;
 }
 .sheet-order-product-name{
     grid-area: name;
     margin-top: 2px;
-    font-size: 13px;
+    font-size: 15px;
     font-weight: 400;
-    line-height: 18px;
+    line-height: 27px;
 }
 .sheet-order-product-option{
     color: #666;
     grid-area: option;
     margin-top: 2px;
-    font-size: 13px;
+    font-size: 14px;
     font-weight: 400;
-    line-height: 18px;
-}
-.sheet-order-product-price-sale{
-    color: #666;
-    font-size: 13px;
-    font-weight: 400;
-    line-height: 18px;
-    text-decoration: line-through;
+    line-height: 35px;
 }
 .sheet-order-product-price-origin{
+    color: #666;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 25px;
+    text-decoration: line-through;
+}
+.sheet-order-product-price-sale{
     color: black;
     grid-area: final;
-    font-size: 13px;
+    font-size: 16px;
     font-weight: 600;
-    line-height: 18px;
+    line-height: 10px;
 }
 .sheet-order-product-coupon{
     box-sizing: border-box;
@@ -276,10 +282,21 @@ input[type='radio']:checked{
     width: 30px;
     object-fit: scale-down;
 }
-div{
+a, div{
     outline: none;
     margin: 0;
     padding: 0;
+}
+.payment-method-type-input{
+    position: relative;
+    clear: both;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.payment-method-type-input [type="radio"]:checked{
+    z-index: 1;
+    display: block;
 }
 .paymentMethod-others{
     text-align: center;
