@@ -1,58 +1,95 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>나의 주문 내역 | 쇼핑하조</title>
-    <link rel="stylesheet" href="order-status.css">
+    <title>주문 내역</title>
+    <link rel="stylesheet" href="order-status.css"> <!-- CSS를 별도로 분리 가능 -->
 </head>
 <body>
-    <h1>db에서 가지고온 나의 주문 내역들 나옴</h1>
-        <div style="text-align: center;">
-            장바구니 조금만 손보면 될거 같음 
-            장바구니에서 저장한것들을 구매한것들로 변환해서
-        </div>
-        <div class="container">
-            <div class="orderlist">
-                <h1>나의 주문 내역 예시 테이블 </h1>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>주문 번호</th>
-                            <th>상품명</th>
-                            <th>수량</th>
-                            <th>가격</th>
-                            <th>주문 날짜</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>#001</td>
-                            <td>상품 A</td>
-                            <td>2</td>
-                            <td>₩20,000</td>
-                            <td>2024-09-15</td>
-                        </tr>
-                        <tr>
-                            <td>#002</td>
-                            <td>상품 B</td>
-                            <td>1</td>
-                            <td>₩15,000</td>
-                            <td>2024-09-16</td>
-                        </tr>
-                        <tr>
-                            <td>#003</td>
-                            <td>상품 C</td>
-                            <td>3</td>
-                            <td>₩30,000</td>
-                            <td>2024-09-17</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-</body>
-</html>
+<!-- 이 페이지랑 .css .js 고치는중 (남은 개수만큼 선택하려고 하는데 안되네) -->
+<h1>DB에서 가져온 나의 주문 내역</h1>
+<div style="text-align: center;">
+    장바구니 조금만 손보면 될 것 같음
+    장바구니에서 저장한 것들을 구매한 것으로 변환해서
+</div>
+<div class="container">
+    <div class="orderlist">
+        <h1>나의 주문 내역 예시 테이블</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>주문 번호</th>
+                    <th>상품명</th>
+                    <th>수량</th>
+                    <th>가격</th>
+                    <th>주문 날짜</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>#001</td>
+                    <td>
+                        <div class="product-info">
+                            <img src="path/to/imageA.jpg" alt="상품 A" class="product-image"/>
+                            <div class="product-details">
+                                <p>₩20,000</p>
+                                <p>남은 수량: <span class="stock-quantity">10</span>개</p>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <select class="quantity" onchange="updateQuantity(this)">
+                            <!-- 옵션은 JavaScript로 동적으로 생성됩니다. -->
+                        </select>
+                    </td>
+                    <td>₩20,000</td>
+                    <td>2024-09-15</td>
+                </tr>
+                <tr>
+                    <td>#002</td>
+                    <td>
+                        <div class="product-info">
+                            <img src="path/to/imageB.jpg" alt="상품 B" class="product-image"/>
+                            <div class="product-details">
+                                <p>₩15,000</p>
+                                <p>남은 수량: <span class="stock-quantity">5</span>개</p>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <select class="quantity" onchange="updateQuantity(this)">
+                            <!-- 옵션은 JavaScript로 동적으로 생성됩니다. -->
+                        </select>
+                    </td>
+                    <td>₩15,000</td>
+                    <td>2024-09-16</td>
+                </tr>
+                <tr>
+                    <td>#003</td>
+                    <td>
+                        <div class="product-info">
+                            <img src="path/to/imageC.jpg" alt="상품 C" class="product-image"/>
+                            <div class="product-details">
+                                <p>₩30,000</p>
+                                <p>남은 수량: <span class="stock-quantity">2</span>개</p>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <select class="quantity" onchange="updateQuantity(this)">
+                            <!-- 옵션은 JavaScript로 동적으로 생성됩니다. -->
+                        </select>
+                    </td>
+                    <td>₩30,000</td>
+                    <td>2024-09-17</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<script src="script.js"></script> <!-- JavaScript를 별도로 분리 가능 -->
 
 </body>
 </html>

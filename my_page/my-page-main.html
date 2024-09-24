@@ -15,7 +15,7 @@
 
     <div class="container">
         <nav class="sidebar">
-            <div class="sidebar-title" id="" onclick="showContent('my-page')" >
+            <div class="sidebar-title" id="" onclick="showContent('maincontents')" >
                 <p>마이페이지</p>
             </div>
                 <ul>
@@ -41,7 +41,7 @@
         <main class="main-hello">
             <!-- 처음 들어왔을때 보여주는 화면 박스 (어서오세요 박스)-->
             <div class="hello">
-                <p class="left">어서오세요 ~~~ 님</p> <!-- 여기 ~~~에 DB에서 가져온 username 삽입 -->
+                <p class="left">닉네임</p> <!-- 여기 ~~~에 DB에서 가져온 username 삽입 -->
                 <div class="right-container">
                     <p id="member-status" class="right">회원 등급: ~~~</p> <!-- member-status 라는게 화원 등급 설정임 (3번 구매하면 브론즈 5번 구매하면 실버 등 로직 추가하기) -->
                     <p id="user-member-point" class="right">잔여 포인트: ~~~p</p>  <!-- user-member-point 라는게 잔여 포인트임 -->
@@ -55,7 +55,7 @@
             <hr/>
 
             <!-- 메인페이지 내용 페이지-->
-            <div id="" class="content-section" style="display: block;">
+            <div id="maincontents" class="content-section" style="display: block;">
                 <h1 id="main-page">메인 페이지</h1>
 
                 <p>주문 내역</p>
@@ -65,17 +65,7 @@
                 <br/>
                 <br/>
 
-                <!-- 버튼임 수정중 (누루면 볼드채로 남아있음 나중에 사이드바 카테고리에 넣을 예정) -->
-                <!-- <div class="buttontest">
-                    <div class="center-container"></div>
-                    
-                    <span class="border rounded cursor-pointer bg-white text-black" onclick="toggleActive(this)">
-                        고객센터
-                    </div>
-                        
-                    </span>
-
-                </div> -->
+                
 
                 <!-- 나중에 여기에다가 주문현황 박스 만들기 박스 3개 정도 만들어서 가로로 해서 왼쪽은 고객센터 중간은 주문현황 오른쪽은 후기 이렇게 만들기 -->
                 <div class="main-container">
@@ -87,8 +77,8 @@
                     <hr/>
                         옷 배송중... 예상 도착일은 5일후<br/>
                         도착한 물품 있음 어쩌고...<br/>
-                        환불 버튼
-                        <input type="button" value="환불 하기(?) 아님 나중에 나의 주문현황에서만 되게끔 바뀔 예정 "/>    <!-- 버튼 누루면 환불 페이지로 이동하게끔 만들기? (나중에 나의 주문현황에서 환불, 문의, 교환 할수 있게 만들까?) -->
+
+                        <a href="#" onclick="showContent('refunds')" ><input type="button" id="" value="환불 하기"/></a>     <!-- 버튼 누루면 환불 페이지로 이동하게끔 만들기? (나중에 나의 주문현황에서 환불, 문의, 교환 할수 있게 만들까?) -->
                     </div>
                     <div class="main-box">후기<br/>
                     <hr/>
@@ -102,8 +92,9 @@
 
             <!-- 나의 정보 내용 페이지 -->
             <div id="my-info" class="content-section" style="display: none;">
-                <h2>나의 정보</h2> <!-- h2 태그 말고 class 줘서 크기 조절하기 다른 페이지도 같이 쓰게 (폰트랑 굵기 등 추가) -->
-                    <div>
+                <div class="profile-container">
+                    <h2>나의 정보</h2> <!-- h2 태그 말고 class 줘서 크기 조절하기 다른 페이지도 같이 쓰게 (폰트랑 굵기 등 추가) -->
+                    <div class="profile-info">
                         <p id="user-id">아이디 : <span>~~~</span></p>   <!-- span 태그 안에 jsp 넣어서 db에서 나중에 select 해 올거 넣기 -->
                         <p id="user-pw"> 비번 : <span>~~~</span></p>
                         <p id="user-name">이름 : <span>~~~</span></p>
@@ -115,66 +106,101 @@
                         <p id="user-shoe-size">신발 사이즈 : <span>~~~</span></p>
 
                     </div>
-
+                </div>
                 <br/>
 
                     <div>
-                        <a href="#" onclick="showContent('edit-my-info')" ><input type="button" id="" class="edit-button" value="정보 수정하기"/></a>  <!-- edit-my-info 와서 보여주기 -->
+                        <a href="#" onclick="showContent('edit-my-info')" ><input type="button" id="" class="done-edit-button" value="정보 수정하기"/></a>  <!-- edit-my-info 와서 보여주기 -->
                     </div>
 
             </div>
 
             <!-- 나의 주문 페이지 -->
             <div id="orders" class="content-section" style="display: none;">
+                <div class="profile-container">
                 <h2>나의 주문</h2>
-                <p>주문 보기임 (주문 현황이나 주문 취소 등 있음 주문 했던 내역들도 있음)</p>
+                주문 보기임 (주문 현황이나 주문 취소 등 있음 주문 했던 내역들도 있음)
+                </div>
+
             </div>
 
             <!-- 나의 멤버십 페이지 -->
             <div id="membership" class="content-section" style="display: none;">
+                <div class="profile-container">
                 <h2>나의 멤버십</h2>
-                <p>멤버십 보기임 (여기에  멤버십 등급, 멤버십 포인트(?) 보임)</p> <!-- 멤버십 포인트는 나중에 시간 있음 DB에서 멤버십 등급이랑 포인트 시스템 추가 하기 -->
+                멤버십 보기임 (여기에  멤버십 등급, 멤버십 포인트(?) 보임) <!-- 멤버십 포인트는 나중에 시간 있음 DB에서 멤버십 등급이랑 포인트 시스템 추가 하기 -->
+                </div>
             </div>
 
             <!-- 고객센터 문의(?) 페이지 -->
             <div id="helpcenter" class="content-section" style="display: none;">
-                <h2>고객센터</h2>
-            <div>
-                전화 가능 시간 : 9:00 ~ 18:00
-                <p>010-1234-5678</p>
-            </div>
-                <a href="https://chatgpt.com/" target="_blank"><p>AI 챗 봇이랑 대화하기</p></a>
+                <div class="profile-container">
+                    <h2>고객센터</h2>
+                        <div>
+                        전화 가능 시간 : 0:00 ~ 24:00<br/>
+                        010-1234-5678<br/>
+                        </div>
+                    <a href="https://chatgpt.com/" target="_blank"><p>AI 챗 봇이랑 대화하기</p></a>
+                </div>
             </div>
 
             <!-- 환불 및 교환 페이지 -->
             <div id="refunds" class="content-section" style="display: none;">
-                <h2>환불 및 교환</h2>
-                <p>환불 안되요!!!</p>
+                <div class="profile-container">
+                    <h2>환불 및 교환</h2>
+                    환불 안되요!!!
+                </div>
             </div>
 
             <!-- 이벤트 페이지 -->
             <div id="events" class="content-section" style="display: none;">
-                <h2>이벤트 내용</h2>
-                <p>할인중</p>
+                <div class="profile-container">
+
+                    <section class="discount-section">
+                        <h2>이벤트 내용</h2>
+                        <div class="product-card">
+                            <h3>여성용 티셔츠</h3>
+                            <p>할인 가격: <span class="discount-price">₩15,000</span> <span class="original-price">₩20,000</span></p>
+                            <a href="#" class="buy-button">구매하기</a>
+                        </div>
+                        
+                        <div class="product-card">
+                            <h3>남성용 청바지</h3>
+                            <p>할인 가격: <span class="discount-price">₩30,000</span> <span class="original-price">₩40,000</span></p>
+                            <a href="#" class="buy-button">구매하기</a>
+                        </div>
+                
+                        <div class="product-card">
+                            <h3>스니커즈</h3>
+                            <p>할인 가격: <span class="discount-price">₩45,000</span> <span class="original-price">₩60,000</span></p>
+                            <a href="#" class="buy-button">구매하기</a>
+                        </div>
+                    </section>
+                </div>
             </div>
 
             <div id="announcement" class="content-section" style="display: none;">
-                <h2>공지사항</h2>
-                <p>섭종합니다</p>
+                <div class="profile-container">
+                    <h2>공지사항</h2>
+                    섭종합니다
+                </div>
             </div>
 
 
 
             <!-- 회원 탈퇴 -->
             <div id="byebye" class="content-section" style="display: none;">
-                <br/>
-                <a href="logout.html"><input type="button" value="탈퇴하기"/></a>
+                <div class="profile-container">
+                    <br/>
+                    <a href="logout.html"><input type="button" class="" value="탈퇴하기"/></a>
+                </div>
             </div>
 
 
 
             <!-- 정보 수정하기 페이지 -->
             <div id="edit-my-info" class="content-section" style="display: none;">
+                <div class="profile-container">
                     <div class="edit-container">
                         <h1>정보 수정하기</h1>
                         <br/>
@@ -196,6 +222,7 @@
                         </form>
                         <div class="edit-container-footer">수정이 완료된 후, 변경된 정보가 저장됩니다</div>
                     </div>
+                </div>
             </div>
 
 
@@ -209,7 +236,7 @@
         </main>
     </div>
 </body>
-    <script src="script.js"></script>
+    <script src="main-script.js"></script>
 </html>
 
 
