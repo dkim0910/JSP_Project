@@ -9,6 +9,7 @@
     @import url(order_form.css);
 </style>
 <body>
+    <script src="order_form.js"></script>
     <head>
     </head>
     <body style="overflow: unset">
@@ -46,7 +47,7 @@
                         <button class="sheet-address-title-button" type="button" id="button-address-register" style="display: none">
                             배송지 등록
                         </button>
-                        <button class="sheet-address-title-button" type="button" id="button-address-change" style>
+                        <button class="sheet-address-title-button" type="button" id="button-address-change" onclick="openPopup_AddressChange()">
                             배송지 변경
                         </button>
                     </div>
@@ -78,29 +79,32 @@
                     <h2 class="sheet-title-count">주문 상품 1개</h2>
                 </div>
                 <div class="sheet-order-product">
-                    <div class="sheet-order-product-cart item" data-goods-no="3997992" data-cart-id="1076429836">
+                    <div class="sheet-order-product-cartItem" data-goods-no="3997992" data-cart-id="1076429836">
                         <div class="sheet-order-product-box">
                             <div class="sheet-order-product-image-box">
                                 <img class="sheet-order-product-image" src="payment_method_img/t-4.jpg">
                             </div>
                             <div class="sheet-order-product-information">
-                                <a class="sheet-order-product-brand" title="아디다쓔">아디다쓔</a>
+                                <a class="sheet-order-product-brand" title="아디다스">아디다스</a>
+                                <br/>                               
                                 <a class="sheet-order-product-name" title="vintage washed Tee_BLUE">
                                     vintage washed Tee_BLUE
                                 </a>
+                                <br/>
                                 <span class="sheet-order-product-option">XL / 1개</span>                                     
                                 <div class="sheet-order-product-price-box">
                                     <strong class="sheet-order-product-price-coupon rolling-counter" id="display-product-price-coupon-box-1076429836" style="display: none">
                                         <span class="rolling-number" id="display-product-price-coupon-1076429836">0</span>
                                         <span>원</span>
                                     </strong><!-- default : style="display: none" -->
-                                    <strong class="sheet-order-product-price-sale" id="display-product-price-1076429836">108,000원</strong>
-                                    <span class="sheet-order-product-price-origin" id="display-product-price-origin-1076429836">100,000원</span>
+                                    <strong class="sheet-order-product-price-origin" id="display-product-price-1076429836">108,000원</strong>
+                                    <br/>                                   
+                                    <span class="sheet-order-product-price-sale" id="display-product-price-origin-1076429836">100,000원</span>
                                     <span class="sheet-order-product-price-text-coupon" id="display-product-apply-coupon-1076429836" style="display: none">쿠폰적용가</span><!-- default : style="display: none" -->
                                 </div>
                             </div>
                         </div>
-                        <button type="button" class="sheet-order-product-coupon" id="button-product-apply-coupon-1076429836" onclick="openPopup()">
+                        <button type="button" class="sheet-order-product-coupon" id="button-product-apply-coupon-1076429836" onclick="openPopup_couponApply()">
                             쿠폰사용
                         </button>
                     </div>
@@ -143,66 +147,56 @@
                 </div>
                 <div class="payment-method-choice">
                     <label>
-                        <input type="radio" name="button-payment-type" id="button-payment-TOSSPAY" class="payment-method-type-input"/>
+                        <input type="radio" name="button-payment-type" id="button-payment-TOSSPAY" class="payment-method-type-input" onclick="toggleOtherPayments(false)">
                         <img src="payment_method_img/Toss-Symbol.png" class="payment-method-logo-TOSSPAY">
                         토스페이
                     </label>
                     <br/>
                     <label>
-                        <input type="radio" name="button-payment-type" id="button-payment-KAKAOPAY" class="payment-method-type-input"/>
+                        <input type="radio" name="button-payment-type" id="button-payment-KAKAOPAY" class="payment-method-type-input" onclick="toggleOtherPayments(false)">
                         <img src="payment_method_img/payment_icon_yellow_small.png" class="payment-method-logo-KAKAOPAY">
                         카카오페이
                     </label>
                     <br/>
                     <label>
-                        <input type="radio" name="button-payment-type" id="button-payment-PAYCO" class="payment-method-type-input"/>
+                        <input type="radio" name="button-payment-type" id="button-payment-PAYCO" class="payment-method-type-input" onclick="toggleOtherPayments(false)">
                         <img src="payment_method_img/1_PAYCO_Red.png" class="payment-method-logo-PAYCO">
                         페이코
                     </label>
                     <br/>
-                    <label>
-                        <input type="radio" name="button-payment-type" id="button-payment-TOSSPAY" class="payment-method-type-input"/>
+                    <label class="payment-method-others">
+                        <input type="radio" name="button-payment-type" id="button-payment-OTHERS" class="payment-method-type-input" onclick="toggleOtherPayments(true)">
                         기타 결제
                     </label>
-                    <div class="payment-method-contents">
-                        <div class="paymentMethod-others">
-                            <ul class="paymentMethod-others-list">
-                                <li id="box-payment-method-type-CARD">
-                                    <button id="button-payment-CARD" onclick="" >
-                                        <span class="paymentMethod-others-text">
-                                            카드
-                                        </span>
-                                    </button>
-                                </li>
-                                <li id="box-payment-method-type-VACCOUNT">
-                                    <button id="button-payment-VACCOUNT" onclick="" >
-                                        <span class="paymentMethod-others-text">
-                                            가상계좌
-                                        </span>
-                                    </button>
-                                </li>
-                                <li id="box-payment-method-type-PHONE">
-                                    <button id="button-payment-PHONE" onclick="" >
-                                        <span class="paymentMethod-others-text">
-                                            휴대폰
-                                        </span>
-                                    </button>
-                                </li>
-                                <li id="box-payment-method-type-NAVERPAY">
-                                    <button id="button-payment-NAVERPAY" onclick="" >
-                                        <span class="paymentMethod-others-text">
-                                            네이버페이
-                                        </span>
-                                    </button>
-                                </li>
-                            </ul>                     
-                        </div>
+                    <div id="other-payment-options" class="paymentMethod-others" style="display: none;">
+                        <ul class="paymentMethod-others-list">
+                            <li id="box-payment-method-type-CARD">
+                                <button id="button-payment-CARD" onclick="">
+                                    <span class="paymentMethod-others-text">카드</span>
+                                </button>
+                            </li>
+                            <li id="box-payment-method-type-VACCOUNT">
+                                <button id="button-payment-VACCOUNT" onclick="">
+                                    <span class="paymentMethod-others-text">가상계좌</span>
+                                </button>
+                            </li>
+                            <li id="box-payment-method-type-PHONE">
+                                <button id="button-payment-PHONE" onclick="">
+                                    <span class="paymentMethod-others-text">휴대폰</span>
+                                </button>
+                            </li>
+                            <li id="box-payment-method-type-NAVERPAY">
+                                <button id="button-payment-NAVERPAY" onclick="">
+                                    <span class="paymentMethod-others-text">네이버페이</span>
+                                </button>
+                            </li>
+                        </ul>
                     </div>
                 </div>
                 </section>
             <hr/>
             <section class="sheet-section">
-                <div class="sheet-purchase-button-bottom" id="sheet-purchase-button2" onclick="">
+                <div class="sheet-purchase-button-bottom" id="sheet-purchase-button2" onclick="location.href='https://www.google.com';">
                     <div class="sheet-purchase-button">
                         <span class="sheet-purchase-button-price" id="display-result-pay-amount">
                             100,000
