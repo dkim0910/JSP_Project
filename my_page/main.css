@@ -139,14 +139,46 @@ body {
     font-size: medium;
 }
 .main-box {
-    background-color: #ffffff;  /* 박스 배경색 */
-    border: 1px solid #ccc;     /* 테두리 */
-    border-radius: 5px;           /* 둥근 모서리 */
-    padding: 20px;                /* 내부 여백 */
-    width: 30%;                   /* 박스 너비 */
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* 그림자 효과 */
-    text-align: center;           /* 텍스트 중앙 정렬 */
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 40px 20px; /* 위 아래 패딩을 늘림 */
+    width: 30%;
+    min-height: 200px; /* 최소 높이 설정 */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
     font-size: medium;
+}
+
+/* 나의 정보 폰트 및 디자인 */
+.profile-container {
+    max-width: 800px; /* 더 넓은 화면을 위해 너비 조정 */
+    margin: auto;
+    background: white;
+    border-radius: 8px;
+    padding: 10px 30px 0px 30px;
+    margin: 0px 0px 0px 100px
+}
+.profile-info {
+    margin-bottom: 20px;
+}
+
+/* '정보수정' 하기 버튼 폰트랑 디자인 */
+.edit-button{
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    color: #ffffff;
+    background-color: #28a745;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.1s ease;
+    align-items: center;
+}
+.edit-button:hover{
+    background-color: #218838;
 }
 
 /* '정보수정' 버튼 누루면 오는 페이지 폰트 */
@@ -160,29 +192,6 @@ body {
     margin-bottom: 8px;
     font-weight: bold;
     color: #495057;
-}
-.edit-container-footer {
-    text-align: center;
-    margin-top: 20px;
-    font-size: 14px;
-    color: #6c757d;
-}
-
-/* '정보수정' 하기 버튼 폰트랑 디자인 */
-.edit-button{
-    font-family: 'Roboto', sans-serif;
-            font-size: 18px;
-            font-weight: bold;
-            color: #ffffff;
-            background-color: #28a745;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.1s ease;
-}
-.edit-button:hover{
-    background-color: #218838;
 }
 
 /* '정보수정하기' -> '수정하기' 버튼의 폰트랑 디자인 */
@@ -214,37 +223,62 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="tel"]:focus {
     outline: none;
 }
 
-
-
-
-
-
-
-
-
-
-/* 이 밑 버튼은 수정중임 */
-.center-container {
-    text-align: center; /* 텍스트 중앙 정렬 */
+/* 이벤트 페이지 폰트 다자인 (삭제 예정?) */
+.discount-section {
+    background: white;
+    padding: 15px;
+    border-radius: 5px;
+}
+.product-card {
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+.discount-price {
+    font-weight: bold;
+    color: #d9534f;
+}
+.original-price {
+    text-decoration: line-through;
+    color: #888;
+    margin-left: 10px;
+}
+.buy-button {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 15px;
+    background-color: #28a745;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+.buy-button:hover {
+    background-color: #218838;
 }
 
-.buttontest {
-    padding: 7px 6px; /* px-1.5, py-[7px]에 해당 */
-    border: 1px solid black; /* border, border-solid, border-black */
-    border-radius: 4px; /* rounded */
-    cursor: pointer; /* cursor-pointer */
-    background-color: white; /* bg-white */
-    color: black; /* text-black */
-    font-weight: 600;
-    box-sizing: border-box; /* 요소의 크기를 테두리와 패딩 포함하여 계산 */
+/* 멤버십 폰트 및 디자인 */
+.membership-container {
+    display: flex;
+    overflow-x: auto;
+    padding: 10px;
+    gap: 20px;
 }
 
-.buttontest.active {
-    border-width: 3px; /* 클릭 시 테두리 두께 변화 */
+.membership {
+    flex: 0 0 auto; /* 고정 폭 */
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 20px;
+    background-color: #fff;
+    max-width: 300px; /* 각 멤버십의 최대 폭 */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-
-
+/* .membership-container {
+    list-style-type: square;
+    padding-left: 20px;
+} */
 
 
 
