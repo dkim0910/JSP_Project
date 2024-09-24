@@ -7,9 +7,10 @@
     <!-- 페이지 제목 옆의 아이콘 -->
     <link href="https://image.msscdn.net/favicon_152.ico" rel="icon">
     <link rel="stylesheet" href="category.css">
+    <script src="category.js" defer></script>
 </head>
 <body>
-    <div id="__next">
+    <div id="common">
         <div id="commonLayoutContainer">
             <!-- 상단 검색창 영역 -->
             <header id="commonLayoutHeader">
@@ -30,104 +31,162 @@
                 <!-- 좌측 카테고리 목록 -->
                 <div class="left-goods-category">
                     <ul>
-                        <li>뷰티</li>
-                        <li>신발</li>
-                        <li>가방</li>
-                        <li>액세서리</li>
-                        <li>의류</li>
+                        <li data-target="beauty-section">뷰티</li>
+                        <li data-target="shoes-section">신발</li>
+                        <li data-target="bags-section">가방</li>
+                        <li data-target="topcloth-section">상의</li>
+                        <li data-target="bottomscloth-section">바지</li>
                     </ul>
                 </div>
 
                 <!-- 우측 상품 카테고리 목록 -->
                 <div class="right-goods-category">
-                    <section class="goods-category">
-                        <h2 class="goods-category-index">뷰티</h2>
+                    <section class="goods-category" id="beauty-section">
+                        <h2 class="goods-category-index" >뷰티</h2>
                         <div class="goods-category-real">
-                            <a href="./detail.html" class="goods">
-                                <svg width="30" height="30">
-                                    <img src="https://image.msscdn.net/images/category_img/women/ITEM_104_17229989762667_big.png" width="80" height="80" alt="신상">
-                                </svg>
-                                <span><strong>신상</strong></span>
+                            <a href="./detail/101.html" class="goods">
+                                <img src="https://image.msscdn.net/images/category_img/women/ITEM_104_17229989762667_big.png" >
+                                <span>신상</span>
                             </a>
-                            <a href="./page2.html" class="goods">
-                                <img src="https://image.msscdn.net/images/category_img/men/ITEM_104001_17164420025345_big.png" width="80" height="80" alt="신상">
+                            <a href="./detail/102.html" class="goods">
+                                <img src="https://image.msscdn.net/images/category_img/men/ITEM_104001_17164420025345_big.png"  >
                                 <span>스킨케어</span>
                             </a>
-                            <a href="./page3.html" class="goods">
-                                <img src="https://image.msscdn.net/images/category_img/men/ITEM_104002_17164420028786_big.png" width="80" height="80" alt="신상">
+                            <a href="./detail/103.html" class="goods">
+                                <img src="https://image.msscdn.net/images/category_img/men/ITEM_104002_17164420028786_big.png"  >
                                 <span>선케어</span>
                             </a>
-                            <a href="~~~" class="goods">
-								<img src="https://image.msscdn.net/images/category_img/men/ITEM_104003_17164420031582_big.png" width="80" height="80" alt="신상">
+                            <a href="./detail/104.html" class="goods">
+								<img src="https://image.msscdn.net/images/category_img/men/ITEM_104003_17164420031582_big.png"  >
 								<span>클렌징</span>
 							</a>
-							<a href="~~~" class="goods">
-								<img src="https://image.msscdn.net/images/category_img/men/ITEM_103004_17164420017705_big.png" width="80" height="80" alt="신상">
+							<a href="./detail/105.html" class="goods">
+								<img src="https://image.msscdn.net/images/category_img/men/ITEM_104004_17164420034611_big.png"  >
 								<span>메이크업</span>
 							</a>
-							<a href="~~~" class="goods">
-								<img src="https://image.msscdn.net/images/category_img/men/ITEM_103004_17164420017705_big.png" width="80" height="80" alt="신상">
+							<a href="./detail/106.html" class="goods">
+								<img src="https://image.msscdn.net/images/category_img/men/ITEM_104005_17164420037579_big.png"  >
 								<span>프레그런스</span>
 							</a>
                         </div>
                     </section>
 
-                    <section class="goods-category">
-                        <h2 class="goods-category-index">신발</h2>
+                    <section class="goods-category" id="shoes-section">
+                        <h2 class="goods-category-index" >신발</h2>
                         <div class="goods-category-real">
-                            <a href="../page1.html" class="goods">
-                                <img src="https://image.msscdn.net/images/category_img/women/ITEM_104_17229989762667_big.png" width="80" height="80" alt="신상">
+                            <a href="./detail/201.html" class="goods">
+                                <img src="https://image.msscdn.net/images/category_img/women/ITEM_104_17229989762667_big.png"  >
                                 <span>신상</span>
                             </a>
-                            <a href="./detail2.html" class="goods">
-                                <img src="https://image.msscdn.net/images/category_img/men/ITEM_103004_17164420017705_big.png" width="80" height="80" alt="신상">
-                                <span><strong>스니커즈</strong></span>
+                            <a href="./detail/202.html" class="goods">
+                                <img src="https://image.msscdn.net/images/category_img/men/ITEM_103004_17164420017705_big.png"  >
+                                <span>스니커즈</span>
                             </a>
-                            <a href="~~~" class="goods">
-								<img src="https://image.msscdn.net/images/category_img/men/ITEM_103004_17164420017705_big.png" width="80" height="80" alt="신상">
+                            <a href="./detail/203.html" class="goods">
+								<img src="https://image.msscdn.net/images/category_img/men/ITEM_103001_17164420008529_big.png"  >
 								<span>구두</span>
 							</a>
-							<a href="~~~" class="goods">
-								<img src="https://image.msscdn.net/images/category_img/men/ITEM_103004_17164420017705_big.png" width="80" height="80" alt="신상">
-								<span>샌들/슬리퍼</span>
+							<a href="./detail/204.html" class="goods">
+								<img src="https://image.msscdn.net/images/category_img/men/ITEM_103003_17164420014447_big.png"  >
+								<span>샌들</span>
 							</a>
-							<a href="~~~" class="goods">
-								<img src="https://image.msscdn.net/images/category_img/men/ITEM_103004_17164420017705_big.png" width="80" height="80" alt="신상">
-								<span>부츠/워커</span>
+							<a href="./detail/205.html" class="goods">
+								<img src="https://image.msscdn.net/images/category_img/men/ITEM_103002_17164420011373_big.png"  >
+								<span>부츠</span>
 							</a>
-							<a href="~~~" class="goods">
-								<img src="https://image.msscdn.net/images/category_img/men/ITEM_103004_17164420017705_big.png" width="80" height="80" alt="신상">
+							<a href="./detail/206.html" class="goods">
+								<img src="https://image.msscdn.net/images/category_img/men/ITEM_103005_17164420020288_big.png"  >
 								<span>스포츠화</span>
 							</a>
                         </div>
                     </section>
 
-                    <section class="goods-category"></section>
-                        <h2 class="goods-category-index">가방</h2>
+                    <section class="goods-category" id="bags-section">
+                        <h2 class="goods-category-index" >가방</h2>
                         <div class="goods-category-real">
-                            <a href="../page1.html" class="goods">
-                                <img src="https://image.msscdn.net/images/category_img/women/ITEM_104_17229989762667_big.png" width="80" height="80" alt="신상">
+                            <a href="./detail/301.html" class="goods">
+                                <img src="https://image.msscdn.net/images/category_img/women/ITEM_104_17229989762667_big.png"  >
                                 <span>신상</span>
                             </a>
-                            <a href="./detail2.html" class="goods">
-                                <img src="https://image.msscdn.net/images/category_img/men/ITEM_103004_17164420017705_big.png" width="80" height="80" alt="신상">
-                                <span><strong>백팩</strong></span>
+                            <a href="./detail/302.html" class="goods">
+                                <img src="https://image.msscdn.net/images/category_img/men/ITEM_004001_17164419839188_big.png"  >
+                                <span>백팩</span>
                             </a>
-                            <a href="~~~" class="goods">
-								<img src="https://image.msscdn.net/images/category_img/men/ITEM_103004_17164420017705_big.png" width="80" height="80" alt="신상">
-								<span>크로스 백</span>
+                            <a href="./detail/303.html" class="goods">
+								<img src="https://image.msscdn.net/images/category_img/men/ITEM_004002_17164419842177_big.png"  >
+								<span>크로스백</span>
 							</a>
-							<a href="~~~" class="goods">
-								<img src="https://image.msscdn.net/images/category_img/men/ITEM_103004_17164420017705_big.png" width="80" height="80" alt="신상">
+							<a href="./detail/304.html" class="goods">
+								<img src="https://image.msscdn.net/images/category_img/women/ITEM_004003_17164419695044_big.png"  >
 								<span>숄더백</span>
 							</a>
-							<a href="~~~" class="goods">
-								<img src="https://image.msscdn.net/images/category_img/men/ITEM_103004_17164420017705_big.png" width="80" height="80" alt="신상">
+							<a href="./detail/305.html" class="goods">
+								<img src="https://image.msscdn.net/images/category_img/women/ITEM_004015_17164419697688_big.png"  >
 								<span>토트백</span>
 							</a>
-							<a href="~~~" class="goods">
-								<img src="https://image.msscdn.net/images/category_img/men/ITEM_103004_17164420017705_big.png" width="80" height="80" alt="신상">
+							<a href="./detail/306.html" class="goods">
+								<img src="https://image.msscdn.net/images/category_img/men/ITEM_004014_17164419870060_big.png" >
 								<span>에코백</span>
+							</a>
+                        </div>
+                    </section>
+
+                    <section class="goods-category" id="topcloth-section">
+                        <h2 class="goods-category-index" >상의</h2>
+                        <div class="goods-category-real">
+                            <a href="./detail/401.html" class="goods">
+                                <img src="https://image.msscdn.net/images/category_img/women/ITEM_104_17229989762667_big.png"  >
+                                <span>신상</span>
+                            </a>
+                            <a href="./detail/402.html" class="goods">
+                                <img src="https://image.msscdn.net/images/category_img/men/ITEM_001005_17164419731519_big.png"  >
+                                <span>맨투맨</span>
+                            </a>
+                            <a href="./detail/403.html" class="goods">
+								<img src="https://image.msscdn.net/images/category_img/men/ITEM_001002_17164419723992_big.png"  >
+								<span>셔츠</span>
+							</a>
+							<a href="./detail/404.html" class="goods">
+								<img src="https://image.msscdn.net/images/category_img/men/ITEM_001004_17164419728866_big.png"  >
+								<span>후드티셔츠</span>
+							</a>
+							<a href="./detail/405.html" class="goods">
+								<img src="https://image.msscdn.net/images/category_img/women/ITEM_001013_17164419666010_big.png"  >
+								<span>스포츠상의</span>
+							</a>
+							<a href="./detail/406.html" class="goods">
+								<img src="https://image.msscdn.net/images/category_img/men/ITEM_001008_17164419738108_big.png" >
+								<span>기타상의</span>
+							</a>
+                        </div>
+                    </section>
+
+                    <section class="goods-category" id="bottomscloth-section">
+                        <h2 class="goods-category-index" >바지</h2>
+                        <div class="goods-category-real">
+                            <a href="./detail/501.html" class="goods">
+                                <img src="https://image.msscdn.net/images/category_img/women/ITEM_104_17229989762667_big.png"  >
+                                <span>신상</span>
+                            </a>
+                            <a href="./detail/502.html" class="goods">
+                                <img src="https://image.msscdn.net/images/category_img/men/ITEM_003002_17164419814765_big.png"  >
+                                <span>데님팬츠</span>
+                            </a>
+                            <a href="./detail/503.html" class="goods">
+								<img src="https://image.msscdn.net/images/category_img/men/ITEM_003007_17164419825758_big.png"  >
+								<span>코튼팬츠</span>
+							</a>
+							<a href="./detail/504.html" class="goods">
+								<img src="https://image.msscdn.net/images/category_img/women/ITEM_003005_17164419688488_big.png"  >
+								<span>레깅스</span>
+							</a>
+							<a href="./detail/505.html" class="goods">
+								<img src="https://image.msscdn.net/images/category_img/men/ITEM_003011_17164419836529_big.png"  >
+								<span>스포츠하의</span>
+							</a>
+							<a href="./detail/506.html" class="goods">
+								<img src="https://image.msscdn.net/images/category_img/men/ITEM_003006_17164419823071_big.png" >
+								<span>기타바지</span>
 							</a>
                         </div>
                     </section>
@@ -138,34 +197,26 @@
             <!-- 고정된 하단 메뉴 -->
             <nav id="commonLayoutGnb">
                 <div class="under-menu">
-                    <a href="https://~~~/menu" class="menu-button">
-                        <svg width="100" height="100">
-                            <circle cx="50" cy="50" r="40" stroke="black" stroke-width="3" />
-                        </svg>
+                    <a href="./category.html" class="menu-button">
+                        <img src="./img/카테고리.png"  >
                         <span>카테고리</span>
                     </a>
-                    <a href="https://~~~/menu" class="menu-button">
+                    <!-- <a href="https://~~~/menu" class="menu-button">
                         <svg width="100" height="100">
                             <circle cx="50" cy="50" r="40" stroke="black" stroke-width="3" />
                         </svg>
                         <span>스냅</span>
-                    </a>
-                    <a href="./category2.html" class="menu-button">
-						<svg width="100" height="100">
-						  <circle cx="50" cy="50" r="40" stroke="black" stroke-width="3"  />
-						</svg>
+                    </a> -->
+                    <a href="~~~" class="menu-button">
+						<img src="./img/홈.png"  >
 						<span>홈</span>
 					</a>
-					<a href="https://~~~/menu" class="menu-button">
-						<svg width="100" height="100">
-						  <circle cx="50" cy="50" r="40" stroke="black" stroke-width="3"  />
-						</svg>
+					<!-- <a href="https://~~~/menu" class="menu-button">
+						<img src="./img/좋아요.png"  >
 						<span>좋아요</span>
-					</a>
-					<a href="https://~~~/menu" class="menu-button">
-						<svg width="100" height="100">
-						  <circle cx="50" cy="50" r="40" stroke="black" stroke-width="3"  />
-						</svg>
+					</a> -->
+					<a href="~~~" class="menu-button">
+						<img src="./img/마이.png"  >
 						<span>마이페이지</span>
 					</a>
                 </div>
