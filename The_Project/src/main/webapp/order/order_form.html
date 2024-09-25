@@ -15,7 +15,7 @@
     <body style="overflow: unset">
         <header>
             <div class="order_form-headline">
-                <a href="https://www.naver.com">
+                <a href="../cart/cart.jsp">
                     <button type="button" aria-label="이전 페이지로 이동" class="button-back-page">
                         <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
                             <path d="M16.1004 21.7L8.61252 14.2122C8.49537 14.095 8.49537 13.9051 8.61252 13.7879L16.1004 6.30005" stroke="currentColor" stroke-width="1.4"></path>
@@ -29,16 +29,11 @@
         <main class="contents">
             <div class="double-section">
                 <div class="double-section-left">
-                    <!-- <div class="sheet-purchase-button-box">
-                        <div class="sheet-purchase-button" id="sheet-purchase-button" onclick="Payment.Pay.executePayment();">
-                            <span class="sheet-purchase-button-price" id="total-pay-amount">
-                                100,000
-                            </span>
-                            원 결제하기
-                        </div>
-                    </div> -->
                     <section class="sheet-section" id="sheet-section-recipient">
                         <div class="sheet-address">
+                            <div class="sheet-title">
+                                <h2 class="sheet-title-address">배송지</h2>
+                            </div>
                             <div class="sheet-address-title">
                                 <strong class="sheet-address-title-name" id="recipient-name">
                                     쇼핑핑
@@ -201,7 +196,7 @@
                 </div>
                 <hr/>
                 <div class="double-section-right">
-                    <section class="sheet-section">
+                    <section class="sheet-section" id="sheet-section-pay">
                         <div class="sheet-title">
                             <h2 class="sheet-title-text">
                                 결제 금액
@@ -255,7 +250,7 @@
                                 </strong>
                             </div>
                             <br/>
-                            <div class="sheet-purchase-button-bottom" id="sheet-purchase-button2" onclick="location.href='https://www.google.com';">
+                            <div class="sheet-purchase-button-bottom" id="sheet-purchase-button1" onclick="location.href='https://www.google.com';">
                                 <div class="sheet-purchase-button">
                                     <span class="sheet-purchase-button-price" id="display-result-pay-amount">
                                         100,000
@@ -264,25 +259,31 @@
                                 </div>
                             </div>
                         </div>
+                        <hr/>
+                        <div class="sheet-agreement">
+                            <strong class="sheet-agreement-text">
+                                주문 내용을 확인했으며 결제에 동의합니다.
+                            </strong>
+                            <strong class="sheet-agreement-text">
+                                회원님의 개인정보는 안전하게 관리됩니다.
+                            </strong>
+                            <strong class="sheet-agreement-text">
+                                쇼핑하조는 통신판매중개자로, 업체 배송 상품의 상품/상품정보/거래 등에 대한 책임은 쇼핑하조가 아닌 판매자에게 있습니다.
+                            </strong>
+                        </div>
                     </section>
-                    <hr/>
                 </div>
             </div>
         </main>
         <footer>
-            <section class="sheet-section">
-                <div class="sheet-agreement">
-                    <strong class="sheet-agreement-text">
-                        주문 내용을 확인했으며 결제에 동의합니다.
-                    </strong>
-                    <strong class="sheet-agreement-text">
-                        회원님의 개인정보는 안전하게 관리됩니다.
-                    </strong>
-                    <strong class="sheet-agreement-text">
-                        쇼핑하조는 통신판매중개자로, 업체 배송 상품의 상품/상품정보/거래 등에 대한 책임은 쇼핑하조가 아닌 판매자에게 있습니다.
-                    </strong>
+            <div class="sheet-purchase-button-bottom" id="sheet-purchase-button2" onclick="location.href='https://www.google.com';">
+                <div class="sheet-purchase-button">
+                    <span class="sheet-purchase-button-price" id="display-result-pay-amount">
+                        100,000
+                    </span>
+                    원 결제하기
                 </div>
-            </section>
+            </div>
         </footer>
 
     </body>
