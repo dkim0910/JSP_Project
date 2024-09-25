@@ -24,6 +24,7 @@
 
 		// 검색 결과 페이지로 포워딩
 		pageContext.forward("id_find_view.jsp");
+		
 	%>
 </body>
 </html>
