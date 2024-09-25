@@ -1,14 +1,38 @@
 @charset "UTF-8";
 body{
-    width: 1600px;
+    width: 1400px;
+
     font-family: Pretendard, 'sans-serif' !important;
-    font-size: 14px;
+    font-size: 16px;
     line-height: inherit;
     margin: auto;
 }
-
+.contents{
+    display: flex;
+    flex-direction: column;
+    /* min-height: 100%; */
+}
 html, body{
     height: 100%;
+}
+.double-section{
+    display: flex;
+}
+.double-section-left{
+    flex: 0 0 800px;
+    min-width: 0;
+    padding-left: 40px;
+    padding-right: 30px;
+    padding-bottom: 40px;
+}
+.double-section-right{
+    flex: 0 0 460px;
+    min-width: 0;
+    position: sticky;
+    top: 24px;
+    padding-left: 40px;
+    padding-right: 30px;
+    padding-bottom: 40px;
 }
 /* ------주문서------ */
 .order_form-headline{
@@ -21,7 +45,7 @@ html, body{
     box-sizing: border-box;
 }
 .order_form-headline-text{
-    font-size: 16px;
+    font-size: 20px;
     flex: 0 1 auto;
     display: block;
     overflow: hidden;
@@ -39,7 +63,7 @@ button{
 #sheet-purchase-button{
     background-color: black;
     color: white;
-    font: 14px ;
+    font: 16px ;
     text-align: center;
 }
 .sheet-purchase-button-box{
@@ -54,7 +78,7 @@ button{
 }
 .sheet-address-address{
     padding: 4px 0;
-    font-size: 13px;
+    font-size: 16px;
     font-weight: 400;
     line-height: 18px;
     display: block;
@@ -72,13 +96,13 @@ button{
     border-radius: 4px;
     margin-left: auto;
     padding: 3px 6px;
-    font-size: 13px;
+    font-size: 15px;
     font-weight: 500;
     line-height: 18px;
 }
 .sheet-address-number{
     padding: 4px 0;
-    font-size: 13px;
+    font-size: 15px;
     font-weight: 400;
     line-height: 18px;
     display: flex;
@@ -122,7 +146,7 @@ h2{
     margin: 0;
 }
 .sheet-title-text, .sheet-title-count{
-    font-size: 18px;
+    font-size: 21px;
     font-weight: 600;
     line-height: 24px;
 }
@@ -146,14 +170,14 @@ h2{
 }
 .sheet-order-product-brand{
     grid-area: brand;
-    font-size: 15px;
+    font-size: 18px;
     font-weight: 600;
     line-height: 30px;
 }
 .sheet-order-product-name{
     grid-area: name;
     margin-top: 2px;
-    font-size: 15px;
+    font-size: 17px;
     font-weight: 400;
     line-height: 27px;
 }
@@ -161,13 +185,13 @@ h2{
     color: #666;
     grid-area: option;
     margin-top: 2px;
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 400;
     line-height: 35px;
 }
 .sheet-order-product-price-origin{
     color: #666;
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 400;
     line-height: 25px;
     text-decoration: line-through;
@@ -175,7 +199,7 @@ h2{
 .sheet-order-product-price-sale{
     color: black;
     grid-area: final;
-    font-size: 16px;
+    font-size: 18px;
     font-weight: 600;
     line-height: 10px;
 }
@@ -189,7 +213,7 @@ h2{
     width: 100%;
     height: 36px;
     margin-top: 12px;
-    font-size: 13px;
+    font-size: 16px;
     font-weight: 500;
     line-height: 18px;
     display: flex;
@@ -200,7 +224,7 @@ h2{
     border-radius: 2px;
     margin-left: 4px;
     padding: 1px 4px;
-    font-size: 11px;
+    font-size: 14px;
     font-weight: 400;
     line-height: 14px;
     overflow: hidden;
@@ -219,10 +243,9 @@ h2{
     border-color: #ebebeb;
     color: #ccc;
     border-radius: 4px;
-    /* flex: 1; */
     width: 100%;
     padding: 6px 8px;
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 400;
     line-height: 20px;
     display: flex;
@@ -240,7 +263,7 @@ input{
 }
 .sheet-point-input-text{
     margin-top: 8px;
-    font-size: 12px;
+    font-size: 14px;
     font-weight: 400;
     line-height: 14px;
     display: flex;
@@ -290,7 +313,7 @@ input[type='radio']:checked{
 }
 .payment-method-choice{
     margin-left: 4px;
-    font-size: 14px;
+    font-size: 17px;
 }
 .payment-method-logo-TOSSPAY, .payment-method-logo-KAKAOPAY, .payment-method-logo-PAYCO {
     height: 15px;
@@ -305,7 +328,7 @@ a, div{
 .payment-method-type-input{
     position: relative;
     clear: both;
-    margin: 0;
+    margin: 10px;
     padding: 0;
     list-style: none;
 }
@@ -330,6 +353,9 @@ a, div{
 .paymentMethod-others-list li{
     width: calc(50% - 2px);
     margin-top: 8px;
+}
+.paymentMethod-others-text{
+    font-size: 15px;
 }
 #box-payment-method-type-CARD, #box-payment-method-type-VACCOUNT, #box-payment-method-type-PHONE, #box-payment-method-type-NAVERPAY{
     border: 1px solid #e0e0e0;
@@ -365,7 +391,6 @@ a, div{
     display: flex;
 }
 .sheet-payment-price-subject-text{
-    /* flex: 1; */
     font-size: 13px;
     font-weight: 400;
     line-height: 18px;
@@ -382,7 +407,6 @@ a, div{
     line-height: 18px;
 }
 .sheet-payment-price-total-text{
-    flex: 1;
     font-size: 14px;
     font-weight: 600;
     line-height: 20px;
