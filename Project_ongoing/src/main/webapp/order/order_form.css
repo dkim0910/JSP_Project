@@ -1,0 +1,419 @@
+@charset "UTF-8";
+body{
+    width: 1600px;
+    font-family: Pretendard, 'sans-serif' !important;
+    font-size: 14px;
+    line-height: inherit;
+    margin: auto;
+}
+
+html, body{
+    height: 100%;
+}
+/* ------주문서------ */
+.order_form-headline{
+    background-color: #f5f5f5;
+    color: black;
+    display: flex;
+    align-items: center;
+    height: 52px;
+    padding: 12px 16px;
+    box-sizing: border-box;
+}
+.order_form-headline-text{
+    font-size: 16px;
+    flex: 0 1 auto;
+    display: block;
+    overflow: hidden;
+    font-weight: 500;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.button-back-page{
+    border: none;
+ }
+button{
+    background-color: transparent;
+    background-image: none;
+}
+#sheet-purchase-button{
+    background-color: black;
+    color: white;
+    font: 14px ;
+    text-align: center;
+}
+.sheet-purchase-button-box{
+    display: block;
+    background-color: #f5f5f5;
+}
+/* ------배송지------ */
+.sheet-address{
+    box-sizing: border-box;
+    width: 100%;
+    padding: 0 16px;
+}
+.sheet-address-address{
+    padding: 4px 0;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 18px;
+    display: block;
+}
+.sheet-address-title{
+    align-items: center;
+    padding: 12px 0;
+    display: flex;
+    position: relative;
+}
+.sheet-address-title-button{
+    border: 1px solid #e0e0e0;
+    box-sizing: border-box;
+    color: black;
+    border-radius: 4px;
+    margin-left: auto;
+    padding: 3px 6px;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 18px;
+}
+.sheet-address-number{
+    padding: 4px 0;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 18px;
+    display: flex;
+}
+.sheet-address-select{
+    border: 1px solid #e0e0e0;
+    box-sizing: border-box;
+    border-radius: 4px;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 36px;
+    margin-top: 4px;
+    padding: 0 8px;
+    display: flex;
+    cursor: pointer;
+}
+svg{
+    display: block;
+    vertical-align: middle;
+}
+button{
+    cursor: pointer;
+}
+/* ------주문 상품------ */
+.sheet-section{
+    background-color: white;
+    width: 100%;
+    padding-top: 25px;
+    position: relative;
+    overflow: hidden;
+}
+.sheet-title{
+    box-sizing: border-box;
+    align-items: center;
+    width: 100%;
+    padding: 12px 16px;
+    display: flex;
+}
+h2{
+    margin: 0;
+}
+.sheet-title-text, .sheet-title-count{
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 24px;
+}
+.sheet-order-product{
+    margin-top: 4px;
+}
+.sheet-order-product-cartItem{
+    margin: 0 16px;
+    position: relative;
+}
+.sheet-order-product-box{
+    gap: 0 12px;
+    display: flex;
+    margin-top: 8px;
+}
+.sheet-order-product-image{
+    object-fit: contain;
+    align-self: flex-start;
+    width: 120px;
+    height: 160px;
+}
+.sheet-order-product-brand{
+    grid-area: brand;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 30px;
+}
+.sheet-order-product-name{
+    grid-area: name;
+    margin-top: 2px;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 27px;
+}
+.sheet-order-product-option{
+    color: #666;
+    grid-area: option;
+    margin-top: 2px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 35px;
+}
+.sheet-order-product-price-origin{
+    color: #666;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 25px;
+    text-decoration: line-through;
+}
+.sheet-order-product-price-sale{
+    color: black;
+    grid-area: final;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 10px;
+}
+.sheet-order-product-coupon{
+    box-sizing: border-box;
+    border: 1px solid #e0e0e0;
+    background-color: white;
+    border-radius: 4px;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 36px;
+    margin-top: 12px;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 18px;
+    display: flex;
+}
+.sheet-address-title-label{
+    background-color: #8A8A8A1A;
+    color: #666;
+    border-radius: 2px;
+    margin-left: 4px;
+    padding: 1px 4px;
+    font-size: 11px;
+    font-weight: 400;
+    line-height: 14px;
+    overflow: hidden;
+}
+/* ------보유 적립금 사용------  */
+.sheet-title-bottomSheet{
+   margin-left: 2px; 
+   display: flex;
+   position: relative;
+   border: none;
+}
+
+.sheet-point-input-input-disabled{
+    box-sizing: border-box;
+    background-color: #f5f5f5;
+    border-color: #ebebeb;
+    color: #ccc;
+    border-radius: 4px;
+    /* flex: 1; */
+    width: 100%;
+    padding: 6px 8px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    display: flex;
+}
+:disabled{
+    cursor: default;
+}
+input{
+    vertical-align: middle;
+}
+.sheet-point-input{
+    box-sizing: border-box;
+    width: 100%;
+    padding: 4px 16px 12px;
+}
+.sheet-point-input-text{
+    margin-top: 8px;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 14px;
+    display: flex;
+}
+.sheet-point-limit-input-text, .sheet-point-input-price, .sheet-point-input-own{
+    display: inline-block;
+    
+}
+/* -------결제 수단------- */
+/* input{
+    background-color: black;
+    border-color: black;
+    opacity: 0;
+    cursor: pointer;
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    top: 1px;
+    left: 0;
+} */
+.payment-method-type {
+    box-sizing: border-box;
+    cursor: pointer;
+    grid-area: label;
+    align-items: center;
+    width: calc(100% - 32px);
+    margin: 0 auto;
+    padding: 8px 0 8px 24px;
+    display: flex;
+    position: relative;
+}
+input[type='radio'] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    border: 2px solid #ccc;
+    border-radius: 50%;
+    outline: none;
+    cursor: pointer;
+}
+input[type='radio']:checked{
+    background-color: white;
+    border: 3px solid black;
+    box-shadow: 0 0 0 1.6px black;
+}
+.payment-method-choice{
+    margin-left: 4px;
+    font-size: 14px;
+}
+.payment-method-logo-TOSSPAY, .payment-method-logo-KAKAOPAY, .payment-method-logo-PAYCO {
+    height: 15px;
+    width: 30px;
+    object-fit: scale-down;
+}
+a, div{
+    outline: none;
+    margin: 0;
+    padding: 0;
+}
+.payment-method-type-input{
+    position: relative;
+    clear: both;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.payment-method-type-input [type="radio"]:checked{
+    z-index: 1;
+    display: block;
+}
+.paymentMethod-others{
+    text-align: center;
+    width: 100%;
+}
+.paymentMethod-others-list{
+    box-sizing: border-box;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 16px 8px 40px;
+    display: flex;
+    list-style: none;
+    margin: 1px;
+}
+.paymentMethod-others-list li{
+    width: calc(50% - 2px);
+    margin-top: 8px;
+}
+#box-payment-method-type-CARD, #box-payment-method-type-VACCOUNT, #box-payment-method-type-PHONE, #box-payment-method-type-NAVERPAY{
+    border: 1px solid #e0e0e0;
+    box-sizing: border-box;
+    background-color: white;
+    border-radius: 4px;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 36px;
+    display: flex;
+    overflow: hidden;   
+}
+#button-payment-CARD, #button-payment-VACCOUNT, #button-payment-PHONE, #button-payment-NAVERPAY{
+  border: none;  
+  display: inline-block;
+}
+
+/* ------결제하기------ */
+.sheet-purchase-button{
+    box-sizing: border-box;
+    background-color: black;
+    color: white;
+    cursor: pointer;
+    border-radius: 4px;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 44px;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 20px;
+    display: flex;
+}
+.sheet-payment-price-subject-text{
+    /* flex: 1; */
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 18px;
+}
+.sheet-payment-price-subject-price{
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 18px;
+}
+.subject-payment-price-subject-price{
+    color: blue;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 18px;
+}
+.sheet-payment-price-total-text{
+    flex: 1;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 20px;
+}
+.subject-payment-price-totla-price{
+    margin-left: 4px;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 20px;
+}
+.sheet-payment-price{
+    box-sizing: border-box;
+    width: 100%;
+    padding: 0 16px 12px;
+}
+.sheet-payment-price-box{
+    padding: 4px 0;
+}
+.sheet-agreement{
+    box-sizing: border-box;
+    grid-template-columns: 1fr auto;
+    justify-content: space-between;
+    width: 100%;
+    padding: 8px 16px 4px;
+}
+.sheet-agreement-text{
+    color: #666;
+    padding: 4px 0;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 18px;
+    display: block;
+}
+
