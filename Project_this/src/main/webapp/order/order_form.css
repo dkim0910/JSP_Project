@@ -28,7 +28,6 @@ html, body{
 .double-section-right{
     flex: 0 0 460px;
     min-width: 0;
-    position: sticky;
     top: 24px;
     padding-left: 40px;
     padding-right: 30px;
@@ -128,6 +127,10 @@ button{
     cursor: pointer;
 }
 /* ------주문 상품------ */
+#sheet-section-pay{
+    position: sticky;
+    top: 24px;
+}
 .sheet-section{
     background-color: white;
     width: 100%;
@@ -439,5 +442,15 @@ a, div{
     font-weight: 400;
     line-height: 18px;
     display: block;
+}
+
+/* ------ footer 버튼 ------ */
+footer{
+    position: fixed;
+    background-color: #ebebeb;
+    left: 0px;
+    bottom: 0px;
+    width: 100%;
+    border-radius: 0px;
 }
 
