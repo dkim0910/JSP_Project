@@ -121,7 +121,6 @@ button{
 }
 svg{
     display: block;
-    vertical-align: middle;
 }
 button{
     cursor: pointer;
@@ -148,7 +147,7 @@ button{
 h2{
     margin: 0;
 }
-.sheet-title-text, .sheet-title-count{
+.sheet-title-address, .sheet-title-text, .sheet-title-count{
     font-size: 21px;
     font-weight: 600;
     line-height: 24px;
