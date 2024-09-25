@@ -1,3 +1,5 @@
+
+// 배송지 변경
 function openPopup_AddressChange() {
     var popupURL = "https://kh-academy.co.kr/login/login.kh";
 
@@ -5,6 +7,8 @@ function openPopup_AddressChange() {
 
     window.open(popupURL, "Popup", popupProperties);
 }
+
+//  쿠폰 적용
 function openPopup_couponApply() {
     var popupURL = "https://www.daum.net";
 
@@ -20,5 +24,15 @@ function toggleOtherPayments(show) {
         otherPayments.style.display = 'none';
     }
 }
+
+// 바텀바 2차메뉴 클릭 기능
+$(document).ready(function() {
+    $('.toggle-icon, .toggle-menu').click(function(event) {
+        event.preventDefault(); // 링크 클릭시 페이지 이동 방지
+        $(this).parent().next('.submenu').slideToggle(); // 
+        $('.submenu').not($(this).parent().next('.submenu')).slideUp(); 
+    });
+  });
+  
 
                 
