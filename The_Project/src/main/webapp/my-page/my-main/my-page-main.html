@@ -8,13 +8,16 @@
     <link rel="stylesheet" href="main.css">
 </head>
 
+<!-- 폰트어썸 불러오기 -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
 <!-- 테일윈드 css 불러오기 -->
 <script src="https://cdn.tailwindcss.com"></script>
 
 <body>
     <div class="header-container">
         <header class="header">
-            <a href="../../main-page/index.html" class="button-back-page" aria-label="이전 페이지로 이동">
+            <a href="../../main-page/login_main.html" class="" aria-label="이전 페이지로 이동">
                 <svg width="35" height="35" viewBox="0 0 28 28" fill="none">
                     <path
                         d="M16.1004 21.7L8.61252 14.2122C8.49537 14.095 8.49537 13.9051 8.61252 13.7879L16.1004 6.30005"
@@ -22,10 +25,15 @@
                 </svg>
             </a>
 
-            <h1 style="flex-grow: 1; text-align: center;">마이 페이지</h1>
-            <p></p>
+            <h1>마이 페이지</h1>
 
-            <!-- 오른쪽에 장바구니 버튼만들기 -->
+            <a href="../../cart/cart.jsp">
+                <label style="cursor: pointer;">
+                    <input type="button" value="장바구니" style="cursor: pointer;" />
+                    <!-- 장바구니 이미지 -->
+                    <i class="fa-solid fa-cart-shopping"></i>
+                </label>
+            </a>
 
         </header>
 
@@ -37,8 +45,8 @@
                         <p>마이페이지</p>
                     </div>
                     <ul>
-                        <li><a href="#" onclick="toggleBold(this); showContent('my-info')" 
-                                class="sidebar-options">나의 정보</a></li> <!-- 나의 정보창 -->
+                        <li><a href="#" onclick="toggleBold(this); showContent('my-info')" class="sidebar-options">나의
+                                정보</a></li> <!-- 나의 정보창 -->
                         <li><a href="../ordered/order-status.html" onclick="toggleBold(this); showContent('orders')"
                                 class="sidebar-options">주문 내역</a></li> <!-- 여기에 주문 취소랑 주소 변경 등 넣기-->
                         <li><a href="#" onclick="toggleBold(this); showContent('membership')"
@@ -52,8 +60,8 @@
                         </li> <!-- 이벤트 나오는 페이지 만들기 -->
                         <li><a href="#" onclick="toggleBold(this); showContent('announcement')"
                                 class="sidebar-options">공지사항</a></li> <!-- 공지사항 페이지 만들기 -->
-                        <li><a href="#" onclick="toggleBold(this); showContent('byebye')" 
-                                class="sidebar-options">회원 탈퇴</a>
+                        <li><a href="#" onclick="toggleBold(this); showContent('byebye')" class="sidebar-options">회원
+                                탈퇴</a>
                         </li> <!-- 이건 나중에 DB에서 delete 문 날리고 새로운 페이지에서 성공했습니다 뜨게 하기 -->
 
                         <li><a href="#" onclick="toggleBold(this); showContent('')" class="sidebar-options"></a></li>
@@ -62,7 +70,7 @@
                     </ul>
 
                     <a href="../../main-page/index.html" style="font-weight: bold; color: red;">로그 아웃</a>
-                
+
                 </nav>
 
 
@@ -70,14 +78,14 @@
                 <main class="main-hello">
                     <!-- 처음 들어왔을때 보여주는 화면 박스 (어서오세요 박스)-->
                     <div class="hello">
-                        <p class="left">닉네임</p> <!-- 여기 '닉네임' 에 DB에서 가져온 username 삽입 -->
+                        <p class="left" style="font-weight: bold;">닉네임</p> <!-- 여기 '닉네임' 에 DB에서 가져온 username 삽입 -->
                         <div class="right-container">
 
                             <!--@@@ 버튼 헤더 오른쪽으로 옮기기 @@@-->
-                            <a href="../../cart/cart.jsp">
+                            <!-- <a href="../../cart/cart.jsp">
                                 <p><input type="button" value="[장바구니]"
                                         style="cursor: pointer; background-color: aqua;" /></p>
-                            </a>
+                            </a> -->
 
 
                             <p id="member-status" class="right">회원 등급: ~~~</p>
@@ -116,8 +124,8 @@
                                 옷 배송중... 예상 도착일은 5일후<br />
                                 도착한 물품 있음 어쩌고...<br /><br />
 
-                                <a href="../ordered/order-status.html"><input type="button" id="" class="all-button" value="주문 내역"
-                                        style="cursor: pointer" /></a>
+                                <a href="../ordered/order-status.html"><input type="button" id="" class="all-button"
+                                        value="주문 내역" style="cursor: pointer" /></a>
                                 <!-- 버튼 누루면 환불 페이지로 이동하게끔 만들기? (나중에 나의 주문현황에서 환불, 문의, 교환 할수 있게 만들까?) -->
                             </div>
                             <div class="main-box">후기<br />
@@ -168,7 +176,7 @@
                                 </div>
 
                             </div>
-                            
+
                         </div>
                         <div style="margin: 0px 0px 0px 100px; margin-top: 30px;">
                             <a href="#" onclick="showContent('edit-my-info')"><input type="button" id=""
