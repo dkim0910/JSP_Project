@@ -206,20 +206,6 @@ body {
 }
 
 /* '정보수정하기' -> '수정하기' 버튼의 폰트랑 디자인 */
-.done-edit-button {
-    width: 100%;
-    padding: 12px;
-    background-color: #28a745;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.1s;
-}
-.done-edit-button:hover {
-    background-color: #218838;
-}
 input[type="text"], input[type="email"], input[type="tel"] {
     width: 100%;
     padding: 12px;
@@ -293,6 +279,48 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="tel"]:focus {
 
 
 
+/* 헤더 컨테이너 */
+.header-container {
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 0 40px;
+    background-color: #fff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.header {
+    display: flex; /* Flexbox layout */
+    align-items: center; /* Center items vertically */
+    justify-content: space-between; /* Distribute space between elements */
+    padding: 20px; /* Vertical and horizontal padding */
+    background-color: black; /* Background color */
+    color: #ffffff; /* Text color */
+    border-bottom: 10px solid ; /* Bottom border */
+    position: relative; /* For absolute positioned elements */
+}
+
+.header h1 {
+    margin: 0;
+    font-weight: bold;
+    font-size: 2.5rem; /* Font size for h1 */
+    flex-grow: 1; /* Takes remaining space to center */
+    text-align: center; /* Center text */
+}
+
+.cart-button {
+    margin-left: auto; /* Pushes the cart button to the far right */
+}
+
+.header p {
+    display: none; /* Existing style remains */
+}
 
 
-
+.all-button {
+    background-color: black;
+    color: #ffffff;
+    padding: 10px 20px;
+    border-radius: 20px;
+    text-align: center;
+    cursor: pointer;
+}

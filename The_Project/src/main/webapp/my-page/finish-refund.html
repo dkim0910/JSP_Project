@@ -1,16 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        html,
+        body {
+            height: 100%;
+            /* Ensure body takes the full height */
+            margin: 0;
+            /* Remove default margin */
+        }
+
+        .header {
+            display: flex;
+            /* flexbox 레이아웃 적용 */
+            align-items: center;
+            /* 세로 중앙 정렬 */
+            padding: 20px;
+            /* 상하좌우 여백 */
+            background-color: black;
+            /* 배경색 */
+            color: #ffffff;
+            /* 텍스트 색상 */
+            border-bottom: 2px solid #ff4d4d;
+            /* 하단 경계선 */
+            position: relative;
+            /* 절대 위치 요소를 포함하기 위해 설정 */
+            padding-right: 130px;
+            /* 오른쪽 패딩 */
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            /* Stack elements vertically */
+        }
+
+        .container {
+            max-width: 1600px;
+            margin: 0 auto;
+            padding: 20px 40px;
+            background-color: #fff;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .content {
+            flex: 1;
+            /* Allow content to grow and take remaining space */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            /* Center the text */
+        }
+
+        .footer {
+            text-align: center;
+            padding: 20px;
+            background-color: black;
+            color: #999999;
+            border-top: 2px solid #ff4d4d;
+        }
+
+        .footer p {
+            margin: 5px 0;
+        }
+    </style>
 </head>
+
 <body>
-    <body style="height: 100%; margin: 0; display: flex; justify-content: center; align-items: center;">
-        <div style="text-align: center;">
-            <h1>환불 및 교환 신청이 완료되었습니다</h1>
-            <h2>자세한 내용은 ~~~로 안내해 드리겠습니다</h2>
-            <a href="my-page-main.html">메인 페이지로 되돌아가기?</a>
+    <div class="container">
+        <header class="header">
+            <a href="../my-page/my-page-main.html" class="button-back-page" aria-label="이전 페이지로 이동" style="color: white;">
+                <svg width="35" height="35" viewBox="0 0 28 28" fill="none">
+                    <path
+                        d="M16.1004 21.7L8.61252 14.2122C8.49537 14.095 8.49537 13.9051 8.61252 13.7879L16.1004 6.30005"
+                        stroke="currentColor" stroke-width="1.4"></path>
+                </svg>
+            </a>
+            <h1 style="flex-grow: 1; text-align: center;">환불 및 교환</h1>
+            <p></p>
+        </header>
+        <div class="content">
+            <div>
+                <h1>환불 및 교환 신청이 완료되었습니다</h1>
+                <h2>자세한 내용은 ~~~로 안내해 드리겠습니다</h2>
+                <a href="my-page-main.html">메인 페이지로 되돌아가기?</a>
+                <p></p>
+            </div>
         </div>
+
+        <footer class="footer">
+            <p>고객 지원 센터: 1234-5678 | 이메일: shoppinghajo@samjo.com</p>
+            <p>운영 시간: 월-금, 09:00-18:00 (주말 및 공휴일 휴무)</p>
+            <div>© 쇼핑하조 ALL RIGHTS RESERVED</div>
+            <div>
+                <span>일부 상품의 경우 쇼핑하조는 통신판매의 당사자가 아닌 통신판매중개자로서 상품, 상품정보, 거래에 대한 책임이 제한될 수 있으므로, 각 상품 페이지에서 구체적인 내용을 확인하시기
+                    바랍니다.</span>
+            </div>
+        </footer>
+    </div>
 </body>
+
 </html>
