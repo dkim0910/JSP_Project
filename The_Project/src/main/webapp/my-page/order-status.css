@@ -9,7 +9,7 @@ body {
 .container {
     max-width: 1600px;
     margin: 0 auto; /* Center the container */
-    padding: 20px 40px; /* Top and bottom padding, with side padding */
+    padding: 0px 40px 20px; /* Top and bottom padding, with side padding */
     background-color: #fff;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
