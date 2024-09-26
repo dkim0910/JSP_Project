@@ -440,3 +440,43 @@ footer>.con {
 .section-img {
 	margin-top: 80px;
 }
+
+/* 세일페이지 구현 시작 */
+.time-sale .flex-grid {
+	display:flex;
+	flex-wrap:wrap;
+	--y-gap:15px;
+	--x-gap:15px;
+	--cc:3;
+	gap:var(--y-gap) var(--x-gap);
+}
+
+.time-sale  .flex-grid > * {
+	width:calc(100% / var(--cc) - (var(--x-gap) * (var(--cc) - 1)) / var(--cc));
+}
+
+.time-sale>.con>.timer {
+	font-size: 1.6rem;
+	padding: 20px 0 15px 0;
+}
+
+.time-sale>.con>.timer>span:last-child {
+	color: red;
+	margin-left: 10px;
+}
+
+.list {
+	border-top: 1px solid #ced4da;
+	border-bottom: 1px solid #ced4da;
+}
+
+.flex-grid li:last-child {
+	margin-bottom: 15px;
+}
+
+.list .sale {
+	color: red;
+	margin-right: 5px;
+}
+
+/* 세일페이지 구현 끝 */
