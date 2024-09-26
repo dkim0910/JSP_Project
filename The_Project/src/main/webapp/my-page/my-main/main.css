@@ -169,7 +169,7 @@ body {
 
 /* 나의 정보 폰트 및 디자인 */
 .profile-container {
-    max-width: 800px; /* 더 넓은 화면을 위해 너비 조정 */
+    max-width: 100%; /* 더 넓은 화면을 위해 너비 조정 */
     margin: auto;
     background: white;
     border-radius: 8px;
@@ -177,6 +177,7 @@ body {
     margin: 0px 0px 0px 100px
 }
 .profile-info {
+    margin-top: 10px;
     margin-bottom: 20px;
 }
 
@@ -289,7 +290,7 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="tel"]:focus {
 .header-container {
     max-width: 1600px;
     margin: 0 auto;
-    padding: 0 40px;
+    padding: 0 40px 20px;
     background-color: #fff;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
