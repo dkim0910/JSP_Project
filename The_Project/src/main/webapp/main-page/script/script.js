@@ -71,3 +71,6 @@ function SwiperInit(selector, prevBtnClass, nextBtnClass) {
 SwiperInit('.section-img .swiper-con1', 'swiper-btn__prev-1', 'swiper-btn__next-1');
 SwiperInit('.section-img-2 .swiper-con2', 'swiper-btn__prev-2', 'swiper-btn__next-2');
 SwiperInit('.section-img-3 .swiper-con3', 'swiper-btn__prev-3', 'swiper-btn__next-3');
+SwiperInit('.section-img-4 .swiper-con4', 'swiper-btn__prev-4', 'swiper-btn__next-4');
+SwiperInit('.section-img-5 .swiper-con5', 'swiper-btn__prev-5', 'swiper-btn__next-5');
+SwiperInit('.section-img-6 .swiper-con6', 'swiper-btn__prev-6', 'swiper-btn__next-6');
