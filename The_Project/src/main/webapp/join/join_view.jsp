@@ -7,42 +7,46 @@
 <title>Insert title here</title>
 <style>
     /* 페이지 기본 설정 */
-    body {
-        margin: 0; /* 기본 margin 제거 */
-        background-color: white; /* 페이지 배경 흰색 */
-    }
+	body {
+	    margin: 0;
+	    background-color: #f4f4f4;
+	    font-family: Arial, sans-serif;
+		}
+		
+	/* 상단 영역 (여백 추가) */
+	.top-section {
+		height: 100px;
+		width: 100%;
+	}
+	
+	/* 폼 컨테이너 (로그인 박스 크기 증가) */
+	.form-container {
+	    width: 450px; /* 로그인 박스 너비 (크기 증가) */
+	    margin: 50px auto; /* 화면 중앙 배치 */
+	    background-color: white;
+	    padding: 50px; /* 내부 여백 (크기 증가) */
+	    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* 그림자 효과 */
+	    border-radius: 12px;
+	    box-sizing: border-box;
+	}
 
-    
-    .top-section {
-        background-color:  rgb(70, 130, 180); 
-        height: 150px; /* 높이 설정 */
-        width: 100%; /* 페이지 전체 너비 */
-    }
-
-    /* 폼 컨테이너 스타일 */
-    .form-container {
-        width: 480px; /* 폼의 너비 */
-        margin: auto; /* 중앙 정렬 */
-        margin-top: -100px; /* 상단 배경과 겹치게 위치 */
-        font-size: 15px; /* 폰트 크기 */
-        background-color: white; /* 폼 배경 흰색 */
-        padding: 20px; /* 내부 여백 */
-        border-radius: 10px; /* 모서리 둥글게 */
-        position: relative; /* 위치 설정 */
-    }
-
-    /* 모든 입력창에 적용되는 스타일 */
-    .input_style {
-        width: 100%; /* 입력창 너비를 폼의 너비에 맞춤 */
-        height: 32px; /* 입력창 높이 */
-        font-size: 15px; /* 폰트 크기 */
-        border: 0; /* 입력창 테두리 제거 */
-        border-radius: 15px; /* 둥근 모서리 */
-        outline: none; /* 입력 시 기본 외곽선 제거 */
-        padding-left: 10px; /* 입력창 왼쪽 패딩 */
-        background-color: rgb(233, 233, 233); /* 배경색 설정 */
-        margin-bottom: 10px; /* 입력창 간격 추가 */
-    }
+	/* 모든 입력창에 적용되는 스타일 */
+	.input_style {
+	    width: 100%;
+	    height: 46px; /* 입력창 크기 증가 */
+	    font-size: 16px;
+	    border: 1px solid #ddd; /* 테두리 스타일 */
+	    border-radius: 8px;
+	    outline: none;
+	    padding-left: 14px;
+	    background-color: #fafafa;
+	    margin-bottom: 20px; /* 입력창 사이 간격 증가 */
+	    transition: border-color 0.3s;
+	}
+	
+	.input_style:focus {
+	    border-color: #999; /* 포커스 시 테두리 색 변경 */
+	}
 
     /* 각 입력 필드 간의 간격을 위한 클래스 */
     .input_row {
@@ -63,20 +67,21 @@
 
     /* 회원가입 버튼 스타일 */
     .submit_button {
-        width: 100%; /* 버튼의 너비를 100%로 설정해 폼 너비와 맞춤 */
-        height: 40px; /* 버튼 높이 */
-        background-color: rgb(70, 130, 180); /* 버튼 배경색 파란색으로 설정 */
-        color: white; /* 버튼 텍스트 색상 흰색 */
-        border: none; /* 테두리 제거 */
-        border-radius: 20px; /* 모서리 둥글게 */
-        font-size: 16px; /* 폰트 크기 */
-        cursor: pointer; /* 마우스를 올렸을 때 포인터 모양으로 변경 */
-        margin-top: 10px; /* 버튼과 다른 입력 필드 간의 간격 */
+        width: 100%;
+	    height: 48px;
+	    font-size: 16px;
+	    border: none;
+	    color: white;
+	    border-radius: 8px;
+	    background-color: #222; /* 버튼 배경색 */
+	    cursor: pointer;
+	    margin-top: 10px;
+	    transition: background-color 0.3s;
     }
 
     /* 회원가입 버튼에 마우스를 올렸을 때 스타일 */
     .submit_button:hover {
-        background-color: rgb(60, 110, 160); /* 버튼의 배경색이 조금 더 어두워짐 */
+       background-color: #555; /* 버튼 호버 시 색 변경 */
     }
     .check{
     	color: black; /* 버튼 텍스트 색상 흰색 */
@@ -87,6 +92,19 @@
         height: 40px; /* 버튼 높이 */
         color: white; /* 버튼 텍스트 색상 흰색 */
     }
+        /* 화면 크기에 따라 스타일을 조정하는 미디어 쿼리 */
+    @media screen and (max-width: 600px) {
+        .form-container {
+            width: 80%; /* 작은 화면에서는 폼 너비를 80%로 설정 */
+        }
+    }
+
+    @media screen and (min-width: 1200px) {
+        .form-container {
+            width: 30%; /* 큰 화면에서는 폼 너비를 20%로 줄임 */
+        }
+    }
+    
     
 </style>
 </head>
