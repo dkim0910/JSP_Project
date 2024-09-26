@@ -442,7 +442,7 @@ footer>.con {
 }
 
 /* 세일페이지 구현 시작 */
-.time-sale .list .flex-grid1 {
+.time-sale .flex-grid2 {
 	display:flex;
 	flex-wrap:wrap;
 	--y-gap:15px;
@@ -451,7 +451,7 @@ footer>.con {
 	gap:var(--y-gap) var(--x-gap);
 }
 
-.time-sale .list .flex-grid1 > * {
+.time-sale .flex-grid2 > * {
 	width:calc(100% / var(--cc) - (var(--x-gap) * (var(--cc) - 1)) / var(--cc));
 }
 
