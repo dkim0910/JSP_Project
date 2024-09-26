@@ -1,5 +1,5 @@
 
-// 배송지 변경
+// 배송지 변경 팝업창
 function openPopup_AddressChange() {
     var popupURL = "https://kh-academy.co.kr/login/login.kh";
 
@@ -8,7 +8,7 @@ function openPopup_AddressChange() {
     window.open(popupURL, "Popup", popupProperties);
 }
 
-//  쿠폰 적용
+//  쿠폰 적용 팝업창
 function openPopup_couponApply() {
     var popupURL = "https://www.daum.net";
 
@@ -16,6 +16,7 @@ function openPopup_couponApply() {
 
     window.open(popupURL, "Popup", popupProperties);
 }
+// 기타 결제 부분
 function toggleOtherPayments(show) {
     var otherPayments = document.getElementById('other-payment-options');
     if (show) {
