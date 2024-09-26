@@ -16,6 +16,7 @@ function openPopup_couponApply() {
 
     window.open(popupURL, "Popup", popupProperties);
 }
+
 // 기타 결제 부분
 function toggleOtherPayments(show) {
     var otherPayments = document.getElementById('other-payment-options');
