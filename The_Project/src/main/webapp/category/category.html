@@ -7,6 +7,8 @@
     <!-- 페이지 제목 옆의 아이콘 -->
     <link href="https://image.msscdn.net/favicon_152.ico" rel="icon">
     <link rel="stylesheet" href="category.css">
+    <!-- 폰트어썸 불러오기 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="category.js" defer></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 </head>
@@ -18,6 +20,17 @@
                 <div class="top-search-bar">
                     <input type="text" id="search" placeholder="검색할 상품을 입력하세요" value="" />
                     <button type="button" id="search-button" >검색</button>
+                </div>
+                <div class="top-menu">
+					<a href="../my-page/my-page-main.html" class="menu-button">
+						<img src="./img/마이.png"  >
+					</a>
+                    <a href="../cart/cart.jsp" class="menu-button">
+						<img src="./img/카트.png"  >
+                      </a>
+                    <a href="../main-page/login_main.html" class="menu-button">
+						<img src="./img/홈.png"  >
+					</a>
                 </div>
             </header>
             
@@ -189,7 +202,7 @@
             </main>
             
             <!-- 고정된 하단 메뉴 -->
-            <nav id="commonLayoutGnb">
+            <!-- <nav id="commonLayoutGnb">
                 <div class="under-menu">
                     <a href="./category.html" class="menu-button">
                         <img src="./img/카테고리.png"  >
@@ -204,7 +217,7 @@
 						<span>마이페이지</span>
 					</a>
                 </div>
-            </nav>
+            </nav> -->
         </div>
     </div>
 </body>
