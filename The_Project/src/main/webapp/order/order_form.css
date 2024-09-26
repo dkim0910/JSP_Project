@@ -374,7 +374,7 @@ a, div{
 }
 /* -------결제 수단------- */
 
-/* ------결제하기------ */
+/* ------결제 금액------ */
 .sheet-purchase-button{
     box-sizing: border-box;
     background-color: black;
@@ -440,7 +440,7 @@ a, div{
     line-height: 18px;
     display: block;
 }
-/* ------결제하기------ */
+/* ------결제 금액------ */
 
 /* ------바텀바------ */
 footer>.con {
