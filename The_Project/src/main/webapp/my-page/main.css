@@ -1,4 +1,16 @@
 /* main.css */
+@font-face {
+	font-family: 'GmarketSansMedium';
+	src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+
+html>body {
+	font-family: 'GmarketSansMedium';
+	text-underline-position: under;
+}
+
 
 /* 전체 페이지 디자인 */
 body {
@@ -34,12 +46,6 @@ body {
 }
 
 /* 사이드바 텍스트 */
-#sidebar {
- 
-}
-.sidebar:hover {
-    
-}
 
 /* 사이드바 택스트 "마이페이지" 글꼴 크기 등 */
 .sidebar-title{
