@@ -1,8 +1,8 @@
 console.clear();
 
-$(document).ready(function() {
+$(document).ready(function () {
     // 탭 메뉴 클릭 이벤트
-    $('#menu1 li a').on('click', function(e) {
+    $('#menu1 li a').on('click', function (e) {
         e.preventDefault();
 
         // 모든 메뉴 항목에서 active 클래스 제거
@@ -27,44 +27,47 @@ $(document).ready(function() {
 
 // 배너 fade-in, fade-out 기능
 function SliderBox__init() {
-	let SliderBox1__idx = 0;
+    let SliderBox1__idx = 0;
 
-	setInterval(function() {
-		$('.slider-box-1').attr('data-index', ++SliderBox1__idx % 5);
-	}, 3000);
+    setInterval(function () {
+        $('.slider-box-1').attr('data-index', ++SliderBox1__idx % 5);
+    }, 3000);
 }
 
 SliderBox__init();
 
 // 바텀바 2차메뉴 클릭 기능
-$(document).ready(function() {
-  $('.toggle-icon, .toggle-menu').click(function(event) {
-      event.preventDefault(); // 링크 클릭시 페이지 이동 방지
-      $(this).parent().next('.submenu').slideToggle(); // 
-      $('.submenu').not($(this).parent().next('.submenu')).slideUp(); 
-  });
+$(document).ready(function () {
+    $('.toggle-icon, .toggle-menu').click(function (event) {
+        event.preventDefault(); // 링크 클릭시 페이지 이동 방지
+        $(this).parent().next('.submenu').slideToggle(); // 
+        $('.submenu').not($(this).parent().next('.submenu')).slideUp();
+    });
 });
 
 
 // 브랜드페이지 스와이퍼 기능
-function SwiperInit(selector) {
+function SwiperInit(selector, prevBtnClass, nextBtnClass) {
     const swiper = new Swiper(selector, {
-        spaceBetween: 50,
-        speed: 800, // 전환 속도
-        grabCursor: true,
-        loop: true,
-        slidesPerView: 1,
-        centeredSlides: true, 
-        touchRatio: 1, 
-        threshold: 10, 
-        on: {
-            slideChangeTransitionStart: function () {
-                
-            },
-        },
+        spaceBetween: 20,
+        speed: 800,
+        allowSlidePrev: false,
+        allowSlideNext: false,
+    });
+
+    $(`.${nextBtnClass}`).click(function () {
+        $(selector).addClass('active');
+        $(`.${nextBtnClass}`).removeClass('active');
+        $(`.${prevBtnClass}`).addClass('active');
+    });
+
+    $(`.${prevBtnClass}`).click(function () {
+        $(selector).removeClass('active');
+        $(`.${nextBtnClass}`).addClass('active');
+        $(`.${prevBtnClass}`).removeClass('active');
     });
 }
 
-SwiperInit('.section-img .swiper-con');
-SwiperInit('.section-img-2 .swiper-con');
-SwiperInit('.section-img-3 .swiper-con');
+SwiperInit('.section-img .swiper-con1', 'swiper-btn__prev-1', 'swiper-btn__next-1');
+SwiperInit('.section-img-2 .swiper-con2', 'swiper-btn__prev-2', 'swiper-btn__next-2');
+SwiperInit('.section-img-3 .swiper-con3', 'swiper-btn__prev-3', 'swiper-btn__next-3');

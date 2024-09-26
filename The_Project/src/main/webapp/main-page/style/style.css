@@ -379,6 +379,37 @@ footer>.con {
 	text-overflow: ellipsis;
 }
 
+
+.swiper-btn-box {
+	display: flex;
+	gap: 0 40px;
+	top: 50%;
+	transform: translateY(-50%);
+	right: 0;
+	position: absolute;
+	margin-top: 20px;
+}
+
+.swiper-btn-box .swiper-btn {
+	cursor: pointer;
+	opacity: 0.5;
+}
+
+
+.swiper-btn-box .swiper-btn__next.active,
+.swiper-btn-box .swiper-btn__prev.active {
+	opacity: 1;
+}
+
+.swiper-btn-box .swiper-btn__next:not(.active),
+.swiper-btn-box .swiper-btn__prev:not(.active) {
+	pointer-events: none;
+}
+
+.swiper-btn-box .swiper-btn__prev>span>img {
+	transform: rotate(180deg);
+}
+
 .section-img .swiper-con .swiper-wrapper .swiper-slide {
 	width: 377.5px !important;
 }
