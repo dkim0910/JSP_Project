@@ -26,5 +26,18 @@ function toggleBold(selectedElement) {
     selectedElement.classList.add('bold');
 }
 
+// 배달 현황 바 나오는 평션
+
+document.getElementById('track-button').addEventListener('click', function() {
+    const orderNumber = document.getElementById('order-number').value;
+
+    // Display the tracking info
+    document.getElementById('display-order-number').innerText = orderNumber;
+    document.getElementById('tracking-info').style.display = 'block'; // Show tracking info
+
+    // Update the progress bar (example: halfway for demo purposes)
+    const progressBar = document.querySelector('.progress-bar');
+    progressBar.style.width = '50%'; // Adjust as needed for the actual status
+});
 
 
