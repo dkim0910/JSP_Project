@@ -85,8 +85,8 @@ body {
     left: 50%;
     transform: translateX(calc(-50% + 660px));
     max-height: var(--top-height);
-    justify-content: center;
-    align-items: center;
+    justify-content: center;    /* 가로 중앙 정렬 */
+    align-items: center;        /* 세로 중앙 정렬 */
 }
 
 .menu-button {
@@ -135,6 +135,10 @@ body {
     padding: 10px;
     cursor: pointer;
     transition: background-color 0.3s;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    font-size: larger;
 }
 
 .left-goods-category li:hover {
