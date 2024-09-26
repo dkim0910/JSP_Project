@@ -114,7 +114,7 @@ body {
     justify-content: space-between; /* 양쪽 끝으로 배치 */
     align-items: center; 
     padding: 20px; 
-    background-color: #646464; 
+    background-color: #f4f4f4; 
     border-radius: 5px; /* 둥근 모서리 */
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); 
 }
@@ -127,8 +127,7 @@ body {
 
 /* 어서오세요 왼쪽으로 */
 .left {
-    font-size: 37px;       
-    color: #ffffff;     
+    font-size: 37px;           
 }
 
 /* 어서오세요 남어지 오른쪽으로 */
@@ -137,7 +136,6 @@ body {
     display: flex; 
     flex-direction: column; /* 세로 방향으로 정렬 */
     align-items: flex-end; /* 오른쪽 정렬 */
-    color: #ffffff;
 }
 .right {
     font-size: 20px; 
@@ -156,7 +154,6 @@ body {
     font-size: medium;
 }
 .main-box {
-    background-color: #ffffff;
     border: 1px solid #ccc;
     border-radius: 5px;
     padding: 40px 20px; /* 위 아래 패딩을 늘림 */
@@ -302,7 +299,7 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="tel"]:focus {
     padding: 20px; /* Vertical and horizontal padding */
     background-color: black; /* Background color */
     color: #ffffff; /* Text color */
-    border-bottom: 10px solid ; /* Bottom border */
+    border-bottom: 10px solid; /* Bottom border */
     position: relative; /* For absolute positioned elements */
 }
 
@@ -314,13 +311,15 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="tel"]:focus {
     text-align: center; /* Center text */
 }
 
+.header p {
+    display: none; /* Existing style remains */
+}
+
+
 .cart-button {
     margin-left: auto; /* Pushes the cart button to the far right */
 }
 
-.header p {
-    display: none; /* Existing style remains */
-}
 
 
 .all-button {
