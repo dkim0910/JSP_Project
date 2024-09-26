@@ -6,7 +6,7 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <style>
-    /* 페이지 기본 설정 */
+     /* 페이지 기본 설정 */
 	body {
 	    margin: 0;
 	    background-color: #f4f4f4;
@@ -83,6 +83,24 @@
 	    color: #222; /* 호버 시 링크 색 변경 */
 	}
 
+    /* 비밀번호 확인 버튼 스타일 (중복확인과 동일하게) */
+    .btn1 {
+	    width: 40%;
+	    height: 46px;
+	    font-size: 16px;
+	    background-color: #222; /* 버튼 배경색 */
+	    color: white;
+	    border: none;
+	    border-radius: 8px;
+	    cursor: pointer;
+	    transition: background-color 0.3s;
+	    margin-top: 10px; /* 위 아래 간격 */
+	}
+	
+	.btn1:hover {
+	    background-color: #555; /* 호버 시 색상 변경 */
+	}
+
     /* 화면 크기에 따라 스타일을 조정하는 미디어 쿼리 */
     @media screen and (max-width: 600px) {
         .form-container {
@@ -94,7 +112,7 @@
         .form-container {
             width: 30%; /* 큰 화면에서는 폼 너비를 20%로 줄임 */
         }
-    }
+
 </style>
 </head>
 <body>
@@ -121,7 +139,7 @@
 			<div class="input_row_ch">
 				<button type="button" id="togglePwBtn" class="btn1">비밀번호 확인</button>
 			</div>
-
+		<br/>
 			<!-- 로그인 버튼 -->
 			<div class="input_row">
 				<input type="submit" value="로그인" class="btn" onclick="login()">
