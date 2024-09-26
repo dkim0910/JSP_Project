@@ -382,6 +382,29 @@ a, div{
   border: none;  
   display: inline-block;
 }
+.list-payment li{
+    position: relative;
+    float: left;
+}
+.list-payment span{
+    margin-top: 8px;
+    text-align: center;
+    line-height: 18px;
+}
+.list-payment label{
+    float: left;
+    width: 117px;
+    height: 117px;
+    padding: 18px 0 16px;
+    border: 1px solid #eee;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+ul{
+    list-style: none;
+}
+
+
 /* -------결제 수단------- */
 
 /* ------결제 금액------ */

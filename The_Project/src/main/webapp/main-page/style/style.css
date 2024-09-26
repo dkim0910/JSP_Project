@@ -451,7 +451,7 @@ footer>.con {
 	gap:var(--y-gap) var(--x-gap);
 }
 
-.time-sale  .flex-grid > * {
+.time-sale .flex-grid > * {
 	width:calc(100% / var(--cc) - (var(--x-gap) * (var(--cc) - 1)) / var(--cc));
 }
 
