@@ -65,7 +65,7 @@
         </table>
         <div class="cart-summary">
             <h3>총 금액: <%= totalPrice %>원</h3>
-            <button onclick="location.href='checkout.jsp'">결제하기</button>
+            <button onclick="location.href='../order/order_form.html'">결제하기</button>
         </div>
     </div>
 </body>
