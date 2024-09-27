@@ -153,11 +153,11 @@ body {
 
 /* 우측 상품 카테고리 */
 .right-goods-category {
-    margin: 0 auto;             /* 좌우 자동으로 균등하게 설정 */
+    margin: 0 auto;                 /* 좌우 자동으로 균등하게 설정 */
     width: calc(var(--site-width) - 120px);
-    margin-left: 140px;           /* 좌측 카테고리와의 간격을 설정 */
+    margin-left: 140px;             /* 좌측 카테고리와의 간격을 설정 */
     padding: 20px;
-    flex-grow: 1;               /* 남은 공간을 차지하도록 설정 */
+    flex-grow: 1;                   /* 남은 공간을 차지하도록 설정 */
 }
 
 .goods-category {
