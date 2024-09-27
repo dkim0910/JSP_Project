@@ -79,12 +79,12 @@
                 <main class="main-hello">
                     <!-- 처음 들어왔을때 보여주는 화면 박스 (어서오세요 박스)-->
                     <div class="hello">
-                        <p class="left" style="font-weight: bold;">닉네임</p> <!-- 여기 '닉네임' 에 DB에서 가져온 username 삽입 -->
+                        <p class="left" style="font-weight: bold; cursor: pointer;" onclick="showContent('my-info')">닉네임</p> <!-- 여기 '닉네임' 에 DB에서 가져온 username 삽입 -->
                         <div class="right-container">
 
-                            <p id="member-status" class="right">회원 등급: ~~~</p>
+                            <p id="member-status" class="right" style="cursor: pointer;" onclick="showContent('membership')">회원 등급: ~~~</p>
                             <!-- member-status 라는게 화원 등급 설정임 (3번 구매하면 브론즈 5번 구매하면 실버 등 로직 추가하기) -->
-                            <p id="user-member-point" class="right">잔여 포인트: ~~~p</p>
+                            <p id="user-member-point" class="right" style="cursor: pointer;" onclick="showContent('membership')">잔여 포인트: ~~~p</p>
                             <!-- user-member-point 라는게 잔여 포인트임 -->
                         </div>
 
