@@ -187,37 +187,6 @@ body {
     margin-bottom: 20px;
 }
 
-/* '정보수정' 하기 버튼 폰트랑 디자인 */
-.edit-button{
-    font-family: 'Roboto', sans-serif;
-    font-size: 18px;
-    font-weight: bold;
-    color: #ffffff;
-    background-color: #28a745;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.1s ease;
-    align-items: center;
-}
-.edit-button:hover{
-    background-color: #218838;
-}
-
-/* '정보수정' 버튼 누루면 오는 페이지 폰트 */
-.edit-my-info {
-    display: flex;                  /* Flexbox 레이아웃을 사용 */
-    flex-direction: column;         /* 세로 방향으로 정렬 */
-    padding-right: 50%;
-}
-.edit-container{
-    display: block;
-    margin-bottom: 8px;
-    font-weight: bold;
-    color: #495057;
-}
-
 /* '정보수정하기' -> '수정하기' 버튼의 폰트랑 디자인 */
 input[type="text"], input[type="email"], input[type="tel"] {
     width: 100%;
@@ -233,62 +202,98 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="tel"]:focus {
     outline: none;
 }
 
-/* 이벤트 페이지 폰트 다자인 (삭제 예정?) */
-.discount-section {
-    background: white;
-    padding: 15px;
-    border-radius: 5px;
-}
-.product-card {
-    margin: 10px 0;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-}
-.discount-price {
-    font-weight: bold;
-    color: #d9534f;
-}
-.original-price {
-    text-decoration: line-through;
-    color: #888;
-    margin-left: 10px;
-}
-.buy-button {
-    display: inline-block;
-    margin-top: 10px;
-    padding: 10px 15px;
-    background-color: #28a745;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-}
-.buy-button:hover {
-    background-color: #218838;
-}
 
 /* 멤버십 폰트 및 디자인 */
-.membership-container {
-    display: flex;
-    overflow-x: auto;
-    padding: 10px;
-    gap: 20px;
-}
 
-.membership {
-    flex: 0 0 auto; /* 고정 폭 */
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    padding: 20px;
+/* 현재 포인트 섹션 스타일 */
+.current-points-section {
+    text-align: center;
+    padding: 30px;
     background-color: #fff;
-    max-width: 300px; /* 각 멤버십의 최대 폭 */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
 }
 
-/* .membership-container {
-    list-style-type: square;
-    padding-left: 20px;
-} */
+.current-points-section h2 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+}
+
+.membership-bar-container {
+    background-color: #f4f4f4;
+    border-radius: 20px;
+    width: 50%;
+    margin: 0 auto;
+    height: 30px;
+    overflow: hidden;
+}
+
+.membership-bar {
+    background-color: black;
+    height: 100%;
+    border-radius: 20px;
+    transition: width 0.3s ease;
+}
+
+.current-points-section p {
+    font-size: 1.2rem;
+    margin-top: 10px;
+}
+
+/* 멤버십 레벨 섹션 스타일 */
+.membership-levels {
+    display: flex;
+    justify-content: space-around;
+    padding: 50px;
+    background-color: #fff;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+.membership-level {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    width: 30%;
+}
+
+.membership-level h3 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+.membership-level p {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+}
+
+.membership-level ul {
+    list-style: none;
+    padding: 0;
+}
+
+.membership-level ul li {
+    background-color: #f4f4f4;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+    .membership-levels {
+        flex-direction: column;
+    }
+
+    .membership-level {
+        width: 80%;
+        margin-bottom: 20px;
+    }
+}
+
+
+
 
 
 
@@ -339,4 +344,10 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="tel"]:focus {
     text-align: center;
     cursor: pointer;
 }
+
+/* 이벤트 페이지 디자인 */
+
+
+
+
 

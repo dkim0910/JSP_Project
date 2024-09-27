@@ -61,6 +61,15 @@
         .footer p {
             margin: 5px 0;
         }
+
+        .all-button {
+            background-color: black;
+            color: #ffffff;
+            padding: 10px 20px;
+            border-radius: 20px;
+            text-align: center;
+            cursor: pointer;
+        }
     </style>
 </head>
 
@@ -78,13 +87,13 @@
             <h1 style="flex-grow: 1; text-align: center;">환불 및 교환</h1>
             <p></p>
         </header>
-        <div class="content">
+        <div class="content" style="min-height: 100vh; display: flex; flex-direction: column;">
+            <!-- style="flex:1" 이거 아직 추가 안함 -->
             <div>
                 <h1>환불 및 교환 신청이 완료되었습니다</h1>
                 <h2>자세한 내용은 ~~~로 안내해 드리겠습니다</h2>
-                <a href="../../my-page/my-main/my-page-main.html">마이 페이지로 되돌아가기?</a>
-                <p></p>
             </div>
+            <a href="../../my-page/my-main/my-page-main.html" class="all-button" style="text-decoration: none;">마이페이지로 돌아가기</a>
         </div>
 
         <footer class="footer">
