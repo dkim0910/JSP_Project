@@ -10,7 +10,7 @@
     <div class="product-detail-container">
         <!-- 상품 이미지 및 정보 -->
         <div class="product-image">
-            <img src="https://image.msscdn.net/thumbnails/images/goods_img/20230105/3007113/3007113_17252441567307_big.jpg?w=1200" alt="상품 이미지">
+            <img src="./img/101-1.webp" alt="상품 이미지">
         </div>
     
         <div class="product-info">
@@ -30,15 +30,19 @@
             </div>
     
             <div class="product-buttons">
-                <button class="buy-now">바로 구매</button>
-                <button class="add-to-cart">장바구니 담기</button>
+                <form action="../../order/order_form.html">
+                    <button type="submit" class="buy-now">바로 구매</button>
+                </form>
+                <form action="../../cart/cart.jsp">
+                    <button type="submit" class="add-to-cart">장바구니 담기</button>
+                </form>
             </div>
         </div>
     </div>
     
     <!-- 상품 상세 이미지 -->
     <div class="product-detail-img">
-        <img src="https://image.musinsa.com/images/prd_img/2023120111283300000018067.jpg" alt="상품 상세 이미지">
+        <img src="./img/101-2.jpg" alt="상품 상세 이미지">
     </div>
 
 </body>

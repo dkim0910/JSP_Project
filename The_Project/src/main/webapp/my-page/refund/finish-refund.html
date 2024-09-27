@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>환불 및 교환 | 쇼핑하조</title>
     <style>
         html,
         body {
@@ -15,18 +15,18 @@
         body {
             display: flex;
             flex-direction: column;
-            /* Stack elements vertically */
         }
 
         .container {
+            display: flex;
+            flex-direction: column;
             max-width: 1600px;
             margin: 0 auto;
-            padding: 0px 40px 20px;
+            padding: 0 40px 20px;
             background-color: #fff;
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
             min-height: 100vh;
-            display: flex;
-            flex-direction: column;
+            /* Maintain full height */
         }
 
         .header {
@@ -37,17 +37,17 @@
             color: #ffffff;
             border-bottom: 2px solid #ff4d4d;
             position: relative;
-            padding-right: 130px;
         }
 
         .content {
             flex: 1;
-            /* Allow content to grow and take remaining space */
+            /* Take up available space */
             display: flex;
             justify-content: center;
             align-items: center;
             text-align: center;
-            /* Center the text */
+            padding: 20px;
+            /* Optional padding */
         }
 
         .footer {
@@ -60,6 +60,17 @@
 
         .footer p {
             margin: 5px 0;
+        }
+
+        .all-button {
+            background-color: black;
+            color: #ffffff;
+            padding: 10px 20px;
+            border-radius: 20px;
+            text-align: center;
+            cursor: pointer;
+            text-decoration: none;
+            /* Ensure no underline */
         }
     </style>
 </head>
@@ -82,8 +93,9 @@
             <div>
                 <h1>환불 및 교환 신청이 완료되었습니다</h1>
                 <h2>자세한 내용은 ~~~로 안내해 드리겠습니다</h2>
-                <a href="../../my-page/my-main/my-page-main.html">마이 페이지로 되돌아가기?</a>
-                <p></p>
+                <div>
+                    <a href="../../my-page/my-main/my-page-main.html" class="all-button">마이페이지로 돌아가기</a>
+                </div>
             </div>
         </div>
 
