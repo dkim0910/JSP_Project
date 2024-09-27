@@ -142,7 +142,7 @@ body {
     bottom: 20px; /* 최하단에 위치 */
 }
 
-.product-parchase-buttons button {
+.buy-now, .add-to-cart {
     padding: 15px 20px;
     font-size: 16px;
     cursor: pointer;
@@ -150,13 +150,13 @@ body {
     border-radius: 5px;
 }
 
-.buy-now {
-    background-color: #3498db;
-    color: white;
+.add-to-cart {
+    background-color: #dddddd;
+    color: black;
 }
 
-.add-to-cart {
-    background-color: #2ecc71;
+.buy-now {
+    background-color: black;
     color: white;
 }
 
@@ -164,3 +164,22 @@ body {
     opacity: 0.9;
 }
 
+/* 하단 구매버튼 공간 */
+.bottom-parchase-buttons{
+    position: fixed;                /* 화면에 고정 */
+    bottom: 20px;                   /* 화면 하단에서 20px 위로 배치 */
+    left: 50%;                      /* 화면의 가로축에서 50% (중앙) */
+    transform: translateX(-50%);    /* 요소의 너비 절반만큼 왼쪽으로 이동해 정확히 중앙에 위치 */
+    width: 1100px;
+    height: 100px;
+    padding: 20px;
+    margin: auto;
+    display: flex;              /* Flexbox 사용 */
+    justify-content: center;    /* 가로축 중앙 정렬 */
+    align-items: center;        /* 세로축 중앙 정렬 */
+    background-color: black;
+    color: white;
+    border-radius: 5px;
+    font-size: 35px;
+    cursor: pointer;
+}
