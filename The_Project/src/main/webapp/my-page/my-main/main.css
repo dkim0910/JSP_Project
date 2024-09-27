@@ -11,10 +11,8 @@ html>body {
 	text-underline-position: under;
 }
 
-
 /* 전체 페이지 디자인 */
 body {
-    /* 여기는 헤더 포함 디자인임 나중에 추가하기 */
     display: flex;
 }
 
@@ -31,7 +29,7 @@ body {
     font-size: large;
     display: flex;
     width: 100%; 
-    float: left; /* 박스를 왼쪽에 배치 */   /* 왜 넣는지는 모르겠음 */
+    float: left; /* 박스를 왼쪽에 배치 */
     clear: both; /* 레이아웃 중첩 방지 */
 }
 
@@ -46,13 +44,10 @@ body {
     position: relative;
 }
 
-/* 사이드바 텍스트 */
-
 /* 사이드바 택스트 "마이페이지" 글꼴 크기 등 */
 .sidebar-title{
     font-size: 270%;
     font-weight: bold;
-    /* white-space:nowrap; */
     font-size: 2.5rem;
     margin-bottom: 17.5px;
 }
@@ -89,7 +84,7 @@ body {
     text-decoration: none;
 }
 
-/* 클릭 시 사이드바 옵션들 볼드채로 유지되게하는 펑션에 들어가는 css */
+/* 그냥 볼드체 만드는 css */
 .bold {
     color: #000000; 
     font-weight: bolder; 
@@ -100,7 +95,6 @@ body {
     flex: 1;
     padding: 20px;
     box-sizing: border-box;
-
 }
 .main-hello-section {
     display: none; /* 기본적으로 모든 섹션 숨기기 */
@@ -146,36 +140,27 @@ body {
 
 /* 메인 마이페이지 폰트 */
 .main-container {
-    display: flex;                /* Arrange boxes in a row */
-    flex-direction: column;      /* Change direction to column */
-    gap: 20px;                   /* Space between boxes */
-    padding: 20px;               /* Padding for the main container */
+    display: flex;              
+    flex-direction: column;    
+    gap: 20px;                   
+    padding: 20px;          
 }
-
 .main-box {
-    background-color: #f9f9f9;   /* Light background for each box */
-    padding: 15px;               /* Inner padding */
-    border-radius: 8px;          /* Rounded corners */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Shadow effect */
+    background-color: #f9f9f9;   
+    padding: 15px;              
+    border-radius: 8px;          
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
-
 .line {
-    border: none;                /* Remove default border */
-    height: 1px;                /* Set the height of the line */
-    background-color: black;    /* Set the color of the line */
-    margin: 13px 0;             /* Add vertical spacing */
+    border: none;                
+    height: 1px;                
+    background-color: black;    
+    margin: 13px 0;             
 }
-
-.bold{
-    font-weight: bold;
-}
-
-
-
 
 /* 나의 정보 폰트 및 디자인 */
 .profile-container {
-    max-width: 100%; /* 더 넓은 화면을 위해 너비 조정 */
+    max-width: 100%; 
     margin: auto;
     background: white;
     border-radius: 8px;
@@ -196,15 +181,12 @@ input[type="text"], input[type="email"], input[type="tel"] {
     border-radius: 5px;
     transition: border-color 0.3s;
 }
-
 input[type="text"]:focus, input[type="email"]:focus, input[type="tel"]:focus {
     border-color: #007BFF;
     outline: none;
 }
 
-
 /* 멤버십 폰트 및 디자인 */
-
 /* 현재 포인트 섹션 스타일 */
 .current-points-section {
     text-align: center;
@@ -212,12 +194,10 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="tel"]:focus {
     background-color: #fff;
     margin-bottom: 30px;
 }
-
 .current-points-section h2 {
     font-size: 1.8rem;
     margin-bottom: 20px;
 }
-
 .membership-bar-container {
     background-color: #f4f4f4;
     border-radius: 20px;
@@ -226,14 +206,12 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="tel"]:focus {
     height: 30px;
     overflow: hidden;
 }
-
 .membership-bar {
     background-color: black;
     height: 100%;
     border-radius: 20px;
     transition: width 0.3s ease;
 }
-
 .current-points-section p {
     font-size: 1.2rem;
     margin-top: 10px;
@@ -248,7 +226,6 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="tel"]:focus {
     margin: 0 auto;
     max-width: 1200px;
 }
-
 .membership-level {
     background-color: #fff;
     border-radius: 8px;
@@ -257,22 +234,18 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="tel"]:focus {
     text-align: center;
     width: 30%;
 }
-
 .membership-level h3 {
     font-size: 1.8rem;
     margin-bottom: 10px;
 }
-
 .membership-level p {
     font-size: 1.1rem;
     margin-bottom: 20px;
 }
-
 .membership-level ul {
     list-style: none;
     padding: 0;
 }
-
 .membership-level ul li {
     background-color: #f4f4f4;
     margin-bottom: 10px;
@@ -292,11 +265,6 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="tel"]:focus {
     }
 }
 
-
-
-
-
-
 /* 헤더 컨테이너 */
 .header-container {
     max-width: 1600px;
@@ -305,7 +273,6 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="tel"]:focus {
     background-color: #fff;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
-
 .header {
     display: flex; /* Flexbox layout */
     align-items: center; /* Center items vertically */
@@ -316,7 +283,6 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="tel"]:focus {
     border-bottom: 10px solid; /* Bottom border */
     position: relative; /* For absolute positioned elements */
 }
-
 .header h1 {
     margin: 0;
     font-weight: bold;
@@ -324,16 +290,14 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="tel"]:focus {
     flex-grow: 1; /* Takes remaining space to center */
     text-align: center; /* Center text */
 }
-
 .header p {
     display: none; /* Existing style remains */
 }
 
-
+/* 장바구니 버튼 */
 .cart-button {
     margin-left: auto; /* Pushes the cart button to the far right */
 }
-
 
 /* 모든 버튼 기본 디자인 */
 .all-button {
@@ -344,6 +308,10 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="tel"]:focus {
     text-align: center;
     cursor: pointer;
 }
+
+/* 마이페이지 배송 현환 디자인 */
+
+
 
 /* 이벤트 페이지 디자인 */
 

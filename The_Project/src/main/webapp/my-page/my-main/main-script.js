@@ -41,7 +41,8 @@ document.getElementById('track-button').addEventListener('click', function () {
 });
 
 
-// 멤버십 바 올라가는거 평션 (오류남 이름 바꿔야될듯)
+// 멤버십 바 올라가는거 평션
+
 // 사용자 현재 포인트 예시
 const currentPoints = 750; // 현재 포인트
 const nextLevelPoints = 1000; // 다음 레벨까지 필요한 포인트 (예: Premium)
