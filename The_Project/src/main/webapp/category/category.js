@@ -61,3 +61,22 @@ function search() {
         }
     });
 }
+
+// 상품 옆의 작은 설명 상자
+document.querySelectorAll('.goods').forEach(product => {
+    const description = product.querySelector('.product-description');
+
+    product.addEventListener('mouseenter', () => {
+        description.style.display = 'block';
+    });
+
+    product.addEventListener('mousemove', (e) => {
+        // 마우스 위치에 따라 설명 상자의 위치 설정
+        description.style.left = `${e.pageX + 10}px`;
+        description.style.top = `${e.pageY + 10}px`;
+    });
+
+    product.addEventListener('mouseleave', () => {
+        description.style.display = 'none';
+    });
+});
