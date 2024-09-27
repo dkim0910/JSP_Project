@@ -207,3 +207,15 @@ body {
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
     z-index: 10;
 }
+
+/* 하단 */
+#commonLayoutFooter {
+    text-align: center;
+    padding: 20px;
+    background-color: #f5f5f5;
+    color: #999999;
+}
+
+#commonLayoutFooter p {
+    margin: 5px 0;
+}

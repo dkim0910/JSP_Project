@@ -61,3 +61,21 @@ const pointsLeft = nextLevelPoints - currentPoints;
 document.getElementById('points-left-text').textContent = `다음 등급까지 ${pointsLeft} 포인트가 남았습니다!`;
 
 
+// 회원 탈퇴 펑션
+function showModal() {
+    document.getElementById("modal").style.display = "flex";
+}
+
+function confirmWithdrawal(confirmed) {
+    const modal = document.getElementById("modal");
+    modal.style.display = "none"; // 모달 닫기
+
+    if (confirmed) {
+        alert("회원 탈퇴가 성공적으로 완료되었습니다.");
+        window.location.href = "../../main-page/index.html"
+    }
+
+    if (!confirmed) {
+        alert("회원 탈퇴를 실패했습니다.");
+    }
+}
