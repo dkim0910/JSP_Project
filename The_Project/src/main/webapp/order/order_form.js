@@ -8,6 +8,34 @@ function openPopup_AddressChange() {
     window.open(popupURL, "Popup", popupProperties);
 }
 
+// 배송 메세지 선택 selectbox
+document.addEventListener('DOMContentLoaded', () => {
+    const btn = document.querySelector(".sheet-message-text");
+    const list = document.querySelector(".sheet-message-selectbox");
+
+    // 요소가 존재하는지 확인
+    if (!btn || !list) {
+        console.error("버튼이나 리스트 요소를 찾을 수 없습니다.");
+        return;
+    }
+
+// 버튼을 누르면 화살표 방향이 바뀌어야 한다. 
+// 셀렉트 박스 옵션이 담긴 ul 이 나와야한다. 
+// 클릭했을 때 그 클릭된 요소가 박스에 보여야 한다. 
+
+    btn.addEventListener('click', () => {
+        btn.classList.toggle('on');
+        list.classList.toggle('on');
+    });
+
+    list.addEventListener('click', (e) => {
+        if (e.target.nodeName === 'BUTTON') {
+            btn.innerHTML = e.target.innerHTML;
+            list.classList.remove('on');
+            btn.classList.remove('on');
+        }
+    });
+});
 //  쿠폰 적용 팝업창
 function openPopup_couponApply() {
     var popupURL = "https://www.daum.net";
@@ -35,6 +63,3 @@ $(document).ready(function() {
         $('.submenu').not($(this).parent().next('.submenu')).slideUp(); 
     });
   });
-  
-
-                

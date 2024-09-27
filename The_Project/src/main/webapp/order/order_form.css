@@ -4,7 +4,9 @@
 	src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
 	font-weight: normal;
 	font-style: normal;
+    !important;
 }
+
 
 html>body {
 	font-family: 'GmarketSansMedium';
@@ -117,22 +119,86 @@ button{
     font-weight: 400;
     line-height: 18px;
     display: flex;
+    margin-bottom: 10px;
 }
-.sheet-address-select{
-    border: 1px solid #e0e0e0;
-    box-sizing: border-box;
-    border-radius: 4px;
+.sheet-message-text{
+    font-size: 14px;
     justify-content: space-between;
     align-items: center;
-    width: 100%;
     height: 36px;
-    margin-top: 4px;
-    padding: 0 8px;
+    width: 60%;
+    text-align: left;
+    background: #ffffff;
+    border: 1px solid #c4c4c4;
+    box-sizing: border-box;
+    border-radius: 4px;
+    padding: 13px 10px
+    margin-top: 9px;
+    margin-bottom: 6px;
     display: flex;
     cursor: pointer;
+    background: url(./img/svg/down-arrow-svgrepo-com.png) no-repeat;
+    background-position: 97% 50%;
 }
-svg{
+.sheet-message-text.on{
+    background: url(./img/svg/down-arrow-svgrepo-com.png) no-repeat;
+    background-position: 97% 50%;
+}
+.sheet-message-text:hover,
+.sheet-message-text:focus,
+.sheet-message-text:active{
+    outline: 1px solid #666;
+}
+.sheet-message-selectbox{
+    box-sizing: border-box;
+    width: 60%;
+    background: #FFFFFF;
+    border: 1px solid #C4C4C4;
+    border-radius: 4px;
+    padding: 4px 8px;
+    margin-top: 0px;
+}
+.sheet-message-selectbox{
+    display: none;
+}
+.sheet-message-selectbox.on{
     display: block;
+}
+.sheet-message-selectbox li{
+    width: 100%;
+    margin-top: 10px;
+    border: none;
+    margin-bottom: 10px;
+}
+.sheet-message-option-btn{
+    width: inherit;
+    box-sizing: border-box;
+    border: none;
+    background-color: transparent;
+    text-align: left;
+    line-height: 16px;
+    display: inline-block;
+    font-size: 15px;
+}
+.sheet-message-option-btn.on{
+    display: block;
+    background-position: right;
+}
+.sheet-message-option-btn{
+    width: inherit;
+    box-sizing: border-box;
+    border: none;
+    background-color: transparent;
+    padding: 7px 10px;
+    text-align: left;
+    line-height: 16px;
+    display: inline-block;
+}
+.sheet-message-selectbox li:hover,
+.sheet-message-selectbox li:focus,
+.sheet-message-selectbox li:active{
+    background-color: #eee;
+    border-radius: 4px;
 }
 button{
     cursor: pointer;
@@ -226,7 +292,7 @@ h2{
     border-radius: 4px;
     justify-content: center;
     align-items: center;
-    width: 100%;
+    width: 60%;
     height: 36px;
     margin-top: 12px;
     font-size: 16px;
