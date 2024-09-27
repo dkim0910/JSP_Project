@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>주문 페이지 | 쇼핑하조</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <style>
     @import url(order_form.css);
@@ -215,109 +217,111 @@
                 </div>
                 <hr/>
                 <div class="double-section-right">
-                    <section class="sheet-section">
-                        <div class="sheet-title">
-                            <h2 class="sheet-title-text">
-                                적립 혜택
-                            </h2>
-                        </div>
-                        <div class="sheet-save-point">
-                            <div class="sheet-save-point-level">
-                                <span class="sheet-save-point-level-text">
-                                    LV.5 실버 : 2% 적립
-                                </span>
-                                <strong class="sheet-save-point-level-subject-price">
-                                    2000원
-                                </strong>
+                    <section class="sticky-section">
+                        <section class="sheet-section" id="sheet-section-reward-point">
+                            <div class="sheet-title">
+                                <h2 class="sheet-title-text">
+                                    적립 혜택
+                                </h2>
                             </div>
-                            <div class="sheet-save-point-additional">
-                                <span class="sheet-save-point-additional-text">
-                                    구매 추가 적립
-                                </span>
-                                <strong class="sheet-save-point-level-subject-price">
-                                    100원
-                                </strong>
-                            </div>
-                            <div class="sheet-save-point-level">
-                                <span class="sheet-save-point-review-text">
-                                    후기 적립금
-                                </span>
-                                <strong class="sheet-save-point-level-subject-price">
-                                    최대 3,500원
-                                </strong>
-                            </div>
-                        </div>
-                    </section>
-                    <br/>
-                    <section class="sheet-section" id="sheet-section-pay">
-                        <div class="sheet-title">
-                            <h2 class="sheet-title-text">
-                                결제 금액
-                            </h2>
-                        </div>
-                        <div class="sheet-payment-price">
-                            <div class="sheet-payment-price-box">
-                                <span class="sheet-payment-price-subject-text">
-                                    상품 금액
-                                </span>
-                                <strong class="sheet-payment-price-subject-price">
-                                    108,000원
-                                </strong>
-                            </div>
-                            <div class="sheet-payment-price-box">
-                                <span class="sheet-payment-price-subject-text">
-                                    할인 금액
-                                </span>
-                                <strong class="sheet-payment-price-subject-price">
-                                    -8,000원
-                                </strong>
-                            </div>
-                            <div class="sheet-payment-price-box">
-                                <span class="sheet-payment-price-subject-text">
-                                    적립금 사용
-                                </span>
-                                <strong class="sheet-payment-price-subject-price">
-                                    0원
-                                </strong>
-                            </div>
-                            <div class="sheet-payment-price-box">
-                                <span class="sheet-payment-price-subject-text">
-                                    배송비
-                                </span>
-                                <strong class="subject-payment-price-subject-price">
-                                    배송비 무료
-                                </strong>
-                            </div>
-                            <div class="sheet-payment-price-total">
-                                <span class="sheet-payment-price-total-text">
-                                    총 결제 금액
-                                </span>
-                                <strong class="subject-payment-price-totla-price">
-                                    100,000원
-                                </strong>
-                            </div>
-                            <br/>
-                            <div class="sheet-purchase-button-bottom" onclick="location.href='../order/payment-process.html';">
-                                <div class="sheet-purchase-button">
-                                    <span class="sheet-purchase-button-price">
-                                        100,000
+                            <div class="sheet-save-point">
+                                <div class="sheet-save-point-level">
+                                    <span class="sheet-save-point-level-text">
+                                        LV.5 실버 : 2% 적립
                                     </span>
-                                    원 결제하기
+                                    <strong class="sheet-save-point-level-subject-price">
+                                        2000원
+                                    </strong>
+                                </div>
+                                <div class="sheet-save-point-level">
+                                    <span class="sheet-save-point-additional-text">
+                                        구매 추가 적립
+                                    </span>
+                                    <strong class="sheet-save-point-level-subject-price">
+                                        100원
+                                    </strong>
+                                </div>
+                                <div class="sheet-save-point-level">
+                                    <span class="sheet-save-point-review-text">
+                                        후기 적립금
+                                    </span>
+                                    <strong class="sheet-save-point-level-subject-price">
+                                        최대 3,500원
+                                    </strong>
                                 </div>
                             </div>
-                        </div>
+                        </section>
                         <hr/>
-                        <div class="sheet-agreement">
-                            <strong class="sheet-agreement-text">
-                                주문 내용을 확인했으며 결제에 동의합니다.
-                            </strong>
-                            <strong class="sheet-agreement-text">
-                                회원님의 개인정보는 안전하게 관리됩니다.
-                            </strong>
-                            <strong class="sheet-agreement-text">
-                                쇼핑하조는 통신판매중개자로, 업체 배송 상품의 상품/상품정보/거래 등에 대한 책임은 쇼핑하조가 아닌 판매자에게 있습니다.
-                            </strong>
-                        </div>
+                        <section class="sheet-section" id="sheet-section-pay">
+                            <div class="sheet-title">
+                                <h2 class="sheet-title-text">
+                                    결제 금액
+                                </h2>
+                            </div>
+                            <div class="sheet-payment-price">
+                                <div class="sheet-payment-price-box">
+                                    <span class="sheet-payment-price-subject-text">
+                                        상품 금액
+                                    </span>
+                                    <strong class="sheet-payment-price-subject-price">
+                                        108,000원
+                                    </strong>
+                                </div>
+                                <div class="sheet-payment-price-box">
+                                    <span class="sheet-payment-price-subject-text">
+                                        할인 금액
+                                    </span>
+                                    <strong class="sheet-payment-price-subject-price">
+                                        -8,000원
+                                    </strong>
+                                </div>
+                                <div class="sheet-payment-price-box">
+                                    <span class="sheet-payment-price-subject-text">
+                                        적립금 사용
+                                    </span>
+                                    <strong class="sheet-payment-price-subject-price">
+                                        0원
+                                    </strong>
+                                </div>
+                                <div class="sheet-payment-price-box">
+                                    <span class="sheet-payment-price-subject-text">
+                                        배송비
+                                    </span>
+                                    <strong class="subject-payment-price-subject-price">
+                                        배송비 무료
+                                    </strong>
+                                </div>
+                                <div class="sheet-payment-price-total">
+                                    <span class="sheet-payment-price-total-text">
+                                        총 결제 금액
+                                    </span>
+                                    <strong class="subject-payment-price-totla-price">
+                                        100,000원
+                                    </strong>
+                                </div>
+                                <br/>
+                                <div class="sheet-purchase-button-bottom" onclick="location.href='../order/order_confirmed.html';">
+                                    <div class="sheet-purchase-button">
+                                        <span class="sheet-purchase-button-price">
+                                            100,000
+                                        </span>
+                                        원 결제하기
+                                    </div>
+                                </div>
+                            </div>
+                            <hr/>
+                            <div class="sheet-agreement">
+                                <strong class="sheet-agreement-text">
+                                    주문 내용을 확인했으며 결제에 동의합니다.
+                                </strong>
+                                <strong class="sheet-agreement-text">
+                                    회원님의 개인정보는 안전하게 관리됩니다.
+                                </strong>
+                                <strong class="sheet-agreement-text">
+                                    쇼핑하조는 통신판매중개자로, 업체 배송 상품의 상품/상품정보/거래 등에 대한 책임은 쇼핑하조가 아닌 판매자에게 있습니다.
+                                </strong>
+                            </div>
+                        </section>
                     </section>
                 </div>
             </div>
@@ -393,7 +397,7 @@
               </div>
         </main>
         <footer>
-            <div class="sheet-purchase-button-bottom" id="sheet-purchase-button2" onclick="location.href='../order/payment-process.html';">
+            <div class="sheet-purchase-button-bottom" id="sheet-purchase-button2" onclick="location.href='../order/order_confirmed.html';">
                 <div class="sheet-purchase-button">
                     <span class="sheet-purchase-button-price" id="display-result-pay-amount">
                         100,000

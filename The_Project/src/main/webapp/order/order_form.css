@@ -8,15 +8,16 @@
 }
 
 
-html>body {
+html>body, input, button {
 	font-family: 'GmarketSansMedium';
 	text-underline-position: under;
 }
 
-body{
-    width: 1400px;
+html, body{
+    width: 1260px;
     font-size: 16px;
     line-height: inherit;
+    justify-content: center;
     margin: auto;
 }
 .contents{
@@ -41,8 +42,8 @@ html, body{
     flex: 0 0 460px;
     min-width: 0;
     top: 24px;
-    padding-left: 40px;
-    padding-right: 30px;
+    padding-left: 30px;
+    padding-right: 40px;
     padding-bottom: 40px;
 }
 /* ------주문서------ */
@@ -206,9 +207,9 @@ button{
 /* ------배송지------ */
 
 /* ------주문 상품------ */
-#sheet-section-pay{
+.sticky-section{
     position: sticky;
-    top: 24px;
+    top: 20px;
 }
 .sheet-section{
     background-color: white;
@@ -489,12 +490,12 @@ ul{
     line-height: 20px;
     display: flex;
 }
-.sheet-payment-price-subject-text{
+.sheet-save-point-additional, .sheet-save-point-level {
     font-size: 13px;
     font-weight: 400;
     line-height: 18px;
 }
-.sheet-payment-price-subject-price{
+.sheet-payment-price-subject-text, .sheet-payment-price-subject-price {
     font-size: 13px;
     font-weight: 400;
     line-height: 18px;
@@ -510,18 +511,23 @@ ul{
     font-weight: 600;
     line-height: 20px;
 }
-.subject-payment-price-totla-price{
+.subject-payment-price-total-price{
     margin-left: 4px;
     font-size: 14px;
     font-weight: 600;
     line-height: 20px;
 }
-.sheet-payment-price{
+.sheet-save-point,{
+    box-sizing: border-box;
+    width: 100%;
+    padding: 0 12px;
+}    
+.sheet-save-point, .sheet-payment-price{
     box-sizing: border-box;
     width: 100%;
     padding: 0 16px 12px;
 }
-.sheet-payment-price-box{
+.sheet-save-point-level, .sheet-payment-price-box{
     padding: 4px 0;
 }
 .sheet-agreement{
@@ -542,8 +548,9 @@ ul{
 /* ------결제 금액------ */
 
 /* ------바텀바------ */
-footer>.con {
+.con {
 	color: #999;
+    padding: 0 40px 60px 40px;
 }
 
 .bottom-menu ul li {
