@@ -4,11 +4,10 @@
 	src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
 	font-weight: normal;
 	font-style: normal;
-    !important;
 }
 
 
-html>body, input, button {
+html>body, button {
 	font-family: 'GmarketSansMedium';
 	text-underline-position: under;
 }
@@ -55,6 +54,9 @@ html, body{
     height: 52px;
     padding: 12px 16px;
     box-sizing: border-box;
+}
+.order_form-headline > a {
+    height: 28px;
 }
 .order_form-headline-text{
     font-size: 20px;
@@ -133,7 +135,7 @@ button{
     border: 1px solid #c4c4c4;
     box-sizing: border-box;
     border-radius: 4px;
-    padding: 13px 10px
+    padding: 13px 10px;
     margin-top: 9px;
     margin-bottom: 6px;
     display: flex;
@@ -330,7 +332,7 @@ h2{
     border-radius: 4px;
     width: 100%;
     padding: 6px 8px;
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 400;
     line-height: 20px;
     display: flex;
@@ -370,6 +372,9 @@ input{
     padding: 8px 0 8px 24px;
     display: flex;
     position: relative;
+}
+.payment-method-choice > label > input, .payment-method-choice > label > img {
+    display: inline-block;
 }
 input[type='radio'] {
     -webkit-appearance: none;
@@ -411,6 +416,7 @@ a, div{
 .payment-method-type-input [type="radio"]:checked{
     z-index: 1;
     display: block;
+
 }
 .paymentMethod-others{
     text-align: center;
@@ -421,7 +427,7 @@ a, div{
     flex-wrap: wrap;
     justify-content: space-between;
     width: 100%;
-    padding: 0 16px 8px 40px;
+    padding: 0 50px 8px 50px;
     display: flex;
     list-style: none;
     margin: 1px;
@@ -440,23 +446,27 @@ a, div{
     border-radius: 4px;
     justify-content: center;
     align-items: center;
-    width: 100%;
     height: 36px;
     display: flex;
     overflow: hidden;   
+    float: left;
 }
 #button-payment-CARD, #button-payment-VACCOUNT, #button-payment-PHONE, #button-payment-NAVERPAY{
   border: none;  
   display: inline-block;
+  width: 100%;
+  height: auto;
 }
 .list-payment li{
     position: relative;
     float: left;
 }
 .list-payment span{
-    margin-top: 8px;
-    text-align: center;
     line-height: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 0 0 0;
 }
 .list-payment label{
     float: left;
@@ -466,6 +476,18 @@ a, div{
     border: 1px solid #eee;
     box-sizing: border-box;
     cursor: pointer;
+    
+}
+.list-payment label:hover,
+.list-payment label:focus,
+.list-payment label:active {
+    border: 1px solid black;
+}
+.card-company-logo{
+    height: 60px;
+    width: auto;
+    object-fit: cover;
+    margin: auto;
 }
 ul{
     list-style: none;
@@ -517,7 +539,7 @@ ul{
     font-weight: 600;
     line-height: 20px;
 }
-.sheet-save-point,{
+.sheet-save-point{
     box-sizing: border-box;
     width: 100%;
     padding: 0 12px;

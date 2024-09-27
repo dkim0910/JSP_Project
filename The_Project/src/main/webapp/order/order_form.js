@@ -1,7 +1,7 @@
 
 // 배송지 변경 팝업창
 function openPopup_AddressChange() {
-    var popupURL = "https://kh-academy.co.kr/login/login.kh";
+    var popupURL = "file:///D:/kcb_0710/project/JSP_PROJECT/git/JSP_Project/The_Project/src/main/webapp/order/address_change.html";
 
     var popupProperties = "width=600, height=700 ,scrollbars=yes";
 
@@ -52,6 +52,16 @@ function toggleOtherPayments(show) {
         otherPayments.style.display = 'block';
     } else {
         otherPayments.style.display = 'none';
+    }
+}
+
+// 기타 -> 카드 결제 부분
+function togglePaymentCard(show) {
+    var listPayments = document.getElementById('list-payment');
+    if (show) {
+        listPayments.style.display = 'block';
+    } else {
+        listPayments.style.display = 'none';
     }
 }
 

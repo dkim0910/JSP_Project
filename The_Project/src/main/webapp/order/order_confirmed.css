@@ -4,7 +4,6 @@
 	src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
 	font-weight: normal;
 	font-style: normal;
-    !important;
 }
 html>body, input {
 	font-family: 'GmarketSansMedium';
@@ -41,6 +40,7 @@ input {
     box-sizing: border-box;
 }
 main {
+    margin: 50px 0 500px 0;
     padding: 24px 40px 24px 40px;
 }
 footer{
@@ -56,8 +56,8 @@ main > h2{
     border-radius: 4px;
     justify-content: center;
     align-items: center;
-    width: 60%;
-    height: 36px;
+    width: 50%;
+    height: 50px;
     margin-top: 12px;
     font-size: 16px;
     font-weight: 500;

@@ -173,22 +173,22 @@
                             <div id="other-payment-options" class="paymentMethod-others" style="display: none;">
                                 <ul class="paymentMethod-others-list">
                                     <li id="box-payment-method-type-CARD">
-                                        <button id="button-payment-CARD" onclick="">
+                                        <button type="button" id="button-payment-CARD" onclick="togglePaymentCard(true)">
                                             <span class="paymentMethod-others-text">카드</span>
                                         </button>
                                     </li>
                                     <li id="box-payment-method-type-VACCOUNT">
-                                        <button id="button-payment-VACCOUNT" onclick="">
+                                        <button type="button" id="button-payment-VACCOUNT" onclick="togglePaymentCard(false)">
                                             <span class="paymentMethod-others-text">가상계좌</span>
                                         </button>
                                     </li>
                                     <li id="box-payment-method-type-PHONE">
-                                        <button id="button-payment-PHONE" onclick="">
+                                        <button type="button" id="button-payment-PHONE" onclick="togglePaymentCard(false)">
                                             <span class="paymentMethod-others-text">휴대폰</span>
                                         </button>
                                     </li>
                                     <li id="box-payment-method-type-NAVERPAY">
-                                        <button id="button-payment-NAVERPAY" onclick="">
+                                        <button type="button" id="button-payment-NAVERPAY" onclick="togglePaymentCard(false)">
                                             <span class="paymentMethod-others-text">네이버페이</span>
                                         </button>
                                     </li>
@@ -196,18 +196,78 @@
                             </div>                    
                         </div>
                         <div>
-                            <ul class="list-payment">
+                            <ul class="list-payment" id="list-payment" style="display: none;">
                                 <div>
                                     <li>
                                         <label>
-                                            <img src="./img/payment_method_img/card_company_logo/KB_s_kr3.jpg" />
+                                            <img src="./img/payment_method_img/card_company_logo/KB_s_kr3.jpg" class="card-company-logo"/>
                                             <span>KB국민</span>
                                         </label>
                                     </li>
                                     <li>
                                         <label>
-                                            <img src="./img/payment_method_img/card_company_logo/KB_s_kr3.jpg" />
-                                            <span>KB국민</span>
+                                            <img src="./img/payment_method_img/card_company_logo/shc_ci_basic_00.png" class="card-company-logo"/>
+                                            <span>신한</span>
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label>
+                                            <img src="./img/payment_method_img/card_company_logo/HyundaiCard_Logomark.jpg" class="card-company-logo"/>
+                                            <span>현대</span>
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label>
+                                            <img src="./img/payment_method_img/card_company_logo/lottecard.png" class="card-company-logo"/>
+                                            <span>롯데</span>
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label>
+                                            <img src="./img/payment_method_img/card_company_logo/NH농협은행 CI 심볼마크.jpg" class="card-company-logo"/>
+                                            <span>농협</span>
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label>
+                                            <img src="./img/payment_method_img/card_company_logo/BC_CARD_CI.svg" class="card-company-logo"/>
+                                            <span>비씨</span>
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label>
+                                            <img src="./img/payment_method_img/card_company_logo/국문_Signature.png" class="card-company-logo"/>
+                                            <span>우리</span>
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label>
+                                            <img src="./img/payment_method_img/card_company_logo/하나카드 로고.jfif" class="card-company-logo"/>
+                                            <span>하나</span>
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label>
+                                            <img src="./img/payment_method_img/card_company_logo/Kakao_Bank_of_Korea_Logo.jpg" class="card-company-logo"/>
+                                            <span>카카오</span>
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label>
+                                            <img src="./img/payment_method_img/card_company_logo/ci_삼성카드.jpg" class="card-company-logo"/>
+                                            <span>삼성</span>
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label>
+                                            <img src="./img/payment_method_img/card_company_logo/sc로고.jpg" class="card-company-logo"/>
+                                            <span>SC</span>
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label>
+                                            <img src="./img/payment_method_img/card_company_logo/씨티.png" class="card-company-logo"/>
+                                            <span>씨티</span>
                                         </label>
                                     </li>
                                 </div>
