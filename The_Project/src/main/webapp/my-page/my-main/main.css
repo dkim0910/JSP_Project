@@ -181,10 +181,8 @@ input[type="text"], input[type="email"], input[type="tel"] {
     border-radius: 5px;
     transition: border-color 0.3s;
 }
-input[type="text"]:focus, input[type="email"]:focus, input[type="tel"]:focus {
-    border-color: #007BFF;
-    outline: none;
-}
+
+
 
 /* 멤버십 폰트 및 디자인 */
 /* 현재 포인트 섹션 스타일 */
