@@ -79,12 +79,15 @@
                 <main class="main-hello">
                     <!-- 처음 들어왔을때 보여주는 화면 박스 (어서오세요 박스)-->
                     <div class="hello">
-                        <p class="left" style="font-weight: bold; cursor: pointer;" onclick="showContent('my-info')">닉네임</p> <!-- 여기 '닉네임' 에 DB에서 가져온 username 삽입 -->
+                        <p class="left" style="font-weight: bold; cursor: pointer;" onclick="showContent('my-info')">닉네임
+                        </p> <!-- 여기 '닉네임' 에 DB에서 가져온 username 삽입 -->
                         <div class="right-container">
 
-                            <p id="member-status" class="right" style="cursor: pointer;" onclick="showContent('membership')">회원 등급: ~~~</p>
+                            <p id="member-status" class="right" style="cursor: pointer;"
+                                onclick="showContent('membership')">회원 등급: ~~~</p>
                             <!-- member-status 라는게 화원 등급 설정임 (3번 구매하면 브론즈 5번 구매하면 실버 등 로직 추가하기) -->
-                            <p id="user-member-point" class="right" style="cursor: pointer;" onclick="showContent('membership')">잔여 포인트: ~~~p</p>
+                            <p id="user-member-point" class="right" style="cursor: pointer;"
+                                onclick="showContent('membership')">잔여 포인트: ~~~p</p>
                             <!-- user-member-point 라는게 잔여 포인트임 -->
                         </div>
 
@@ -137,64 +140,7 @@
                                             <p><strong>예상 도착일:</strong> 5일 후</p>
                                         </div>
                                     </div>
-                                    <style>
-                                        .tracking-container {
-                                            max-width: 800px;
-                                            margin: 0 auto;
-                                            padding: 20px;
-                                        }
 
-                                        .tracking-header {
-                                            text-align: center;
-                                        }
-
-                                        .tracking-box {
-                                            background-color: #f9f9f9;
-                                            padding: 20px;
-                                            border-radius: 8px;
-                                            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-                                            margin-top: 20px;
-                                        }
-
-                                        #tracking-form {
-                                            display: flex;
-                                            gap: 10px;
-                                        }
-
-                                        #order-number {
-                                            flex: 1;
-                                            padding: 10px;
-                                            border: 1px solid #ccc;
-                                            border-radius: 5px;
-                                            margin-top: 20px;
-                                        }
-
-                                        .tracking-info {
-                                            margin-top: 20px;
-                                        }
-
-                                        .progress-container {
-                                            background-color: #e0e0e0;
-                                            border-radius: 5px;
-                                            height: 20px;
-                                            position: relative;
-                                            margin: 20px 0;
-                                        }
-
-                                        .progress-bar {
-                                            background-color: #007bff;
-                                            height: 100%;
-                                            border-radius: 5px;
-                                            transition: width 0.3s ease;
-                                        }
-
-                                        .progress-labels {
-                                            display: flex;
-                                            justify-content: space-between;
-                                            margin-top: 5px;
-                                            font-size: 0.9rem;
-                                        }
-                                    </style>
                                 </div>
 
 
@@ -405,92 +351,6 @@
                                 </section>
                             </div>
 
-
-                            <style>
-                                /* 스크롤 가능한 이벤트 카드 섹션 */
-                                .events-section-wrapper {
-                                    max-height: 690px;
-                                   
-                                    overflow-y: auto;
-                                    /* 세로 스크롤 활성화 */
-                                    padding: 20px;
-                                }
-
-                                .events-section {
-                                    display: flex;
-                                    flex-direction: column;
-                                    /* 세로로 정렬 */
-                                    align-items: center;
-                                    gap: 20px;
-                                }
-
-                                /* 이벤트 카드 스타일 */
-                                .event-card {
-                                    background-color: #fff;
-                                    border-radius: 10px;
-                                    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-                                    width: 100%;
-                                    /* 전체 너비를 차지 */
-                                    max-width: 500px;
-                                    /* 카드 최대 너비 */
-                                    overflow: hidden;
-                                    transition: transform 0.3s ease;
-                                }
-
-                                .event-card:hover {
-                                    transform: translateY(-5px);
-                                }
-
-                                .event-card img {
-                                    width: 100%;
-                                    height: 150px;
-                                    /* 이미지 높이 */
-                                    object-fit: cover;
-                                }
-
-                                .event-card-content {
-                                    padding: 20px;
-                                    text-align: center;
-                                }
-
-                                .event-card-content h3 {
-                                    font-size: 1.5rem;
-                                    margin-bottom: 10px;
-                                }
-
-                                .event-card-content p {
-                                    font-size: 1rem;
-                                    color: #666;
-                                }
-
-                                .event-card-content a {
-                                    display: inline-block;
-                                    margin-top: 15px;
-                                    padding: 10px 20px;
-                                    color: white;
-                                    border-radius: 5px;
-                                    text-decoration: none;
-                                    transition: background-color 0.3s ease;
-                                }
-
-
-                                /* 스크롤바 스타일 (선택 사항, 크롬 기준) */
-                                .events-section-wrapper::-webkit-scrollbar {
-                                    width: 8px;
-                                }
-
-                                .events-section-wrapper::-webkit-scrollbar-thumb {
-                                    background-color: black;
-                                    border-radius: 10px;
-                                }
-
-                                .events-section-wrapper::-webkit-scrollbar-track {
-                                    background-color: #f4f4f4;
-                                }
-                            </style>
-
-
-
                         </div>
                     </div>
 
@@ -508,11 +368,11 @@
                                     <!-- 공지1 -->
                                     <div class="event-card">
                                         <a href="https://www.naver.com/">
-                                        <div class="event-card-content">
-                                            <h3>공지1</h3>
-                                            <p>세일 안해요.</p>
-                                        </div>
-                                    </a>
+                                            <div class="event-card-content">
+                                                <h3>공지1</h3>
+                                                <p>세일 안해요.</p>
+                                            </div>
+                                        </a>
                                     </div>
 
                                     <!-- 공지 2 -->
@@ -552,7 +412,8 @@
                     <!-- 회원 탈퇴 -->
                     <div id="byebye" class="content-section" style="display: none;">
                         <div class="profile-container">
-                            <a href="../sign-off.html"><input type="button" class="all-button" value="탈퇴하기" style="cursor: pointer;" /></a>
+                            <a href="../sign-off.html"><input type="button" class="all-button" value="탈퇴하기"
+                                    style="cursor: pointer;" /></a>
                         </div>
                     </div>
 
@@ -629,3 +490,12 @@
 <script src="main-script.js"></script>
 
 </html>
+
+
+
+
+
+
+
+
+
