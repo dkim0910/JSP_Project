@@ -21,6 +21,7 @@ body {
 
 .container {
     max-width: 1600px;
+    box-sizing: border-box; /* width + padding <= max-width */
     margin: 0 auto;
     padding: 0px 40px 20px;
     background-color: #fff;
