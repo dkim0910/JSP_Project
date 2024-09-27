@@ -14,7 +14,7 @@
 <!-- 테일윈드 css 불러오기 -->
 <script src="https://cdn.tailwindcss.com"></script>
 
-<body>
+<body style="cursor: default;">
     <div class="header-container">
         <header class="header">
             <a href="../../main-page/login_main.html" class="" aria-label="이전 페이지로 이동 (로그인 후의 메인 페이지)">
@@ -25,11 +25,12 @@
                 </svg>
             </a>
 
-            <h1 onclick="toggleBold(this); showContent('maincontents')" style="cursor: pointer; color: #ffffff;">마이 페이지
+            <h1 onclick="toggleBold(this); showContent('maincontents')" style="color: #ffffff; cursor: default;">
+                마이 페이지
             </h1>
 
             <a href="../../cart/cart.jsp">
-                <label style="cursor: pointer;">
+                <label style="font-size: 24px; cursor: pointer;">
                     <input type="button" value="장바구니" style="cursor: pointer;" />
                     <!-- 장바구니 이미지 -->
                     <i class="fa-solid fa-cart-shopping"></i>
@@ -407,15 +408,61 @@
                         </div>
                     </div>
 
-
+                    <!-- <a href="../sign-off.html"></a> -->
 
                     <!-- 회원 탈퇴 -->
                     <div id="byebye" class="content-section" style="display: none;">
                         <div class="profile-container">
-                            <a href="../sign-off.html"><input type="button" class="all-button" value="탈퇴하기"
-                                    style="cursor: pointer;" /></a>
+
+                            <button onclick="showModal()" class="all-button">회원 탈퇴</button>
+
+                            <div id="modal">
+                                <div id="modalContent">
+                                    <h2>회원 탈퇴 확인</h2>
+                                    <p>회원 탈퇴하시겠습니까?</p>
+                                    <button class="all-button" onclick="confirmWithdrawal(true)">네</button>
+                                    <button class="all-button" onclick="confirmWithdrawal(false)">아니오</button>
+                                </div>
+                            </div>
+
                         </div>
+                        <style>
+                            body {
+                                background-color: #f0f0f0;
+                                /* 연한 회색 */
+                                color: #333;
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                height: 100vh;
+                                margin: 0;
+                            }
+
+                            /* 모달 스타일 */
+                            #modal {
+                                display: none;
+                                /* 기본적으로 숨김 */
+                                position: fixed;
+                                z-index: 1000;
+                                left: 0;
+                                top: 0;
+                                width: 100%;
+                                height: 100%;
+                                background-color: rgba(0, 0, 0, 0.7);
+                                justify-content: center;
+                                align-items: center;
+                            }
+
+                            #modalContent {
+                                background: white;
+                                padding: 20px;
+                                border-radius: 8px;
+                                text-align: center;
+                            }
+                        </style>
                     </div>
+
+
 
 
 
@@ -490,12 +537,3 @@
 <script src="main-script.js"></script>
 
 </html>
-
-
-
-
-
-
-
-
-
