@@ -450,8 +450,28 @@ input[type="text"], input[type="email"], input[type="tel"] {
     background-color: #f4f4f4;
 }
 
+/* 회원 탈퇴 */
+ /* 모달 스타일 */
+ #modal {
+    display: none;
+    /* 기본적으로 숨김 */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+}
 
-
+#modalContent {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+}
 
 
 
