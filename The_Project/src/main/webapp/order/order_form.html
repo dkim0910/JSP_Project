@@ -4,12 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>주문 페이지 | 쇼핑하조</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 </head>
 <style>
     @import url(order_form.css);
 </style>
+<script src="order_form.js"></script>
 <body>
-    <script src="order_form.js"></script>
     <head>
     </head>
     <body style="overflow: unset">
@@ -54,20 +55,18 @@
                             <span class="sheet-address-number" id="recipient-mobile" style>
                                 010-1234-1234
                             </span>
-                            <select class="sheet-address-select" id="sheet-delivery-message">
-                                <option class="sheet-address-select-text-active" id="delivery-message-select-display">
-                                    문 앞에 놔주세요
-                                </option>
-                                <option class="sheet-address-select-text-active" id="delivery-message-select-display">
-                                    경비실에 맡겨주세요
-                                </option>
-                                <option class="sheet-address-select-text-active" id="delivery-message-select-display">
-                                    택배함에 넣어주세요
-                                </option>
-                                <option class="sheet-address-select-text-active" id="delivery-message-select-display">
-                                    배송 전에 연락주세요
-                                </option>
-                            </select>
+                            <div class="sheet-message-select">
+                                <button type="button" class="sheet-message-text">
+                                    배송 메세지를 선택하세요.
+                                    <!-- <img src="./img/svg/down-arrow-svgrepo-com.png" alt="" class="icon-down" width="12" height="12"> -->
+                                </button>    
+                                <ul class="sheet-message-selectbox">
+                                    <li><button type="button" class="sheet-message-option-btn">문 앞에 놔주세요</button></li>                       
+                                    <li><button type="button" class="sheet-message-option-btn">경비실에 맡겨주세요</button></li>                                    
+                                    <li><button type="button" class="sheet-message-option-btn">택배함에 넣어주세요</button></li>                   
+                                    <li><button type="button" class="sheet-message-option-btn">배송 전에 연락주세요</button></li>      
+                                </ul>    
+                            </div>
                         </div>
                     </section>
                     <br/>
@@ -80,7 +79,7 @@
                             <div class="sheet-order-product-cartItem" data-goods-no="3997992" data-cart-id="1076429836">
                                 <div class="sheet-order-product-box">
                                     <div class="sheet-order-product-image-box">
-                                        <img class="sheet-order-product-image" src="payment_method_img/t-4.jpg">
+                                        <img class="sheet-order-product-image" src="./img/payment_method_img/t-4.jpg">
                                     </div>
                                     <div class="sheet-order-product-information">
                                         <a class="sheet-order-product-brand" title="아디다스">아디다스</a>
@@ -149,19 +148,19 @@
                         <div class="payment-method-choice">
                             <label>
                                 <input type="radio" name="button-payment-type" id="button-payment-TOSSPAY" class="payment-method-type-input" onclick="toggleOtherPayments(false)">
-                                <img src="payment_method_img/Toss-Symbol.png" class="payment-method-logo-TOSSPAY">
+                                <img src="./img/payment_method_img/Toss-Symbol.png" class="payment-method-logo-TOSSPAY">
                                 토스페이
                             </label>
                             <br/>
                             <label>
                                 <input type="radio" name="button-payment-type" id="button-payment-KAKAOPAY" class="payment-method-type-input" onclick="toggleOtherPayments(false)">
-                                <img src="payment_method_img/payment_icon_yellow_small.png" class="payment-method-logo-KAKAOPAY">
+                                <img src="./img/payment_method_img/payment_icon_yellow_small.png" class="payment-method-logo-KAKAOPAY">
                                 카카오페이
                             </label>
                             <br/>
                             <label>
                                 <input type="radio" name="button-payment-type" id="button-payment-PAYCO" class="payment-method-type-input" onclick="toggleOtherPayments(false)">
-                                <img src="payment_method_img/1_PAYCO_Red.png" class="payment-method-logo-PAYCO">
+                                <img src="./img/payment_method_img/1_PAYCO_Red.png" class="payment-method-logo-PAYCO">
                                 페이코
                             </label>
                             <br/>
@@ -199,13 +198,13 @@
                                 <div>
                                     <li>
                                         <label>
-                                            <img src="payment_method_img/card_company_logo/KB_s_kr3.jpg" />
+                                            <img src="./img/payment_method_img/card_company_logo/KB_s_kr3.jpg" />
                                             <span>KB국민</span>
                                         </label>
                                     </li>
                                     <li>
                                         <label>
-                                            <img src="payment_method_img/card_company_logo/KB_s_kr3.jpg" />
+                                            <img src="./img/payment_method_img/card_company_logo/KB_s_kr3.jpg" />
                                             <span>KB국민</span>
                                         </label>
                                     </li>
@@ -298,7 +297,7 @@
                                 </strong>
                             </div>
                             <br/>
-                            <div class="sheet-purchase-button-bottom" onclick="location.href='../my-page/order-status.html';">
+                            <div class="sheet-purchase-button-bottom" onclick="location.href='../../my-page/order-status.html';">
                                 <div class="sheet-purchase-button">
                                     <span class="sheet-purchase-button-price">
                                         100,000
@@ -394,7 +393,7 @@
               </div>
         </main>
         <footer>
-            <div class="sheet-purchase-button-bottom" id="sheet-purchase-button2" onclick="location.href='../my-page/order-status.html';">
+            <div class="sheet-purchase-button-bottom" id="sheet-purchase-button2" onclick="location.href='../../my-page/order-status.html';">
                 <div class="sheet-purchase-button">
                     <span class="sheet-purchase-button-price" id="display-result-pay-amount">
                         100,000
