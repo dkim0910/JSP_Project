@@ -21,7 +21,7 @@
 			session.setAttribute("session_id", member);
 	%>
 		<script>
-			location.href = '../main-page/login_main.html';
+			location.href = '../main-page/login_main.jsp';
 		</script>
 	<%} else { 								// 로그인 실패 %>
 		<script>
