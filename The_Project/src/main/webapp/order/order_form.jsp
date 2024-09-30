@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,6 +10,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
+<script src="https://cdn.tailwindcss.com"></script>
 <style>
     @import url(order_form.css);
 </style>
@@ -44,12 +47,17 @@
                                 <span class="sheet-address-title-label" id="recipient-default" style="display: block;">
                                     기본 배송지
                                 </span>
-                                <button class="sheet-address-title-button" type="button" id="button-address-register" style="display: none">
-                                    배송지 등록
-                                </button>
-                                <button class="sheet-address-title-button" type="button" id="button-address-change" onclick="openPopup_AddressChange()">
+                                <button class="sheet-address-title-button" type="button" id="button-address-change" onclick="new_execDaumPostcode()">
                                     배송지 변경
                                 </button>
+                            </div>
+                            <div>
+                            	<div class="form-input-address">
+		                            <input type="text" id="input_postcode" placeholder="우편번호"><br/>
+									<input type="text" id="input_address" placeholder="주소"><br/>
+									<input type="text" id="input_detailAddress" placeholder="상세주소">
+									<input type="text" id="input_extraAddress" placeholder="참고항목">
+                            	</div>
                             </div>
                             <span class="sheet-address-address" id="recipient-address" style>
                                 서울시 강남구 강남대로 1길 쇼핑하조빌딩
@@ -149,19 +157,19 @@
                         </div>
                         <div class="payment-method-choice">
                             <label>
-                                <input type="radio" name="button-payment-type" id="button-payment-TOSSPAY" class="payment-method-type-input" onclick="toggleOtherPayments(false)">
+                                <input type="radio" name="button-payment-type" id="button-payment-TOSSPAY" class="payment-method-type-input" onclick="toggleOtherPayments(false); togglePaymentCard(false)">
                                 <img src="./img/payment_method_img/Toss-Symbol.png" class="payment-method-logo-TOSSPAY">
                                 토스페이
                             </label>
                             <br/>
                             <label>
-                                <input type="radio" name="button-payment-type" id="button-payment-KAKAOPAY" class="payment-method-type-input" onclick="toggleOtherPayments(false)">
+                                <input type="radio" name="button-payment-type" id="button-payment-KAKAOPAY" class="payment-method-type-input" onclick="toggleOtherPayments(false); togglePaymentCard(false)">
                                 <img src="./img/payment_method_img/payment_icon_yellow_small.png" class="payment-method-logo-KAKAOPAY">
                                 카카오페이
                             </label>
                             <br/>
                             <label>
-                                <input type="radio" name="button-payment-type" id="button-payment-PAYCO" class="payment-method-type-input" onclick="toggleOtherPayments(false)">
+                                <input type="radio" name="button-payment-type" id="button-payment-PAYCO" class="payment-method-type-input" onclick="toggleOtherPayments(false); togglePaymentCard(false)">
                                 <img src="./img/payment_method_img/1_PAYCO_Red.png" class="payment-method-logo-PAYCO">
                                 페이코
                             </label>
@@ -173,22 +181,22 @@
                             <div id="other-payment-options" class="paymentMethod-others" style="display: none;">
                                 <ul class="paymentMethod-others-list">
                                     <li id="box-payment-method-type-CARD">
-                                        <button id="button-payment-CARD" onclick="">
+                                        <button type="button" id="button-payment-CARD" onclick="togglePaymentCard(true)">
                                             <span class="paymentMethod-others-text">카드</span>
                                         </button>
                                     </li>
                                     <li id="box-payment-method-type-VACCOUNT">
-                                        <button id="button-payment-VACCOUNT" onclick="">
+                                        <button type="button" id="button-payment-VACCOUNT" onclick="togglePaymentCard(false)">
                                             <span class="paymentMethod-others-text">가상계좌</span>
                                         </button>
                                     </li>
                                     <li id="box-payment-method-type-PHONE">
-                                        <button id="button-payment-PHONE" onclick="">
+                                        <button type="button" id="button-payment-PHONE" onclick="togglePaymentCard(false)">
                                             <span class="paymentMethod-others-text">휴대폰</span>
                                         </button>
                                     </li>
                                     <li id="box-payment-method-type-NAVERPAY">
-                                        <button id="button-payment-NAVERPAY" onclick="">
+                                        <button type="button" id="button-payment-NAVERPAY" onclick="togglePaymentCard(false)">
                                             <span class="paymentMethod-others-text">네이버페이</span>
                                         </button>
                                     </li>
@@ -196,18 +204,90 @@
                             </div>                    
                         </div>
                         <div>
-                            <ul class="list-payment">
+                            <ul class="list-payment" id="list-payment" style="display: none;">
                                 <div>
                                     <li>
-                                        <label>
-                                            <img src="./img/payment_method_img/card_company_logo/KB_s_kr3.jpg" />
+                                        <label class="list-payment-label">
+                                            <input type="radio" name="card-selection" class="card-selection-input" />
+                                            <img src="./img/payment_method_img/card_company_logo/KB_s_kr3.jpg" class="card-company-logo"/>
                                             <span>KB국민</span>
                                         </label>
                                     </li>
                                     <li>
-                                        <label>
-                                            <img src="./img/payment_method_img/card_company_logo/KB_s_kr3.jpg" />
-                                            <span>KB국민</span>
+                                        <label class="list-payment-label">
+                                            <input type="radio" name="card-selection" class="card-selection-input" />
+                                            <img src="./img/payment_method_img/card_company_logo/shc_ci_basic_00.png" class="card-company-logo"/>
+                                            <span>신한</span>
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label class="list-payment-label">
+                                            <input type="radio" name="card-selection" class="card-selection-input" />
+                                            <img src="./img/payment_method_img/card_company_logo/HyundaiCard_Logomark.jpg" class="card-company-logo"/>
+                                            <span>현대</span>
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label class="list-payment-label">
+                                            <input type="radio" name="card-selection" class="card-selection-input" />
+                                            <img src="./img/payment_method_img/card_company_logo/lottecard.png" class="card-company-logo"/>
+                                            <span>롯데</span>
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label class="list-payment-label">
+                                            <input type="radio" name="card-selection" class="card-selection-input" />
+                                            <img src="./img/payment_method_img/card_company_logo/NH농협은행 CI 심볼마크.jpg" class="card-company-logo"/>
+                                            <span>농협</span>
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label class="list-payment-label">
+                                            <input type="radio" name="card-selection" class="card-selection-input" />
+                                            <img src="./img/payment_method_img/card_company_logo/BC_CARD_CI.svg" class="card-company-logo"/>
+                                            <span>비씨</span>
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label class="list-payment-label">
+                                            <input type="radio" name="card-selection" class="card-selection-input" />
+                                            <img src="./img/payment_method_img/card_company_logo/국문_Signature.png" class="card-company-logo"/>
+                                            <span>우리</span>
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label class="list-payment-label">
+                                            <input type="radio" name="card-selection" class="card-selection-input" />
+                                            <img src="./img/payment_method_img/card_company_logo/하나카드 로고.jfif" class="card-company-logo"/>
+                                            <span>하나</span>
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label class="list-payment-label">
+                                            <input type="radio" name="card-selection" class="card-selection-input" />
+                                            <img src="./img/payment_method_img/card_company_logo/Kakao_Bank_of_Korea_Logo.jpg" class="card-company-logo"/>
+                                            <span>카카오</span>
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label class="list-payment-label">
+                                            <input type="radio" name="card-selection" class="card-selection-input" />
+                                            <img src="./img/payment_method_img/card_company_logo/ci_삼성카드.jpg" class="card-company-logo"/>
+                                            <span>삼성</span>
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label class="list-payment-label">
+                                            <input type="radio" name="card-selection" class="card-selection-input" />
+                                            <img src="./img/payment_method_img/card_company_logo/sc로고.jpg" class="card-company-logo"/>
+                                            <span>SC</span>
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label class="list-payment-label">
+                                            <input type="radio" name="card-selection" class="card-selection-input" />
+                                            <img src="./img/payment_method_img/card_company_logo/씨티.png" class="card-company-logo"/>
+                                            <span>씨티</span>
                                         </label>
                                     </li>
                                 </div>
@@ -300,7 +380,7 @@
                                     </strong>
                                 </div>
                                 <br/>
-                                <div class="sheet-purchase-button-bottom" onclick="location.href='../order/order_confirmed.html';">
+                                <div class="sheet-purchase-button-bottom" onclick="location.href='../order/order_confirmed.jsp';">
                                     <div class="sheet-purchase-button">
                                         <span class="sheet-purchase-button-price">
                                             100,000
@@ -397,7 +477,7 @@
               </div>
         </main>
         <footer>
-            <div class="sheet-purchase-button-bottom" id="sheet-purchase-button2" onclick="location.href='../order/order_confirmed.html';">
+            <div class="sheet-purchase-button-bottom" id="sheet-purchase-button2" onclick="location.href='../order/order_confirmed.jsp';">
                 <div class="sheet-purchase-button">
                     <span class="sheet-purchase-button-price" id="display-result-pay-amount">
                         100,000
@@ -410,4 +490,54 @@
     </body>
 
 </body>
+<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+<script>
+    function new_execDaumPostcode() {
+        new daum.Postcode({
+            oncomplete: function(data) {
+                // 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분.
+
+                // 각 주소의 노출 규칙에 따라 주소를 조합한다.
+                // 내려오는 변수가 값이 없는 경우엔 공백('')값을 가지므로, 이를 참고하여 분기 한다.
+                var addr = ''; // 주소 변수
+                var extraAddr = ''; // 참고항목 변수
+
+                //사용자가 선택한 주소 타입에 따라 해당 주소 값을 가져온다.
+                if (data.userSelectedType === 'R') { // 사용자가 도로명 주소를 선택했을 경우
+                    addr = data.roadAddress;
+                } else { // 사용자가 지번 주소를 선택했을 경우(J)
+                    addr = data.jibunAddress;
+                }
+
+                // 사용자가 선택한 주소가 도로명 타입일때 참고항목을 조합한다.
+                if(data.userSelectedType === 'R'){
+                    // 법정동명이 있을 경우 추가한다. (법정리는 제외)
+                    // 법정동의 경우 마지막 문자가 "동/로/가"로 끝난다.
+                    if(data.bname !== '' && /[동|로|가]$/g.test(data.bname)){
+                        extraAddr += data.bname;
+                    }
+                    // 건물명이 있고, 공동주택일 경우 추가한다.
+                    if(data.buildingName !== '' && data.apartment === 'Y'){
+                        extraAddr += (extraAddr !== '' ? ', ' + data.buildingName : data.buildingName);
+                    }
+                    // 표시할 참고항목이 있을 경우, 괄호까지 추가한 최종 문자열을 만든다.
+                    if(extraAddr !== ''){
+                        extraAddr = ' (' + extraAddr + ')';
+                    }
+                    // 조합된 참고항목을 해당 필드에 넣는다.
+                    document.getElementById("input_extraAddress").value = extraAddr;
+                
+                } else {
+                    document.getElementById("input_extraAddress").value = '';
+                }
+
+                // 우편번호와 주소 정보를 해당 필드에 넣는다.
+                document.getElementById('input_postcode').value = data.zonecode;
+                document.getElementById("input_address").value = addr;
+                // 커서를 상세주소 필드로 이동한다.
+                document.getElementById("input_detailAddress").focus();
+            }
+        }).open();
+    }
+</script>
 </html>

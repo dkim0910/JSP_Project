@@ -4,11 +4,10 @@
 	src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
 	font-weight: normal;
 	font-style: normal;
-    !important;
 }
 
 
-html>body, input, button {
+html>body, button {
 	font-family: 'GmarketSansMedium';
 	text-underline-position: under;
 }
@@ -56,6 +55,9 @@ html, body{
     padding: 12px 16px;
     box-sizing: border-box;
 }
+.order_form-headline > a {
+    height: 28px;
+}
 .order_form-headline-text{
     font-size: 20px;
     flex: 0 1 auto;
@@ -85,17 +87,25 @@ button{
 /* ------주문서------ */
 
 /* ------배송지------ */
+/* ------배송지(Daum API)------ */
+#new_postcode{
+	width: 7em;
+}
+.form-input-address input{
+	margin: .2em 0;
+	font-size: 1em;
+	padding: .5em;
+	border: 1px solid #ccc;
+ 	border-color: #dbdbdb #d2d2d2 #d0d0d0 #d2d2d3;
+ 	vertical-align: middle;
+ 	line-height: 1.25em;
+ 	outline: 0;
+}
+/* ------배송지(Daum API)------ */
 .sheet-address{
     box-sizing: border-box;
     width: 100%;
     padding: 0 16px;
-}
-.sheet-address-address{
-    padding: 4px 0;
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 18px;
-    display: block;
 }
 .sheet-address-title{
     align-items: center;
@@ -114,14 +124,6 @@ button{
     font-weight: 500;
     line-height: 18px;
 }
-.sheet-address-number{
-    padding: 4px 0;
-    font-size: 15px;
-    font-weight: 400;
-    line-height: 18px;
-    display: flex;
-    margin-bottom: 10px;
-}
 .sheet-message-text{
     font-size: 14px;
     justify-content: space-between;
@@ -133,7 +135,7 @@ button{
     border: 1px solid #c4c4c4;
     box-sizing: border-box;
     border-radius: 4px;
-    padding: 13px 10px
+    padding: 13px 10px;
     margin-top: 9px;
     margin-bottom: 6px;
     display: flex;
@@ -330,7 +332,7 @@ h2{
     border-radius: 4px;
     width: 100%;
     padding: 6px 8px;
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 400;
     line-height: 20px;
     display: flex;
@@ -370,6 +372,9 @@ input{
     padding: 8px 0 8px 24px;
     display: flex;
     position: relative;
+}
+.payment-method-choice > label > input, .payment-method-choice > label > img {
+    display: inline-block;
 }
 input[type='radio'] {
     -webkit-appearance: none;
@@ -411,6 +416,7 @@ a, div{
 .payment-method-type-input [type="radio"]:checked{
     z-index: 1;
     display: block;
+
 }
 .paymentMethod-others{
     text-align: center;
@@ -421,7 +427,7 @@ a, div{
     flex-wrap: wrap;
     justify-content: space-between;
     width: 100%;
-    padding: 0 16px 8px 40px;
+    padding: 0 50px 8px 50px;
     display: flex;
     list-style: none;
     margin: 1px;
@@ -440,25 +446,35 @@ a, div{
     border-radius: 4px;
     justify-content: center;
     align-items: center;
-    width: 100%;
     height: 36px;
     display: flex;
     overflow: hidden;   
+    float: left;
 }
 #button-payment-CARD, #button-payment-VACCOUNT, #button-payment-PHONE, #button-payment-NAVERPAY{
   border: none;  
   display: inline-block;
+  width: 100%;
+  height: auto;
+}
+.card-selection-input{
+    top: 0;
+    left: 0;
+    opacity: 0;
+    position: absolute;
 }
 .list-payment li{
     position: relative;
     float: left;
 }
 .list-payment span{
-    margin-top: 8px;
-    text-align: center;
     line-height: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 0 0 0;
 }
-.list-payment label{
+.list-payment li {
     float: left;
     width: 117px;
     height: 117px;
@@ -466,6 +482,24 @@ a, div{
     border: 1px solid #eee;
     box-sizing: border-box;
     cursor: pointer;
+    transition: border 0.3s ease;
+}
+.list-payment li:hover,
+.list-payment li:focus {
+    border: 1px solid black;
+}
+.card-selection li:checked + label {
+    border: 1px solid black;
+}
+.list-payment li:active {
+    border: 1px solid black;
+}
+
+.card-company-logo{
+    height: 60px;
+    width: auto;
+    object-fit: cover;
+    margin: auto;
 }
 ul{
     list-style: none;
@@ -517,7 +551,7 @@ ul{
     font-weight: 600;
     line-height: 20px;
 }
-.sheet-save-point,{
+.sheet-save-point{
     box-sizing: border-box;
     width: 100%;
     padding: 0 12px;

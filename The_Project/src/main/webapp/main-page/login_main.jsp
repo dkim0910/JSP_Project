@@ -1,6 +1,9 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@page import="com.kh.web.beans.TblMember"%>    
+<%@page import="com.kh.web.dao.MemberHelper"%>     
 <!DOCTYPE html>
 <html lang="ko">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -42,10 +45,24 @@
         <div class="flex-1 h-full">
           <div id="icon-box">
             <div id="icon">
-              <div class="user">
-                <span>안녕하세요 ~~~님</span>
-              </div>
-              <a href="../my-page/my-main/my-page-main.html" id="login">
+            	<div class="user">
+				    <%
+				        // 세션에서 회원 정보 가져오기
+				        TblMember member = (TblMember) session.getAttribute("session_member"); // 세션에서 가져올 때 같은 이름 사용
+				
+				        // 회원 정보가 null이 아닐 경우 출력
+				        if (member != null) {
+				    %>
+				        <%= member.getUSER_id() %>님 (<%= member.getUsername() %>)
+				    <%
+				        } else {
+				    %>
+				        로그인 해주세요.
+				    <%
+				        }
+				    %>
+				</div>
+              <a href="../my-page/my-main/my-page-main.jsp" id="login">
                 <i class="fa-regular fa-user"></i>
               </a>
               <a href="../cart/cart.jsp" id="cart">

@@ -108,7 +108,7 @@
 	            <c:when test="${!empty requestScope.user }">
 					<c:set var="user" value="${requestScope.user }"/>
 	                <div>
-						${user.username}님의 아이디는 <strong> ${user.userid}</strong> 입니다.
+						${user.username}님의 아이디는 <strong> ${user.USER_id}</strong> 입니다.
 					</div>
 	            </c:when>
 	            <c:otherwise>

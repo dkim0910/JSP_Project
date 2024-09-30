@@ -1,3 +1,7 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ page import="java.util.List" %>
+<%@ page import="com.example.model.CartItem" %>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -51,7 +55,7 @@
                     <section class="goods-category" id="beauty-section">
                         <h2 class="goods-category-index" >뷰티</h2>
                         <div class="goods-category-real">
-                            <a href="./detail/detail.html" class="goods" name="헤어케어">
+                            <a href="./detail/detail.jsp" class="goods" name="헤어케어">
                                 <img src="https://image.msscdn.net/images/category_img/men/ITEM_104006_17164420040904_big.png" >
                                 <span>헤어케어</span>
                                 <div class="product-description">

@@ -127,7 +127,7 @@
 
         <!-- 아이디 입력 필드 -->
         <div class="input_row">
-            <input type="text" name="userid" class="input_style" placeholder="아이디">
+            <input type="text" name="USER_id" class="input_style" placeholder="아이디">
         </div>
 
         <!-- 비밀번호 입력 필드 -->

@@ -1,9 +1,11 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>결제가 완료되었습니다.</title>
+    <title>결제가 완료되었습니다. | 쇼핑하조</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -13,12 +15,58 @@
 </style>
 <body>
     <header>
-        <div class="order_confirmed-headline">                           
+        <div class="order_confirmed-headline">
+            <div id="logo-box" class="self-center">
+                <a href="../main-page/login_main.html" id="logo" class="flex">
+                  <span>쇼핑하조</span>
+                </a>
+              </div>
+            <div class="flex-1 h-full">
+                <div id="icon-box">
+                  <div id="icon">
+                    <a href="../my-page/my-main/my-page-main.html" id="login">
+                      <i class="fa-regular fa-user"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>                           
         </div>
     </header>
     <main> 
         <h2>결제가 완료되었습니다. 주문해주셔서 감사합니다.</h2>
-        <button type="button" class="button-order-status" onclick="location.href='../my-page/ordered/order-status.html';">
+        <br/>
+        <section class="sheet-section" id="sheet-section-product">
+            <div class="sheet-title">
+                <h2 class="sheet-title-count">주문 상품 1개</h2>
+            </div>
+            <div class="sheet-order-product">
+                <div class="sheet-order-product-cartItem" data-goods-no="3997992" data-cart-id="1076429836">
+                    <div class="sheet-order-product-box">
+                        <div class="sheet-order-product-image-box">
+                            <img class="sheet-order-product-image" src="./img/payment_method_img/t-4.jpg">
+                        </div>
+                        <div class="sheet-order-product-information">
+                            <a class="sheet-order-product-brand" title="아디다스">아디다스</a>
+                            <br/>                               
+                            <a class="sheet-order-product-name" title="vintage washed Tee_BLUE">
+                                vintage washed Tee_BLUE
+                            </a>
+                            <br/>
+                            <span class="sheet-order-product-option">XL / 1개</span>                                     
+                            <div class="sheet-order-product-price-box">
+                                <strong class="sheet-order-product-price-coupon rolling-counter" id="display-product-price-coupon-box-1076429836" style="display: none">
+                                    <span class="rolling-number" id="display-product-price-coupon-1076429836">0</span>
+                                    <span>원</span>
+                                </strong>
+                                <br/>                                   
+                                <span class="sheet-order-product-price-sale" id="display-product-price-origin-1076429836">100,000원</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <button type="button" class="button-order-status" onclick="location.href='../my-page/ordered/order-status.jsp';">
             주문 내역 바로가기
         </button>
     </main>
