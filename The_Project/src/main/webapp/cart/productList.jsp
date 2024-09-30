@@ -2,25 +2,81 @@
 <html>
 <head>
     <title>상품 목록</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            padding: 20px;
+        }
+
+        .product {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .product img {
+            width: 100px;
+            height: auto;
+            margin-right: 20px;
+        }
+
+        .product-details {
+            flex-grow: 1;
+        }
+
+        .product-name {
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .product-price {
+            color: #333;
+            margin: 5px 0;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
 </head>
 <body>
 
-<h1>상품 목록</h1>
-
-<!-- 상품 목록을 표시 -->
-<c:forEach var="product" items="${productList}">
-    <div class="product">
-        <h2>${product.name}</h2>
-        <p>가격: ${product.price}원</p>
-        <!-- 장바구니에 추가하는 폼 -->
-        <form action="addToCart.jsp" method="post">
-            <input type="hidden" name="productId" value="${product.id}">
-            <input type="hidden" name="productName" value="${product.name}">
-            <input type="hidden" name="productPrice" value="${product.price}">
-            <button type="submit">장바구니 담기</button>
-        </form>
-    </div>
-</c:forEach>
+<div class="container">
+    <h1>상품 목록</h1>
+    
+    <!-- 상품 목록 -->
+    <c:forEach var="product" items="상의">
+        <div class="product">
+            <div class="product-details">
+                <p class="product-name">후드티</p>
+                <p class="product-price">10000원</p>
+            </div>
+            <!-- 장바구니 담기 버튼 -->
+            <form action="addToCart.jsp" method="post">
+                <input type="hidden" name="productId" value="상의">
+                <input type="hidden" name="productName" value="후드티">
+                <input type="hidden" name="productPrice" value="10000">
+                <button type="submit">장바구니 담기</button>
+            </form>
+        </div>
+    </c:forEach>
+</div>
 
 </body>
 </html>

@@ -102,14 +102,14 @@
 <body>
 	<div class="top-section"></div>
 	<div class="form-container">
+	<c:set var="user" value="${requestScope.user}" />
 	
 	    <h2>비밀번호 찾기 결과</h2>
 	
 	        <c:choose>
-				<c:when test="${!empty requestScope.userp}">
-				    <c:set var="userp" value="${requestScope.userp}" />
+				<c:when test="${!empty user}">
 				    <div>
-				        ${userp.username}님의 비밀번호는 <strong>${userp.userpw}</strong> 입니다.
+				        ${user.username}님의 비밀번호는 <strong>${user.userpw}</strong> 입니다.
 				    </div>
 				</c:when>
 	            <c:otherwise>
