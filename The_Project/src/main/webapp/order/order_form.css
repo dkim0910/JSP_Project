@@ -100,10 +100,10 @@ button{
  	border-radius: 4px;
 }
 #input_postcode{
-	width: 9%;
+	width: 15%;
 }
 #input_address{
-	width: 49%
+	width: 45%
 }
 #input_detailAddress{
 	width: 60%
