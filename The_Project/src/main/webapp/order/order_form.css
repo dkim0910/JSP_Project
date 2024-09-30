@@ -89,7 +89,6 @@ button{
 /* ------배송지------ */
 /* ------배송지(Daum API)------ */
 .form-input-address input{
-	width: 50%;
 	margin: .2em 0;
 	font-size: 1em;
 	padding: .5em;
@@ -98,9 +97,16 @@ button{
  	vertical-align: middle;
  	line-height: 1.25em;
  	outline: 0;
+ 	border-radius: 4px;
 }
 #input_postcode{
-	width: 7em;
+	width: 9%;
+}
+#input_address{
+	width: 49%
+}
+#input_detailAddress{
+	width: 60%
 }
 /* ------배송지(Daum API)------ */
 .sheet-address{
@@ -124,7 +130,7 @@ button{
     font-size: 15px;
     font-weight: 500;
     line-height: 18px;
-    text-aling: center;
+    text-align: center;
 }
 .sheet-message-text{
     font-size: 14px;
