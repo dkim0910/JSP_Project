@@ -360,7 +360,7 @@
                                     </strong>
                                 </div>
                                 <br/>
-                                <div class="sheet-purchase-button-bottom" onclick="location.href='../order/order_confirmed.html';">
+                                <div class="sheet-purchase-button-bottom" onclick="location.href='../order/order_confirmed.jsp';">
                                     <div class="sheet-purchase-button">
                                         <span class="sheet-purchase-button-price">
                                             100,000
@@ -457,7 +457,7 @@
               </div>
         </main>
         <footer>
-            <div class="sheet-purchase-button-bottom" id="sheet-purchase-button2" onclick="location.href='../order/order_confirmed.html';">
+            <div class="sheet-purchase-button-bottom" id="sheet-purchase-button2" onclick="location.href='../order/order_confirmed.jsp';">
                 <div class="sheet-purchase-button">
                     <span class="sheet-purchase-button-price" id="display-result-pay-amount">
                         100,000
