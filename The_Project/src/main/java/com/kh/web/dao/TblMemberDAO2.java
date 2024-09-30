@@ -1,5 +1,10 @@
 package com.kh.web.dao;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -68,4 +73,14 @@ public class TblMemberDAO2 {
 	    return (TblMember) sqlSession.selectOne("Member.searchByphone", member);
 	}
 	 
+	// 사용자 ID로 회원 정보 조회
+    public TblMember getMemberById(String USER_id) {
+        // MyBatis를 사용하여 DB에서 회원 정보 조회
+        return sqlSession.selectOne("Member.getMemberById", USER_id);
+    }
+
+
+
 }
+
+

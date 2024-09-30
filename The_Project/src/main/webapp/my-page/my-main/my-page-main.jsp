@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ page import="com.kh.web.beans.TblMember" %>    
 <!DOCTYPE html>
 <html lang="en">
 
@@ -82,7 +83,8 @@
                 <main class="main-hello">
                     <!-- 처음 들어왔을때 보여주는 화면 박스 (어서오세요 박스)-->
                     <div class="hello">
-                        <p class="left" style="font-weight: bold; cursor: pointer;" onclick="showContent('my-info')">닉네임
+                   
+                        <p class="left" style="font-weight: bold; cursor: pointer;" onclick="showContent('my-info')">
                         </p> <!-- 여기 '닉네임' 에 DB에서 가져온 username 삽입 -->
                         <div class="right-container">
 
@@ -181,30 +183,52 @@
                             <p></p>
                             <div class="profile-info">
                                 <!-- span 태그 안에 jsp 넣어서 db에서 나중에 select 해 올거 넣기 -->
+                                
+								<%
+								    TblMember member = (TblMember) session.getAttribute("session_member"); // 세션에서 회원 정보 가져오기
+								%>
                                 <div class="profile-info">
-                                    <label for="user-name">이름 :</label>
-                                    <span id="user-name">NAME~~~</span>
-                                </div>
+							    <label for="user-name">이름 :</label>
+							    <span id="user-name">
+							        <%
+							            // member가 null일 경우 처리
+							            if (member != null) {
+							                out.print(member.getUsername());
+							            } else {
+							                out.print("로그인 해주세요."); // 회원 정보가 없을 경우 메시지 출력
+							            }
+							        %>
+							    </span>
+								</div>
+								<div class="profile-info">
+								    <label for="user-id">아이디 :</label>
+								    <span id="user-id">
+								        <%
+								            // member가 null일 경우 처리
+								            if (member != null) {
+								                out.print(member.getUSER_id());
+								            } else {
+								                out.print("로그인 해주세요.");
+								            }
+								        %>
+								    </span>
+								</div>
+							<div class="profile-info">
+							    <label for="user-pw">비밀번호 :</label>
+							    <span id="user-pw">비밀번호는 보안을 위해 표시되지 않습니다.</span>
+							</div>
                                 <div class="profile-info">
-                                    <label for="user-id">아이디 :</label>
-                                    <span id="user-id">ID~~~</span>
-                                </div>
-                                <div class="profile-info">
-                                    <label for="user-pw">비밀번호 :</label>
-                                    <span id="user-pw">pasword~~~</span>
-                                </div>
-                                <div class="profile-info">
-                                    <label for="phone">전화번호 :</label>
-                                    <span id="phone">010-1234-5678</span>
-                                </div>
+								    <label for="phone">전화번호 :</label>
+								    <span id="phone"><%= member.getUserphone() %></span>
+								</div>
                                 <div class="profile-info">
                                     <label for="address">주소 :</label>
                                     <span id="address">서울특별시 강남구 테헤란로 123</span>
                                 </div>
                                 <div class="profile-info">
-                                    <label for="user-gender">성별 :</label>
-                                    <span id="user-gender">남</span>
-                                </div>
+								    <label for="user-gender">성별 :</label>
+								    <span id="user-gender"><%= member.getUsergender() %></span>
+								</div>
                                 <div class="profile-info">
                                     <label for="email">이메일 :</label>
                                     <span id="email">example@example.com</span>

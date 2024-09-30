@@ -24,5 +24,7 @@
 	    WHERE username = #{username, jdbcType=VARCHAR}
 	    AND userphone = #{userphone, jdbcType=VARCHAR}
 	</select>	
-	
+	<select id="getMemberById" parameterType="String" resultType="com.kh.web.beans.TblMember">
+    	SELECT * FROM member WHERE USER_id = #{USER_id}
+	</select>
   </mapper>

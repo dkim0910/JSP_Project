@@ -45,10 +45,24 @@
         <div class="flex-1 h-full">
           <div id="icon-box">
             <div id="icon">
-              <div class="user">
-    				<%= MemberHelper.getMemberInfo((TblMember)session.getAttribute("session_id")) %>
+            	<div class="user">
+				    <%
+				        // 세션에서 회원 정보 가져오기
+				        TblMember member = (TblMember) session.getAttribute("session_member"); // 세션에서 가져올 때 같은 이름 사용
+				
+				        // 회원 정보가 null이 아닐 경우 출력
+				        if (member != null) {
+				    %>
+				        <%= member.getUSER_id() %>님 (<%= member.getUsername() %>)
+				    <%
+				        } else {
+				    %>
+				        로그인 해주세요.
+				    <%
+				        }
+				    %>
 				</div>
-              <a href="../my-page/my-main/my-page-main.html" id="login">
+              <a href="../my-page/my-main/my-page-main.jsp" id="login">
                 <i class="fa-regular fa-user"></i>
               </a>
               <a href="../cart/cart.jsp" id="cart">

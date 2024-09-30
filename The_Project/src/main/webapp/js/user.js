@@ -4,24 +4,24 @@
 // 회원가입 폼 value 확인하는 자바스크립트
 function sendit(){
 	let frm = document.joinForm;
-	let userid = frm.userid;
+	let USER_id = frm.USER_id;
 	let userpw = frm.userpw;
 	let userpw_re = frm.userpw_re;
 	let username = frm.username;
 	let userphone = frm.userphone;
 	
 	// 아이디 빈값 처리
-	if( userid.value == "" ){
+	if( USER_id.value == "" ){
 		alert("아이디를 입력하세요");
-		userid.focus();
+		USER_id.focus();
 		return false;
 	}
 	
 	// 아이디는 5자리 이상, 16자 미만
-	if( userid.value.length <= 4 
-			|| userid.value.length >= 16 ){
+	if( USER_id.value.length <= 4 
+			|| USER_id.value.length >= 16 ){
 		alert("아이디는 5자리 이상, 16자 미만으로 작성해주세요");
-		userid.focus();
+		USER_id.focus();
 		return false;
 	}
 		
@@ -65,13 +65,13 @@ function sendit(){
 
 function login(){
 	let frm = document.frm;
-	let userid = frm.userid;
+	let USER_id = frm.USER_id;
 	let userpw = frm.userpw;
 	
 	// 아이디 빈값 체크
-	if(userid.value == ""){
+	if(USER_id.value == ""){
 		alert("아이디를 입력하세요!");
-		userid.focus();
+		USER_id.focus();
 		return false;
 	}
 	
@@ -86,16 +86,16 @@ function login(){
 }
 
 function checkId(){
-	let userid = document.getElementById("userid").value;
-	if( userid == "" ){
+	let USER_id = document.getElementById("USER_id").value;
+	if( USER_id == "" ){
 		alert("아이디를 입력해주세요");
-		userid.focus();
+		USER_id.focus();
 		return false;
 	} else {
 		// ajax 통신으로 id 중복체크
-		// get, idcheck.jsp?userid=userid
+		// get, idcheck.jsp?USER_id=USER_id
 		let xhr = new XMLHttpRequest();
-		xhr.open("GET", "idcheck.jsp?userid="+userid, true);
+		xhr.open("GET", "idcheck.jsp?USER_id="+USER_id, true);
 		xhr.send();
 		xhr.onreadystatechange = function(){
 			if(xhr.status == 200 
