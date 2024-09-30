@@ -99,7 +99,7 @@ button{
  	line-height: 1.25em;
  	outline: 0;
 }
-#new_postcode{
+#input_postcode{
 	width: 7em;
 }
 /* ------배송지(Daum API)------ */
@@ -124,6 +124,7 @@ button{
     font-size: 15px;
     font-weight: 500;
     line-height: 18px;
+    text-aling: center;
 }
 .sheet-message-text{
     font-size: 14px;

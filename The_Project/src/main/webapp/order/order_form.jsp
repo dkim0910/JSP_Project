@@ -53,7 +53,7 @@
                             </div>
                             <div>
                             	<div class="form-input-address">
-		                            <input type="text" id="input_postcode" placeholder="우편번호"><br/>
+		                            <input type="text" id="input_postcode" placeholder="우편번호">
 									<input type="text" id="input_address" placeholder="주소"><br/>
 									<input type="text" id="input_detailAddress" placeholder="상세주소">
                             	</div>
