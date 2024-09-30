@@ -53,18 +53,11 @@
                             </div>
                             <div>
                             	<div class="form-input-address">
-		                            <input type="text" id="input_postcode" placeholder="우편번호"><br/>
+		                            <input type="text" id="input_postcode" placeholder="우편번호">
 									<input type="text" id="input_address" placeholder="주소"><br/>
 									<input type="text" id="input_detailAddress" placeholder="상세주소">
-									<input type="text" id="input_extraAddress" placeholder="참고항목">
                             	</div>
                             </div>
-                            <span class="sheet-address-address" id="recipient-address" style>
-                                서울시 강남구 강남대로 1길 쇼핑하조빌딩
-                            </span>
-                            <span class="sheet-address-number" id="recipient-mobile" style>
-                                010-1234-1234
-                            </span>
                             <div class="sheet-message-select">
                                 <button type="button" class="sheet-message-text">
                                     배송 메세지를 선택하세요.
@@ -520,13 +513,13 @@
                     if(data.buildingName !== '' && data.apartment === 'Y'){
                         extraAddr += (extraAddr !== '' ? ', ' + data.buildingName : data.buildingName);
                     }
-                    // 표시할 참고항목이 있을 경우, 괄호까지 추가한 최종 문자열을 만든다.
+                   /*-- // 표시할 참고항목이 있을 경우, 괄호까지 추가한 최종 문자열을 만든다.
                     if(extraAddr !== ''){
                         extraAddr = ' (' + extraAddr + ')';
                     }
                     // 조합된 참고항목을 해당 필드에 넣는다.
                     document.getElementById("input_extraAddress").value = extraAddr;
-                
+                --*/
                 } else {
                     document.getElementById("input_extraAddress").value = '';
                 }

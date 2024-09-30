@@ -88,18 +88,25 @@ button{
 
 /* ------배송지------ */
 /* ------배송지(Daum API)------ */
-#new_postcode{
-	width: 7em;
-}
 .form-input-address input{
 	margin: .2em 0;
 	font-size: 1em;
 	padding: .5em;
 	border: 1px solid #ccc;
- 	border-color: #dbdbdb #d2d2d2 #d0d0d0 #d2d2d3;
+ 	border-color: #dbdbdb;
  	vertical-align: middle;
  	line-height: 1.25em;
  	outline: 0;
+ 	border-radius: 4px;
+}
+#input_postcode{
+	width: 13.1%;
+}
+#input_address{
+	width: 46.1%
+}
+#input_detailAddress{
+	width: 60%
 }
 /* ------배송지(Daum API)------ */
 .sheet-address{
@@ -118,11 +125,13 @@ button{
     box-sizing: border-box;
     color: black;
     border-radius: 4px;
-    margin-left: auto;
+    margin-right: 40%;
     padding: 3px 6px;
     font-size: 15px;
     font-weight: 500;
     line-height: 18px;
+    margin-left: 195px;
+    
 }
 .sheet-message-text{
     font-size: 14px;
