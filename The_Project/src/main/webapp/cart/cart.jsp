@@ -14,7 +14,7 @@
 	font-style: normal;
 }
 
-html>body {
+html>body, button {
 	font-family: 'GmarketSansMedium';
 	text-underline-position: under;
 }
@@ -24,7 +24,18 @@ body {
     color: #333;
     margin: 0; /* Remove default body margin */
     font-size: large;
+	
+    font-size: 16px;
 }
+
+html, body{
+    width: 1260px;
+    font-size: 16px;
+    line-height: inherit;
+    justify-content: center;
+    margin: auto;
+}
+
 
 .container {
     max-width: 1600px;
