@@ -457,6 +457,12 @@ a, div{
   width: 100%;
   height: auto;
 }
+.card-selection-input{
+    top: 0;
+    left: 0;
+    opacity: 0;
+    position: absolute;
+}
 .list-payment li{
     position: relative;
     float: left;
@@ -468,7 +474,7 @@ a, div{
     align-items: center;
     padding: 10px 0 0 0;
 }
-.list-payment label{
+.list-payment li {
     float: left;
     width: 117px;
     height: 117px;
@@ -476,13 +482,19 @@ a, div{
     border: 1px solid #eee;
     box-sizing: border-box;
     cursor: pointer;
-    
+    transition: border 0.3s ease;
 }
-.list-payment label:hover,
-.list-payment label:focus,
-.list-payment label:active {
+.list-payment li:hover,
+.list-payment li:focus {
     border: 1px solid black;
 }
+.card-selection li:checked + label {
+    border: 1px solid black;
+}
+.list-payment li:active {
+    border: 1px solid black;
+}
+
 .card-company-logo{
     height: 60px;
     width: auto;

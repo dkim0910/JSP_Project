@@ -1,13 +1,3 @@
-
-// 배송지 변경 팝업창
-function openPopup_AddressChange() {
-    var popupURL = "../order/address_change.jsp";
-
-    var popupProperties = "width=600, height=700 ,scrollbars=yes";
-
-    window.open(popupURL, "Popup", popupProperties);
-}
-
 // 배송 메세지 선택 selectbox
 document.addEventListener('DOMContentLoaded', () => {
     const btn = document.querySelector(".sheet-message-text");
@@ -54,7 +44,6 @@ function toggleOtherPayments(show) {
         otherPayments.style.display = 'none';
     }
 }
-
 // 기타 -> 카드 결제 부분
 function togglePaymentCard(show) {
     var listPayments = document.getElementById('list-payment');
@@ -64,6 +53,19 @@ function togglePaymentCard(show) {
         listPayments.style.display = 'none';
     }
 }
+// 기타 -> 카드결제 클릭 부분
+document.querySelectorAll('.card-selection-input').forEach((input) => {
+    input.addEventListener('change', function() {
+        document.querySelectorAll('.list-payment-label').forEach((label) => {
+            label.style.border = '1px solid #eee';  // 모든 label을 초기화
+        });
+        if (this.checked) {
+            this.parentElement.style.border = '1px solid black';  // 선택된 label에 테두리 적용
+        }
+    });
+});
+
+
 
 // 바텀바 2차메뉴 클릭 기능
 $(document).ready(function() {
