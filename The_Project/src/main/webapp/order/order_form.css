@@ -100,10 +100,10 @@ button{
  	border-radius: 4px;
 }
 #input_postcode{
-	width: 14%;
+	width: 13.1%;
 }
 #input_address{
-	width: 45%
+	width: 46.1%
 }
 #input_detailAddress{
 	width: 60%
@@ -130,6 +130,7 @@ button{
     font-size: 15px;
     font-weight: 500;
     line-height: 18px;
+    margin-left: 195px;
     
 }
 .sheet-message-text{
