@@ -1,7 +1,7 @@
 
 // 배송지 변경 팝업창
 function openPopup_AddressChange() {
-    var popupURL = "file:///D:/kcb_0710/project/JSP_PROJECT/git/JSP_Project/The_Project/src/main/webapp/order/address_change.html";
+    var popupURL = "../order/address_change.jsp";
 
     var popupProperties = "width=600, height=700 ,scrollbars=yes";
 
