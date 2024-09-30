@@ -27,4 +27,5 @@
 	<select id="getMemberById" parameterType="String" resultType="com.kh.web.beans.TblMember">
     	SELECT * FROM member WHERE USER_id = #{USER_id}
 	</select>
+	
   </mapper>

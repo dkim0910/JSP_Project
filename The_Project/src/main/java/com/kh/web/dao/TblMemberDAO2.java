@@ -78,7 +78,8 @@ public class TblMemberDAO2 {
         // MyBatis를 사용하여 DB에서 회원 정보 조회
         return sqlSession.selectOne("Member.getMemberById", USER_id);
     }
-
+    
+    
 
 
 }

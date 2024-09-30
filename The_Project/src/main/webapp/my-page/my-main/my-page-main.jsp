@@ -195,7 +195,7 @@
                             <div class="profile-info">
                                 <!-- span 태그 안에 jsp 넣어서 db에서 나중에 select 해 올거 넣기 -->
                                 
-								
+								<!-- 나의 정보 -->
                                 <div class="profile-info">
 							    <label for="user-name">이름 :</label>
 							    <span id="user-name">
@@ -226,9 +226,18 @@
 							    <label for="user-pw">비밀번호 :</label>
 							    <span id="user-pw">비밀번호는 보안을 위해 표시되지 않습니다.</span>
 							</div>
-                                <div class="profile-info">
+                               <div class="profile-info">
 								    <label for="phone">전화번호 :</label>
-								    <span id="phone"><%= member.getUserphone() %></span>
+								    <span id="phone">
+								        <%
+								            // member가 null일 경우 처리
+								            if (member != null) {
+								                out.print(member.getUserphone());
+								            } else {
+								                out.print("로그인 해주세요.");
+								            }
+								        %>
+								    </span>
 								</div>
                                 <div class="profile-info">
                                     <label for="address">주소 :</label>
@@ -236,7 +245,16 @@
                                 </div>
                                 <div class="profile-info">
 								    <label for="user-gender">성별 :</label>
-								    <span id="user-gender"><%= member.getUsergender() %></span>
+								    <span id="user-gender">
+								        <%
+								            // member가 null일 경우 처리
+								            if (member != null) {
+								                out.print(member.getUsergender());
+								            } else {
+								                out.print("로그인 해주세요.");
+								            }
+								        %>
+								    </span>
 								</div>
                                 <div class="profile-info">
                                     <label for="email">이메일 :</label>
