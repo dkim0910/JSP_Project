@@ -12,10 +12,10 @@
 
 	<%
 		TblMemberDAO2 mdao = new TblMemberDAO2();
-		String userid = request.getParameter("userid");
+		String USER_id = request.getParameter("USER_id");
 		String userpw = request.getParameter("userpw");
 		
-		TblMember member = mdao.login(userid, userpw);		
+		TblMember member = mdao.login(USER_id, userpw);		
 		
 		if( member != null ){	// 로그인 성공
 			session.setAttribute("session_id", member);

@@ -147,7 +147,7 @@ body {
 		<!-- 아이디 입력 필드와 중복확인 버튼 -->
 			<div class="input_row">
 			    <p id="text"></p>
-			    <input id="userid" class="input_style" type="text" name="userid" placeholder="아이디">
+			    <input id="USER_id" class="input_style" type="text" name="USER_id" placeholder="아이디">
 			    <input type="button" value="중복확인" class="check_button" onclick="checkId();"/>
 			</div>
 	        <br/>

@@ -1,19 +1,19 @@
 package com.kh.web.beans;
 
 public class TblMember {
-	private String userid;
+	private String USER_id;
 	private String userpw;
 	private String username;
 	private String usergender;
 	private String userphone;
 	private String useraddress;
 	
-	
-	public String getUserid() {
-		return userid;
+
+	public String getUSER_id() {
+		return USER_id;
 	}
-	public void setUserid(String userid) {
-		this.userid = userid;
+	public void setUSER_id(String uSER_id) {
+		USER_id = uSER_id;
 	}
 	public String getUserpw() {
 		return userpw;

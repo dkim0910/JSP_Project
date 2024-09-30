@@ -17,10 +17,10 @@ public class TblMemberDAO2 {
 	 }
 	
 	// id 중복체크
-	 public boolean checkId(String userid) {
+	 public boolean checkId(String USER_id) {
 		 boolean result = false;
 		 int cnt = 0;
-		 cnt = sqlSession.selectOne("Member.checkId", userid);
+		 cnt = sqlSession.selectOne("Member.checkId", USER_id);
 		 if(cnt == 1) {
 			 result = true;
 		 }
@@ -37,10 +37,10 @@ public class TblMemberDAO2 {
 		 return result;
 	 }
 	
-	 public TblMember login(String userid, String userpw) {
+	 public TblMember login(String USER_id, String userpw) {
 		 TblMember member = null;
 		 HashMap<String, String> datas = new HashMap<>();
-		 datas.put("userid", userid);
+		 datas.put("USER_id", USER_id);
 		 datas.put("userpw", userpw);
 		 
 		 member = sqlSession.selectOne("Member.login",datas);
@@ -51,7 +51,7 @@ public class TblMemberDAO2 {
 		 
 	 }
 	 
-	//회원 1명 검색
+	//아이디 찾기
 	public TblMember searchByname(String username, String userphone) {
 		 Map<String, String> params = new HashMap<>();
 		 params.put("username", username);
@@ -60,7 +60,7 @@ public class TblMemberDAO2 {
 		return (TblMember) sqlSession.selectOne("Member.searchByname", params);		 
  
 	}
-	 
+	 //비밀번호 찾기
 	public TblMember searchByphone(String username, String userphone) {
 	    TblMember member = new TblMember();
 	    member.setUsername(username);

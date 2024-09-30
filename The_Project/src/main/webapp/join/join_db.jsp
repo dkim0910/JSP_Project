@@ -13,9 +13,9 @@
 		MemberDAO의 join(파라미터 값) 
 	-->
 	<jsp:useBean id="member" class="com.kh.web.beans.TblMember"/>
-	<!--<jsp:setProperty property="userid" name="member"/>-->
+	<!--<jsp:setProperty property="USER_id" name="member"/>-->
 	<!-- 
-		member.setUserId(request.getParameter("userid"));
+		member.setUSER_id(request.getParameter("USER_id"));
 	-->
 	<jsp:setProperty property="*" name="member"/>
 	<!-- 
