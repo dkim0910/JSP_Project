@@ -6,6 +6,9 @@ public class TblMember {
 	private String username;
 	private String usergender;
 	private String userphone;
+	private String useraddress;
+	
+	
 	public String getUserid() {
 		return userid;
 	}
@@ -36,7 +39,12 @@ public class TblMember {
 	public void setUserphone(String userphone) {
 		this.userphone = userphone;
 	}
-
+	public String getUseraddress() {
+		return useraddress;
+	}
+	public void setUseraddress(String useraddress) {
+		this.useraddress = useraddress;
+	}
 
 	
 }
