@@ -422,11 +422,6 @@ a, div{
     padding: 0;
     list-style: none;
 }
-.payment-method-type-input [type="radio"]:checked{
-    z-index: 1;
-    display: block;
-
-}
 .paymentMethod-others{
     text-align: center;
     width: 100%;
@@ -460,12 +455,28 @@ a, div{
     overflow: hidden;   
     float: left;
 }
+#box-payment-method-type-CARD:checked+label, #box-payment-method-type-VACCOUNT:checked+label, #box-payment-method-type-PHONE:checked+label, #box-payment-method-type-NAVERPAY:checked+label {
+    border: 1px solid black;
+}
+paymentMethod-others > li :checked{
+    border: 1px solid black;
+    box-sizing: border-box;
+    background-color: white;
+    border-radius: 4px;
+    justify-content: center;
+    align-items: center;
+    height: 36px;
+    display: flex;
+    overflow: hidden;   
+    float: left;
+}
 #button-payment-CARD, #button-payment-VACCOUNT, #button-payment-PHONE, #button-payment-NAVERPAY{
   border: none;  
   display: inline-block;
   width: 100%;
   height: auto;
 }
+
 .card-selection-input{
     top: 0;
     left: 0;
@@ -485,22 +496,18 @@ a, div{
 }
 .list-payment li {
     float: left;
-    width: 117px;
-    height: 117px;
+    width: 121.6px;
+    height: 121.6px;
     padding: 18px 0 16px;
     border: 1px solid #eee;
     box-sizing: border-box;
     cursor: pointer;
     transition: border 0.3s ease;
 }
-.list-payment li:hover,
-.list-payment li:focus {
+.list-payment li:hover{
     border: 1px solid black;
 }
-.card-selection li:checked + label {
-    border: 1px solid black;
-}
-.list-payment li:active {
+input.card-selection-input:checked + label {
     border: 1px solid black;
 }
 
