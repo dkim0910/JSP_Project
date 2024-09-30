@@ -99,7 +99,7 @@
 </head>
 
 <body>
-	<form action="pw_find_db.jsp">
+	<form action="/join/pwfind.fr">
 		<div class="top-section"></div>
 		<div class="form-container">
 			<h2>비밀번호 찾기</h2>
@@ -114,10 +114,7 @@
 			<div class="input_row">
 				<input type="submit" value="비밀번호 찾기" class="btn"/> 
 			</div>
-			
-				
 		</div>
-	
 	</form>
 </body>
 </html>

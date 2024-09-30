@@ -3,29 +3,28 @@
     PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
   <mapper namespace="Member">
-  	<select id="checkId" parameterType="string" resultType="_int">
-  		SELECT count(*) FROM member WHERE USER_id = #{USER_id}
+  	<select id="checkId" parameterType="string" resultType="int">
+  		SELECT count(*) FROM MEMBER WHERE USERID = #{userid}
   	</select>
   
- 	<insert id="join" parameterType="com.kh.web.beans.TblMember">
- 		INSERT INTO member VALUES (#{USER_id},#{userpw},#{username},#{userphone} ,#{usergender})
- 		
+ 	<insert id="join" parameterType="userdto">
+ 		INSERT INTO MEMBER VALUES (#{userid},#{userpw},#{username},#{userphone},#{usergender})
  	</insert>
- 	<select id="login" parameterType="hashmap" resultType="com.kh.web.beans.TblMember">
- 		SELECT * FROM member WHERE USER_id = #{USER_id} AND USERPW = #{userpw}
  	
+ 	<select id="login" parameterType="hashmap" resultType="userdto">
+ 		SELECT * FROM MEMBER WHERE USERID = #{userid} AND USERPW = #{userpw}
  	</select>
-	<select id="searchByname" parameterType="string" resultType="com.kh.web.beans.TblMember">
-		 SELECT * FROM member WHERE USERNAME = #{username} AND USERPHONE = #{userphone}
+ 	
+	<select id="searchByname" parameterType="hashmap" resultType="userdto">
+		 SELECT * FROM MEMBER WHERE USERNAME = #{username} AND USERPHONE = #{userphone}
 	</select>
-	<select id="searchByphone" parameterType="com.kh.web.beans.TblMember" resultType="com.kh.web.beans.TblMember">
+	
+	<select id="searchByphone" parameterType="userdto" resultType="userdto">
+<!-- 	<select id="searchByphone" parameterType="com.kh.web.beans.TblMember" resultType="com.kh.web.beans.TblMember"> -->
 	    SELECT *
-	    FROM member
+	    FROM MEMBER
 	    WHERE username = #{username, jdbcType=VARCHAR}
 	    AND userphone = #{userphone, jdbcType=VARCHAR}
 	</select>	
-	<select id="getMemberById" parameterType="String" resultType="com.kh.web.beans.TblMember">
-    	SELECT * FROM member WHERE USER_id = #{USER_id}
-	</select>
 	
   </mapper>

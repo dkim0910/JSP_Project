@@ -116,7 +116,7 @@
 </style>
 </head>
 <body>
-	<form action="login_db.jsp" method="post" name="frm">
+	<form action="/join/userlogin.fr" method="post" name="frm">
  <!-- 상단 파란색 배경 영역 -->
     <div class="top-section"></div>
 
@@ -127,7 +127,7 @@
 
         <!-- 아이디 입력 필드 -->
         <div class="input_row">
-            <input type="text" name="USER_id" class="input_style" placeholder="아이디">
+            <input type="text" name="userid" class="input_style" placeholder="아이디">
         </div>
 
         <!-- 비밀번호 입력 필드 -->
@@ -142,7 +142,7 @@
 		<br/>
 			<!-- 로그인 버튼 -->
 			<div class="input_row">
-				<input type="submit" value="로그인" class="btn" onclick="login()">
+				<input type="button" value="로그인" class="btn" onclick="login()">
 			</div>
 			<br />
 			<!-- 하단 링크 (아이디/비밀번호 찾기, 회원가입) -->

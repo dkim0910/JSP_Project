@@ -136,7 +136,7 @@ body {
 </style>
 </head>
 <body>
-	<form action="join_db.jsp" method="post" name="joinForm">
+	<form action="/join/userjoin.fr" method="post" name="joinForm">
 		<!-- 상단 회색 배경 영역 -->
 	    <div class="top-section"></div>
 	    <div class="form-container">
@@ -147,7 +147,7 @@ body {
 		<!-- 아이디 입력 필드와 중복확인 버튼 -->
 			<div class="input_row">
 			    <p id="text"></p>
-			    <input id="USER_id" class="input_style" type="text" name="USER_id" placeholder="아이디">
+			    <input id="userid" class="input_style" type="text" name="userid" placeholder="아이디">
 			    <input type="button" value="중복확인" class="check_button" onclick="checkId();"/>
 			</div>
 	        <br/>
@@ -171,8 +171,6 @@ body {
 	            <input id="userphone" class="input_style" type="text" name="userphone" placeholder="휴대폰 번호">
 	        </div>
 	        <br/>
-	        
-	        
 			
 			<!-- 성별 선택 필드 -->
 			<div class="input_row gender_section">

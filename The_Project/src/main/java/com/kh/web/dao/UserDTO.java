@@ -1,19 +1,18 @@
-package com.kh.web.beans;
+package com.kh.web.user.dao;
 
-public class TblMember {
-	private String USER_id;
+public class UserDTO {
+	private String userid;
 	private String userpw;
 	private String username;
 	private String usergender;
 	private String userphone;
 	private String useraddress;
 	
-
-	public String getUSER_id() {
-		return USER_id;
+	public String getUserid() {
+		return userid;
 	}
-	public void setUSER_id(String uSER_id) {
-		USER_id = uSER_id;
+	public void setUserid(String userid) {
+		this.userid = userid;
 	}
 	public String getUserpw() {
 		return userpw;
@@ -45,10 +44,4 @@ public class TblMember {
 	public void setUseraddress(String useraddress) {
 		this.useraddress = useraddress;
 	}
-
-	
 }
-
-
-
-
