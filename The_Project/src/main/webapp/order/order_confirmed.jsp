@@ -19,7 +19,7 @@
     <main> 
         <h2>결제가 완료되었습니다. 주문해주셔서 감사합니다.</h2>
         <br/>
-        <button type="button" class="button-order-status" onclick="location.href='../my-page/ordered/order-status.html';">
+        <button type="button" class="button-order-status" onclick="location.href='../my-page/ordered/order-status.jsp';">
             주문 내역 바로가기
         </button>
     </main>
