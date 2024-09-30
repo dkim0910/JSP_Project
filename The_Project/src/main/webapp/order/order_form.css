@@ -88,18 +88,19 @@ button{
 
 /* ------배송지------ */
 /* ------배송지(Daum API)------ */
-#new_postcode{
-	width: 7em;
-}
 .form-input-address input{
+	width: 50%;
 	margin: .2em 0;
 	font-size: 1em;
 	padding: .5em;
 	border: 1px solid #ccc;
- 	border-color: #dbdbdb #d2d2d2 #d0d0d0 #d2d2d3;
+ 	border-color: #dbdbdb;
  	vertical-align: middle;
  	line-height: 1.25em;
  	outline: 0;
+}
+#new_postcode{
+	width: 7em;
 }
 /* ------배송지(Daum API)------ */
 .sheet-address{
