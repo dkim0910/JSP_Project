@@ -6,20 +6,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ë§ì´ íì´ì§ | ì¼ííì¡°</title>
+    <title>마이 페이지 | 쇼핑하조</title>
     <link rel="stylesheet" href="main.css">
 </head>
 
-<!-- í°í¸ì´ì¸ ë¶ë¬ì¤ê¸° -->
+<!-- 폰트어썸 불러오기 -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-<!-- íì¼ìë css ë¶ë¬ì¤ê¸° -->
+<!-- 테일윈드 css 불러오기 -->
 <script src="https://cdn.tailwindcss.com"></script>
 
 <body style="cursor: default;">
     <div class="header-container">
         <header class="header">
-            <a href="../../main-page/login_main.html" class="" aria-label="ì´ì  íì´ì§ë¡ ì´ë (ë¡ê·¸ì¸ íì ë©ì¸ íì´ì§)">
+            <a href="../../main-page/login_main.html" class="" aria-label="이전 페이지로 이동 (로그인 후의 메인 페이지)">
                 <svg width="35" height="35" viewBox="0 0 28 28" fill="none">
                     <path
                         d="M16.1004 21.7L8.61252 14.2122C8.49537 14.095 8.49537 13.9051 8.61252 13.7879L16.1004 6.30005"
@@ -28,13 +28,13 @@
             </a>
 
             <h1 onclick="toggleBold(this); showContent('maincontents')" style="color: #ffffff; cursor: default;">
-                ë§ì´ íì´ì§
+                마이 페이지
             </h1>
 
             <a href="../../cart/cart.jsp">
                 <label style="font-size: 24px; cursor: pointer;">
-                    <input type="button" value="ì¥ë°êµ¬ë" style="cursor: pointer;" />
-                    <!-- ì¥ë°êµ¬ë ì´ë¯¸ì§ -->
+                    <input type="button" value="장바구니" style="cursor: pointer;" />
+                    <!-- 장바구니 이미지 -->
                     <i class="fa-solid fa-cart-shopping"></i>
                 </label>
             </a>
@@ -46,101 +46,101 @@
             <div class="container" style="flex:1">
                 <nav class="sidebar">
                     <div class="sidebar-title" id="" onclick="toggleBold(this); showContent('maincontents')">
-                        <p>ë§ì´íì´ì§</p>
+                        <p>마이페이지</p>
                     </div>
                     <ul>
-                        <li><a href="#" onclick="toggleBold(this); showContent('my-info')" class="sidebar-options">ëì
-                                ì ë³´</a></li> <!-- ëì ì ë³´ì°½ -->
+                        <li><a href="#" onclick="toggleBold(this); showContent('my-info')" class="sidebar-options">나의
+                                정보</a></li> <!-- 나의 정보창 -->
                         <li><a href="../ordered/order-status.html" onclick="toggleBold(this); showContent('orders')"
-                                class="sidebar-options">ì£¼ë¬¸ ë´ì­</a></li> <!-- ì¬ê¸°ì ì£¼ë¬¸ ì·¨ìë ì£¼ì ë³ê²½ ë± ë£ê¸°-->
+                                class="sidebar-options">주문 내역</a></li> <!-- 여기에 주문 취소랑 주소 변경 등 넣기-->
                         <li><a href="#" onclick="toggleBold(this); showContent('membership')"
-                                class="sidebar-options">ë©¤ë²ì­</a></li> <!-- ì¬ê¸°ì ë©¤ë²ì­ í¬ì¸í¸ë í ì¸ ì´ë²¤í¸ ë± ë£ê¸° -->
+                                class="sidebar-options">멤버십</a></li> <!-- 여기에 멤버십 포인트나 할인 이벤트 등 넣기 -->
                         <li><a href="#" onclick="toggleBold(this); showContent('helpcenter')"
-                                class="sidebar-options">ê³ ê°ì¼í°</a></li> <!-- ê³ ê°ì¼í° íì´ì§ ë§ë¤ê¸°(ê°ì íì´ì§ì)-->
+                                class="sidebar-options">고객센터</a></li> <!-- 고객센터 페이지 만들기(같은 페이지임)-->
                         <li><a href="../refund/refund.html" onclick="toggleBold(this); showContent('refunds')"
-                                class="sidebar-options">íë¶ ë° êµí</a></li> <!-- íë¶ ë° êµí íì´ì§ ë§ë¤ê¸°(ê°ì íì´ì§ì) -->
+                                class="sidebar-options">환불 및 교환</a></li> <!-- 환불 및 교환 페이지 만들기(같은 페이지임) -->
                         <li><a href="#" onclick="toggleBold(this); showContent('events')"
-                                class="sidebar-options">ì´ë²¤í¸</a>
-                        </li> <!-- ì´ë²¤í¸ ëì¤ë íì´ì§ ë§ë¤ê¸° -->
+                                class="sidebar-options">이벤트</a>
+                        </li> <!-- 이벤트 나오는 페이지 만들기 -->
                         <li><a href="#" onclick="toggleBold(this); showContent('announcement')"
-                                class="sidebar-options">ê³µì§ì¬í­</a></li> <!-- ê³µì§ì¬í­ íì´ì§ ë§ë¤ê¸° -->
-                        <li><a href="#" onclick="toggleBold(this); showContent('byebye')" class="sidebar-options">íì
-                                íí´</a>
-                        </li> <!-- ì´ê±´ ëì¤ì DBìì delete ë¬¸ ë ë¦¬ê³  ìë¡ì´ íì´ì§ìì ì±ê³µíìµëë¤ ë¨ê² íê¸° -->
+                                class="sidebar-options">공지사항</a></li> <!-- 공지사항 페이지 만들기 -->
+                        <li><a href="#" onclick="toggleBold(this); showContent('byebye')" class="sidebar-options">회원
+                                탈퇴</a>
+                        </li> <!-- 이건 나중에 DB에서 delete 문 날리고 새로운 페이지에서 성공했습니다 뜨게 하기 -->
 
                         <li><a href="#" onclick="toggleBold(this); showContent('')" class="sidebar-options"></a></li>
-                        <!-- ('') ììª½ì ë ì¶ê°í´ì íë©´ ë ë§ë¤ê¸° -->
+                        <!-- ('') 안쪽에 더 추가해서 화면 더 만들기 -->
 
                     </ul>
 
-                    <a href="../../main-page/index.html" style="font-weight: bold; color: red;">ë¡ê·¸ ìì</a>
+                    <a href="../../main-page/index.html" style="font-weight: bold; color: red;">로그 아웃</a>
 
                 </nav>
 
 
 
                 <main class="main-hello">
-                    <!-- ì²ì ë¤ì´ììë ë³´ì¬ì£¼ë íë©´ ë°ì¤ (ì´ìì¤ì¸ì ë°ì¤)-->
+                    <!-- 처음 들어왔을때 보여주는 화면 박스 (어서오세요 박스)-->
                     <div class="hello">
-                        <p class="left" style="font-weight: bold; cursor: pointer;" onclick="showContent('my-info')">ëë¤ì
-                        </p> <!-- ì¬ê¸° 'ëë¤ì' ì DBìì ê°ì ¸ì¨ username ì½ì -->
+                        <p class="left" style="font-weight: bold; cursor: pointer;" onclick="showContent('my-info')">닉네임
+                        </p> <!-- 여기 '닉네임' 에 DB에서 가져온 username 삽입 -->
                         <div class="right-container">
 
                             <p id="member-status" class="right" style="cursor: pointer;"
-                                onclick="showContent('membership')">íì ë±ê¸: ~~~</p>
-                            <!-- member-status ë¼ëê² íì ë±ê¸ ì¤ì ì (3ë² êµ¬ë§¤íë©´ ë¸ë¡ ì¦ 5ë² êµ¬ë§¤íë©´ ì¤ë² ë± ë¡ì§ ì¶ê°íê¸°) -->
+                                onclick="showContent('membership')">회원 등급: ~~~</p>
+                            <!-- member-status 라는게 화원 등급 설정임 (3번 구매하면 브론즈 5번 구매하면 실버 등 로직 추가하기) -->
                             <p id="user-member-point" class="right" style="cursor: pointer;"
-                                onclick="showContent('membership')">ìì¬ í¬ì¸í¸: ~~~p</p>
-                            <!-- user-member-point ë¼ëê² ìì¬ í¬ì¸í¸ì -->
+                                onclick="showContent('membership')">잔여 포인트: ~~~p</p>
+                            <!-- user-member-point 라는게 잔여 포인트임 -->
                         </div>
 
                     </div>
 
-                    <!-- ìì ë°ì¤ë ìë ë´ì©ì´ë ì¡°ê¸ ê³µë°± ë£ì¼ë ¤ê³  ë£ì -->
+                    <!-- 위에 박스랑 아래 내용이랑 조금 공백 넣으려고 넣음 -->
                     <br />
                     <hr class="line" />
                     <br />
 
-                    <!-- ë©ì¸íì´ì§ ë´ì© íì´ì§-->
+                    <!-- 메인페이지 내용 페이지-->
                     <div id="maincontents" class="content-section" style="display: block;">
 
-                        <!-- ëì¤ì ì¬ê¸°ìë¤ê° ì£¼ë¬¸íí© ë°ì¤ ë§ë¤ê¸° ë°ì¤ 3ê° ì ë ë§ë¤ì´ì ê°ë¡ë¡ í´ì ì¼ìª½ì ì£¼ë¬¸íí© ì¤ê°ì ì£¼ë¬¸íí© ì¤ë¥¸ìª½ì ê³ ê°ì¼í° ì´ë ê² ë§ë¤ê¸° ìëë íê¸°-->
+                        <!-- 나중에 여기에다가 주문현황 박스 만들기 박스 3개 정도 만들어서 가로로 해서 왼쪽은 주문형황 중간은 주문현황 오른쪽은 고객센터 이렇게 만들기 아래는 후기-->
                         <div class="main-container">
                             <div class="tracking">
-                                <h2 class="bold">ì£¼ë¬¸íí©</h2>
+                                <h2 class="bold">주문현황</h2>
                                 <hr class="line" />
 
 
                                 <div class="tracking-container">
                                     <header class="tracking-header">
-                                        <h1 class="bold">ë°°ì¡ ì¶ì íê¸°</h1>
+                                        <h1 class="bold">배송 추적하기</h1>
                                         <hr />
                                     </header>
 
                                     <div class="tracking-box" style="border-radius: 5px;">
-                                        <h2 class="bold">ì£¼ë¬¸ ë²í¸ë¥¼ ìë ¥íì¸ì:</h2>
+                                        <h2 class="bold">주문 번호를 입력하세요:</h2>
                                         <form id="tracking-form">
-                                            <input type="text" id="order-number" placeholder="ì: 123456789" required />
-                                            <button type="button" class="all-button" id="track-button">ì¶ì íê¸°</button>
+                                            <input type="text" id="order-number" placeholder="예: 123456789" required />
+                                            <button type="button" class="all-button" id="track-button">추적하기</button>
                                         </form>
 
                                         <div id="tracking-info" class="tracking-info" style="display: none;">
                                             <hr class="line" />
-                                            <h3>ë°°ì¡ ì ë³´</h3>
-                                            <p><strong>ì£¼ë¬¸ ë²í¸:</strong> <span id="display-order-number"></span></p>
+                                            <h3>배송 정보</h3>
+                                            <p><strong>주문 번호:</strong> <span id="display-order-number"></span></p>
                                             <div class="progress-container">
                                                 <div class="progress-bar"></div>
                                             </div>
 
-                                            <!-- ì´ ìëê° ì¶ì íê¸° ëë£¨ë©´ ëì¤ë ë´ì© ëì¤ì DBìª½ìì ê°ì§ê³  ì¤ê¸° ìì ì ê±° ë°ë¥¼ ì¹¸ì¼ë¡ ëë ì íê° ë ë ë§ë¤ ì¹¸ ì±ì°ê¸°(?) ê°ë¥íê°? ìê° ë§ì´ ë¨ì¼ë©´ íê¸° -->
+                                            <!-- 이 아래가 추적하기 누루면 나오는 내용 나중엔 DB쪽에서 가지고 오기 색은 저거 바를 칸으로 나눠서 한개 될때 마다 칸 채우기(?) 가능한가? 시간 많이 남으면 하기 -->
                                             <div class="progress-labels">
-                                                <span>ì£¼ë¬¸ ì ì</span>
-                                                <span>ë°°ì¡ ì¤ë¹ì¤</span>
-                                                <span>ë°°ì¡ ì¤</span>
-                                                <span>ë°°ì¡ ìë£</span>
+                                                <span>주문 접수</span>
+                                                <span>배송 준비중</span>
+                                                <span>배송 중</span>
+                                                <span>배송 완료</span>
                                             </div>
-                                            <p><strong>íì¬ ìì¹:</strong> ë¬¼ë¥ì¼í° A</p>
-                                            <p><strong>ìì ëì°©ì¼:</strong> 5ì¼ í</p>
+                                            <p><strong>현재 위치:</strong> 물류센터 A</p>
+                                            <p><strong>예상 도착일:</strong> 5일 후</p>
                                         </div>
                                     </div>
 
@@ -153,67 +153,67 @@
 
                             <!-- <div class="main-box">
                                 <a href="#" onclick="showContent('helpcenter')">
-                                    <h2 class="bold">ê³ ê°ì¼í°</h2>
+                                    <h2 class="bold">고객센터</h2>
                                 </a>
                                 <hr class="line" />
-                                <p>1 : 1 ë¬¸ì ë´ì©</p>
+                                <p>1 : 1 문의 내용</p>
 
-                                -- ì¬ê¸° ë´ì© ë ì¶ê°íê¸° --
+                                -- 여기 내용 더 추가하기 --
 
                             </div> -->
 
                             <div class="main-box">
-                                <h2 class="bold">íê¸°</h2>
+                                <h2 class="bold">후기</h2>
                                 <hr class="line" />
-                                <p>íê¸°1</p><br />
-                                <p>íê¸°2</p><br />
-                                <p>íê¸°3</p>
+                                <p>후기1</p><br />
+                                <p>후기2</p><br />
+                                <p>후기3</p>
                             </div>
                         </div>
 
                     </div>
 
-                    <!-- ëì ì ë³´ ë´ì© íì´ì§ -->
+                    <!-- 나의 정보 내용 페이지 -->
                     <div id="my-info" class="content-section" style="display: none;">
                         <div class="profile-container">
-                            <h2 class="bold">ëì ì ë³´</h2>
-                            <!-- h2 íê·¸ ë§ê³  class ì¤ì í¬ê¸° ì¡°ì íê¸° ë¤ë¥¸ íì´ì§ë ê°ì´ ì°ê² (í°í¸ë êµµê¸° ë± ì¶ê°) -->
+                            <h2 class="bold">나의 정보</h2>
+                            <!-- h2 태그 말고 class 줘서 크기 조절하기 다른 페이지도 같이 쓰게 (폰트랑 굵기 등 추가) -->
                             <p></p>
                             <div class="profile-info">
-                                <!-- span íê·¸ ìì jsp ë£ì´ì dbìì ëì¤ì select í´ ì¬ê±° ë£ê¸° -->
+                                <!-- span 태그 안에 jsp 넣어서 db에서 나중에 select 해 올거 넣기 -->
                                 <div class="profile-info">
-                                    <label for="user-name">ì´ë¦ :</label>
+                                    <label for="user-name">이름 :</label>
                                     <span id="user-name">NAME~~~</span>
                                 </div>
                                 <div class="profile-info">
-                                    <label for="user-id">ìì´ë :</label>
+                                    <label for="user-id">아이디 :</label>
                                     <span id="user-id">ID~~~</span>
                                 </div>
                                 <div class="profile-info">
-                                    <label for="user-pw">ë¹ë°ë²í¸ :</label>
+                                    <label for="user-pw">비밀번호 :</label>
                                     <span id="user-pw">pasword~~~</span>
                                 </div>
                                 <div class="profile-info">
-                                    <label for="phone">ì íë²í¸ :</label>
+                                    <label for="phone">전화번호 :</label>
                                     <span id="phone">010-1234-5678</span>
                                 </div>
                                 <div class="profile-info">
-                                    <label for="address">ì£¼ì :</label>
-                                    <span id="address">ìì¸í¹ë³ì ê°ë¨êµ¬ íí¤ëë¡ 123</span>
+                                    <label for="address">주소 :</label>
+                                    <span id="address">서울특별시 강남구 테헤란로 123</span>
                                 </div>
                                 <div class="profile-info">
-                                    <label for="user-gender">ì±ë³ :</label>
-                                    <span id="user-gender">ë¨</span>
+                                    <label for="user-gender">성별 :</label>
+                                    <span id="user-gender">남</span>
                                 </div>
                                 <div class="profile-info">
-                                    <label for="email">ì´ë©ì¼ :</label>
+                                    <label for="email">이메일 :</label>
                                     <span id="email">example@example.com</span>
                                 </div>
 
                                 <div style="width: 100%;">
                                     <a href="#" onclick="showContent('edit-my-info')">
-                                        <input type="button" id="" class="all-button" value="ì ë³´ ìì íê¸°"
-                                            style="width: 100%;" /></a> <!-- edit-my-info ìì ë³´ì¬ì£¼ê¸° -->
+                                        <input type="button" id="" class="all-button" value="정보 수정하기"
+                                            style="width: 100%;" /></a> <!-- edit-my-info 와서 보여주기 -->
                                 </div>
 
                             </div>
@@ -227,50 +227,50 @@
 
 
 
-                    <!-- ëì ë©¤ë²ì­ íì´ì§ -->
+                    <!-- 나의 멤버십 페이지 -->
 
-                    <!-- íì¬ í¬ì¸í¸ ì¹ì -->
+                    <!-- 현재 포인트 섹션 -->
                     <div id="membership" class="content-section" style="display: none;">
                         <section class="bold" style="text-align: center;">
-                            <h2>íì¬ ë³´ì  í¬ì¸í¸: <span id="current-points">750</span> P</h2>
+                            <h2>현재 보유 포인트: <span id="current-points">750</span> P</h2>
                             <div class="membership-bar-container">
                                 <div class="membership-bar" id="membership-bar"></div>
                             </div>
-                            <p id="points-left-text">ë¤ì ë±ê¸ê¹ì§ 250 í¬ì¸í¸ê° ë¨ììµëë¤!</p>
+                            <p id="points-left-text">다음 등급까지 250 포인트가 남았습니다!</p>
                         </section>
 
-                        <!-- ë©¤ë²ì­ ë¨ê³ -->
+                        <!-- 멤버십 단계 -->
                         <section class="membership-levels">
                             <div class="membership-level">
                                 <h3>Basic</h3>
-                                <p>0 - 999 í¬ì¸í¸</p>
+                                <p>0 - 999 포인트</p>
                                 <ul>
-                                    <li>ì ê· ê°ì ì 5% í ì¸ ì¿ í°</li>
-                                    <li>í¬ì¸í¸ ì ë¦½: êµ¬ë§¤ ê¸ì¡ì 5%</li>
-                                    <li>ë¬´ë£ ë°°ì¡ (ì¼ì  ê¸ì¡ ì´ì êµ¬ë§¤ ì)</li>
+                                    <li>신규 가입 시 5% 할인 쿠폰</li>
+                                    <li>포인트 적립: 구매 금액의 5%</li>
+                                    <li>무료 배송 (일정 금액 이상 구매 시)</li>
                                 </ul>
                             </div>
 
                             <div class="membership-level">
                                 <h3>Premium</h3>
-                                <p>1000 - 4999 í¬ì¸í¸</p>
+                                <p>1000 - 4999 포인트</p>
                                 <ul>
-                                    <li>10% í ì¸ ì¿ í°</li>
-                                    <li>í¬ì¸í¸ ì ë¦½: êµ¬ë§¤ ê¸ì¡ì 10%</li>
-                                    <li>ë¬´ë£ ë°°ì¡</li>
-                                    <li>ìì¼ ì¶í ì¿ í°</li>
+                                    <li>10% 할인 쿠폰</li>
+                                    <li>포인트 적립: 구매 금액의 10%</li>
+                                    <li>무료 배송</li>
+                                    <li>생일 축하 쿠폰</li>
                                 </ul>
                             </div>
 
                             <div class="membership-level">
                                 <h3>VIP</h3>
-                                <p>5000 í¬ì¸í¸ ì´ì</p>
+                                <p>5000 포인트 이상</p>
                                 <ul>
-                                    <li>20% í ì¸ ì¿ í°</li>
-                                    <li>í¬ì¸í¸ ì ë¦½: êµ¬ë§¤ ê¸ì¡ì 20%</li>
-                                    <li>ì  ì í ë¬´ë£ ë°°ì¡</li>
-                                    <li>ìì¼ ì¶í ì¿ í°</li>
-                                    <li>íì í ìí ì¬ì  ìì½ ê¸°í</li>
+                                    <li>20% 할인 쿠폰</li>
+                                    <li>포인트 적립: 구매 금액의 20%</li>
+                                    <li>전 제품 무료 배송</li>
+                                    <li>생일 축하 쿠폰</li>
+                                    <li>한정판 상품 사전 예약 기회</li>
                                 </ul>
                             </div>
                         </section>
@@ -278,76 +278,76 @@
                     </div>
 
 
-                    <!-- ê³ ê°ì¼í° ìë´ íì´ì§ -->
+                    <!-- 고객센터 상담 페이지 -->
                     <div id="helpcenter" class="content-section" style="display: none;">
                         <div class="profile-container">
-                            <h2 class="bold">ê³ ê° ì§ì ì¼í° ì¼í°</h2>
+                            <h2 class="bold">고객 지원 센터 센터</h2>
                             <div>
-                                ê³ ê° ì§ì ì¼í°: 1234-5678 | ì´ë©ì¼: shoppinghajo@samjo.com<br />
-                                ì´ì ìê°: ì-ê¸, 09:00-18:00 (ì£¼ë§ ë° ê³µí´ì¼ í´ë¬´)<br />
+                                고객 지원 센터: 1234-5678 | 이메일: shoppinghajo@samjo.com<br />
+                                운영 시간: 월-금, 09:00-18:00 (주말 및 공휴일 휴무)<br />
                             </div>
                             <br />
                             <a href="https://chatgpt.com/" target="_blank">
-                                <p class="all-button">AI ì± ë´ì´ë ëííê¸°</p>
+                                <p class="all-button">AI 챗 봇이랑 대화하기</p>
                             </a>
 
                             <!-- <hr class="line" />
-                    1 : 1 ìë´ ë²í¼ ì¶ê° -> ìë´íê³  ê·¸ ë´ì­ ì ì¡
-                    (ì ì¡ëê±° ë°ë íì´ì§ or DB) ìë³´ì
-                    ìë´ ë´ì­ ì¶ê° - ì¥ë°êµ¬ë ë ì£¼ë¬¸ë´ì­ ìì for ë¬¸ ëë¦°ê±° ì²ë¼ ì¶ê° íë©´ ë ë¯ (ìì§ì forë¬¸ ìì)
+                    1 : 1 상담 버튼 추가 -> 상담하고 그 내역 전송
+                    (전송된거 받는 페이지 or DB) 안보임
+                    상담 내역 추가 - 장바구니 나 주문내역 에서 for 문 돌린거 처럼 추가 하면 될듯 (아직은 for문 없음)
 
-                    ë°ì¤ 2ê° ìì ì¢ì°ë¡ íê°ë ìë´ íê¸° ë´ì© íê°ë ìë´ í íì ë´ì© / ë´ì­ -->
+                    박스 2개 있음 좌우로 한개는 상담 하기 내용 한개는 상담 한 후의 내용 / 내역 -->
 
                         </div>
                     </div>
 
-                    <!-- ì´ë²¤í¸ íì´ì§ -->
+                    <!-- 이벤트 페이지 -->
                     <div id="events" class="content-section" style="display: none;">
                         <div>
 
-                            <!-- ìì§ a íê·¸ì # ë£ì ëì¤ìë ì´ë²¤í¸ íì´ì§ ë§ë¤ì´ì ì´ë²¤í¸ ë´ì© ì§ì´ ë£ê¸° -->
+                            <!-- 아직 a 태그에 # 넣음 나중에는 이벤트 페이지 만들어서 이벤트 내용 집어 넣기 -->
 
-                            <!-- ì¤í¬ë¡¤ ê°ë¥í ì´ë²¤í¸ ì¹´ë ì¹ì -->
+                            <!-- 스크롤 가능한 이벤트 카드 섹션 -->
                             <div class="events-section-wrapper">
                                 <section class="events-section">
 
-                                    <!-- ì´ë²¤í¸ ì¹´ë 1 -->
+                                    <!-- 이벤트 카드 1 -->
                                     <div class="event-card">
-                                        <img src="https://via.placeholder.com/500x200" alt="ì´ë²¤í¸ 1 ì´ë¯¸ì§">
+                                        <img src="https://via.placeholder.com/500x200" alt="이벤트 1 이미지">
                                         <div class="event-card-content">
-                                            <h3>ê°ì ìì¦ í ì¸</h3>
-                                            <p>ê°ìì ë§ì ì  ì í 20% í ì¸! ì§ê¸ ë°ë¡ ì¼ííì¸ì.</p>
-                                            <a href="#" class="all-button">ì´ë²¤í¸ ì°¸ì¬íê¸°</a>
+                                            <h3>가을 시즌 할인</h3>
+                                            <p>가을을 맞아 전 제품 20% 할인! 지금 바로 쇼핑하세요.</p>
+                                            <a href="#" class="all-button">이벤트 참여하기</a>
                                         </div>
                                     </div>
 
-                                    <!-- ì´ë²¤í¸ ì¹´ë 2 -->
+                                    <!-- 이벤트 카드 2 -->
                                     <div class="event-card">
-                                        <img src="https://via.placeholder.com/500x200" alt="ì´ë²¤í¸ 2 ì´ë¯¸ì§">
+                                        <img src="https://via.placeholder.com/500x200" alt="이벤트 2 이미지">
                                         <div class="event-card-content">
-                                            <h3>ì ê· íì ì°ì»´ ì¿ í°</h3>
-                                            <p>ì ê· íì ê°ì ì 10% í ì¸ ì¿ í°ì ëë¦½ëë¤!</p>
-                                            <a href="#" class="all-button">ì´ë²¤í¸ ì°¸ì¬íê¸°</a>
+                                            <h3>신규 회원 웰컴 쿠폰</h3>
+                                            <p>신규 회원 가입 시 10% 할인 쿠폰을 드립니다!</p>
+                                            <a href="#" class="all-button">이벤트 참여하기</a>
                                         </div>
                                     </div>
 
-                                    <!-- ì´ë²¤í¸ ì¹´ë 3 -->
+                                    <!-- 이벤트 카드 3 -->
                                     <div class="event-card">
-                                        <img src="https://via.placeholder.com/500x200" alt="ì´ë²¤í¸ 3 ì´ë¯¸ì§">
+                                        <img src="https://via.placeholder.com/500x200" alt="이벤트 3 이미지">
                                         <div class="event-card-content">
-                                            <h3>ë¬´ë£ ë°°ì¡ ì´ë²¤í¸</h3>
-                                            <p>í¹ì  ê¸ì¡ ì´ì êµ¬ë§¤ ì, ë¬´ë£ ë°°ì¡ ííì ëë¦½ëë¤.</p>
-                                            <a href="#" class="all-button">ì´ë²¤í¸ ì°¸ì¬íê¸°</a>
+                                            <h3>무료 배송 이벤트</h3>
+                                            <p>특정 금액 이상 구매 시, 무료 배송 혜택을 드립니다.</p>
+                                            <a href="#" class="all-button">이벤트 참여하기</a>
                                         </div>
                                     </div>
 
-                                    <!-- ì´ë²¤í¸ ì¹´ë 4 -->
+                                    <!-- 이벤트 카드 4 -->
                                     <div class="event-card">
-                                        <img src="https://via.placeholder.com/500x200" alt="ì´ë²¤í¸ 4 ì´ë¯¸ì§">
+                                        <img src="https://via.placeholder.com/500x200" alt="이벤트 4 이미지">
                                         <div class="event-card-content">
-                                            <h3>VIP ì ì© íë¡ëª¨ì</h3>
-                                            <p>VIP ê³ ê°ëë¤ë§ì ìí í¹ë³í ííì ëë ¤ë³´ì¸ì.</p>
-                                            <a href="#" class="all-button">ì´ë²¤í¸ ì°¸ì¬íê¸°</a>
+                                            <h3>VIP 전용 프로모션</h3>
+                                            <p>VIP 고객님들만을 위한 특별한 혜택을 누려보세요.</p>
+                                            <a href="#" class="all-button">이벤트 참여하기</a>
                                         </div>
                                     </div>
 
@@ -358,47 +358,47 @@
                     </div>
 
 
-                    <!-- ê³µì§ì¬í­ íì´ì§ -->
+                    <!-- 공지사항 페이지 -->
                     <div id="announcement" class="content-section" style="display: none;">
                         <div class="profile-container">
 
-                            <!-- ì§ê¸ì ì´ëíëê² ê³µì§ 1ë¿ì´ì§ë§ ëì¤ì ê³µì§ ëë£¨ë©´ ë°ë¡ ê³µì§ íì´ì§ë¡ ì´ë ê°ë¥ íê²ë ë§ë¤ê¸° -->
+                            <!-- 지금은 이동하는게 공지 1뿐이지만 나중엔 공지 누루면 바로 공지 페이지로 이동 가능 하게끔 만들기 -->
 
 
                             <div class="events-section-wrapper">
                                 <section class="events-section">
 
-                                    <!-- ê³µì§1 -->
+                                    <!-- 공지1 -->
                                     <div class="event-card">
                                         <a href="https://www.naver.com/">
                                             <div class="event-card-content">
-                                                <h3>ê³µì§1</h3>
-                                                <p>ì¸ì¼ ìí´ì.</p>
+                                                <h3>공지1</h3>
+                                                <p>세일 안해요.</p>
                                             </div>
                                         </a>
                                     </div>
 
-                                    <!-- ê³µì§ 2 -->
+                                    <!-- 공지 2 -->
                                     <div class="event-card">
                                         <div class="event-card-content">
-                                            <h3>ê³µì§ 2</h3>
-                                            <p>ë©¤ë²ì­ í¬ì¸í¸ ìëê±° ë§ë¤ê±°ì?</p>
+                                            <h3>공지 2</h3>
+                                            <p>멤버십 포인트 있는거 만들거임?</p>
                                         </div>
                                     </div>
 
-                                    <!-- ê³µì§ 3 -->
+                                    <!-- 공지 3 -->
                                     <div class="event-card">
                                         <div class="event-card-content">
-                                            <h3>ê³µì§ 3</h3>
-                                            <p>DB ì¸ì ë¨?.</p>
+                                            <h3>공지 3</h3>
+                                            <p>DB 언제됨?.</p>
                                         </div>
                                     </div>
 
-                                    <!-- ê³µì§ 4 -->
+                                    <!-- 공지 4 -->
                                     <div class="event-card">
                                         <div class="event-card-content">
-                                            <h3>ê³µì§ 4</h3>
-                                            <p>ì­ì¢í©ëë¤.</p>
+                                            <h3>공지 4</h3>
+                                            <p>섭종합니다.</p>
                                         </div>
                                     </div>
 
@@ -412,18 +412,18 @@
 
 
 
-                    <!-- íì íí´ -->
+                    <!-- 회원 탈퇴 -->
                     <div id="byebye" class="content-section" style="display: none;">
                         <div class="profile-container">
 
-                            <button onclick="showModal()" class="all-button">íì íí´</button>
+                            <button onclick="showModal()" class="all-button">회원 탈퇴</button>
 
                             <div id="modal">
                                 <div id="modalContent">
-                                    <h2>íì íí´ íì¸</h2>
-                                    <p>íì íí´íìê² ìµëê¹?</p>
-                                    <button class="all-button" onclick="confirmWithdrawal(true)">ë¤</button>
-                                    <button class="all-button" onclick="confirmWithdrawal(false)">ìëì¤</button>
+                                    <h2>회원 탈퇴 확인</h2>
+                                    <p>회원 탈퇴하시겠습니까?</p>
+                                    <button class="all-button" onclick="confirmWithdrawal(true)">네</button>
+                                    <button class="all-button" onclick="confirmWithdrawal(false)">아니오</button>
                                 </div>
                             </div>
 
@@ -433,62 +433,62 @@
 
 
 
-                    <!-- ì ë³´ ìì íê¸° íì´ì§ -->
+                    <!-- 정보 수정하기 페이지 -->
                     <div id="edit-my-info" class="content-section" style="display: none;">
                         <div class="profile-container">
                             <div class="">
-                                <h1 style="font-weight: bold;">ì ë³´ ìì íê¸°</h1>
+                                <h1 style="font-weight: bold;">정보 수정하기</h1>
                                 <br />
 
-                                <!-- ì§ê¸ì ê·¸ë¥ ë°ë¡ ìì íê¸° ëì¤ëë° ëì¤ì placeholderì ê¸°ì¡´ì ìëê±° ê·¸ëë¡ ê°ì§ê³  ì¤ê¸°(íë¶ì ìë ì£¼ë¬¸ë²í¸ì²ë¼)
-                                    readonly ë ìíì§ë§, ê·¸ë¦¬ê³  ë§ì½ ì¬ì©ìê° ìì íë©´ ê·¸ê±°ë§ ë°ëê² íê¸° (ê±´ë ê²ë§) ìê±´ëë ¸ì¼ë©´ ê·¸ë¥ ê¸°ì¡´êº¼ ê·¸ëë¡ ëëê¸°
-                                    ë ë³ê²½íë©´ ê·¸ ë°ì¤ë ë¤ë¥¸ìì¼ë¡ íí ëê² íê¸° border ê° ê°ìê±° ë£ì ì ìíë©´ ë ë¯
+                                <!-- 지금은 그냥 바로 수정하기 나오는데 나중엔 placeholder에 기존에 있던거 그댜로 가지고 오기(환불에 있는 주문번호처럼)
+                                    readonly 는 안하지만, 그리고 만약 사용자가 수정하면 그거만 바뀌게 하기 (건든것만) 안건드렸으면 그냥 기존꺼 그대로 냅두기
+                                    또 변경하면 그 박스는 다른색으로 표현 되게 하기 border 값 같은거 넣서 색 입히면 될듯
 
                                     input[type="text"]:focus, input[type="email"]:focus, input[type="tel"]:focus {
                                     border-color: #007BFF;
                                     outline: none;
 }
-                                    ìì ì²ë¼ cssì ë£ì¼ë©´ ë ë¯ ìë§ ì¢ ë°ê¾¸ê³  
+                                    위에 처럼 css에 넣으면 될듯 색만 좀 바꾸고 
                                 -->
 
 
                                 <form>
 
                                     <div class="profile-info">
-                                        <label for="user-name">ì´ë¦ :</label>
-                                        <input type="text" id="" name="user-name" placeholder="ì´ë¦ì ìë ¥íì¸ì">
+                                        <label for="user-name">이름 :</label>
+                                        <input type="text" id="" name="user-name" placeholder="이름을 입력하세요">
                                     </div>
 
-                                    <label for="user-id">ìì´ë</label>
-                                    <input type="text" id="" name="user-id" placeholder="ìì´ëë¥¼ ìë ¥íì¸ì">
+                                    <label for="user-id">아이디</label>
+                                    <input type="text" id="" name="user-id" placeholder="아이디를 입력하세요">
 
-                                    <label for="pw">ë¹ë°ë²í¸</label>
-                                    <input type="text" id="" name="pw" placeholder="ë¹ë°ë²í¸ë¥¼ ìë ¥íì¸ì">
+                                    <label for="pw">비밀번호</label>
+                                    <input type="text" id="" name="pw" placeholder="비밀번호를 입력하세요">
 
-                                    <label for="user-name" class="">ì´ë¦</label>
-                                    <input type="text" id="" name="user-name" placeholder="ì´ë¦ì ìë ¥íì¸ì">
+                                    <label for="user-name" class="">이름</label>
+                                    <input type="text" id="" name="user-name" placeholder="이름을 입력하세요">
 
-                                    <label for="user-addr">ì£¼ì</label>
-                                    <input type="text" id="" name="user-addr" placeholder="ì£¼ìë¥¼ ìë ¥íì¸ì">
+                                    <label for="user-addr">주소</label>
+                                    <input type="text" id="" name="user-addr" placeholder="주소를 입력하세요">
 
-                                    <label for="phone">ì íë²í¸</label>
-                                    <input type="tel" id="" name="" placeholder="ì íë²í¸ë¥¼ ìë ¥íì¸ì">
+                                    <label for="phone">전화번호</label>
+                                    <input type="tel" id="" name="" placeholder="전화번호를 입력하세요">
 
-                                    <label for="user-gender">ì±ë³</label>
+                                    <label for="user-gender">성별</label>
                                     <div style="padding-top: 12px;">
                                         <input type="radio" id="male" name="user-gender" value="male">
-                                        <label for="male">ë¨</label>
+                                        <label for="male">남</label>
 
                                         <input type="radio" id="female" name="user-gender" value="female">
-                                        <label for="female">ì¬</label>
+                                        <label for="female">여</label>
                                     </div>
 
                                 </form>
 
                                 <div style="padding-top: 20px;">
                                     <a href="#" onclick="showContent('my-info')"><input type="button" class="all-button"
-                                            value="ìì íê¸°" /></a>
-                                    <!-- ì§ê¸ì ê·¸ë¥ ëì ì ë³´ íì´ì§ë¡ ì´ëíëë° ëì¤ìë ëë£¨ë©´ DB ìì update íê³  ëì ì ë³´ íì´ì§ë¡ ì´ëíê² ë§ë¤ê¸° -->
+                                            value="수정하기" /></a>
+                                    <!-- 지금은 그냥 나의 정보 페이지로 이동하는데 나중에는 누루면 DB 에서 update 하고 나의 정보 페이지로 이동하게 만들기 -->
                                 </div>
                             </div>
 
@@ -499,7 +499,7 @@
 
 
 
-                    <!-- ë ì¶ê°í  íì´ì§ë¤ -->
+                    <!-- 더 추가할 페이지들 -->
 
 
 

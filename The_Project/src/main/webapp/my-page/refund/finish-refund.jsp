@@ -6,7 +6,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>íë¶ ë° êµí | ì¼ííì¡°</title>
+    <title>환불 및 교환 | 쇼핑하조</title>
     <style>
         html,
         body {
@@ -80,7 +80,7 @@
 <body style="cursor: default;">
     <div class="container">
         <header class="header">
-            <a href="../../my-page/my-main/my-page-main.html" class="button-back-page" aria-label="ì´ì  íì´ì§ë¡ ì´ë"
+            <a href="../../my-page/my-main/my-page-main.html" class="button-back-page" aria-label="이전 페이지로 이동"
                 style="color: white;">
                 <svg width="35" height="35" viewBox="0 0 28 28" fill="none">
                     <path
@@ -88,26 +88,26 @@
                         stroke="currentColor" stroke-width="1.4"></path>
                 </svg>
             </a>
-            <h1 style="flex-grow: 1; text-align: center;">íë¶ ë° êµí</h1>
+            <h1 style="flex-grow: 1; text-align: center;">환불 및 교환</h1>
             <p></p>
         </header>
         <div class="content">
             <div>
-                <h1>íë¶ ë° êµí ì ì²­ì´ ìë£ëììµëë¤</h1>
-                <h2>ìì¸í ë´ì©ì ~~~ë¡ ìë´í´ ëë¦¬ê² ìµëë¤</h2>
+                <h1>환불 및 교환 신청이 완료되었습니다</h1>
+                <h2>자세한 내용은 ~~~로 안내해 드리겠습니다</h2>
                 <div>
-                    <a href="../../my-page/my-main/my-page-main.html" class="all-button">ë§ì´íì´ì§ë¡ ëìê°ê¸°</a>
+                    <a href="../../my-page/my-main/my-page-main.html" class="all-button">마이페이지로 돌아가기</a>
                 </div>
             </div>
         </div>
 
         <footer class="footer">
-            <p>ê³ ê° ì§ì ì¼í°: 1234-5678 | ì´ë©ì¼: shoppinghajo@samjo.com</p>
-            <p>ì´ì ìê°: ì-ê¸, 09:00-18:00 (ì£¼ë§ ë° ê³µí´ì¼ í´ë¬´)</p>
-            <div>Â© ì¼ííì¡° ALL RIGHTS RESERVED</div>
+            <p>고객 지원 센터: 1234-5678 | 이메일: shoppinghajo@samjo.com</p>
+            <p>운영 시간: 월-금, 09:00-18:00 (주말 및 공휴일 휴무)</p>
+            <div>© 쇼핑하조 ALL RIGHTS RESERVED</div>
             <div>
-                <span>ì¼ë¶ ìíì ê²½ì° ì¼ííì¡°ë íµì íë§¤ì ë¹ì¬ìê° ìë íµì íë§¤ì¤ê°ìë¡ì ìí, ìíì ë³´, ê±°ëì ëí ì±ìì´ ì íë  ì ìì¼ë¯ë¡, ê° ìí íì´ì§ìì êµ¬ì²´ì ì¸ ë´ì©ì íì¸íìê¸°
-                    ë°ëëë¤.</span>
+                <span>일부 상품의 경우 쇼핑하조는 통신판매의 당사자가 아닌 통신판매중개자로서 상품, 상품정보, 거래에 대한 책임이 제한될 수 있으므로, 각 상품 페이지에서 구체적인 내용을 확인하시기
+                    바랍니다.</span>
             </div>
         </footer>
     </div>
