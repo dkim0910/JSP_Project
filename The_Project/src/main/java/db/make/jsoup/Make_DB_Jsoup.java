@@ -57,9 +57,9 @@ public class Make_DB_Jsoup {
                     int normalPriceInt = !normalPrice.isEmpty() ? Integer.parseInt(normalPrice) : 0;
 
                     // 제품 이름의 첫 7자리 중복 확인
-                    String productNamePrefix = productName.length() >= 7 ? productName.substring(0, 7) : productName;
+                    String productNamePrefix = productName.length() >= 10 ? productName.substring(0, 10) : productName;
                     if (isProductPrefixExists(conn, productNamePrefix)) {
-                        System.out.println("제품 이름의 첫 7자리가 이미 존재합니다: " + productNamePrefix + " - 건너뜁니다.");
+                        System.out.println("제품 이름의 첫 10자리가 이미 존재합니다: " + productNamePrefix + " - 건너뜁니다.");
                         continue; // 다음 제품으로 건너뛰기
                     }
 
@@ -100,7 +100,7 @@ public class Make_DB_Jsoup {
         }
     }
 
-    // 제품 이름의 첫 7자리가 데이터베이스에 존재하는지 확인하는 메소드
+    // 제품 이름의 첫 10자리가 데이터베이스에 존재하는지 확인하는 메소드
     private static boolean isProductPrefixExists(Connection conn, String productNamePrefix) throws SQLException {
         String sql = "SELECT COUNT(*) FROM products WHERE product_name LIKE ?";
         try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
