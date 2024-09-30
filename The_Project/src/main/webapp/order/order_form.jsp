@@ -47,9 +47,6 @@
                                 <span class="sheet-address-title-label" id="recipient-default" style="display: block;">
                                     기본 배송지
                                 </span>
-                                <button class="sheet-address-title-button" type="button" id="button-address-register" style="display: none">
-                                    배송지 등록
-                                </button>
                                 <button class="sheet-address-title-button" type="button" id="button-address-change" onclick="new_execDaumPostcode()">
                                     배송지 변경
                                 </button>
@@ -57,7 +54,7 @@
                             <div>
                             	<div class="form-input-address">
 		                            <input type="text" id="input_postcode" placeholder="우편번호"><br/>
-									<input type="text" id="input_address" placeholder="주소">
+									<input type="text" id="input_address" placeholder="주소"><br/>
 									<input type="text" id="input_detailAddress" placeholder="상세주소">
 									<input type="text" id="input_extraAddress" placeholder="참고항목">
                             	</div>
