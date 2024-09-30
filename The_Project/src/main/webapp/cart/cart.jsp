@@ -1,5 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ page import="java.util.ArrayList, java.util.HashMap, java.util.List, java.util.Map" %>
+
 <html>
 <head>
     <title>장바구니</title>
@@ -175,7 +177,7 @@ th {
 
         button {
             padding: 5px 10px;
-            background-color: #333;
+            background-color: black;
             color: white;
             border: none;
             cursor: pointer;
@@ -183,13 +185,13 @@ th {
         }
 
         button:hover {
-            background-color: #555;
+            background-color: black;
         }
 
         /* 구매하기 버튼 스타일 */
         .purchase-button {
             padding: 10px 20px;
-            background-color: #007bff;
+            background-color: black;
             color: white;
             border-radius: 5px;
             font-size: 16px;
@@ -247,7 +249,6 @@ th {
             <p></p>
         </header>
 
-<!-- 상단 뒤로가기 및 홈 버튼 -->
 
 
 <!-- 장바구니 항목 전체 선택 및 삭제 -->
@@ -350,9 +351,16 @@ function purchaseItems() {
     }
 }
 
+
+
+
+
+
+
 </script>
  
-    
+
+  
         <footer class="footer">
             <p>고객 지원 센터: 1234-5678 | 이메일: shoppinghajo@samjo.com</p>
             <p>운영 시간: 월-금, 09:00-18:00 (주말 및 공휴일 휴무)</p>
