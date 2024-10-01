@@ -128,7 +128,7 @@
                     <a href="../main-page/shirt.html/t1.html" class="block">
                       <img class="w-full block" src="./images/t1.jpg" alt="">
                     </a>
-                    <a href="#" class="block text-center">라이트더모스트</a>
+                    <a href="#" class="block text-center">마카사이트</a>
                     <div>
                       <span>19,900</span>
                     </div>
