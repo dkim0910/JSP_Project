@@ -15,15 +15,15 @@ public class UserLoginAction implements Action{
 		ActionForward forward = new ActionForward();
 		UserDAO udao = new UserDAO();
 		
-		String userid = request.getParameter("user_id");
-		String userpw = request.getParameter("user_pw");
+		String user_id = request.getParameter("user_id");
+		String user_pw = request.getParameter("user_pw");
 		
-		UserDTO member = udao.login(userid, userpw);	
+		UserDTO member = udao.login(user_id, user_pw);	
 		forward.setRedirect(true);
 		
 		if(member != null){	
 			// 로그인 성공
-			forward.setPath("/main-page/login_main.html");
+			forward.setPath("/main-page/login_main.jsp");
 		} else { 			
 			// 로그인 실패
 			forward.setPath("/login/join/login_view.jsp?flag=false");
