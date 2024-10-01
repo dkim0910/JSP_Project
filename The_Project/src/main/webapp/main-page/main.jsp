@@ -46,7 +46,7 @@
               <a href="../login/join/login_view.jsp" id="login">
                 <i class="fa-regular fa-user"></i>
               </a>
-              <a href="../category/category.html" id="more">
+              <a href="../category/category.jsp" id="more">
                 <i class="fa-solid fa-bars"></i>
               </a>
             </div>
