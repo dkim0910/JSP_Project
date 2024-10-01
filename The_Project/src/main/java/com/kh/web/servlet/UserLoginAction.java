@@ -15,8 +15,8 @@ public class UserLoginAction implements Action{
 		ActionForward forward = new ActionForward();
 		UserDAO udao = new UserDAO();
 		
-		String userid = request.getParameter("userid");
-		String userpw = request.getParameter("userpw");
+		String userid = request.getParameter("user_id");
+		String userpw = request.getParameter("user_pw");
 		
 		UserDTO member = udao.login(userid, userpw);	
 		forward.setRedirect(true);

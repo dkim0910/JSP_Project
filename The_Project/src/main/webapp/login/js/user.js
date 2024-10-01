@@ -98,7 +98,7 @@ function checkId(){
 		
 		// Content-Type 설정
 		xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-		xhr.send("userid=" + encodeURIComponent(userid));
+		xhr.send("user_id=" + encodeURIComponent(userid));
 		xhr.onreadystatechange = function(){
 			if(xhr.status == 200 
 				&& xhr.readyState == XMLHttpRequest.DONE){

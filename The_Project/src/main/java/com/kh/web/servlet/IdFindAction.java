@@ -18,10 +18,10 @@ public class IdFindAction implements Action{
 		UserDTO user = new UserDTO();
 		
 		// 클라이언트로부터 전달된 username 값을 가져옴
-		String username = request.getParameter("username");
-		String userphone = request.getParameter("userphone");
+		String user_name = request.getParameter("user_name");
+		String user_phone = request.getParameter("user_phone");
 		
-		user = udao.searchByname(username, userphone);
+		user = udao.searchByname(user_name, user_phone);
 		request.setAttribute("user", user);
 
 		forward.setRedirect(false);

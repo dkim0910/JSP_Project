@@ -4,27 +4,25 @@
     "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
   <mapper namespace="Member">
   	<select id="checkId" parameterType="string" resultType="int">
-  		SELECT count(*) FROM MEMBER WHERE USERID = #{userid}
+  		SELECT count(*) FROM USERS WHERE USER_ID = #{user_id}
   	</select>
   
  	<insert id="join" parameterType="userdto">
- 		INSERT INTO MEMBER VALUES (#{userid},#{userpw},#{username},#{userphone},#{usergender})
+ 		INSERT INTO USERS VALUES (#{user_id},#{user_pw},#{user_name},#{user_phone},#{user_gender},'???')
  	</insert>
  	
  	<select id="login" parameterType="hashmap" resultType="userdto">
- 		SELECT * FROM MEMBER WHERE USERID = #{userid} AND USERPW = #{userpw}
+ 		SELECT * FROM USERS WHERE USER_ID = #{user_id} AND USER_PW = #{user_pw}
  	</select>
  	
 	<select id="searchByname" parameterType="hashmap" resultType="userdto">
-		 SELECT * FROM MEMBER WHERE USERNAME = #{username} AND USERPHONE = #{userphone}
+		 SELECT * FROM USERS WHERE USER_NAME = #{user_name} AND USER_PHONE = #{user_phone}
 	</select>
 	
 	<select id="searchByphone" parameterType="userdto" resultType="userdto">
-<!-- 	<select id="searchByphone" parameterType="com.kh.web.beans.TblMember" resultType="com.kh.web.beans.TblMember"> -->
 	    SELECT *
-	    FROM MEMBER
-	    WHERE username = #{username, jdbcType=VARCHAR}
-	    AND userphone = #{userphone, jdbcType=VARCHAR}
+	    FROM USERS
+	    WHERE USER_NAME = #{user_name, jdbcType=VARCHAR}
+	    AND USER_PHONE = #{user_phone, jdbcType=VARCHAR}
 	</select>	
-	
   </mapper>

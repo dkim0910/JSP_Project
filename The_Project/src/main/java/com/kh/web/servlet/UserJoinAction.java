@@ -19,12 +19,12 @@ public class UserJoinAction implements Action{
 		UserDAO udao = new UserDAO();
 		
 		// 파라미터 값 setting
-		user.setUserid(request.getParameter("userid"));
-		user.setUserpw(request.getParameter("userpw"));
-		user.setUsername(request.getParameter("username"));
-		user.setUserphone(request.getParameter("userphone"));
-		user.setUsergender(request.getParameter("usergender"));
-		//user.setUseraddress(request.getParameter("useraddr"));
+		user.setUser_id(request.getParameter("user_id"));
+		user.setUser_pw(request.getParameter("user_pw"));
+		user.setUser_name(request.getParameter("user_name"));
+		user.setUser_phone(request.getParameter("user_phone"));
+		user.setUser_gender(request.getParameter("user_gender"));
+		//user.setUseraddress(request.getParameter("user_addr"));
 		
 		// 회원가입 성공시
 		if(udao.join(user)) {

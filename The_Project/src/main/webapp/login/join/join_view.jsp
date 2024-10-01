@@ -147,13 +147,13 @@ body {
 		<!-- 아이디 입력 필드와 중복확인 버튼 -->
 			<div class="input_row">
 			    <p id="text"></p>
-			    <input id="userid" class="input_style" type="text" name="userid" placeholder="아이디">
+			    <input id="userid" class="input_style" type="text" name="user_id" placeholder="아이디">
 			    <input type="button" value="중복확인" class="check_button" onclick="checkId();"/>
 			</div>
 	        <br/>
 			<!-- 비밀번호 입력 필드 -->
 	        <div class="input_row">
-	            <input id="userpw" class="input_style" type="password" name="userpw" placeholder="비밀번호">
+	            <input id="userpw" class="input_style" type="password" name="user_pw" placeholder="비밀번호">
 	        </div>
 	        
 	        <!-- 비밀번호 확인 필드 -->
@@ -163,21 +163,21 @@ body {
 	        
 	        <!-- 이름 입력 필드 -->
 	        <div class="input_row">
-	            <input id="username" class="input_style" type="text" name="username" placeholder="이름">
+	            <input id="username" class="input_style" type="text" name="user_name" placeholder="이름">
 	        </div>
 	        
 	        <!-- 휴대폰 번호 입력 필드 -->
 	        <div class="input_row">
-	            <input id="userphone" class="input_style" type="text" name="userphone" placeholder="휴대폰 번호">
+	            <input id="userphone" class="input_style" type="text" name="user_phone" placeholder="휴대폰 번호">
 	        </div>
 	        <br/>
 			
 			<!-- 성별 선택 필드 -->
 			<div class="input_row gender_section">
-			    <input id="male" type="radio" name="usergender" value="M" checked>
+			    <input id="male" type="radio" name="user_gender" value="M" checked>
 			    <label for="male">남자</label>
 			    
-			    <input id="female" type="radio" name="usergender" value="W">
+			    <input id="female" type="radio" name="user_gender" value="W">
 			    <label for="female">여자</label>
 			</div>
 	        <!-- 회원가입 버튼 -->

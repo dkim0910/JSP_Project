@@ -1,47 +1,47 @@
 package com.kh.web.dao;
 
 public class UserDTO {
-	private String userid;
-	private String userpw;
-	private String username;
-	private String usergender;
-	private String userphone;
-	private String useraddress;
+	private String user_id;
+	private String user_pw;
+	private String user_name;
+	private String user_gender;
+	private String user_phone;
+	private String user_address;
 	
-	public String getUserid() {
-		return userid;
+	public String getUser_id() {
+		return user_id;
 	}
-	public void setUserid(String userid) {
-		this.userid = userid;
+	public void setUser_id(String user_id) {
+		this.user_id = user_id;
 	}
-	public String getUserpw() {
-		return userpw;
+	public String getUser_pw() {
+		return user_pw;
 	}
-	public void setUserpw(String userpw) {
-		this.userpw = userpw;
+	public void setUser_pw(String user_pw) {
+		this.user_pw = user_pw;
 	}
-	public String getUsername() {
-		return username;
+	public String getUser_name() {
+		return user_name;
 	}
-	public void setUsername(String username) {
-		this.username = username;
+	public void setUser_name(String user_name) {
+		this.user_name = user_name;
 	}
-	public String getUsergender() {
-		return usergender;
+	public String getUser_gender() {
+		return user_gender;
 	}
-	public void setUsergender(String usergender) {
-		this.usergender = usergender;
+	public void setUser_gender(String user_gender) {
+		this.user_gender = user_gender;
 	}
-	public String getUserphone() {
-		return userphone;
+	public String getUser_phone() {
+		return user_phone;
 	}
-	public void setUserphone(String userphone) {
-		this.userphone = userphone;
+	public void setUser_phone(String user_phone) {
+		this.user_phone = user_phone;
 	}
-	public String getUseraddress() {
-		return useraddress;
+	public String getUser_address() {
+		return user_address;
 	}
-	public void setUseraddress(String useraddress) {
-		this.useraddress = useraddress;
+	public void setUser_address(String user_address) {
+		this.user_address = user_address;
 	}
 }

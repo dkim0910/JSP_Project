@@ -109,7 +109,7 @@
 	        <c:choose>
 				<c:when test="${!empty user}">
 				    <div>
-				        ${user.username}님의 비밀번호는 <strong>${user.userpw}</strong> 입니다.
+				        ${user.user_name}님의 비밀번호는 <strong>${user.user_pw}</strong> 입니다.
 				    </div>
 				</c:when>
 	            <c:otherwise>

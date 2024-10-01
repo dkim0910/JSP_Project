@@ -26,10 +26,10 @@ public class UserDAO {
 	}
 	
 	// id 중복체크
-	 public boolean checkId(String userid) {
+	 public boolean checkId(String user_id) {
 		 boolean result = false;
 		 int cnt = 0;
-		 cnt = session.selectOne("Member.checkId", userid);
+		 cnt = session.selectOne("Member.checkId", user_id);
 		 if(cnt == 1) {
 			 result = true;
 		 }
@@ -37,21 +37,21 @@ public class UserDAO {
 	 }
 	
 	// 로그인
-	public UserDTO login(String userid, String userpw) {
+	public UserDTO login(String user_id, String user_pw) {
 		UserDTO member = null;
 		HashMap<String, String> datas = new HashMap<>();
-		datas.put("userid", userid);
-		datas.put("userpw", userpw);
+		datas.put("user_id", user_id);
+		datas.put("user_pw", user_pw);
 		member = session.selectOne("Member.login", datas);
 		return member;
 	}
 	
 	// 아이디 찾기
-	public UserDTO searchByname(String username, String userphone) {
+	public UserDTO searchByname(String user_name, String user_phone) {
 		UserDTO member = null;
 		Map<String, String> params = new HashMap<>();
-		params.put("username", username);
-		params.put("userphone", userphone);
+		params.put("user_name", user_name);
+		params.put("user_phone", user_phone);
 		member = session.selectOne("Member.searchByname", params);
 		return member;		 
 	}

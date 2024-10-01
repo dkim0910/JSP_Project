@@ -16,8 +16,8 @@ public class PwFindAction implements Action{
 		UserDTO user = new UserDTO();
 		UserDAO udao = new UserDAO();
 		
-		String username = request.getParameter("username");
-		String userphone = request.getParameter("userphone");
+		String username = request.getParameter("user_name");
+		String userphone = request.getParameter("user_phone");
 		
 		user = udao.searchByname(username, userphone);
 		request.setAttribute("user", user);

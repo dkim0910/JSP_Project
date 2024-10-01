@@ -15,7 +15,7 @@ public class CheckIdAction implements Action {
     @Override
     public ActionForward execute(HttpServletRequest request, HttpServletResponse response) {
         UserDAO udao = new UserDAO();
-        String userid = request.getParameter("userid");
+        String userid = request.getParameter("user_id");
 
         try {
             // PrintWriter 객체 생성

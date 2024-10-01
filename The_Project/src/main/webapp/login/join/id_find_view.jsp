@@ -106,7 +106,7 @@
 	        <c:choose>
 	            <c:when test="${!empty user }">
 	                <div>
-						${user.username}님의 아이디는 <strong> ${user.userid}</strong> 입니다.
+						${user.user_name}님의 아이디는 <strong> ${user.user_id}</strong> 입니다.
 					</div>
 	            </c:when>
 	            <c:otherwise>
