@@ -238,7 +238,7 @@ th {
 <body style="cursor: default;">
 
  <header class="header">
-            <a href="../../my-page/my-main/my-page-main.html" class="button-back-page" aria-label="이전 페이지로 이동">
+            <a href="../../my-page/my-main/my-page-main.jsp" class="button-back-page" aria-label="이전 페이지로 이동">
                 <svg width="35" height="35" viewBox="0 0 28 28" fill="none">
                     <path
                         d="M16.1004 21.7L8.61252 14.2122C8.49537 14.095 8.49537 13.9051 8.61252 13.7879L16.1004 6.30005"
