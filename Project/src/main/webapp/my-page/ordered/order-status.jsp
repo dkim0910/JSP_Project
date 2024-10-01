@@ -1,5 +1,6 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 <!DOCTYPE html>
 <html>
 
@@ -13,7 +14,7 @@
 <body style="cursor: default;">
     <div class="container" style="text-align: center;">
         <header class="header">
-            <a href="../../my-page/my-main/my-page-main.html" class="button-back-page" aria-label="이전 페이지로 이동">
+            <a href="../../my-page/my-main/my-page-main.jsp" class="button-back-page" aria-label="이전 페이지로 이동">
                 <svg width="35" height="35" viewBox="0 0 28 28" fill="none">
                     <path d="M16.1004 21.7L8.61252 14.2122C8.49537 14.095 8.49537 13.9051 8.61252 13.7879L16.1004 6.30005" stroke="currentColor" stroke-width="1.4"></path>
                 </svg>
@@ -51,7 +52,7 @@
                         <td>₩20,000</td>
                         <td>
                             <span> 주문 날짜 <br/> </span> 2024-09-15 <br /><br />
-                            <a href="../refund/refund.html"><input type="button" class="refund-button" value="환불 및 교환하기" style="cursor: pointer;"/></a>
+                            <a href="../refund/refund.jsp"><input type="button" class="refund-button" value="환불 및 교환하기" style="cursor: pointer;"/></a>
                         </td>
                     </tr>
                     <!-- 추가 주문 내역 -->

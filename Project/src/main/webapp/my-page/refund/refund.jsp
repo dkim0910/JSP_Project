@@ -1,5 +1,6 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,7 +14,7 @@
 <body style="cursor: default;">
     <div class="container" >
         <header class="header">
-            <a href="../my-main/my-page-main.html" class="button-back-page" aria-label="이전 페이지로 이동">
+            <a href="../my-main/my-page-main.jsp" class="button-back-page" aria-label="이전 페이지로 이동">
                 <svg width="35" height="35" viewBox="0 0 28 28" fill="none">
                     <path d="M16.1004 21.7L8.61252 14.2122C8.49537 14.095 8.49537 13.9051 8.61252 13.7879L16.1004 6.30005" stroke="currentColor" stroke-width="1.4"></path>
                 </svg>
@@ -70,7 +71,7 @@
                     <input type="text" id="bank-info" name="bank-info" required>
                 </div> -->
 
-                <a href="finish-refund.html"><button type="button" class="submit-button">환불 신청하기</button></a>
+                <a href="finish-refund.jsp"><button type="button" class="submit-button">환불 신청하기</button></a>
             </form>
         </section>
 

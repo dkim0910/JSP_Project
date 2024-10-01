@@ -6,4 +6,6 @@
     <select id="getAllProducts" resultType="mydto">
         SELECT * FROM Products
     </select>
+    
+    
 </mapper>
