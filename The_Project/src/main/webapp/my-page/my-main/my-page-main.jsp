@@ -97,7 +97,7 @@
 					
 					<div class="hello">
 					    <p class="left" style="font-weight: bold; cursor: pointer;" onclick="showContent('my-info')">
-					        <%= nicknameMessage %> <!-- DB에서 가져온 username 삽입 -->
+					        <%-- <%= nicknameMessage %> --%> <!-- DB에서 가져온 username 삽입 -->
 					    </p>
 					    <div class="right-container">
 					        <p id="member-status" class="right" style="cursor: pointer;" onclick="showContent('membership')">

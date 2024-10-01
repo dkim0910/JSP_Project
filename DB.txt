@@ -18,7 +18,8 @@ CREATE TABLE Products (
     normal_price 		NUMBER,    -- 숫자임
     sale_rate 			NUMBER,       -- 숫자임
     Image_url 			VARCHAR2(300),
-    PRODUCT_CATEGORY 	varchar2(200)
+    CATEGORY 			varchar2(200),
+    subCategory			varchar2(200)	
 );
 
 -- Table: Cart
