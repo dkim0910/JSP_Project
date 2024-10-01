@@ -117,11 +117,11 @@
 	        </c:choose>
 	    <br/>
 	    <div class="join">
-		    <a href="id_find.jsp">다시 찾기</a>
+		    <a href="/login/join/id_find.jsp">다시 찾기</a>
 		    |
-		    <a href="login_view.jsp">로그인</a>
+		    <a href="/login/join/login_view.jsp">로그인</a>
 		    |
-		    <a href="join_view.jsp">회원가입</a>
+		    <a href="/login/join/join_view.jsp">회원가입</a>
 		</div>
     </div>
 </body>

@@ -5,7 +5,7 @@ import java.io.PrintWriter;
 
 import com.kh.web.action.Action;
 import com.kh.web.action.ActionForward;
-import com.kh.web.user.dao.UserDAO;
+import com.kh.web.dao.UserDAO;
 
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
