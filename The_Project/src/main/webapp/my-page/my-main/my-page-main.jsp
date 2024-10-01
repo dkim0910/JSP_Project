@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ page import="com.kh.web.beans.TblMember" %>    
+    
 <!DOCTYPE html>
 <html lang="en">
 
@@ -81,8 +81,8 @@
 
 
                 <main class="main-hello">
-                    <!-- 처음 들어왔을때 보여주는 화면 박스 (어서오세요 박스)-->
-                    <%
+                    <<%-- !-- 처음 들어왔을때 보여주는 화면 박스 (어서오세요 박스)-->
+                    <%	TblMember를 DTO로 변경해야함
 					    // 세션에서 회원 정보 가져오기
 					    TblMember member = (TblMember) session.getAttribute("session_member");
 					    String nicknameMessage;
@@ -93,7 +93,7 @@
 					    } else {
 					        nicknameMessage = "로그인 해주세요"; // 회원 정보가 없을 경우 메시지 출력
 					    }
-					%>
+					%> --%>
 					
 					<div class="hello">
 					    <p class="left" style="font-weight: bold; cursor: pointer;" onclick="showContent('my-info')">
@@ -199,27 +199,28 @@
                                 <div class="profile-info">
 							    <label for="user-name">이름 :</label>
 							    <span id="user-name">
-							        <%
+							        <%--위에 Tblmember DTO로 변경후 사용 <%
 							            // member가 null일 경우 처리
 							            if (member != null) {
 							                out.print(member.getUsername());
 							            } else {
 							                out.print("로그인 해주세요."); // 회원 정보가 없을 경우 메시지 출력
 							            }
-							        %>
+							        %> --%>
 							    </span>
 								</div>
 								<div class="profile-info">
 								    <label for="user-id">아이디 :</label>
 								    <span id="user-id">
-								        <%
+								       <%--위에 Tblmember DTO로 변경후 사용
+								         <%
 								            // member가 null일 경우 처리
 								            if (member != null) {
 								                out.print(member.getUSER_id());
 								            } else {
 								                out.print("로그인 해주세요.");
 								            }
-								        %>
+								        %> --%>
 								    </span>
 								</div>
 							<div class="profile-info">
@@ -229,14 +230,15 @@
                                <div class="profile-info">
 								    <label for="phone">전화번호 :</label>
 								    <span id="phone">
-								        <%
+								        <%--위에 Tblmember DTO로 변경후 사용
+								         <%
 								            // member가 null일 경우 처리
 								            if (member != null) {
 								                out.print(member.getUserphone());
 								            } else {
 								                out.print("로그인 해주세요.");
 								            }
-								        %>
+								        %> --%>
 								    </span>
 								</div>
                                 <div class="profile-info">
@@ -246,14 +248,15 @@
                                 <div class="profile-info">
 								    <label for="user-gender">성별 :</label>
 								    <span id="user-gender">
-								        <%
+								        <%-- 위에 Tblmember DTO로 변경후 사용
+								         <%
 								            // member가 null일 경우 처리
 								            if (member != null) {
 								                out.print(member.getUsergender());
 								            } else {
 								                out.print("로그인 해주세요.");
 								            }
-								        %>
+								        %> --%>
 								    </span>
 								</div>
                                 <div class="profile-info">
