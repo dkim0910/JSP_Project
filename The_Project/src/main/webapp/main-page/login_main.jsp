@@ -109,14 +109,14 @@
             </div>
           </section>
 
-          <section class="section-prod-list con-min-width">
+         <section class="section-prod-list con-min-width">
             <div class="con mx-auto">
               <nav class="prod-menu">
                 <div class="title">
                   <span>
                     비슷한 연령대 인기 카테고리 트렌드
                     <br>
-                    반소매 티셔츠 추천
+                    티셔츠 추천
                   </span>
                   <a href="#">
                     더보기
@@ -125,56 +125,56 @@
                 <ul class="flex-grid">
                   <li>
                     <a href="../main-page/shirt.html/t1.html" class="block">
-                      <img class="w-full block" src="./images/t1.jpg" alt="">
+                      <img class="w-full block" src="https://image.msscdn.net/images/goods_img/20240809/4316817/4316817_17231977575753_500.jpg" alt="">
                     </a>
-                    <a href="#" class="block text-center">마카사이트</a>
+                    <a href="#" class="block text-center">러브이즈트루</a>
                     <div>
-                      <span>19,900</span>
-                    </div>
-                  </li>
-                  <li>
-                    <a href="../main-page/shirt.html/t2.html" class="block">
-                      <img class="w-full block" src="./images/t-2.jpg" alt="">
-                    </a>
-                    <a href="#" class="block text-center">메종미네드</a>
-                    <div>
-                      <span>47,200</span>
+                      <span>89,000</span>
                     </div>
                   </li>
                   <li>
                     <a href="#" class="block">
-                      <img class="w-full block" src="./images/t-3.jpg" alt="">
+                      <img class="w-full block" src="https://image.msscdn.net/images/goods_img/20240809/4316843/4316843_17235406432386_500.jpg" alt="">
                     </a>
-                    <a href="#" class="block text-center">커버낫</a>
+                    <a href="#" class="block text-center">스타터</a>
                     <div>
-                      <span>39,000</span>
+                      <span>89,100</span>
                     </div>
                   </li>
                   <li>
                     <a href="#" class="block">
-                      <img class="w-full block" src="./images/t-4.jpg" alt="">
+                      <img class="w-full block" src="https://image.msscdn.net/images/goods_img/20240809/4316937/4316937_17242152034233_500.jpg" alt="">
                     </a>
-                    <a href="#" class="block text-center">언더오프</a>
+                    <a href="#" class="block text-center">인사일런스 우먼</a>
                     <div>
-                      <span>18,900</span>
+                      <span>256,000</span>
                     </div>
                   </li>
                   <li>
                     <a href="#" class="block">
-                      <img class="w-full block" src="./images/t-5.jpg" alt="">
+                      <img class="w-full block" src="https://image.msscdn.net/images/goods_img/20240809/4316949/4316949_17232010403691_500.jpg" alt="">
                     </a>
-                    <a href="#" class="block text-center">마리떼</a>
+                    <a href="#" class="block text-center">슈퍼드라이</a>
                     <div>
-                      <span>49,000</span>
+                      <span>69,000</span>
                     </div>
                   </li>
                   <li>
                     <a href="#" class="block">
-                      <img class="w-full block" src="./images/t-6.jpg" alt="">
+                      <img class="w-full block" src="https://image.msscdn.net/images/goods_img/20240809/4316988/4316988_17233802347410_500.jpg" alt="">
                     </a>
-                    <a href="#" class="block text-center">마하그리드</a>
+                    <a href="#" class="block text-center">유우프</a>
                     <div>
-                      <span>31,200</span>
+                      <span>65,000</span>
+                    </div>
+                  </li>
+                  <li>
+                    <a href="#" class="block">
+                      <img class="w-full block" src="https://image.msscdn.net/images/goods_img/20240809/4316962/4316962_17232048056711_500.jpg" alt="">
+                    </a>
+                    <a href="#" class="block text-center">비터</a>
+                    <div>
+                      <span>33,000</span>
                     </div>
                   </li>
                 </ul>
@@ -189,7 +189,7 @@
                   <span>
                     고객이 찾는 캐주얼 스타일
                     <br>
-                    데님 팬츠
+                    팬츠
                   </span>
                   <a href="#">
                     더보기
@@ -198,56 +198,56 @@
                 <ul class="flex-grid">
                   <li>
                     <a href="#" class="block">
-                      <img class="w-full block" src="./images/b-1.jpg" alt="">
+                      <img class="w-full block" src="https://image.msscdn.net/images/goods_img/20240809/4316952/4316952_17234473779019_500.jpg" alt="">
                     </a>
-                    <a href="#" class="block text-center">라이트더모스트</a>
+                    <a href="#" class="block text-center">씨알티원</a>
                     <div>
-                      <span>39,800</span>
+                      <span>45,000</span>
                     </div>
                   </li>
                   <li>
                     <a href="#" class="block">
-                      <img class="w-full block" src="./images/b-2.jpg" alt="">
+                      <img class="w-full block" src="https://image.msscdn.net/images/goods_img/20240809/4316885/4316885_17253244074662_500.jpg" alt="">
                     </a>
-                    <a href="#" class="block text-center">아웃스텐딩</a>
+                    <a href="#" class="block text-center">인사일런스 우먼</a>
                     <div>
-                      <span>106,200</span>
+                      <span>129,000</span>
                     </div>
                   </li>
                   <li>
                     <a href="#" class="block">
-                      <img class="w-full block" src="./images/b-3.jpg" alt="">
+                      <img class="w-full block" src="https://image.msscdn.net/images/goods_img/20240809/4316913/4316913_17242247351528_500.jpg" alt="">
                     </a>
-                    <a href="#" class="block text-center">밀리언코르</a>
+                    <a href="#" class="block text-center">인사일런스 우먼</a>
                     <div>
-                      <span>32,400</span>
+                      <span>177,000</span>
                     </div>
                   </li>
                   <li>
                     <a href="#" class="block">
-                      <img class="w-full block" src="./images/b-4.jpg" alt="">
+                      <img class="w-full block" src="https://image.msscdn.net/images/goods_img/20240809/4316816/4316816_17231977679300_500.jpg" alt="">
                     </a>
-                    <a href="#" class="block text-center">비디알</a>
+                    <a href="#" class="block text-center">비긴202</a>
                     <div>
-                      <span>109,650</span>
+                      <span>116,100</span>
                     </div>
                   </li>
                   <li>
                     <a href="#" class="block">
-                      <img class="w-full block" src="./images/b-5.jpg" alt="">
+                      <img class="w-full block" src="https://image.msscdn.net/images/goods_img/20240809/4316989/4316989_17240569811986_500.jpg" alt="">
                     </a>
-                    <a href="#" class="block text-center">피디워커</a>
+                    <a href="#" class="block text-center">셋업이엑스이</a>
                     <div>
-                      <span>78,000</span>
+                      <span>158,000</span>
                     </div>
                   </li>
                   <li>
                     <a href="#" class="block">
-                      <img class="w-full block" src="./images/b-6.jpg" alt="">
+                      <img class="w-full block" src="https://image.msscdn.net/images/goods_img/20240809/4316996/4316996_17240564866278_500.jpg" alt="">
                     </a>
-                    <a href="#" class="block text-center">챔브로스</a>
+                    <a href="#" class="block text-center">셋업이엑스이</a>
                     <div>
-                      <span>39,800</span>
+                      <span>122,000</span>
                     </div>
                   </li>
                 </ul>
