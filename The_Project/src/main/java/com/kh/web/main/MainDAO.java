@@ -1,0 +1,43 @@
+package com.kh.web.main;
+
+import java.util.List;
+
+import org.apache.ibatis.session.SqlSession;
+import org.apache.ibatis.session.SqlSessionFactory;
+
+import com.kh.mybatis.SqlMapConfig;
+import com.kh.web.action.ActionForward;
+
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+
+public class MainDAO {
+	SqlSessionFactory factory = SqlMapConfig.getFactory();
+	SqlSession session;
+	
+	public MainDAO() {
+		session = factory.openSession(true);
+	}
+	
+	public List<MainDTO> getImages() {
+        List<MainDTO> products;
+        products = session.selectList("Member.getImages"); // MyBatis Mapper XML에서 정의된 쿼리 호출
+        return products;
+    }
+
+    public ActionForward execute(HttpServletRequest req, HttpServletResponse resp) {
+        ActionForward forward = new ActionForward();
+
+        // 모든 제품 목록 가져오기
+        List<MainDTO> products = getImages();
+        
+        // 요청 속성에 제품 목록 저장
+        req.setAttribute("products", products);
+        
+        // 결과를 보여줄 JSP 페이지로 포워딩
+        forward.setPath("/main-page/imgview.jsp"); // JSP 페이지 경로 설정
+        forward.setRedirect(false); // 포워드 방식으로 설정
+        
+        return forward; // ActionForward 반환
+    }
+}

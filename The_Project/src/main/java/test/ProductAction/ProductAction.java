@@ -15,7 +15,7 @@ public class ProductAction implements Action {
         ActionForward forward = new ActionForward();
     	
     	MyDAO productDAO = new MyDAO();
-        List<MyDTO> products = productDAO.getAllProducts();
+        List<MainDTO> products = productDAO.getAllProducts();
         request.setAttribute("products", products);
         
         forward.setRedirect(false);

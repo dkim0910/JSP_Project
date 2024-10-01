@@ -24,5 +24,9 @@
 	    FROM USERS
 	    WHERE USER_NAME = #{user_name, jdbcType=VARCHAR}
 	    AND USER_PHONE = #{user_phone, jdbcType=VARCHAR}
+	</select>
+	
+	<select id="getImages" resultType="userdto">
+		SELECT BRAND , IMAGE_URL , PRICE_AMOUNT FROM PRODUCTS 
 	</select>	
   </mapper>
