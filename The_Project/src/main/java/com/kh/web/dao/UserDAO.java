@@ -1,4 +1,4 @@
-package com.kh.web.user.dao;
+package com.kh.web.dao;
 
 import java.util.HashMap;
 import java.util.Map;

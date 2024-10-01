@@ -1,4 +1,4 @@
-package com.kh.web.user.dao;
+package com.kh.web.dao;
 
 public class UserDTO {
 	private String userid;

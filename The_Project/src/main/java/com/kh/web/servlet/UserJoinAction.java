@@ -2,8 +2,8 @@ package com.kh.web.servlet;
 
 import com.kh.web.action.Action;
 import com.kh.web.action.ActionForward;
-import com.kh.web.user.dao.UserDAO;
-import com.kh.web.user.dao.UserDTO;
+import com.kh.web.dao.UserDAO;
+import com.kh.web.dao.UserDTO;
 
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -30,7 +30,7 @@ public class UserJoinAction implements Action{
 		if(udao.join(user)) {
 			// redirect 여부 선택
 			forward.setRedirect(true);
-			forward.setPath("/join/login_view.jsp");
+			forward.setPath("/login/join/login_view.jsp");
 		// 회원가입 실패시
 		}else {
 			forward.setRedirect(true);

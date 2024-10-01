@@ -2,8 +2,8 @@ package com.kh.web.servlet;
 
 import com.kh.web.action.Action;
 import com.kh.web.action.ActionForward;
-import com.kh.web.user.dao.UserDAO;
-import com.kh.web.user.dao.UserDTO;
+import com.kh.web.dao.UserDAO;
+import com.kh.web.dao.UserDTO;
 
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -24,9 +24,9 @@ public class PwFindAction implements Action{
 
 		forward.setRedirect(false);
 		if(user != null){	
-			forward.setPath("/join/pw_find_view.jsp");
+			forward.setPath("/login/join/pw_find_view.jsp");
 		} else { 			
-			forward.setPath("/join/pw_find.jsp");
+			forward.setPath("/login/join/pw_find.jsp");
 		}
 		return forward;
 	}
