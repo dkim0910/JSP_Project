@@ -13,7 +13,7 @@ public class MemberDAO {
 		session = factory.openSession(true);
 	}
 
-	public MemberDTO getMemberById(String userId) {
-		return (MemberDTO)session.selectOne("Member.getMemberById",userId);
+	public MemberDTO getMemberById(String user_id) {
+		return (MemberDTO)session.selectOne("Member.getMemberById",user_id);
 	}
 }
