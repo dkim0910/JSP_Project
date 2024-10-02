@@ -38,6 +38,7 @@ public class OrderDirectAction implements Action{
 
 		// 조회한 회원 정보를 request에 저장
         req.setAttribute("name", name);
+        req.setAttribute("product", product);
 		
 		/*
 		 * // 세션에 유저 정보 저장 req.getSession().setAttribute("order", order);

@@ -34,7 +34,6 @@
 <body>
 	<c:set var="name" value="${requestScope.name}"/>
 	<!-- <c:set var="orderItems" value="${requestScope.orderItems }"/>
-	<c:set var="totalCnt" value="${requestScope.totalCnt }"/> -->
     <head>
     </head>
     <body style="overflow: unset">
