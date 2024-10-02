@@ -1,5 +1,6 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -80,7 +81,7 @@
 <body style="cursor: default;">
     <div class="container">
         <header class="header">
-            <a href="../../my-page/my-main/my-page-main.html" class="button-back-page" aria-label="이전 페이지로 이동"
+            <a href="../../my-page/my-main/my-page-main.jsp" class="button-back-page" aria-label="이전 페이지로 이동"
                 style="color: white;">
                 <svg width="35" height="35" viewBox="0 0 28 28" fill="none">
                     <path
@@ -96,7 +97,7 @@
                 <h1>환불 및 교환 신청이 완료되었습니다</h1>
                 <h2>자세한 내용은 ~~~로 안내해 드리겠습니다</h2>
                 <div>
-                    <a href="../../my-page/my-main/my-page-main.html" class="all-button">마이페이지로 돌아가기</a>
+                    <a href="../../my-page/my-main/my-page-main.jsp" class="all-button">마이페이지로 돌아가기</a>
                 </div>
             </div>
         </div>

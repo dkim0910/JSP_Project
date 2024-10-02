@@ -1,6 +1,6 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-    
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -50,15 +50,15 @@
                         <p>마이페이지</p>
                     </div>
                     <ul>
-                        <li><a href="#" onclick="toggleBold(this); showContent('my-info')" class="sidebar-options">나의
+                        <li><a href="/my-main/MemberList.up" onclick="toggleBold(this); showContent('my-info')" class="sidebar-options">나의
                                 정보</a></li> <!-- 나의 정보창 -->
-                        <li><a href="../ordered/order-status.html" onclick="toggleBold(this); showContent('orders')"
+                        <li><a href="../ordered/order-status.jsp" onclick="toggleBold(this); showContent('orders')"
                                 class="sidebar-options">주문 내역</a></li> <!-- 여기에 주문 취소랑 주소 변경 등 넣기-->
                         <li><a href="#" onclick="toggleBold(this); showContent('membership')"
                                 class="sidebar-options">멤버십</a></li> <!-- 여기에 멤버십 포인트나 할인 이벤트 등 넣기 -->
                         <li><a href="#" onclick="toggleBold(this); showContent('helpcenter')"
                                 class="sidebar-options">고객센터</a></li> <!-- 고객센터 페이지 만들기(같은 페이지임)-->
-                        <li><a href="../refund/refund.html" onclick="toggleBold(this); showContent('refunds')"
+                        <li><a href="../refund/refund.jsp" onclick="toggleBold(this); showContent('refunds')"
                                 class="sidebar-options">환불 및 교환</a></li> <!-- 환불 및 교환 페이지 만들기(같은 페이지임) -->
                         <li><a href="#" onclick="toggleBold(this); showContent('events')"
                                 class="sidebar-options">이벤트</a>
@@ -74,7 +74,7 @@
 
                     </ul>
 
-                    <a href="../../main-page/index.html" style="font-weight: bold; color: red;">로그 아웃</a>
+                    <a href="../../main-page/index.jsp" style="font-weight: bold; color: red;">로그 아웃</a>
 
                 </nav>
 
@@ -97,7 +97,7 @@
 					
 					<div class="hello">
 					    <p class="left" style="font-weight: bold; cursor: pointer;" onclick="showContent('my-info')">
-					        <%= nicknameMessage %> <!-- DB에서 가져온 username 삽입 -->
+					       <%--  <%= nicknameMessage %> --%> <!-- DB에서 가져온 username 삽입 -->
 					    </p>
 					    <div class="right-container">
 					        <p id="member-status" class="right" style="cursor: pointer;" onclick="showContent('membership')">
