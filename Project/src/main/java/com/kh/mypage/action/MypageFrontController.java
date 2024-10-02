@@ -33,7 +33,7 @@ public class MypageFrontController extends HttpServlet {
 			forward = new MembeUpdateAction().execute(req, resp);
 			break;
 		}
-		
+		// ㅇ
 		if(forward != null) {
 			if(forward.isRedirect()) {
 				resp.sendRedirect(forward.getPath());
