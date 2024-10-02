@@ -5,7 +5,7 @@ import java.util.List;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 
-import com.kh.mypage.Action.ActionForward;
+import com.kh.mypage.refund.Action.ActionForward;
 import com.kh.mypage.refund.mybatis.SqlMapConfig;
 
 import jakarta.servlet.http.HttpServletRequest;
