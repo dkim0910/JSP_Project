@@ -462,6 +462,7 @@ footer>.con {
 
 .time-sale>.con>.timer>span {
 	margin-left: 10px;
+	font-weight: bold;
 }
 
 .list {
