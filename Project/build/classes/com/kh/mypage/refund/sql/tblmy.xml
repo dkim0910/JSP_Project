@@ -8,25 +8,28 @@
 		SELECT * FROM Products
 	</select>
 
-	<!-- refund.jsp에 DB에서 조회한 데이터 가지고 오기 -->
-	<select id="getRefundedProducts" parameterType="string"
-		resultType="mydto">
-		SELECT * FROM ORDERED
-		WHERE ORDER_NUM = #{orderNum}
-	</select>
-
-	<!-- order_num 주문내역의 번호로 조회 환불 페이지로 가는거 -->
-	<!-- <select id="getRefund" resultType="mydto">
-		SELECT *
-		FROM ORDERED o
-		JOIN Order_ ord ON o.ORDER_NUM = ord.ORDER_NUM
-		JOIN PRODUCTS p ON ord.PRODUCT_ID = p.PRODUCT_ID
-		WHERE o.ORDER_NUM = #{orderNum}
-	</select> -->
-	
 	<select id="getImage" resultType="mydto">
 		SELECT IMAGE_URL FROM PRODUCTS p 
 		WHERE p.PRODUCT_ID = #{Image1}
+	</select>
+	
+	<select id="getRefunds" resultType="mydto">
+	SELECT 
+    p.PRODUCT_ID, 
+    p.Brand, 
+    p.Product_name, 
+    p.Price_amount, 
+    p.Image_url, 
+    o.ORDER_NUM, 
+    ord.ORDERED_NUM
+	FROM 
+	    Products p
+	JOIN 
+	    Order_ o ON p.PRODUCT_ID = o.PRODUCT_ID
+	JOIN 
+	    Ordered ord ON o.ORDER_NUM = ord.ORDER_NUM
+	WHERE 
+	    o.ORDER_NUM = #{thisorderNum}
 	</select>
 
 </mapper>

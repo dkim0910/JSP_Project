@@ -20,31 +20,18 @@ public class RefundAction implements Action {
 		
 		MyDAO MyDAO = new MyDAO();
 		
-		// ORDER_NUM을 직접 설정
-//	    String orderNum = null; // 하드코딩된 값, 또는 다른 방법으로 동적으로 설정 가능
-	    
 		
-		// 요청에서 ORDER_NUM을 가져옵니다. (예: "1"로 하드코딩 하거나 request.getParameter로 가져옴)
-//	    String orderNum = request.getParameter("orderNum"); // 예를 들어, URL에서 orderNum을 가져옴
-	    
-	    // refundDAO에서 orderNum을 사용하여 환불 정보를 가져옵니다.
-		String orderNum = "O001";
-	    List<MyDTO> refund = MyDAO.getRefundedProducts(orderNum);
-	    request.setAttribute("refund", refund);
-	    
-        List<MyDTO> products = MyDAO.getAllProducts();
-        request.setAttribute("products", products);
+		
+        // 환불페이지에 필요한 정보 전체 가지고 오기
         
-		/*
-		 * String orderNum2 = "O002"; List<MyDTO> refunded =
-		 * MyDAO.getRefundProducts(orderNum2); request.setAttribute("refunded",
-		 * refunded);
-		 */
+        // 이거 나중에 1개씩이 아니라 O001, O002, O003 이렇게 한 5개 정도 바로 뽑을 수 있게 만들기
+        // 여기에 "" 배열 적어서 한개씩 돌아가면서 넣으면 되나?
+        String thisorderNum = "O002";  // 원하는 주문 번호
         
-        String Image1 = "4316816";
-        List<MyDTO> Image = MyDAO.getImage(Image1);
-        request.setAttribute("Image", Image);
-        System.out.println(Image);
+        List<MyDTO> getRefunds = MyDAO.getRefunds(thisorderNum);
+        request.setAttribute("getRefunds", getRefunds);
+        
+        
 	    
 	    forward.setRedirect(false);
 	    forward.setPath("/my-page/refund/refund.jsp");
