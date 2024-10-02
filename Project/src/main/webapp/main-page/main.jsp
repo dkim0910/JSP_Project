@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@page import="com.kh.web.dao.UserDTO"%>    
+<%@page import="com.kh.login.UserDTO"%>    
 <!DOCTYPE html>
 <html>
 <head>
