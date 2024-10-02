@@ -21,6 +21,7 @@
   <mappers>
   	<mapper resource="com/kh/login/tblmember.xml"/>
   	<mapper resource="com/kh/category/goods.xml"/>
+  	<mapper resource="com/kh/mypage/sql/member.xml"/>
   </mappers>
   
-</configuration>  
+</configuration> 

@@ -47,5 +47,4 @@ public class MemberListAction implements Action {
 
         return forward;
     }
-
 }
