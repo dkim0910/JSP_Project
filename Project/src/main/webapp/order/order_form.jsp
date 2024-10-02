@@ -530,11 +530,10 @@
                  //   document.getElementById("input_extraAddress").value = '';
                 }
 
-                // 우편번호와 주소 정보를 해당 필드에 넣는다.
-                document.getElementById('input_postcode').value = data.zonecode;
+                // 주소 정보를 해당 필드에 넣는다.
                 document.getElementById("input_address").value = addr;
-                // 커서를 상세주소 필드로 이동한다.
-                document.getElementById("input_detailAddress").focus();
+                // 커서를 주소 필드로 이동한다.
+                document.getElementById("input_Address").focus();
             }
         }).open();
     }
