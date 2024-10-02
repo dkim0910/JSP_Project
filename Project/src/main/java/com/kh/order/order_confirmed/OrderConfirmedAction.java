@@ -1,0 +1,20 @@
+package com.kh.order.order_confirmed;
+
+import com.kh.web.action.Action;
+import com.kh.web.action.ActionForward;
+
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
+
+public class OrderConfirmedAction implements Action{
+
+	@Override
+	public ActionForward execute(HttpServletRequest req, HttpServletResponse resp) {
+		ActionForward forward = new ActionForward();
+		HttpSession session = req.getSession();
+		
+		return null;
+	}
+
+}

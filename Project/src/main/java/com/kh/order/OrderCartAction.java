@@ -2,6 +2,7 @@ package com.kh.order;
 
 import com.kh.cart.dao.CartDTO;
 import com.kh.login.UserDTO;
+import com.kh.mypage.refund.Beans_DAO_DTO.MyProductsDTO;
 import com.kh.web.action.ActionForward;
 
 import jakarta.servlet.http.HttpServletRequest;
@@ -14,8 +15,7 @@ public class OrderCartAction {
 		ActionForward forward = new ActionForward();
 		HttpSession session = req.getSession();
 		UserDTO order = (UserDTO) session.getAttribute("member");
-		
-		CartDTO prod2 = new CartDTO();
+		CartDTO prod2 = (CartDTO) session.getAttribute("product2");
 		
 		OrderDAO odao = new OrderDAO();
 		// 세션에 user_id가 없으면 로그인 페이지로 리다이렉트
@@ -27,19 +27,15 @@ public class OrderCartAction {
 		
         // 세션에서 가져온 user_id로 회원 정보 조회
         String user_id = order.getUser_id();
+        String product_id = prod2.getPRODUCT_ID();
         UserDTO member = odao.getById(user_id);
+        CartDTO product = odao.getproductidByCart(product_id);
 		// 파라미터 가져오기
 		String user_name = req.getParameter("user_name");
-		String product_id = req.getParameter("product_id");
+//		String product_id = req.getParameter("product_id");
 		
 		prod2 = odao.getproductidByCart(product_id);
 
-		if (member == null) {
-            // 회원 정보가 없을 경우 처리 (예: 회원가입 페이지로 이동)
-            forward.setPath("/login/join/join_view.jsp");
-            forward.setRedirect(false);
-            return forward;
-        }
 		// 조회한 회원 정보를 request에 저장
         req.setAttribute("member", member);
 		
