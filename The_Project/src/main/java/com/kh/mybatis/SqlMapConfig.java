@@ -12,7 +12,6 @@ public class SqlMapConfig {
 
 	// 클래스 초기화 블록(클래스가 처음 로딩 될 때 한번만 수행
 	static {
-		
 		try {
 			String resouce ="com/kh/mybatis/config.xml";
 			
@@ -22,20 +21,11 @@ public class SqlMapConfig {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		
-		
 	}
 	
 	public static SqlSessionFactory getFactory(){
 		return factory;
 	}
-
-	
-
-
-
-
-
 
 }
 
