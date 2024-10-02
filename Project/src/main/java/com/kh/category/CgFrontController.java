@@ -19,8 +19,6 @@ public class CgFrontController extends HttpServlet{
 		ActionForward forward = null;
 		
 		if(requestURI.equals("/cg.product")) {
-			String category = req.getParameter("category"); 		// ex) beauty
-			String subcategory = req.getParameter("subcategory"); 	// ex) skincare
 			forward = new CategoryService().execute(req, resp);
 		}
 		else if(requestURI.equals("/haircare.product")) {
@@ -28,10 +26,8 @@ public class CgFrontController extends HttpServlet{
 		}
         
         if(forward != null) {
-			// true, redirect 방식으로 페이지 이동할 경우
 			if(forward.isRedirect()) {
 				resp.sendRedirect(forward.getPath());
-			// false, forward 방식으로 페이지 이동할 경우	
 			}else {
 				req.getRequestDispatcher(forward.getPath()).forward(req, resp);
 			}

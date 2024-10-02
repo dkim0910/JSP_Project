@@ -79,7 +79,7 @@
                                     선케어
                                 </div>
                             </a>
-                            <a href="./detail/104.html" class="goods" name="클렌징">
+                            <a href="/cg.product?category=뷰티&subcategory=클렌징" class="goods" name="클렌징">
 								<img src="https://image.msscdn.net/images/category_img/men/ITEM_104003_17164420031582_big.png"  >
 								<span>클렌징</span>
                                 <div class="product-description">
@@ -87,7 +87,7 @@
                                     클렌징
                                 </div>
 							</a>
-							<a href="./detail/105.html" class="goods" name="메이크업">
+							<a href="/cg.product?category=뷰티&subcategory=메이크업" class="goods" name="메이크업">
 								<img src="https://image.msscdn.net/images/category_img/men/ITEM_104004_17164420034611_big.png"  >
 								<span>메이크업</span>
                                 <div class="product-description">
@@ -95,7 +95,7 @@
                                     메이크업
                                 </div>
 							</a>
-							<a href="./detail/106.html" class="goods" name="프레그런스">
+							<a href="/cg.product?category=뷰티&subcategory=프레그런스" class="goods" name="프레그런스">
 								<img src="https://image.msscdn.net/images/category_img/men/ITEM_104005_17164420037579_big.png"  >
 								<span>프레그런스</span>
                                 <div class="product-description">
