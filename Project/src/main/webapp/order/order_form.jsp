@@ -87,9 +87,10 @@
                     <hr/>
                     <section class="sheet-section" id="sheet-section-product">
                         <div class="sheet-title">
-                            <h2 class="sheet-title-count">주문 상품 1개</h2>
+                            <h2 class="sheet-title-count">주문 상품</h2>
                         </div>
                         <div class="sheet-order-product">
+                        <c:forEach var="item" items="${orderItems }">
                             <div class="sheet-order-product-cartItem" data-goods-no="3997992" data-cart-id="1076429836">
                                 <div class="sheet-order-product-box">
                                     <div class="sheet-order-product-image-box">
@@ -119,6 +120,7 @@
                                     쿠폰사용
                                 </button>
                             </div>
+                       	</c:forEach>
                         </div>
                     </section>
                     <br/>

@@ -48,11 +48,12 @@
 					<div id="icon-box">
 						<div id="icon">
 							<div class="user">
-								<c:set var="user" value="${sessionScope.session_member}" />
-
-								<c:if test="${not empty user}">
-									<p>${user.user_name}님 환영합니다!</p>
-								</c:if>
+								<!-- 세션에서 회원 정보 가져오기 -->
+					        <c:choose>
+					            <c:when test="${not empty sessionScope.member}">
+					                <p>${sessionScope.member.user_name}님</p>
+					            </c:when>
+					        </c:choose>
 							</div>
 							<a href="../my-page/my-main/my-page-main.jsp" id="login"> <i
 								class="fa-regular fa-user"></i>
@@ -772,7 +773,7 @@
 					<section class="time-sale">
 						<div class="con mx-auto">
 							<div class="timer">
-								<span>오늘의 타임세일</span> <span>00:00:00</span>
+								<span>오늘의 세일</span>
 							</div>
 							<nav class="list">
 								<ul class="flex-grid">

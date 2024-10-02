@@ -460,9 +460,9 @@ footer>.con {
 	padding: 20px 0 15px 0;
 }
 
-.time-sale>.con>.timer>span:last-child {
-	color: red;
+.time-sale>.con>.timer>span {
 	margin-left: 10px;
+	font-weight: bold;
 }
 
 .list {

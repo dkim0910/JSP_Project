@@ -5,6 +5,7 @@ import org.apache.ibatis.session.SqlSessionFactory;
 
 import com.kh.login.UserDTO;
 import com.kh.mybatis.SqlMapConfig;
+import com.kh.mypage.refund.Beans_DAO_DTO.MyProductsDTO;
 
 public class OrderDAO {
 	SqlSessionFactory factory = SqlMapConfig.getFactory();
@@ -14,12 +15,11 @@ public class OrderDAO {
 		session = factory.openSession(true);
 	}
 
-	public boolean insertInfo(UserDTO order) {
-		boolean result = false;
-		if(session.insert("order.insertOrder", order) == 1 ) {
-			result = true;
-		}
+	public MyProductsDTO insertInfo(String product_id) {
+		MyProductsDTO result = null;
+		result = session.selectOne("Order.myproductsinfo", product_id);
 		return result;
 	}
+	
 	
 }

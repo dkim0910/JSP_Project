@@ -25,7 +25,6 @@ public class UserLoginAction implements Action{
 			// 로그인한 사용자 정보를 세션에 저장
 			HttpSession session = request.getSession();
 			session.setAttribute("user", member); 
-//			forward.setPath("/main-page/login_main.jsp");
 			forward.setPath("/main-page/main.jsp");
 		} else { 			
 			// 로그인 실패

@@ -5,6 +5,7 @@ import java.util.HashMap;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 
+import com.kh.login.UserDTO;
 import com.kh.mybatis.SqlMapConfig;
 
 public class MemberDAO {
@@ -15,11 +16,11 @@ public class MemberDAO {
 		session = factory.openSession(true);
 	}
 
-	public MemberDTO getMemberById(String user_id) {
-		return (MemberDTO)session.selectOne("Member.getMemberById",user_id);
+	public UserDTO getMemberById(String user_id) {
+		return (UserDTO)session.selectOne("Userinformation.getMemberById",user_id);
 	}
 
-	public boolean updateMember(MemberDTO member) {
+	public boolean updateMember(UserDTO member) {
 	    boolean result = false;
 	    HashMap<String, Object> datas = new HashMap<>();
 	    
