@@ -169,6 +169,7 @@ button{
 }
 .sheet-message-selectbox{
     display: none;
+    float: inherit;
 }
 .sheet-message-selectbox.on{
     display: block;
