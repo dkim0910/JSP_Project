@@ -38,7 +38,7 @@ public class MemberListAction implements Action {
             forward.setRedirect(false);
             return forward;
         }
-
+        
         // 조회한 회원 정보를 request에 저장
         request.setAttribute("member", member);
 

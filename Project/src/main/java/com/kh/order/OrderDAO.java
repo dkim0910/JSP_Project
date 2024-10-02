@@ -20,6 +20,10 @@ public class OrderDAO {
 		result = session.selectOne("Order.myproductsinfo", product_id);
 		return result;
 	}
+
+	public UserDTO getById(String user_id) {
+		return (UserDTO)session.selectOne("Order.getById",user_id);
+	}
 	
 	
 }
