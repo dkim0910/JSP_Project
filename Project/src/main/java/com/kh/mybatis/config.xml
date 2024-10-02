@@ -5,6 +5,7 @@
 <configuration>
 	<typeAliases>
 		<typeAlias type="com.kh.login.UserDTO" alias="userdto"/>
+		<typeAlias type="com.kh.category.GoodsDTO" alias="goodsdto"/>
 	</typeAliases>
   <environments default="development">
     <environment id="development">
@@ -19,6 +20,7 @@
   </environments>
   <mappers>
   	<mapper resource="com/kh/login/tblmember.xml"/>
+  	<mapper resource="com/kh/category/goods.xml"/>
   </mappers>
   
 </configuration>  
