@@ -43,7 +43,7 @@
         <div class="flex-1 h-full">
           <div id="icon-box">
             <div id="icon">
-              <a href="../login/join/login_view.ma" id="login">
+              <a href="../login/join/login_view" id="login">
                 <i class="fa-regular fa-user"></i>
               </a>
               <a href="../category/category.jsp" id="more">
