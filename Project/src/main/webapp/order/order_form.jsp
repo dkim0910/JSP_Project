@@ -55,7 +55,7 @@
                             </div>
                             <div class="sheet-address-title">
                                 <strong class="sheet-address-title-name" id="recipient-name">
-                                    ${order.user_name }
+                                    ${user_name }
                                 </strong>
                                 <span class="sheet-address-title-label" id="recipient-default" style="display: block;">
                                     기본 배송지
@@ -66,8 +66,8 @@
                             </div>
                             <div>
                             	<div class="form-input-address">
-									<input type="text" id="input_address" placeholder="주소" value="${order.user_address}"><br/>
-									<input type="text" id="input_phoneNumber" placeholder="전화번호" value="${order.user_phone}">
+									<input type="text" id="input_address" placeholder="주소" value="${user_address}"><br/>
+									<input type="text" id="input_phoneNumber" placeholder="전화번호" value="${user_phone}">
                             	</div>
                             </div>
                             <div class="sheet-message-select">
@@ -90,37 +90,70 @@
                             <h2 class="sheet-title-count">주문 상품</h2>
                         </div>
                         <div class="sheet-order-product">
-                        <c:forEach var="item" items="${orderItems }">
-                            <div class="sheet-order-product-cartItem" data-goods-no="3997992" data-cart-id="1076429836">
-                                <div class="sheet-order-product-box">
-                                    <div class="sheet-order-product-image-box">
-                                        <img class="sheet-order-product-image" src="./img/payment_method_img/t-4.jpg">
-                                    </div>
-                                    <div class="sheet-order-product-information">
-                                        <a class="sheet-order-product-brand">아디다스</a>
-                                        <br/>                               
-                                        <a class="sheet-order-product-name">
-                                            ${item.name}
-                                        </a>
-                                        <br/>
-                                        <span class="sheet-order-product-option">XL / 1개</span>                                     
-                                        <div class="sheet-order-product-price-box">
-                                            <strong class="sheet-order-product-price-coupon rolling-counter" id="display-product-price-coupon-box-1076429836" style="display: none">
-                                                <span class="rolling-number" id="display-product-price-coupon-1076429836">0</span>
-                                                <span>원</span>
-                                            </strong><!-- default : style="display: none" -->
-                                            <strong class="sheet-order-product-price-origin" id="display-product-price-1076429836">108,000원</strong>
-                                            <br/>                                   
-                                            <span class="sheet-order-product-price-sale" id="display-product-price-origin-1076429836">100,000원</span>
-                                            <span class="sheet-order-product-price-text-coupon" id="display-product-apply-coupon-1076429836" style="display: none">쿠폰적용가</span><!-- default : style="display: none" -->
-                                        </div>
-                                    </div>
-                                </div>
-                                <button type="button" class="sheet-order-product-coupon" id="button-product-apply-coupon-1076429836" onclick="openPopup_couponApply()">
-                                    쿠폰사용
-                                </button>
-                            </div>
-                       	</c:forEach>
+                        <c:choose>
+	                        	<c:when test="${user_name != null }">
+	                        	<%-- 상세페이지에서 결제한 경우 when절 수정해야함--%>
+			                        <c:forEach var="item" items="${orderItems }">
+			                            <div class="sheet-order-product-cartItem">
+			                                <div class="sheet-order-product-box">
+			                                    <div class="sheet-order-product-image-box">
+			                                        <img class="sheet-order-product-image" src="location.href='${image_url }';">
+			                                    </div>
+			                                    <div class="sheet-order-product-information">
+			                                        <a class="sheet-order-product-brand">${brand}</a>
+			                                        <br/>                               
+			                                        <a class="sheet-order-product-name">
+			                                            ${product_name}
+			                                        </a>
+			                                        <br/>
+			                                        <span class="sheet-order-product-option">XL / 1개</span>                                     
+			                                        <div class="sheet-order-product-price-box">
+			                                            <strong class="sheet-order-product-price-coupon rolling-counter" id="display-product-price-coupon-box-1076429836" style="display: none">
+			                                            </strong><!-- default : style="display: none" -->
+			                                            <strong class="sheet-order-product-price-origin">${normal_price }원</strong>
+			                                            <br/>                                   
+			                                            <span class="sheet-order-product-price-sale">${price_amount }원</span>
+			                                            <span class="sheet-order-product-price-text-coupon" style="display: none">쿠폰적용가</span><!-- default : style="display: none" -->
+			                                        </div>
+			                                    </div>
+			                                </div>
+			                                <button type="button" class="sheet-order-product-coupon" id="button-product-apply-coupon-1076429836" onclick="openPopup_couponApply()">
+			                                    쿠폰사용
+			                                </button>
+			                            </div>
+			                       	</c:forEach>
+	                        	</c:when>
+                        	<c:otherwise>
+	                        	<%-- 장바구니에서 결제한 경우 --%>
+	                        	<div class="sheet-order-product-cartItem">
+				                                <div class="sheet-order-product-box">
+				                                    <div class="sheet-order-product-image-box">
+				                                        <img class="sheet-order-product-image" src="location.href='${image_url }';">
+				                                    </div>
+				                                    <div class="sheet-order-product-information">
+				                                        <a class="sheet-order-product-brand">${brand}</a>
+				                                        <br/>                               
+				                                        <a class="sheet-order-product-name">
+				                                            ${product_name}
+				                                        </a>
+				                                        <br/>
+				                                        <span class="sheet-order-product-option">XL / 1개</span>                                     
+				                                        <div class="sheet-order-product-price-box">
+				                                            <strong class="sheet-order-product-price-coupon rolling-counter" id="display-product-price-coupon-box-1076429836" style="display: none">
+				                                            </strong><!-- default : style="display: none" -->
+				                                            <strong class="sheet-order-product-price-origin">${normal_price }원</strong>
+				                                            <br/>                                   
+				                                            <span class="sheet-order-product-price-sale">${price_amount }원</span>
+				                                            <span class="sheet-order-product-price-text-coupon" style="display: none">쿠폰적용가</span><!-- default : style="display: none" -->
+				                                        </div>
+				                                    </div>
+				                                </div>
+				                                <button type="button" class="sheet-order-product-coupon" id="button-product-apply-coupon-1076429836" onclick="openPopup_couponApply()">
+				                                    쿠폰사용
+				                                </button>
+				                            </div>
+                        	</c:otherwise>
+                        </c:choose>
                         </div>
                     </section>
                     <br/>
