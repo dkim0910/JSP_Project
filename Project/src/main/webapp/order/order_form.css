@@ -80,6 +80,10 @@ button{
     font: 16px ;
     text-align: center;
 }
+.sheet-purchase-button-box{
+    display: block;
+    background-color: #f5f5f5;
+}
 /* ------주문서------ */
 
 /* ------배송지------ */
@@ -95,11 +99,14 @@ button{
  	outline: 0;
  	border-radius: 4px;
 }
-#input_address{
-	width: 60%
+#input_postcode{
+	width: 13.1%;
 }
-#input_phoneNumber{
-    width: 30%;
+#input_address{
+	width: 46.1%
+}
+#input_detailAddress{
+	width: 60%
 }
 /* ------배송지(Daum API)------ */
 .sheet-address{
@@ -123,7 +130,7 @@ button{
     font-size: 15px;
     font-weight: 500;
     line-height: 18px;
-    margin-left: 243px;
+    margin-left: 195px;
     
 }
 .sheet-message-text{
@@ -167,7 +174,6 @@ button{
     display: none;
 }
 .sheet-message-selectbox.on{
-    float: left;
     display: block;
 }
 .sheet-message-selectbox li{
