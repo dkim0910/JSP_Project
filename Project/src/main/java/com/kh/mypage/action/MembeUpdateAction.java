@@ -1,7 +1,8 @@
 package com.kh.mypage.action;
 
+import com.kh.login.UserDTO;
 import com.kh.mypage.dao.MemberDAO;
-import com.kh.mypage.dao.MemberDTO;
+
 import com.kh.web.action.Action;
 import com.kh.web.action.ActionForward;
 
@@ -30,7 +31,7 @@ public class MembeUpdateAction implements Action{
         }
 
         // MemberDTO 객체에 수정할 정보 세팅
-        MemberDTO member = new MemberDTO();
+       UserDTO member = new UserDTO();
         member.setUser_id(user_id);
         member.setUser_name(user_name);
         member.setUser_pw(user_pw);

@@ -20,7 +20,7 @@ public class MemberDAO {
 		return (UserDTO)session.selectOne("Userinformation.getMemberById",user_id);
 	}
 
-	public boolean updateMember(MemberDTO member) {
+	public boolean updateMember(UserDTO member) {
 	    boolean result = false;
 	    HashMap<String, Object> datas = new HashMap<>();
 	    
