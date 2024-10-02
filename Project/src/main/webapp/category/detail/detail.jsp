@@ -2,6 +2,8 @@
     pageEncoding="UTF-8"%>
 <%@ page import="java.util.List" %>
 <%@ page import="com.example.model.CartItem" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -12,6 +14,7 @@
     <script src="./detail.js" defer></script>
 </head>
 <body>
+	<c:set var="goods" value="${sessionScope.goods }"/>
     <div class="product-detail-container">
         <!-- 상품 이미지 및 정보 -->
         <div class="product-image">
@@ -19,8 +22,8 @@
         </div>
     
         <div class="product-info">
-            <h1 class="product-title">헤어케어</h1>
-            <p class="product-price">27,000원</p>
+            <h1 class="product-title">${goods.PRODUCT_NAME }</h1>
+            <p class="product-price">${goods.NORMAL_PRICE }원</p>
             <p class="product-description">
                 향기에 한번, 사용감에 두 번 반하다<br>
                 카카오톡 선물하기 랭킹 1위<br>
@@ -39,7 +42,7 @@
             <!-- 현재 이 파일(detail.html)에만 구현되어 있음 -->
             <div class="total-price">
                 <p id="total-number">총 x개</p>
-                <p>y원</p>
+                <p id="total-goods-price">y원</p>
             </div>
             
             <!-- 현재 이 파일(detail.html)에만 구현되어 있음 -->
@@ -62,6 +65,8 @@
     <div class="bottom-parchase-buttons">
         구매하기
     </div>
-
+	<script>
+    const productPrice = ${goods.NORMAL_PRICE}; // 상품의 개당 가격
+	</script>
 </body>
 </html>

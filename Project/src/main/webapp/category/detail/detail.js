@@ -8,17 +8,26 @@ const selectElement = document.getElementById('quantity');
         option.text = `${i}`;
         selectElement.appendChild(option);
     }
-
-// 총 수량과 가격 업데이트
+////////////////////////
+// 총 수량과 가격 업데이트 함수
 function updateTotalNumber() {
     let totalNumber = document.getElementById('total-number');
-    totalNumber.innerHTML = '총 ' + selectElement.value + '개';
+    let totalPrice = document.getElementById('total-goods-price');
+    
+    const quantity = selectElement.value; // 선택한 수량
+    const total = quantity * productPrice; // 총 가격 계산
+    
+    totalNumber.innerHTML = '총 ' + quantity + '개';
+    totalPrice.innerHTML = total.toLocaleString() + '원'; // 숫자 포맷팅하여 원화 표시
 }
+
 // 처음 로드 시 초기값 설정
 updateTotalNumber();
+
 // 수량이 변경될 때마다 업데이트
 selectElement.addEventListener('change', updateTotalNumber);
 
+////////////////////////
 // 하단의 구매하기
 document.addEventListener('DOMContentLoaded', function() {
     const b_button = document.querySelector('.bottom-parchase-buttons');
@@ -30,6 +39,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
+/////////////////////
 // 스크롤 시 하단의 구매하기 버튼 보이기
 document.addEventListener('DOMContentLoaded', function() {
     const b_button = document.querySelector('.bottom-parchase-buttons');
