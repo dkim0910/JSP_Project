@@ -31,8 +31,12 @@ public class OrderFormFrontController extends HttpServlet{
 		ActionForward forward = null;
 		
 //		 결제창
-		if(requestURI.equals("/order/order_form.or")) {
+		if(requestURI.equals("/order/order.or")) {
+			forward = new ActionForward(true, "/order/order_form.jsp");
+		} else if(requestURI.equals("/order/order_form.or")) {
 			forward = new OrderFormAction().execute(req, resp);
+		} else if(requestURI.equals("/order/order_cart.or")) {
+			forward = new OrderCartAction().execute(req, resp);
 		}
 		
 		

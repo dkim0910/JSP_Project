@@ -55,9 +55,9 @@
                             </div>
                             <div>
                             	<div class="form-input-address">
-		                            <input type="text" id="input_postcode" placeholder="우편번호" value="${user_postcode}" >
+		                            <%-- <input type="text" id="input_postcode" placeholder="우편번호" value="${user_postcode}" > --%>
 									<input type="text" id="input_address" placeholder="주소" value="${user_address}"><br/>
-									<input type="text" id="input_detailAddress" placeholder="상세주소" value="${user_address_detail}">
+									<%-- <input type="text" id="input_detailAddress" placeholder="상세주소" value="${user_address_detail}"> --%>
 									<input type="text" id="input_phoneNumber" placeholder="전화번호" value="${user_phone}">
                             	</div>
                             </div>
