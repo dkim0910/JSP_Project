@@ -6,13 +6,13 @@ import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 
 import com.kh.mypage.refund.Action.ActionForward;
-import com.kh.mypage.refund.mybatis.SqlMapConfig;
+import com.kh.mypage.refund.mybatis.My_SqlMapConfig;
 
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 public class MyDAO {
-	SqlSessionFactory factory = SqlMapConfig.getFactory();
+	SqlSessionFactory factory = My_SqlMapConfig.getFactory();
 	SqlSession session;
 	
 	public MyDAO() {

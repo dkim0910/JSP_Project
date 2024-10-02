@@ -15,8 +15,10 @@ public class ProductAction implements Action {
     public ActionForward execute(HttpServletRequest request, HttpServletResponse response) {
         ActionForward forward = new ActionForward();
     	
+        // 전체 데이터 베이스의 내용 테이블로 출력
     	MyDAO productDAO = new MyDAO();
         List<MyDTO> products = productDAO.getAllProducts();
+        
         request.setAttribute("products", products);
         
         forward.setRedirect(false);

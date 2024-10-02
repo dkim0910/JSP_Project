@@ -4,7 +4,7 @@
   "https://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
 	<typeAliases>
-		<typeAlias type="test.MyDTO" alias="mydto"/>
+		<typeAlias type="com.kh.mypage.refund.Beans_DAO_DTO.MyDTO" alias="mydto"/>
 	</typeAliases>
   <environments default="development">
     <environment id="development">
@@ -18,7 +18,7 @@
     </environment>
   </environments>
   <mappers>
-  	<mapper resource="tblmy.xml"/>
+  	<mapper resource="com/kh/mypage/refund/sql/tblmy.xml"/>
   </mappers>
   
 </configuration>  
