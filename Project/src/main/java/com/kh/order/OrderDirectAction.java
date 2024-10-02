@@ -14,7 +14,7 @@ public class OrderDirectAction implements Action{
 	public ActionForward execute(HttpServletRequest req, HttpServletResponse resp) {
 		ActionForward forward = new ActionForward();
 		HttpSession session = req.getSession();
-		UserDTO order = (UserDTO) session.getAttribute("member");
+		UserDTO order = (UserDTO) session.getAttribute("name");
 		MyProductsDTO prod = (MyProductsDTO) session.getAttribute("product");
 		
 		OrderDAO odao = new OrderDAO();
@@ -28,7 +28,7 @@ public class OrderDirectAction implements Action{
         // 세션에서 가져온 user_id / product_id로 회원 정보 조회
         String user_id = order.getUser_id();
         String product_id = prod.getProduct_id();
-        UserDTO member = odao.getById(user_id);
+        UserDTO name = odao.getById(user_id);
         MyProductsDTO product = odao.getproductidByMyProducts(product_id);
 		// 파라미터 가져오기
 		String user_name = req.getParameter("user_name");
@@ -37,7 +37,7 @@ public class OrderDirectAction implements Action{
 		prod = odao.getproductidByMyProducts(product_id);
 
 		// 조회한 회원 정보를 request에 저장
-        req.setAttribute("member", member);
+        req.setAttribute("name", name);
 		
 		/*
 		 * // 세션에 유저 정보 저장 req.getSession().setAttribute("order", order);

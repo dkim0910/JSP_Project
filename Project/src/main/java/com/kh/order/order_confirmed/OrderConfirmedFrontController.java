@@ -12,7 +12,7 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
-@WebServlet("*.or")
+@WebServlet("*.or_c")
 public class OrderConfirmedFrontController extends HttpServlet{
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -29,7 +29,7 @@ public class OrderConfirmedFrontController extends HttpServlet{
 	
 		
 //		결제 완료창
-		if(requestURI.equals("/order/order_confirmed.or")) {
+		if(requestURI.equals("/order/order_confirmed.or_c")) {
 			forward = new ActionForward(true, "/order/order_confirmed.jsp");
 		}
 		
