@@ -1,7 +1,8 @@
 package com.kh.mypage.action;
 
+import com.kh.login.UserDTO;
 import com.kh.mypage.dao.MemberDAO;
-import com.kh.mypage.dao.MemberDTO;
+
 import com.kh.web.action.Action;
 import com.kh.web.action.ActionForward;
 
@@ -18,7 +19,7 @@ public class MemberListAction implements Action {
 
         // 세션에서 user_id 가져오기
         HttpSession session = request.getSession();
-        MemberDTO sessionMember = (MemberDTO) session.getAttribute("member");
+        UserDTO sessionMember = (UserDTO) session.getAttribute("member");
 
         // 세션에 user_id가 없으면 로그인 페이지로 리다이렉트
         if (sessionMember == null) {
@@ -29,7 +30,7 @@ public class MemberListAction implements Action {
 
         // 세션에서 가져온 user_id로 회원 정보 조회
         String user_id = sessionMember.getUser_id();
-        MemberDTO member = dao.getMemberById(user_id);
+        UserDTO member = dao.getMemberById(user_id);
 
         if (member == null) {
             // 회원 정보가 없을 경우 처리 (예: 회원가입 페이지로 이동)
