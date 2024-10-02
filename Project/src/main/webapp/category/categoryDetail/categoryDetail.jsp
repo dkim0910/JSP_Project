@@ -49,10 +49,20 @@
                         	<c:forEach var="category" items="${category }">
 	                            <a href="/scg.product?PRODUCT_ID=${category.PRODUCT_ID }" class="goods" name="스킨케어">
 	                                <img src="${category.IMAGE_URL }"  >
-	                                <span>${category.PRODUCT_NAME }</span>
+	                                <c:choose>
+									    <c:when test="${fn:length(category.PRODUCT_NAME) > 15}">
+									        <span>${fn:substring(category.PRODUCT_NAME, 0, 15)}...</span>
+									    </c:when>
+									    <c:otherwise>
+									        <span>${category.PRODUCT_NAME}</span>
+									    </c:otherwise>
+									</c:choose>
+
 	                                <div class="product-description">
-	                                    <img src="./detail/img/102-1.webp" alt="상품 이미지">
-	                                    ${category.PRODUCT_NAME }
+	                                    <!-- <img src="./detail/img/102-1.webp" alt="상품 이미지"> -->
+	                                    <p id="product-description-name">${category.PRODUCT_NAME }</p>
+	                                    <p id="product-description-price">${category.PRICE_AMOUNT }원</p>
+	                                    
 	                                </div>
 	                            </a>
                             </c:forEach>
