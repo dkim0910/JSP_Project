@@ -27,7 +27,6 @@
                         stroke="currentColor" stroke-width="1.4"></path>
                 </svg>
             </a>
-
             <h1 onclick="toggleBold(this); showContent('maincontents')" style="color: #ffffff; cursor: default;">
                 마이 페이지
             </h1>
@@ -81,7 +80,7 @@
 
 
                 <main class="main-hello">
-                    <<%-- !-- 처음 들어왔을때 보여주는 화면 박스 (어서오세요 박스)-->
+                    <%-- !-- 처음 들어왔을때 보여주는 화면 박스 (어서오세요 박스)-->
                     <%	TblMember를 DTO로 변경해야함
 					    // 세션에서 회원 정보 가져오기
 					    TblMember member = (TblMember) session.getAttribute("session_member");

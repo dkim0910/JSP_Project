@@ -33,7 +33,7 @@ public class MemberDAO {
 	    datas.put("userGender", member.getUser_gender());
 	    
 	    // SQL 쿼리 실행 및 영향을 받은 행 수 확인
-	    if (session.update("Member.updateMember", datas) == 1) {
+	    if (session.update("Userinformation.updateMember", datas) == 1) {
 	        result = true; // 성공적으로 업데이트된 경우
 	    }
 	    

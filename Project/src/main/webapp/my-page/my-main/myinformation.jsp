@@ -39,28 +39,63 @@
     </style>
 </head>
 <body>
-    <c:set var="member" value="${requestScope.member}"/>  <!-- requestScope에서 member 설정 -->
     <div class="container">
-        <h1>마이 페이지</h1>
-        <div class="profile-section">
-            <h2>나의 정보</h2>
-
-            <!-- JSTL을 사용하여 member 객체의 정보를 출력 -->
-            <c:choose>
-                <c:when test="${not empty member}">
-                    <div class="info">이름: <c:out value="${member.user_name}" /></div>
-                    <div class="info">아이디: <c:out value="${member.user_id}" /></div>
-                    <div class="info">전화번호: <c:out value="${member.user_phone}" /></div>
-                    <div class="info">주소: <c:out value="${member.user_address}" /></div>
-                    <div class="info">성별: <c:out value="${member.user_gender}" /></div>
-                    <a href="editProfile.jsp" class="button">정보 수정하기</a>
-                </c:when>
-                <c:otherwise>
-                    <p>해당하는 사용자 정보를 찾을 수 없습니다.</p>
-                </c:otherwise>
-            </c:choose>
-        </div>
+        <h1>회원 정보 수정</h1>
+        <form action="/my-main/MemberUpdate.up" method="post" onsubmit="return checkForm()">
+            <table border="1">
+                <tr>
+                    <th>아이디 (변경 불가)</th>
+                    <td>
+                        <input type="text" name="user_id" value="${member.user_id}" readonly />
+                    </td>
+                </tr>
+                <tr>
+                    <th>이름</th>
+                    <td>
+                        <input type="text" name="user_name" value="${member.user_name}" />
+                    </td>
+                </tr>
+                <tr>
+                    <th>비밀번호</th>
+                    <td>
+                        <input type="password" name="user_pw" placeholder="새 비밀번호를 입력하세요" />
+                    </td>
+                </tr>
+                <tr>
+                    <th>주소</th>
+                    <td>
+                        <input type="text" name="user_address" value="${member.user_address}" />
+                    </td>
+                </tr>
+                <tr>
+                    <th>전화번호</th>
+                    <td>
+                        <input type="text" name="user_phone" value="${member.user_phone}" />
+                    </td>
+                </tr>
+                <tr>
+                    <th>성별</th>
+                    <td>
+                        <select name="user_gender">
+                            <option value="M" ${member.user_gender == 'M' ? 'selected' : ''}>남성</option>
+                            <option value="F" ${member.user_gender == 'F' ? 'selected' : ''}>여성</option>
+                        </select>
+                    </td>
+                </tr>
+            </table>
+            <input type="submit" value="정보 수정" />
+        </form>
     </div>
-
+	
+    <script>
+        function checkForm() {
+            // 기본적으로 모든 필드를 전송하게 하고, 비밀번호는 빈 값이면 전송하지 않음
+            var pwField = document.querySelector("input[name='user_pw']");
+            if (pwField.value.trim() === "") {
+                pwField.disabled = true;  // 비밀번호 입력하지 않았으면 서버로 보내지 않음
+            }
+            return true;  // 폼 제출 허용
+        }
+    </script>
 </body>
 </html>

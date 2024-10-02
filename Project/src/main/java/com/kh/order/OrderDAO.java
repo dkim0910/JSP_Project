@@ -1,5 +1,7 @@
 package com.kh.order;
 
+import java.util.HashMap;
+
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 
@@ -30,6 +32,12 @@ public class OrderDAO {
 		CartDTO result = null;
 		result = session.selectOne("Order.getproductidByCart", product_id);
 		return result;
+	}
+	
+	public UserDTO getName(String user_name) {
+		UserDTO name = null;
+		name = session.selectOne("Order.getById", user_name);
+		return name;
 	}
 	
 	

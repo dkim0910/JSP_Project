@@ -14,9 +14,8 @@ public class OrderDirectAction implements Action{
 	public ActionForward execute(HttpServletRequest req, HttpServletResponse resp) {
 		ActionForward forward = new ActionForward();
 		HttpSession session = req.getSession();
-		UserDTO order = (UserDTO) session.getAttribute("member");
-		
-		MyProductsDTO prod = new MyProductsDTO();
+		UserDTO order = (UserDTO) session.getAttribute("name");
+		MyProductsDTO prod = (MyProductsDTO) session.getAttribute("product");
 		
 		OrderDAO odao = new OrderDAO();
 		// 세션에 user_id가 없으면 로그인 페이지로 리다이렉트
@@ -26,23 +25,20 @@ public class OrderDirectAction implements Action{
             return forward;
         }
 		
-        // 세션에서 가져온 user_id로 회원 정보 조회
+        // 세션에서 가져온 user_id / product_id로 회원 정보 조회
         String user_id = order.getUser_id();
-        UserDTO member = odao.getById(user_id);
+        String product_id = prod.getProduct_id();
+        UserDTO name = odao.getById(user_id);
+        MyProductsDTO product = odao.getproductidByMyProducts(product_id);
 		// 파라미터 가져오기
 		String user_name = req.getParameter("user_name");
-		String product_id = req.getParameter("product_id");
+//		String product_id = req.getParameter("product_id");
 		
 		prod = odao.getproductidByMyProducts(product_id);
 
-		if (member == null) {
-            // 회원 정보가 없을 경우 처리 (예: 회원가입 페이지로 이동)
-            forward.setPath("/login/join/join_view.jsp");
-            forward.setRedirect(false);
-            return forward;
-        }
 		// 조회한 회원 정보를 request에 저장
-        req.setAttribute("member", member);
+        req.setAttribute("name", name);
+        req.setAttribute("product", product);
 		
 		/*
 		 * // 세션에 유저 정보 저장 req.getSession().setAttribute("order", order);
