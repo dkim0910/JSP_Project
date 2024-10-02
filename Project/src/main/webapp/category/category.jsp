@@ -66,42 +66,22 @@
                             <a href="/cg.product?category=뷰티&subcategory=스킨케어" class="goods" name="스킨케어">
                                 <img src="https://image.msscdn.net/images/category_img/men/ITEM_104001_17164420025345_big.png"  >
                                 <span>스킨케어</span>
-                                <div class="product-description">
-                                    <img src="./detail/img/102-1.webp" alt="상품 이미지">
-                                    스킨케어
-                                </div>
                             </a>
                             <a href="/cg.product?category=뷰티&subcategory=선케어" class="goods" name="선케어">
                                 <img src="https://image.msscdn.net/images/category_img/men/ITEM_104002_17164420028786_big.png"  >
                                 <span>선케어</span>
-                                <div class="product-description">
-                                    <img src="./detail/img/103-1.webp" alt="상품 이미지">
-                                    선케어
-                                </div>
                             </a>
                             <a href="/cg.product?category=뷰티&subcategory=클렌징" class="goods" name="클렌징">
 								<img src="https://image.msscdn.net/images/category_img/men/ITEM_104003_17164420031582_big.png"  >
 								<span>클렌징</span>
-                                <div class="product-description">
-                                    <img src="./detail/img/104-1.webp" alt="상품 이미지">
-                                    클렌징
-                                </div>
 							</a>
 							<a href="/cg.product?category=뷰티&subcategory=메이크업" class="goods" name="메이크업">
 								<img src="https://image.msscdn.net/images/category_img/men/ITEM_104004_17164420034611_big.png"  >
 								<span>메이크업</span>
-                                <div class="product-description">
-                                    <img src="./detail/img/105-1.webp" alt="상품 이미지">
-                                    메이크업
-                                </div>
 							</a>
 							<a href="/cg.product?category=뷰티&subcategory=프레그런스" class="goods" name="프레그런스">
 								<img src="https://image.msscdn.net/images/category_img/men/ITEM_104005_17164420037579_big.png"  >
 								<span>프레그런스</span>
-                                <div class="product-description">
-                                    <img src="./detail/img/106-1.webp" alt="상품 이미지">
-                                    프레그런스
-                                </div>
 							</a>
                         </div>
                     </section>
@@ -109,53 +89,29 @@
                     <section class="goods-category" id="shoes-section">
                         <h2 class="goods-category-index" >신발</h2>
                         <div class="goods-category-real">
-                            <a href="./detail/201.html" class="goods" name="신상">
+                            <a href="/cg.product?category=신발&subcategory=스니커즈" class="goods" name="스니커즈">
                                 <img src="https://image.msscdn.net/images/category_img/men/ITEM_103004_17164420017705_big.png"  >
                                 <span>스니커즈</span>
-                                <div class="product-description">
-                                    <img src="./detail/img/201-1.webp" alt="상품 이미지">
-                                    스니커즈
-                                </div>
                             </a>
-                            <a href="./detail/202.html" class="goods" name="스니커즈">
+                            <a href="/cg.product?category=신발&subcategory=스포츠화" class="goods" name="스포츠화">
                                 <img src="https://image.msscdn.net/images/category_img/men/ITEM_103005_17164420020288_big.png"  >
                                 <span>스포츠화</span>
-                                <div class="product-description">
-                                    <img src="./detail/img/202-1.webp" alt="상품 이미지">
-                                    스포츠화
-                                </div>
                             </a>
-                            <a href="./detail/203.html" class="goods" name="구두">
+                            <a href="/cg.product?category=신발&subcategory=구두" class="goods" name="구두">
 								<img src="https://image.msscdn.net/images/category_img/men/ITEM_103001_17164420008529_big.png"  >
 								<span>구두</span>
-                                <div class="product-description">
-                                    <img src="./detail/img/203-1.webp" alt="상품 이미지">
-                                    구두
-                                </div>
 							</a>
-							<a href="./detail/204.html" class="goods" name="샌들">
+                            <a href="/cg.product?category=신발&subcategory=샌들/슬리퍼" class="goods" name="샌들/슬리퍼">
 								<img src="https://image.msscdn.net/images/category_img/men/ITEM_103003_17164420014447_big.png"  >
-								<span>샌들</span>
-                                <div class="product-description">
-                                    <img src="./detail/img/204-1.webp" alt="상품 이미지">
-                                    샌들
-                                </div>
+								<span>샌들/슬리퍼</span>
 							</a>
-							<a href="./detail/205.html" class="goods" name="부츠">
+                            <a href="/cg.product?category=신발&subcategory=부츠/워커" class="goods" name="부츠/워커">
 								<img src="https://image.msscdn.net/images/category_img/men/ITEM_103002_17164420011373_big.png"  >
-								<span>부츠</span>
-                                <div class="product-description">
-                                    <img src="./detail/img/205-1.webp" alt="상품 이미지">
-                                    부츠
-                                </div>
+								<span>부츠/워커</span>
 							</a>
-							<a href="./detail/206.html" class="goods" name="스포츠화">
+                            <a href="/cg.product?category=신발&subcategory=신발용품" class="goods" name="신발용품">
 								<img src="https://image.msscdn.net/images/category_img/men/ITEM_103006_17164446463550_big.png"  >
 								<span>신발용품</span>
-                                <div class="product-description">
-                                    <img src="./detail/img/206-1.webp" alt="상품 이미지">
-                                    신발용품
-                                </div>
 							</a>
                         </div>
                     </section>
@@ -163,53 +119,29 @@
                     <section class="goods-category" id="bags-section">
                         <h2 class="goods-category-index" >가방</h2>
                         <div class="goods-category-real">
-                            <a href="./detail/301.html" class="goods" name="신상">
+                            <a href="/cg.product?category=가방&subcategory=캐리어" class="goods" name="캐리어">
                                 <img src="https://image.msscdn.net/images/category_img/men/ITEM_004005_17164419848078_big.png"  >
-                                <span>클러치백</span>
-                                <div class="product-description">
-                                    <img src="./detail/img/301-1.webp" alt="상품 이미지">
-                                    클러치백
-                                </div>
+                                <span>캐리어</span>
                             </a>
-                            <a href="./detail/302.html" class="goods" name="백팩">
+                            <a href="/cg.product?category=가방&subcategory=백팩" class="goods" name="백팩">
                                 <img src="https://image.msscdn.net/images/category_img/men/ITEM_004001_17164419839188_big.png"  >
                                 <span>백팩</span>
-                                <div class="product-description">
-                                    <img src="./detail/img/302-1.webp" alt="상품 이미지">
-                                    백팩
-                                </div>
                             </a>
-                            <a href="./detail/303.html" class="goods" name="크로스백">
+                            <a href="/cg.product?category=가방&subcategory=지갑/머니클립" class="goods" name="지갑/머니클립">
 								<img src="https://image.msscdn.net/images/category_img/men/ITEM_004002_17164419842177_big.png"  >
-								<span>크로스백</span>
-                                <div class="product-description">
-                                    <img src="./detail/img/303-1.webp" alt="상품 이미지">
-                                    크로스백
-                                </div>
+								<span>지갑/머니클립</span>
 							</a>
-							<a href="./detail/304.html" class="goods" name="숄더백">
+                            <a href="/cg.product?category=가방&subcategory=숄더백" class="goods" name="숄더백">
 								<img src="https://image.msscdn.net/images/category_img/women/ITEM_004003_17164419695044_big.png"  >
 								<span>숄더백</span>
-                                <div class="product-description">
-                                    <img src="./detail/img/304-1.webp" alt="상품 이미지">
-                                    숄더백
-                                </div>
 							</a>
-							<a href="./detail/305.html" class="goods" name="토트백">
+                            <a href="/cg.product?category=가방&subcategory=토트백" class="goods" name="토트백">
 								<img src="https://image.msscdn.net/images/category_img/women/ITEM_004015_17164419697688_big.png"  >
 								<span>토트백</span>
-                                <div class="product-description">
-                                    <img src="./detail/img/305-1.webp" alt="상품 이미지">
-                                    토트백
-                                </div>
 							</a>
-							<a href="./detail/306.html" class="goods" name="에코백">
+                            <a href="/cg.product?category=가방&subcategory=에코백" class="goods" name="에코백">
 								<img src="https://image.msscdn.net/images/category_img/men/ITEM_004014_17164419870060_big.png" >
 								<span>에코백</span>
-                                <div class="product-description">
-                                    <img src="./detail/img/306-1.webp" alt="상품 이미지">
-                                    에코백
-                                </div>
 							</a>
                         </div>
                     </section>
@@ -217,53 +149,29 @@
                     <section class="goods-category" id="topcloth-section">
                         <h2 class="goods-category-index" >상의</h2>
                         <div class="goods-category-real">
-                            <a href="./detail/401.html" class="goods" name="신상">
+                            <a href="/cg.product?category=상의&subcategory=피케/카라 티셔츠" class="goods" name="피케/카라 티셔츠">
                                 <img src="https://image.msscdn.net/images/category_img/women/ITEM_001003_17164419662809_big.png"  >
-                                <span>피케</span>
-                                <div class="product-description">
-                                    <img src="./detail/img/401-1.webp" alt="상품 이미지">
-                                    피케
-                                </div>
+                                <span>피케/카라 티셔츠</span>
                             </a>
-                            <a href="./detail/402.html" class="goods" name="맨투맨">
+                            <a href="/cg.product?category=상의&subcategory=맨투맨/스웨트" class="goods" name="맨투맨/스웨트">
                                 <img src="https://image.msscdn.net/images/category_img/men/ITEM_001005_17164419731519_big.png"  >
-                                <span>맨투맨</span>
-                                <div class="product-description">
-                                    <img src="./detail/img/402-1.webp" alt="상품 이미지">
-                                    맨투맨
-                                </div>
+                                <span>맨투맨/스웨트</span>
                             </a>
-                            <a href="./detail/403.html" class="goods" name="셔츠">
+                            <a href="/cg.product?category=상의&subcategory=셔츠/블라우스" class="goods" name="셔츠/블라우스">
 								<img src="https://image.msscdn.net/images/category_img/men/ITEM_001002_17164419723992_big.png"  >
-								<span>셔츠</span>
-                                <div class="product-description">
-                                    <img src="./detail/img/403-1.webp" alt="상품 이미지">
-                                    셔츠
-                                </div>
+								<span>셔츠/블라우스</span>
 							</a>
-							<a href="./detail/404.html" class="goods" name="후드티셔츠">
+                            <a href="/cg.product?category=상의&subcategory=후드 티셔츠" class="goods" name="후드 티셔츠">
 								<img src="https://image.msscdn.net/images/category_img/men/ITEM_001004_17164419728866_big.png"  >
-								<span>후드티셔츠</span>
-                                <div class="product-description">
-                                    <img src="./detail/img/404-1.webp" alt="상품 이미지">
-                                    후드티셔츠
-                                </div>
+								<span>후드 티셔츠</span>
 							</a>
-							<a href="./detail/405.html" class="goods" name="스포츠상의">
+                            <a href="/cg.product?category=상의&subcategory=민소매 티셔츠" class="goods" name="민소매 티셔츠">
 								<img src="https://image.msscdn.net/images/category_img/women/ITEM_001013_17164419666010_big.png"  >
-								<span>스포츠상의</span>
-                                <div class="product-description">
-                                    <img src="./detail/img/405-1.webp" alt="상품 이미지">
-                                    스포츠상의
-                                </div>
+								<span>민소매 티셔츠</span>
 							</a>
-							<a href="./detail/406.html" class="goods" name="기타상의">
+                            <a href="/cg.product?category=상의&subcategory=니트/스웨터" class="goods" name="니트/스웨터">
 								<img src="https://image.msscdn.net/images/category_img/men/ITEM_001008_17164419738108_big.png" >
-								<span>기타상의</span>
-                                <div class="product-description">
-                                    <img src="./detail/img/406-1.webp" alt="상품 이미지">
-                                    기타상의
-                                </div>
+								<span>니트/스웨터</span>
 							</a>
                         </div>
                     </section>
@@ -271,53 +179,29 @@
                     <section class="goods-category" id="bottomscloth-section">
                         <h2 class="goods-category-index" >바지</h2>
                         <div class="goods-category-real">
-                            <a href="./detail/501.html" class="goods" name="신상">
+                            <a href="/cg.product?category=바지&subcategory=숏 팬츠" class="goods" name="숏 팬츠">
                                 <img src="https://image.msscdn.net/images/category_img/women/ITEM_003009_17164419691815_big.png"  >
-                                <span>숏팬츠</span>
-                                <div class="product-description">
-                                    <img src="./detail/img/501-1.webp" alt="상품 이미지">
-                                    숏팬츠
-                                </div>
+                                <span>숏 팬츠</span>
                             </a>
-                            <a href="./detail/502.html" class="goods" name="데님팬츠">
+                            <a href="/cg.product?category=바지&subcategory=데님 팬츠" class="goods" name="데님 팬츠">
                                 <img src="https://image.msscdn.net/images/category_img/men/ITEM_003002_17164419814765_big.png"  >
-                                <span>데님팬츠</span>
-                                <div class="product-description">
-                                    <img src="./detail/img/502-1.webp" alt="상품 이미지">
-                                    데님팬츠
-                                </div>
+                                <span>데님 팬츠</span>
                             </a>
-                            <a href="./detail/503.html" class="goods" name="코튼팬츠">
+                            <a href="/cg.product?category=바지&subcategory=코튼 팬츠" class="goods" name="코튼팬 츠">
 								<img src="https://image.msscdn.net/images/category_img/men/ITEM_003007_17164419825758_big.png"  >
-								<span>코튼팬츠</span>
-                                <div class="product-description">
-                                    <img src="./detail/img/503-1.webp" alt="상품 이미지">
-                                    코튼팬츠
-                                </div>
+								<span>코튼 팬츠</span>
 							</a>
-							<a href="./detail/504.html" class="goods" name="레깅스">
+                            <a href="/cg.product?category=바지&subcategory=트레이닝/조거 팬츠" class="goods" name="트레이닝/조거 팬츠">
 								<img src="https://image.msscdn.net/images/category_img/women/ITEM_003005_17164419688488_big.png"  >
-								<span>레깅스</span>
-                                <div class="product-description">
-                                    <img src="./detail/img/504-1.webp" alt="상품 이미지">
-                                    레깅스
-                                </div>
+								<span>트레이닝/조거 팬츠</span>
 							</a>
-							<a href="./detail/505.html" class="goods" name="스포츠하의">
+                            <a href="/cg.product?category=바지&subcategory=슈트 팬츠/슬랙스" class="goods" name="슈트 팬츠/슬랙스">
 								<img src="https://image.msscdn.net/images/category_img/men/ITEM_003011_17164419836529_big.png"  >
-								<span>스포츠하의</span>
-                                <div class="product-description">
-                                    <img src="./detail/img/505-1.webp" alt="상품 이미지">
-                                    스포츠하의
-                                </div>
+								<span>슈트 팬츠/슬랙스</span>
 							</a>
-							<a href="./detail/506.html" class="goods" name="기타바지">
+                            <a href="/cg.product?category=바지&subcategory=기타 바지" class="goods" name="기타 바지">
 								<img src="https://image.msscdn.net/images/category_img/men/ITEM_003006_17164419823071_big.png" >
-								<span>기타바지</span>
-                                <div class="product-description">
-                                    <img src="./detail/img/506-1.webp" alt="상품 이미지">
-                                    기타바지
-                                </div>
+								<span>기타 바지</span>
 							</a>
                         </div>
                     </section>
