@@ -78,7 +78,7 @@
                             </tr>
                         </tbody>
                     </table>
-                    <a href="/my-main/MemberUpdate.up" class="button">정보 수정하기</a>
+                    <a href="/my-page/my-main/myinformation_update.jsp" class="button">정보 수정하기</a>
                 </c:when>
                 <c:otherwise>
                     <p>해당하는 사용자 정보를 찾을 수 없습니다.</p>
