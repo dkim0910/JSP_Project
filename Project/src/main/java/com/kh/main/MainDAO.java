@@ -5,8 +5,8 @@ import java.util.List;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 
+import com.kh.login.UserDTO;
 import com.kh.mybatis.SqlMapConfig;
-import com.kh.web.dao.UserDTO;
 
 public class MainDAO {
 	SqlSessionFactory factory = SqlMapConfig.getFactory();
