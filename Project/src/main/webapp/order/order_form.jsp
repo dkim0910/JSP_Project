@@ -80,7 +80,6 @@
                         <div class="sheet-title">
                             <h2 class="sheet-title-count">주문 상품 1개</h2>
                         </div>
-                        <!-- <c:forEach var="item" items="${orderItems}" > -->
                         <div class="sheet-order-product">
                             <div class="sheet-order-product-cartItem" data-goods-no="3997992" data-cart-id="1076429836">
                                 <div class="sheet-order-product-box">
@@ -111,7 +110,6 @@
                                     쿠폰사용
                                 </button>
                             </div>
-                        <!-- </c:forEach> -->
                         </div>
                     </section>
                     <br/>
