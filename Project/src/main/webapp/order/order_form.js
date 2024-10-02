@@ -9,9 +9,9 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
     }
 
-    // 버튼을 누르면 화살표 방향이 바뀌어야 한다. 
-    // 셀렉트 박스 옵션이 담긴 ul 이 나와야한다. 
-    // 클릭했을 때 그 클릭된 요소가 박스에 보여야 한다. 
+// 버튼을 누르면 화살표 방향이 바뀌어야 한다. 
+// 셀렉트 박스 옵션이 담긴 ul 이 나와야한다. 
+// 클릭했을 때 그 클릭된 요소가 박스에 보여야 한다. 
 
     btn.addEventListener('click', () => {
         btn.classList.toggle('on');
@@ -53,9 +53,9 @@ function togglePaymentCard(show) {
         listPayments.style.display = 'none';
     }
 }
-// 기타 -> 카드결제 클릭 부분
+//기타 -> 카드결제 클릭 부분
 document.querySelectorAll('.card-selection-input').forEach((input) => {
-    input.addEventListener('change', function () {
+    input.addEventListener('change', function() {
         document.querySelectorAll('.list-payment-label').forEach((label) => {
             label.style.border = '1px solid #eee';  // 모든 label을 초기화
         });
@@ -66,12 +66,25 @@ document.querySelectorAll('.card-selection-input').forEach((input) => {
 });
 
 
-
 // 바텀바 2차메뉴 클릭 기능
-$(document).ready(function () {
-    $('.toggle-icon, .toggle-menu').click(function (event) {
+$(document).ready(function() {
+    $('.toggle-icon, .toggle-menu').click(function(event) {
         event.preventDefault(); // 링크 클릭시 페이지 이동 방지
         $(this).parent().next('.submenu').slideToggle(); // 
-        $('.submenu').not($(this).parent().next('.submenu')).slideUp();
+        $('.submenu').not($(this).parent().next('.submenu')).slideUp(); 
     });
-});
+  });
+
+  
+  function setupCardSelection() {
+    $('.card-selection-input').on('click', function() {
+        // 모든 카드의 border를 초기화
+        $('.list-payment li').css('border', '1px solid #eee');
+        
+        // 선택된 카드의 border를 변경
+        $(this).closest('li').css('border', '1px solid black');
+    });
+}
+
+// 함수 호출
+setupCardSelection();

@@ -502,14 +502,12 @@ paymentMethod-others > li :checked{
     padding: 18px 0 16px;
     border: 1px solid #eee;
     box-sizing: border-box;
-    cursor: pointer;
     transition: border 0.3s ease;
 }
-.list-payment li:hover{
+
+.list-payment li:hover > label {
     border: 1px solid black;
-}
-input.card-selection-input:checked + label {
-    border: 1px solid black;
+    cursor: pointer;
 }
 
 .card-company-logo{
