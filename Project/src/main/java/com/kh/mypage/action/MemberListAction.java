@@ -16,7 +16,7 @@ public class MemberListAction implements Action {
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) {
 		ActionForward forward = new ActionForward();
         MemberDAO dao = new MemberDAO();
-
+        
         // 세션에서 user_id 가져오기
         HttpSession session = request.getSession();
         UserDTO sessionMember = (UserDTO) session.getAttribute("member");

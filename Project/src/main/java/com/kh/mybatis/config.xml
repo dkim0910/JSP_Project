@@ -6,6 +6,7 @@
 	<typeAliases>
 		<typeAlias type="com.kh.login.UserDTO" alias="userdto"/>
 		<typeAlias type="com.kh.category.GoodsDTO" alias="goodsdto"/>
+		<typeAlias type="com.kh.mypage.refund.Beans_DAO_DTO.MyProductsDTO" alias="myproductsdto"/>
 	</typeAliases>
   <environments default="development">
     <environment id="development">
@@ -22,6 +23,7 @@
   	<mapper resource="com/kh/login/tblmember.xml"/>
   	<mapper resource="com/kh/category/goods.xml"/>
   	<mapper resource="com/kh/mypage/sql/member.xml"/>
+  	<mapper resource="com/kh/order/order.xml"/>
   </mappers>
   
 </configuration> 
