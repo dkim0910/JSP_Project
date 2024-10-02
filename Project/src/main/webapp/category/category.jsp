@@ -63,7 +63,7 @@
                                     헤어케어
                                 </div>
                             </a>
-                            <a href="./detail/102.html" class="goods" name="스킨케어">
+                            <a href="/cg/product?category=beauty&subcategory=skincare" class="goods" name="스킨케어">
                                 <img src="https://image.msscdn.net/images/category_img/men/ITEM_104001_17164420025345_big.png"  >
                                 <span>스킨케어</span>
                                 <div class="product-description">
@@ -71,7 +71,7 @@
                                     스킨케어
                                 </div>
                             </a>
-                            <a href="./detail/103.html" class="goods" name="선케어">
+                            <a href="/cg/product?category=beauty&subcategory=suncare" class="goods" name="선케어">
                                 <img src="https://image.msscdn.net/images/category_img/men/ITEM_104002_17164420028786_big.png"  >
                                 <span>선케어</span>
                                 <div class="product-description">

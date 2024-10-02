@@ -61,7 +61,22 @@ public class Make_DB_Jsoup {
                             category = parts[1].split(">")[0].trim(); // '뷰티'만 추출
                         }
                     }
-
+                    
+                 // content 속성 값에서 "제품분류 : " 뒤의 값을 추출
+                    String subCategory = "";
+                    if (ogDescription.contains("제품분류 : ")) {
+                        String[] parts = ogDescription.split("제품분류 : ");
+                        if (parts.length > 1) {
+                            // '브랜드 : '가 나타나기 전까지의 텍스트 추출
+                            String categoryPart = parts[1].split("브랜드 :")[0].trim(); 
+                            // '>'로 구분해서 마지막 카테고리인 '스킨케어'만 추출
+                            String[] categories = categoryPart.split(">");
+                            if (categories.length > 1) {
+                                subCategory = categories[1].trim(); // '스킨케어' 추출
+                            }
+                        }
+                    }
+                    
                     // 가격 값이 비어 있지 않은지 확인하고 변환
                     int priceAmountInt = !priceAmount.isEmpty() ? Integer.parseInt(priceAmount) : 0;
                     int normalPriceInt = !normalPrice.isEmpty() ? Integer.parseInt(normalPrice) : 0;
@@ -74,7 +89,7 @@ public class Make_DB_Jsoup {
                     }
 
                     // 데이터베이스에 삽입
-                    String sql = "INSERT INTO products (product_id, brand, product_name, price_amount, normal_price, sale_rate, image_url, PRODUCT_CATEGORY) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+                    String sql = "INSERT INTO products (product_id, brand, product_name, price_amount, normal_price, sale_rate, image_url, CATEGORY, subCategory) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
                     try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
                         pstmt.setInt(1, currentNum);
                         pstmt.setString(2, brand);
@@ -84,6 +99,7 @@ public class Make_DB_Jsoup {
                         pstmt.setString(6, saleRate); // 세일 비율
                         pstmt.setString(7, imageUrl); // 이미지 URL 삽입
                         pstmt.setString(8, category);
+                        pstmt.setString(9, subCategory);
                         pstmt.executeUpdate(); // 데이터 삽입 실행
                     }
 
@@ -96,6 +112,7 @@ public class Make_DB_Jsoup {
                     System.out.println("세일 비율: " + saleRate + "%");
                     System.out.println("이미지 URL: " + imageUrl);
                     System.out.println("카테고리: " + category);
+                    System.out.println("세부 카테고리: " + subCategory);
                     System.out.println("---------------------------");
 
                 } catch (IOException e) {
