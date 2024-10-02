@@ -34,12 +34,6 @@ public class OrderDAO {
 		return result;
 	}
 	
-//	public UserDTO getName(String user_name) {
-//		UserDTO member = null;
-//		HashMap<String, String> datas = new HashMap<>();
-//		datas.put("user_name", user_name);
-//		member = session.selectOne("Order.getById", user_name);
-//	}
 	public UserDTO getName(String user_name) {
 		UserDTO name = null;
 		name = session.selectOne("Order.getById", user_name);
