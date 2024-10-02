@@ -87,7 +87,7 @@
                     <hr/>
                     <section class="sheet-section" id="sheet-section-product">
                         <div class="sheet-title">
-                            <h2 class="sheet-title-count">주문 상품 1개</h2>
+                            <h2 class="sheet-title-count">주문 상품</h2>
                         </div>
                         <div class="sheet-order-product">
                         <c:forEach var="item" items="${orderItems }">
