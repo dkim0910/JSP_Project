@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>    
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -42,7 +44,7 @@
                             </div>
                             <div class="sheet-address-title">
                                 <strong class="sheet-address-title-name" id="recipient-name">
-                                    쇼핑핑
+                                    ${user_name }
                                 </strong>
                                 <span class="sheet-address-title-label" id="recipient-default" style="display: block;">
                                     기본 배송지
@@ -56,6 +58,7 @@
 		                            <input type="text" id="input_postcode" placeholder="우편번호">
 									<input type="text" id="input_address" placeholder="주소"><br/>
 									<input type="text" id="input_detailAddress" placeholder="상세주소">
+									<input type="text" id="input_phoneNumber" placeholder="전화번호">
                             	</div>
                             </div>
                             <div class="sheet-message-select">
