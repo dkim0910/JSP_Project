@@ -884,7 +884,6 @@
             <div class="con mx-auto">
               <div class="timer">
                 <span>오늘의 세일</span>
-                
               </div>
               <nav class="list">
                 <ul class="flex-grid">
