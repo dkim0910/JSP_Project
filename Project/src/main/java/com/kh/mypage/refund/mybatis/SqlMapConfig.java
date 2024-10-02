@@ -1,4 +1,4 @@
-package com.mypage.mybatis;
+package com.kh.mypage.refund.mybatis;
 
 import java.io.IOException;
 import java.io.Reader;

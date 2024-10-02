@@ -1,11 +1,11 @@
-package com.mypage.frontcontroller;
+package com.kh.mypage.refund.frontcontroller;
 
 import java.util.List;
 
-import com.mypage.Action.Action;
-import com.mypage.Action.ActionForward;
-import com.mypageBeans_DAO_DTO.MyDAO;
-import com.mypageBeans_DAO_DTO.MyDTO;
+import com.kh.mypage.Action.Action;
+import com.kh.mypage.Action.ActionForward;
+import com.kh.mypage.refund.Beans_DAO_DTO.MyDAO;
+import com.kh.mypage.refund.Beans_DAO_DTO.MyDTO;
 
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
