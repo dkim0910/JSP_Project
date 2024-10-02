@@ -18,10 +18,13 @@ public class CgFrontController extends HttpServlet{
 		String requestURI = req.getRequestURI();
 		ActionForward forward = null;
 		
-		if(requestURI.equals("/cg/product")) {
+		if(requestURI.equals("/cg.product")) {
 			String category = req.getParameter("category"); 		// ex) beauty
 			String subcategory = req.getParameter("subcategory"); 	// ex) skincare
 			forward = new CategoryService().execute(req, resp);
+		}
+		else if(requestURI.equals("/haircare.product")) {
+			forward = new HaircareInfo().execute(req, resp);
 		}
         
         if(forward != null) {

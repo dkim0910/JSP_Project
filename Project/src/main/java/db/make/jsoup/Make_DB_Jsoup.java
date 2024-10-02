@@ -24,7 +24,7 @@ public class Make_DB_Jsoup {
             System.out.println("데이터베이스에 연결되었습니다.");
 
 //          500개를 조회후 DB에 insert
-            for (int i = 0; i < 500; i++) {
+            for (int i = 500; i < 1000; i++) {
                 int currentNum = stratNum2 + i;
                 String productURL = baseURL + currentNum;
 

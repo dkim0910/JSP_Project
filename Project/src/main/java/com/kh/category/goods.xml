@@ -6,5 +6,8 @@
  	<select id="search" parameterType="map" resultType="goodsdto">
         SELECT * FROM PRODUCTS WHERE category = #{category} AND name = #{subcategory}
     </select>
+ 	<select id="Haircareinfo" resultType="goodsdto">
+ 		SELECT * FROM PRODUCTS WHERE PRODUCT_ID = '4308348'
+    </select>
 	
   </mapper>
