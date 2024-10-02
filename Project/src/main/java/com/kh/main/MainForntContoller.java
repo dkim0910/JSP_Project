@@ -14,7 +14,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 
-@WebServlet("*login")
+@WebServlet("*.login")
 public class MainForntContoller extends HttpServlet {
 
 	@Override
