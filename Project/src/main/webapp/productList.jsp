@@ -14,6 +14,8 @@
         <th>Name</th>
         <th>Price</th>
         <th>Image</th>
+        <th>CATEGORY</th>
+        <th>subCategory</th>
     </tr>
     <c:forEach var="product" items="${requestScope.products}">
         <tr>
@@ -22,6 +24,8 @@
             <td>${product.product_name}</td>
             <td>${product.price_amount}</td>
             <td><img src="${product.image_url}"/></td>
+            <td>${product.CATEGORY}</td>
+            <td>${product.subCategory }</td>
         </tr>
     </c:forEach>
 </table>

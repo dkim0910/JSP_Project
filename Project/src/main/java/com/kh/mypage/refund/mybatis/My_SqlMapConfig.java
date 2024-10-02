@@ -7,14 +7,14 @@ import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
-public class SqlMapConfig {
+public class My_SqlMapConfig {
 	private static SqlSessionFactory factory;
 
 	// 클래스 초기화 블록(클래스가 처음 로딩 될 때 한번만 수행
 	static {
 		
 		try {
-			String resouce ="com/kh/mybatis/config.xml";
+			String resouce ="/com/kh/mypage/refund/mybatis/My_config.xml";
 			
 			Reader reader = Resources.getResourceAsReader(resouce);
 			factory = new SqlSessionFactoryBuilder().build(reader);

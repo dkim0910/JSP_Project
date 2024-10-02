@@ -13,7 +13,7 @@ public class Make_DB_Jsoup {
     public static void main(String[] args) {
         String baseURL = "https://www.musinsa.com/products/"; // 제품 URL
         int startNum = 4316816; // 제품 ID의 시작 번호	/ @@@ 변경 금지 @@@
-        int stratNum2 = 4307469; // 제품 ID의 시작 번호2 / 뷰티 카테고리의 상품 시작 번호
+        int stratNum2 = 4307469; // 제품 ID의 시작 번호2 / 뷰티 카테고리의 상품 시작 번호 // 이걸로 시작???
 
         // 데이터베이스 연결 변수
         String jdbcUrl = "jdbc:oracle:thin:@localhost:1521:xe"; // Oracle 데이터베이스 URL
