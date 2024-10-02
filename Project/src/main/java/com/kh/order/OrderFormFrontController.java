@@ -30,10 +30,10 @@ public class OrderFormFrontController extends HttpServlet{
 		String requestURI = req.getRequestURI();
 		ActionForward forward = null;
 		
-		// 결제창
-//		if(requestURI.equals("/order/order_form.or")) {
-//			forward = new UserJoinAction().execute(req, resp);
-//		}
+//		 결제창
+		if(requestURI.equals("/order/order_form.or")) {
+			forward = new OrderFormAction().execute(req, resp);
+		}
 		
 		
 		if(forward != null) {
