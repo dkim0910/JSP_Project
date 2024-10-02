@@ -1,32 +1,31 @@
-package com.kh.web.servlet;
+package com.kh.login;
 
 import com.kh.web.action.Action;
 import com.kh.web.action.ActionForward;
-import com.kh.web.dao.UserDAO;
-import com.kh.web.dao.UserDTO;
 
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
-public class PwFindAction implements Action{
+public class IdFindAction implements Action{
 
 	@Override
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) {
 		ActionForward forward = new ActionForward();
-		UserDTO user = new UserDTO();
 		UserDAO udao = new UserDAO();
+		UserDTO user = new UserDTO();
 		
-		String username = request.getParameter("user_name");
-		String userphone = request.getParameter("user_phone");
+		// 클라이언트로부터 전달된 username 값을 가져옴
+		String user_name = request.getParameter("user_name");
+		String user_phone = request.getParameter("user_phone");
 		
-		user = udao.searchByname(username, userphone);
+		user = udao.searchByname(user_name, user_phone);
 		request.setAttribute("user", user);
 
 		forward.setRedirect(false);
 		if(user != null){	
-			forward.setPath("/login/join/pw_find_view.jsp");
-		} else { 			
-			forward.setPath("/login/join/pw_find.jsp");
+			forward.setPath("/login/join/id_find_view.jsp");
+		} else {
+			forward.setPath("/login/join/id_find.jsp");
 		}
 		return forward;
 	}

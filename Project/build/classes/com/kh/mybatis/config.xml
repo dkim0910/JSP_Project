@@ -4,7 +4,7 @@
   "https://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
 	<typeAliases>
-		<typeAlias type="com.kh.web.dao.UserDTO" alias="userdto"/>
+		<typeAlias type="com.kh.login.UserDTO" alias="userdto"/>
 	</typeAliases>
   <environments default="development">
     <environment id="development">
@@ -18,7 +18,7 @@
     </environment>
   </environments>
   <mappers>
-  	<mapper resource="com/kh/web/sql/tblmember.xml"/>
+  	<mapper resource="com/kh/login/tblmember.xml"/>
   </mappers>
   
 </configuration>  

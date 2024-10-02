@@ -1,4 +1,4 @@
-package com.kh.web.servlet;
+package com.kh.login;
 
 import java.io.IOException;
 
@@ -12,7 +12,6 @@ import jakarta.servlet.http.HttpServletResponse;
 
 @WebServlet("*.fr")
 public class FrontController extends HttpServlet{
-	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) 
 			throws ServletException, IOException {

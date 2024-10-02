@@ -1,20 +1,19 @@
-package com.kh.web.servlet;
+package com.kh.login;
 
 import java.io.IOException;
 import java.io.PrintWriter;
 
 import com.kh.web.action.Action;
 import com.kh.web.action.ActionForward;
-import com.kh.web.dao.UserDAO;
 
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
-public class CheckIdAction implements Action {
+public class CheckIdAction implements Action{
 
-    @Override
-    public ActionForward execute(HttpServletRequest request, HttpServletResponse response) {
-        UserDAO udao = new UserDAO();
+	@Override
+	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) {
+		UserDAO udao = new UserDAO();
         String userid = request.getParameter("user_id");
 
         try {
@@ -37,5 +36,6 @@ public class CheckIdAction implements Action {
         }
 
         return null; // AJAX 응답이므로 페이지 리디렉션이 필요 없음
-    }
+	}
+
 }

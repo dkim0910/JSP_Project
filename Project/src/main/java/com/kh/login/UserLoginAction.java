@@ -1,17 +1,15 @@
-package com.kh.web.servlet;
+package com.kh.login;
 
 import com.kh.web.action.Action;
 import com.kh.web.action.ActionForward;
-import com.kh.web.dao.UserDAO;
-import com.kh.web.dao.UserDTO;
 
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 public class UserLoginAction implements Action{
+
 	@Override
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) {
-		
 		ActionForward forward = new ActionForward();
 		UserDAO udao = new UserDAO();
 		
@@ -30,6 +28,5 @@ public class UserLoginAction implements Action{
 		}
 		return forward;
 	}
+
 }
-
-

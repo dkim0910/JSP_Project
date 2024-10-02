@@ -3,7 +3,7 @@ package com.kh.order;
 import java.io.IOException;
 
 import com.kh.web.action.ActionForward;
-import com.kh.web.servlet.UserJoinAction;
+import com.kh.login.UserJoinAction;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
