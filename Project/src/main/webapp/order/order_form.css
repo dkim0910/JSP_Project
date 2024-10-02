@@ -48,8 +48,8 @@ html, body{
 }
 /* ------주문서------ */
 .order_form-headline{
-    background-color: #f5f5f5;
-    color: black;
+    background-color: black;
+    color: #f5f5f5;
     display: flex;
     align-items: center;
     height: 52px;
@@ -77,7 +77,7 @@ button{
 }
 #sheet-purchase-button{
     background-color: black;
-    color: white;
+    color: #f5f5f5;
     font: 16px ;
     text-align: center;
 }
