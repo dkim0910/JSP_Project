@@ -58,7 +58,7 @@
                                 class="sidebar-options">멤버십</a></li> <!-- 여기에 멤버십 포인트나 할인 이벤트 등 넣기 -->
                         <li><a href="#" onclick="toggleBold(this); showContent('helpcenter')"
                                 class="sidebar-options">고객센터</a></li> <!-- 고객센터 페이지 만들기(같은 페이지임)-->
-                        <li><a href="../refund/refund.jsp" onclick="toggleBold(this); showContent('refunds')"
+                        <li><a href="/refund.my" onclick="toggleBold(this); showContent('refunds')"
                                 class="sidebar-options">환불 및 교환</a></li> <!-- 환불 및 교환 페이지 만들기(같은 페이지임) -->
                         <li><a href="#" onclick="toggleBold(this); showContent('events')"
                                 class="sidebar-options">이벤트</a>

@@ -5,11 +5,7 @@ import java.util.List;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 
-import com.kh.mypage.refund.Action.ActionForward;
 import com.kh.mypage.refund.mybatis.My_SqlMapConfig;
-
-import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpServletResponse;
 
 public class MyDAO {
 	SqlSessionFactory factory = My_SqlMapConfig.getFactory();
@@ -20,26 +16,41 @@ public class MyDAO {
 	}
 
     // 전체 테이블 검색
-    public List<MyProductsDTO> getAllProducts() {
-        List<MyProductsDTO> products;
+    public List<MyDTO> getAllProducts() {
+        List<MyDTO> products;
         products = session.selectList("MyMapper.getAllProducts"); // MyBatis Mapper XML에서 정의된 쿼리 호출
         return products;
     }
 
     // 한불 테이블 검색 order_num으로 
-    public List<MyOrder_OrderedDTO> getRefundedProducts(String orderNum) {
+    public List<MyDTO> getRefundedProducts(String orderNum) {
     	System.out.println("here3");
-    	System.out.println("ORDER_NUM : " + orderNum);
-        List<MyOrder_OrderedDTO> refund;
+        List<MyDTO> refund;
         refund = session.selectList("MyMapper.getRefundedProducts", orderNum); // orderNum을 파라미터로 전달
-        System.out.println("refund : " + refund);
         return refund;
     }
+
+    // ordered 테이블에서 order_num으로 주문했던 상품 조회 (주문내역에서의 조회임)
+	/*
+	 * public List<MyDTO> getRefundProducts(String orderNum2) { List<MyDTO>
+	 * refunded; refunded = session.selectList("MyMapper.getRefund", orderNum2);
+	 * 
+	 * return refunded; }
+	 */
+
+	// 이미지 불러오기
+	public List<MyDTO> getImage(String Image1) {
+		List<MyDTO> Image;
+		Image = session.selectList("MyMapper.getImage", Image1);
+		
+		return Image;
+	}
+    
+    
 
 
 
     
-    // 환불 페이지 DB 조회 
     
     
     

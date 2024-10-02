@@ -4,8 +4,7 @@
   "https://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
 	<typeAliases>
-		<typeAlias type="com.kh.mypage.refund.Beans_DAO_DTO.MyProductsDTO" alias="myproductsdto"/>
-		<typeAlias type="com.kh.mypage.refund.Beans_DAO_DTO.MyOrder_OrderedDTO" alias="myrefunddto"/>
+		<typeAlias type="com.kh.mypage.refund.Beans_DAO_DTO.MyDTO" alias="mydto"/>
 	</typeAliases>
   <environments default="development">
     <environment id="development">

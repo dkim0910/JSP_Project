@@ -45,40 +45,15 @@
         <div class="profile-section">
             <h2>나의 정보</h2>
 
-            <!-- JSTL을 사용하여 member 객체의 정보를 테이블 형식으로 출력 -->
+            <!-- JSTL을 사용하여 member 객체의 정보를 출력 -->
             <c:choose>
                 <c:when test="${not empty member}">
-                    <table border="1" >
-                        <thead>
-                            <tr>
-                                <th>항목</th>
-                                <th>정보</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>이름</td>
-                                <td>${member.user_name}</td>
-                            </tr>
-                            <tr>
-                                <td>아이디</td>
-                                <td>${member.user_id}"</td>
-                            </tr>
-                            <tr>
-                                <td>전화번호</td>
-                                <td>${member.user_phone}</td>
-                            </tr>
-                            <tr>
-                                <td>주소</td>
-                                <td>${member.user_address}</td>
-                            </tr>
-                            <tr>
-                                <td>성별</td>
-                                <td>${member.user_gender}</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <a href="/my-page/my-main/myinformation_update.jsp" class="button">정보 수정하기</a>
+                    <div class="info">이름: <c:out value="${member.user_name}" /></div>
+                    <div class="info">아이디: <c:out value="${member.user_id}" /></div>
+                    <div class="info">전화번호: <c:out value="${member.user_phone}" /></div>
+                    <div class="info">주소: <c:out value="${member.user_address}" /></div>
+                    <div class="info">성별: <c:out value="${member.user_gender}" /></div>
+                    <a href="editProfile.jsp" class="button">정보 수정하기</a>
                 </c:when>
                 <c:otherwise>
                     <p>해당하는 사용자 정보를 찾을 수 없습니다.</p>
@@ -86,5 +61,6 @@
             </c:choose>
         </div>
     </div>
+
 </body>
 </html>
