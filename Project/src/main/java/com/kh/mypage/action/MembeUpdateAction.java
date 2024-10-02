@@ -30,7 +30,7 @@ public class MembeUpdateAction implements Action{
             return forward;
         }
 
-        // MemberDTO 객체에 수정할 정보 세팅
+        // UserDTO 객체에 수정할 정보 세팅
         UserDTO member = new UserDTO();
         member.setUser_id(user_id);
         member.setUser_name(user_name);
