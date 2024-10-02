@@ -24,10 +24,12 @@ public class UserLoginAction implements Action{
 		if(member != null){	
 			// 로그인한 사용자 정보를 세션에 저장
 			HttpSession session = request.getSession();
-			session.setAttribute("user", member); 
+			session.setAttribute("member", member);
+			forward.setRedirect(true);
 			forward.setPath("/main-page/main.jsp");
 		} else { 			
 			// 로그인 실패
+			forward.setRedirect(true);
 			forward.setPath("/login/join/login_view.jsp?flag=false");
 		}
 		return forward;

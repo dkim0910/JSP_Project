@@ -44,7 +44,7 @@
             </div>
             
             <div class="product-parchase-buttons">
-                <form action="../../order/order_form.html">
+                <form action="../../order/order_form.jsp">
                     <button type="submit" class="buy-now">바로 구매</button>
                 </form>
                 <form action="../../cart/cart.jsp">
