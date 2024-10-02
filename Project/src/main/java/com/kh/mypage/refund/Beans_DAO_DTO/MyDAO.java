@@ -1,12 +1,12 @@
-package com.mypageBeans_DAO_DTO;
+package com.kh.mypage.refund.Beans_DAO_DTO;
 
 import java.util.List;
 
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 
-import com.mypage.Action.ActionForward;
-import com.mypage.mybatis.SqlMapConfig;
+import com.kh.mypage.refund.Action.ActionForward;
+import com.kh.mypage.refund.mybatis.SqlMapConfig;
 
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;

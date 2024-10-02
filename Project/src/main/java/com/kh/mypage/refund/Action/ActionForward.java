@@ -1,4 +1,4 @@
-package com.mypage.Action;
+package com.kh.mypage.refund.Action;
 
 public class ActionForward {
 	private boolean isRedirect;

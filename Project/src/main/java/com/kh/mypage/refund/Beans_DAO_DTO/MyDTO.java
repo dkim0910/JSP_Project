@@ -1,4 +1,4 @@
-package com.mypageBeans_DAO_DTO;
+package com.kh.mypage.refund.Beans_DAO_DTO;
 
 public class MyDTO {
     private String product_id;
