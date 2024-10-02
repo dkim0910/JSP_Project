@@ -353,6 +353,38 @@ function purchaseItems() {
 
 
 
+<%
+String userId = "1"; // 예시로 사용자 ID 1로 고정
+Connection conn = null;
+PreparedStatement stmt = null;
+ResultSet rs = null;
+
+try {
+    Class.forName("com.mysql.cj.jdbc.Driver");
+    conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/shopdb", "root", "password");
+
+    String sql = "SELECT Products.product_name, Products.price, Cart.quantity FROM Cart " +
+                 "JOIN Products ON Cart.product_id = Products.product_id " +
+                 "WHERE Cart.user_id = ?";
+    stmt = conn.prepareStatement(sql);
+    stmt.setString(1, userId);
+    rs = stmt.executeQuery();
+
+    while (rs.next()) {
+        String productName = rs.getString("product_name");
+        float price = rs.getFloat("price");
+        int quantity = rs.getInt("quantity");
+
+        out.println("<p>" + productName + " - " + quantity + "개 - 가격: " + price * quantity + "</p>");
+    }
+} catch (Exception e) {
+    e.printStackTrace();
+} finally {
+    if (rs != null) try { rs.close(); } catch (SQLException e) {}
+    if (stmt != null) try { stmt.close(); } catch (SQLException e) {}
+    if (conn != null) try { conn.close(); } catch (SQLException e) {}
+}
+%>
 
 
 
