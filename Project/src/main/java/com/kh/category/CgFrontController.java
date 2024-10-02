@@ -24,6 +24,9 @@ public class CgFrontController extends HttpServlet{
 		else if(requestURI.equals("/haircare.product")) {
 			forward = new HaircareInfo().execute(req, resp);
 		}
+		else if(requestURI.equals("/scg.product")) {
+			forward = new DetailService().execute(req, resp);
+		}
         
         if(forward != null) {
 			if(forward.isRedirect()) {

@@ -32,6 +32,12 @@ public class GoodsDAO {
 		result = session.selectOne("Category.Haircareinfo");
 		return result;
 	}
+
+	public GoodsDTO searchgoods(String PRODUCT_ID) {
+		GoodsDTO result = null;
+		result = session.selectOne("Category.goodsinfo",PRODUCT_ID);
+		return result;
+	}
 	
 	
 }
