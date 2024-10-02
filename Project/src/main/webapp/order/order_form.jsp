@@ -533,7 +533,7 @@
                 // 주소 정보를 해당 필드에 넣는다.
                 document.getElementById("input_address").value = addr;
                 // 커서를 주소 필드로 이동한다.
-                document.getElementById("input_Address").focus();
+                document.getElementById("input_address").focus();
             }
         }).open();
     }
