@@ -18,6 +18,8 @@
 </style>
 <script src="order_form.js"></script>
 <body>
+	<c:set var="orderItems" value="${requestScope.orderItems }"/>
+	<c:set var="totalCnt" value="${requestScope.totalCnt }"/>
     <head>
     </head>
     <body style="overflow: unset">
@@ -55,9 +57,7 @@
                             </div>
                             <div>
                             	<div class="form-input-address">
-		                            <%-- <input type="text" id="input_postcode" placeholder="우편번호" value="${order.user_postcode}" > --%>
 									<input type="text" id="input_address" placeholder="주소" value="${order.user_address}"><br/>
-									<%-- <input type="text" id="input_detailAddress" placeholder="상세주소" value="${order.user_address_detail}"> --%>
 									<input type="text" id="input_phoneNumber" placeholder="전화번호" value="${order.user_phone}">
                             	</div>
                             </div>
@@ -77,6 +77,7 @@
                     <br/>
                     <hr/>
                     <section class="sheet-section" id="sheet-section-product">
+                    <c:forEach var="item" items="${orderItems}" >
                         <div class="sheet-title">
                             <h2 class="sheet-title-count">주문 상품 1개</h2>
                         </div>
@@ -87,10 +88,10 @@
                                         <img class="sheet-order-product-image" src="./img/payment_method_img/t-4.jpg">
                                     </div>
                                     <div class="sheet-order-product-information">
-                                        <a class="sheet-order-product-brand" title="아디다스">아디다스</a>
+                                        <a class="sheet-order-product-brand">아디다스</a>
                                         <br/>                               
-                                        <a class="sheet-order-product-name" title="vintage washed Tee_BLUE">
-                                            vintage washed Tee_BLUE
+                                        <a class="sheet-order-product-name">
+                                            ${item.name}
                                         </a>
                                         <br/>
                                         <span class="sheet-order-product-option">XL / 1개</span>                                     
@@ -102,6 +103,7 @@
                                             <strong class="sheet-order-product-price-origin" id="display-product-price-1076429836">108,000원</strong>
                                             <br/>                                   
                                             <span class="sheet-order-product-price-sale" id="display-product-price-origin-1076429836">100,000원</span>
+                    </c:forEach>
                                             <span class="sheet-order-product-price-text-coupon" id="display-product-apply-coupon-1076429836" style="display: none">쿠폰적용가</span><!-- default : style="display: none" -->
                                         </div>
                                     </div>
@@ -526,11 +528,10 @@
                  //   document.getElementById("input_extraAddress").value = '';
                 }
 
-                // 우편번호와 주소 정보를 해당 필드에 넣는다.
-                document.getElementById('input_postcode').value = data.zonecode;
+                // 주소 정보를 해당 필드에 넣는다.
                 document.getElementById("input_address").value = addr;
-                // 커서를 상세주소 필드로 이동한다.
-                document.getElementById("input_detailAddress").focus();
+                // 커서를 주소 필드로 이동한다.
+                document.getElementById("input_address").focus();
             }
         }).open();
     }
