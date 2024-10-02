@@ -29,7 +29,7 @@
 <!-- 공통 js 연결 -->
 <script defer src="script/script.js"></script>
 <%
-    boolean isLoggedIn = (session != null && session.getAttribute("user") != null);
+    boolean isLoggedIn = (session != null && session.getAttribute("member") != null);
 %>
 <body>
   <header>
@@ -50,9 +50,9 @@
                 <i class="fa-regular fa-user"></i>
               </a> -->
               <div class="user">
-				<c:set var="user" value="${sessionScope.user}" />
+				<c:set var="user" value="${sessionScope.member}" />
 				<c:if test="${not empty user}">
-					<p>${user.user_name}님 환영합니다!</p>
+					<p>${member.user_name}님 환영합니다!</p>
 				</c:if>
 			  </div>
 			  <a href="<%= isLoggedIn ? "../my-page/my-main/my-page-main.jsp" : "../login/join/login_view.jsp" %>" id="login">
