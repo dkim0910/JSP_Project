@@ -55,13 +55,9 @@
                     <section class="goods-category" id="beauty-section">
                         <h2 class="goods-category-index" >뷰티</h2>
                         <div class="goods-category-real">
-                            <a href="/haircare.product" class="goods" name="헤어케어">
+                            <a href="/cg.product?category=뷰티&subcategory=헤어케어" class="goods" name="헤어케어">
                                 <img src="https://image.msscdn.net/images/category_img/men/ITEM_104006_17164420040904_big.png" >
                                 <span>헤어케어</span>
-                                <div class="product-description">
-                                    <img src="./detail/img/101-1.webp" alt="상품 이미지">
-                                    헤어케어
-                                </div>
                             </a>
                             <a href="/cg.product?category=뷰티&subcategory=스킨케어" class="goods" name="스킨케어">
                                 <img src="https://image.msscdn.net/images/category_img/men/ITEM_104001_17164420025345_big.png"  >

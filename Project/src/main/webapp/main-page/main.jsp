@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@page import="com.kh.login.UserDTO"%>    
+<%@page import="com.kh.login.UserDTO"%>  
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>  
 <!DOCTYPE html>
 <html>
 <head>
@@ -27,7 +28,9 @@
 
 <!-- 공통 js 연결 -->
 <script defer src="script/script.js"></script>
-
+<%
+    boolean isLoggedIn = (session != null && session.getAttribute("user") != null);
+%>
 <body>
   <header>
     <div class="con mx-auto">
@@ -43,9 +46,19 @@
         <div class="flex-1 h-full">
           <div id="icon-box">
             <div id="icon">
-              <a href="../login/join/login_view.jsp" id="login">
+              <!-- <a href="../login/join/login_view.jsp" id="login">
                 <i class="fa-regular fa-user"></i>
-              </a>
+              </a> -->
+              <div class="user">
+				<c:set var="user" value="${sessionScope.user}" />
+				<c:if test="${not empty user}">
+					<p>${user.user_name}님 환영합니다!</p>
+				</c:if>
+			  </div>
+			  <a href="<%= isLoggedIn ? "../my-page/my-main/my-page-main.jsp" : "../login/join/login_view.jsp" %>" id="login">
+			    <i class="fa-regular fa-user"></i>
+			    <%-- <%= isLoggedIn ? "마이페이지" : "로그인" %> --%>
+			  </a>
               <a href="../category/category.jsp" id="more">
                 <i class="fa-solid fa-bars"></i>
               </a>
