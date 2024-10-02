@@ -6,7 +6,10 @@
   <select id="getById" parameterType="string" resultType="userdto" >
  		SELECT * FROM USERS WHERE user_name = #{user_name}
  	</select>
- 	<select id="myproductsinfo" parameterType="string" resultType="myproductsdto" >
+ 	<select id="getproductidByMyProducts" parameterType="string" resultType="myproductsdto" >
+ 		SELECT * FROM PRODUCTS WHERE product_id = #{product_id}
+ 	</select>
+ 	<select id="getproductidByCart" parameterType="string" resultType="cartdto" >
  		SELECT * FROM PRODUCTS WHERE product_id = #{product_id}
  	</select>
 

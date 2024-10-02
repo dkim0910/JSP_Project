@@ -33,7 +33,7 @@ public class OrderDirectAction implements Action{
 		String user_name = req.getParameter("user_name");
 		String product_id = req.getParameter("product_id");
 		
-		prod = odao.insertInfo(product_id);
+		prod = odao.getproductidByMyProducts(product_id);
 
 		if (member == null) {
             // 회원 정보가 없을 경우 처리 (예: 회원가입 페이지로 이동)
