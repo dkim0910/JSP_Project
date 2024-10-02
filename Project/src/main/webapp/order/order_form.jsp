@@ -77,10 +77,10 @@
                     <br/>
                     <hr/>
                     <section class="sheet-section" id="sheet-section-product">
-                    <c:forEach var="item" items="${orderItems}" >
                         <div class="sheet-title">
                             <h2 class="sheet-title-count">주문 상품 1개</h2>
                         </div>
+                        <c:forEach var="item" items="${orderItems}" >
                         <div class="sheet-order-product">
                             <div class="sheet-order-product-cartItem" data-goods-no="3997992" data-cart-id="1076429836">
                                 <div class="sheet-order-product-box">
@@ -103,7 +103,6 @@
                                             <strong class="sheet-order-product-price-origin" id="display-product-price-1076429836">108,000원</strong>
                                             <br/>                                   
                                             <span class="sheet-order-product-price-sale" id="display-product-price-origin-1076429836">100,000원</span>
-                    </c:forEach>
                                             <span class="sheet-order-product-price-text-coupon" id="display-product-apply-coupon-1076429836" style="display: none">쿠폰적용가</span><!-- default : style="display: none" -->
                                         </div>
                                     </div>
@@ -112,6 +111,7 @@
                                     쿠폰사용
                                 </button>
                             </div>
+                        </c:forEach>
                         </div>
                     </section>
                     <br/>
