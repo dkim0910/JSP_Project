@@ -29,7 +29,6 @@ html, body{
 }
 .double-section{
     display: flex;
-    border: 2px solid red;
 }
 .double-section-left{
     flex: 0 0 800px;
@@ -39,7 +38,7 @@ html, body{
     padding-bottom: 40px;
 }
 .double-section-right{
-    flex: 0 0 460px;
+    box-sizing: content-box;
     min-width: 0;
     top: 24px;
     padding-left: 30px;
@@ -502,14 +501,12 @@ paymentMethod-others > li :checked{
     padding: 18px 0 16px;
     border: 1px solid #eee;
     box-sizing: border-box;
-    cursor: pointer;
     transition: border 0.3s ease;
 }
-.list-payment li:hover{
+
+.list-payment li:hover > label {
     border: 1px solid black;
-}
-input.card-selection-input:checked + label {
-    border: 1px solid black;
+    cursor: pointer;
 }
 
 .card-company-logo{

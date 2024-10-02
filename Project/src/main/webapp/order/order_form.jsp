@@ -12,10 +12,19 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
+
+<!-- 제이쿼리 불러오기  -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+<!-- 테일윈드 css불러오기 -->
 <script src="https://cdn.tailwindcss.com"></script>
+
+<!-- css연결 -->
 <style>
     @import url(order_form.css);
 </style>
+
+<!-- js연결 -->
 <script defer src="order_form.js"></script>
 <body>
 	<!-- <c:set var="orderItems" value="${requestScope.orderItems }"/>
@@ -80,7 +89,6 @@
                         <div class="sheet-title">
                             <h2 class="sheet-title-count">주문 상품 1개</h2>
                         </div>
-                        <!-- <c:forEach var="item" items="${orderItems}" > -->
                         <div class="sheet-order-product">
                             <div class="sheet-order-product-cartItem" data-goods-no="3997992" data-cart-id="1076429836">
                                 <div class="sheet-order-product-box">
@@ -111,7 +119,6 @@
                                     쿠폰사용
                                 </button>
                             </div>
-                        <!-- </c:forEach> -->
                         </div>
                     </section>
                     <br/>

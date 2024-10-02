@@ -53,7 +53,7 @@ function togglePaymentCard(show) {
         listPayments.style.display = 'none';
     }
 }
-// 기타 -> 카드결제 클릭 부분
+//기타 -> 카드결제 클릭 부분
 document.querySelectorAll('.card-selection-input').forEach((input) => {
     input.addEventListener('change', function() {
         document.querySelectorAll('.list-payment-label').forEach((label) => {
@@ -66,7 +66,6 @@ document.querySelectorAll('.card-selection-input').forEach((input) => {
 });
 
 
-
 // 바텀바 2차메뉴 클릭 기능
 $(document).ready(function() {
     $('.toggle-icon, .toggle-menu').click(function(event) {
@@ -75,3 +74,17 @@ $(document).ready(function() {
         $('.submenu').not($(this).parent().next('.submenu')).slideUp(); 
     });
   });
+
+  
+  function setupCardSelection() {
+    $('.card-selection-input').on('click', function() {
+        // 모든 카드의 border를 초기화
+        $('.list-payment li').css('border', '1px solid #eee');
+        
+        // 선택된 카드의 border를 변경
+        $(this).closest('li').css('border', '1px solid black');
+    });
+}
+
+// 함수 호출
+setupCardSelection();
