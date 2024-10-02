@@ -29,10 +29,11 @@ html, body{
 }
 .double-section{
     display: flex;
+    border: 2px solid red;
 }
 .double-section-left{
     flex: 0 0 800px;
-    min-width: 0;
+    /* min-width: 0; */
     padding-left: 40px;
     padding-right: 30px;
     padding-bottom: 40px;
@@ -99,11 +100,14 @@ button{
  	outline: 0;
  	border-radius: 4px;
 }
-#input_address{
-	width: 65%
+#input_postcode{
+	width: 13.1%;
 }
-#input_phoneNumber{
-    width: 27%;
+#input_address{
+	width: 46.1%
+}
+#input_detailAddress{
+	width: 60%
 }
 /* ------배송지(Daum API)------ */
 .sheet-address{
@@ -171,7 +175,6 @@ button{
     display: none;
 }
 .sheet-message-selectbox.on{
-    float: left;
     display: block;
 }
 .sheet-message-selectbox li{
