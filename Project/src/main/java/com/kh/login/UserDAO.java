@@ -55,4 +55,11 @@ public class UserDAO {
 		member = session.selectOne("Member.searchByname", params);
 		return member;		 
 	}
+	
+	//	로그인성공시 이름보여주는 메서드
+	public UserDTO nameView(String user_name) {
+		UserDTO name = null;
+	    name = session.selectOne("Member.nameView", user_name);
+	    return name;		 
+	}
 }
