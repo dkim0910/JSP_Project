@@ -1,4 +1,4 @@
-package com.kh.web.main;
+package com.kh.main;
 
 import java.util.List;
 
