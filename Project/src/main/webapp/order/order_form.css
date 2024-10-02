@@ -99,14 +99,11 @@ button{
  	outline: 0;
  	border-radius: 4px;
 }
-#input_postcode{
-	width: 13.1%;
-}
 #input_address{
-	width: 46.1%
+	width: 65%
 }
-#input_detailAddress{
-	width: 60%
+#input_phoneNumber{
+    width: 27%;
 }
 /* ------배송지(Daum API)------ */
 .sheet-address{
