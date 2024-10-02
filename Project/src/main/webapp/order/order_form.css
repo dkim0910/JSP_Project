@@ -39,7 +39,7 @@ html, body{
     padding-bottom: 40px;
 }
 .double-section-right{
-    flex: 0 0 460px;
+    box-sizing: content-box;
     min-width: 0;
     top: 24px;
     padding-left: 30px;

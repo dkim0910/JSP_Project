@@ -9,5 +9,8 @@
  	<select id="Haircareinfo" resultType="goodsdto">
  		SELECT * FROM PRODUCTS WHERE PRODUCT_ID = '4308348'
     </select>
+ 	<select id="goodsinfo" parameterType="string" resultType="goodsdto">
+ 		SELECT * FROM PRODUCTS WHERE PRODUCT_ID = #{PRODUCT_ID}
+    </select>
 	
   </mapper>

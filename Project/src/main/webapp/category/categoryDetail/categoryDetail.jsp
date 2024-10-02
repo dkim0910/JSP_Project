@@ -47,7 +47,7 @@
                     <section class="goods-category" id="beauty-section">
                         <div class="goods-category-real">
                         	<c:forEach var="category" items="${category }">
-	                            <a href="/scg.product?subcategory=skincare" class="goods" name="스킨케어">
+	                            <a href="/scg.product?PRODUCT_ID=${category.PRODUCT_ID }" class="goods" name="스킨케어">
 	                                <img src="${category.IMAGE_URL }"  >
 	                                <span>${category.PRODUCT_NAME }</span>
 	                                <div class="product-description">
