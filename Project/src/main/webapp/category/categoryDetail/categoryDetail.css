@@ -207,6 +207,10 @@ body {
     z-index: 10;
 }
 
+#product-description-price{
+	color: red;
+}
+
 /* 하단 */
 #commonLayoutFooter {
     text-align: center;
