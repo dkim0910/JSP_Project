@@ -1,9 +1,10 @@
-package com.kh.web.main;
+package com.kh.main;
 
 import java.io.IOException;
 
 import com.kh.web.action.ActionForward;
 
+import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -27,10 +28,20 @@ public class MainForntContoller extends HttpServlet {
 		String requestURI = req.getRequestURI();
 		ActionForward forward = null;
 
-		switch (requestURI) {
-		case "/main/mainview.ma":
-			forward = new ImgAction().execute(req, resp);
-			break;
+//		switch (requestURI) {
+//		case "":
+//			forward = new ().execute(req, resp);
+//			break;
+//		}
+
+		if (forward != null) {
+			if (forward.isRedirect()) {
+				resp.sendRedirect(forward.getPath());
+			} else {
+				RequestDispatcher disp = req.getRequestDispatcher(forward.getPath());
+				disp.forward(req, resp);
+			}
 		}
+
 	}
 }
