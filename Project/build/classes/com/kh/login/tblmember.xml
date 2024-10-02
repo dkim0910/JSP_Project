@@ -25,4 +25,8 @@
 	    WHERE USER_NAME = #{user_name, jdbcType=VARCHAR}
 	    AND USER_PHONE = #{user_phone, jdbcType=VARCHAR}
 	</select>	
+	
+	<select id="nameView" parameterType="userdto" resultType="userdto">
+		SELECT * FROM USERS WHERE USER_NAME = #{user_name}
+	</select>
   </mapper>

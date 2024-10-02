@@ -39,24 +39,15 @@
     </style>
 </head>
 <body>
-	<c:set var="member" value="${requestScope.member}"/>
+    <c:set var="member" value="${requestScope.member}"/>  <!-- requestScope에서 member 설정 -->
     <div class="container">
         <h1>마이 페이지</h1>
         <div class="profile-section">
             <h2>나의 정보</h2>
-            <%-- <%
-                String userId = request.getParameter("user_id");  // GET 방식으로 user_id를 전달받음
-                MemberDAO memberDAO = new MemberDAO();
-                MemberDTO member = memberDAO.getMemberById(userId);
-
-                // member 객체를 requestScope에 설정
-                request.setAttribute("member", member);
-            %> --%>
 
             <!-- JSTL을 사용하여 member 객체의 정보를 출력 -->
             <c:choose>
                 <c:when test="${not empty member}">
-                    
                     <div class="info">이름: <c:out value="${member.user_name}" /></div>
                     <div class="info">아이디: <c:out value="${member.user_id}" /></div>
                     <div class="info">전화번호: <c:out value="${member.user_phone}" /></div>
@@ -70,5 +61,6 @@
             </c:choose>
         </div>
     </div>
+
 </body>
 </html>

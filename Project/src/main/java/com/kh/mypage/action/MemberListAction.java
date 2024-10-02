@@ -7,7 +7,6 @@ import com.kh.web.action.ActionForward;
 
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import jakarta.servlet.http.HttpSession;
 
 public class MemberListAction implements Action {
 
@@ -16,13 +15,12 @@ public class MemberListAction implements Action {
 		ActionForward forward = new ActionForward();
         MemberDAO dao = new MemberDAO();
 
-        // 세션에서 user_id 가져오기
-        HttpSession session = request.getSession();
-        String user_id = (String) session.getAttribute("user_id");
+        // 요청 파라미터에서 user_id 가져오기
+        String user_id = request.getParameter("user_id");
 
-        // user_id가 세션에 없는 경우 로그인 페이지로 이동
+        // user_id가 요청에 없는 경우 로그인 페이지로 이동
         if (user_id == null || user_id.isEmpty()) {
-            // 세션에 user_id가 없을 경우 처리 (예: 로그인 페이지로 리다이렉트)
+            // user_id가 없을 경우 처리 (예: 로그인 페이지로 리다이렉트)
             forward.setPath("/login/join/login_view.jsp");
             forward.setRedirect(true);
             return forward;

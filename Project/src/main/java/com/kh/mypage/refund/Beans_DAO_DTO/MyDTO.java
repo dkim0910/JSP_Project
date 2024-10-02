@@ -8,6 +8,8 @@ public class MyDTO {
     private int normal_price;
     private int sale_rate;
     private String image_url;
+    private String CATEGORY;
+    private String subCategory;
     
 	public String getProduct_id() {
 		return product_id;
@@ -51,6 +53,21 @@ public class MyDTO {
 	public void setImage_url(String image_url) {
 		this.image_url = image_url;
 	}
+	public String getCATEGORY() {
+		return CATEGORY;
+	}
+	public void setCATEGORY(String cATEGORY) {
+		CATEGORY = cATEGORY;
+	}
+	public String getSubCategory() {
+		return subCategory;
+	}
+	public void setSubCategory(String subCategory) {
+		this.subCategory = subCategory;
+	}
+    
+	
+    
     
 	
 }

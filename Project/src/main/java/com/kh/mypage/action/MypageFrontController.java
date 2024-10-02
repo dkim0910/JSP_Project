@@ -29,6 +29,9 @@ public class MypageFrontController extends HttpServlet {
 		case "/my-main/MemberList.up":
 			forward = new MemberListAction().execute(req, resp);
 			break;
+		case "/my-main/MemberChange.up":
+			forward = new MembeUpdateAction().execute(req, resp);
+			break;
 		}
 		
 		if(forward != null) {
