@@ -387,7 +387,7 @@
                                         상품 금액
                                     </span>
                                     <strong class="sheet-payment-price-subject-price">
-                                        108,000원
+                                        ${normal_price }원
                                     </strong>
                                 </div>
                                 <div class="sheet-payment-price-box">
@@ -395,7 +395,7 @@
                                         할인 금액
                                     </span>
                                     <strong class="sheet-payment-price-subject-price">
-                                        -8,000원
+                                        -${normal_price-price_amount }원
                                     </strong>
                                 </div>
                                 <div class="sheet-payment-price-box">
@@ -418,15 +418,15 @@
                                     <span class="sheet-payment-price-total-text">
                                         총 결제 금액
                                     </span>
-                                    <strong class="subject-payment-price-totla-price">
-                                        100,000원
+                                    <strong class="subject-payment-price-total-price">
+                                        ${price_amount }원
                                     </strong>
                                 </div>
                                 <br/>
                                 <div class="sheet-purchase-button-bottom" onclick="location.href='../order/order_confirmed.jsp';">
                                     <div class="sheet-purchase-button">
                                         <span class="sheet-purchase-button-price">
-                                            100,000
+                                            ${price_amount }
                                         </span>
                                         원 결제하기
                                     </div>
@@ -523,7 +523,7 @@
             <div class="sheet-purchase-button-bottom" id="sheet-purchase-button2" onclick="location.href='../order/order_confirmed.jsp';">
                 <div class="sheet-purchase-button">
                     <span class="sheet-purchase-button-price" id="display-result-pay-amount">
-                        100,000
+                        ${price_amount }
                     </span>
                     원 결제하기
                 </div>
