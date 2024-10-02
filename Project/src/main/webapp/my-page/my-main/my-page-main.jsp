@@ -50,7 +50,7 @@
                         <p>마이페이지</p>
                     </div>
                     <ul>
-                        <li><a href="#" onclick="toggleBold(this); showContent('my-info')" class="sidebar-options">나의
+                        <li><a href="/my-main/MemberList.up" onclick="toggleBold(this); showContent('my-info')" class="sidebar-options">나의
                                 정보</a></li> <!-- 나의 정보창 -->
                         <li><a href="../ordered/order-status.jsp" onclick="toggleBold(this); showContent('orders')"
                                 class="sidebar-options">주문 내역</a></li> <!-- 여기에 주문 취소랑 주소 변경 등 넣기-->
@@ -97,7 +97,7 @@
 					
 					<div class="hello">
 					    <p class="left" style="font-weight: bold; cursor: pointer;" onclick="showContent('my-info')">
-					        <%= nicknameMessage %> <!-- DB에서 가져온 username 삽입 -->
+					       <%--  <%= nicknameMessage %> --%> <!-- DB에서 가져온 username 삽입 -->
 					    </p>
 					    <div class="right-container">
 					        <p id="member-status" class="right" style="cursor: pointer;" onclick="showContent('membership')">
