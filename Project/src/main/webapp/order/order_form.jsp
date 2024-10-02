@@ -55,16 +55,15 @@
                             </div>
                             <div>
                             	<div class="form-input-address">
-		                            <input type="text" id="input_postcode" placeholder="우편번호">
-									<input type="text" id="input_address" placeholder="주소"><br/>
-									<input type="text" id="input_detailAddress" placeholder="상세주소">
-									<input type="text" id="input_phoneNumber" placeholder="전화번호">
+		                            <input type="text" id="input_postcode" placeholder="우편번호" value="${user_postcode}" >
+									<input type="text" id="input_address" placeholder="주소" value="${user_address}"><br/>
+									<input type="text" id="input_detailAddress" placeholder="상세주소" value="${user_address_detail}">
+									<input type="text" id="input_phoneNumber" placeholder="전화번호" value="${user_phone}">
                             	</div>
                             </div>
                             <div class="sheet-message-select">
                                 <button type="button" class="sheet-message-text">
                                     배송 메세지를 선택하세요.
-                                    <!-- <img src="./img/svg/down-arrow-svgrepo-com.png" alt="" class="icon-down" width="12" height="12"> -->
                                 </button>    
                                 <ul class="sheet-message-selectbox">
                                     <li><button type="button" class="sheet-message-option-btn">문 앞에 놔주세요</button></li>                       
