@@ -1,4 +1,6 @@
-package com.kh.web.main;
+package com.kh.main;
+
+import java.util.List;
 
 import com.kh.web.action.Action;
 import com.kh.web.action.ActionForward;
@@ -12,7 +14,12 @@ public class ImgAction implements Action {
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) {
 		ActionForward forward = new ActionForward();
 		
-		
+		MainDAO mainDAO = new MainDAO();
+        List<MainDAO> mainImg = mainDAO.getMainImg();
+        request.setAttribute("mainImg", mainImg);
+        
+        forward.setRedirect(false);
+        forward.setPath();
 		
 		return forward;
 	}

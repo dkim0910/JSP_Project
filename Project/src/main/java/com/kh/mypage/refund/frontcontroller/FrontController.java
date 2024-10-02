@@ -12,41 +12,37 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 @WebServlet("*.my")
-public class FrontController extends HttpServlet{
-	
+public class FrontController extends HttpServlet {
+
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		doProcess(req, resp);
 	}
-	
+
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		doProcess(req, resp);
 	}
-	
+
 	protected void doProcess(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-			
+
 		String requestURI = req.getRequestURI();
 		ActionForward forward = null;
-		
-		switch(requestURI) {
+
+		switch (requestURI) {
 		case "/my/mypage.my":
 			forward = new ProductAction().execute(req, resp);
 			break;
 		}
-		
-			if(forward != null) {
-		         if(forward.isRedirect()) {
-		            resp.sendRedirect(forward.getPath());
-		         }else {
-		            RequestDispatcher disp = req.getRequestDispatcher(forward.getPath());
-		            disp.forward(req, resp);
-		         }
-		      }
-			
-		
-		
-		
+
+		if (forward != null) {
+			if (forward.isRedirect()) {
+				resp.sendRedirect(forward.getPath());
+			} else {
+				RequestDispatcher disp = req.getRequestDispatcher(forward.getPath());
+				disp.forward(req, resp);
+			}
+		}
+
 	}
 }
-
