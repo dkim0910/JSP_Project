@@ -39,6 +39,7 @@
     </style>
 </head>
 <body>
+	<c:set var="member" value="${requestScope.member}"/>
     <div class="container">
         <h1>마이 페이지</h1>
         <div class="profile-section">
@@ -55,7 +56,7 @@
             <!-- JSTL을 사용하여 member 객체의 정보를 출력 -->
             <c:choose>
                 <c:when test="${not empty member}">
-                    <c:set var="member" value="${requestScope.member}"/>
+                    
                     <div class="info">이름: <c:out value="${member.user_name}" /></div>
                     <div class="info">아이디: <c:out value="${member.user_id}" /></div>
                     <div class="info">전화번호: <c:out value="${member.user_phone}" /></div>
