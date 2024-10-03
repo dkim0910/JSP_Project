@@ -34,7 +34,7 @@
 	</select>
 
 	<!-- 아직 DAO 랑 Action에 로직 추가 안했음 (유저 아이디도 가지고 올 수 있게 만들기)-->
-	<select id="">
+	<select id="" resultType="mydto">
 		SELECT o.ORDERED_NUM, o.ORDER_NUM, o.ordered_date
 		FROM Ordered o
 		JOIN Order_
