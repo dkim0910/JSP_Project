@@ -26,7 +26,7 @@ public class RefundAction implements Action {
         
         // 이거 나중에 1개씩이 아니라 O001, O002, O003 이렇게 한 5개 정도 바로 뽑을 수 있게 만들기
         // 여기에 "" 배열 적어서 한개씩 돌아가면서 넣으면 되나?
-        String thisorderNum = "O002";  // 원하는 주문 번호
+        String thisorderNum = "ORD001";  // 원하는 주문 번호
         
         List<MyDTO> getRefunds = MyDAO.getRefunds(thisorderNum);
         request.setAttribute("getRefunds", getRefunds);
