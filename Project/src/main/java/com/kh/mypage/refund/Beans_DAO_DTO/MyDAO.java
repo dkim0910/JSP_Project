@@ -1,5 +1,7 @@
 package com.kh.mypage.refund.Beans_DAO_DTO;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 import org.apache.ibatis.session.SqlSession;
@@ -22,14 +24,18 @@ public class MyDAO {
         return products;
     }
 
-	// 환불에 필요한 요소 전체 가지고 오기
-	public List<MyDTO> getRefunds(String thisorderNum) {
-		List<MyDTO> allRefunds;
-		allRefunds = session.selectList("MyMapper.getRefunds", thisorderNum);
-		return allRefunds;
+	// 환불페이지에 필요한 요소 가지고 오기
+	public List<MyDTO> getRefunds(String userid, String orderedNum, String orderNum){
+		HashMap<String, String> datas = new HashMap<>();
+		datas.put("userid", userid);
+		datas.put("orderedNum", orderedNum);
+		datas.put("orderNum", orderNum);
+		
+		List<MyDTO> refunds = new ArrayList<>();
+		refunds = session.selectList("MyMapper.getRefunds", datas);	// .xml 에 있는거 가지고 옴 Board , getBoardList
+		
+		return refunds;
 	}
-    
-    
 
 
 
