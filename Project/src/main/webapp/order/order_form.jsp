@@ -22,7 +22,7 @@
 <link rel="stylesheet"
 	href="${pageContext.request.contextPath}/order/order_form.css">
 <!-- js연결 -->
-<script defer src="order_form.js"></script>
+<script defer src="/order/order_form.js"></script>
 
 <!-- 배송지변경 -->
 <script defer
