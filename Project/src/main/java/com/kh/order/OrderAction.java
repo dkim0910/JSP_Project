@@ -30,7 +30,6 @@ public class OrderAction implements Action {
        forward.setRedirect(true);
        forward.setPath("/order/order_form.jsp");
 
-       System.out.println("테스트");
        return forward;
 	}
 
