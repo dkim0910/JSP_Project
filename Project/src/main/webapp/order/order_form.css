@@ -127,7 +127,6 @@ button{
     font-size: 15px;
     font-weight: 500;
     line-height: 18px;
-    margin-left: 241px;
     
 }
 .sheet-message-text{
@@ -314,6 +313,7 @@ h2{
     color: #666;
     border-radius: 2px;
     margin-left: 4px;
+    margin-right: auto;
     padding: 1px 4px;
     font-size: 14px;
     font-weight: 400;
