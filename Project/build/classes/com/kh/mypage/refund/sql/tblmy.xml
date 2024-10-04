@@ -17,57 +17,50 @@
 	<!-- 아직 DAO 랑 Action에 로직 추가 안했음 (유저 아이디도 가지고 올 수 있게 만들기) -->
 	<select id="getRefunds" resultType="mydto">
 		SELECT
-		o.ORDERED_NUM AS ordered_num,
-		o.ORDER_NUM AS order_num,
-		o.ordered_date AS ordered_date,
-		c.USER_ID AS user_id,
-		p.PRODUCT_ID AS product_id,
-		p.Brand AS brand,
-		p.Product_name AS product_name,
-		p.Price_amount AS price_amount,
-		p.Image_url AS image_url
+		o.ORDERED_NUM,
+		o.USER_ID,
+		o.PRODUCT_ID,
+		o.ordered_date,
+		p.Brand,
+		p.Product_name,
+		p.Price_amount,
+		p.Image_url
 		FROM
 		Ordered o
 		JOIN
-		Order_ ord ON o.ORDER_NUM = ord.ORDER_NUM
+		Cart c ON c.PRODUCT_ID = o.PRODUCT_ID AND c.USER_ID = o.USER_ID
 		JOIN
-		Cart c ON ord.PRODUCT_ID = c.PRODUCT_ID
-		JOIN
-		Users u ON c.USER_ID = u.USER_ID
-		JOIN
-		Products p ON ord.PRODUCT_ID = p.PRODUCT_ID
+		Products p ON o.PRODUCT_ID = p.PRODUCT_ID
 		WHERE
-		u.USER_ID = #{userid}
+		o.USER_ID = #{userid}
 		AND o.ORDERED_NUM = #{orderedNum}
-		AND ord.ORDER_NUM = #{orderNum}
 	</select>
 
 	<!-- 주문 내역 -->
 	<select id="getOrdered" resultType="mydto">
 		SELECT
-		o.ORDERED_NUM AS ordered_num,
-		o.ORDER_NUM AS order_num,
-		o.ordered_date AS ordered_date,
-		c.USER_ID AS user_id,
-		p.PRODUCT_ID AS product_id,
-		p.Brand AS brand,
-		p.Product_name AS product_name,
-		p.Price_amount AS price_amount,
-		p.Image_url AS image_url
+		o.ORDERED_NUM,
+		o.USER_ID,
+		o.PRODUCT_ID,
+		o.ordered_date,
+		p.Brand,
+		p.Product_name,
+		p.Price_amount,
+		p.Image_url
 		FROM
 		Ordered o
 		JOIN
-		Order_ ord ON o.ORDER_NUM = ord.ORDER_NUM
+		Cart c ON c.PRODUCT_ID = o.PRODUCT_ID AND c.USER_ID = o.USER_ID
 		JOIN
-		Cart c ON ord.PRODUCT_ID = c.PRODUCT_ID
-		JOIN
-		Users u ON c.USER_ID = u.USER_ID
-		JOIN
-		Products p ON ord.PRODUCT_ID = p.PRODUCT_ID
+		Products p ON o.PRODUCT_ID = p.PRODUCT_ID
 		WHERE
-		u.USER_ID = #{userid}
+		o.USER_ID = #{userid}
 		AND o.ORDERED_NUM = #{orderedNum}
-		AND ord.ORDER_NUM = #{orderNum}
 	</select>
+
+	<!-- 회원 삭제 -->
+	<delete id="">
+
+	</delete>
 
 </mapper>

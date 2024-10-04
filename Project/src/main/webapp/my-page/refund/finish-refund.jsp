@@ -95,7 +95,6 @@
         <div class="content">
             <div>
                 <h1>환불 및 교환 신청이 완료되었습니다</h1>
-                <h2>자세한 내용은 ~~~로 안내해 드리겠습니다</h2>
                 <div>
                     <a href="../../my-page/my-main/my-page-main.jsp" class="all-button">마이페이지로 돌아가기</a>
                 </div>

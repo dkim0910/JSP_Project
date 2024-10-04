@@ -10,29 +10,21 @@ import com.kh.mypage.refund.Beans_DAO_DTO.MyDTO;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
-public class OrederedAction implements Action{
+public class DeleteUserAction implements Action{
 
 	@Override
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) {
 		ActionForward forward = new ActionForward();
 		
-		System.out.println("here2");
-		
 		MyDAO mydao = new MyDAO();
 		
-		// 나중에 앞에서 카트 또는 주문후의 값을 바로 가지고 오가
-		String userid = "admin";
-        String orderedNum = "ORD001";
-        String orderNum = "O001";  // 원하는 주문 번호
-		
-		
-		List<MyDTO> getOrederd = mydao.getOrdered(userid, orderedNum, orderNum);
-		request.setAttribute("Ordered", getOrederd);
+		List<MyDTO> deleteUser = mydao.deleteUser();
+		request.setAttribute("delete", deleteUser);
 		
 		forward.setRedirect(false);
-	    forward.setPath("/my-page/ordered/order-status.jsp");
+		forward.setPath("/main-page/main.jsp");
 		
 		return forward;
 	}
-	
+		
 }

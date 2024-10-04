@@ -34,7 +34,7 @@ public class RefundAction implements Action {
         String orderedNum = "ORD001";
         String orderNum = "O001";  // 원하는 주문 번호
         
-        List<MyDTO> getRefunds = MyDAO.getRefunds(userid, orderedNum, orderNum);
+        List<MyDTO> getRefunds = MyDAO.getRefunds(userid, orderedNum);
         request.setAttribute("Refunded", getRefunds);
 	    
         

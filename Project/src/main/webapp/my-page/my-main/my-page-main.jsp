@@ -20,7 +20,7 @@
 <body style="cursor: default;">
     <div class="header-container">
         <header class="header">
-            <a href="../../main-page/login_main." class="" aria-label="이전 페이지로 이동 (로그인 후의 메인 페이지)">
+            <a href="../../main-page/main.jsp" class="" aria-label="이전 페이지로 이동 (로그인 후의 메인 페이지)">
                 <svg width="35" height="35" viewBox="0 0 28 28" fill="none">
                     <path
                         d="M16.1004 21.7L8.61252 14.2122C8.49537 14.095 8.49537 13.9051 8.61252 13.7879L16.1004 6.30005"
@@ -423,10 +423,10 @@
 
                                     <!-- 공지1 -->
                                     <div class="event-card">
-                                        <a href="https://www.naver.com/">
+                                        <a href="">
                                             <div class="event-card-content">
-                                                <h3>공지1</h3>
-                                                <p>세일 안해요.</p>
+                                                <h3>공지 1</h3>
+                                                <p>후기는 없습니다 시간 없음</p>
                                             </div>
                                         </a>
                                     </div>
@@ -435,7 +435,7 @@
                                     <div class="event-card">
                                         <div class="event-card-content">
                                             <h3>공지 2</h3>
-                                            <p>멤버십 포인트 있는거 만들거임?</p>
+                                            <p>멤버십 포인트 있는거 만들 시간이 없다</p>
                                         </div>
                                     </div>
 
@@ -443,7 +443,7 @@
                                     <div class="event-card">
                                         <div class="event-card-content">
                                             <h3>공지 3</h3>
-                                            <p>DB 언제됨?.</p>
+                                            <p>DB 설게 잘못한듯</p>
                                         </div>
                                     </div>
 
@@ -553,8 +553,6 @@
 
 
                     <!-- 더 추가할 페이지들 -->
-
-
 
 
 

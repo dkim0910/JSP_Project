@@ -72,7 +72,8 @@ function confirmWithdrawal(confirmed) {
 
     if (confirmed) {
         alert("회원 탈퇴가 성공적으로 완료되었습니다.");
-        window.location.href = "../../main-page/index.html"
+		
+        window.location.href = "/byebye.my"
     }
 
     if (!confirmed) {

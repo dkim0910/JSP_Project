@@ -25,11 +25,10 @@ public class MyDAO {
     }
 
 	// 환불페이지에 필요한 요소 가지고 오기
-	public List<MyDTO> getRefunds(String userid, String orderedNum, String orderNum){
+	public List<MyDTO> getRefunds(String userid, String orderedNum){
 		HashMap<String, String> datas = new HashMap<>();
 		datas.put("userid", userid);
 		datas.put("orderedNum", orderedNum);
-		datas.put("orderNum", orderNum);
 		
 		List<MyDTO> refunds = new ArrayList<>();
 		refunds = session.selectList("MyMapper.getRefunds", datas);	// .xml 에 있는거 가지고 옴 Board , getBoardList
@@ -38,16 +37,21 @@ public class MyDAO {
 	}
 
 	// 주문 내역
-	public List<MyDTO> getOrdered(String userid, String orderedNum, String orderNum) {
+	public List<MyDTO> getOrdered(String userid, String orderedNum) {
 		HashMap<String, String> datas = new HashMap<>();
 		datas.put("userid", userid);
 		datas.put("orderedNum", orderedNum);
-		datas.put("orderNum", orderNum);
 		
 		List<MyDTO> refunds = new ArrayList<>();
 		refunds = session.selectList("MyMapper.getOrdered", datas);	// .xml 에 있는거 가지고 옴 Board , getBoardList
 		
 		return refunds;
+	}
+
+	public List<MyDTO> deleteUser() {
+		
+		
+		return null;
 	}
 
 

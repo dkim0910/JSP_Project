@@ -44,7 +44,7 @@
 					<c:forEach var="order" items="${Ordered}">
 						<tr>
 							<!-- 주문 번호 -->
-							<td>${order.order_num}</td>
+							<td id="order-number">${order.order_num}</td>
 
 							<!-- 상품명 및 이미지 -->
 							<td>
@@ -53,12 +53,12 @@
 										class="product-image" />
 									<div class="product-details">
 										<p>${order.product_name}</p>
-										<p>₩${order.price_amount}</p>
+										<p class="price">₩${order.price_amount}</p>
 									</div>
 								</div>
 							</td>
 							<!-- 가격 -->
-							<td>₩${order.price_amount}</td>
+							<td class="price">₩${order.price_amount}</td>
 							<!-- 주문 날짜 -->
 							<td><span> 주문 날짜 <br /></span> ${order.ordered_date} <br />
 							</td>
@@ -73,7 +73,6 @@
 			</table>
 		</div>
 
-
 		<footer class="footer">
 			<p>고객 지원 센터: 1234-5678 | 이메일: shoppinghajo@samjo.com</p>
 			<p>운영 시간: 월-금, 09:00-18:00 (주말 및 공휴일 휴무)</p>
@@ -84,6 +83,33 @@
 			</div>
 		</footer>
 	</div>
+
+	<script type="text/javascript">
+		// 000,000 만들기
+		function formatPrice() {
+			let prices = document.querySelectorAll('.price');
+
+			prices.forEach(function(price) {
+				let priceValue = parseInt(price.innerText.replace(/₩|,/g, '')); // ₩와 콤마 제거 후 숫자로 변환
+
+				if (!isNaN(priceValue)) {
+					let priceStr = priceValue.toString();
+
+					if (priceStr.length > 3) {
+						// 마지막 세 자리 앞에 '.' 추가
+						let formattedPrice = priceStr.slice(0,
+								priceStr.length - 3).replace(
+								/\B(?=(\d{3})+(?!\d))/g, ',')
+								+ ',' + priceStr.slice(-3);
+						price.innerText = '₩' + formattedPrice;
+					}
+				}
+			});
+		}
+
+		// 페이지 로드 시 실행
+		document.addEventListener("DOMContentLoaded", formatPrice);
+	</script>
 
 </body>
 

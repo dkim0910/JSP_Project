@@ -32,15 +32,6 @@
 			style="min-height: 100vh; display: flex; flex-direction: column;">
 			<h2>구매 내역</h2>
 
-			<%-- <c:forEach var="refund" items="${Refunded}">
-				<div>
-					<p>User ID: ${refund.user_id}</p>
-					<p>Ordered Number: ${refund.ordered_num}</p>
-					<p>Ordered Date: ${refund.ordered_date}</p>
-				</div>
-			</c:forEach> --%>
-
-
 			<!-- 환불할 제품이 있는 경우 -->
 			<c:if test="${not empty Refunded}">
 				<h2>환불 제품 목록</h2>
@@ -63,6 +54,7 @@
 			</c:if>
 		</section>
 
+		<!-- 환불할 제품 선택하고 보내는거 나옴 -->
 		<section class="refund-form-section" id="refund-form-section">
 			<h2>환불 신청서</h2>
 			<form id="refund-form">
@@ -81,6 +73,7 @@
 
 				<a href="my-page/refund/finish-refund.jsp"><button type="button"
 						class="submit-button" onclick="submitRefund()">환불 신청하기</button></a>
+						<!-- 지금은 이걸 보내도 받는 곳이 없음;; -->
 			</form>
 		</section>
 
