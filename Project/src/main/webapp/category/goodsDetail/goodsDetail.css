@@ -80,8 +80,14 @@ body {
 /* 가격 */
 .product-price {
     font-size: 30px;
-    color: #e74c3c;
     margin-bottom: 20px;
+}
+.product-price .price-amount {
+    color: red; /* 가격 부분은 빨간색 */
+}
+
+.product-price .currency {
+    color: black; /* "원" 부분은 검은색 */
 }
 
 .product-description {
@@ -131,7 +137,7 @@ body {
     display: flex;
     justify-content: space-between;
     margin-bottom: 10px;
-    font-size: large;
+    font-size: x-large;
 }
 
 /* 구매, 장바구니 */

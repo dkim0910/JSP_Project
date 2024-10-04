@@ -82,5 +82,12 @@ function addtoCart(){
         form.reset();
     }
 }
+////////////////////
+document.addEventListener('DOMContentLoaded', function() {
+    const priceElement = document.querySelector('.product-price');
+    const price = priceElement.getAttribute('data-price');
 
+    const formattedPrice = Number(price).toLocaleString();
+    priceElement.querySelector('.price-amount').textContent = formattedPrice;
+});
 

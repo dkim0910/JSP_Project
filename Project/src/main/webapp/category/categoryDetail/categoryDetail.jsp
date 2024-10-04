@@ -29,13 +29,13 @@
                     <button type="button" id="search-button" >검색</button>
                 </div>
                 <div class="top-menu">
-					<a href="../../my-page/my-main/my-page-main.html" class="menu-button">
+					<a href="../../my-page/my-main/my-page-main.jsp" class="menu-button">
 						<img src="../img/마이.png"  >
 					</a>
                     <a href="../../cart/cart.jsp" class="menu-button">
 						<img src="../img/카트.png"  >
                     </a>
-                    <a href="../../main-page/login_main.html" class="menu-button">
+                    <a href="../../main-page/main.jsp" class="menu-button">
 						<img src="../img/홈.png"  >
 					</a>
                 </div>

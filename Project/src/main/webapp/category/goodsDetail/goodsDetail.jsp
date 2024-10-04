@@ -23,7 +23,11 @@
     
         <div class="product-info">
             <h1 class="product-title">${goods.PRODUCT_NAME }</h1>
-            <p class="product-price">${goods.NORMAL_PRICE }원</p>
+            <p class="product-price" data-price="${goods.NORMAL_PRICE}">
+			    <span class="price-amount"></span><span class="currency">원</span>
+			</p>
+            <%-- <p class="product-price">${goods.NORMAL_PRICE }원</p> --%>
+            
 
             <div class="quantity-selector">
                 <label for="quantity">수량 :</label>
@@ -41,7 +45,6 @@
                     <button type="submit" class="buy-now">바로 구매</button>
                 </form>
                 <form id="addForm" action="../../cart/cart.jsp" method="post">
-                    <!-- <button type="submit" class="add-to-cart">장바구니 담기</button> -->
                     <button type="button" class="add-to-cart" onclick="addtoCart()">장바구니 담기</button>
                 </form>
             </div>
