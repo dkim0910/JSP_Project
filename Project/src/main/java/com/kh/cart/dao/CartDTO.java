@@ -1,6 +1,7 @@
 package com.kh.cart.dao;
 
 public class CartDTO {
+	
 	private String PRODUCT_ID;
 	private String BRAND;	
 	private String PRODUCT_NAME	;	
@@ -10,7 +11,20 @@ public class CartDTO {
 	private String IMAGE_URL;	
 	private String CATEGORY	;
 	private String SUBCATEGORY;
+	private int COUNT;
 	
+	
+	   
+
+
+	
+	
+	public int getCOUNT() {
+		return COUNT;
+	}
+	public void setCOUNT(int COUNT) {
+		COUNT = COUNT;
+	}
 	public String getPRODUCT_ID() {
 		return PRODUCT_ID;
 	}
