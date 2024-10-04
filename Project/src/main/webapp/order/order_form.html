@@ -15,6 +15,11 @@
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
+
+<!-- 제이쿼리 불러오기  -->
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
 <!-- 테일윈드 css불러오기 -->
 <script src="https://cdn.tailwindcss.com"></script>
 
@@ -31,6 +36,7 @@
     boolean isLoggedIn = (session != null && session.getAttribute("member") != null);
 %>
 <body>
+	<c:set var="userName" value="${requestScope.name}"/>
 	<c:set var="totalPrice_amount" value="0"/>
 	<c:set var="totalPrice_original" value="0"/>
 <head>
@@ -69,7 +75,7 @@
 				</c:if>
 						<div class="sheet-address-title">
 							<strong class="sheet-address-title-name" id="recipient-name">
-							${member.user_name }님
+							${userName.user_name }
 							</strong> <span class="sheet-address-title-label" id="recipient-default"
 								style="display: block;"> 기본 배송지 </span>
 							<button class="sheet-address-title-button" type="button"
@@ -119,8 +125,9 @@
 												class="sheet-order-product-option"></span>
 											<div class="sheet-order-product-price-box">
 												<strong class="sheet-order-product-price-origin">${productList.normal_price } 원</strong> <br />
-												<span class="sheet-order-product-price-sale">${productList.price_amount } 원</span>
-												<span class="sheet-order-product-price-text-coupon" style="display: none">쿠폰적용가</span>
+												<span class="sheet-order-product-price-sale">${productList.price_amount } 원</span> <span
+													class="sheet-order-product-price-text-coupon"
+													style="display: none">쿠폰적용가</span>
 											</div>
 										</div>
 									</div>
@@ -138,6 +145,7 @@
 						<h1>${totalPrice_amount }원 , ${totalPrice_original }원, ${totalPrice_original - totalPrice_amount }원</h1>
 					</div>
 				</section>
+			</div>
 			<br />
 			<hr />
 			<section class="sheet-section" id="sheet-section-usepoint">
@@ -305,76 +313,76 @@
 					</ul>
 				</div>
 			</section>
-			</div>
-			<hr />
-			<div class="double-section-right">
-				<section class="sticky-section">
-					<section class="sheet-section" id="sheet-section-reward-point">
-						<div class="sheet-title">
-							<h2 class="sheet-title-text">적립 혜택</h2>
+		</div>
+		<hr />
+		<div class="double-section-right">
+			<section class="sticky-section">
+				<section class="sheet-section" id="sheet-section-reward-point">
+					<div class="sheet-title">
+						<h2 class="sheet-title-text">적립 혜택</h2>
+					</div>
+					<div class="sheet-save-point">
+						<div class="sheet-save-point-level">
+							<span class="sheet-save-point-level-text"> LV.5 실버 : 2% 적립
+							</span> <strong class="sheet-save-point-level-subject-price">
+								2000원 </strong>
 						</div>
-						<div class="sheet-save-point">
-							<div class="sheet-save-point-level">
-								<span class="sheet-save-point-level-text"> LV.5 실버 : 2% 적립
-								</span> <strong class="sheet-save-point-level-subject-price">
-									2000원 </strong>
-							</div>
-							<div class="sheet-save-point-level">
-								<span class="sheet-save-point-additional-text"> 구매 추가 적립 </span>
-								<strong class="sheet-save-point-level-subject-price">
-									100원 </strong>
-							</div>
-							<div class="sheet-save-point-level">
-								<span class="sheet-save-point-review-text"> 후기 적립금 </span> <strong
-									class="sheet-save-point-level-subject-price"> 최대 3,500원
-								</strong>
-							</div>
+						<div class="sheet-save-point-level">
+							<span class="sheet-save-point-additional-text"> 구매 추가 적립 </span>
+							<strong class="sheet-save-point-level-subject-price">
+								100원 </strong>
 						</div>
-					</section>
-					<hr />
-					<section class="sheet-section" id="sheet-section-pay">
-						<div class="sheet-title">
-							<h2 class="sheet-title-text">결제 금액</h2>
+						<div class="sheet-save-point-level">
+							<span class="sheet-save-point-review-text"> 후기 적립금 </span> <strong
+								class="sheet-save-point-level-subject-price"> 최대 3,500원
+							</strong>
 						</div>
-						<div class="sheet-payment-price">
-							<div class="sheet-payment-price-box">
-								<span class="sheet-payment-price-subject-text"> 상품 금액 </span> <strong
-									class="sheet-payment-price-subject-price">${totalPrice_original } 원 </strong>
-							</div>
-							<div class="sheet-payment-price-box">
-								<span class="sheet-payment-price-subject-text"> 할인 금액 </span> <strong
-									class="sheet-payment-price-subject-price">${totalPrice_original - totalPrice_amount } 원 </strong>
-							</div>
-							<div class="sheet-payment-price-box">
-								<span class="sheet-payment-price-subject-text"> 적립금 사용 </span> <strong
-									class="sheet-payment-price-subject-price"> 0원 </strong>
-							</div>
-							<div class="sheet-payment-price-box">
-								<span class="sheet-payment-price-subject-text"> 배송비 </span> <strong
-									class="subject-payment-price-subject-price"> 배송비 무료 </strong>
-							</div>
-							<div class="sheet-payment-price-total">
-								<span class="sheet-payment-price-total-text"> 총 결제 금액 </span> <strong
-									class="subject-payment-price-total-price">${totalPrice_amount } 원 </strong>
-							</div>
-							<br />
-							<div class="sheet-purchase-button-bottom"
-								onclick="location.href='../order/order_confirmed.jsp';">
-								<div class="sheet-purchase-button">
-									<span class="sheet-purchase-button-price">${totalPrice_amount } </span> 원 결제하기
-								</div>
-							</div>
-						</div>
-						<hr />
-						<div class="sheet-agreement">
-							<strong class="sheet-agreement-text"> 주문 내용을 확인했으며 결제에
-								동의합니다. </strong> <strong class="sheet-agreement-text"> 회원님의 개인정보는
-								안전하게 관리됩니다. </strong> <strong class="sheet-agreement-text"> 쇼핑하조는
-								통신판매중개자로, 업체 배송 상품의 상품/상품정보/거래 등에 대한 책임은 쇼핑하조가 아닌 판매자에게 있습니다. </strong>
-						</div>
-					</section>
+					</div>
 				</section>
-			</div>
+				<hr />
+				<section class="sheet-section" id="sheet-section-pay">
+					<div class="sheet-title">
+						<h2 class="sheet-title-text">결제 금액</h2>
+					</div>
+					<div class="sheet-payment-price">
+						<div class="sheet-payment-price-box">
+							<span class="sheet-payment-price-subject-text"> 상품 금액 </span> <strong
+								class="sheet-payment-price-subject-price">${totalPrice_original } 원 </strong>
+						</div>
+						<div class="sheet-payment-price-box">
+							<span class="sheet-payment-price-subject-text"> 할인 금액 </span> <strong
+								class="sheet-payment-price-subject-price">${totalPrice_original - totalPrice_amount } 원 </strong>
+						</div>
+						<div class="sheet-payment-price-box">
+							<span class="sheet-payment-price-subject-text"> 적립금 사용 </span> <strong
+								class="sheet-payment-price-subject-price"> 0원 </strong>
+						</div>
+						<div class="sheet-payment-price-box">
+							<span class="sheet-payment-price-subject-text"> 배송비 </span> <strong
+								class="subject-payment-price-subject-price"> 배송비 무료 </strong>
+						</div>
+						<div class="sheet-payment-price-total">
+							<span class="sheet-payment-price-total-text"> 총 결제 금액 </span> <strong
+								class="subject-payment-price-total-price">${totalPrice_amount } 원 </strong>
+						</div>
+						<br />
+						<div class="sheet-purchase-button-bottom"
+							onclick="location.href='../order/order_confirmed.jsp';">
+							<div class="sheet-purchase-button">
+								<span class="sheet-purchase-button-price">${totalPrice_amount } </span> 원 결제하기
+							</div>
+						</div>
+					</div>
+					<hr />
+					<div class="sheet-agreement">
+						<strong class="sheet-agreement-text"> 주문 내용을 확인했으며 결제에
+							동의합니다. </strong> <strong class="sheet-agreement-text"> 회원님의 개인정보는
+							안전하게 관리됩니다. </strong> <strong class="sheet-agreement-text"> 쇼핑하조는
+							통신판매중개자로, 업체 배송 상품의 상품/상품정보/거래 등에 대한 책임은 쇼핑하조가 아닌 판매자에게 있습니다. </strong>
+					</div>
+				</section>
+			</section>
+		</div>
 		</div>
 		<div class="con mx-auto">
 			<nav class="bottom-menu">
@@ -438,7 +446,7 @@
 	</main>
 	<footer>
 		<div class="sheet-purchase-button-bottom" id="sheet-purchase-button2"
-			onclick="/order/order_confirmed.or_c">
+			onclick="location.href='../order/order_confirmed.jsp';">
 			<div class="sheet-purchase-button">
 				<span class="sheet-purchase-button-price"
 					id="display-result-pay-amount">${totalPrice_amount }원 </span> 결제하기
