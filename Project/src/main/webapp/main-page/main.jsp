@@ -55,8 +55,6 @@
 					<p>${member.user_name}님 환영합니다!</p>
 				</c:if>
 			  </div>
-			  
-			  
 			  <a href="<%= isLoggedIn ? "../my-page/my-main/my-page-main.jsp" : "../login/join/login_view.jsp" %>" id="login">
 			    <i class="fa-regular fa-user"></i>
 			    <%-- <%= isLoggedIn ? "마이페이지" : "로그인" %> --%>
