@@ -34,8 +34,11 @@ public class FrontController extends HttpServlet {
 			forward = new ProductAction().execute(req, resp);
 			break;
 		case "/refund.my":
-			System.out.println("here");
 			forward = new RefundAction().execute(req, resp);
+			break;
+		case "/ordered.my":
+			System.out.println("ordered");
+			forward = new OrederedAction().execute(req, resp);
 			break;
 		}
 

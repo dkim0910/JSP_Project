@@ -16,7 +16,7 @@
 <body style="cursor: default;">
 	<div class="container">
 		<header class="header">
-			<a href="../my-page/my-main/my-page-main.jsp"
+			<a href="./my-page/my-main/my-page-main.jsp"
 				class="button-back-page" aria-label="이전 페이지로 이동"> <!-- 이게 '<' 모양의 뒤로 가기 버튼 -->
 				<svg width="35" height="35" viewBox="0 0 28 28" fill="none">
                     <path

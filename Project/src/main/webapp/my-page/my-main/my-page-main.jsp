@@ -51,7 +51,7 @@
                     <ul>
                         <li><a href="/my-main/MemberList.up" onclick="toggleBold(this); showContent('my-info')" class="sidebar-options">나의
                                 정보</a></li> <!-- 나의 정보창 -->
-                        <li><a href="../ordered/order-status.jsp" onclick="toggleBold(this); showContent('orders')"
+                        <li><a href="/ordered.my" onclick="toggleBold(this); showContent('orders')"
                                 class="sidebar-options">주문 내역</a></li> <!-- 여기에 주문 취소랑 주소 변경 등 넣기-->
                         <li><a href="#" onclick="toggleBold(this); showContent('membership')"
                                 class="sidebar-options">멤버십</a></li> <!-- 여기에 멤버십 포인트나 할인 이벤트 등 넣기 -->

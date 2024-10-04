@@ -9,7 +9,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>주문 내역 | 쇼핑하조</title>
-<link rel="stylesheet" href="order-status.css">
+<link rel="stylesheet"
+	href="${pageContext.request.contextPath}/my-page/ordered/order-status.css">
 </head>
 
 <body style="cursor: default;">
@@ -25,49 +26,53 @@
 			</a>
 			<h1 style="flex-grow: 1; text-align: center;">주문 내역</h1>
 		</header>
-		
+
 		<div class="orderlist"
 			style="min-height: 100vh; display: flex; flex-direction: column;">
-			<h1>나의 주문 내역 예시 테이블</h1>
+			<h1>나의 주문 내역</h1>
 			<table>
 				<thead>
 					<tr>
 						<th>주문 번호</th>
 						<th>상품명</th>
-						<th>수량</th>
 						<th>가격</th>
 						<th>주문 날짜</th>
+						<th>환불/교환</th>
 					</tr>
 				</thead>
 				<tbody>
-					<tr>
-						<td>#001</td>
-						<td>
-							<div class="product-info">
-								<img
-									src="https://image.msscdn.net/thumbnails/images/goods_img/20210826/2092852/2092852_17086532214128_big.jpg?w=1200"
-									alt="이지 와이드 데님 팬츠 그레이" class="product-image" />
-								<div class="product-details">
-									<p>이지 와이드 데님 팬츠 그레이</p>
-									<p>₩20,000</p>
-									<p>
-										남은 수량: <span class="stock-quantity">1</span>개
-									</p>
+					<c:forEach var="order" items="${Ordered}">
+						<tr>
+							<!-- 주문 번호 -->
+							<td>${order.order_num}</td>
+
+							<!-- 상품명 및 이미지 -->
+							<td>
+								<div class="product-info">
+									<img src="${order.image_url}" alt="${order.product_name}"
+										class="product-image" />
+									<div class="product-details">
+										<p>${order.product_name}</p>
+										<p>₩${order.price_amount}</p>
+									</div>
 								</div>
-							</div>
-						</td>
-						<td>1</td>
-						<td>₩20,000</td>
-						<td><span> 주문 날짜 <br />
-						</span> 2024-09-15 <br />
-						<br /> <a href="../refund/refund.jsp"><input type="button"
-								class="refund-button" value="환불 및 교환하기" style="cursor: pointer;" /></a>
-						</td>
-					</tr>
-					<!-- 추가 주문 내역 -->
+							</td>
+							<!-- 가격 -->
+							<td>₩${order.price_amount}</td>
+							<!-- 주문 날짜 -->
+							<td><span> 주문 날짜 <br /></span> ${order.ordered_date} <br />
+							</td>
+							<!-- 환불 및 교환 버튼 -->
+							<td><a href="/refund.my"> <input type="button"
+									class="refund-button" value="환불 및 교환하기"
+									style="cursor: pointer;" />
+							</a></td>
+						</tr>
+					</c:forEach>
 				</tbody>
 			</table>
 		</div>
+
 
 		<footer class="footer">
 			<p>고객 지원 센터: 1234-5678 | 이메일: shoppinghajo@samjo.com</p>
@@ -80,7 +85,6 @@
 		</footer>
 	</div>
 
-	<script src="order-status.js"></script>
 </body>
 
 </html>

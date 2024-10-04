@@ -25,7 +25,7 @@ public class Make_DB_Jsoup {
 
 //          500개를 조회후 DB에 insert
             int i_start = 0;
-            int i_end = 10;
+            int i_end = 30;
             for (int i = i_start; i < i_end; i++) {
                 int currentNum = startNum + i;
                 String productURL = baseURL + currentNum;

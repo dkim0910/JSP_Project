@@ -37,6 +37,19 @@ public class MyDAO {
 		return refunds;
 	}
 
+	// 주문 내역
+	public List<MyDTO> getOrdered(String userid, String orderedNum, String orderNum) {
+		HashMap<String, String> datas = new HashMap<>();
+		datas.put("userid", userid);
+		datas.put("orderedNum", orderedNum);
+		datas.put("orderNum", orderNum);
+		
+		List<MyDTO> refunds = new ArrayList<>();
+		refunds = session.selectList("MyMapper.getOrdered", datas);	// .xml 에 있는거 가지고 옴 Board , getBoardList
+		
+		return refunds;
+	}
+
 
 
     
