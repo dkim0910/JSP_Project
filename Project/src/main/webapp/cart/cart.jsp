@@ -1,5 +1,5 @@
 <%@page import="com.kh.cart.dao.CartDTO"%>
-<%@page import="com.kh.cart.dao.DecimalFormat"%>
+<%@page import="java.text.DecimalFormat"%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page import="java.util.ArrayList, java.util.HashMap, java.util.List, java.util.Map" %>
@@ -280,7 +280,7 @@ th {
 		<%
 		
 		DecimalFormat dfFormat = new DecimalFormat("###,###");
-//		dfFormat.format();
+		
 		
 		int sum = 0;
 		ArrayList<CartDTO> cartList = (ArrayList<CartDTO>)session.getAttribute("cartList");
@@ -311,7 +311,6 @@ th {
 		<th></th>
 		<th></th>
 		<th>총액</th>
-		
 		<th><%=dfFormat.format(sum) %></th>
 		<th></th>
 	</tr>
