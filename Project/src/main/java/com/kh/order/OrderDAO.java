@@ -1,5 +1,6 @@
 package com.kh.order;
 
+import java.util.HashMap;
 import java.util.List;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
@@ -26,11 +27,15 @@ public class OrderDAO {
 		return result;
 	}
 
-	public boolean insertOrderedList(GoodsDTO list) {
+	public boolean insertOrderedList(String product_id, String user_id) {
 		boolean result = false;
-		if( session.insert("list.insertOrderedList", list) == 1 ) {
-			result = true;
-		}
+		HashMap<String, String> data = new HashMap<String, String>();
+		data.put("product_id", product_id);
+		data.put("user_id", user_id);
+		session.insert("Order.insertOrderedList", data);
+		/*
+		 * if( session.insert("list.insertOrderedList", data) == 1 ) { result = true; }
+		 */
 		return result;
 	}
 	
