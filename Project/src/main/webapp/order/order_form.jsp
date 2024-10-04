@@ -32,8 +32,8 @@
 <script defer src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 
 <body>
-	<c:set var="name" value="${requestScope.name}"/>
-	<!-- <c:set var="orderItems" value="${requestScope.orderItems }"/>
+	<!-- <c:set var="name" value="${requestScope.name}"/>
+	<c:set var="orderItems" value="${requestScope.orderItems }"/> -->
     <head>
     </head>
     <body style="overflow: unset">

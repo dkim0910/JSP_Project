@@ -3,7 +3,7 @@
     PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
   <mapper namespace="Order">
-  <select id="getById" parameterType="userdto" resultType="userdto" >
+  <select id="getName" parameterType="userdto" resultType="userdto" >
  		SELECT * FROM USERS WHERE user_name = #{user_name}
  	</select>
  	<select id="getproductidByMyProducts" parameterType="string" resultType="myproductsdto" >

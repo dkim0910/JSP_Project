@@ -36,7 +36,7 @@ public class OrderDAO {
 	
 	public UserDTO getName(String user_name) {
 		UserDTO name = null;
-		name = session.selectOne("Order.getById", user_name);
+		name = session.selectOne("Order.getName", user_name);
 		return name;
 	}
 	
