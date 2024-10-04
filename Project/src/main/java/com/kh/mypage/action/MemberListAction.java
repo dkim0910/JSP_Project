@@ -14,37 +14,34 @@ public class MemberListAction implements Action {
 
 	@Override
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) {
-		ActionForward forward = new ActionForward();
-        MemberDAO dao = new MemberDAO();
-        
-        // 세션에서 user_id 가져오기
-        HttpSession session = request.getSession();
-        UserDTO sessionMember = (UserDTO) session.getAttribute("member");
+		ActionForward forward = new ActionForward(); // forward 정보를 담을 객체 생성
+        MemberDAO dao = new MemberDAO(); // DAO 객체 생성
+        HttpSession session = request.getSession(); // 세션 객체 가져오기
+        UserDTO sessionMember = (UserDTO) session.getAttribute("member"); // 세션에서 로그인한 회원 정보 가져옴
 
-        // 세션에 user_id가 없으면 로그인 페이지로 리다이렉트
+        // 세션에 회원 정보가 없으면 로그인 페이지로 리다이렉트
         if (sessionMember == null) {
             forward.setPath("/login/join/login_view.jsp");
             forward.setRedirect(true);
             return forward;
         }
 
-        // 세션에서 가져온 user_id로 회원 정보 조회
-        String user_id = sessionMember.getUser_id();
-        UserDTO member = dao.getMemberById(user_id);
+        String user_id = sessionMember.getUser_id(); // 세션에서 회원 ID를 가져옴
+        UserDTO member = dao.getMemberById(user_id); // DAO를 통해 회원 정보 조회
 
+        // 회원 정보가 없으면 회원가입 페이지로 이동
         if (member == null) {
-            // 회원 정보가 없을 경우 처리 (예: 회원가입 페이지로 이동)
             forward.setPath("/login/join/join_view.jsp");
             forward.setRedirect(false);
             return forward;
         }
-        
-        // 조회한 회원 정보를 request에 저장
+
+        // 회원 정보를 request에 저장하여 JSP에서 사용 가능하도록 설정
         request.setAttribute("member", member);
 
-        // 이후 보여줄 페이지 설정 (myinformation.jsp로 이동)
+        // 회원 정보를 출력할 JSP로 포워딩
         forward.setPath("/my-page/my-main/myinformation.jsp");
-        forward.setRedirect(false); // forward 방식으로 이동
+        forward.setRedirect(false);
 
         return forward;
     }

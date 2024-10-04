@@ -32,6 +32,11 @@ public class MypageFrontController extends HttpServlet {
 		case "/my-main/MemberUpdate.up":
 			forward = new MembeUpdateAction().execute(req, resp);
 			break;
+		case "/my-main/MemberUpdateForm.up": // 회원 정보 수정 페이지
+            forward = new ActionForward();
+            forward.setPath("/my-page/my-main/myinformation_update.jsp");
+            forward.setRedirect(false); // forward 방식으로 JSP로 이동
+            break;
 		}
 		// ㅇ
 		if(forward != null) {
