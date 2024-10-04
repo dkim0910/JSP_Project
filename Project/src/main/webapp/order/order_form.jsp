@@ -352,7 +352,7 @@
 									class="subject-payment-price-total-price">${totalPrice_amount } 원 </strong>
 							</div>
 							<br />
-							<form action="/order/order_confirmed.or_c" class="sheet-purchase-button-bottom" id="sheet-purchase-button" method="post">
+							<form action="/order/order_confirmed.or_c" class="sheet-purchase-button" id="sheet-purchase-button" method="post">
 		 						<div class="sheet-purchase-button">
 									<input type="hidden" name="PRODUCT_ID" value="${goods.PRODUCT_ID}">
 									<input type="hidden" name="quantity" id="quantityInput" value="1">
