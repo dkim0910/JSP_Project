@@ -47,27 +47,28 @@
                 <h2 class="sheet-title-count">주문 상품</h2>
             </div>
             <div class="sheet-order-product">
-	            <c:forEach var="productList" items="${requestScope.productList}">
-	                <div class="sheet-order-product-cartItem">
-	                    <div class="sheet-order-product-box">
-	                        <div class="sheet-order-product-image-box">
-	                            <img class="sheet-order-product-image" src="${productList.image_url}">
-	                        </div>
-	                        <div class="sheet-order-product-information">
-	                            <a class="sheet-order-product-brand">${productList.brand}</a>
-	                            <br/>                               
-	                            <a class="sheet-order-product-name">
-	                                ${productList.product_name }
-	                            </a>
-	                            <br/>
-	                            <span class="sheet-order-product-option"></span>                                     
-	                            <div class="sheet-order-product-price-box"><br/>                                   
-									<span class="sheet-order-product-price-sale">${productList.price_amount } 원</span>
-	                            </div>
-	                        </div>
-	                    </div>
-	                </div>
-	        	</c:forEach>        
+				<c:forEach var="product" items="${productList}">
+				    <div class="sheet-order-product-cartItem">
+				        <div class="sheet-order-product-box">
+				            <div class="sheet-order-product-image-box">
+				                <img class="sheet-order-product-image" src="${product.image_url}">
+				            </div>
+				            <div class="sheet-order-product-information">
+				                <a class="sheet-order-product-brand">${product.brand}</a>
+				                <br/>                               
+				                <a class="sheet-order-product-name">
+				                    ${product.product_name }
+				                </a>
+				                <br/>
+				                <span class="sheet-order-product-option"></span>                                     
+				                <div class="sheet-order-product-price-box">
+				                    <br/>                                   
+				                    <span class="sheet-order-product-price-sale">${product.price_amount } 원</span>
+				                </div>
+				            </div>
+				        </div>
+				    </div>
+				</c:forEach>
             </div>
         </section>
         <button type="button" class="button-order-status" onclick="location.href='../my-page/ordered/order-status.jsp';">

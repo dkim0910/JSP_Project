@@ -358,12 +358,12 @@
 									class="subject-payment-price-total-price">${totalPrice_amount } 원 </strong>
 							</div>
 							<br />
-							<div class="sheet-purchase-button-bottom"
-								onclick="location.href='../order/order_confirmed.jsp';">
+							<a class="sheet-purchase-button-bottom"
+								href="/order/order_confirmed.or_c">
 								<div class="sheet-purchase-button">
 									<span class="sheet-purchase-button-price">${totalPrice_amount } </span> 원 결제하기
 								</div>
-							</div>
+							</a>
 						</div>
 						<hr />
 						<div class="sheet-agreement">
@@ -437,13 +437,13 @@
 		</div>
 	</main>
 	<footer>
-		<div class="sheet-purchase-button-bottom" id="sheet-purchase-button2"
-			onclick="/order/order_confirmed.or_c">
-			<div class="sheet-purchase-button">
-				<span class="sheet-purchase-button-price"
-					id="display-result-pay-amount">${totalPrice_amount }원 </span> 결제하기
-			</div>
-		</div>
+		<a href="/order/order_confirmed.or_c" class="sheet-purchase-button-bottom" id="sheet-purchase-button2">
+  			<div class="sheet-purchase-button">
+		        <span class="sheet-purchase-button-price" id="display-result-pay-amount">
+		            ${totalPrice_amount}원 결제하기
+		        </span>
+   			</div>
+		</a>
 	</footer>
 
 
