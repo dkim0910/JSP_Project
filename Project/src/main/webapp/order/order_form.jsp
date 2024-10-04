@@ -356,7 +356,8 @@
 		 						<div class="sheet-purchase-button">
 									<input type="hidden" name="PRODUCT_ID" value="${goods.PRODUCT_ID}">
 									<input type="hidden" name="quantity" id="quantityInput" value="1">
-    								<span class="sheet-purchase-button-price">${totalPrice_amount } </span> 원 결제하기
+									<input type="hidden" name="user_id" value="${member.user_id}">
+				                    <button type="submit" class="sheet-purchase-button-price">${totalPrice_amount }원 결제하기 </button>
 								</div>
 				       		</form>
 						</div>
@@ -435,10 +436,9 @@
 		 <form action="/order/order_confirmed.or_c" class="sheet-purchase-button-bottom" id="sheet-purchase-button2" method="post">
 		 <div class="sheet-purchase-button">
 			<input type="hidden" name="PRODUCT_ID" value="${goods.PRODUCT_ID}">
+			<input type="hidden" name="user_id" value="${member.user_id}">
 			<input type="hidden" name="quantity" id="quantityInput" value="1">
-        	<span class="sheet-purchase-button-price" id="display-result-pay-amount">
-	            ${totalPrice_amount}원 결제하기
-	        </span>
+	        <button type="submit" class="sheet-purchase-button-price"id="display-result-pay-amount">${totalPrice_amount }원 결제하기 </button>
 			</div>
          </form>
 	</footer>
