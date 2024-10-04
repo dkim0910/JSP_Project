@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper
     PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
@@ -10,4 +11,18 @@
     	INSERT INTO ORDERED o VALUES
 		( seq.nextval,#{user_id}, #{product_id}, sysdate )
     </insert>
+=======
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="Order">
+    <select id="getProducts" parameterType="String" resultType="mydto">
+        SELECT * FROM PRODUCTS WHERE product_id = #{product_id}
+    </select>
+    <insert id="insertOrderedList" parameterType="goodsdto" >
+    	INSERT INTO ORDERED o VALUES
+		( #{ORDERED_NUM},#{USER_ID}, #{PRODUCT_ID}, sysdate )
+    </insert>
+>>>>>>> branch 'main' of https://github.com/dkim0910/JSP_Project.git
 </mapper>
