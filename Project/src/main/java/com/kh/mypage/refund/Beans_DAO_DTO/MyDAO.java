@@ -48,11 +48,12 @@ public class MyDAO {
 		return refunds;
 	}
 
-	public List<MyDTO> deleteUser() {
-		
-		
-		return null;
-	}
+	public void deleteUser(String userid) {
+		System.out.println("here3");
+        session.delete("MyMapper.deleteUser", userid);
+        System.out.println("her4");
+    }
+
 
 
 
