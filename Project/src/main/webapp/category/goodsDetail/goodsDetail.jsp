@@ -65,5 +65,17 @@
 	<script>
     	const productPrice = ${goods.NORMAL_PRICE}; // 상품의 개당 가격
 	</script>
+	
+	<script type="text/javascript">
+	//장바구니에 추가하기 위한 헨들러 함수
+	function addtoCart(){
+		if (confirm("장바구니에 추가하시겠습니까?")){
+			document.addForm.submit();
+		}
+		else{
+			document.addFromreset();
+		}
+	}
+	</script>
 </body>
 </html>
