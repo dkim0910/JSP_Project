@@ -48,11 +48,17 @@ public class MyDAO {
 		return refunds;
 	}
 
+	// 회원 삭제 및 회원 카트랑 주문 내역 삭제 (모든 테이블에서 이 값의 user_id면 삭제)
 	public void deleteUser(String userid) {
-		System.out.println("here3");
-        session.delete("MyMapper.deleteUser", userid);
-        System.out.println("her4");
-    }
+	    // Ordered 테이블에서 USER_ID가 'admin'인 데이터 삭제
+	    session.delete("MyMapper.deleteFromOrdered", userid);
+
+	    // Cart 테이블에서 USER_ID가 'admin'인 데이터 삭제
+	    session.delete("MyMapper.deleteFromCart", userid);
+
+	    // Users 테이블에서 USER_ID가 'admin'인 데이터 삭제
+	    session.delete("MyMapper.deleteFromUsers", userid);
+	}
 
 
 

@@ -16,11 +16,11 @@ public class OrederedAction implements Action{
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) {
 		ActionForward forward = new ActionForward();
 		
-		System.out.println("here2");
-		
 		MyDAO mydao = new MyDAO();
 		
-		// 나중에 앞에서 카트 또는 주문후의 값을 바로 가지고 오가
+		
+		// 주문화면에서 가지고 오기?
+		// 나중에 앞에서 카트 또는 주문후의 값을 바로 가지고 오기
 		String userid = "admin";
         String orderedNum = "ORD001";
 		
