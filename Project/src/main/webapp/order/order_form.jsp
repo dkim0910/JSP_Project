@@ -352,12 +352,13 @@
 									class="subject-payment-price-total-price">${totalPrice_amount } 원 </strong>
 							</div>
 							<br />
-							<a class="sheet-purchase-button-bottom"
-								href="/order/order_confirmed.or_c">
-								<div class="sheet-purchase-button">
-									<span class="sheet-purchase-button-price">${totalPrice_amount } </span> 원 결제하기
+							<form action="/order/order_confirmed.or_c" class="sheet-purchase-button-bottom" id="sheet-purchase-button" method="post">
+		 						<div class="sheet-purchase-button">
+									<input type="hidden" name="PRODUCT_ID" value="${goods.PRODUCT_ID}">
+									<input type="hidden" name="quantity" id="quantityInput" value="1">
+    								<span class="sheet-purchase-button-price">${totalPrice_amount } </span> 원 결제하기
 								</div>
-							</a>
+				       		</form>
 						</div>
 						<hr />
 						<div class="sheet-agreement">

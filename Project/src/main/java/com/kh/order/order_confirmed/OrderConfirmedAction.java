@@ -2,6 +2,7 @@ package com.kh.order.order_confirmed;
 
 import java.util.List;
 
+import com.kh.category.GoodsDTO;
 import com.kh.mypage.refund.Beans_DAO_DTO.MyDTO;
 import com.kh.order.OrderDAO;
 import com.kh.web.action.Action;
@@ -17,10 +18,15 @@ public class OrderConfirmedAction implements Action{
 	public ActionForward execute(HttpServletRequest req, HttpServletResponse resp) {
 		ActionForward forward = new ActionForward();
 		OrderDAO odao = new OrderDAO();
+		GoodsDTO list = new GoodsDTO(); 
+		
 		HttpSession session = req.getSession();
 		
         // 필요한 값들 추출
         String product_id = req.getParameter("product_id");
+        odao.insertOrderedList(list);
+        
+        
 
         forward.setRedirect(true);
         forward.setPath("/order/order_confirmed.jsp");

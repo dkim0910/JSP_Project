@@ -6,4 +6,8 @@
     <select id="getProducts" parameterType="String" resultType="mydto">
         SELECT * FROM PRODUCTS WHERE product_id = #{product_id}
     </select>
+    <insert id="insertOrderedList" parameterType="goodsdto" >
+    	INSERT INTO ORDERED o VALUES
+		( #{ORDERED_NUM},#{USER_ID}, #{PRODUCT_ID}, sysdate )
+    </insert>
 </mapper>

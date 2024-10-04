@@ -42,35 +42,8 @@
     <c:set var="user" value="${sessionScope.member}" />
         <h2>${member.user_name }님, 결제가 완료되었습니다. 주문해주셔서 감사합니다.</h2>
         <br/>
-        <section class="sheet-section" id="sheet-section-product">
-            <div class="sheet-title">
-                <h2 class="sheet-title-count">주문 상품</h2>
-            </div>
-            <div class="sheet-order-product">
-				<c:forEach var="product" items="${productList}">
-				    <div class="sheet-order-product-cartItem">
-				        <div class="sheet-order-product-box">
-				            <div class="sheet-order-product-image-box">
-				                <img class="sheet-order-product-image" src="${product.image_url}">
-				            </div>
-				            <div class="sheet-order-product-information">
-				                <a class="sheet-order-product-brand">${product.brand}</a>
-				                <br/>                               
-				                <a class="sheet-order-product-name">
-				                    ${product.product_name }
-				                </a>
-				                <br/>
-				                <span class="sheet-order-product-option"></span>                                     
-				                <div class="sheet-order-product-price-box">
-				                    <br/>                                   
-				                    <span class="sheet-order-product-price-sale">${product.price_amount } 원</span>
-				                </div>
-				            </div>
-				        </div>
-				    </div>
-				</c:forEach>
-            </div>
-        </section>
+        <br/>
+        <br/>
         <button type="button" class="button-order-status" onclick="location.href='../my-page/ordered/order-status.jsp';">
             주문 내역 바로가기
         </button>

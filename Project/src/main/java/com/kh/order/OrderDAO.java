@@ -3,6 +3,8 @@ package com.kh.order;
 import java.util.List;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
+
+import com.kh.category.GoodsDTO;
 import com.kh.mybatis.SqlMapConfig;
 import com.kh.mypage.refund.Beans_DAO_DTO.MyDTO;
 
@@ -21,6 +23,14 @@ public class OrderDAO {
 
 	public List<MyDTO> getProducts(String product_id) {
 		List<MyDTO> result = session.selectList("Order.getProducts", product_id);
+		return result;
+	}
+
+	public boolean insertOrderedList(GoodsDTO list) {
+		boolean result = false;
+		if( session.insert("list.insertOrderedList", list) == 1 ) {
+			result = true;
+		}
 		return result;
 	}
 	
