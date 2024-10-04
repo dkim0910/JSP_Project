@@ -33,6 +33,9 @@
 <body>
 	<c:set var="totalPrice_amount" value="0"/>
 	<c:set var="totalPrice_original" value="0"/>
+	<c:set var="productList" value="${requestScope.goods }"/>
+	 <c:set var="totalPrice_amount" value="${totalPrice_amount + product.price_amount}" />
+	 <c:set var="totalPrice_original" value="${totalPrice_original + product.normal_price}" />
 <head>
 </head>
 <body style="overflow: unset">
@@ -61,12 +64,6 @@
 							<h2 class="sheet-title-address">배송지</h2>
 						</div>
 						<c:set var="user" value="${sessionScope.member}" />
-				<c:if test="${not empty user}">
-					<p>${member.user_name}낫엠티님 환영합니다!</p>
-				</c:if>
-				<c:if test="${empty user}">
-					<p>${member.user_name}엠티님 환영합니다!</p>
-				</c:if>
 						<div class="sheet-address-title">
 							<strong class="sheet-address-title-name" id="recipient-name">
 							${member.user_name }님
@@ -106,20 +103,20 @@
 						<h2 class="sheet-title-count">주문 상품</h2>
 					</div>
 					<div class="sheet-order-product">
-						    <c:forEach var="productList" items="${requestScope.productList}">
+						    <%-- <c:forEach var="productList" items="${requestScope.goods}"> --%>
 								<div class="sheet-order-product-cartItem">
 									<div class="sheet-order-product-box">
 										<div class="sheet-order-product-image-box">
 											<img class="sheet-order-product-image"
-												src="${productList.image_url}" alt="">
+												src="${productList.IMAGE_URL}" alt="">
 										</div>
 										<div class="sheet-order-product-information">
-											<a class="sheet-order-product-brand">${productList.brand}</a> <br />
-											<a class="sheet-order-product-name">${productList.product_name }</a> <br /> <span
+											<a class="sheet-order-product-brand">${productList.BRAND}</a> <br />
+											<a class="sheet-order-product-name">${productList.PRODUCT_NAME }</a> <br /> <span
 												class="sheet-order-product-option"></span>
 											<div class="sheet-order-product-price-box">
-												<strong class="sheet-order-product-price-origin">${productList.normal_price } 원</strong> <br />
-												<span class="sheet-order-product-price-sale">${productList.price_amount } 원</span>
+												<strong class="sheet-order-product-price-origin">${productList.NORMAL_PRICE } 원</strong> <br />
+												<span class="sheet-order-product-price-sale">${productList.PRICE_AMOUNT } 원</span>
 												<span class="sheet-order-product-price-text-coupon" style="display: none">쿠폰적용가</span>
 											</div>
 										</div>
@@ -128,10 +125,7 @@
 										id="button-product-apply-coupon-"
 										onclick="openPopup_couponApply('')">쿠폰사용</button>
 								</div>
-								 <%-- 총 합계에 가격 추가 --%>
-       							 <c:set var="totalPrice_amount" value="${totalPrice_amount + product.price_amount}" />
-       							 <c:set var="totalPrice_original" value="${totalPrice_original + product.normal_price}" />
-						    </c:forEach>
+						    <%-- </c:forEach> --%>
 					</div>	
 					<div>
 					<%--임시로 표시(지워야할것) --%>
@@ -437,13 +431,13 @@
 		</div>
 	</main>
 	<footer>
-		<a href="/order/order_confirmed.or_c" class="sheet-purchase-button-bottom" id="sheet-purchase-button2">
+		<form href="/order/order_confirmed.or_c" class="sheet-purchase-button-bottom" id="sheet-purchase-button2">
   			<div class="sheet-purchase-button">
 		        <span class="sheet-purchase-button-price" id="display-result-pay-amount">
 		            ${totalPrice_amount}원 결제하기
 		        </span>
    			</div>
-		</a>
+		</form>
 	</footer>
 
 
