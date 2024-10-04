@@ -1,3 +1,5 @@
+<%@page import="com.kh.cart.dao.CartDTO"%>
+<%@page import="com.kh.cart.dao.DecimalFormat"%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page import="java.util.ArrayList, java.util.HashMap, java.util.List, java.util.Map" %>
@@ -234,6 +236,12 @@ th {
             cursor: pointer;
         }
     </style>
+    
+    
+    <%
+    //세션 id값 가져오기
+    String cartId = session.getId();
+    %>
 </head>
 <body style="cursor: default;">
 
@@ -249,7 +257,91 @@ th {
             <p></p>
         </header>
 
+	<div class = "container">
+		<div class = "row">
+			<table width = 100%>
+				<tr>
+					<td align = "left"><a href="./deleteCart.jsp?cartId=<%= cartId %>"
+					class = "btn btn-danger">삭제하기</a></td>
+				</tr>
+			</table>
+		</div>
+	</div>
+	
+	<div style="padding-top: 50px">
+	<table class = "table table-hover">
+		<tr>	
+			<th>상품</th>
+			<th>가격</th>
+			<th>수량</th>
+			<th>소계</th>
+			<th>비고</th>
+		</tr>
+		<%
+		
+		DecimalFormat dfFormat = new DecimalFormat("###,###");
+//		dfFormat.format();
+		
+		int sum = 0;
+		ArrayList<CartDTO> cartList = (ArrayList<CartDTO>)session.getAttribute("cartList");
+		
+		if(cartList== null){
+			cartList = new ArrayList<>();
+			
+		}
+		for (int i =0; i<cartList.size(); i++){
+			CartDTO product = cartList.get(i);
+			int total = product.getCOUNT()*product.getNORMAL_PRICE();
+			sum += total;
+			%>
+			
+			<tr>
+				<td><%=product.getPRODUCT_ID() %>-</td>
+					<td><%=dfFormat.format(product.getNORMAL_PRICE()) %></td>
+					<td><%=product.getCOUNT() %></td>
+			<td><%=dfFormat.format(total) %></td>
+					<td><a href = "./removeCart.jsp?id=<%=product.getPRODUCT_ID()%>" class = "badge badge-danger">삭제</a></td>
+			</tr>
+				<% 
+		}
+		
+		
+		%>
+	<tr>
+		<th></th>
+		<th></th>
+		<th>총액</th>
+		
+		<th><%=dfFormat.format(sum) %></th>
+		<th></th>
+	</tr>
+	</table>
+	
+	<a href = "./goodsDetail.jsp" class="btn btn -secondary">쇼핑 계속하기</a>
+	</div>
+	
 
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 
 <!-- 장바구니 항목 전체 선택 및 삭제 -->
 <div class="cart">
