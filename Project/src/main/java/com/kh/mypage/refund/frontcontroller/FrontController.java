@@ -44,7 +44,6 @@ public class FrontController extends HttpServlet {
 			forward = new OrederedAction().execute(req, resp);
 			break;
 		case "/byebye.my":
-			System.out.println("here");
 			forward = new DeleteUserAction().execute(req, resp);
 			break;
 			

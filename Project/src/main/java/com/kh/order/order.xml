@@ -2,11 +2,12 @@
 <!DOCTYPE mapper
     PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
-  <mapper namespace="Order">
-  <select id="getName" parameterType="userdto" resultType="userdto" >
- 		SELECT * FROM USERS WHERE user_name = #{user_name}
- 	</select>
- 	<select id="getProducts" parameterType="string" resultType="mydto" >
- 		SELECT * FROM PRODUCTS WHERE product_id = #{product_id}
- 	</select>
-  </mapper>
+<mapper namespace="Order">
+    <select id="getProducts" parameterType="String" resultType="mydto">
+        SELECT * FROM PRODUCTS WHERE product_id = #{product_id}
+    </select>
+    <insert id="insertOrderedList" parameterType="hashmap" >
+    	INSERT INTO ORDERED o VALUES
+		( seq.nextval,#{user_id}, #{product_id}, sysdate )
+    </insert>
+</mapper>

@@ -28,12 +28,15 @@
 		FROM
 		Ordered o
 		JOIN
-		Cart c ON c.PRODUCT_ID = o.PRODUCT_ID AND c.USER_ID = o.USER_ID
+		Cart c ON c.PRODUCT_ID =
+		o.PRODUCT_ID AND c.USER_ID = o.USER_ID
 		JOIN
-		Products p ON o.PRODUCT_ID = p.PRODUCT_ID
+		Products p ON o.PRODUCT_ID =
+		p.PRODUCT_ID
 		WHERE
 		o.USER_ID = #{userid}
-		AND o.ORDERED_NUM = #{orderedNum}
+		AND o.ORDERED_NUM =
+		#{orderedNum}
 	</select>
 
 	<!-- 주문 내역 -->
@@ -50,17 +53,31 @@
 		FROM
 		Ordered o
 		JOIN
-		Cart c ON c.PRODUCT_ID = o.PRODUCT_ID AND c.USER_ID = o.USER_ID
+		Cart c ON c.PRODUCT_ID =
+		o.PRODUCT_ID AND c.USER_ID = o.USER_ID
 		JOIN
-		Products p ON o.PRODUCT_ID = p.PRODUCT_ID
+		Products p ON o.PRODUCT_ID =
+		p.PRODUCT_ID
 		WHERE
 		o.USER_ID = #{userid}
-		AND o.ORDERED_NUM = #{orderedNum}
+		AND o.ORDERED_NUM =
+		#{orderedNum}
 	</select>
 
 	<!-- 회원 삭제 -->
-	<delete id="">
+	<!-- Ordered 테이블에서 USER_ID가 #{userid}인 데이터 삭제 -->
+    <delete id="deleteFromOrdered">
+        DELETE FROM Ordered WHERE USER_ID = #{userid}
+    </delete>
 
-	</delete>
+    <!-- Cart 테이블에서 USER_ID가 #{userid}인 데이터 삭제 -->
+    <delete id="deleteFromCart">
+        DELETE FROM Cart WHERE USER_ID = #{userid}
+    </delete>
+
+    <!-- Users 테이블에서 USER_ID가 #{userid}인 데이터 삭제 -->
+    <delete id="deleteFromUsers">
+        DELETE FROM Users WHERE USER_ID = #{userid}
+    </delete>
 
 </mapper>

@@ -17,17 +17,19 @@ public class OrderConfirmedAction implements Action{
 	public ActionForward execute(HttpServletRequest req, HttpServletResponse resp) {
 		ActionForward forward = new ActionForward();
 		OrderDAO odao = new OrderDAO();
+		
 		HttpSession session = req.getSession();
 		
         // 필요한 값들 추출
-        String product_id = req.getParameter("product_id");
-        List<MyDTO> productList = odao.getProducts(product_id);
-        session.setAttribute("productList", productList);
+        String product_id = req.getParameter("PRODUCT_ID");
+        String user_id = req.getParameter("user_id");
+        
+        odao.insertOrderedList(product_id, user_id);
 
-
-        forward.setRedirect(true);
+        forward.setRedirect(false);
         forward.setPath("/order/order_confirmed.jsp");
 
-        return forward;	}
+        return forward;	
+        }
 
 }

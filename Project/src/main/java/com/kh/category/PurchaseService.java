@@ -18,7 +18,7 @@ public class PurchaseService {
         request.setAttribute("goods", goods);
         request.setAttribute("quantity", quantity);
         
-		forward.setRedirect(true);
+		forward.setRedirect(false);
 		forward.setPath("/order/order_form.jsp");
         
         return forward;
