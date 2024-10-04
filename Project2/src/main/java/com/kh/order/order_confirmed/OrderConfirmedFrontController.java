@@ -2,8 +2,6 @@ package com.kh.order.order_confirmed;
 
 import java.io.IOException;
 
-import com.kh.order.OrderCartAction;
-import com.kh.order.OrderDirectAction;
 import com.kh.web.action.ActionForward;
 
 import jakarta.servlet.ServletException;

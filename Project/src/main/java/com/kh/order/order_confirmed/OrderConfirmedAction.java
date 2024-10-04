@@ -1,5 +1,9 @@
 package com.kh.order.order_confirmed;
 
+import java.util.List;
+
+import com.kh.mypage.refund.Beans_DAO_DTO.MyDTO;
+import com.kh.order.OrderDAO;
 import com.kh.web.action.Action;
 import com.kh.web.action.ActionForward;
 
@@ -12,9 +16,18 @@ public class OrderConfirmedAction implements Action{
 	@Override
 	public ActionForward execute(HttpServletRequest req, HttpServletResponse resp) {
 		ActionForward forward = new ActionForward();
+		OrderDAO odao = new OrderDAO();
 		HttpSession session = req.getSession();
 		
-		return null;
-	}
+        // 필요한 값들 추출
+        String product_id = req.getParameter("product_id");
+        List<MyDTO> productList = odao.getProducts(product_id);
+        session.setAttribute("productList", productList);
+
+
+        forward.setRedirect(true);
+        forward.setPath("/order/order_confirmed.jsp");
+
+        return forward;	}
 
 }

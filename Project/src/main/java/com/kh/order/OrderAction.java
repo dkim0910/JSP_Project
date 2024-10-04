@@ -17,18 +17,18 @@ public class OrderAction implements Action {
 		ActionForward forward = new ActionForward();
 		OrderDAO odao = new OrderDAO();
 		HttpSession session = req.getSession();
-		String user_name = req.getParameter("user_name");
-	       
-       // 사용자 이름 정보를 가져옴
-       MyDTO memberName = odao.getName(user_name); 
-       
+//		String user_name = req.getParameter("user_name");
+//	       
+//       // 사용자 이름 정보를 가져옴
+//       MyDTO memberName = odao.getName(user_name); 
+//       
        // 제품 정보를 가져옴
        String product_id = req.getParameter("product_id");
        List<MyDTO> productList = odao.getProducts(product_id);
        session.setAttribute("productList", productList);
 
+       forward.setRedirect(true);
        forward.setPath("/order/order_form.jsp");
-       forward.setRedirect(false);
 
        return forward;
 	}
