@@ -25,8 +25,8 @@ public class OrderNameAction implements Action{
             session.setAttribute("session_member", memberName);
         }
         
-        forward.setRedirect(true);
         forward.setPath("/order/order_form.jsp");
+        forward.setRedirect(false);
 
         return forward;
 	}

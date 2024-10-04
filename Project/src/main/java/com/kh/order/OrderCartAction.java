@@ -42,7 +42,7 @@ public class OrderCartAction {
 		 */
 
 		// order_form으로 포워딩
-		forward.setPath("/order/order_form.jsp");
+		forward.setPath("/order/order_form_name.or");
 		forward.setRedirect(false);  // forward 방식으로 이동
 
 		return forward;
