@@ -42,13 +42,13 @@
             
             <div class="product-parchase-buttons" >
                 <form id="buyForm" action="/purchase.product" method="post">
-                 	<!-- <form action="../../order/order_form.jsp"> -->
 					<input type="hidden" name="PRODUCT_ID" value="${goods.PRODUCT_ID}">
 					<input type="hidden" name="quantity" id="quantityInput" value="1">
-                    <!-- <button type="submit" class="buy-now">바로 구매</button> -->
                     <button type="button" class="buy-now" onclick="submitPurchaseForm()">바로 구매</button>
                 </form>
                 <form id="addForm" action="../../cart/cart.jsp" method="post">
+                	<input type="hidden" name="PRODUCT_ID" value="${goods.PRODUCT_ID}">
+					<input type="hidden" name="quantity" id="quantityInput" value="1">
                     <button type="button" class="add-to-cart" onclick="addtoCart()">장바구니 담기</button>
                 </form>
             </div>
