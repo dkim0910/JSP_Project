@@ -10,11 +10,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>상품 상세 페이지</title>
-    <link rel="stylesheet" href="goodsDetail.css">
-    <script src="./goodsDetail.js" defer></script>
+    <link rel="stylesheet" href="/category/goodsDetail/goodsDetail.css">
+    <script src="/category/goodsDetail/goodsDetail.js" defer></script>
 </head>
 <body>
-	<c:set var="goods" value="${sessionScope.goods }"/>
+	<c:set var="goods" value="${requestScope.goods }"/>
+	<c:set var="member" value="${sessionScope.member}" />
     <div class="product-detail-container">
         <!-- 상품 이미지 및 정보 -->
         <div class="product-image">
@@ -26,8 +27,6 @@
             <p class="product-price" data-price="${goods.NORMAL_PRICE}">
 			    <span class="price-amount"></span><span class="currency">원</span>
 			</p>
-            <%-- <p class="product-price">${goods.NORMAL_PRICE }원</p> --%>
-            
 
             <div class="quantity-selector">
                 <label for="quantity">수량 :</label>
@@ -46,8 +45,10 @@
 					<input type="hidden" name="quantity" id="quantityInput" value="1">
                     <button type="button" class="buy-now" onclick="submitPurchaseForm()">바로 구매</button>
                 </form>
-                <form id="addForm" action="../../cart/cart.jsp" method="post">
+                <form id="addForm" action="/add.product" method="post">
+                <!-- <form id="addForm" action="../../cart/cart.jsp" method="post"> -->
                 	<input type="hidden" name="PRODUCT_ID" value="${goods.PRODUCT_ID}">
+                	<input type="hidden" name="user_id" value="${member.user_id}">
 					<input type="hidden" name="quantity" id="quantityInput" value="1">
                     <button type="button" class="add-to-cart" onclick="addtoCart()">장바구니 담기</button>
                 </form>

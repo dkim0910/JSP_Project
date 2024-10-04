@@ -27,14 +27,21 @@ public class CgFrontController extends HttpServlet{
 		String requestURI = req.getRequestURI();
 		ActionForward forward = null;
 		
+		// 카테고리마다 상품 추가
 		if(requestURI.equals("/cg.product")) {
 			forward = new CategoryService().execute(req, resp);
 		}
+		// 상품 상세페이지 보기
 		else if(requestURI.equals("/scg.product")) {
 			forward = new DetailService().execute(req, resp);
 		}
+		// 상품 구매하기
 		else if(requestURI.equals("/purchase.product")) {
 			forward = new PurchaseService().execute(req, resp);
+		}
+		// 상품 장바구니에 넣기
+		else if(requestURI.equals("/add.product")) {
+			forward = new AddService().execute(req, resp);
 		}
         
         if(forward != null) {
