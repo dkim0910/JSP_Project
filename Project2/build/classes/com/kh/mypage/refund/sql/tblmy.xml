@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="MyMapper">
+	<!-- 전체 DB 조회후 productList.jsp에서 표시 -->
+	<select id="getAllProducts" resultType="mydto">
+		SELECT * FROM Products
+	</select>
+
+	<select id="getImage" resultType="mydto">
+		SELECT IMAGE_URL FROM PRODUCTS
+		p
+		WHERE p.PRODUCT_ID = #{Image1}
+	</select>
+
+	<!-- 아직 DAO 랑 Action에 로직 추가 안했음 (유저 아이디도 가지고 올 수 있게 만들기) -->
+	<select id="getRefunds" resultType="mydto">
+		SELECT
+		o.ORDERED_NUM AS ordered_num,
+		o.ORDER_NUM AS order_num,
+		o.ordered_date AS ordered_date,
+		c.USER_ID AS user_id,
+		p.PRODUCT_ID AS product_id,
+		p.Brand AS brand,
+		p.Product_name AS product_name,
+		p.Price_amount AS price_amount,
+		p.Image_url AS image_url
+		FROM
+		Ordered o
+		JOIN
+		Order_ ord ON o.ORDER_NUM = ord.ORDER_NUM
+		JOIN
+		Cart c ON ord.PRODUCT_ID = c.PRODUCT_ID
+		JOIN
+		Users u ON c.USER_ID = u.USER_ID
+		JOIN
+		Products p ON ord.PRODUCT_ID = p.PRODUCT_ID
+		WHERE
+		u.USER_ID = #{userid}
+		AND o.ORDERED_NUM = #{orderedNum}
+		AND ord.ORDER_NUM = #{orderNum}
+	</select>
+
+	<!-- SELECT o.ORDERED_NUM, o.ORDER_NUM, o.ordered_date, c.USER_ID, p.PRODUCT_ID, 
+		p.Brand, p.Product_name, p.Price_amount, p.Image_url FROM Ordered o JOIN 
+		Order_ ord ON o.ORDER_NUM = ord.ORDER_NUM JOIN Cart c ON ord.PRODUCT_ID = 
+		c.PRODUCT_ID JOIN Users u ON c.USER_ID = u.USER_ID JOIN Products p ON ord.PRODUCT_ID 
+		= p.PRODUCT_ID WHERE u.USER_ID = 'admin' AND o.ORDERED_NUM = 'ORD001' AND 
+		o.ORDER_NUM = 'O001'; -->
+
+</mapper>
