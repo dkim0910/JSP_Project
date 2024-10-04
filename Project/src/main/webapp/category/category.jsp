@@ -17,6 +17,10 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 </head>
 <body>
+	<c:set var="member" value="${sessionScope.member}" />
+	<%
+    	boolean isLoggedIn = (session != null && session.getAttribute("member") != null);
+	%>
     <div id="common">
         <div id="commonLayoutContainer">
             <!-- 상단 검색창 영역 -->
@@ -26,12 +30,26 @@
                     <button type="button" id="search-button" >검색</button>
                 </div>
                 <div class="top-menu">
-					<a href="../my-page/my-main/my-page-main.jsp" class="menu-button">
-						<img src="./img/마이.png"  >
-					</a>
-                    <a href="../cart/cart.jsp" class="menu-button">
-						<img src="./img/카트.png"  >
-                    </a>
+                	<c:choose>
+				        <c:when test="${isLoggedIn}">
+				            <!-- 로그인 상태인 경우 -->
+				            <a href="../my-page/my-main/my-page-main.jsp" class="menu-button">
+				                <img src="./img/마이.png">
+				            </a>
+				            <a href="../cart/cart.jsp" class="menu-button">
+				                <img src="./img/카트.png">
+				            </a>
+				        </c:when>
+				        <c:otherwise>
+				            <!-- 비로그인 상태인 경우 -->
+				            <a href="../login/join/login_view.jsp" class="menu-button">
+				                <img src="./img/마이.png">
+				            </a>
+				            <a href="../login/join/login_view.jsp" class="menu-button">
+				                <img src="./img/카트.png">
+				            </a>
+				        </c:otherwise>
+				    </c:choose>
                     <a href="../main-page/main.jsp" class="menu-button">
 						<img src="./img/홈.png"  >
 					</a>
