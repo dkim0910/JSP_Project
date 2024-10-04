@@ -73,7 +73,10 @@
 
                     </ul>
 
-                    <a href="../../main-page/index.jsp" style="font-weight: bold; color: red;">로그 아웃</a>
+					
+                    <!-- <div style="font-weight: bold; color: red;" onclick="logout()" id="logout">로그 아웃</div> -->
+                    
+                    <button style="font-weight: bold; color: red;" onclick="logout()">로그 아웃</button>
 
                 </nav>
 
