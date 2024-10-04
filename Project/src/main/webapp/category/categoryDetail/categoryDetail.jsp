@@ -12,14 +12,14 @@
     <title>카테고리 페이지</title>
     <!-- 페이지 제목 옆의 아이콘 -->
     <link href="https://image.msscdn.net/favicon_152.ico" rel="icon">
-    <link rel="stylesheet" href="categoryDetail.css">
+    <link rel="stylesheet" href="/category/categoryDetail/categoryDetail.css">
     <!-- 폰트어썸 불러오기 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <script src="categoryDetail.js" defer></script>
+    <script src="/category/categoryDetail/categoryDetail.js" defer></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 </head>
 <body>
-	<c:set var="category" value="${sessionScope.categoryList }"/>
+	<c:set var="category" value="${requestScope.categoryList }"/>
     <div id="common">
         <div id="commonLayoutContainer">
             <!-- 상단 검색창 영역 -->
@@ -30,13 +30,13 @@
                 </div>
                 <div class="top-menu">
 					<a href="../../my-page/my-main/my-page-main.jsp" class="menu-button">
-						<img src="../img/마이.png"  >
+						<img src="/category/img/마이.png"  >
 					</a>
                     <a href="../../cart/cart.jsp" class="menu-button">
-						<img src="../img/카트.png"  >
+						<img src="/category/img/카트.png"  >
                     </a>
                     <a href="../../main-page/main.jsp" class="menu-button">
-						<img src="../img/홈.png"  >
+						<img src="/category/img/홈.png"  >
 					</a>
                 </div>
             </header>
