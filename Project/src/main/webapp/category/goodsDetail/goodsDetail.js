@@ -90,4 +90,15 @@ document.addEventListener('DOMContentLoaded', function() {
     const formattedPrice = Number(price).toLocaleString();
     priceElement.querySelector('.price-amount').textContent = formattedPrice;
 });
+///////////////////////
+// 바로 구매
+// 수량 선택 설정 및 구매하기 폼 제출
+document.getElementById('quantity').addEventListener('change', function() {
+    document.getElementById('quantityInput').value = this.value;
+});
+
+function submitPurchaseForm() {
+    const buyForm = document.getElementById("buyForm");
+    buyForm.submit();
+}
 

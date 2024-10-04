@@ -12,9 +12,18 @@ import jakarta.servlet.http.HttpServletResponse;
 
 @WebServlet("*.product")
 public class CgFrontController extends HttpServlet{
-	
+			
+	@Override
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		doProcess(req,resp);
+	}
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		doProcess(req,resp);
+	}
+	
+	protected void doProcess(HttpServletRequest req, HttpServletResponse resp) 
+			throws ServletException, IOException{
 		String requestURI = req.getRequestURI();
 		ActionForward forward = null;
 		
@@ -23,6 +32,9 @@ public class CgFrontController extends HttpServlet{
 		}
 		else if(requestURI.equals("/scg.product")) {
 			forward = new DetailService().execute(req, resp);
+		}
+		else if(requestURI.equals("/purchase.product")) {
+			forward = new PurchaseService().execute(req, resp);
 		}
         
         if(forward != null) {
