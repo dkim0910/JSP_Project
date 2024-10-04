@@ -72,4 +72,15 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+/////////////////////////
+// 장바구니에 담기
+function addtoCart(){
+    const form = document.getElementById("addForm"); // 폼을 id로 참조
+    if (confirm("장바구니에 추가하시겠습니까?")) {
+        form.submit();
+    } else {
+        form.reset();
+    }
+}
+
 

@@ -71,12 +71,19 @@ document.querySelectorAll('.goods').forEach(product => {
     });
 
     product.addEventListener('mousemove', (e) => {
-        // 마우스 위치에 따라 설명 상자의 위치 설정
-        description.style.left = `${e.pageX + 10}px`;
-        description.style.top = `${e.pageY + 10}px`;
+        const rect = product.getBoundingClientRect(); // 상품 요소의 위치 정보
+        // 상품 요소의 상대적인 위치로 조정
+        description.style.left = `${e.clientX - rect.left + 10}px`;
+        description.style.top = `${e.clientY - rect.top + 10}px`;
     });
 
     product.addEventListener('mouseleave', () => {
         description.style.display = 'none';
     });
+});
+
+// 가격 숫자에 천단위마다 쉼표넣기
+document.querySelectorAll('#product-description-price').forEach(priceElement => {
+    const price = priceElement.getAttribute('data-price'); // 'data-price'에서 가격 정보 가져오기
+    priceElement.textContent = Number(price).toLocaleString(); // 쉼표 형식으로 숫자 포맷
 });

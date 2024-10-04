@@ -42,12 +42,12 @@
             </header>
             
             <main id="commonLayoutContents">
-                <!-- 우측 상품 카테고리 목록 -->
-                <div class="right-goods-category">
+                <!-- 중앙 상품 카테고리 목록 -->
+                <div class="main-goods-category">
                     <section class="goods-category" id="beauty-section">
                         <div class="goods-category-real">
                         	<c:forEach var="category" items="${category }">
-	                            <a href="/scg.product?PRODUCT_ID=${category.PRODUCT_ID }" class="goods" name="스킨케어">
+	                            <a href="/scg.product?PRODUCT_ID=${category.PRODUCT_ID }" class="goods" >
 	                                <img src="${category.IMAGE_URL }"  >
 	                                <c:choose>
 									    <c:when test="${fn:length(category.PRODUCT_NAME) > 15}">
@@ -59,9 +59,9 @@
 									</c:choose>
 
 	                                <div class="product-description">
-	                                    <!-- <img src="./detail/img/102-1.webp" alt="상품 이미지"> -->
+	                                    <img src="${category.IMAGE_URL }" alt="상품 이미지">
 	                                    <p id="product-description-name">${category.PRODUCT_NAME }</p>
-	                                    <p id="product-description-price">${category.PRICE_AMOUNT }원</p>
+	                                    <span id="product-description-price" data-price="${category.PRICE_AMOUNT}"></span><span>원</span>
 	                                    
 	                                </div>
 	                            </a>

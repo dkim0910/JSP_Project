@@ -24,13 +24,6 @@
         <div class="product-info">
             <h1 class="product-title">${goods.PRODUCT_NAME }</h1>
             <p class="product-price">${goods.NORMAL_PRICE }원</p>
-            <!-- <p class="product-description">
-                향기에 한번, 사용감에 두 번 반하다<br>
-                카카오톡 선물하기 랭킹 1위<br>
-                모발 굵기, 손상도, 퍼퓸 모두 나의 헤어타입 및<br>
-                취향에 맞춘 스타일로! 나에게 꼭 맞춘<br>
-                '퍼스널 헤어 오일'
-            </p> -->
 
             <div class="quantity-selector">
                 <label for="quantity">수량 :</label>
@@ -47,8 +40,9 @@
                 <form action="../../order/order_form.jsp">
                     <button type="submit" class="buy-now">바로 구매</button>
                 </form>
-                <form action="../../cart/cart.jsp">
-                    <button type="submit" class="add-to-cart">장바구니 담기</button>
+                <form id="addForm" action="../../cart/cart.jsp" method="post">
+                    <!-- <button type="submit" class="add-to-cart">장바구니 담기</button> -->
+                    <button type="button" class="add-to-cart" onclick="addtoCart()">장바구니 담기</button>
                 </form>
             </div>
         </div>
@@ -64,18 +58,6 @@
     </div>
 	<script>
     	const productPrice = ${goods.NORMAL_PRICE}; // 상품의 개당 가격
-	</script>
-	
-	<script type="text/javascript">
-	//장바구니에 추가하기 위한 헨들러 함수
-	function addtoCart(){
-		if (confirm("장바구니에 추가하시겠습니까?")){
-			document.addForm.submit();
-		}
-		else{
-			document.addFromreset();
-		}
-	}
 	</script>
 </body>
 </html>
