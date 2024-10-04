@@ -35,11 +35,11 @@ public class FrontController extends HttpServlet {
 		case "/my/mypage.my":
 			forward = new ProductAction().execute(req, resp);
 			break;
-		// 환불 페이지 값 넣는거
+		// 환불 페이지 값 넣는거 (아래 쪽 값을 가지고올거임)
 		case "/refund.my":
 			forward = new RefundAction().execute(req, resp);
 			break;
-		// 주문 내역 값 넣는거
+		// 주문 내역 값 넣는거 (이게 먼저)
 		case "/ordered.my":
 			forward = new OrederedAction().execute(req, resp);
 			break;

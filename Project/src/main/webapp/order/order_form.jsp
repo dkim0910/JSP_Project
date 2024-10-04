@@ -22,7 +22,7 @@
 <link rel="stylesheet"
 	href="${pageContext.request.contextPath}/order/order_form.css">
 <!-- js연결 -->
-<script defer src="order_form.js"></script>
+<script defer src="/order/order_form.js"></script>
 
 <!-- 배송지변경 -->
 <script defer
@@ -173,19 +173,19 @@
 					<label> <input type="radio" name="button-payment-type"
 						id="button-payment-TOSSPAY" class="payment-method-type-input"
 						onclick="toggleOtherPayments(false); togglePaymentCard(false)">
-						<img src="./img/payment_method_img/Toss-Symbol.png"
+						<img src="../order/img/payment_method_img/Toss-Symbol.png"
 						class="payment-method-logo-TOSSPAY"> 토스페이
 					</label> <br /> <label> <input type="radio"
 						name="button-payment-type" id="button-payment-KAKAOPAY"
 						class="payment-method-type-input"
 						onclick="toggleOtherPayments(false); togglePaymentCard(false)">
-						<img src="./img/payment_method_img/payment_icon_yellow_small.png"
+						<img src="../order/img/payment_method_img/payment_icon_yellow_small.png"
 						class="payment-method-logo-KAKAOPAY"> 카카오페이
 					</label> <br /> <label> <input type="radio"
 						name="button-payment-type" id="button-payment-PAYCO"
 						class="payment-method-type-input"
 						onclick="toggleOtherPayments(false); togglePaymentCard(false)">
-						<img src="./img/payment_method_img/1_PAYCO_Red.png"
+						<img src="../order/img/payment_method_img/1_PAYCO_Red.png"
 						class="payment-method-logo-PAYCO"> 페이코
 					</label> <br /> <label class="payment-method-others"> <input
 						type="radio" name="button-payment-type" id="button-payment-OTHERS"
@@ -228,71 +228,71 @@
 							<li><label class="list-payment-label"> <input
 									type="radio" name="card-selection" class="card-selection-input" />
 									<img
-									src="./img/payment_method_img/card_company_logo/KB_s_kr3.jpg"
+									src="../order/img/payment_method_img/card_company_logo/KB_s_kr3.jpg"
 									class="card-company-logo" /> <span>KB국민</span>
 							</label></li>
 							<li><label class="list-payment-label"> <input
 									type="radio" name="card-selection" class="card-selection-input" />
 									<img
-									src="./img/payment_method_img/card_company_logo/shc_ci_basic_00.png"
+									src="../order/img/payment_method_img/card_company_logo/shc_ci_basic_00.png"
 									class="card-company-logo" /> <span>신한</span>
 							</label></li>
 							<li><label class="list-payment-label"> <input
 									type="radio" name="card-selection" class="card-selection-input" />
 									<img
-									src="./img/payment_method_img/card_company_logo/HyundaiCard_Logomark.jpg"
+									src="../order/img/payment_method_img/card_company_logo/HyundaiCard_Logomark.jpg"
 									class="card-company-logo" /> <span>현대</span>
 							</label></li>
 							<li><label class="list-payment-label"> <input
 									type="radio" name="card-selection" class="card-selection-input" />
 									<img
-									src="./img/payment_method_img/card_company_logo/lottecard.png"
+									src="../order/img/payment_method_img/card_company_logo/lottecard.png"
 									class="card-company-logo" /> <span>롯데</span>
 							</label></li>
 							<li><label class="list-payment-label"> <input
 									type="radio" name="card-selection" class="card-selection-input" />
 									<img
-									src="./img/payment_method_img/card_company_logo/NH농협은행 CI 심볼마크.jpg"
+									src="../order/img/payment_method_img/card_company_logo/NH농협은행 CI 심볼마크.jpg"
 									class="card-company-logo" /> <span>농협</span>
 							</label></li>
 							<li><label class="list-payment-label"> <input
 									type="radio" name="card-selection" class="card-selection-input" />
 									<img
-									src="./img/payment_method_img/card_company_logo/BC_CARD_CI.svg"
+									src="../order/img/payment_method_img/card_company_logo/BC_CARD_CI.svg"
 									class="card-company-logo" /> <span>비씨</span>
 							</label></li>
 							<li><label class="list-payment-label"> <input
 									type="radio" name="card-selection" class="card-selection-input" />
 									<img
-									src="./img/payment_method_img/card_company_logo/국문_Signature.png"
+									src="../order/img/payment_method_img/card_company_logo/국문_Signature.png"
 									class="card-company-logo" /> <span>우리</span>
 							</label></li>
 							<li><label class="list-payment-label"> <input
 									type="radio" name="card-selection" class="card-selection-input" />
 									<img
-									src="./img/payment_method_img/card_company_logo/하나카드 로고.jfif"
+									src="../order/img/payment_method_img/card_company_logo/하나카드 로고.jfif"
 									class="card-company-logo" /> <span>하나</span>
 							</label></li>
 							<li><label class="list-payment-label"> <input
 									type="radio" name="card-selection" class="card-selection-input" />
 									<img
-									src="./img/payment_method_img/card_company_logo/Kakao_Bank_of_Korea_Logo.jpg"
+									src="../order/img/payment_method_img/card_company_logo/Kakao_Bank_of_Korea_Logo.jpg"
 									class="card-company-logo" /> <span>카카오</span>
 							</label></li>
 							<li><label class="list-payment-label"> <input
 									type="radio" name="card-selection" class="card-selection-input" />
 									<img
-									src="./img/payment_method_img/card_company_logo/ci_삼성카드.jpg"
+									src="../order/img/payment_method_img/card_company_logo/ci_삼성카드.jpg"
 									class="card-company-logo" /> <span>삼성</span>
 							</label></li>
 							<li><label class="list-payment-label"> <input
 									type="radio" name="card-selection" class="card-selection-input" />
-									<img src="./img/payment_method_img/card_company_logo/sc로고.jpg"
+									<img src="../order/img/payment_method_img/card_company_logo/sc로고.jpg"
 									class="card-company-logo" /> <span>SC</span>
 							</label></li>
 							<li><label class="list-payment-label"> <input
 									type="radio" name="card-selection" class="card-selection-input" />
-									<img src="./img/payment_method_img/card_company_logo/씨티.png"
+									<img src="../order/img/payment_method_img/card_company_logo/씨티.png"
 									class="card-company-logo" /> <span>씨티</span>
 							</label></li>
 						</div>
@@ -352,7 +352,7 @@
 									class="subject-payment-price-total-price">${totalPrice_amount } 원 </strong>
 							</div>
 							<br />
-							<form action="/order/order_confirmed.or_c" class="sheet-purchase-button-bottom" id="sheet-purchase-button" method="post">
+							<form action="/order/order_confirmed.or_c" class="sheet-purchase-button" id="sheet-purchase-button" method="post">
 		 						<div class="sheet-purchase-button">
 									<input type="hidden" name="PRODUCT_ID" value="${goods.PRODUCT_ID}">
 									<input type="hidden" name="quantity" id="quantityInput" value="1">
