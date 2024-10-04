@@ -26,13 +26,7 @@ public class GoodsDAO {
 		return result;
 	}
 	
-	// 헤어케어 상품 1개 특정한 정보
-	public GoodsDTO searchHaircare() {
-		GoodsDTO result = null;
-		result = session.selectOne("Category.Haircareinfo");
-		return result;
-	}
-
+	// 카테고리 별 상품 정보
 	public GoodsDTO searchgoods(String PRODUCT_ID) {
 		GoodsDTO result = null;
 		result = session.selectOne("Category.goodsinfo",PRODUCT_ID);
