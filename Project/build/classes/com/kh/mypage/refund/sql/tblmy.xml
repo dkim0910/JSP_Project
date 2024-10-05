@@ -79,5 +79,7 @@
     <delete id="deleteFromUsers">
         DELETE FROM Users WHERE USER_ID = #{userid}
     </delete>
+    
+    
 
 </mapper>
