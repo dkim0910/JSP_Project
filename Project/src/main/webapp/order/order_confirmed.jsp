@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,10 +12,14 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-<style>
-    @import url(order_confirmed.css);
-</style>
+<!-- css연결 -->
+<link rel="stylesheet"
+	href="${pageContext.request.contextPath}/order/order_confirmed.css">
+<%
+    boolean isLoggedIn = (session != null && session.getAttribute("member") != null);
+%>
 <body>
+
     <header>
         <div class="order_confirmed-headline">
             <div id="logo-box" class="self-center">
@@ -33,39 +39,11 @@
         </div>
     </header>
     <main> 
-        <h2>결제가 완료되었습니다. 주문해주셔서 감사합니다.</h2>
+    <c:set var="user" value="${sessionScope.member}" />
+        <h2>${member.user_name }님, 결제가 완료되었습니다. 주문해주셔서 감사합니다.</h2>
         <br/>
-        <section class="sheet-section" id="sheet-section-product">
-            <div class="sheet-title">
-                <h2 class="sheet-title-count">주문 상품 1개</h2>
-            </div>
-            <div class="sheet-order-product">
-                <div class="sheet-order-product-cartItem" data-goods-no="3997992" data-cart-id="1076429836">
-                    <div class="sheet-order-product-box">
-                        <div class="sheet-order-product-image-box">
-                            <img class="sheet-order-product-image" src="./img/payment_method_img/t-4.jpg">
-                        </div>
-                        <div class="sheet-order-product-information">
-                            <a class="sheet-order-product-brand" title="아디다스">아디다스</a>
-                            <br/>                               
-                            <a class="sheet-order-product-name" title="vintage washed Tee_BLUE">
-                                vintage washed Tee_BLUE
-                            </a>
-                            <br/>
-                            <span class="sheet-order-product-option">XL / 1개</span>                                     
-                            <div class="sheet-order-product-price-box">
-                                <strong class="sheet-order-product-price-coupon rolling-counter" id="display-product-price-coupon-box-1076429836" style="display: none">
-                                    <span class="rolling-number" id="display-product-price-coupon-1076429836">0</span>
-                                    <span>원</span>
-                                </strong>
-                                <br/>                                   
-                                <span class="sheet-order-product-price-sale" id="display-product-price-origin-1076429836">100,000원</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+        <br/>
+        <br/>
         <button type="button" class="button-order-status" onclick="location.href='../my-page/ordered/order-status.jsp';">
             주문 내역 바로가기
         </button>
@@ -142,15 +120,5 @@
                 </div>
             </div>
     </footer>
-    <script>
-        // 바텀바 2차메뉴 클릭 기능
-$(document).ready(function() {
-    $('.toggle-icon, .toggle-menu').click(function(event) {
-        event.preventDefault(); // 링크 클릭시 페이지 이동 방지
-        $(this).parent().next('.submenu').slideToggle(); // 
-        $('.submenu').not($(this).parent().next('.submenu')).slideUp(); 
-    });
-  });
-    </script>
 </body>
 </html>

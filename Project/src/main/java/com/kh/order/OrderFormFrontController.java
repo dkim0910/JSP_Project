@@ -31,14 +31,11 @@ public class OrderFormFrontController extends HttpServlet{
 		ActionForward forward = null;
 		
 //		 결제창
-		if(requestURI.equals("/order/order.or")) {
-			forward = new ActionForward(true, "/order/order_form.jsp");
-		} else if(requestURI.equals("/order/order_form_direct.or")) { 	// 상세페이지에서 구매시
-			forward = new OrderDirectAction().execute(req, resp);
-		} else if(requestURI.equals("/order/order_form_cart.or")) {		// 카트에서 구매시
-			forward = new OrderCartAction().execute(req, resp);
-		}else if(requestURI.equals("/order/order_form_name.or")) {		// 카트에서 구매시
-			forward = new OrderNameAction().execute(req, resp);
+		if(requestURI.equals("/order/order_login.or")) { 
+			forward = new OrderLoginAction().execute(req, resp);
+		} else if(requestURI.equals("/order/order_form.or")) {
+			forward = new OrderAction().execute(req, resp);
+
 		}
 		
 		

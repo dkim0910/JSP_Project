@@ -1,14 +1,13 @@
 package com.kh.order;
 
 import java.util.HashMap;
-
+import java.util.List;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 
-import com.kh.cart.dao.CartDTO;
-import com.kh.login.UserDTO;
+import com.kh.category.GoodsDTO;
 import com.kh.mybatis.SqlMapConfig;
-import com.kh.mypage.refund.Beans_DAO_DTO.MyProductsDTO;
+import com.kh.mypage.refund.Beans_DAO_DTO.MyDTO;
 
 public class OrderDAO {
 	SqlSessionFactory factory = SqlMapConfig.getFactory();
@@ -17,27 +16,27 @@ public class OrderDAO {
 	public OrderDAO() {
 		session = factory.openSession(true);
 	}
-
-	public MyProductsDTO getproductidByMyProducts(String product_id) {
-		MyProductsDTO result = null;
-		result = session.selectOne("Order.getproductidByMyProducts", product_id);
-		return result;
-	}
-
-	public UserDTO getById(String user_id) {
-		return (UserDTO)session.selectOne("Order.getById",user_id);
-	}
-
-	public CartDTO getproductidByCart(String product_id) {
-		CartDTO result = null;
-		result = session.selectOne("Order.getproductidByCart", product_id);
-		return result;
-	}
 	
-	public UserDTO getName(String user_name) {
-		UserDTO name = null;
-		name = session.selectOne("Order.getName", user_name);
-		return name;
+//	public MyDTO getName(String user_name) {
+//		MyDTO name = session.selectOne("Order.getName", user_name);
+//		return name;
+//	}
+
+	public List<MyDTO> getProducts(String product_id) {
+		List<MyDTO> result = session.selectList("Order.getProducts", product_id);
+		return result;
+	}
+
+	public boolean insertOrderedList(String product_id, String user_id) {
+		boolean result = false;
+		HashMap<String, String> data = new HashMap<String, String>();
+		data.put("product_id", product_id);
+		data.put("user_id", user_id);
+		session.insert("Order.insertOrderedList", data);
+		/*
+		 * if( session.insert("list.insertOrderedList", data) == 1 ) { result = true; }
+		 */
+		return result;
 	}
 	
 	

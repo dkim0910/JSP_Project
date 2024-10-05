@@ -15,6 +15,11 @@
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
+
+<!-- 제이쿼리 불러오기  -->
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
 <!-- 테일윈드 css불러오기 -->
 <script src="https://cdn.tailwindcss.com"></script>
 
@@ -22,7 +27,7 @@
 <link rel="stylesheet"
 	href="${pageContext.request.contextPath}/order/order_form.css">
 <!-- js연결 -->
-<script defer src="/order/order_form.js"></script>
+<script defer src="order_form.js"></script>
 
 <!-- 배송지변경 -->
 <script defer
@@ -31,11 +36,9 @@
     boolean isLoggedIn = (session != null && session.getAttribute("member") != null);
 %>
 <body>
+	<c:set var="userName" value="${requestScope.name}"/>
 	<c:set var="totalPrice_amount" value="0"/>
 	<c:set var="totalPrice_original" value="0"/>
-	<c:set var="productList" value="${requestScope.goods }"/>
-	 <c:set var="totalPrice_amount" value="${totalPrice_amount + product.price_amount}" />
-	 <c:set var="totalPrice_original" value="${totalPrice_original + product.normal_price}" />
 <head>
 </head>
 <body style="overflow: unset">
@@ -64,9 +67,15 @@
 							<h2 class="sheet-title-address">배송지</h2>
 						</div>
 						<c:set var="user" value="${sessionScope.member}" />
+				<c:if test="${not empty user}">
+					<p>${member.user_name}낫엠티님 환영합니다!</p>
+				</c:if>
+				<c:if test="${empty user}">
+					<p>${member.user_name}엠티님 환영합니다!</p>
+				</c:if>
 						<div class="sheet-address-title">
 							<strong class="sheet-address-title-name" id="recipient-name">
-							${member.user_name }님
+							${userName.user_name }
 							</strong> <span class="sheet-address-title-label" id="recipient-default"
 								style="display: block;"> 기본 배송지 </span>
 							<button class="sheet-address-title-button" type="button"
@@ -103,21 +112,22 @@
 						<h2 class="sheet-title-count">주문 상품</h2>
 					</div>
 					<div class="sheet-order-product">
-						    <%-- <c:forEach var="productList" items="${requestScope.goods}"> --%>
+						    <c:forEach var="productList" items="${requestScope.productList}">
 								<div class="sheet-order-product-cartItem">
 									<div class="sheet-order-product-box">
 										<div class="sheet-order-product-image-box">
 											<img class="sheet-order-product-image"
-												src="${productList.IMAGE_URL}" alt="">
+												src="${productList.image_url}" alt="">
 										</div>
 										<div class="sheet-order-product-information">
-											<a class="sheet-order-product-brand">${productList.BRAND}</a> <br />
-											<a class="sheet-order-product-name">${productList.PRODUCT_NAME }</a> <br /> <span
+											<a class="sheet-order-product-brand">${productList.brand}</a> <br />
+											<a class="sheet-order-product-name">${productList.product_name }</a> <br /> <span
 												class="sheet-order-product-option"></span>
 											<div class="sheet-order-product-price-box">
-												<strong class="sheet-order-product-price-origin">${productList.NORMAL_PRICE } 원</strong> <br />
-												<span class="sheet-order-product-price-sale">${productList.PRICE_AMOUNT } 원</span>
-												<span class="sheet-order-product-price-text-coupon" style="display: none">쿠폰적용가</span>
+												<strong class="sheet-order-product-price-origin">${productList.normal_price } 원</strong> <br />
+												<span class="sheet-order-product-price-sale">${productList.price_amount } 원</span> <span
+													class="sheet-order-product-price-text-coupon"
+													style="display: none">쿠폰적용가</span>
 											</div>
 										</div>
 									</div>
@@ -125,13 +135,17 @@
 										id="button-product-apply-coupon-"
 										onclick="openPopup_couponApply('')">쿠폰사용</button>
 								</div>
-						    <%-- </c:forEach> --%>
+								 <%-- 총 합계에 가격 추가 --%>
+       							 <c:set var="totalPrice_amount" value="${totalPrice_amount + product.price_amount}" />
+       							 <c:set var="totalPrice_original" value="${totalPrice_original + product.normal_price}" />
+						    </c:forEach>
 					</div>	
 					<div>
 					<%--임시로 표시(지워야할것) --%>
 						<h1>${totalPrice_amount }원 , ${totalPrice_original }원, ${totalPrice_original - totalPrice_amount }원</h1>
 					</div>
 				</section>
+			</div>
 			<br />
 			<hr />
 			<section class="sheet-section" id="sheet-section-usepoint">
@@ -173,19 +187,19 @@
 					<label> <input type="radio" name="button-payment-type"
 						id="button-payment-TOSSPAY" class="payment-method-type-input"
 						onclick="toggleOtherPayments(false); togglePaymentCard(false)">
-						<img src="../order/img/payment_method_img/Toss-Symbol.png"
+						<img src="./img/payment_method_img/Toss-Symbol.png"
 						class="payment-method-logo-TOSSPAY"> 토스페이
 					</label> <br /> <label> <input type="radio"
 						name="button-payment-type" id="button-payment-KAKAOPAY"
 						class="payment-method-type-input"
 						onclick="toggleOtherPayments(false); togglePaymentCard(false)">
-						<img src="../order/img/payment_method_img/payment_icon_yellow_small.png"
+						<img src="./img/payment_method_img/payment_icon_yellow_small.png"
 						class="payment-method-logo-KAKAOPAY"> 카카오페이
 					</label> <br /> <label> <input type="radio"
 						name="button-payment-type" id="button-payment-PAYCO"
 						class="payment-method-type-input"
 						onclick="toggleOtherPayments(false); togglePaymentCard(false)">
-						<img src="../order/img/payment_method_img/1_PAYCO_Red.png"
+						<img src="./img/payment_method_img/1_PAYCO_Red.png"
 						class="payment-method-logo-PAYCO"> 페이코
 					</label> <br /> <label class="payment-method-others"> <input
 						type="radio" name="button-payment-type" id="button-payment-OTHERS"
@@ -228,149 +242,147 @@
 							<li><label class="list-payment-label"> <input
 									type="radio" name="card-selection" class="card-selection-input" />
 									<img
-									src="../order/img/payment_method_img/card_company_logo/KB_s_kr3.jpg"
+									src="./img/payment_method_img/card_company_logo/KB_s_kr3.jpg"
 									class="card-company-logo" /> <span>KB국민</span>
 							</label></li>
 							<li><label class="list-payment-label"> <input
 									type="radio" name="card-selection" class="card-selection-input" />
 									<img
-									src="../order/img/payment_method_img/card_company_logo/shc_ci_basic_00.png"
+									src="./img/payment_method_img/card_company_logo/shc_ci_basic_00.png"
 									class="card-company-logo" /> <span>신한</span>
 							</label></li>
 							<li><label class="list-payment-label"> <input
 									type="radio" name="card-selection" class="card-selection-input" />
 									<img
-									src="../order/img/payment_method_img/card_company_logo/HyundaiCard_Logomark.jpg"
+									src="./img/payment_method_img/card_company_logo/HyundaiCard_Logomark.jpg"
 									class="card-company-logo" /> <span>현대</span>
 							</label></li>
 							<li><label class="list-payment-label"> <input
 									type="radio" name="card-selection" class="card-selection-input" />
 									<img
-									src="../order/img/payment_method_img/card_company_logo/lottecard.png"
+									src="./img/payment_method_img/card_company_logo/lottecard.png"
 									class="card-company-logo" /> <span>롯데</span>
 							</label></li>
 							<li><label class="list-payment-label"> <input
 									type="radio" name="card-selection" class="card-selection-input" />
 									<img
-									src="../order/img/payment_method_img/card_company_logo/NH농협은행 CI 심볼마크.jpg"
+									src="./img/payment_method_img/card_company_logo/NH농협은행 CI 심볼마크.jpg"
 									class="card-company-logo" /> <span>농협</span>
 							</label></li>
 							<li><label class="list-payment-label"> <input
 									type="radio" name="card-selection" class="card-selection-input" />
 									<img
-									src="../order/img/payment_method_img/card_company_logo/BC_CARD_CI.svg"
+									src="./img/payment_method_img/card_company_logo/BC_CARD_CI.svg"
 									class="card-company-logo" /> <span>비씨</span>
 							</label></li>
 							<li><label class="list-payment-label"> <input
 									type="radio" name="card-selection" class="card-selection-input" />
 									<img
-									src="../order/img/payment_method_img/card_company_logo/국문_Signature.png"
+									src="./img/payment_method_img/card_company_logo/국문_Signature.png"
 									class="card-company-logo" /> <span>우리</span>
 							</label></li>
 							<li><label class="list-payment-label"> <input
 									type="radio" name="card-selection" class="card-selection-input" />
 									<img
-									src="../order/img/payment_method_img/card_company_logo/하나카드 로고.jfif"
+									src="./img/payment_method_img/card_company_logo/하나카드 로고.jfif"
 									class="card-company-logo" /> <span>하나</span>
 							</label></li>
 							<li><label class="list-payment-label"> <input
 									type="radio" name="card-selection" class="card-selection-input" />
 									<img
-									src="../order/img/payment_method_img/card_company_logo/Kakao_Bank_of_Korea_Logo.jpg"
+									src="./img/payment_method_img/card_company_logo/Kakao_Bank_of_Korea_Logo.jpg"
 									class="card-company-logo" /> <span>카카오</span>
 							</label></li>
 							<li><label class="list-payment-label"> <input
 									type="radio" name="card-selection" class="card-selection-input" />
 									<img
-									src="../order/img/payment_method_img/card_company_logo/ci_삼성카드.jpg"
+									src="./img/payment_method_img/card_company_logo/ci_삼성카드.jpg"
 									class="card-company-logo" /> <span>삼성</span>
 							</label></li>
 							<li><label class="list-payment-label"> <input
 									type="radio" name="card-selection" class="card-selection-input" />
-									<img src="../order/img/payment_method_img/card_company_logo/sc로고.jpg"
+									<img src="./img/payment_method_img/card_company_logo/sc로고.jpg"
 									class="card-company-logo" /> <span>SC</span>
 							</label></li>
 							<li><label class="list-payment-label"> <input
 									type="radio" name="card-selection" class="card-selection-input" />
-									<img src="../order/img/payment_method_img/card_company_logo/씨티.png"
+									<img src="./img/payment_method_img/card_company_logo/씨티.png"
 									class="card-company-logo" /> <span>씨티</span>
 							</label></li>
 						</div>
 					</ul>
 				</div>
 			</section>
-			</div>
-			<hr />
-			<div class="double-section-right">
-				<section class="sticky-section">
-					<section class="sheet-section" id="sheet-section-reward-point">
-						<div class="sheet-title">
-							<h2 class="sheet-title-text">적립 혜택</h2>
+		</div>
+		<hr />
+		<div class="double-section-right">
+			<section class="sticky-section">
+				<section class="sheet-section" id="sheet-section-reward-point">
+					<div class="sheet-title">
+						<h2 class="sheet-title-text">적립 혜택</h2>
+					</div>
+					<div class="sheet-save-point">
+						<div class="sheet-save-point-level">
+							<span class="sheet-save-point-level-text"> LV.5 실버 : 2% 적립
+							</span> <strong class="sheet-save-point-level-subject-price">
+								2000원 </strong>
 						</div>
-						<div class="sheet-save-point">
-							<div class="sheet-save-point-level">
-								<span class="sheet-save-point-level-text"> LV.5 실버 : 2% 적립
-								</span> <strong class="sheet-save-point-level-subject-price">
-									2000원 </strong>
-							</div>
-							<div class="sheet-save-point-level">
-								<span class="sheet-save-point-additional-text"> 구매 추가 적립 </span>
-								<strong class="sheet-save-point-level-subject-price">
-									100원 </strong>
-							</div>
-							<div class="sheet-save-point-level">
-								<span class="sheet-save-point-review-text"> 후기 적립금 </span> <strong
-									class="sheet-save-point-level-subject-price"> 최대 3,500원
-								</strong>
-							</div>
+						<div class="sheet-save-point-level">
+							<span class="sheet-save-point-additional-text"> 구매 추가 적립 </span>
+							<strong class="sheet-save-point-level-subject-price">
+								100원 </strong>
 						</div>
-					</section>
-					<hr />
-					<section class="sheet-section" id="sheet-section-pay">
-						<div class="sheet-title">
-							<h2 class="sheet-title-text">결제 금액</h2>
+						<div class="sheet-save-point-level">
+							<span class="sheet-save-point-review-text"> 후기 적립금 </span> <strong
+								class="sheet-save-point-level-subject-price"> 최대 3,500원
+							</strong>
 						</div>
-						<div class="sheet-payment-price">
-							<div class="sheet-payment-price-box">
-								<span class="sheet-payment-price-subject-text"> 상품 금액 </span> <strong
-									class="sheet-payment-price-subject-price">${totalPrice_original } 원 </strong>
-							</div>
-							<div class="sheet-payment-price-box">
-								<span class="sheet-payment-price-subject-text"> 할인 금액 </span> <strong
-									class="sheet-payment-price-subject-price">${totalPrice_original - totalPrice_amount } 원 </strong>
-							</div>
-							<div class="sheet-payment-price-box">
-								<span class="sheet-payment-price-subject-text"> 적립금 사용 </span> <strong
-									class="sheet-payment-price-subject-price"> 0원 </strong>
-							</div>
-							<div class="sheet-payment-price-box">
-								<span class="sheet-payment-price-subject-text"> 배송비 </span> <strong
-									class="subject-payment-price-subject-price"> 배송비 무료 </strong>
-							</div>
-							<div class="sheet-payment-price-total">
-								<span class="sheet-payment-price-total-text"> 총 결제 금액 </span> <strong
-									class="subject-payment-price-total-price">${totalPrice_amount } 원 </strong>
-							</div>
-							<br />
-							<form action="/order/order_confirmed.or_c" class="sheet-purchase-button" id="sheet-purchase-button" method="post">
-		 						<div class="sheet-purchase-button">
-									<input type="hidden" name="PRODUCT_ID" value="${goods.PRODUCT_ID}">
-									<input type="hidden" name="quantity" id="quantityInput" value="1">
-									<input type="hidden" name="user_id" value="${member.user_id}">
-				                    <button type="submit" class="sheet-purchase-button-price">${totalPrice_amount }원 결제하기 </button>
-								</div>
-				       		</form>
-						</div>
-						<hr />
-						<div class="sheet-agreement">
-							<strong class="sheet-agreement-text"> 주문 내용을 확인했으며 결제에
-								동의합니다. </strong> <strong class="sheet-agreement-text"> 회원님의 개인정보는
-								안전하게 관리됩니다. </strong> <strong class="sheet-agreement-text"> 쇼핑하조는
-								통신판매중개자로, 업체 배송 상품의 상품/상품정보/거래 등에 대한 책임은 쇼핑하조가 아닌 판매자에게 있습니다. </strong>
-						</div>
-					</section>
+					</div>
 				</section>
-			</div>
+				<hr />
+				<section class="sheet-section" id="sheet-section-pay">
+					<div class="sheet-title">
+						<h2 class="sheet-title-text">결제 금액</h2>
+					</div>
+					<div class="sheet-payment-price">
+						<div class="sheet-payment-price-box">
+							<span class="sheet-payment-price-subject-text"> 상품 금액 </span> <strong
+								class="sheet-payment-price-subject-price">${totalPrice_original } 원 </strong>
+						</div>
+						<div class="sheet-payment-price-box">
+							<span class="sheet-payment-price-subject-text"> 할인 금액 </span> <strong
+								class="sheet-payment-price-subject-price">${totalPrice_original - totalPrice_amount } 원 </strong>
+						</div>
+						<div class="sheet-payment-price-box">
+							<span class="sheet-payment-price-subject-text"> 적립금 사용 </span> <strong
+								class="sheet-payment-price-subject-price"> 0원 </strong>
+						</div>
+						<div class="sheet-payment-price-box">
+							<span class="sheet-payment-price-subject-text"> 배송비 </span> <strong
+								class="subject-payment-price-subject-price"> 배송비 무료 </strong>
+						</div>
+						<div class="sheet-payment-price-total">
+							<span class="sheet-payment-price-total-text"> 총 결제 금액 </span> <strong
+								class="subject-payment-price-total-price">${totalPrice_amount } 원 </strong>
+						</div>
+						<br />
+						<div class="sheet-purchase-button-bottom"
+							onclick="location.href='../order/order_confirmed.jsp';">
+							<div class="sheet-purchase-button">
+								<span class="sheet-purchase-button-price">${totalPrice_amount } </span> 원 결제하기
+							</div>
+						</div>
+					</div>
+					<hr />
+					<div class="sheet-agreement">
+						<strong class="sheet-agreement-text"> 주문 내용을 확인했으며 결제에
+							동의합니다. </strong> <strong class="sheet-agreement-text"> 회원님의 개인정보는
+							안전하게 관리됩니다. </strong> <strong class="sheet-agreement-text"> 쇼핑하조는
+							통신판매중개자로, 업체 배송 상품의 상품/상품정보/거래 등에 대한 책임은 쇼핑하조가 아닌 판매자에게 있습니다. </strong>
+					</div>
+				</section>
+			</section>
+		</div>
 		</div>
 		<div class="con mx-auto">
 			<nav class="bottom-menu">
@@ -433,14 +445,13 @@
 		</div>
 	</main>
 	<footer>
-		 <form action="/order/order_confirmed.or_c" class="sheet-purchase-button-bottom" id="sheet-purchase-button2" method="post">
-		 <div class="sheet-purchase-button">
-			<input type="hidden" name="PRODUCT_ID" value="${goods.PRODUCT_ID}">
-			<input type="hidden" name="user_id" value="${member.user_id}">
-			<input type="hidden" name="quantity" id="quantityInput" value="1">
-	        <button type="submit" class="sheet-purchase-button-price"id="display-result-pay-amount">${totalPrice_amount }원 결제하기 </button>
+		<div class="sheet-purchase-button-bottom" id="sheet-purchase-button2"
+			onclick="location.href='../order/order_confirmed.jsp';">
+			<div class="sheet-purchase-button">
+				<span class="sheet-purchase-button-price"
+					id="display-result-pay-amount">${totalPrice_amount }원 </span> 결제하기
 			</div>
-         </form>
+		</div>
 	</footer>
 
 

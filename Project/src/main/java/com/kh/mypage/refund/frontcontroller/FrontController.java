@@ -1,6 +1,7 @@
 package com.kh.mypage.refund.frontcontroller;
 
 import java.io.IOException;
+import java.util.Iterator;
 
 import com.kh.mypage.refund.Action.ActionForward;
 
@@ -30,16 +31,22 @@ public class FrontController extends HttpServlet {
 		ActionForward forward = null;
 
 		switch (requestURI) {
+		// DB 상품 전체 조회
 		case "/my/mypage.my":
 			forward = new ProductAction().execute(req, resp);
 			break;
+		// 환불 페이지 값 넣는거 (아래 쪽 값을 가지고올거임)
 		case "/refund.my":
 			forward = new RefundAction().execute(req, resp);
 			break;
+		// 주문 내역 값 넣는거 (이게 먼저)
 		case "/ordered.my":
-			System.out.println("ordered");
 			forward = new OrederedAction().execute(req, resp);
 			break;
+		case "/byebye.my":
+			forward = new DeleteUserAction().execute(req, resp);
+			break;
+			
 		}
 
 		if (forward != null) {

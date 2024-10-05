@@ -16,9 +16,9 @@ public class CategoryService {
 		String subcategory = request.getParameter("subcategory");
 		
 		List<GoodsDTO> categoryList = gdao.searchCategory(category, subcategory);
-		request.getSession().setAttribute("categoryList", categoryList);
+		request.setAttribute("categoryList", categoryList);
 		
-		forward.setRedirect(true);
+		forward.setRedirect(false);
 		forward.setPath("/category/categoryDetail/categoryDetail.jsp");
 		
 		return forward;

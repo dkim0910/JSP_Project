@@ -11,3 +11,4 @@ function removeStyles() {
     section.style.minHeight = ""; // min-height 제거
     section.style.display = "";   // display 제거
 }
+

@@ -2,8 +2,6 @@ package com.kh.order.order_confirmed;
 
 import java.io.IOException;
 
-import com.kh.order.OrderCartAction;
-import com.kh.order.OrderDirectAction;
 import com.kh.web.action.ActionForward;
 
 import jakarta.servlet.ServletException;
@@ -30,7 +28,7 @@ public class OrderConfirmedFrontController extends HttpServlet{
 		
 //		결제 완료창
 		if(requestURI.equals("/order/order_confirmed.or_c")) {
-			forward = new ActionForward(true, "/order/order_confirmed.jsp");
+			forward = new OrderConfirmedAction().execute(req, resp);
 		}
 		
 		

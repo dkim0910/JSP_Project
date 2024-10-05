@@ -9,5 +9,7 @@
  	<select id="goodsinfo" parameterType="string" resultType="goodsdto">
  		SELECT * FROM PRODUCTS WHERE PRODUCT_ID = #{PRODUCT_ID}
     </select>
-	
+	<insert id="addtocart" parameterType="map">
+ 		INSERT INTO CART VALUES (#{user_id},#{PRODUCT_ID})
+ 	</insert>
   </mapper>

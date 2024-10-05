@@ -33,5 +33,13 @@ public class GoodsDAO {
 		return result;
 	}
 	
+	// 장바구니 db에 상품 저장
+	public void addgoods(String user_id, String PRODUCT_ID) {
+		HashMap<String, String> datas = new HashMap<>();
+		datas.put("user_id", user_id);
+		datas.put("PRODUCT_ID", PRODUCT_ID);
+		session.insert("Category.addtocart",datas);
+	}
+	
 	
 }

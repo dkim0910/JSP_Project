@@ -13,10 +13,9 @@ public class DetailService {
 		
 		String PRODUCT_ID = request.getParameter("PRODUCT_ID");
 		goods = gdao.searchgoods(PRODUCT_ID);
-		// 세션에 상품 정보 저장
-		request.getSession().setAttribute("goods", goods);
+		request.setAttribute("goods", goods);
 		
-		forward.setRedirect(true);
+		forward.setRedirect(false);
 		forward.setPath("/category/goodsDetail/goodsDetail.jsp");
 		
 		return forward;
