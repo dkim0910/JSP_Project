@@ -1,5 +1,3 @@
-
-
 // 이 펑션이 페이지에서 사이드바에 있는 카테고리 클릭하면 나타내주는 기능의 펑션
 function showContent(sectionId) {
 	// 모든 섹션 숨기기
@@ -24,7 +22,24 @@ function toggleBold(selectedElement) {
 	});
 	// 클릭한 요소에 'bold' 클래스를 추가
 	selectedElement.classList.add('bold');
+	// 클릭한 메뉴를 localStorage에 저장
+    localStorage.setItem('activeMenu', selectedElement.innerText);
 }
+// 페이지 로드 시 localStorage 값 확인 및 적용(볼드체 적용 목적)
+window.onload = function() {
+    let activeMenu = localStorage.getItem('activeMenu');
+    
+    if (activeMenu) {
+        // 저장된 메뉴 텍스트와 일치하는 요소를 찾아서 bold 적용
+        const options = document.querySelectorAll('.sidebar-options');
+        options.forEach(option => {
+            if (option.innerText === activeMenu) {
+                option.classList.add('bold');
+            }
+        });
+    }
+};
+
 
 // 배달 현황 바 나오는 평션
 

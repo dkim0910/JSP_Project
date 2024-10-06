@@ -9,7 +9,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>마이 페이지 | 쇼핑하조</title>
-<link rel="stylesheet" href="main.css">
+<link rel="stylesheet" href="/my-page/my-main/main.css">
 </head>
 
 <!-- 폰트어썸 불러오기 -->
@@ -20,6 +20,7 @@
 <script src="https://cdn.tailwindcss.com"></script>
 
 <body style="cursor: default;">
+	<c:set var="showMyInfo" value="${requestScope.showMyInfo}" />
 	<div class="header-container">
 		<header class="header">
 			<a href="../../main-page/main.jsp" class=""
@@ -135,8 +136,8 @@
 					<br />
 
 					<!-- 메인페이지 내용 페이지-->
-					<div id="maincontents" class="content-section"
-						style="display: block;">
+					<div id="maincontents" class="content-section" 
+						style="display: <c:out value="${empty showMyInfo ? 'block' : 'none'}" />;">
 
 						<!-- 나중에 여기에다가 주문현황 박스 만들기 박스 3개 정도 만들어서 가로로 해서 왼쪽은 주문형황 중간은 주문현황 오른쪽은 고객센터 이렇게 만들기 아래는 후기-->
 						<div class="main-container">
@@ -216,7 +217,7 @@
 					</div>
 
 					<!-- 나의 정보 내용 페이지 -->
-					<div id="my-info" class="content-section" style="display: none;">
+					<div id="my-info" class="content-section" style="display: <c:out value="${not empty showMyInfo ? 'block' : 'none'}" />;">
 						<div class="profile-container">
 							<h2 class="bold">나의 정보</h2>
 							<!-- h2 태그 말고 class 줘서 크기 조절하기 다른 페이지도 같이 쓰게 (폰트랑 굵기 등 추가) -->
@@ -226,7 +227,7 @@
 
 								<!-- 나의 정보 -->
 								<div class="profile-info">
-									<label for="user-name">이름 :</label> <span id="user-name">
+									<label for="user-name">이름 : ${member.user_name }</label> <span id="user-name">
 										<%--위에 Tblmember DTO로 변경후 사용 <%
 							            // member가 null일 경우 처리
 							            if (member != null) {
@@ -238,7 +239,7 @@
 									</span>
 								</div>
 								<div class="profile-info">
-									<label for="user-id">아이디 :</label> <span id="user-id"> <%--위에 Tblmember DTO로 변경후 사용
+									<label for="user-id">아이디 : ${member.user_id }</label> <span id="user-id"> <%--위에 Tblmember DTO로 변경후 사용
 								         <%
 								            // member가 null일 경우 처리
 								            if (member != null) {
@@ -250,11 +251,12 @@
 									</span>
 								</div>
 								<div class="profile-info">
-									<label for="user-pw">비밀번호 :</label> <span id="user-pw">비밀번호는
+									<!-- 나중에 ${member.user_pw } 부분을 *로 수정하기 -->
+									<label for="user-pw">비밀번호 : ${member.user_pw }</label> <span id="user-pw">비밀번호는
 										보안을 위해 표시되지 않습니다.</span>
 								</div>
 								<div class="profile-info">
-									<label for="phone">전화번호 :</label> <span id="phone"> <%--위에 Tblmember DTO로 변경후 사용
+									<label for="phone">전화번호 : ${member.user_phone }</label> <span id="phone"> <%--위에 Tblmember DTO로 변경후 사용
 								         <%
 								            // member가 null일 경우 처리
 								            if (member != null) {
@@ -266,11 +268,11 @@
 									</span>
 								</div>
 								<div class="profile-info">
-									<label for="address">주소 :</label> <span id="address">서울특별시
+									<label for="address">주소 : ${member.user_address }</label> <span id="address">서울특별시
 										강남구 테헤란로 123</span>
 								</div>
 								<div class="profile-info">
-									<label for="user-gender">성별 :</label> <span id="user-gender">
+									<label for="user-gender">성별 : ${member.user_gender }</label> <span id="user-gender">
 										<%-- 위에 Tblmember DTO로 변경후 사용
 								         <%
 								            // member가 null일 경우 처리
@@ -283,7 +285,7 @@
 									</span>
 								</div>
 								<div class="profile-info">
-									<label for="email">이메일 :</label> <span id="email">example@example.com</span>
+									<label for="email">이메일 : </label> <span id="email">example@example.com</span>
 								</div>
 
 								<div style="width: 100%;">
@@ -585,6 +587,6 @@
 
 		</div>
 </body>
-<script src="main-script.js"></script>
+<script src="/my-page/my-main/main-script.js"></script>
 
 </html>
