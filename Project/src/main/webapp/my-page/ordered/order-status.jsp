@@ -44,7 +44,7 @@
 					<c:forEach var="order" items="${Ordered}">
 						<tr>
 							<!-- 주문 번호 -->
-							<td id="order-number">${order.order_num}</td>
+							<td id="order-number">${order.ordered_num}</td>
 
 							<!-- 상품명 및 이미지 -->
 							<td>

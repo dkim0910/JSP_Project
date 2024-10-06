@@ -43,10 +43,15 @@ public class FrontController extends HttpServlet {
 		case "/ordered.my":
 			forward = new OrederedAction().execute(req, resp);
 			break;
+		// 회원 탈퇴
 		case "/byebye.my":
 			forward = new DeleteUserAction().execute(req, resp);
 			break;
-			
+		// 로그 아웃
+		case "/bye.my":
+			System.out.println("here");
+			forward = new LogoutAction().execute(req, resp);
+			break;	
 		}
 
 		if (forward != null) {

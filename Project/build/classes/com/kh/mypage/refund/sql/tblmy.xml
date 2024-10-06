@@ -28,15 +28,10 @@
 		FROM
 		Ordered o
 		JOIN
-		Cart c ON c.PRODUCT_ID =
-		o.PRODUCT_ID AND c.USER_ID = o.USER_ID
-		JOIN
 		Products p ON o.PRODUCT_ID =
 		p.PRODUCT_ID
 		WHERE
 		o.USER_ID = #{userid}
-		AND o.ORDERED_NUM =
-		#{orderedNum}
 	</select>
 
 	<!-- 주문 내역 -->
@@ -53,15 +48,10 @@
 		FROM
 		Ordered o
 		JOIN
-		Cart c ON c.PRODUCT_ID =
-		o.PRODUCT_ID AND c.USER_ID = o.USER_ID
-		JOIN
 		Products p ON o.PRODUCT_ID =
 		p.PRODUCT_ID
 		WHERE
 		o.USER_ID = #{userid}
-		AND o.ORDERED_NUM =
-		#{orderedNum}
 	</select>
 
 	<!-- 회원 삭제 -->

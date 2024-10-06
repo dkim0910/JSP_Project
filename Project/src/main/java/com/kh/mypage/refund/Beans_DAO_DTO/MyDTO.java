@@ -25,22 +25,12 @@ public class MyDTO {
 //    private String user_id;
 //    private String product_id;
     
-    // Order_ Table
-    private String order_num;
-//    private String product_id;
-    
     // Ordered Table 
     private String ordered_num;
-//    private String order_num;
-//    private String order_num;
+//    private String USER_ID;
+//    private String PRODUCT_ID;
+    
     private String ordered_date;
-    
-    // Product_count Table 
-    // 이건 보류
-//    private int Product_count;
-    
-	
-    
 	public String getUser_id() {
 		return user_id;
 	}
@@ -137,12 +127,6 @@ public class MyDTO {
 	public void setCart_num(String cart_num) {
 		this.cart_num = cart_num;
 	}
-	public String getOrder_num() {
-		return order_num;
-	}
-	public void setOrder_num(String order_num) {
-		this.order_num = order_num;
-	}
 	public String getOrdered_num() {
 		return ordered_num;
 	}
@@ -155,7 +139,6 @@ public class MyDTO {
 	public void setOrdered_date(String ordered_date) {
 		this.ordered_date = ordered_date;
 	}
-    
     
     
 }

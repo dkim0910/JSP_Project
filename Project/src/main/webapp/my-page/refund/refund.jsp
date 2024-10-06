@@ -12,13 +12,15 @@
 <link rel="stylesheet"
 	href="${pageContext.request.contextPath}/my-page/refund/refund.css">
 </head>
-
+<%
+boolean isLoggedIn = (session != null && session.getAttribute("member") != null);
+%>
 <body style="cursor: default;">
 	<div class="container">
 		<header class="header">
-			<a href="./my-page/my-main/my-page-main.jsp"
-				class="button-back-page" aria-label="이전 페이지로 이동"> <!-- 이게 '<' 모양의 뒤로 가기 버튼 -->
-				<svg width="35" height="35" viewBox="0 0 28 28" fill="none">
+			<a href="./my-page/my-main/my-page-main.jsp" class="button-back-page"
+				aria-label="이전 페이지로 이동"> <!-- 이게 '<' 모양의 뒤로 가기 버튼 --> <svg
+					width="35" height="35" viewBox="0 0 28 28" fill="none">
                     <path
 						d="M16.1004 21.7L8.61252 14.2122C8.49537 14.095 8.49537 13.9051 8.61252 13.7879L16.1004 6.30005"
 						stroke="currentColor" stroke-width="1.4"></path>
@@ -33,20 +35,25 @@
 			<h2>구매 내역</h2>
 
 			<!-- 환불할 제품이 있는 경우 -->
+			<!-- 5개만 보여줄기 xml에서 해도되지만 지금은 급하게 추가 (화면 밖으로 제품들이 추가됨) -->
 			<c:if test="${not empty Refunded}">
 				<h2>환불 제품 목록</h2>
 				<ul class="product-list">
-					<c:forEach var="refund" items="${Refunded}">
-						<li class="product-item"
-							onclick="showRefundForm('${refund.product_name}', '${refund.order_num}')">
-							<img src="${refund.image_url}" alt="${refund.product_name}"
-							class="product-image"> <span class="product-name">${refund.product_name}</span>
-							<span class="order-number">주문 번호: ${refund.order_num}</span> <!-- 주문 번호 표시 -->
-							<span class="refund-button" onclick="removeStyles()">환불 신청</span>
-						</li>
+					<c:forEach var="refund" items="${Refunded}" varStatus="status">
+						<c:if test="${status.index < 5}">
+							<li class="product-item"
+								onclick="showRefundForm('${refund.product_name}', '${refund.ordered_num}')">
+								<img src="${refund.image_url}" alt="${refund.product_name}"
+								class="product-image"> <span class="product-name">${refund.product_name}</span>
+								<span class="order-number">주문 번호: ${refund.ordered_num}</span> <!-- 주문 번호 표시 -->
+								<span class="refund-button" onclick="removeStyles()">환불
+									신청</span>
+							</li>
+						</c:if>
 					</c:forEach>
 				</ul>
 			</c:if>
+
 
 			<!-- 환불할 제품이 없는 경우 -->
 			<c:if test="${empty Refunded}">
@@ -73,7 +80,7 @@
 
 				<a href="my-page/refund/finish-refund.jsp"><button type="button"
 						class="submit-button" onclick="submitRefund()">환불 신청하기</button></a>
-						<!-- 지금은 이걸 보내도 받는 곳이 없음;; -->
+				<!-- 지금은 이걸 보내도 받는 곳이 없음;; -->
 			</form>
 		</section>
 

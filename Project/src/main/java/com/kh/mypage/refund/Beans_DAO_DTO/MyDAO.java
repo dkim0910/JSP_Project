@@ -37,10 +37,9 @@ public class MyDAO {
 	}
 
 	// 주문 내역
-	public List<MyDTO> getOrdered(String userid, String orderedNum) {
+	public List<MyDTO> getOrdered(String userid) {
 		HashMap<String, String> datas = new HashMap<>();
 		datas.put("userid", userid);
-		datas.put("orderedNum", orderedNum);
 		
 		List<MyDTO> refunds = new ArrayList<>();
 		refunds = session.selectList("MyMapper.getOrdered", datas);	// .xml 에 있는거 가지고 옴 Board , getBoardList
@@ -59,7 +58,6 @@ public class MyDAO {
 	    // Users 테이블에서 USER_ID가 'admin'인 데이터 삭제
 	    session.delete("MyMapper.deleteFromUsers", userid);
 	}
-
 
 
 

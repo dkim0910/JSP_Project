@@ -23,7 +23,7 @@
     <header>
         <div class="order_confirmed-headline">
             <div id="logo-box" class="self-center">
-                <a href="../main-page/login_main.html" id="logo" class="flex">
+                <a href="../main-page/main.jsp" id="logo" class="flex">
                   <span>쇼핑하조</span>
                 </a>
               </div>
@@ -44,7 +44,7 @@
         <br/>
         <br/>
         <br/>
-        <button type="button" class="button-order-status" onclick="location.href='../my-page/ordered/order-status.jsp';">
+        <button type="button" class="button-order-status" onclick="location.href='/ordered.my';">
             주문 내역 바로가기
         </button>
     </main>

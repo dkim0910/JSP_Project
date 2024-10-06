@@ -86,7 +86,7 @@ function logout() {
 	// 확인 대화상자 표시
 	if (confirm("로그 아웃 하시겠습니까?")) {
 		// 사용자가 "네"를 클릭한 경우 로그아웃 페이지로 이동
-		window.location.href = "../../main-page/main.jsp"; // 로그아웃 페이지의 URL로 변경
+		window.location.href = "/bye.my"; // 로그아웃 페이지의 URL로 변경
 	}
 	// 사용자가 "아니요"를 클릭한 경우 아무 작업도 하지 않음
 }
