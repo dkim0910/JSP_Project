@@ -17,6 +17,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 </head>
 <body>
+	<c:set var="member" value="${sessionScope.member}" />
 	<%
     	boolean isLoggedIn = (session != null && session.getAttribute("member") != null);
 	%>
@@ -29,7 +30,7 @@
                     <button type="button" id="search-button" >검색</button>
                 </div>
                 <div class="top-menu">
-                	<c:set var="member" value="${sessionScope.member}" />
+                	
 		            <!-- 로그인 상태인 경우 -->
 		            <a href="<%= isLoggedIn ? "../my-page/my-main/my-page-main.jsp" : "../login/join/login_view.jsp" %>" class="menu-button">
 		                <img src="./img/마이.png">
