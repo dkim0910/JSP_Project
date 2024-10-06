@@ -38,9 +38,11 @@ public class MemberListAction implements Action {
 
         // 회원 정보를 request에 저장하여 JSP에서 사용 가능하도록 설정
         request.setAttribute("member", member);
+        // '나의 정보'를 보여줄 플래그 설정
+        request.setAttribute("showMyInfo", true); 
 
         // 회원 정보를 출력할 JSP로 포워딩
-        forward.setPath("/my-page/my-main/myinformation.jsp");
+        forward.setPath("/my-page/my-main/my-page-main.jsp");
         forward.setRedirect(false);
 
         return forward;
