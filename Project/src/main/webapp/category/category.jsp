@@ -10,14 +10,13 @@
     <title>카테고리 페이지</title>
     <!-- 페이지 제목 옆의 아이콘 -->
     <link href="https://image.msscdn.net/favicon_152.ico" rel="icon">
-    <link rel="stylesheet" href="category.css">
+    <link rel="stylesheet" href="/category/category.css">
     <!-- 폰트어썸 불러오기 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <script src="category.js" defer></script>
+    <script src="/category/category.js" defer></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 </head>
 <body>
-	<c:set var="member" value="${sessionScope.member}" />
 	<%
     	boolean isLoggedIn = (session != null && session.getAttribute("member") != null);
 	%>
@@ -30,26 +29,14 @@
                     <button type="button" id="search-button" >검색</button>
                 </div>
                 <div class="top-menu">
-                	<c:choose>
-				        <c:when test="${isLoggedIn}">
-				            <!-- 로그인 상태인 경우 -->
-				            <a href="../my-page/my-main/my-page-main.jsp" class="menu-button">
-				                <img src="./img/마이.png">
-				            </a>
-				            <a href="../cart/cart.jsp" class="menu-button">
-				                <img src="./img/카트.png">
-				            </a>
-				        </c:when>
-				        <c:otherwise>
-				            <!-- 비로그인 상태인 경우 -->
-				            <a href="../login/join/login_view.jsp" class="menu-button">
-				                <img src="./img/마이.png">
-				            </a>
-				            <a href="../login/join/login_view.jsp" class="menu-button">
-				                <img src="./img/카트.png">
-				            </a>
-				        </c:otherwise>
-				    </c:choose>
+                	<c:set var="member" value="${sessionScope.member}" />
+		            <!-- 로그인 상태인 경우 -->
+		            <a href="<%= isLoggedIn ? "../my-page/my-main/my-page-main.jsp" : "../login/join/login_view.jsp" %>" class="menu-button">
+		                <img src="./img/마이.png">
+		            </a>
+		            <a href="<%= isLoggedIn ? "../cart/cart.jsp" : "../login/join/login_view.jsp" %>" class="menu-button">
+		                <img src="./img/카트.png">
+		            </a>
                     <a href="../main-page/main.jsp" class="menu-button">
 						<img src="./img/홈.png"  >
 					</a>

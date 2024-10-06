@@ -90,11 +90,11 @@ body {
 }
 
 .menu-button {
-    display: flex;
     flex-direction: column; 	/* 세로 방향으로 정렬 */
 	align-items: center; 		/* 가로 중앙 정렬 */
     color: #000;
     margin-right: 30px;
+    text-decoration: none;  	/* 링크 밑줄 제거 */
 }
 
 .menu-button svg {
