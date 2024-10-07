@@ -6,6 +6,8 @@
 <head>
 <meta charset="UTF-8">
 <title>아이디 찾기 | 쇼핑하조</title>
+ <!-- 페이지 제목 옆의 아이콘 -->
+    <link href="https://i.ibb.co/X4b9F9N/logo.png" rel="icon">
 <style>
 	/* 페이지 기본 설정 */
 	body {

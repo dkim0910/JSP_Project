@@ -11,6 +11,8 @@ boolean isLoggedIn = (session != null && session.getAttribute("member") != null)
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>주문 내역 | 쇼핑하조</title>
+ <!-- 페이지 제목 옆의 아이콘 -->
+    <link href="https://i.ibb.co/X4b9F9N/logo.png" rel="icon">
 <link rel="stylesheet"
 	href="${pageContext.request.contextPath}/my-page/ordered/order-status.css">
 </head>

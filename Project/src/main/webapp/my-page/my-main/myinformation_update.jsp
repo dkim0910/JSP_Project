@@ -4,6 +4,8 @@
 <html>
 <head>
     <title>회원 정보 수정</title>
+     <!-- 페이지 제목 옆의 아이콘 -->
+    <link href="https://i.ibb.co/X4b9F9N/logo.png" rel="icon">
 </head>
 <body>
     <h2>회원 정보 수정</h2>

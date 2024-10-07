@@ -10,6 +10,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>상품 상세 페이지</title>
+     <!-- 페이지 제목 옆의 아이콘 -->
+    <link href="https://i.ibb.co/X4b9F9N/logo.png" rel="icon">
     <link rel="stylesheet" href="/category/goodsDetail/goodsDetail.css">
     <script src="/category/goodsDetail/goodsDetail.js" defer></script>
 </head>
