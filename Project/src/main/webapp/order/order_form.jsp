@@ -70,10 +70,10 @@ boolean isLoggedIn = (session != null && session.getAttribute("member") != null)
 		<div class="double-section">
 			<div class="double-section-left">
 				<section class="sheet-section" id="sheet-section-recipient">
+					<div class="sheet-title">
+						<h2 class="sheet-title-address">배송지</h2>
+					</div>
 					<div class="sheet-address">
-						<div class="sheet-title">
-							<h2 class="sheet-title-address">배송지</h2>
-						</div>
 						<c:set var="user" value="${sessionScope.member}" />
 						<div class="sheet-address-title">
 							<strong class="sheet-address-title-name" id="recipient-name">
@@ -126,9 +126,10 @@ boolean isLoggedIn = (session != null && session.getAttribute("member") != null)
 									<a class="sheet-order-product-name">${productList.PRODUCT_NAME }</a>
 									<br /> <span class="sheet-order-product-option"></span>
 									<div class="sheet-order-product-price-box">
-										<strong class="sheet-order-product-price-origin">${productList.NORMAL_PRICE }
-											원</strong> <br /> <span class="sheet-order-product-price-sale">${productList.PRICE_AMOUNT }
-											원</span>
+										<strong class="sheet-order-product-price-origin"><fmt:formatNumber
+												value="${productList.NORMAL_PRICE }" pattern="#,###" /> 원</strong> <br />
+										<span class="sheet-order-product-price-sale"><fmt:formatNumber
+												value="${productList.PRICE_AMOUNT }" pattern="#,###" /> 원</span>
 									</div>
 								</div>
 							</div>
@@ -336,7 +337,7 @@ boolean isLoggedIn = (session != null && session.getAttribute("member") != null)
 							<div class="sheet-save-point-level">
 								<span class="sheet-save-point-level-text"> LV.5 실버 : 2%
 									적립 </span> <strong class="sheet-save-point-level-subject-price">
-									<fmt:formatNumber value="${savePoint}" pattern="#,###" /> 원
+									<fmt:formatNumber value="${savePoint}" pattern="#,###" />원
 								</strong>
 							</div>
 							<div class="sheet-save-point-level">
@@ -360,7 +361,7 @@ boolean isLoggedIn = (session != null && session.getAttribute("member") != null)
 							<div class="sheet-payment-price-box">
 								<span class="sheet-payment-price-subject-text"> 상품 금액 </span> <strong
 									class="sheet-payment-price-subject-price"><fmt:formatNumber
-										value="${totalPrice_original}" pattern="#,###" /> 원 </strong>
+										value="${totalPrice_original}" pattern="#,###" />원 </strong>
 							</div>
 							<div class="sheet-payment-price-box">
 								<span class="sheet-payment-price-subject-text"> 할인 금액 </span> <strong
@@ -392,8 +393,7 @@ boolean isLoggedIn = (session != null && session.getAttribute("member") != null)
 										name="quantity" id="quantityInput" value="1"> <input
 										type="hidden" name="user_id" value="${member.user_id}">
 									<button type="submit" class="sheet-purchase-button-price">
-										<fmt:formatNumber value="${totalPrice_amount}" pattern="#,###" />
-										원 결제하기
+										<fmt:formatNumber value="${totalPrice_amount}" pattern="#,###" />원 결제하기
 									</button>
 								</div>
 							</form>
@@ -481,8 +481,7 @@ boolean isLoggedIn = (session != null && session.getAttribute("member") != null)
 				<input type="hidden" name="quantity" id="quantityInput" value="1">
 				<button type="submit" class="sheet-purchase-button-price"
 					id="display-result-pay-amount">
-					<fmt:formatNumber value="${totalPrice_amount}" pattern="#,###" />
-					원 결제하기
+					<fmt:formatNumber value="${totalPrice_amount}" pattern="#,###" />원 결제하기
 				</button>
 			</div>
 		</form>
