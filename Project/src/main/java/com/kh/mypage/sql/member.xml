@@ -8,13 +8,13 @@
 		WHERE user_id = #{user_id}
 	</select>
 	<update id="updateMember" parameterType="map">
-        UPDATE Users
+        UPDATE USERS
         SET 
-            user_name = #{user_name},
-            user_pw = #{user_pw},
-            user_address = #{user_address},
-            user_phone = #{user_phone},
-            user_gender = #{user_gender}
-        WHERE user_id = #{user_id}
+            user_name = #{userName},
+            user_pw = #{userPw},
+            user_address = #{userAddress},
+            user_phone = #{userPhone},
+            user_gender = #{userGender}
+        WHERE user_id = #{userId}
     </update>
 </mapper>

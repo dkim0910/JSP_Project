@@ -14,9 +14,9 @@ public class MemberListAction implements Action {
 
 	@Override
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) {
-		ActionForward forward = new ActionForward(); // forward 정보를 담을 객체 생성
-        MemberDAO dao = new MemberDAO(); // DAO 객체 생성
-        HttpSession session = request.getSession(); // 세션 객체 가져오기
+		ActionForward forward = new ActionForward(); 	// forward 정보를 담을 객체 생성
+        MemberDAO dao = new MemberDAO(); 				// DAO 객체 생성
+        HttpSession session = request.getSession(); 	// 세션 객체 가져오기
         UserDTO sessionMember = (UserDTO) session.getAttribute("member"); // 세션에서 로그인한 회원 정보 가져옴
 
         // 세션에 회원 정보가 없으면 로그인 페이지로 리다이렉트
@@ -35,7 +35,7 @@ public class MemberListAction implements Action {
             forward.setRedirect(false);
             return forward;
         }
-
+        
         // 회원 정보를 request에 저장하여 JSP에서 사용 가능하도록 설정
         request.setAttribute("member", member);
         // '나의 정보'를 보여줄 플래그 설정

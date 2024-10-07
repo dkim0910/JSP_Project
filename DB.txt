@@ -41,6 +41,14 @@ CREATE TABLE Ordered (
     FOREIGN KEY (PRODUCT_ID) REFERENCES Products(PRODUCT_ID) -- 외래 키 설정
 );
 
+CREATE SEQUENCE ordered_seq
+START WITH 1 -- 시퀀스가 시작할 값
+INCREMENT BY 1 -- 시퀀스 값이 증가할 크기
+MINVALUE 1 -- 최소값 (선택사항)
+MAXVALUE 99999999 -- 최대값 (선택사항)
+NOCYCLE -- 최대값에 도달하면 다시 최소값으로 돌아가지 않도록 설정 (CYCLE 사용 가능)
+NOCACHE;
+
 SELECT * FROM CART c ;
 SELECT * FROM ORDERED o ;
 SELECT * FROM PRODUCTS p ;

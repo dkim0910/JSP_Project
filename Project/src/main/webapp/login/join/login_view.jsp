@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>로그인 | 쇼핑하조</title>
 <style>
      /* 페이지 기본 설정 */
 	body {

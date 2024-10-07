@@ -119,6 +119,24 @@ body {
 	.submit_button:hover {
 	    background-color: #555;
 	}
+	
+	 /* 하단 링크 영역 */
+	.join {
+	    font-size: 14px;
+	    text-align: center;
+	    margin-top: 15px;
+	}
+	
+	.join a {
+	    text-decoration: none;
+	    color: #888;
+	    margin: 0 5px;
+	}
+	
+	.join a:hover {
+	    color: #222; /* 호버 시 링크 색 변경 */
+	}
+	
         /* 화면 크기에 따라 스타일을 조정하는 미디어 쿼리 */
     @media screen and (max-width: 600px) {
         .form-container {
@@ -131,7 +149,6 @@ body {
             width: 30%; /* 큰 화면에서는 폼 너비를 20%로 줄임 */
         }
     }
-    
     
 </style>
 </head>
@@ -184,6 +201,12 @@ body {
 	        <div class="input_row">
 	            <input type="button" value="회원가입" class="submit_button" onclick="sendit()"/> 
 	        </div>
+	        <!-- 하단 링크 (로그인, 아이디/비밀번호 찾기) -->
+	        <div class="join">
+				<a href="login_view.jsp">로그인</a> |
+				<a href="id_find.jsp">아이디찾기</a> |
+				<a href="pw_find.jsp">비밀번호찾기</a>
+			</div>
 		</div>	        
 	</form>
 </body>
