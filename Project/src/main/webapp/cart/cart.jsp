@@ -3,6 +3,10 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page import="java.util.ArrayList, java.util.HashMap, java.util.List, java.util.Map" %>
+<%@page import="com.kh.cart.dao.CartAction"%>
+<%@page import="com.kh.cart.dao.CartFrontController"%>
+<%@page import="com.kh.cart.dao.CartAction"%>
+
 
 <html>
 <head>
@@ -351,7 +355,8 @@ th {
             <button class="delete-selected" onclick="deleteSelectedItems()">선택삭제</button>
         </div>
         <!-- 구매하기 버튼 -->
-        <button class="purchase-button" onclick="purchaseItems()">구매하기</button>
+        <a href = "./order_form.jsp" class="purchase-button" onclick="purchaseItems()">구매하기</a>
+        
     </div>
 
     <!-- 장바구니 항목 리스트 -->
