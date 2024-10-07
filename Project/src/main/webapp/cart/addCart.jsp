@@ -1,6 +1,6 @@
 <%@ page import="java.util.*" %>
-<%@ page import="com.kh.cart.dao.CartDAO" %>
-<%@ page import="com.kh.cart.dao.CartDTO" %>
+<%@ page import="com.kh.cart.CartDAO" %>
+<%@ page import="com.kh.cart.CartDTO" %>
 
 
 
