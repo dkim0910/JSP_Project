@@ -35,7 +35,7 @@
 		            <a href="<%= isLoggedIn ? "../my-page/my-main/my-page-main.jsp" : "../login/join/login_view.jsp" %>" class="menu-button">
 		                <img src="./img/마이.png">
 		            </a>
-		            <a href="<%= isLoggedIn ? "../cart/cart.jsp" : "../login/join/login_view.jsp" %>" class="menu-button">
+		            <a href="<%= isLoggedIn ? "/cart.ca" : "../login/join/login_view.jsp" %>" class="menu-button">
 		                <img src="./img/카트.png">
 		            </a>
                     <a href="../main-page/main.jsp" class="menu-button">

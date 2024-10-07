@@ -36,7 +36,7 @@
 			<h1 onclick="toggleBold(this); showContent('maincontents')"
 				style="color: #ffffff; cursor: default;">마이 페이지</h1>
 
-			<a href="../../cart/cart.jsp"> <label
+			<a href="/cart.ca"> <label
 				style="font-size: 24px; cursor: pointer;"> <input
 					type="button" value="장바구니" style="cursor: pointer;" /> <!-- 장바구니 이미지 -->
 					<i class="fa-solid fa-cart-shopping"></i>
