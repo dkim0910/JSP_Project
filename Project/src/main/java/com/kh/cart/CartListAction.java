@@ -22,7 +22,7 @@ public class CartListAction {
         // 세션에서 회원 ID를 가져옴
         String user_id = sessionMember.getUser_id(); 
         
-		List<GoodsDTO> cartList = cdao.searchcartgoods(user_id);
+		List<CartDTO> cartList = cdao.searchcartgoods(user_id);
 		
 		request.setAttribute("cartList", cartList);
 		

@@ -1,7 +1,8 @@
 package com.kh.cart;
 
 public class CartDTO {
-	
+	private String CART_NUM;
+	private String USER_ID;
 	private String PRODUCT_ID;
 	private String BRAND;	
 	private String PRODUCT_NAME	;	
@@ -11,19 +12,18 @@ public class CartDTO {
 	private String IMAGE_URL;	
 	private String CATEGORY	;
 	private String SUBCATEGORY;
-	private int COUNT;
 	
-	
-	   
-
-
-	
-	
-	public int getCOUNT() {
-		return COUNT;
+	public String getCART_NUM() {
+		return CART_NUM;
 	}
-	public void setCOUNT(int COUNT) {
-		COUNT = COUNT;
+	public void setCART_NUM(String cART_NUM) {
+		CART_NUM = cART_NUM;
+	}
+	public String getUSER_ID() {
+		return USER_ID;
+	}
+	public void setUSER_ID(String uSER_ID) {
+		USER_ID = uSER_ID;
 	}
 	public String getPRODUCT_ID() {
 		return PRODUCT_ID;
