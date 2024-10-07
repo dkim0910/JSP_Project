@@ -5,8 +5,10 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
+import java.util.List;
 
 import com.kh.cart.dao.CartDTO;
+import com.kh.mypage.refund.Beans_DAO_DTO.MyDTO;
 
 public class CartDAO{
 	
@@ -119,5 +121,15 @@ public class CartDAO{
     	}
     	public void addProduct(CartDTO product) {
     		listOfProducts.add(product);
-    	}}
+    	}
+
+		public List<CartDTO> selectAll(int userNo) {
+			// TODO Auto-generated method stub
+			return null;
+		}
+
+		public List<CartDTO> getProducts(String product_id) {
+			// TODO Auto-generated method stub
+			return null;
+		}}
     
