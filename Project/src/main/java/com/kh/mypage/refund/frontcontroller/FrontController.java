@@ -51,11 +51,16 @@ public class FrontController extends HttpServlet {
 		case "/bye.my":
 			forward = new LogoutAction().execute(req, resp);
 			break;
+		// 환불 완료후 의 환불 완료 랑 시간 update
 		case "/finishedRefund.my":
 			forward = new FinishedRefund().execute(req, resp);
 			break;
+		// 세션에 환불 완료에 필요한 값 불러오는거 (refund.jsp 에서 환불하기 누루면 오는거)
+		case "/setSessionForProductsAtFinished-Refund.my":
+			forward = new ProductSession().execute(req, resp);
+			break;
 		}
-
+//		my-page/refund/finish-refund.jsp
 		if (forward != null) {
 			if (forward.isRedirect()) {
 				resp.sendRedirect(forward.getPath());

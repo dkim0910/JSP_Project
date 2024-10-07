@@ -31,6 +31,7 @@ public class MyDTO {
 //    private String PRODUCT_ID;
     private String ordered_date;
     private String refunded_date;
+    private String refund_status;
     
 	public String getUser_id() {
 		return user_id;
@@ -145,6 +146,11 @@ public class MyDTO {
 	}
 	public void setRefunded_date(String refunded_date) {
 		this.refunded_date = refunded_date;
+	}public String getRefund_status() {
+		return refund_status;
+	}
+	public void setRefund_status(String refund_status) {
+		this.refund_status = refund_status;
 	}
     
     

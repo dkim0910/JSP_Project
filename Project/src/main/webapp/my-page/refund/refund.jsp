@@ -19,76 +19,68 @@ boolean isLoggedIn = (session != null && session.getAttribute("member") != null)
 	<div class="container">
 		<header class="header">
 			<a href="./my-page/my-main/my-page-main.jsp" class="button-back-page"
-				aria-label="이전 페이지로 이동"> <!-- 이게 '<' 모양의 뒤로 가기 버튼 --> <svg
-					width="35" height="35" viewBox="0 0 28 28" fill="none">
+				aria-label="이전 페이지로 이동"> <svg width="35" height="35"
+					viewBox="0 0 28 28" fill="none">
                     <path
 						d="M16.1004 21.7L8.61252 14.2122C8.49537 14.095 8.49537 13.9051 8.61252 13.7879L16.1004 6.30005"
 						stroke="currentColor" stroke-width="1.4"></path>
                 </svg>
 			</a>
 			<h1 style="flex-grow: 1; text-align: center;">환불 및 교환</h1>
-			<p></p>
 		</header>
+		<form id="refund-form"
+			action="/setSessionForProductsAtFinished-Refund.my" method="post">
+			<section class="products-section" id="remove-style"
+				style="min-height: 100vh; display: flex; flex-direction: column;">
+				<h2>구매 내역</h2>
 
-		<section class="products-section" id="remove-style"
-			style="min-height: 100vh; display: flex; flex-direction: column;">
-			<h2>구매 내역</h2>
+				<c:if test="${not empty Refunded}">
+					<h2>환불 제품 목록</h2>
+					<ul class="product-list">
+						<c:forEach var="refund" items="${Refunded}" varStatus="status">
+							<c:if test="${status.index < 5}">
+								<li class="product-item"
+									onclick="showRefundForm('${refund.product_name}', '${refund.ordered_num}')">
+									<img src="${refund.image_url}" alt="${refund.product_name}"
+									class="product-image"> <span class="product-name">${refund.product_name}</span>
+									<span class="order-number">주문 번호: ${refund.ordered_num}</span>
+									<span class="refund-button" onclick="removeStyles()">환불
+										신청</span> <input type="hidden" id="product-id" name="product-id"
+									value="${refund.product_id}">
+								</li>
+							</c:if>
+						</c:forEach>
 
-			<!-- 환불할 제품이 있는 경우 -->
-			<!-- 5개만 보여줄기 xml에서 해도되지만 지금은 급하게 추가 (화면 밖으로 제품들이 추가됨) -->
-			<c:if test="${not empty Refunded}">
-				<h2>환불 제품 목록</h2>
-				<ul class="product-list">
-					<!-- Refunded 리스트의 각 아이템을 순회 -->
-					<c:forEach var="refund" items="${Refunded}" varStatus="status">
-						<!-- 최대 5개까지만 표시 -->
-						<c:if test="${status.index < 5}">
-							<li class="product-item"
-								onclick="showRefundForm('${refund.product_name}', '${refund.ordered_num}')">
-								<img src="${refund.image_url}" alt="${refund.product_name}"
-								class="product-image"> <span class="product-name">${refund.product_name}</span>
-								<span class="order-number">주문 번호: ${refund.ordered_num}</span> <span
-								class="refund-button" onclick="removeStyles()">환불 신청</span>
-							</li>
+						<c:if test="${fn:length(Refunded) == 0}">
+							<li class="product-item" style="display: none;"></li>
 						</c:if>
-					</c:forEach>
+					</ul>
+				</c:if>
 
-					<!-- Refunded 리스트의 길이가 0일 경우 빈 리스트 아이템 추가 (화면 레이아웃 유지) -->
-					<c:if test="${fn:length(Refunded) == 0}">
-						<li class="product-item" style="display: none;"></li>
-						<!-- 빈 리스트 아이템을 추가 -->
-					</c:if>
-				</ul>
-			</c:if>
+				<c:if test="${empty Refunded}">
+					<p>환불할 제품이 없습니다.</p>
+				</c:if>
+			</section>
 
-			<!-- Refunded가 비어 있을 경우 메시지 표시 -->
-			<c:if test="${empty Refunded}">
-				<p>환불할 제품이 없습니다.</p>
-			</c:if>
-
-		</section>
-
-		<!-- 환불할 제품 선택하고 보내는거 나옴 -->
-		<section class="refund-form-section" id="refund-form-section">
-			<h2>환불 신청서</h2>
-			<form id="refund-form">
+			<section class="refund-form-section" id="refund-form-section">
+				<h2>환불 신청서</h2>
 				<div class="form-group">
 					<label for="product-name">제품 이름</label> <input type="text"
-						id="product-name" name="product-name" readonly>
+						id="product-name" name="product-name"
+						value="${refund.product_name}" readonly>
 				</div>
 				<div class="form-group">
 					<label for="order-number">주문 번호</label> <input type="text"
-						id="order-number" name="order-number" readonly>
+						id="order-number" name="order-number"
+						value="${refund.ordered_num}" readonly>
 				</div>
+				<div></div>
 				<div class="form-group">
 					<label for="reason">환불 사유</label>
-					<textarea id="reason" name="reason" rows="4" required></textarea>
+					<textarea id="reason" name="reason" rows="4"></textarea>
 				</div>
-
-				<a href="my-page/refund/finish-refund.jsp"><button type="button"
-						class="submit-button" onclick="submitRefund()">환불 신청하기</button></a>
-				<!-- 지금은 이걸 보내도 받는 곳이 없음;; -->
-			</form>
+				<button type="submit" class="submit-button">환불 신청하기</button>
+		</form>
 		</section>
 
 		<footer class="footer">
