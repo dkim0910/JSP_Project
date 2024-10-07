@@ -15,8 +15,7 @@ public class DeleteUserAction implements Action{
 		MyDAO mydao = new MyDAO();
 		
 		
-		String userid = "admin";
-
+		
 		// 사용자 삭제
 		mydao.deleteUser(userid);
 
