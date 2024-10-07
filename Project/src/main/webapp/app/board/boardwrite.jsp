@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>게시판 | 쇼핑하조</title>
 <style>
 table {
 	margin: 0 auto;
