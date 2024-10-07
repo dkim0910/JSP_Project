@@ -33,15 +33,15 @@ html, body{
 .container {
     max-width: 1600px;
     box-sizing: border-box; /* width + padding <= max-width */
-    margin: 0 auto; /* Center the container */
+    margin: 0 auto; 		/* Center the container */
     padding: 0px 40px 20px; /* Top and bottom padding, with side padding */
     background-color: #fff;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 h1 {
-    margin: 0; /* Remove margin from h1 */
-    padding: 10px 0; /* Add padding if needed for spacing */
+    margin: 0; 			/* Remove margin from h1 */
+    padding: 10px 0; 	/* Add padding if needed for spacing */
 }
 
 .product-info {
@@ -52,9 +52,9 @@ h1 {
 
 /* 이미지 크기 변경 */
 .product-image {
-    width: 300px; /* Smaller width */
-    height: 300px; /* Smaller height */
-    object-fit: cover; /* Maintain aspect ratio */
+    width: 300px; 		/* Smaller width */
+    height: 300px; 		/* Smaller height */
+    object-fit: cover; 	/* Maintain aspect ratio */
     border-radius: 10px;
     margin-bottom: 10px;
 }
@@ -71,7 +71,7 @@ th, td {
 }
 
 th {
-    background-color: #f0f4f8; 
+    background-color: #f0f4f8; /* 헤더 셀 배경색 설정 */
 }
 
 .footer {
@@ -88,29 +88,29 @@ th {
 
 
 .button-back-page {
-    background: none; /* 배경색 제거 */
-    border: none; /* 테두리 제거 */
-    cursor: pointer; /* 포인터 커서 */
-    margin-right: 10px; /* h1과의 간격 */
-    font-size: 2.5rem; /* h1과 동일한 크기로 설정 */
-    color: #ffffff; /* 텍스트 색상 */
-    display: flex; /* flexbox로 중앙 정렬 */
-    align-items: center; /* 세로 중앙 정렬 */
-    justify-content: center; /* 가로 중앙 정렬 */
-    padding: 0; /* 기본 패딩 제거 */
-    line-height: 1; /* 줄 높이 설정 */
-  text-decoration: none; /* 밑줄 제거 */
+    background: none; 			/* 배경색 제거 */
+    border: none; 				/* 테두리 제거 */
+    cursor: pointer; 			/* 포인터 커서 */
+    margin-right: 10px; 		/* h1과의 간격 */
+    font-size: 2.5rem; 			/* h1과 동일한 크기로 설정 */
+    color: #ffffff; 			/* 텍스트 색상 */
+    display: flex; 				/* flexbox로 중앙 정렬 */
+    align-items: center; 		/* 세로 중앙 정렬 */
+    justify-content: center; 	/* 가로 중앙 정렬 */
+    padding: 0; 				/* 기본 패딩 제거 */
+    line-height: 1; 			/* 줄 높이 설정 */
+  text-decoration: none; 		/* 밑줄 제거 */
 }
 
 .header {
-    display: flex; /* flexbox 레이아웃 적용 */
-    align-items: center; /* 세로 중앙 정렬 */
-    padding: 20px; /* 상하좌우 여백 */
-    background-color: black; /* 배경색 */
-    color: #ffffff; /* 텍스트 색상 */
+    display: flex; 						/* flexbox 레이아웃 적용 */
+    align-items: center; 				/* 세로 중앙 정렬 */
+    padding: 20px; 						/* 상하좌우 여백 */
+    background-color: black; 			/* 배경색 */
+    color: #ffffff; 					/* 텍스트 색상 */
     border-bottom: 2px solid #ff4d4d; /* 하단 경계선 */
-    position: relative; /* 절대 위치 요소를 포함하기 위해 설정 */
-    padding-right: 130px; /* 오른쪽 패딩 */
+    position: relative; 				/* 절대 위치 요소를 포함하기 위해 설정 */
+    padding-right: 130px; 				/* 오른쪽 패딩 */
 }
 
 .refund-button {
@@ -153,7 +153,6 @@ body {
 }
 
 .cart-item {
-    display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 10px 0;

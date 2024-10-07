@@ -6,13 +6,13 @@
 <%@taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 <html>
 <head>
-    <title>장바구니 | 쇼핑하조</title>
+    <title>장바구니</title>
     <link rel="stylesheet" href="/cart/cart.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="/cart/cart.js" defer></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 </head>
-<body style="cursor: default;">
+<body onload="calculateTotalPrice()" style="cursor: default;">
 	<c:set var="member" value="${sessionScope.member}" />
 	<c:set var="cartList" value="${requestScope.cartList}" />
 	<header class="header">
@@ -26,7 +26,7 @@
 		<h1 style="flex-grow: 1; text-align: center;">장바구니</h1>
 	</header>
 
-	<div class = "container">
+	<!-- <div class = "container">
 		<div class = "row">
 			<table width = 100%>
 				<tr>
@@ -34,11 +34,12 @@
 				</tr>
 			</table>
 		</div>
-	</div>
+	</div> -->
 	
 	<div style="padding-top: 50px">
 		<table class = "table table-hover">
 			<tr>	
+				<th>선택</th>
 				<th>상품번호</th>
 				<th>이름</th>
 				<th>가격</th>
@@ -47,38 +48,42 @@
 				<th>비고</th>
 			</tr>
 			<c:forEach var="goods" items="${cartList }">
-				<tr>
+				<tr class="cart-item">
+					<td><input type="checkbox" class="item-checkbox" value="${goods.PRODUCT_ID}"></td>
 					<td>${goods.PRODUCT_ID }</td>
-					<td>${goods.PRODUCT_NAME }</td>
-					<td>${goods.NORMAL_PRICE }</td>
-					<td>1</td>
-					<td id="cart_total_price">${goods.NORMAL_PRICE }</td>
-					<td>비고</a></td>
+					<c:choose>
+					    <c:when test="${fn:length(goods.PRODUCT_NAME) > 30}">
+					        <td>${fn:substring(goods.PRODUCT_NAME, 0, 30)}...</td>
+					    </c:when>
+					    <c:otherwise>
+					        <td>${goods.PRODUCT_NAME}</td>
+					    </c:otherwise>
+					</c:choose>
+					<%-- <td>${goods.PRODUCT_NAME }</td> --%>
+					<td id="item-price" class="item-price">${goods.NORMAL_PRICE}원</td> 
+			        <td class="item-quantity">1</td> 
+			        <td id="item-subtotal" class="item-subtotal">0원</td>
+					<td>비고</td>
 				</tr>
 			</c:forEach>
 			<tr>
-				<th></th>
-				<th></th>
-				<th></th>
-				<th id="cart_final_price">총액</th>
-				<th></th>
-				<th></th>
+				<th colspan="5">총액</th>
+    			<th colspan="2" id="cart_final_price">0원</th>
 			</tr>
 		</table>
-		<a href = "./goodsDetail.jsp" class="btn btn -secondary">쇼핑 계속하기</a>
+		<a href = "../category/category.jsp" class="btn btn -secondary">쇼핑 계속하기</a>
 	</div>
 
 	<!-- 장바구니 항목 전체 선택 및 삭제 -->
 	<div class="cart">
 	    <div class="cart-header">
 	        <div>
-	            <input type="checkbox" id="select-all" onclick="toggleSelectAll(this)">
+	            <input type="checkbox" id="select-all" onClick="toggleSelectAll(this)">
 	            <label for="select-all">전체선택</label>
 	            <button class="delete-selected" onclick="deleteSelectedItems()">선택삭제</button>
 	        </div>
 	        <!-- 구매하기 버튼 -->
 	        <a href = "./order_form.jsp" class="purchase-button" onclick="purchaseItems()">구매하기</a>
-	        
 	    </div>
 	
 	    <!-- 장바구니 항목 리스트 -->
@@ -96,7 +101,7 @@
 	</div>
 	
 	<!-- 옵션 변경 모달 -->
-	<div id="optionModal" class="modal">
+	<!-- <div id="optionModal" class="modal">
 	    <div class="modal-content">
 	        <span class="close" onclick="closeModal('optionModal')">&times;</span>
 	        <h2>옵션 변경</h2>
@@ -107,10 +112,10 @@
 	            <button type="submit">변경</button>
 	        </form>
 	    </div>
-	</div>
+	</div> -->
 	
 	<!-- 쿠폰 사용 모달 -->
-	<div id="couponModal" class="modal">
+	<!-- <div id="couponModal" class="modal">
 	    <div class="modal-content">
 	        <span class="close" onclick="closeModal('couponModal')">&times;</span>
 	        <h2>쿠폰 사용</h2>
@@ -121,7 +126,7 @@
 	            <button type="submit">적용</button>
 	        </form>
 	    </div>
-	</div>
+	</div> -->
  
 	<footer class="footer">
 	    <p>고객 지원 센터: 1234-5678 | 이메일: shoppinghajo@samjo.com</p>
@@ -129,11 +134,11 @@
 	    <div>
 	        © 쇼핑하조 ALL RIGHTS RESERVED
 	    </div>
-	
 	    <div>
 	        <span>일부 상품의 경우 쇼핑하조는 통신판매의 당사자가 아닌 통신판매중개자로서 상품, 상품정보, 거래에 대한
 	            <br>
-	            책임이 제한될 수 있으므로, 각 상품 페이지에서 구체적인 내용을 확인하시기 바랍니다.</span>
+	            책임이 제한될 수 있으므로, 각 상품 페이지에서 구체적인 내용을 확인하시기 바랍니다.
+	        </span>
 	    </div>
     </footer>
 </body>
