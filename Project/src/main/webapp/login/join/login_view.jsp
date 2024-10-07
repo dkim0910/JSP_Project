@@ -19,8 +19,13 @@ body {
 	width: 100%;
 }
 /* 뒤로가기 버튼 */
+.back_button {
+	margin: -30px 0 0 -45px;
+}
 .button-back-page {
 	background-color: white;
+	border: none;
+	cursor: pointer;
 }
 
 /* 폼 컨테이너 (로그인 박스 크기 증가) */
@@ -36,16 +41,16 @@ body {
 
 /* 모든 입력창에 적용되는 스타일 */
 .input_style {
-	width: 100%;
+	width: 98.5%;
 	height: 46px; /* 입력창 크기 증가 */
 	font-size: 16px;
 	border: 1px solid #ddd; /* 테두리 스타일 */
 	border-radius: 8px;
 	outline: none;
-	padding-left: 14px;
 	background-color: #fafafa;
 	margin-bottom: 20px; /* 입력창 사이 간격 증가 */
 	transition: border-color 0.3s;
+	text-indent: 10px;
 }
 
 .input_style:focus {
@@ -120,24 +125,30 @@ body {
 </style>
 </head>
 <body>
-	<% String flag = request.getParameter("flag"); %>
+	<%
+	String flag = request.getParameter("flag");
+	%>
 	<form action="/join/userlogin.fr" method="post" name="frm">
 		<!-- 상단 파란색 배경 영역 -->
-		<div class="top-section">
-			<a href="/Project/src/main/webapp/main-page/main.jsp">
-				<button type="button" aria-label="이전 페이지로 이동(메인 페이지)"
-					class="button-back-page">
-					<svg fill="#000000" height="28" width="28" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
-						 viewBox="0 0 404.258 404.258" xml:space="preserve">
-						<polygon points="289.927,18 265.927,0 114.331,202.129 265.927,404.258 289.927,386.258 151.831,202.129 "/>
-					</svg>
-				</button>
-			</a>
-			
-		</div>
+		<div class="top-section"></div>
 
 		<!-- 로그인 폼 컨테이너 -->
 		<div class="form-container">
+			<div class="back_button">
+				<a href="/main-page/main.jsp">
+					<button type="button" aria-label="이전 페이지로 이동(메인 페이지)"
+						class="button-back-page">
+						<svg fill="#000000" height="28" width="28" version="1.1"
+							id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+							xmlns:xlink="http://www.w3.org/1999/xlink"
+							viewBox="0 0 404.258 404.258" xml:space="preserve">
+						<polygon
+								points="289.927,18 265.927,0 114.331,202.129 265.927,404.258 289.927,386.258 151.831,202.129 " />
+					</svg>
+					</button>
+				</a>
+
+			</div>
 			<!-- 제목 -->
 			<h2>로그인</h2>
 
