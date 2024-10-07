@@ -128,14 +128,13 @@ boolean isLoggedIn = (session != null && session.getAttribute("member") != null)
 									<div class="sheet-order-product-price-box">
 										<strong class="sheet-order-product-price-origin">${productList.NORMAL_PRICE }
 											원</strong> <br /> <span class="sheet-order-product-price-sale">${productList.PRICE_AMOUNT }
-											원</span> <span class="sheet-order-product-price-text-coupon"
-											style="display: none">쿠폰적용가</span>
+											원</span>
 									</div>
 								</div>
 							</div>
-							<button type="button" class="sheet-order-product-coupon"
+							<%-- <button type="button" class="sheet-order-product-coupon"
 								id="button-product-apply-coupon-"
-								onclick="openPopup_couponApply('')">쿠폰사용</button>
+								onclick="openPopup_couponApply('')">쿠폰사용</button> --%>
 						</div>
 						<%-- </c:forEach> --%>
 					</div>

@@ -32,7 +32,7 @@
             <div class="flex-1 h-full">
                 <div id="icon-box">
                   <div id="icon">
-                    <a href="../my-page/my-main/my-page-main.html" id="login">
+                    <a href="../my-page/my-main/my-page-main.jsp" id="login">
                       <i class="fa-regular fa-user"></i>
                     </a>
                   </div>
