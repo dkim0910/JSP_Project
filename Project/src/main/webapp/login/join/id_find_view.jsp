@@ -31,16 +31,16 @@
 	
 	/* 모든 입력창에 적용되는 스타일 */
 	.input_style {
-	    width: 100%;
+	   	width: 98.5%;
 	    height: 46px; /* 입력창 크기 증가 */
 	    font-size: 16px;
 	    border: 1px solid #ddd; /* 테두리 스타일 */
 	    border-radius: 8px;
 	    outline: none;
-	    padding-left: 14px;
 	    background-color: #fafafa;
 	    margin-bottom: 20px; /* 입력창 사이 간격 증가 */
 	    transition: border-color 0.3s;
+	    text-indent: 10px;
 	}
 	
 	.input_style:focus {
