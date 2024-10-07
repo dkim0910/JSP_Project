@@ -18,6 +18,10 @@ body {
 	height: 100px;
 	width: 100%;
 }
+/* 뒤로가기 버튼 */
+.button-back-page {
+	background-color: white;
+}
 
 /* 폼 컨테이너 (로그인 박스 크기 증가) */
 .form-container {
@@ -120,7 +124,7 @@ body {
 	<form action="/join/userlogin.fr" method="post" name="frm">
 		<!-- 상단 파란색 배경 영역 -->
 		<div class="top-section">
-			<a href="main-page/main.jsp">
+			<a href="/Project/src/main/webapp/main-page/main.jsp">
 				<button type="button" aria-label="이전 페이지로 이동(메인 페이지)"
 					class="button-back-page">
 					<svg fill="#000000" height="28" width="28" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
