@@ -269,7 +269,6 @@
 								</div>
 								<div class="profile-info">
 									<label for="address">주소 : ${member.user_address }</label> 
-									<!-- <span id="address">서울특별시 강남구 테헤란로 123</span> -->
 								</div>
 								<div class="profile-info">
 									<label for="user-gender">성별 : ${member.user_gender }</label> <span id="user-gender">
@@ -536,16 +535,16 @@
 
 								<form action="/my-main/MemberUpdate.up">
 									<label for="user-Name" >이름</label> 
-									<input type="text" id="" name="user-Name" placeholder="이름을 입력하세요"> 
+									<input type="text" id="" name="user-Name" placeholder="현재 이름 : ${member.user_name }"> 
 									
 									<label for="user-Pw">비밀번호</label> 
-									<input type="text" id="" name="user-Pw" placeholder="비밀번호를 입력하세요"> 
+									<input type="text" id="" name="user-Pw" placeholder="현재 비밀번호 : ${member.user_pw }"> 
 									
 									<label for="user_address">주소</label>
-									<input type="text" id="" name="user_address" placeholder="주소를 입력하세요"> 
+									<input type="text" id="" name="user_address" placeholder="현재 주소 : ${member.user_address }"> 
 									
 									<label for="user_phone">전화번호</label>
-									<input type="tel" id="" name="user_phone" placeholder="전화번호를 입력하세요">
+									<input type="tel" id="" name="user_phone" placeholder="현재 전화번호 : ${member.user_phone }">
 
 									<label for="user-Gender">성별</label>
 									<div style="padding-top: 12px;">
