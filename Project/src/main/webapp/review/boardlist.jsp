@@ -7,28 +7,14 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<style>
-a:visited {
-	color: #ce93d8;
-	text-decoration: none;
-}
-
-a:hover {
-	color: #ce93d8;
-	text-decoration: none;
-	font-weight: bold;
-}
-
-a:link {
-	color: #ce93d8;
-	text-decoration: none;
-}
-
-table {
-	margin: 0 auto;
-}
-</style>
 </head>
+
+<!-- 테일윈드 css 불러오기 -->
+<script src="https://cdn.tailwindcss.com"></script>
+
+<!-- css연결 -->
+<link rel="stylesheet" href="style/boardlist.css">
+
 <body>
 	<c:set var="boardList" value="${requestScope.boardList }" />
 	<c:set var="totalCnt" value="${requestScope.totalCnt }" />

@@ -9,37 +9,25 @@ import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
 public class SqlMapConfig {
 	private static SqlSessionFactory factory;
-
-	// 클래스 초기화 블록(클래스가 처음 로딩 될 때 한번만 수행
+	
+	// 클래스 초기화 블록(클래스가 처음 로딩될 때 한번만 수행)
 	static {
-		
 		try {
-			String resouce ="com/kh/mybatis/config.xml";
+			String resource = "com/kh/mybatis/config.xml";
+			Reader reader 
+			= Resources.getResourceAsReader(resource);
 			
-			Reader reader = Resources.getResourceAsReader(resouce);
-			factory = new SqlSessionFactoryBuilder().build(reader);
-			
+			factory 
+			= new SqlSessionFactoryBuilder().build(reader);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		
-		
 	}
 	
-	public static SqlSessionFactory getFactory(){
+	public static SqlSessionFactory getFactory() {
 		return factory;
 	}
-
-	
-
-
-
-
-
-
 }
-
-
 
 
 
