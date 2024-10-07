@@ -63,7 +63,7 @@ boolean isLoggedIn = (session != null && session.getAttribute("member") != null)
 									</div>
 								</td>
 								<!-- 가격 -->
-								<td class="price">${order.price_amount}</td>
+								<td class="price" name="price" value="${order.price_amount}">${order.price_amount}</td>
 								<!-- 주문 날짜 -->
 								<td><span> 주문 날짜 <br /></span> ${order.ordered_date} <br />
 								</td>
