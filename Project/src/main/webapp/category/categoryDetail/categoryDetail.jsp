@@ -19,7 +19,9 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 </head>
 <body>
+	<c:set var="member" value="${sessionScope.member}" />
 	<c:set var="category" value="${requestScope.categoryList }"/>
+	<% boolean isLoggedIn = (session != null && session.getAttribute("member") != null); %>
     <div id="common">
         <div id="commonLayoutContainer">
             <!-- 상단 검색창 영역 -->
@@ -29,10 +31,12 @@
                     <button type="button" id="search-button" >검색</button>
                 </div>
                 <div class="top-menu">
-					<a href="../../my-page/my-main/my-page-main.jsp" class="menu-button">
+                	<a href="<%= isLoggedIn ? "../../my-page/my-main/my-page-main.jsp" : "../../login/join/login_view.jsp" %>" class="menu-button">
+					<!-- <a href="../../my-page/my-main/my-page-main.jsp" class="menu-button"> -->
 						<img src="/category/img/마이.png"  >
 					</a>
-                    <a href="/cart.ca" class="menu-button">
+					<a href="<%= isLoggedIn ? "/cart.ca" : "../../login/join/login_view.jsp" %>" class="menu-button">
+                    <!-- <a href="/cart.ca" class="menu-button"> -->
 						<img src="/category/img/카트.png"  >
                     </a>
                     <a href="../../main-page/main.jsp" class="menu-button">

@@ -81,7 +81,7 @@
 <body style="cursor: default;">
     <div class="container">
         <header class="header">
-            <a href="../../my-page/my-main/my-page-main.jsp" class="button-back-page" aria-label="이전 페이지로 이동"
+            <a href="/finishedRefund.my" class="button-back-page" aria-label="이전 페이지로 이동"
                 style="color: white;">
                 <svg width="35" height="35" viewBox="0 0 28 28" fill="none">
                     <path

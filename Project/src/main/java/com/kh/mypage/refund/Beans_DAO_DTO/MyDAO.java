@@ -58,18 +58,17 @@ public class MyDAO {
 	    session.delete("MyMapper.deleteFromUsers", userid);
 	}
 
-	// 환불 하면 "환불 완료" 로 update 하는거
-	public List<MyDTO> finishedRefund(String userid) {
+	// 환불 하면 "환불 완료"랑 sysdate update 하는거
+	public List<MyDTO> finishedRefund(String userid, String ordernum) {
 		HashMap<String, String> datas = new HashMap<>();
 		datas.put("userid", userid);
+		datas.put("ordernum", ordernum);
 		
 		List<MyDTO> refunds = new ArrayList<>();
 		refunds = session.selectList("MyMapper.finishedRefund", datas);	
 		
 		return refunds;
 	}
-
-
 
     
     

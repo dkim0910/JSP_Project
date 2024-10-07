@@ -18,9 +18,7 @@
 </head>
 <body>
 	<c:set var="member" value="${sessionScope.member}" />
-	<%
-    	boolean isLoggedIn = (session != null && session.getAttribute("member") != null);
-	%>
+	<% boolean isLoggedIn = (session != null && session.getAttribute("member") != null); %>
     <div id="common">
         <div id="commonLayoutContainer">
             <!-- 상단 검색창 영역 -->

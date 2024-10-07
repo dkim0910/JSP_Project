@@ -16,8 +16,8 @@ public class CartDAO {
 		session = factory.openSession(true);
 	}
 
-	public List<GoodsDTO> searchcartgoods(String user_id) {
-		List<GoodsDTO> result = null;
+	public List<CartDTO> searchcartgoods(String user_id) {
+		List<CartDTO> result = null;
 		result = session.selectList("Cart.searchgoods", user_id);
 
 		return result;
