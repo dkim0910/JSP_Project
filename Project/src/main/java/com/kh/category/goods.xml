@@ -10,6 +10,6 @@
  		SELECT * FROM PRODUCTS WHERE PRODUCT_ID = #{PRODUCT_ID}
     </select>
 	<insert id="addtocart" parameterType="map">
- 		INSERT INTO CART VALUES (#{user_id},#{PRODUCT_ID})
+ 		INSERT INTO CART VALUES (cart_seq.nextval,#{user_id},#{PRODUCT_ID})
  	</insert>
   </mapper>
