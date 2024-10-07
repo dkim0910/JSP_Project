@@ -26,19 +26,16 @@ public class MypageFrontController extends HttpServlet {
 		ActionForward forward = null;
 		
 		switch(rquestURI) {
+		// 나의 정보 페이지
 		case "/my-main/MemberList.up":
 			forward = new MemberListAction().execute(req, resp);
 			break;
+		// 회원 정보 수정 페이지
 		case "/my-main/MemberUpdate.up":
 			forward = new MembeUpdateAction().execute(req, resp);
 			break;
-		case "/my-main/MemberUpdateForm.up": // 회원 정보 수정 페이지
-            forward = new ActionForward();
-            forward.setPath("/my-page/my-main/myinformation_update.jsp");
-            forward.setRedirect(false); // forward 방식으로 JSP로 이동
-            break;
 		}
-		// ㅇ
+		
 		if(forward != null) {
 			if(forward.isRedirect()) {
 				resp.sendRedirect(forward.getPath());

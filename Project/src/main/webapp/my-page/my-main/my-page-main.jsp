@@ -219,7 +219,7 @@
 					<!-- 나의 정보 내용 페이지 -->
 					<div id="my-info" class="content-section" style="display: <c:out value="${not empty showMyInfo ? 'block' : 'none'}" />;">
 						<div class="profile-container">
-							<h2 class="bold">나의 정보</h2>
+							<h2 class="bold" id="myInformation">나의 정보</h2>
 							<!-- h2 태그 말고 class 줘서 크기 조절하기 다른 페이지도 같이 쓰게 (폰트랑 굵기 등 추가) -->
 							<p></p>
 							<div class="profile-info">
@@ -535,19 +535,11 @@
 
 
 								<form action="/my-main/MemberUpdate.up">
-									<!-- <div class="profile-info">
-										<label for="user-name">이름 :</label> 
-										<input type="text" id="" name="user-name" placeholder="이름을 입력하세요">
-									</div> -->
-
-									<label for="user-id">아이디</label> 
-									<input type="text" id="" name="user-id" placeholder="아이디를 입력하세요"> 
+									<label for="user-Name" >이름</label> 
+									<input type="text" id="" name="user-Name" placeholder="이름을 입력하세요"> 
 									
 									<label for="user-Pw">비밀번호</label> 
 									<input type="text" id="" name="user-Pw" placeholder="비밀번호를 입력하세요"> 
-									
-									<label for="user-Name" >이름</label> 
-									<input type="text" id="" name="user-Name" placeholder="이름을 입력하세요"> 
 									
 									<label for="user_address">주소</label>
 									<input type="text" id="" name="user_address" placeholder="주소를 입력하세요"> 

@@ -28,17 +28,16 @@ public class MembeUpdateAction implements Action{
         
         // 수정된 회원 정보를 받아서 DTO 객체에 저장
         UserDTO member = new UserDTO();
-        member.setUser_id(sessionMember.getUser_id()); // 세션에서 가져온 ID
-        member.setUser_name(request.getParameter("user-Name")); // 수정된 이름
-        member.setUser_pw(request.getParameter("user-Pw")); // 수정된 비밀번호
-        member.setUser_phone(request.getParameter("user_phone")); // 수정된 전화번호
-        member.setUser_address(request.getParameter("user_address")); // 수정된 주소
-        member.setUser_gender(request.getParameter("user-Gender")); // 수정된 성별
-        System.out.println("dao 진입");
+        member.setUser_id(sessionMember.getUser_id()); 					// 세션에서 가져온 ID
+        member.setUser_name(request.getParameter("user-Name")); 		// 수정된 이름
+        member.setUser_pw(request.getParameter("user-Pw")); 			// 수정된 비밀번호
+        member.setUser_phone(request.getParameter("user_phone")); 		// 수정된 전화번호
+        member.setUser_address(request.getParameter("user_address")); 	// 수정된 주소
+        member.setUser_gender(request.getParameter("user-Gender")); 	// 수정된 성별
         // DAO를 통해 회원 정보 수정
         if (dao.updateMember(member)) {
-            forward.setPath("/my-page/my-main/my-page-main.jsp"); 
-            //forward.setPath("/my-main/MemberList.up"); // 수정 완료 후 회원 정보 조회 페이지로 이동
+            //forward.setPath("/my-page/my-main/my-page-main.jsp"); 
+            forward.setPath("/my-main/MemberList.up"); // 수정 완료 후 회원 정보 조회 페이지로 이동
             forward.setRedirect(true);
         } else {
             request.setAttribute("message", "회원 정보 수정 실패"); // 수정 실패 시 메시지 설정
