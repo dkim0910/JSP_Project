@@ -52,16 +52,16 @@
 					<td>${goods.PRODUCT_ID }</td>
 					<td>${goods.PRODUCT_NAME }</td>
 					<td>${goods.NORMAL_PRICE }</td>
-					<td>${goods.PRODUCT_ID }</td>
-					<td>${goods.PRODUCT_ID }</td>
-					<td>삭제</a></td>
+					<td>1</td>
+					<td id="cart_total_price">${goods.NORMAL_PRICE }</td>
+					<td>비고</a></td>
 				</tr>
 			</c:forEach>
 			<tr>
 				<th></th>
 				<th></th>
 				<th></th>
-				<th>총액</th>
+				<th id="cart_final_price">총액</th>
 				<th></th>
 				<th></th>
 			</tr>

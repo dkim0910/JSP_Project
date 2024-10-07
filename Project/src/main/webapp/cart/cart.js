@@ -1,4 +1,4 @@
-// 전체 선택 및 해제 기능
+/*// 전체 선택 및 해제 기능
 function toggleSelectAll(source) {
     const checkboxes = document.querySelectorAll('.item-checkbox');
     checkboxes.forEach(checkbox => {
@@ -6,14 +6,14 @@ function toggleSelectAll(source) {
     });
 }
 
-/*// 선택된 항목 삭제 기능
+// 선택된 항목 삭제 기능
 function deleteSelectedItems() {
     const selectedItems = document.querySelectorAll('.item-checkbox:checked');
     if (selectedItems.length > 0) {
         let itemIds = Array.from(selectedItems).map(item => item.value);
         window.location.href = deleteSelectedItems.jsp?itemIds=${itemIds.join(",")};
     }
-}*/
+}
 
 // 옵션 변경 모달 열기
 function openOptionModal(itemId) {
@@ -30,7 +30,7 @@ function openCouponModal(itemId) {
 // 모달 닫기
 function closeModal(modalId) {
     document.getElementById(modalId).style.display = 'none';
-}
+}*/
 
 /*// 구매하기 기능 (선택된 항목 구매)
 function purchaseItems() {
