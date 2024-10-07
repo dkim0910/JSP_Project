@@ -119,7 +119,18 @@ body {
 	<% String flag = request.getParameter("flag"); %>
 	<form action="/join/userlogin.fr" method="post" name="frm">
 		<!-- 상단 파란색 배경 영역 -->
-		<div class="top-section"></div>
+		<div class="top-section">
+			<a href="main-page/main.jsp">
+				<button type="button" aria-label="이전 페이지로 이동(메인 페이지)"
+					class="button-back-page">
+					<svg fill="#000000" height="28" width="28" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
+						 viewBox="0 0 404.258 404.258" xml:space="preserve">
+						<polygon points="289.927,18 265.927,0 114.331,202.129 265.927,404.258 289.927,386.258 151.831,202.129 "/>
+					</svg>
+				</button>
+			</a>
+			
+		</div>
 
 		<!-- 로그인 폼 컨테이너 -->
 		<div class="form-container">
