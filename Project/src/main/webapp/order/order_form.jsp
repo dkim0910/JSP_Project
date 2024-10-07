@@ -68,10 +68,10 @@ boolean isLoggedIn = (session != null && session.getAttribute("member") != null)
 		<div class="double-section">
 			<div class="double-section-left">
 				<section class="sheet-section" id="sheet-section-recipient">
+					<div class="sheet-title">
+						<h2 class="sheet-title-address">배송지</h2>
+					</div>
 					<div class="sheet-address">
-						<div class="sheet-title">
-							<h2 class="sheet-title-address">배송지</h2>
-						</div>
 						<c:set var="user" value="${sessionScope.member}" />
 						<div class="sheet-address-title">
 							<strong class="sheet-address-title-name" id="recipient-name">
@@ -124,9 +124,10 @@ boolean isLoggedIn = (session != null && session.getAttribute("member") != null)
 									<a class="sheet-order-product-name">${productList.PRODUCT_NAME }</a>
 									<br /> <span class="sheet-order-product-option"></span>
 									<div class="sheet-order-product-price-box">
-										<strong class="sheet-order-product-price-origin">${productList.NORMAL_PRICE }
-											원</strong> <br /> <span class="sheet-order-product-price-sale">${productList.PRICE_AMOUNT }
-											원</span>
+										<strong class="sheet-order-product-price-origin"><fmt:formatNumber
+												value="${productList.NORMAL_PRICE }" pattern="#,###" /> 원</strong> <br />
+										<span class="sheet-order-product-price-sale"><fmt:formatNumber
+												value="${productList.PRICE_AMOUNT }" pattern="#,###" /> 원</span>
 									</div>
 								</div>
 							</div>
