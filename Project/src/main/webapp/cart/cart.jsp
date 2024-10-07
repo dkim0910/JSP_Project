@@ -7,7 +7,7 @@
 <%@taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 <html>
 <head>
-    <title>장바구니</title>
+    <title>장바구니 | 쇼핑하조</title>
     <link rel="stylesheet" href="/cart/cart.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="/cart/cart.js" defer></script>

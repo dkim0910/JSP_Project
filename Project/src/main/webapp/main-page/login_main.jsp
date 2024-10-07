@@ -6,7 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>쇼핑하조</title>
+<title>쇼핑하조 | 쇼핑하조</title>
  <!-- 페이지 제목 옆의 아이콘 -->
     <link href="https://i.ibb.co/X4b9F9N/logo.png" rel="icon">
 </head>

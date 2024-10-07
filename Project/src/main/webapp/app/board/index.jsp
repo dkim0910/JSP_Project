@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>게시판 | 쇼핑하조</title>
 </head>
 <body>
 	<a href="/board/BoardWirte.bo">[글 쓰기]</a>

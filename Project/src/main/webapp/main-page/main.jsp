@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>메인화면 | 쇼핑하조</title>
  <!-- 페이지 제목 옆의 아이콘 -->
     <link href="https://i.ibb.co/X4b9F9N/logo.png" rel="icon">
 </head>

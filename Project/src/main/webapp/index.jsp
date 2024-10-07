@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>DB불러온거 보는 페이지</title>
 </head>
 <body>
 	<a href="/my/mypage.my">DB불러온거 보는 페이지</a>
