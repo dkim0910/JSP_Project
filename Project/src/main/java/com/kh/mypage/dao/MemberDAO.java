@@ -31,11 +31,11 @@ public class MemberDAO {
 	    datas.put("userAddress", member.getUser_address());
 	    datas.put("userPhone", member.getUser_phone());
 	    datas.put("userGender", member.getUser_gender());
+	    
 	    // SQL 쿼리 실행 및 영향을 받은 행 수 확인
 	    if (session.update("Userinformation.updateMember", datas) == 1) {
 	        result = true; // 성공적으로 업데이트된 경우
 	    }
-	    
 	    return result; // 결과 반환
 	}
 }
