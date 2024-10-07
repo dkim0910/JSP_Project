@@ -58,11 +58,15 @@
     
     <!-- 상품 상세 이미지 -->
     <div class="product-detail-img">
-        <img src="./img/101-2.jpg" alt="상품 상세 이미지">
+        <img src="/category/detail/img/101-2.jpg" alt="상품 상세 이미지">
     </div>
 
     <div class="bottom-parchase-buttons">
-        구매하기
+    	<form id="buyForm" action="/purchase.product" method="post">
+			<input type="hidden" name="PRODUCT_ID" value="${goods.PRODUCT_ID}">
+			<input type="hidden" name="quantity" id="quantityInput" value="1">
+            <button type="button" class="buy-now" onclick="submitPurchaseForm()">구매하기</button>
+        </form>
     </div>
 	<script>
     	const productPrice = ${goods.NORMAL_PRICE}; // 상품의 개당 가격

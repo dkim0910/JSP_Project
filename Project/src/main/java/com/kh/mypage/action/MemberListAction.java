@@ -35,7 +35,7 @@ public class MemberListAction implements Action {
             forward.setRedirect(false);
             return forward;
         }
-
+        
         // 회원 정보를 request에 저장하여 JSP에서 사용 가능하도록 설정
         request.setAttribute("member", member);
         // '나의 정보'를 보여줄 플래그 설정

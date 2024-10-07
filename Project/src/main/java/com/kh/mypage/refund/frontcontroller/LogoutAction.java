@@ -24,7 +24,7 @@ public class LogoutAction implements Action{
 		
 		
 		forward.setRedirect(true);
-	    forward.setPath("/webapp/main-page/main.jsp");
+	    forward.setPath("/main-page/main.jsp");
 		
 		
 		return forward;

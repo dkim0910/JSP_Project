@@ -27,7 +27,7 @@ public class Make_DB_Jsoup {
             int i_start = 0;
             int i_end = 1000;
             for (int i = i_start; i < i_end; i++) {
-                int currentNum = startNum + i;
+                int currentNum = stratNum2 + i;
                 String productURL = baseURL + currentNum;
 
                 try {
