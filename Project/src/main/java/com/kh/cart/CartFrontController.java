@@ -1,4 +1,4 @@
-package com.kh.cart.dao;
+package com.kh.cart;
 
 
 import java.io.IOException;
