@@ -25,13 +25,12 @@ public class MyDAO {
     }
 
 	// 환불페이지에 필요한 요소 가지고 오기
-	public List<MyDTO> getRefunds(String userid, String orderedNum){
+	public List<MyDTO> getRefunds(String userid){
 		HashMap<String, String> datas = new HashMap<>();
 		datas.put("userid", userid);
-		datas.put("orderedNum", orderedNum);
 		
 		List<MyDTO> refunds = new ArrayList<>();
-		refunds = session.selectList("MyMapper.getRefunds", datas);	// .xml 에 있는거 가지고 옴 Board , getBoardList
+		refunds = session.selectList("MyMapper.getRefunds", datas);	
 		
 		return refunds;
 	}
@@ -42,7 +41,7 @@ public class MyDAO {
 		datas.put("userid", userid);
 		
 		List<MyDTO> refunds = new ArrayList<>();
-		refunds = session.selectList("MyMapper.getOrdered", datas);	// .xml 에 있는거 가지고 옴 Board , getBoardList
+		refunds = session.selectList("MyMapper.getOrdered", datas);
 		
 		return refunds;
 	}
@@ -57,6 +56,17 @@ public class MyDAO {
 
 	    // Users 테이블에서 USER_ID가 'admin'인 데이터 삭제
 	    session.delete("MyMapper.deleteFromUsers", userid);
+	}
+
+	// 환불 하면 "환불 완료" 로 update 하는거
+	public List<MyDTO> finishedRefund(String userid) {
+		HashMap<String, String> datas = new HashMap<>();
+		datas.put("userid", userid);
+		
+		List<MyDTO> refunds = new ArrayList<>();
+		refunds = session.selectList("MyMapper.finishedRefund", datas);	
+		
+		return refunds;
 	}
 
 

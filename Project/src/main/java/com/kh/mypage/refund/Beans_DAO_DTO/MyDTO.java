@@ -29,8 +29,8 @@ public class MyDTO {
     private String ordered_num;
 //    private String USER_ID;
 //    private String PRODUCT_ID;
-    
     private String ordered_date;
+    
 	public String getUser_id() {
 		return user_id;
 	}

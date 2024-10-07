@@ -95,8 +95,9 @@
         <div class="content">
             <div>
                 <h1>환불 및 교환 신청이 완료되었습니다</h1>
+                <br/>
                 <div>
-                    <a href="../../my-page/my-main/my-page-main.jsp" class="all-button">마이페이지로 돌아가기</a>
+                    <a href="/finishedRefund.my" class="all-button">마이페이지로 돌아가기</a>
                 </div>
             </div>
         </div>

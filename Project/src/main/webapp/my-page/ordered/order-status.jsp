@@ -32,6 +32,7 @@ boolean isLoggedIn = (session != null && session.getAttribute("member") != null)
 		<div class="orderlist"
 			style="min-height: 100vh; display: flex; flex-direction: column;">
 			<h1>나의 주문 내역</h1>
+			<c:set var="order" value="${requestScope.Ordered}"/>
 			<c:if test="${not empty Ordered}">
 				<table>
 					<thead>
@@ -57,12 +58,12 @@ boolean isLoggedIn = (session != null && session.getAttribute("member") != null)
 											class="product-image" />
 										<div class="product-details">
 											<p>${order.product_name}</p>
-											<p class="price">₩${order.price_amount}</p>
+											<p class="price">${order.price_amount}</p>
 										</div>
 									</div>
 								</td>
 								<!-- 가격 -->
-								<td class="price">₩${order.price_amount}</td>
+								<td class="price">${order.price_amount}</td>
 								<!-- 주문 날짜 -->
 								<td><span> 주문 날짜 <br /></span> ${order.ordered_date} <br />
 								</td>
@@ -73,11 +74,11 @@ boolean isLoggedIn = (session != null && session.getAttribute("member") != null)
 								</a></td>
 							</tr>
 						</c:forEach>
-						</c:if>
 					</tbody>
 				</table>
+						</c:if>
 				<!-- 환불할 제품이 없는 경우 -->
-				<c:if test="${empty Refunded}">
+				<c:if test="${empty Ordered}">
 					<p>환불할 제품이 없습니다.</p>
 				</c:if>
 		</div>
