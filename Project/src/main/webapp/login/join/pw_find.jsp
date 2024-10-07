@@ -108,7 +108,7 @@
 				<input type="text" name="user_name" class="input_style" placeholder="이름을 입력하세요."/>
 			</div>
 			<div class="input_row">
-				<input type="text" name="user_phone" class="input_style" placeholder="핸드폰 번호를 입력하세요."/>
+				<input type="text" name="user_phone" class="input_style" placeholder="휴대폰 번호를 입력하세요."/>
 			</div>
 				
 			<div class="input_row">

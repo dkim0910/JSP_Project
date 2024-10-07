@@ -20,7 +20,7 @@ public class UserJoinAction implements Action{
 		user.setUser_name(request.getParameter("user_name"));
 		user.setUser_phone(request.getParameter("user_phone"));
 		user.setUser_gender(request.getParameter("user_gender"));
-		//user.setUseraddress(request.getParameter("user_addr"));
+		user.setUser_address(request.getParameter("user_address"));
 		
 		// 회원가입 성공시
 		if(udao.join(user)) {

@@ -8,7 +8,7 @@
   	</select>
   
  	<insert id="join" parameterType="userdto">
- 		INSERT INTO USERS VALUES (#{user_id},#{user_pw},#{user_name},#{user_phone},#{user_gender},'???')
+ 		INSERT INTO USERS VALUES (#{user_id},#{user_pw},#{user_name},#{user_phone},#{user_gender},#{user_address})
  	</insert>
  	
  	<select id="login" parameterType="hashmap" resultType="userdto">
