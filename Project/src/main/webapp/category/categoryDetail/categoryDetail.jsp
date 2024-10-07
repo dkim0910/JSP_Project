@@ -11,7 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>카테고리 페이지</title>
     <!-- 페이지 제목 옆의 아이콘 -->
-    <link href="https://image.msscdn.net/favicon_152.ico" rel="icon">
+    <link href="https://i.ibb.co/X4b9F9N/logo.png" rel="icon">
     <link rel="stylesheet" href="/category/categoryDetail/categoryDetail.css">
     <!-- 폰트어썸 불러오기 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -19,7 +19,9 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 </head>
 <body>
+	<c:set var="member" value="${sessionScope.member}" />
 	<c:set var="category" value="${requestScope.categoryList }"/>
+	<% boolean isLoggedIn = (session != null && session.getAttribute("member") != null); %>
     <div id="common">
         <div id="commonLayoutContainer">
             <!-- 상단 검색창 영역 -->
@@ -29,10 +31,12 @@
                     <button type="button" id="search-button" >검색</button>
                 </div>
                 <div class="top-menu">
-					<a href="../../my-page/my-main/my-page-main.jsp" class="menu-button">
+                	<a href="<%= isLoggedIn ? "../../my-page/my-main/my-page-main.jsp" : "../../login/join/login_view.jsp" %>" class="menu-button">
+					<!-- <a href="../../my-page/my-main/my-page-main.jsp" class="menu-button"> -->
 						<img src="/category/img/마이.png"  >
 					</a>
-                    <a href="../../cart/cart.jsp" class="menu-button">
+					<a href="<%= isLoggedIn ? "/cart.ca" : "../../login/join/login_view.jsp" %>" class="menu-button">
+                    <!-- <a href="/cart.ca" class="menu-button"> -->
 						<img src="/category/img/카트.png"  >
                     </a>
                     <a href="../../main-page/main.jsp" class="menu-button">

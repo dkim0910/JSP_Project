@@ -1,10 +1,8 @@
 package com.kh.cart;
 
-
 import java.io.IOException;
 
 import com.kh.web.action.ActionForward;
-import com.kh.login.UserJoinAction;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -12,7 +10,7 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
-@WebServlet("*.org")
+@WebServlet("*.ca")
 public class CartFrontController extends HttpServlet{
 	@Override
 	protected void doGet(HttpServletRequest req,
@@ -27,18 +25,13 @@ public class CartFrontController extends HttpServlet{
 	
 	protected void doProcess(HttpServletRequest req, 
 			HttpServletResponse resp) throws ServletException, IOException {
-		
 		String requestURI = req.getRequestURI();
 		ActionForward forward = null;
 		
-//		 결제창
-		if(requestURI.equals("/order/order_login.or")) { 
-			forward = new CartLoginAction().execute(req, resp);
-		} else if(requestURI.equals("/order/order_form.or")) {
-			forward = new CartAction().execute(req, resp);
-
-		}
-		
+		// 장바구니에 저장된 상품 정보 불러오기
+		if(requestURI.equals("/cart.ca")) { 
+			forward = new CartListAction().execute(req, resp);
+		} 
 		
 		if(forward != null) {
 			// true, redirect 방식으로 페이지 이동할 경우

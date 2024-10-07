@@ -6,6 +6,7 @@
    <typeAliases>
       <typeAlias type="com.kh.login.UserDTO" alias="userdto"/>
       <typeAlias type="com.kh.category.GoodsDTO" alias="goodsdto"/>
+      <typeAlias type="com.kh.cart.CartDTO" alias="cartdto"/>
       <typeAlias type="com.kh.mypage.refund.Beans_DAO_DTO.MyDTO" alias="mydto"/>
       <typeAlias type="com.kh.app.board.dao.BoardDTO" alias="boarddto"/>
       <typeAlias type="com.kh.app.board.dao.ReplyDTO" alias="replydto"/>
@@ -26,6 +27,7 @@
      <mapper resource="com/kh/category/goods.xml"/>
      <mapper resource="com/kh/mypage/sql/member.xml"/>
      <mapper resource="com/kh/order/order.xml"/>
+     <mapper resource="com/kh/cart/cart.xml"/>
      <mapper resource="com/kh/web/sql/board.xml" />
   </mappers>
   

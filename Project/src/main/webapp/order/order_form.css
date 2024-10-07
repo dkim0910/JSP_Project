@@ -271,6 +271,9 @@ h2{
     width: 120px;
     height: 160px;
 }
+.sheet-order-product-information{
+	margin-top: 15px;
+}
 .sheet-order-product-brand{
     grid-area: brand;
     font-size: 18px;
