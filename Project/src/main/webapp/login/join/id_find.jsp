@@ -110,7 +110,7 @@
 				<input type="text" name="user_name" class="input_style" placeholder="이름을 입력하세요."/>
 			</div>
 			<div class="input_row">
-				<input type="text" name="user_phone" class="input_style" placeholder="휴대폰 번호를 입력하세요."/>
+				<input type="text" name="user_phone" class="input_style" placeholder="휴대폰 번호를 입력하세요." oninput="formatPhoneNumber(this)" maxlength="13"/>
 			</div>
 				
 			<div class="input_row">
@@ -124,6 +124,27 @@
 			</div>
 		</div>
 	</form>
-	
+	<script>
+		function formatPhoneNumber(input) {
+			// 입력 값에서 숫자만 추출
+			const value = input.value.replace(/\D/g, '');
+
+			// 11자리 제한
+			if (value.length > 11) {
+				input.value = value.slice(0, 11); // 11자리까지만 잘라냄
+			}
+
+			// 전화번호 형식 적용
+			if (value.length === 11) {
+				input.value = value.replace(/^(\d{3})(\d{4})(\d{4})$/, '$1-$2-$3');
+			} else if (value.length > 7) {
+				input.value = value.replace(/^(\d{3})(\d{4})$/, '$1-$2');
+			} else if (value.length > 3) {
+				input.value = value.replace(/^(\d{3})(\d{0,4})$/, '$1-$2');
+			} else {
+				input.value = value;
+			}
+		}
+	</script>
 </body>
 </html>
