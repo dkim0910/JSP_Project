@@ -252,7 +252,7 @@
 								</div>
 								<div class="profile-info">
 									<!-- 나중에 ${member.user_pw } 부분을 *로 수정하기 -->
-									<label for="user-pw">비밀번호 : ${member.user_pw }</label> <span id="user-pw">비밀번호는
+									<label for="user-pw"></label>비밀번호 : <span id="user-pw">비밀번호는
 										보안을 위해 표시되지 않습니다.</span>
 								</div>
 								<div class="profile-info">
@@ -268,8 +268,8 @@
 									</span>
 								</div>
 								<div class="profile-info">
-									<label for="address">주소 : ${member.user_address }</label> <span id="address">서울특별시
-										강남구 테헤란로 123</span>
+									<label for="address">주소 : ${member.user_address }</label> 
+									<!-- <span id="address">서울특별시 강남구 테헤란로 123</span> -->
 								</div>
 								<div class="profile-info">
 									<label for="user-gender">성별 : ${member.user_gender }</label> <span id="user-gender">
@@ -534,38 +534,40 @@
                                 -->
 
 
-								<form>
+								<form action="/my-main/MemberUpdate.up">
+									<!-- <div class="profile-info">
+										<label for="user-name">이름 :</label> 
+										<input type="text" id="" name="user-name" placeholder="이름을 입력하세요">
+									</div> -->
 
-									<div class="profile-info">
-										<label for="user-name">이름 :</label> <input type="text" id=""
-											name="user-name" placeholder="이름을 입력하세요">
-									</div>
+									<label for="user-id">아이디</label> 
+									<input type="text" id="" name="user-id" placeholder="아이디를 입력하세요"> 
+									
+									<label for="user-Pw">비밀번호</label> 
+									<input type="text" id="" name="user-Pw" placeholder="비밀번호를 입력하세요"> 
+									
+									<label for="user-Name" >이름</label> 
+									<input type="text" id="" name="user-Name" placeholder="이름을 입력하세요"> 
+									
+									<label for="user_address">주소</label>
+									<input type="text" id="" name="user_address" placeholder="주소를 입력하세요"> 
+									
+									<label for="user_phone">전화번호</label>
+									<input type="tel" id="" name="user_phone" placeholder="전화번호를 입력하세요">
 
-									<label for="user-id">아이디</label> <input type="text" id=""
-										name="user-id" placeholder="아이디를 입력하세요"> <label
-										for="pw">비밀번호</label> <input type="text" id="" name="pw"
-										placeholder="비밀번호를 입력하세요"> <label for="user-name"
-										class="">이름</label> <input type="text" id="" name="user-name"
-										placeholder="이름을 입력하세요"> <label for="user-addr">주소</label>
-									<input type="text" id="" name="user-addr"
-										placeholder="주소를 입력하세요"> <label for="phone">전화번호</label>
-									<input type="tel" id="" name="" placeholder="전화번호를 입력하세요">
-
-									<label for="user-gender">성별</label>
+									<label for="user-Gender">성별</label>
 									<div style="padding-top: 12px;">
-										<input type="radio" id="male" name="user-gender" value="male">
-										<label for="male">남</label> <input type="radio" id="female"
-											name="user-gender" value="female"> <label
-											for="female">여</label>
+										<input type="radio" id="male" name="user-Gender" value="M">
+										<label for="male">남</label> 
+										
+										<input type="radio" id="female" name="user-Gender" value="W"> 
+										<label for="female">여</label>
 									</div>
-
+									<div style="padding-top: 20px;">
+										<input type="submit" value="수정하기" class="all-button" onclick="showContent('my-info')"/> 
+									</div>
 								</form>
 
-								<div style="padding-top: 20px;">
-									<a href="#" onclick="showContent('my-info')"><input
-										type="button" class="all-button" value="수정하기" /></a>
-									<!-- 지금은 그냥 나의 정보 페이지로 이동하는데 나중에는 누루면 DB 에서 update 하고 나의 정보 페이지로 이동하게 만들기 -->
-								</div>
 							</div>
 
 						</div>
