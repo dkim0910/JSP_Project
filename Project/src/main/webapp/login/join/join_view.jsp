@@ -163,56 +163,43 @@ body {
 				<h2>회원가입</h2>
 			</div>
 			<!-- 아이디 입력 필드 -->
-			<!-- 아이디 입력 필드와 중복확인 버튼 -->
 			<div class="input_row" id="input_userid">
-			<p id="text"></p>
-				<input id="userid" class="input_style" type="text" name="user_id"
-					placeholder="아이디"> <input type="button" value="중복확인"
-					class="check_button" onclick="checkId();" />
+				<p id="text"></p>
+				<input id="userid" class="input_style" type="text" name="user_id" placeholder="아이디"> 
+				<input type="button" value="중복확인" class="check_button" onclick="checkId();" />
 			</div>
 			<!-- 비밀번호 입력 필드 -->
 			<div class="input_row">
-				<input id="userpw" class="input_style" type="password"
-					name="user_pw" placeholder="비밀번호">
+				<input id="userpw" class="input_style" type="password" name="user_pw" placeholder="비밀번호">
 			</div>
-
 			<!-- 비밀번호 확인 필드 -->
 			<div class="input_row">
-				<input id="userpw_re" class="input_style" type="password"
-					name="userpw_re" placeholder="비밀번호 확인">
+				<input id="userpw_re" class="input_style" type="password" name="userpw_re" placeholder="비밀번호 확인">
 			</div>
-
 			<!-- 이름 입력 필드 -->
 			<div class="input_row">
-				<input id="username" class="input_style" type="text"
-					name="user_name" placeholder="이름">
+				<input id="username" class="input_style" type="text" name="user_name" placeholder="이름">
 			</div>
-
 			<!-- 휴대폰 번호 입력 필드 -->
 			<div class="input_row" id="input_userphone">
-				<input id="userphone" class="input_style" type="text"
-					name="user_phone" placeholder="휴대폰 번호">
-					<!-- 주소 찾기 버튼 -->
-				<input type="button" value="주소 찾기"
-					class="addressFind_button" onclick="new_execDaumPostcode()" />			
+				<input id="userphone" class="input_style" type="text" name="user_phone" placeholder="휴대폰 번호" oninput="formatPhoneNumber(this)" maxlength="13" />
+				<input type="button" value="주소 찾기" class="addressFind_button" onclick="new_execDaumPostcode()" />			
 			</div>
 			<!-- 주소 입력 필드 -->
 			<div class="input_row">
-				<input id="useraddress" class="input_style" type="text"
-					name="user_address" placeholder="주소">
+				<input id="useraddress" class="input_style" type="text" name="user_address" placeholder="주소">
 			</div>
 			<br />
-
 			<!-- 성별 선택 필드 -->
 			<div class="input_row gender_section">
 				<input id="male" type="radio" name="user_gender" value="M" checked>
-				<label for="male">남자</label> <input id="female" type="radio"
-					name="user_gender" value="W"> <label for="female">여자</label>
+				<label for="male">남자</label> 
+				<input id="female" type="radio" name="user_gender" value="W"> 
+				<label for="female">여자</label>
 			</div>
 			<!-- 회원가입 버튼 -->
 			<div class="input_row">
-				<input type="button" value="회원가입" class="submit_button"
-					onclick="sendit()" />
+				<input type="button" value="회원가입" class="submit_button" onclick="sendit()" />
 			</div>
 			<!-- 하단 링크 (로그인, 아이디/비밀번호 찾기) -->
 			<div class="join">
@@ -221,6 +208,29 @@ body {
 			</div>
 		</div>
 	</form>
+
+	<script>
+		function formatPhoneNumber(input) {
+			// 입력 값에서 숫자만 추출
+			const value = input.value.replace(/\D/g, '');
+
+			// 11자리 제한
+			if (value.length > 11) {
+				input.value = value.slice(0, 11); // 11자리까지만 잘라냄
+			}
+
+			// 전화번호 형식 적용
+			if (value.length === 11) {
+				input.value = value.replace(/^(\d{3})(\d{4})(\d{4})$/, '$1-$2-$3');
+			} else if (value.length > 7) {
+				input.value = value.replace(/^(\d{3})(\d{4})$/, '$1-$2');
+			} else if (value.length > 3) {
+				input.value = value.replace(/^(\d{3})(\d{0,4})$/, '$1-$2');
+			} else {
+				input.value = value;
+			}
+		}
+	</script>
 </body>
 <script
 	src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
