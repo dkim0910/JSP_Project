@@ -86,6 +86,13 @@ function login() {
 	frm.submit();
 }
 
+// 엔터키 입력 체크
+document.addEventListener("keydown", function(event) {
+    if (event.key === "Enter") {
+        login();
+    }
+});
+
 // 주소 입력
 function new_execDaumPostcode() {
 	new daum.Postcode({
