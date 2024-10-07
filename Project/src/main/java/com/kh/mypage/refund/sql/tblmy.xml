@@ -9,7 +9,8 @@
 	</select>
 
 	<!-- 아직 DAO 랑 Action에 로직 추가 안했음 (유저 아이디도 가지고 올 수 있게 만들기) -->
-	<select id="getRefunds" parameterType="string" resultType="mydto">
+	<select id="getRefunds" parameterType="string"
+		resultType="mydto">
 		SELECT
 		o.ORDERED_NUM,
 		o.USER_ID,
@@ -22,15 +23,14 @@
 		FROM
 		Ordered o
 		JOIN
-		Products p ON o.PRODUCT_ID
-		=
-		p.PRODUCT_ID
+		Products p ON o.PRODUCT_ID = p.PRODUCT_ID
 		WHERE
 		o.USER_ID = #{userid}
 	</select>
 
 	<!-- 주문 내역 -->
-	<select id="getOrdered" parameterType="string" resultType="mydto">
+	<select id="getOrdered" parameterType="string"
+		resultType="mydto">
 		SELECT
 		o.ORDERED_NUM,
 		o.USER_ID,
@@ -43,9 +43,7 @@
 		FROM
 		Ordered o
 		JOIN
-		Products p ON o.PRODUCT_ID
-		=
-		p.PRODUCT_ID
+		Products p ON o.PRODUCT_ID = p.PRODUCT_ID
 		WHERE
 		o.USER_ID = #{userid}
 	</select>
@@ -66,16 +64,14 @@
 		DELETE FROM Users WHERE USER_ID = #{userid}
 	</delete>
 
-	// 
+	<!-- 환불하면 주문 내역 업데이트 제품 번호를 환불 완료 로 바꿈 () -->
 	<update id="finishedRefund" parameterType="string">
-		UPDATE ORDERED
-		SET ordered_id = '환불 완료'
-		WHERE USER_ID = #{userid} AND PRODUCT_ID = #{product_id}
-		
+		UPDATE
+		ORDERED
+		SET refund_status = '환불 완료',
+		refunded_date = SYSDATE
+		WHERE
+		USER_ID = #{userid} AND PRODUCT_ID = #{productid}
 	</update>
-	
-	<insert id="">
-	
-	</insert>
 
 </mapper>
