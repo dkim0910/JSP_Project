@@ -25,20 +25,31 @@ function toggleBold(selectedElement) {
 	// 클릭한 메뉴를 localStorage에 저장
     localStorage.setItem('activeMenu', selectedElement.innerText);
 }
-// 페이지 로드 시 localStorage 값 확인 및 적용(볼드체 적용 목적)
+
 window.onload = function() {
-    let activeMenu = localStorage.getItem('activeMenu');
-    
-    if (activeMenu) {
-        // 저장된 메뉴 텍스트와 일치하는 요소를 찾아서 bold 적용
+    let showMyInfo = '<c:out value="${showMyInfo}" />'; // 세션에서 showMyInfo 값을 가져옴
+
+    if (showMyInfo === 'true') {
+        // '나의 정보'가 선택된 상태라면 localStorage 값을 유지
+        let activeMenu = localStorage.getItem('activeMenu');
         const options = document.querySelectorAll('.sidebar-options');
         options.forEach(option => {
             if (option.innerText === activeMenu) {
                 option.classList.add('bold');
             }
         });
+    } else {
+        // '나의 정보'가 선택되지 않은 상태라면 localStorage 초기화
+        localStorage.removeItem('activeMenu');
+
+        // 모든 sidebar-options 요소에서 'bold' 클래스를 제거
+        const options = document.querySelectorAll('.sidebar-options');
+        options.forEach(option => {
+            option.classList.remove('bold');
+        });
     }
 };
+
 
 
 // 배달 현황 바 나오는 평션

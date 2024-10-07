@@ -3,8 +3,8 @@ package com.kh.cart;
 
 import java.util.List;
 
-import com.kh.cart.dao.CartDAO;
-import com.kh.cart.dao.CartDTO;
+import com.kh.cart.CartDAO;
+import com.kh.cart.CartDTO;
 import com.kh.web.action.Action;
 import com.kh.web.action.ActionForward;
 
