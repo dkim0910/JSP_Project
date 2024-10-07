@@ -24,6 +24,9 @@ public class FinishedRefund implements Action{
 		
 		String userid = member.getUser_id();
 		
+		String price = request.getParameter("price");
+		System.out.println(price);
+		
         
         
         if(member.getUser_id() != null){	

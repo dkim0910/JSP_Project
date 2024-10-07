@@ -30,6 +30,7 @@ public class MyDTO {
 //    private String USER_ID;
 //    private String PRODUCT_ID;
     private String ordered_date;
+    private String refunded_date;
     
 	public String getUser_id() {
 		return user_id;
@@ -138,6 +139,12 @@ public class MyDTO {
 	}
 	public void setOrdered_date(String ordered_date) {
 		this.ordered_date = ordered_date;
+	}
+	public String getRefunded_date() {
+		return refunded_date;
+	}
+	public void setRefunded_date(String refunded_date) {
+		this.refunded_date = refunded_date;
 	}
     
     

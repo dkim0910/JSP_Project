@@ -8,14 +8,8 @@
 		SELECT * FROM Products
 	</select>
 
-	<select id="getImage" resultType="mydto">
-		SELECT IMAGE_URL FROM PRODUCTS
-		p
-		WHERE p.PRODUCT_ID = #{Image1}
-	</select>
-
 	<!-- 아직 DAO 랑 Action에 로직 추가 안했음 (유저 아이디도 가지고 올 수 있게 만들기) -->
-	<select id="getRefunds" resultType="mydto">
+	<select id="getRefunds" parameterType="string" resultType="mydto">
 		SELECT
 		o.ORDERED_NUM,
 		o.USER_ID,
@@ -36,7 +30,7 @@
 	</select>
 
 	<!-- 주문 내역 -->
-	<select id="getOrdered" resultType="mydto">
+	<select id="getOrdered" parameterType="string" resultType="mydto">
 		SELECT
 		o.ORDERED_NUM,
 		o.USER_ID,
@@ -72,10 +66,16 @@
 		DELETE FROM Users WHERE USER_ID = #{userid}
 	</delete>
 
-	<update id="finishedRefund" resultType="mydto">
+	// 
+	<update id="finishedRefund" parameterType="string">
 		UPDATE ORDERED
-		SET product_id = '환불 완료'
-		WHERE USER_ID = #{userid}
+		SET ordered_id = '환불 완료'
+		WHERE USER_ID = #{userid} AND PRODUCT_ID = #{product_id}
+		
 	</update>
+	
+	<insert id="">
+	
+	</insert>
 
 </mapper>

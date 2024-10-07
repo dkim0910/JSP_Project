@@ -52,7 +52,6 @@ public class FrontController extends HttpServlet {
 			forward = new LogoutAction().execute(req, resp);
 			break;
 		case "/finishedRefund.my":
-			System.out.println("here");
 			forward = new FinishedRefund().execute(req, resp);
 			break;
 		}
