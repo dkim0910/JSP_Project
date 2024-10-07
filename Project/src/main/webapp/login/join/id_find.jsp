@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>아이디 찾기</title>
+<title>아이디 찾기 | 쇼핑하조</title>
 <style>
 	/* 페이지 기본 설정 */
 	body {
@@ -113,6 +113,12 @@
 				
 			<div class="input_row">
 				<input type="submit" value="아이디 찾기" class="btn"/> 
+			</div>
+			<!-- 하단 링크 (비밀번호 찾기, 회원가입, 회원가입) -->
+	        <div class="join">
+				<a href="pw_find.jsp">비밀번호찾기</a> |
+				<a href="join_view.jsp">회원가입</a> | 
+				<a href="login_view.jsp">로그인</a>
 			</div>
 		</div>
 	</form>

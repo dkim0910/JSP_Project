@@ -3,7 +3,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html>
 <head>
-    <title>아이디 찾기 결과</title>
+    <title>아이디 찾기 결과 | 쇼핑하조</title>
 <style>
 	/* 페이지 기본 설정 */
 	body {
