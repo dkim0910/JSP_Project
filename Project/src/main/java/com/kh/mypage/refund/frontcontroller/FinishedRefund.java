@@ -22,11 +22,10 @@ public class FinishedRefund implements Action{
 		
 		// 세션에 있는 값 가지고 오기
 //		String product_name = (String) session.getAttribute("product_name");
-//		String order_number = (String) session.getAttribute("order_number");
-		String product_id = (String) session.getAttribute("product_id");
+		String order_number = (String) session.getAttribute("order_number");
 		
 		// 세션에는 DTO로 되어 있으니 String 으로 변환하고 파라미터에 넣음 (제품 아이디 보내기)
-		String productid = product_id;
+		String ordernum = order_number;
 		
 		// 유저 아이디 값 보내기
         UserDTO member = (UserDTO) session.getAttribute("member");
@@ -36,13 +35,13 @@ public class FinishedRefund implements Action{
 			MyDAO mydao = new MyDAO();
 			
 			System.out.println(userid);
-			System.out.println(productid);
+			System.out.println(ordernum);
 			
-			List<MyDTO> finishedRefund = mydao.finishedRefund(userid, productid);
+			List<MyDTO> finishedRefund = mydao.finishedRefund(userid, ordernum);
 			request.setAttribute("finishedRefund", finishedRefund);
 			
 			forward.setRedirect(false);
-		    forward.setPath("/my-page/my-main/my-page-main.jsp");
+		    forward.setPath("/ordered.my");
 		} else { 			
 			// 로그인 실패
 			forward.setRedirect(true);

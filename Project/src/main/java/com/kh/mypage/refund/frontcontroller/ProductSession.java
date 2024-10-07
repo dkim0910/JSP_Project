@@ -16,7 +16,6 @@ public class ProductSession implements Action{
 		// jsp 페이지에서 name, value 값으로 값 가지고옴
 		String product_name = request.getParameter("product-name"); 
 		String order_number = request.getParameter("order-number"); 
-		String product_id = request.getParameter("product-id"); 
 
 		// 세션 열기
 		HttpSession session = request.getSession();
@@ -24,7 +23,6 @@ public class ProductSession implements Action{
 		// 세션에 값들 저장
 		session.setAttribute("product_name", product_name);
 		session.setAttribute("order_number", order_number);
-		session.setAttribute("product_id", product_id);
 		
 		forward.setRedirect(false);
 		forward.setPath("/finishedRefund.my");

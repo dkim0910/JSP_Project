@@ -28,42 +28,45 @@ boolean isLoggedIn = (session != null && session.getAttribute("member") != null)
 			</a>
 			<h1 style="flex-grow: 1; text-align: center;">환불 및 교환</h1>
 		</header>
-		<form id="refund-form"
-			action="/setSessionForProductsAtFinished-Refund.my" method="post">
-			<section class="products-section" id="remove-style"
-				style="min-height: 100vh; display: flex; flex-direction: column;">
-				<h2>구매 내역</h2>
 
-				<c:if test="${not empty Refunded}">
-					<h2>환불 제품 목록</h2>
-					<ul class="product-list">
-						<c:forEach var="refund" items="${Refunded}" varStatus="status">
-							<c:if test="${status.index < 5}">
+		<section class="products-section" id="remove-style"
+			style="min-height: 100vh; display: flex; flex-direction: column;">
+			<h2>구매 내역</h2>
+
+			<c:if test="${not empty Refunded}">
+				<h2>환불 제품 목록</h2>
+				<ul class="product-list">
+					<c:forEach var="refund" items="${Refunded}" varStatus="status">
+						<c:if test="${status.index < 5}">
+							<!-- 환불 날짜 또는 환불 상태가 비어있는 경우에만 보여줌 -->
+							<c:if test="${empty refund.refunded_date || empty refund.refund_status}">
 								<li class="product-item"
 									onclick="showRefundForm('${refund.product_name}', '${refund.ordered_num}')">
 									<img src="${refund.image_url}" alt="${refund.product_name}"
-									class="product-image"> <span class="product-name">${refund.product_name}</span>
+										class="product-image"> <span class="product-name">${refund.product_name}</span>
 									<span class="order-number">주문 번호: ${refund.ordered_num}</span>
-									<span class="refund-button" onclick="removeStyles()">환불
-										신청</span> <input type="hidden" id="product-id" name="product-id"
-									value="${refund.product_id}">
+									<span class="refund-button" onclick="removeStyles()">환불 신청</span>
 								</li>
 							</c:if>
-						</c:forEach>
-
-						<c:if test="${fn:length(Refunded) == 0}">
-							<li class="product-item" style="display: none;"></li>
+							<!-- 환불 날짜 또는 환불 상태가 비어있지 않은 경우 생략 -->
 						</c:if>
-					</ul>
-				</c:if>
+					</c:forEach>
 
-				<c:if test="${empty Refunded}">
-					<p>환불할 제품이 없습니다.</p>
-				</c:if>
-			</section>
+					<c:if test="${fn:length(Refunded) == 0}">
+						<li class="product-item" style="display: none;"></li>
+					</c:if>
+				</ul>
+			</c:if>
 
-			<section class="refund-form-section" id="refund-form-section">
-				<h2>환불 신청서</h2>
+			<c:if test="${empty Refunded}">
+				<p>환불할 제품이 없습니다.</p>
+			</c:if>
+		</section>
+
+		<section class="refund-form-section" id="refund-form-section">
+			<h2>환불 신청서</h2>
+			<form id="refund-form"
+				action="/setSessionForProductsAtFinished-Refund.my" method="post">
 				<div class="form-group">
 					<label for="product-name">제품 이름</label> <input type="text"
 						id="product-name" name="product-name"
@@ -74,13 +77,12 @@ boolean isLoggedIn = (session != null && session.getAttribute("member") != null)
 						id="order-number" name="order-number"
 						value="${refund.ordered_num}" readonly>
 				</div>
-				<div></div>
 				<div class="form-group">
 					<label for="reason">환불 사유</label>
 					<textarea id="reason" name="reason" rows="4"></textarea>
 				</div>
 				<button type="submit" class="submit-button">환불 신청하기</button>
-		</form>
+			</form>
 		</section>
 
 		<footer class="footer">

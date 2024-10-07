@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 <!DOCTYPE html>
 <html>
 <%
@@ -68,15 +68,19 @@ boolean isLoggedIn = (session != null && session.getAttribute("member") != null)
 								<td><span> 주문 날짜 <br /></span> ${order.ordered_date} <br />
 								</td>
 								<!-- 환불 및 교환 버튼 -->
-								<td><a href="/refund.my"> <input type="button"
-										class="refund-button" value="환불 및 교환하기"
-										style="cursor: pointer;" />
-								</a></td>
+								<td>
+									<c:if test="${empty order.refunded_date || empty order.refund_status}">
+										<a href="/refund.my"> 
+											<input type="button" class="refund-button" value="환불 및 교환하기"
+												style="cursor: pointer;" />
+										</a>
+									</c:if>
+								</td>
 							</tr>
 						</c:forEach>
 					</tbody>
 				</table>
-						</c:if>
+			</c:if>
 				<!-- 환불할 제품이 없는 경우 -->
 				<c:if test="${empty Ordered}">
 					<p>환불할 제품이 없습니다.</p>
@@ -95,7 +99,7 @@ boolean isLoggedIn = (session != null && session.getAttribute("member") != null)
 	</div>
 
 	<script type="text/javascript">
-		// 000,000 만들기
+		// 가격 포맷팅
 		function formatPrice() {
 			let prices = document.querySelectorAll('.price');
 

@@ -59,10 +59,10 @@ public class MyDAO {
 	}
 
 	// 환불 하면 "환불 완료"랑 sysdate update 하는거
-	public List<MyDTO> finishedRefund(String userid, String productid) {
+	public List<MyDTO> finishedRefund(String userid, String ordernum) {
 		HashMap<String, String> datas = new HashMap<>();
 		datas.put("userid", userid);
-		datas.put("productid", productid);
+		datas.put("ordernum", ordernum);
 		
 		List<MyDTO> refunds = new ArrayList<>();
 		refunds = session.selectList("MyMapper.finishedRefund", datas);	
