@@ -71,6 +71,7 @@ boolean isLoggedIn = (session != null && session.getAttribute("member") != null)
 								</td>
 								<!-- 환불 및 교환 버튼 -->
 								<td>
+								<!-- 환불 날짜 또는 환불 상태에 값이 없을깨만 버튼 보여줌 (있으면 환불 된거임) -->
 									<c:if test="${empty order.refunded_date || empty order.refund_status}">
 										<a href="/refund.my"> 
 											<input type="button" class="refund-button" value="환불 및 교환하기"
