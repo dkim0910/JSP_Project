@@ -17,14 +17,11 @@ public class LogoutAction implements Action{
 		HttpSession session = request.getSession();
 		
 		UserDTO member = (UserDTO) session.getAttribute("member");
-		System.out.println("member1" + member.getUser_id());
+		
 		session.removeAttribute("member");
 		
-		System.out.println("member2" + member.getUser_id());
-		
-		
 		forward.setRedirect(true);
-	    forward.setPath("/webapp/main-page/main.jsp");
+	    forward.setPath("/main-page/main.jsp");
 		
 		
 		return forward;
