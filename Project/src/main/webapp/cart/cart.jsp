@@ -1,11 +1,11 @@
-<%@page import="com.kh.cart.dao.CartDTO"%>
+<%@page import="com.kh.cart.CartDTO"%>
 <%@page import="java.text.DecimalFormat"%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page import="java.util.ArrayList, java.util.HashMap, java.util.List, java.util.Map" %>
-<%@page import="com.kh.cart.dao.CartAction"%>
-<%@page import="com.kh.cart.dao.CartFrontController"%>
-<%@page import="com.kh.cart.dao.CartAction"%>
+<%@page import="com.kh.cart.CartAction"%>
+<%@page import="com.kh.cart.CartFrontController"%>
+<%@page import="com.kh.cart.CartAction"%>
 
 
 <html>
