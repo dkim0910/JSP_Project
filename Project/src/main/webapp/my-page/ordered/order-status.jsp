@@ -4,7 +4,9 @@
 <%@taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 <!DOCTYPE html>
 <html>
-
+<%
+boolean isLoggedIn = (session != null && session.getAttribute("member") != null);
+%>
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -30,47 +32,54 @@
 		<div class="orderlist"
 			style="min-height: 100vh; display: flex; flex-direction: column;">
 			<h1>나의 주문 내역</h1>
-			<table>
-				<thead>
-					<tr>
-						<th>주문 번호</th>
-						<th>상품명</th>
-						<th>가격</th>
-						<th>주문 날짜</th>
-						<th>환불/교환</th>
-					</tr>
-				</thead>
-				<tbody>
-					<c:forEach var="order" items="${Ordered}">
+			<c:if test="${not empty Ordered}">
+				<table>
+					<thead>
 						<tr>
-							<!-- 주문 번호 -->
-							<td id="order-number">${order.ordered_num}</td>
-
-							<!-- 상품명 및 이미지 -->
-							<td>
-								<div class="product-info">
-									<img src="${order.image_url}" alt="${order.product_name}"
-										class="product-image" />
-									<div class="product-details">
-										<p>${order.product_name}</p>
-										<p class="price">₩${order.price_amount}</p>
-									</div>
-								</div>
-							</td>
-							<!-- 가격 -->
-							<td class="price">₩${order.price_amount}</td>
-							<!-- 주문 날짜 -->
-							<td><span> 주문 날짜 <br /></span> ${order.ordered_date} <br />
-							</td>
-							<!-- 환불 및 교환 버튼 -->
-							<td><a href="/refund.my"> <input type="button"
-									class="refund-button" value="환불 및 교환하기"
-									style="cursor: pointer;" />
-							</a></td>
+							<th>주문 번호</th>
+							<th>상품명</th>
+							<th>가격</th>
+							<th>주문 날짜</th>
+							<th>환불/교환</th>
 						</tr>
-					</c:forEach>
-				</tbody>
-			</table>
+					</thead>
+					<tbody>
+
+						<c:forEach var="order" items="${Ordered}">
+							<tr>
+								<!-- 주문 번호 -->
+								<td id="order-number">${order.ordered_num}</td>
+
+								<!-- 상품명 및 이미지 -->
+								<td>
+									<div class="product-info">
+										<img src="${order.image_url}" alt="${order.product_name}"
+											class="product-image" />
+										<div class="product-details">
+											<p>${order.product_name}</p>
+											<p class="price">₩${order.price_amount}</p>
+										</div>
+									</div>
+								</td>
+								<!-- 가격 -->
+								<td class="price">₩${order.price_amount}</td>
+								<!-- 주문 날짜 -->
+								<td><span> 주문 날짜 <br /></span> ${order.ordered_date} <br />
+								</td>
+								<!-- 환불 및 교환 버튼 -->
+								<td><a href="/refund.my"> <input type="button"
+										class="refund-button" value="환불 및 교환하기"
+										style="cursor: pointer;" />
+								</a></td>
+							</tr>
+						</c:forEach>
+						</c:if>
+					</tbody>
+				</table>
+				<!-- 환불할 제품이 없는 경우 -->
+				<c:if test="${empty Refunded}">
+					<p>환불할 제품이 없습니다.</p>
+				</c:if>
 		</div>
 
 		<footer class="footer">
