@@ -116,6 +116,7 @@ body {
 </style>
 </head>
 <body>
+	<% String flag = request.getParameter("flag"); %>
 	<form action="/join/userlogin.fr" method="post" name="frm">
 		<!-- 상단 파란색 배경 영역 -->
 		<div class="top-section"></div>
