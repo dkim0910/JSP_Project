@@ -335,7 +335,7 @@ boolean isLoggedIn = (session != null && session.getAttribute("member") != null)
 							<div class="sheet-save-point-level">
 								<span class="sheet-save-point-level-text"> LV.5 실버 : 2%
 									적립 </span> <strong class="sheet-save-point-level-subject-price">
-									<fmt:formatNumber value="${savePoint}" pattern="#,###" /> 원
+									<fmt:formatNumber value="${savePoint}" pattern="#,###" />원
 								</strong>
 							</div>
 							<div class="sheet-save-point-level">
@@ -359,7 +359,7 @@ boolean isLoggedIn = (session != null && session.getAttribute("member") != null)
 							<div class="sheet-payment-price-box">
 								<span class="sheet-payment-price-subject-text"> 상품 금액 </span> <strong
 									class="sheet-payment-price-subject-price"><fmt:formatNumber
-										value="${totalPrice_original}" pattern="#,###" /> 원 </strong>
+										value="${totalPrice_original}" pattern="#,###" />원 </strong>
 							</div>
 							<div class="sheet-payment-price-box">
 								<span class="sheet-payment-price-subject-text"> 할인 금액 </span> <strong
@@ -391,8 +391,7 @@ boolean isLoggedIn = (session != null && session.getAttribute("member") != null)
 										name="quantity" id="quantityInput" value="1"> <input
 										type="hidden" name="user_id" value="${member.user_id}">
 									<button type="submit" class="sheet-purchase-button-price">
-										<fmt:formatNumber value="${totalPrice_amount}" pattern="#,###" />
-										원 결제하기
+										<fmt:formatNumber value="${totalPrice_amount}" pattern="#,###" />원 결제하기
 									</button>
 								</div>
 							</form>
@@ -480,8 +479,7 @@ boolean isLoggedIn = (session != null && session.getAttribute("member") != null)
 				<input type="hidden" name="quantity" id="quantityInput" value="1">
 				<button type="submit" class="sheet-purchase-button-price"
 					id="display-result-pay-amount">
-					<fmt:formatNumber value="${totalPrice_amount}" pattern="#,###" />
-					원 결제하기
+					<fmt:formatNumber value="${totalPrice_amount}" pattern="#,###" />원 결제하기
 				</button>
 			</div>
 		</form>
