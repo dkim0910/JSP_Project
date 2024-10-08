@@ -75,14 +75,6 @@ document.addEventListener('DOMContentLoaded', () => {
 		}
 	});
 });
-//  쿠폰 적용 팝업창
-function openPopup_couponApply() {
-	var popupURL = "https://www.daum.net";
-
-	var popupProperties = "width=400, height=700 ,scrollbars=yes";
-
-	window.open(popupURL, "Popup", popupProperties);
-}
 
 // 기타 결제 부분
 function toggleOtherPayments(show) {
@@ -115,13 +107,28 @@ document.querySelectorAll('.card-selection-input').forEach((input) => {
 });
 
 // 결제하기 버튼
-document.querySelector('.sheet-purchase-button').addEventListener('click', function() {
-	document.getElementById('display-result-pay-amount').click();
-});
+function purchaseItem(productId, userId) {
+    const form = document.createElement('form');
+    form.action = '/order/order_confirmed.or_c';
+    form.method = 'post';
 
-document.querySelector('.sheet-purchase-button').addEventListener('click', function() {
-	document.getElementById('sheet-purchase-button').submit();
-});
+    // PRODUCT_ID 추가
+    const productIdInput = document.createElement('input');
+    productIdInput.type = 'hidden';
+    productIdInput.name = 'PRODUCT_ID[]'; // 배열 형태로 전송
+    productIdInput.value = productId;
+    form.appendChild(productIdInput);
+
+    // 사용자 ID 추가
+    const userIdInput = document.createElement('input');
+    userIdInput.type = 'hidden';
+    userIdInput.name = 'user_id';
+    userIdInput.value = userId; // JSP 변수 사용
+    form.appendChild(userIdInput);
+
+    document.body.appendChild(form);
+    form.submit(); // 폼 전송
+}
 
 // 바텀바 2차메뉴 클릭 기능
 $(document).ready(function() {

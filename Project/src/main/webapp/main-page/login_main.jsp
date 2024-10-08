@@ -59,9 +59,9 @@
 							</div>
 							<a href="../my-page/my-main/my-page-main.jsp" id="login"> <i
 								class="fa-regular fa-user"></i>
-							</a> <a href="../cart/cart.jsp" id="cart"> <i
+							</a> <a href="/cart/cart.jsp" id="cart"> <i
 								class="fa-solid fa-cart-shopping"></i>
-							</a> <a href="../category/category.jsp" id="more"> <i
+							</a> <a href="/category/category.jsp" id="more"> <i
 								class="fa-solid fa-bars"></i>
 							</a>
 						</div>
