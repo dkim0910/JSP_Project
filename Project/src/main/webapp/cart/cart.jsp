@@ -6,7 +6,9 @@
 <%@taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 <html>
 <head>
-    <title>장바구니</title>
+    <title>장바구니 | 쇼핑하조</title>
+     <!-- 페이지 제목 옆의 아이콘 -->
+    <link href="https://i.ibb.co/X4b9F9N/logo.png" rel="icon">
     <link rel="stylesheet" href="/cart/cart.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="/cart/cart.js" defer></script>
