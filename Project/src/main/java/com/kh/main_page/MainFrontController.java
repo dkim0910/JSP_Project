@@ -33,7 +33,6 @@ public class MainFrontController extends HttpServlet {
 		switch (requestURI) {
 		// DB 상품 전체 조회
 		case "/getAllItems.main":
-			System.out.println("here2");
 			forward = new GetAllItems().execute(req, resp);
 			break;
 		}
