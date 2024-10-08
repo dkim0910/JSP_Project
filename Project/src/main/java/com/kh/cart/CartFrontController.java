@@ -25,7 +25,6 @@ public class CartFrontController extends HttpServlet{
 	
 	protected void doProcess(HttpServletRequest req, 
 			HttpServletResponse resp) throws ServletException, IOException {
-		System.out.println("front start");
 		String requestURI = req.getRequestURI();
 		ActionForward forward = null;
 		
@@ -35,9 +34,7 @@ public class CartFrontController extends HttpServlet{
 		}
 		// 선택한 상품 구매하기 페이지로 보내기
 		else if(requestURI.equals("/purchaseItems.ca")) { 
-			System.out.println("/purchaseItems.ca start");
 			forward = new PurchaseAction().execute(req, resp);
-			System.out.println("/purchaseItems.ca finish");
 		}
 		
 		if(forward != null) {

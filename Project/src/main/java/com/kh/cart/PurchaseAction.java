@@ -15,21 +15,17 @@ public class PurchaseAction {
 		ActionForward forward = new ActionForward();
 		CartDAO cdao = new CartDAO();
 		GoodsDTO gdto = new GoodsDTO();
-		System.out.println("PurchaseAction start");
 		String itemIdsParam = request.getParameter("itemIds");
 		// itemIds를 콤마로 분리하여 배열로 변환
         String[] itemIdsArray = null;
         if (itemIdsParam != null && !itemIdsParam.isEmpty()) {
             itemIdsArray = itemIdsParam.split(",");
         }
-        System.out.println("cado.searchByList start");
 		List<GoodsDTO> cartList = cdao.searchByList(itemIdsArray);
-		System.out.println(cartList.get(0).getPRODUCT_ID());
         request.setAttribute("cartList", cartList);
         
         forward.setRedirect(false);
 		forward.setPath("/order/order_form.jsp");
-		System.out.println("PurchaseAction end");
 		return forward;
 	}
 }
