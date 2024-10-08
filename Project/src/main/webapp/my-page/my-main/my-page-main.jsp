@@ -107,7 +107,9 @@
 							onclick="showContent('my-info')">
 
 							<!-- 세션에 저장되어 있는 user 값 가지고 옴 (UserLoginAction에 있음)-->
-							<% boolean isLoggedIn = (session != null && session.getAttribute("member") != null); %>
+							<%
+							boolean isLoggedIn = (session != null && session.getAttribute("member") != null);
+							%>
 
 							<c:set var="member" value="${sessionScope.member}" />
 							<!-- 세션에 user_name 이 있는 경우 -->
@@ -348,16 +350,15 @@
 					<div id="events" class="content-section" style="display: none;">
 						<div>
 
-							<!-- 아직 a 태그에 # 넣음 나중에는 이벤트 페이지 만들어서 이벤트 내용 집어 넣기 -->
-							<!-- 이미지 넣기? -->
-
 							<!-- 스크롤 가능한 이벤트 카드 섹션 -->
 							<div class="events-section-wrapper">
 								<section class="events-section">
 
 									<!-- 이벤트 카드 1 -->
 									<div class="event-card">
-										<img src="https://img.pikbest.com/backgrounds/20190730/warm-color-autumn-discount-coupon-1_5723639.jpg!sw800" alt="이벤트 1 이미지">
+										<img
+											src="https://img.pikbest.com/backgrounds/20190730/warm-color-autumn-discount-coupon-1_5723639.jpg!sw800"
+											alt="이벤트 1 이미지">
 										<div class="event-card-content">
 											<h3>가을 시즌 할인</h3>
 											<p>가을을 맞이 아웃터 할인중! 지금 바로 쇼핑하세요.</p>
@@ -367,7 +368,9 @@
 
 									<!-- 이벤트 카드 2 -->
 									<div class="event-card">
-										<img src="/my-page/events/images/DALL·E-2024-10-08-13.59_1.jpg" alt="이벤트 2 이미지">
+										<img
+											src="/my-page/events/images/DALL·E-2024-10-08-13.59_1.jpg"
+											alt="이벤트 2 이미지">
 										<div class="event-card-content">
 											<h3>3만원의 행복 이벤트</h3>
 											<p>3만원으로 구매할 수 있는 상품 판매중! 지금 바로 쇼핑하세요.</p>
@@ -377,7 +380,9 @@
 
 									<!-- 이벤트 카드 3 -->
 									<div class="event-card">
-										<img src="https://marketplace.canva.com/EAGEK6RPm58/1/0/1600w/canva-%EB%B3%B4%EB%9D%BC%EC%83%89-%EB%B0%94%ED%83%95-%EB%8F%84%ED%98%95-%EC%9D%BC%EB%9F%AC%EC%8A%A4%ED%8A%B8-%EC%8B%A0%EA%B7%9C-%EA%B0%80%EC%9E%85-%EC%BF%A0%ED%8F%B0-%EC%9D%B4%EB%B2%A4%ED%8A%B8-instagram-%EA%B2%8C%EC%8B%9C%EB%AC%BC-y9QtJNhIw38.jpg" alt="이벤트 3 이미지">
+										<img
+											src="https://marketplace.canva.com/EAGEK6RPm58/1/0/1600w/canva-%EB%B3%B4%EB%9D%BC%EC%83%89-%EB%B0%94%ED%83%95-%EB%8F%84%ED%98%95-%EC%9D%BC%EB%9F%AC%EC%8A%A4%ED%8A%B8-%EC%8B%A0%EA%B7%9C-%EA%B0%80%EC%9E%85-%EC%BF%A0%ED%8F%B0-%EC%9D%B4%EB%B2%A4%ED%8A%B8-instagram-%EA%B2%8C%EC%8B%9C%EB%AC%BC-y9QtJNhIw38.jpg"
+											alt="이벤트 3 이미지">
 										<div class="event-card-content">
 											<h3>신규 회원 웰컴 쿠폰</h3>
 											<p>신규 회원 가입 시 할인 쿠폰을 드립니다!</p>
@@ -387,7 +392,9 @@
 
 									<!-- 이벤트 카드 4 -->
 									<div class="event-card">
-										<img src="https://img.freepik.com/free-vector/gradient-vip-invitation-card-template_23-2150996118.jpg" alt="이벤트 4 이미지">
+										<img
+											src="https://img.freepik.com/free-vector/gradient-vip-invitation-card-template_23-2150996118.jpg"
+											alt="이벤트 4 이미지">
 										<div class="event-card-content">
 											<h3>VIP 전용 프로모션</h3>
 											<p>VIP 고객님들만을 위한 특별한 혜택을 누려보세요.</p>
@@ -424,26 +431,29 @@
 
 									<!-- 공지 2 -->
 									<div class="event-card">
-										<div class="event-card-content">
-											<h3>공지 2</h3>
-											<p>멤버십 포인트 있는거 만들 시간이 없다</p>
-										</div>
+										<a href="">
+											<div class="event-card-content">
+												<h3>공지 2</h3>
+												<p>멤버십 포인트 있는거 만들 시간이 없다</p>
+											</div>
 									</div>
 
 									<!-- 공지 3 -->
 									<div class="event-card">
-										<div class="event-card-content">
-											<h3>공지 3</h3>
-											<p>DB 설게 어렵네</p>
-										</div>
+										<a href="">
+											<div class="event-card-content">
+												<h3>공지 3</h3>
+												<p>DB 설게 어렵네</p>
+											</div>
 									</div>
 
 									<!-- 공지 4 -->
 									<div class="event-card">
-										<div class="event-card-content">
-											<h3>공지 4</h3>
-											<p>섭종합니다</p>
-										</div>
+										<a href="">
+											<div class="event-card-content">
+												<h3>공지 4</h3>
+												<p>섭종합니다</p>
+											</div>
 									</div>
 
 								</section>

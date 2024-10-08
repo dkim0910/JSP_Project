@@ -20,6 +20,8 @@
   </environments>
   <mappers>
   	<mapper resource="com/kh/mypage/refund/sql/tblmy.xml"/>
+  	<!-- 메인에 mvc2 모델 추가 (main.xml 추가) -->
+  	<mapper resource="com/kh/main_page/tblmain.xml"/>
   </mappers>
   
 </configuration>  
