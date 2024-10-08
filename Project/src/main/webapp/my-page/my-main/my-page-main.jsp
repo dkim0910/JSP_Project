@@ -360,8 +360,8 @@
 										<img src="https://via.placeholder.com/500x200" alt="이벤트 1 이미지">
 										<div class="event-card-content">
 											<h3>가을 시즌 할인</h3>
-											<p>가을을 맞아 전 제품 20% 할인! 지금 바로 쇼핑하세요.</p>
-											<a href="#" class="all-button">이벤트 참여하기</a>
+											<p>가을을 맞이 제품 할인중! 지금 바로 쇼핑하세요.</p>
+											<a href="" class="all-button">할인 상품 보러가기</a>
 										</div>
 									</div>
 
