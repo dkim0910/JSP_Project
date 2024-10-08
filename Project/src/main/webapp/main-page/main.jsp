@@ -34,10 +34,11 @@
 <link rel="stylesheet" href="/main-page/style/style.css">
 
 <!-- 공통 js 연결 -->
-<script defer src="script/script.js"></script>
+<script defer src="/main-page/script/script.js"></script>
 
 <!-- jquery 불러오기 -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 <%
 boolean isLoggedIn = (session != null && session.getAttribute("member") != null);
@@ -56,7 +57,7 @@ boolean isLoggedIn = (session != null && session.getAttribute("member") != null)
 				<div class="flex-1 h-full">
 					<div id="icon-box">
 						<div id="icon">
-							<!-- <a href="../login/join/login_view.jsp" id="login">
+							<!-- <a href="main-page./login/join/login_view.jsp" id="login">
                 <i class="fa-regular fa-user"></i>
               </a> -->
 							<div class="user">
@@ -66,9 +67,9 @@ boolean isLoggedIn = (session != null && session.getAttribute("member") != null)
 								</c:if>
 							</div>
 							<a
-								href="<%=isLoggedIn ? "../my-page/my-main/my-page-main.jsp" : "../login/join/login_view.jsp"%>"
+								href="<%=isLoggedIn ? "main-page./my-page/my-main/my-page-main.jsp" : "main-page./login/join/login_view.jsp"%>"
 								id="login"> <i class="fa-regular fa-user"></i> <%-- <%= isLoggedIn ? "마이페이지" : "로그인" %> --%>
-							</a> <a href="../category/category.jsp" id="more"> <i
+							</a> <a href="main-page./category/category.jsp" id="more"> <i
 								class="fa-solid fa-bars"></i>
 							</a>
 						</div>
@@ -88,6 +89,17 @@ boolean isLoggedIn = (session != null && session.getAttribute("member") != null)
 				</ul>
 			</nav>
 
+			<div>
+				<c:forEach var="products" items="${requestScope.getAllProducts}"
+					varStatus="status">
+					<c:if test="${status.index < 3}">
+						<h3>${products.brand}</h3>
+					</c:if>
+				</c:forEach>
+
+			</div>
+
+
 			<div id="tab-content">
 				<div class="tab-content" id="tab1">
 					<section class="section-slider">
@@ -95,19 +107,19 @@ boolean isLoggedIn = (session != null && session.getAttribute("member") != null)
 							<div class="slider-box-1" data-index="0">
 								<div class="slides">
 									<div class="slide-item">
-										<img src="./images/slide1.jpg" alt="슬라이드이미지1">
+										<img src="https://image.msscdn.net/images/goods_img/20240808/4307792/4307792_17248074541091_500.jpg" alt="슬라이드이미지1" name="image" value="https://image.msscdn.net/images/goods_img/20240808/4307792/4307792_17248074541091_500.jpg">
 									</div>
 									<div class="slide-item">
-										<img src="./images/slide2.jpg" alt="슬라이드이미지2">
+										<img src="main-page/images/slide2.jpg" alt="슬라이드이미지2">
 									</div>
 									<div class="slide-item">
-										<img src="./images/slide3.jpg" alt="슬라이드이미지3">
+										<img src="main-page/images/slide3.jpg" alt="슬라이드이미지3">
 									</div>
 									<div class="slide-item">
-										<img src="./images/slide4.png" alt="슬라이드이미지4">
+										<img src="main-page/images/slide4.png" alt="슬라이드이미지4">
 									</div>
 									<div class="slide-item">
-										<img src="./images/slide5.jpg" alt="슬라이드이미지5">
+										<img src="main-page/images/slide5.jpg" alt="슬라이드이미지5">
 									</div>
 								</div>
 							</div>
@@ -122,7 +134,7 @@ boolean isLoggedIn = (session != null && session.getAttribute("member") != null)
 									</span> <a href="#"> 더보기 </a>
 								</div>
 								<ul class="flex-grid">
-									<li><a href="../main-page/shirt.html/t1.html"
+									<li><a href=""
 										class="block"> <img class="w-full block"
 											src="https://image.msscdn.net/images/goods_img/20240809/4316817/4316817_17231977575753_500.jpg"
 											alt="">
@@ -241,19 +253,19 @@ boolean isLoggedIn = (session != null && session.getAttribute("member") != null)
 					<section class="section-img">
 						<div class="con mx-auto">
 							<div class="logo-box">
-								<a href="#"> <img src="./images/brand/musinsastandard.png"
+								<a href="#"> <img src="main-page/images/brand/musinsastandard.png"
 									alt="">
 								</a>
 							</div>
 							<h2 class="tit text-[40px] font-bold">무신사 스탠다드</h2>
 							<div class="swiper-btn-box">
 								<div class="swiper-btn swiper-btn__prev swiper-btn__prev-1">
-									<span> <img src="./images/brand/sl_arrow.svg" alt="">
+									<span> <img src="main-page/images/brand/sl_arrow.svg" alt="">
 									</span>
 								</div>
 								<div
 									class="swiper-btn swiper-btn__next swiper-btn__next-1 active">
-									<span> <img src="./images/brand/sl_arrow.svg" alt="">
+									<span> <img src="main-page/images/brand/sl_arrow.svg" alt="">
 									</span>
 								</div>
 							</div>
@@ -262,7 +274,7 @@ boolean isLoggedIn = (session != null && session.getAttribute("member") != null)
 							<ul class="swiper-wrapper">
 								<li class="swiper-slide"><a href="#">
 										<div class="img-box">
-											<img src="./images/brand/ms1.jpg" alt="">
+											<img src="main-page/images/brand/ms1.jpg" alt="">
 										</div>
 										<div class="content">
 											<p class="category">무신사 스탠다드 24 F/W 아우터 페스티벌</p>
@@ -270,7 +282,7 @@ boolean isLoggedIn = (session != null && session.getAttribute("member") != null)
 								</a></li>
 								<li class="swiper-slide"><a href="#">
 										<div class="img-box">
-											<img src="./images/brand/ms2.jfif" alt="">
+											<img src="main-page/images/brand/ms2.jfif" alt="">
 										</div>
 										<div class="content">
 											<p class="category">무신사 스탠다드 24 가을 캠페인</p>
@@ -278,7 +290,7 @@ boolean isLoggedIn = (session != null && session.getAttribute("member") != null)
 								</a></li>
 								<li class="swiper-slide"><a href="#">
 										<div class="img-box">
-											<img src="./images/brand/ms3.jpg" alt="">
+											<img src="main-page/images/brand/ms3.jpg" alt="">
 										</div>
 										<div class="content">
 											<p class="category">무신사 스탠다드 세미 와이드 히든 밴딩 슬랙스 [블랙]</p>
@@ -287,7 +299,7 @@ boolean isLoggedIn = (session != null && session.getAttribute("member") != null)
 								</a></li>
 								<li class="swiper-slide"><a href="#">
 										<div class="img-box">
-											<img src="./images/brand/ms4.jpg" alt="">
+											<img src="main-page/images/brand/ms4.jpg" alt="">
 										</div>
 										<div class="content">
 											<p class="category">무신사 스탠다드 릴렉스드 베이식 블레이저 [블랙]</p>
@@ -295,7 +307,7 @@ boolean isLoggedIn = (session != null && session.getAttribute("member") != null)
 								</a></li>
 								<li class="swiper-slide"><a href="#">
 										<div class="img-box">
-											<img src="./images/brand/ms5.jpg" alt="">
+											<img src="main-page/images/brand/ms5.jpg" alt="">
 										</div>
 										<div class="content">
 											<p class="category">무신사 스탠다드 레이어드 크루 넥 반팔 티셔츠_일반 기장 [화이트]</p>
@@ -303,7 +315,7 @@ boolean isLoggedIn = (session != null && session.getAttribute("member") != null)
 								</a></li>
 								<li class="swiper-slide"><a href="#">
 										<div class="img-box">
-											<img src="./images/brand/ms6.jpg" alt="">
+											<img src="main-page/images/brand/ms6.jpg" alt="">
 										</div>
 										<div class="content">
 											<p class="category">무신사 스탠다드 와이드 히든 밴딩 슬랙스 [블랙]</p>
@@ -311,7 +323,7 @@ boolean isLoggedIn = (session != null && session.getAttribute("member") != null)
 								</a></li>
 								<li class="swiper-slide"><a href="#">
 										<div class="img-box">
-											<img src="./images/brand/ms7.jpg" alt="">
+											<img src="main-page/images/brand/ms7.jpg" alt="">
 										</div>
 										<div class="content">
 											<p class="category">무신사 스탠다드 오버사이즈 블레이저 [블랙]</p>
@@ -319,7 +331,7 @@ boolean isLoggedIn = (session != null && session.getAttribute("member") != null)
 								</a></li>
 								<li class="swiper-slide"><a href="#">
 										<div class="img-box">
-											<img src="./images/brand/ms8.jpg" alt="">
+											<img src="main-page/images/brand/ms8.jpg" alt="">
 										</div>
 										<div class="content">
 											<p class="category">무신사 스탠다드 캔버스 워크 재킷 [블랙]</p>
@@ -333,18 +345,18 @@ boolean isLoggedIn = (session != null && session.getAttribute("member") != null)
 					<section class="section-img section-img-2">
 						<div class="con mx-auto">
 							<div class="logo-box">
-								<a href="#"> <img src="./images/brand/nike.png" alt="">
+								<a href="#"> <img src="main-page/images/brand/nike.png" alt="">
 								</a>
 							</div>
 							<h2 class="tit text-[40px] font-bold">나이키</h2>
 							<div class="swiper-btn-box">
 								<div class="swiper-btn swiper-btn__prev swiper-btn__prev-2">
-									<span> <img src="./images/brand/sl_arrow.svg" alt="">
+									<span> <img src="main-page/images/brand/sl_arrow.svg" alt="">
 									</span>
 								</div>
 								<div
 									class="swiper-btn swiper-btn__next swiper-btn__next-2 active">
-									<span> <img src="./images/brand/sl_arrow.svg" alt="">
+									<span> <img src="main-page/images/brand/sl_arrow.svg" alt="">
 									</span>
 								</div>
 							</div>
@@ -353,7 +365,7 @@ boolean isLoggedIn = (session != null && session.getAttribute("member") != null)
 							<ul class="swiper-wrapper">
 								<li class="swiper-slide"><a href="#">
 										<div class="img-box">
-											<img src="./images/brand/n1.jpg" alt="">
+											<img src="main-page/images/brand/n1.jpg" alt="">
 										</div>
 										<div class="content">
 											<p class="category">스니커즈 에디터가 선보이는 원 슈즈, 투 코디</p>
@@ -361,7 +373,7 @@ boolean isLoggedIn = (session != null && session.getAttribute("member") != null)
 								</a></li>
 								<li class="swiper-slide"><a href="#">
 										<div class="img-box">
-											<img src="./images/brand/n2.jpg" alt="">
+											<img src="main-page/images/brand/n2.jpg" alt="">
 										</div>
 										<div class="content">
 											<p class="category">나이키 에어 포스 1 07 M - 블랙 / CW2288-001</p>
@@ -369,7 +381,7 @@ boolean isLoggedIn = (session != null && session.getAttribute("member") != null)
 								</a></li>
 								<li class="swiper-slide"><a href="#">
 										<div class="img-box">
-											<img src="./images/brand/n3.jpg" alt="">
+											<img src="main-page/images/brand/n3.jpg" alt="">
 										</div>
 										<div class="content">
 											<p class="category">나이키 에어 포스 1 07 M - 화이트 / CW2288-111</p>
@@ -377,7 +389,7 @@ boolean isLoggedIn = (session != null && session.getAttribute("member") != null)
 								</a></li>
 								<li class="swiper-slide"><a href="#">
 										<div class="img-box">
-											<img src="./images/brand/n4.jpg" alt="">
+											<img src="main-page/images/brand/n4.jpg" alt="">
 										</div>
 										<div class="content">
 											<p class="category">나이키 V2K 런 W - 라이트 오어우드 브라운:카키</p>
@@ -385,7 +397,7 @@ boolean isLoggedIn = (session != null && session.getAttribute("member") != null)
 								</a></li>
 								<li class="swiper-slide"><a href="#">
 										<div class="img-box">
-											<img src="./images/brand/n5.jpg" alt="">
+											<img src="main-page/images/brand/n5.jpg" alt="">
 										</div>
 										<div class="content">
 											<p class="category">나이키 V2K 런 M - 블랙:앤트럴사이트:다크 스모크:그레이</p>
@@ -393,7 +405,7 @@ boolean isLoggedIn = (session != null && session.getAttribute("member") != null)
 								</a></li>
 								<li class="swiper-slide"><a href="#">
 										<div class="img-box">
-											<img src="./images/brand/n6.jpg" alt="">
+											<img src="main-page/images/brand/n6.jpg" alt="">
 										</div>
 										<div class="content">
 											<p class="category">나이키 덩크 로우 레트로 M - 블랙:화이트</p>
@@ -401,7 +413,7 @@ boolean isLoggedIn = (session != null && session.getAttribute("member") != null)
 								</a></li>
 								<li class="swiper-slide"><a href="#">
 										<div class="img-box">
-											<img src="./images/brand/n7.jpg" alt="">
+											<img src="main-page/images/brand/n7.jpg" alt="">
 										</div>
 										<div class="content">
 											<p class="category">나이키 덩크 로우 레트로 M - 그레이 포그:화이트</p>
@@ -409,7 +421,7 @@ boolean isLoggedIn = (session != null && session.getAttribute("member") != null)
 								</a></li>
 								<li class="swiper-slide"><a href="#">
 										<div class="img-box">
-											<img src="./images/brand/n8.jpg" alt="">
+											<img src="main-page/images/brand/n8.jpg" alt="">
 										</div>
 										<div class="content">
 											<p class="category">나이키 ACG 써마 핏 플리스 풀오버 후디</p>
@@ -423,18 +435,18 @@ boolean isLoggedIn = (session != null && session.getAttribute("member") != null)
 					<section class="section-img section-img-3">
 						<div class="con mx-auto">
 							<div class="logo-box">
-								<a href="#"> <img src="./images/brand/newbalance.png" alt="">
+								<a href="#"> <img src="main-page/images/brand/newbalance.png" alt="">
 								</a>
 							</div>
 							<h2 class="tit text-[40px] font-bold">뉴발란스</h2>
 							<div class="swiper-btn-box">
 								<div class="swiper-btn swiper-btn__prev swiper-btn__prev-3">
-									<span> <img src="./images/brand/sl_arrow.svg" alt="">
+									<span> <img src="main-page/images/brand/sl_arrow.svg" alt="">
 									</span>
 								</div>
 								<div
 									class="swiper-btn swiper-btn__next swiper-btn__next-3 active">
-									<span> <img src="./images/brand/sl_arrow.svg" alt="">
+									<span> <img src="main-page/images/brand/sl_arrow.svg" alt="">
 									</span>
 								</div>
 							</div>
@@ -443,7 +455,7 @@ boolean isLoggedIn = (session != null && session.getAttribute("member") != null)
 							<ul class="swiper-wrapper">
 								<li class="swiper-slide"><a href="#">
 										<div class="img-box">
-											<img src="./images/brand/nb1.jpg" alt="">
+											<img src="main-page/images/brand/nb1.jpg" alt="">
 										</div>
 										<div class="content">
 											<p class="category">뉴발란스 2002</p>
@@ -451,7 +463,7 @@ boolean isLoggedIn = (session != null && session.getAttribute("member") != null)
 								</a></li>
 								<li class="swiper-slide"><a href="#">
 										<div class="img-box">
-											<img src="./images/brand/nb2.jfif" alt="">
+											<img src="main-page/images/brand/nb2.jfif" alt="">
 										</div>
 										<div class="content">
 											<p class="category">레거시 컬렉션</p>
@@ -459,7 +471,7 @@ boolean isLoggedIn = (session != null && session.getAttribute("member") != null)
 								</a></li>
 								<li class="swiper-slide"><a href="#">
 										<div class="img-box">
-											<img src="./images/brand/nb3.jpg" alt="">
+											<img src="main-page/images/brand/nb3.jpg" alt="">
 										</div>
 										<div class="content">
 											<p class="category">뉴발란스 NBPDEF704W/ MR530SG (WHITE)</p>
@@ -467,7 +479,7 @@ boolean isLoggedIn = (session != null && session.getAttribute("member") != null)
 								</a></li>
 								<li class="swiper-slide"><a href="#">
 										<div class="img-box">
-											<img src="./images/brand/nb4.jpg" alt="">
+											<img src="main-page/images/brand/nb4.jpg" alt="">
 										</div>
 										<div class="content">
 											<p class="category">뉴발란스 NBP7EF771N / M2002RCK (BLACK)</p>
@@ -475,7 +487,7 @@ boolean isLoggedIn = (session != null && session.getAttribute("member") != null)
 								</a></li>
 								<li class="swiper-slide"><a href="#">
 										<div class="img-box">
-											<img src="./images/brand/nb5.jpg" alt="">
+											<img src="main-page/images/brand/nb5.jpg" alt="">
 										</div>
 										<div class="content">
 											<p class="category">뉴발란스 NBPDEF707G / MR530CK (GRAY)</p>
@@ -483,7 +495,7 @@ boolean isLoggedIn = (session != null && session.getAttribute("member") != null)
 								</a></li>
 								<li class="swiper-slide"><a href="#">
 										<div class="img-box">
-											<img src="./images/brand/nb6.jpg" alt="">
+											<img src="main-page/images/brand/nb6.jpg" alt="">
 										</div>
 										<div class="content">
 											<p class="category">뉴발란스 NBP7EF757G / M2002RNM (GRAY)</p>
@@ -491,7 +503,7 @@ boolean isLoggedIn = (session != null && session.getAttribute("member") != null)
 								</a></li>
 								<li class="swiper-slide"><a href="#">
 										<div class="img-box">
-											<img src="./images/brand/nb7.jpg" alt="">
+											<img src="main-page/images/brand/nb7.jpg" alt="">
 										</div>
 										<div class="content">
 											<p class="category">뉴발란스 NBPDES169C / MR530LG (WHITE)</p>
@@ -499,7 +511,7 @@ boolean isLoggedIn = (session != null && session.getAttribute("member") != null)
 								</a></li>
 								<li class="swiper-slide"><a href="#">
 										<div class="img-box">
-											<img src="./images/brand/nb8.jpg" alt="">
+											<img src="main-page/images/brand/nb8.jpg" alt="">
 										</div>
 										<div class="content">
 											<p class="category">뉴발란스 NBP7EF738B / U574LGRA (BLACK)</p>
@@ -514,18 +526,18 @@ boolean isLoggedIn = (session != null && session.getAttribute("member") != null)
 					<section class="section-img section-img-4">
 						<div class="con mx-auto">
 							<div class="logo-box">
-								<a href="#"> <img src="./images/comming/4-1.png" alt="">
+								<a href="#"> <img src="main-page/images/comming/4-1.png" alt="">
 								</a>
 							</div>
 							<h2 class="tit text-[40px] font-bold">제로 24 F/W 3차 신상 발매</h2>
 							<div class="swiper-btn-box">
 								<div class="swiper-btn swiper-btn__prev swiper-btn__prev-4">
-									<span> <img src="./images/brand/sl_arrow.svg" alt="">
+									<span> <img src="main-page/images/brand/sl_arrow.svg" alt="">
 									</span>
 								</div>
 								<div
 									class="swiper-btn swiper-btn__next swiper-btn__next-4 active">
-									<span> <img src="./images/brand/sl_arrow.svg" alt="">
+									<span> <img src="main-page/images/brand/sl_arrow.svg" alt="">
 									</span>
 								</div>
 							</div>
@@ -534,7 +546,7 @@ boolean isLoggedIn = (session != null && session.getAttribute("member") != null)
 							<ul class="swiper-wrapper">
 								<li class="swiper-slide"><a href="#">
 										<div class="img-box">
-											<img src="./images/comming/4-2.jpg" alt="">
+											<img src="main-page/images/comming/4-2.jpg" alt="">
 										</div>
 										<div class="content">
 											<p class="category">Vintage Washed Sweat Ma-1 [3 Colors]</p>
@@ -542,7 +554,7 @@ boolean isLoggedIn = (session != null && session.getAttribute("member") != null)
 								</a></li>
 								<li class="swiper-slide"><a href="#">
 										<div class="img-box">
-											<img src="./images/comming/4-3.jpg" alt="">
+											<img src="main-page/images/comming/4-3.jpg" alt="">
 										</div>
 										<div class="content">
 											<p class="category">Tender Ombre Check Hood Shirts [2
@@ -551,7 +563,7 @@ boolean isLoggedIn = (session != null && session.getAttribute("member") != null)
 								</a></li>
 								<li class="swiper-slide"><a href="#">
 										<div class="img-box">
-											<img src="./images/comming/4-4.jpg" alt="">
+											<img src="main-page/images/comming/4-4.jpg" alt="">
 										</div>
 										<div class="content">
 											<p class="category">Denim Hood Shirts [2 Colors]</p>
@@ -560,7 +572,7 @@ boolean isLoggedIn = (session != null && session.getAttribute("member") != null)
 								</a></li>
 								<li class="swiper-slide"><a href="#">
 										<div class="img-box">
-											<img src="./images/comming/4-5.jpg" alt="">
+											<img src="main-page/images/comming/4-5.jpg" alt="">
 										</div>
 										<div class="content">
 											<p class="category">Flannel Check Hood Shirts [2 Colors]</p>
@@ -568,7 +580,7 @@ boolean isLoggedIn = (session != null && session.getAttribute("member") != null)
 								</a></li>
 								<li class="swiper-slide"><a href="#">
 										<div class="img-box">
-											<img src="./images/comming/4-6.jpg" alt="">
+											<img src="main-page/images/comming/4-6.jpg" alt="">
 										</div>
 										<div class="content">
 											<p class="category">Vintage Washed Long Sleeve String
@@ -577,7 +589,7 @@ boolean isLoggedIn = (session != null && session.getAttribute("member") != null)
 								</a></li>
 								<li class="swiper-slide"><a href="#">
 										<div class="img-box">
-											<img src="./images/comming/4-7.jpg" alt="">
+											<img src="main-page/images/comming/4-7.jpg" alt="">
 										</div>
 										<div class="content">
 											<p class="category">Column Line Texture Wide Pants [2
@@ -586,7 +598,7 @@ boolean isLoggedIn = (session != null && session.getAttribute("member") != null)
 								</a></li>
 								<li class="swiper-slide"><a href="#">
 										<div class="img-box">
-											<img src="./images/comming/4-8.jpg" alt="">
+											<img src="main-page/images/comming/4-8.jpg" alt="">
 										</div>
 										<div class="content">
 											<p class="category">Cargo Over String Sweat Pants [4
@@ -601,18 +613,18 @@ boolean isLoggedIn = (session != null && session.getAttribute("member") != null)
 					<section class="section-img section-img-5">
 						<div class="con mx-auto">
 							<div class="logo-box">
-								<a href="#"> <img src="./images/comming/5-1.png" alt="">
+								<a href="#"> <img src="main-page/images/comming/5-1.png" alt="">
 								</a>
 							</div>
 							<h2 class="tit text-[40px] font-bold">일리오 24 F/W 신상 한정 발매</h2>
 							<div class="swiper-btn-box">
 								<div class="swiper-btn swiper-btn__prev swiper-btn__prev-5">
-									<span> <img src="./images/brand/sl_arrow.svg" alt="">
+									<span> <img src="main-page/images/brand/sl_arrow.svg" alt="">
 									</span>
 								</div>
 								<div
 									class="swiper-btn swiper-btn__next swiper-btn__next-5 active">
-									<span> <img src="./images/brand/sl_arrow.svg" alt="">
+									<span> <img src="main-page/images/brand/sl_arrow.svg" alt="">
 									</span>
 								</div>
 							</div>
@@ -621,7 +633,7 @@ boolean isLoggedIn = (session != null && session.getAttribute("member") != null)
 							<ul class="swiper-wrapper">
 								<li class="swiper-slide"><a href="#">
 										<div class="img-box">
-											<img src="./images/comming/5-2.jpg" alt="">
+											<img src="main-page/images/comming/5-2.jpg" alt="">
 										</div>
 										<div class="content">
 											<p class="category">Black check stud shirts</p>
@@ -629,7 +641,7 @@ boolean isLoggedIn = (session != null && session.getAttribute("member") != null)
 								</a></li>
 								<li class="swiper-slide"><a href="#">
 										<div class="img-box">
-											<img src="./images/comming/5-3.jpg" alt="">
+											<img src="main-page/images/comming/5-3.jpg" alt="">
 										</div>
 										<div class="content">
 											<p class="category">Faux suede stud shirts</p>
@@ -637,7 +649,7 @@ boolean isLoggedIn = (session != null && session.getAttribute("member") != null)
 								</a></li>
 								<li class="swiper-slide"><a href="#">
 										<div class="img-box">
-											<img src="./images/comming/5-4.jpg" alt="">
+											<img src="main-page/images/comming/5-4.jpg" alt="">
 										</div>
 										<div class="content">
 											<p class="category">Black leopard cross necklace top</p>
@@ -645,7 +657,7 @@ boolean isLoggedIn = (session != null && session.getAttribute("member") != null)
 								</a></li>
 								<li class="swiper-slide"><a href="#">
 										<div class="img-box">
-											<img src="./images/comming/5-5.jpg" alt="">
+											<img src="main-page/images/comming/5-5.jpg" alt="">
 										</div>
 										<div class="content">
 											<p class="category">White leopard cross necklace top</p>
@@ -653,7 +665,7 @@ boolean isLoggedIn = (session != null && session.getAttribute("member") != null)
 								</a></li>
 								<li class="swiper-slide"><a href="#">
 										<div class="img-box">
-											<img src="./images/comming/5-6.jpg" alt="">
+											<img src="main-page/images/comming/5-6.jpg" alt="">
 										</div>
 										<div class="content">
 											<p class="category">Black lover one shoulder long sleeve</p>
@@ -661,7 +673,7 @@ boolean isLoggedIn = (session != null && session.getAttribute("member") != null)
 								</a></li>
 								<li class="swiper-slide"><a href="#">
 										<div class="img-box">
-											<img src="./images/comming/5-7.jpg" alt="">
+											<img src="main-page/images/comming/5-7.jpg" alt="">
 										</div>
 										<div class="content">
 											<p class="category">Gray lover one shoulder long sleeve</p>
@@ -669,7 +681,7 @@ boolean isLoggedIn = (session != null && session.getAttribute("member") != null)
 								</a></li>
 								<li class="swiper-slide"><a href="#">
 										<div class="img-box">
-											<img src="./images/comming/5-8.jpg" alt="">
+											<img src="main-page/images/comming/5-8.jpg" alt="">
 										</div>
 										<div class="content">
 											<p class="category">Light gray lover one shoulder long
@@ -678,7 +690,7 @@ boolean isLoggedIn = (session != null && session.getAttribute("member") != null)
 								</a></li>
 								<li class="swiper-slide"><a href="#">
 										<div class="img-box">
-											<img src="./images/comming/5-9.jpg" alt="">
+											<img src="main-page/images/comming/5-9.jpg" alt="">
 										</div>
 										<div class="content">
 											<p class="category">Black stud sweat set</p>
@@ -692,18 +704,18 @@ boolean isLoggedIn = (session != null && session.getAttribute("member") != null)
 					<section class="section-img section-img-6">
 						<div class="con mx-auto">
 							<div class="logo-box">
-								<a href="#"> <img src="./images/comming/6-1.png" alt="">
+								<a href="#"> <img src="main-page/images/comming/6-1.png" alt="">
 								</a>
 							</div>
 							<h2 class="tit text-[40px] font-bold">커리쉴 신상 발매</h2>
 							<div class="swiper-btn-box">
 								<div class="swiper-btn swiper-btn__prev swiper-btn__prev-6">
-									<span> <img src="./images/brand/sl_arrow.svg" alt="">
+									<span> <img src="main-page/images/brand/sl_arrow.svg" alt="">
 									</span>
 								</div>
 								<div
 									class="swiper-btn swiper-btn__next swiper-btn__next-6 active">
-									<span> <img src="./images/brand/sl_arrow.svg" alt="">
+									<span> <img src="main-page/images/brand/sl_arrow.svg" alt="">
 									</span>
 								</div>
 							</div>
@@ -712,7 +724,7 @@ boolean isLoggedIn = (session != null && session.getAttribute("member") != null)
 							<ul class="swiper-wrapper">
 								<li class="swiper-slide"><a href="#">
 										<div class="img-box">
-											<img src="./images/comming/6-2.jpg" alt="">
+											<img src="main-page/images/comming/6-2.jpg" alt="">
 										</div>
 										<div class="content">
 											<p class="category">에프터 살롱 케어 리페어 헤어 앰플 100ml</p>
@@ -720,7 +732,7 @@ boolean isLoggedIn = (session != null && session.getAttribute("member") != null)
 								</a></li>
 								<li class="swiper-slide"><a href="#">
 										<div class="img-box">
-											<img src="./images/comming/6-3.jpg" alt="">
+											<img src="main-page/images/comming/6-3.jpg" alt="">
 										</div>
 										<div class="content">
 											<p class="category">에프터 살롱 케어 샴푸 (극손상) 500g</p>
@@ -728,7 +740,7 @@ boolean isLoggedIn = (session != null && session.getAttribute("member") != null)
 								</a></li>
 								<li class="swiper-slide"><a href="#">
 										<div class="img-box">
-											<img src="./images/comming/6-4.jpg" alt="">
+											<img src="main-page/images/comming/6-4.jpg" alt="">
 										</div>
 										<div class="content">
 											<p class="category">에프터 살롱 케어 헤어팩 트리트먼트 250ml</p>
@@ -736,7 +748,7 @@ boolean isLoggedIn = (session != null && session.getAttribute("member") != null)
 								</a></li>
 								<li class="swiper-slide"><a href="#">
 										<div class="img-box">
-											<img src="./images/comming/6-5.jpg" alt="">
+											<img src="main-page/images/comming/6-5.jpg" alt="">
 										</div>
 										<div class="content">
 											<p class="category">퍼펙션 컬 크림 150ml</p>
@@ -744,7 +756,7 @@ boolean isLoggedIn = (session != null && session.getAttribute("member") != null)
 								</a></li>
 								<li class="swiper-slide"><a href="#">
 										<div class="img-box">
-											<img src="./images/comming/6-6.jpg" alt="">
+											<img src="main-page/images/comming/6-6.jpg" alt="">
 										</div>
 										<div class="content">
 											<p class="category">젤 오일 왁스 150ml</p>
@@ -752,7 +764,7 @@ boolean isLoggedIn = (session != null && session.getAttribute("member") != null)
 								</a></li>
 								<li class="swiper-slide"><a href="#">
 										<div class="img-box">
-											<img src="./images/comming/6-7.jpg" alt="">
+											<img src="main-page/images/comming/6-7.jpg" alt="">
 										</div>
 										<div class="content">
 											<p class="category">제로 그래비티 왁스 100ml</p>
@@ -760,7 +772,7 @@ boolean isLoggedIn = (session != null && session.getAttribute("member") != null)
 								</a></li>
 								<li class="swiper-slide"><a href="#">
 										<div class="img-box">
-											<img src="./images/comming/6-8.jpg" alt="">
+											<img src="main-page/images/comming/6-8.jpg" alt="">
 										</div>
 										<div class="content">
 											<p class="category">스타일 그래비티 왁스 100ml</p>
@@ -768,7 +780,7 @@ boolean isLoggedIn = (session != null && session.getAttribute("member") != null)
 								</a></li>
 								<li class="swiper-slide"><a href="#">
 										<div class="img-box">
-											<img src="./images/comming/6-9.jpg" alt="">
+											<img src="main-page/images/comming/6-9.jpg" alt="">
 										</div>
 										<div class="content">
 											<p class="category">새틴 앤 에어리 스프레이 300ml</p>
@@ -787,55 +799,55 @@ boolean isLoggedIn = (session != null && session.getAttribute("member") != null)
 							</div>
 							<nav class="list">
 								<ul class="flex-grid">
-									<li><a href="#"> <img src="./images/sale/s1.jpg"
+									<li><a href="#"> <img src="main-page/images/sale/s1.jpg"
 											alt="">
 									</a> <a href="#">후브스</a>
 										<div class="price">
 											<span class="sale">35%</span> <span>48,990원</span>
 										</div></li>
-									<li><a href="#"> <img src="./images/sale/s2.jpg"
+									<li><a href="#"> <img src="main-page/images/sale/s2.jpg"
 											alt="">
 									</a> <a href="#">테이크이지</a>
 										<div class="price">
 											<span class="sale">40%</span> <span>50,400원</span>
 										</div></li>
-									<li><a href="#"> <img src="./images/sale/s3.jpg"
+									<li><a href="#"> <img src="main-page/images/sale/s3.jpg"
 											alt="">
 									</a> <a href="#">슬로우 레코드 하우스</a>
 										<div class="price">
 											<span class="sale">45%</span> <span>34,100원</span>
 										</div></li>
-									<li><a href="#"> <img src="./images/sale/s4.jpg"
+									<li><a href="#"> <img src="main-page/images/sale/s4.jpg"
 											alt="">
 									</a> <a href="#">엘리메노</a>
 										<div class="price">
 											<span class="sale">44%</span> <span>32,800원</span>
 										</div></li>
-									<li><a href="#"> <img src="./images/sale/s5.jpg"
+									<li><a href="#"> <img src="main-page/images/sale/s5.jpg"
 											alt="">
 									</a> <a href="#">스파오</a>
 										<div class="price">
 											<span class="sale">50%</span> <span>29,990원</span>
 										</div></li>
-									<li><a href="#"> <img src="./images/sale/s6.jpg"
+									<li><a href="#"> <img src="main-page/images/sale/s6.jpg"
 											alt="">
 									</a> <a href="#">레더리</a>
 										<div class="price">
 											<span class="sale">20%</span> <span>52,000원</span>
 										</div></li>
-									<li><a href="#"> <img src="./images/sale/s7.jpg"
+									<li><a href="#"> <img src="main-page/images/sale/s7.jpg"
 											alt="">
 									</a> <a href="#">트릴리온</a>
 										<div class="price">
 											<span class="sale">40%</span> <span>29,800원</span>
 										</div></li>
-									<li><a href="#"> <img src="./images/sale/s8.jpg"
+									<li><a href="#"> <img src="main-page/images/sale/s8.jpg"
 											alt="">
 									</a> <a href="#">런트</a>
 										<div class="price">
 											<span class="sale">48%</span> <span>35,990원</span>
 										</div></li>
-									<li><a href="#"> <img src="./images/sale/s9.jpg"
+									<li><a href="#"> <img src="main-page/images/sale/s9.jpg"
 											alt="">
 									</a> <a href="#">아웃스탠딩</a>
 										<div class="price">
@@ -849,14 +861,6 @@ boolean isLoggedIn = (session != null && session.getAttribute("member") != null)
 			</div>
 		</div>
 	</header>
-	<div>2222222
-	
-		<c:forEach var="products" items="${requestScope.getAllProducts}">
-			<h3>${products.brand}</h3>
-		</c:forEach>
-	</div>
-
-
 
 	<footer>
 		<div class="con mx-auto">

@@ -12,7 +12,7 @@ import com.kh.mypage.refund.Beans_DAO_DTO.MyDTO;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
-public class GetAllItems_Json implements Action{
+public class GetAllItems_Json_test implements Action{
 
 	@Override
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) {
