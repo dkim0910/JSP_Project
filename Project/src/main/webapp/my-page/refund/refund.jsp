@@ -33,36 +33,46 @@ boolean isLoggedIn = (session != null && session.getAttribute("member") != null)
 
 		<section class="products-section" id="remove-style"
 			style="min-height: 100vh; display: flex; flex-direction: column;">
-			<h2>구매 내역</h2>
+			<c:forEach var="refund" items="${Refunded}" varStatus="status">
 
-			<c:if test="${not empty Refunded}">
-				<h2>환불 제품 목록</h2>
-				<ul class="product-list">
-					<c:forEach var="refund" items="${Refunded}" varStatus="status">
-						<c:if test="${status.index < 5}">
-							<!-- 환불 날짜 또는 환불 상태가 비어있는 경우에만 보여줌 -->
-							<c:if test="${empty refund.refunded_date || empty refund.refund_status}">
-								<li class="product-item"
-									onclick="showRefundForm('${refund.product_name}', '${refund.ordered_num}')">
-									<img src="${refund.image_url}" alt="${refund.product_name}"
-										class="product-image"> <span class="product-name">${refund.product_name}</span>
-									<span class="order-number">주문 번호: ${refund.ordered_num}</span>
-									<span class="refund-button" onclick="removeStyles()">환불 신청</span>
-								</li>
-							</c:if>
-							<!-- 환불 날짜 또는 환불 상태가 비어있지 않은 경우 생략 -->
+				<c:if
+					test="${empty refund.refunded_date || empty refund.refund_status}">
+					<h2>환불 제품 목록</h2>
+				</c:if>
+			</c:forEach>
+			<ul class="product-list">
+				<c:forEach var="refund" items="${Refunded}" varStatus="status">
+					<!-- 제품 5개까지만 보여주는거 -->
+					<c:if test="${status.index < 5}">
+						<!-- 환불 날짜 또는 환불 상태가 비어있는 경우에만 보여줌 -->
+						<c:if
+							test="${empty refund.refunded_date || empty refund.refund_status}">
+							<li class="product-item"
+								onclick="showRefundForm('${refund.product_name}', '${refund.ordered_num}')">
+								<img src="${refund.image_url}" alt="${refund.product_name}"
+								class="product-image"> <span class="product-name">${refund.product_name}</span>
+								<span class="order-number">주문 번호: ${refund.ordered_num}</span> <span
+								class="refund-button" onclick="removeStyles()">환불 신청</span>
+							</li>
 						</c:if>
-					</c:forEach>
-
-					<c:if test="${fn:length(Refunded) == 0}">
-						<li class="product-item" style="display: none;"></li>
+						<!-- 환불 날짜 또는 환불 상태가 비어있지 않은 경우 생략 -->
 					</c:if>
-				</ul>
-			</c:if>
+				</c:forEach>
 
-			<c:if test="${empty Refunded}">
-				<p>환불할 제품이 없습니다.</p>
-			</c:if>
+				<c:if test="${fn:length(Refunded) == 0}">
+					<li class="product-item" style="display: none;"></li>
+				</c:if>
+			</ul>
+			<!-- forEach 문 밖이니 또 선언해주고 -->
+			<c:forEach var="refund" items="${Refunded}" varStatus="status">
+				<!-- 이건 List 인거 같은데 그러니 한개만 나오게끔 만들기 (환불 제품이 한개도 없을때만 나오는거니) -->
+				<c:if test="${status.index < 1}">
+					<c:if
+						test="${not empty refund.refunded_date || not empty refund.refund_status}">
+					</c:if>
+					<h2>환불할 제품이 없습니다</h2>
+				</c:if>
+			</c:forEach>
 		</section>
 
 		<section class="refund-form-section" id="refund-form-section">

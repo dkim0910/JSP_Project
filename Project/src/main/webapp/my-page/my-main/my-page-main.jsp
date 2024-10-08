@@ -9,8 +9,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>마이 페이지 | 쇼핑하조</title>
- <!-- 페이지 제목 옆의 아이콘 -->
-    <link href="https://i.ibb.co/X4b9F9N/logo.png" rel="icon">
+<!-- 페이지 제목 옆의 아이콘 -->
+<link href="https://i.ibb.co/X4b9F9N/logo.png" rel="icon">
 <link rel="stylesheet" href="/my-page/my-main/main.css">
 </head>
 
@@ -112,13 +112,13 @@
 							<c:set var="member" value="${sessionScope.member}" />
 							<!-- 세션에 user_name 이 있는 경우 -->
 							<c:if test="${not empty member}">
-							<span>${member.user_name}님 어서오세요</span>
+								<span>${member.user_name}님 어서오세요</span>
 							</c:if>
 							<!-- 만약 세션에 user_name 이 없는 경우 -->
 							<c:if test="${empty member}">
-							<span>비회원님 어서오세요</span>
+								<span>비회원님 어서오세요</span>
 							</c:if>
-							
+
 						</p>
 						<div class="right-container">
 							<p id="member-status" class="right" style="cursor: pointer;"
@@ -138,7 +138,7 @@
 					<br />
 
 					<!-- 메인페이지 내용 페이지-->
-					<div id="maincontents" class="content-section" 
+					<div id="maincontents" class="content-section"
 						style="display: <c:out value="${empty showMyInfo ? 'block' : 'none'}" />;">
 
 						<!-- 나중에 여기에다가 주문현황 박스 만들기 박스 3개 정도 만들어서 가로로 해서 왼쪽은 주문형황 중간은 주문현황 오른쪽은 고객센터 이렇게 만들기 아래는 후기-->
@@ -219,7 +219,8 @@
 					</div>
 
 					<!-- 나의 정보 내용 페이지 -->
-					<div id="my-info" class="content-section" style="display: <c:out value="${not empty showMyInfo ? 'block' : 'none'}" />;">
+					<div id="my-info" class="content-section"
+						style="display: <c:out value="${not empty showMyInfo ? 'block' : 'none'}" />;">
 						<div class="profile-container">
 							<h2 class="bold" id="myInformation">나의 정보</h2>
 							<!-- h2 태그 말고 class 줘서 크기 조절하기 다른 페이지도 같이 쓰게 (폰트랑 굵기 등 추가) -->
@@ -229,28 +230,10 @@
 
 								<!-- 나의 정보 -->
 								<div class="profile-info">
-									<label for="user-name">이름 : ${member.user_name }</label> <span id="user-name">
-										<%--위에 Tblmember DTO로 변경후 사용 <%
-							            // member가 null일 경우 처리
-							            if (member != null) {
-							                out.print(member.getUsername());
-							            } else {
-							                out.print("로그인 해주세요."); // 회원 정보가 없을 경우 메시지 출력
-							            }
-							        %> --%>
-									</span>
+									<label for="user-name">이름 : ${member.user_name }</label>
 								</div>
 								<div class="profile-info">
-									<label for="user-id">아이디 : ${member.user_id }</label> <span id="user-id"> <%--위에 Tblmember DTO로 변경후 사용
-								         <%
-								            // member가 null일 경우 처리
-								            if (member != null) {
-								                out.print(member.getUSER_id());
-								            } else {
-								                out.print("로그인 해주세요.");
-								            }
-								        %> --%>
-									</span>
+									<label for="user-id">아이디 : ${member.user_id }</label>
 								</div>
 								<div class="profile-info">
 									<!-- 나중에 ${member.user_pw } 부분을 *로 수정하기 -->
@@ -258,42 +241,24 @@
 										보안을 위해 표시되지 않습니다.</span>
 								</div>
 								<div class="profile-info">
-									<label for="phone">전화번호 : ${member.user_phone }</label> <span id="phone"> <%--위에 Tblmember DTO로 변경후 사용
-								         <%
-								            // member가 null일 경우 처리
-								            if (member != null) {
-								                out.print(member.getUserphone());
-								            } else {
-								                out.print("로그인 해주세요.");
-								            }
-								        %> --%>
-									</span>
+									<label for="phone">전화번호 : ${member.user_phone }</label>
 								</div>
 								<div class="profile-info">
-									<label for="address">주소 : ${member.user_address }</label> 
+									<label for="address">주소 : ${member.user_address }</label>
 								</div>
 								<div class="profile-info">
-									<label for="user-gender">성별 : ${member.user_gender }</label> <span id="user-gender">
-										<%-- 위에 Tblmember DTO로 변경후 사용
-								         <%
-								            // member가 null일 경우 처리
-								            if (member != null) {
-								                out.print(member.getUsergender());
-								            } else {
-								                out.print("로그인 해주세요.");
-								            }
-								        %> --%>
-									</span>
+									<label for="user-gender">성별 : ${member.user_gender }</label>
+
 								</div>
 								<div class="profile-info">
 									<label for="email">이메일 : </label> <span id="email">example@example.com</span>
 								</div>
 
+								<!-- edit-my-info 와서 보여주는거 -->
 								<div style="width: 100%;">
 									<a href="#" onclick="showContent('edit-my-info')"> <input
 										type="button" id="" class="all-button" value="정보 수정하기"
 										style="width: 100%;" /></a>
-									<!-- edit-my-info 와서 보여주기 -->
 								</div>
 
 							</div>
@@ -310,6 +275,7 @@
 					<!-- 나의 멤버십 페이지 -->
 
 					<!-- 현재 포인트 섹션 -->
+					<!-- 지금은 그냥 숫자 넣는데 나중에 바꾸기? -->
 					<div id="membership" class="content-section" style="display: none;">
 						<section class="bold" style="text-align: center;">
 							<h2>
@@ -387,6 +353,7 @@
 						<div>
 
 							<!-- 아직 a 태그에 # 넣음 나중에는 이벤트 페이지 만들어서 이벤트 내용 집어 넣기 -->
+							<!-- 이미지 넣기? -->
 
 							<!-- 스크롤 가능한 이벤트 카드 섹션 -->
 							<div class="events-section-wrapper">
@@ -444,8 +411,7 @@
 						style="display: none;">
 						<div class="profile-container">
 
-							<!-- 지금은 이동하는게 공지 1뿐이지만 나중엔 공지 누루면 바로 공지 페이지로 이동 가능 하게끔 만들기 -->
-
+							<!-- 공지 누루면 바로 공지 페이지로 이동 가능 하게끔 만들기 -->
 
 							<div class="events-section-wrapper">
 								<section class="events-section">
@@ -455,7 +421,7 @@
 										<a href="">
 											<div class="event-card-content">
 												<h3>공지 1</h3>
-												<p>후기는 없습니다 시간 없음</p>
+												<p>배송 추적하는거 만들 시간이 없다</p>
 											</div>
 										</a>
 									</div>
@@ -487,14 +453,14 @@
 								</section>
 							</div>
 
-
-
 						</div>
+
 					</div>
 
 
 
 					<!-- 회원 탈퇴 -->
+					<!-- DB가서 전체 회원 정보랑 카트에 담긴 물품 주문 내역 등 다 삭제함 -->
 					<div id="byebye" class="content-section" style="display: none;">
 						<div class="profile-container">
 
@@ -516,6 +482,7 @@
 
 
 					<!-- 정보 수정하기 페이지 -->
+					<!-- DB 가서 update 문으로 바꾸고 옴 -->
 					<div id="edit-my-info" class="content-section"
 						style="display: none;">
 						<div class="profile-container">
@@ -523,41 +490,28 @@
 								<h1 style="font-weight: bold;">정보 수정하기</h1>
 								<br />
 
-								<!-- 지금은 그냥 바로 수정하기 나오는데 나중엔 placeholder에 기존에 있던거 그댜로 가지고 오기(환불에 있는 주문번호처럼)
-                                    readonly 는 안하지만, 그리고 만약 사용자가 수정하면 그거만 바뀌게 하기 (건든것만) 안건드렸으면 그냥 기존꺼 그대로 냅두기
-                                    또 변경하면 그 박스는 다른색으로 표현 되게 하기 border 값 같은거 넣서 색 입히면 될듯
-
-                                    input[type="text"]:focus, input[type="email"]:focus, input[type="tel"]:focus {
-                                    border-color: #007BFF;
-                                    outline: none;
-}
-                                    위에 처럼 css에 넣으면 될듯 색만 좀 바꾸고 
-                                -->
-
-
 								<form action="/my-main/MemberUpdate.up">
-									<label for="user-Name" >이름</label> 
-									<input type="text" id="" name="user-Name" placeholder="현재 이름 : ${member.user_name }"> 
-									
-									<label for="user-Pw">비밀번호</label> 
-									<input type="text" id="" name="user-Pw" placeholder="현재 비밀번호 : ${member.user_pw }"> 
-									
-									<label for="user_address">주소</label>
-									<input type="text" id="" name="user_address" placeholder="현재 주소 : ${member.user_address }"> 
-									
-									<label for="user_phone">전화번호</label>
-									<input type="tel" id="" name="user_phone" placeholder="현재 전화번호 : ${member.user_phone }">
+									<label for="user-Name">이름</label> <input type="text" id=""
+										name="user-Name" placeholder="현재 이름 : ${member.user_name }">
 
-									<label for="user-Gender">성별</label>
+									<label for="user-Pw">비밀번호</label> <input type="text" id=""
+										name="user-Pw" placeholder="현재 비밀번호 : ${member.user_pw }">
+
+									<label for="user_address">주소</label> <input type="text" id=""
+										name="user_address"
+										placeholder="현재 주소 : ${member.user_address }"> <label
+										for="user_phone">전화번호</label> <input type="tel" id=""
+										name="user_phone"
+										placeholder="현재 전화번호 : ${member.user_phone }"> <label
+										for="user-Gender">성별</label>
 									<div style="padding-top: 12px;">
 										<input type="radio" id="male" name="user-Gender" value="M">
-										<label for="male">남</label> 
-										
-										<input type="radio" id="female" name="user-Gender" value="W"> 
-										<label for="female">여</label>
+										<label for="male">남</label> <input type="radio" id="female"
+											name="user-Gender" value="W"> <label for="female">여</label>
 									</div>
 									<div style="padding-top: 20px;">
-										<input type="submit" value="수정하기" class="all-button" onclick="showContent('my-info')"/> 
+										<input type="submit" value="수정하기" class="all-button"
+											onclick="showContent('my-info')" />
 									</div>
 								</form>
 
@@ -585,3 +539,5 @@
 <script src="/my-page/my-main/main-script.js"></script>
 
 </html>
+
+

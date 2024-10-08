@@ -11,8 +11,8 @@ boolean isLoggedIn = (session != null && session.getAttribute("member") != null)
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>주문 내역 | 쇼핑하조</title>
- <!-- 페이지 제목 옆의 아이콘 -->
-    <link href="https://i.ibb.co/X4b9F9N/logo.png" rel="icon">
+<!-- 페이지 제목 옆의 아이콘 -->
+<link href="https://i.ibb.co/X4b9F9N/logo.png" rel="icon">
 <link rel="stylesheet"
 	href="${pageContext.request.contextPath}/my-page/ordered/order-status.css">
 </head>
@@ -34,7 +34,7 @@ boolean isLoggedIn = (session != null && session.getAttribute("member") != null)
 		<div class="orderlist"
 			style="min-height: 100vh; display: flex; flex-direction: column;">
 			<h1>나의 주문 내역</h1>
-			<c:set var="order" value="${requestScope.Ordered}"/>
+			<c:set var="order" value="${requestScope.Ordered}" />
 			<c:if test="${not empty Ordered}">
 				<table>
 					<thead>
@@ -71,23 +71,34 @@ boolean isLoggedIn = (session != null && session.getAttribute("member") != null)
 								</td>
 								<!-- 환불 및 교환 버튼 -->
 								<td>
-								<!-- 환불 날짜 또는 환불 상태에 값이 없을깨만 버튼 보여줌 (있으면 환불 된거임) -->
-									<c:if test="${empty order.refunded_date || empty order.refund_status}">
-										<a href="/refund.my"> 
-											<input type="button" class="refund-button" value="환불 및 교환하기"
+									<!-- 환불 날짜 또는 환불 상태에 값이 없을깨만 버튼 보여줌 (있으면 환불 된거임) --> 
+									<c:choose>
+										<%-- 환불 날짜 또는 환불 상태가 비어있을 경우 --%>
+										<c:when
+											test="${empty order.refunded_date || empty order.refund_status}">
+											<a href="/refund.my"> <input type="button"
+												class="refund-button" value="환불 및 교환하기"
 												style="cursor: pointer;" />
-										</a>
-									</c:if>
+											</a>
+										</c:when>
+
+										<%-- 환불 날짜와 환불 상태가 존재할 경우 --%>
+										<c:otherwise>
+									        ${order.refund_status } <br />
+									        ${order.refunded_date } 
+								    	</c:otherwise>
+									</c:choose>
+
 								</td>
 							</tr>
 						</c:forEach>
 					</tbody>
 				</table>
 			</c:if>
-				<!-- 환불할 제품이 없는 경우 -->
-				<c:if test="${empty Ordered}">
-					<p>환불할 제품이 없습니다.</p>
-				</c:if>
+			<!-- 환불할 제품이 없는 경우 -->
+			<c:if test="${empty Ordered}">
+				<p>환불할 제품이 없습니다.</p>
+			</c:if>
 		</div>
 
 		<footer class="footer">
