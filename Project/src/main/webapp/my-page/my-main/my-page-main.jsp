@@ -55,45 +55,45 @@
 						<p>마이페이지</p>
 					</div>
 					<ul>
+						<!-- 나의 정보창 -->
 						<li><a href="/my-main/MemberList.up"
 							onclick="toggleBold(this); showContent('my-info')"
 							class="sidebar-options">나의 정보</a></li>
-						<!-- 나의 정보창 -->
+						<!-- 여기에 주문 취소랑 주소 변경 등 넣기-->
 						<li><a href="/ordered.my"
 							onclick="toggleBold(this); showContent('orders')"
 							class="sidebar-options">주문 내역</a></li>
-						<!-- 여기에 주문 취소랑 주소 변경 등 넣기-->
+						<!-- 여기에 멤버십 포인트나 할인 이벤트 등 넣기 -->
 						<li><a href="#"
 							onclick="toggleBold(this); showContent('membership')"
 							class="sidebar-options">멤버십</a></li>
-						<!-- 여기에 멤버십 포인트나 할인 이벤트 등 넣기 -->
+						<!-- 고객센터 페이지-->
 						<li><a href="#"
 							onclick="toggleBold(this); showContent('helpcenter')"
 							class="sidebar-options">고객센터</a></li>
-						<!-- 고객센터 페이지 만들기(같은 페이지임)-->
+						<!-- 환불 및 교환 페이지 -->
 						<li><a href="/refund.my"
 							onclick="toggleBold(this); showContent('refunds')"
 							class="sidebar-options">환불 및 교환</a></li>
-						<!-- 환불 및 교환 페이지 만들기(같은 페이지임) -->
+						<!-- 이벤트 -->
 						<li><a href="#"
 							onclick="toggleBold(this); showContent('events')"
 							class="sidebar-options">이벤트</a></li>
-						<!-- 이벤트 나오는 페이지 만들기 -->
+						<!-- 공지사항 페이지 -->
 						<li><a href="#"
 							onclick="toggleBold(this); showContent('announcement')"
 							class="sidebar-options">공지사항</a></li>
-						<!-- 공지사항 페이지 만들기 -->
+						<!-- 회원 탈퇴 페이지 -->
 						<li><a href="#"
 							onclick="toggleBold(this); showContent('byebye')"
 							class="sidebar-options">회원 탈퇴</a></li>
-						<!-- 이건 나중에 DB에서 delete 문 날리고 새로운 페이지에서 성공했습니다 뜨게 하기 -->
 
 						<li><a href="#" onclick="toggleBold(this); showContent('')"
 							class="sidebar-options"></a></li>
 						<!-- ('') 안쪽에 더 추가해서 화면 더 만들기 -->
 
 					</ul>
-
+					<%-- 로그 아웃 버튼 --%>
 					<button style="font-weight: bold; color: red;" onclick="logout()">로그
 						아웃</button>
 
@@ -116,7 +116,7 @@
 							</c:if>
 							<!-- 만약 세션에 user_name 이 없는 경우 -->
 							<c:if test="${empty member}">
-								<span>비회원님 어서오세요</span>
+								<span>비회원님 로그인 해주세요</span>
 							</c:if>
 
 						</p>
@@ -138,10 +138,10 @@
 					<br />
 
 					<!-- 메인페이지 내용 페이지-->
+					<!--  -->
 					<div id="maincontents" class="content-section"
 						style="display: <c:out value="${empty showMyInfo ? 'block' : 'none'}" />;">
 
-						<!-- 나중에 여기에다가 주문현황 박스 만들기 박스 3개 정도 만들어서 가로로 해서 왼쪽은 주문형황 중간은 주문현황 오른쪽은 고객센터 이렇게 만들기 아래는 후기-->
 						<div class="main-container">
 							<div class="tracking">
 								<h2 class="bold">주문현황</h2>
@@ -205,6 +205,7 @@
 
                             </div> -->
 
+							<!-- 후기 페이지랑 연결? -->
 							<div class="main-box">
 								<h2 class="bold">후기</h2>
 								<hr class="line" />
@@ -219,15 +220,13 @@
 					</div>
 
 					<!-- 나의 정보 내용 페이지 -->
+					<!--  -->
 					<div id="my-info" class="content-section"
 						style="display: <c:out value="${not empty showMyInfo ? 'block' : 'none'}" />;">
 						<div class="profile-container">
 							<h2 class="bold" id="myInformation">나의 정보</h2>
-							<!-- h2 태그 말고 class 줘서 크기 조절하기 다른 페이지도 같이 쓰게 (폰트랑 굵기 등 추가) -->
 							<p></p>
 							<div class="profile-info">
-								<!-- span 태그 안에 jsp 넣어서 db에서 나중에 select 해 올거 넣기 -->
-
 								<!-- 나의 정보 -->
 								<div class="profile-info">
 									<label for="user-name">이름 : ${member.user_name }</label>
@@ -238,7 +237,7 @@
 								<div class="profile-info">
 									<!-- 나중에 ${member.user_pw } 부분을 *로 수정하기 -->
 									<label for="user-pw"></label>비밀번호 : <span id="user-pw">비밀번호는
-										보안을 위해 표시되지 않습니다.</span>
+										보안을 위해 표시되지 않습니다</span>
 								</div>
 								<div class="profile-info">
 									<label for="phone">전화번호 : ${member.user_phone }</label>
@@ -263,10 +262,7 @@
 
 							</div>
 
-
 						</div>
-
-
 
 					</div>
 
@@ -364,8 +360,8 @@
 										<img src="https://via.placeholder.com/500x200" alt="이벤트 1 이미지">
 										<div class="event-card-content">
 											<h3>가을 시즌 할인</h3>
-											<p>가을을 맞아 전 제품 20% 할인! 지금 바로 쇼핑하세요.</p>
-											<a href="#" class="all-button">이벤트 참여하기</a>
+											<p>가을을 맞이 제품 할인중! 지금 바로 쇼핑하세요.</p>
+											<a href="" class="all-button">할인 상품 보러가기</a>
 										</div>
 									</div>
 
