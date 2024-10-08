@@ -55,45 +55,45 @@
 						<p>마이페이지</p>
 					</div>
 					<ul>
+						<!-- 나의 정보창 -->
 						<li><a href="/my-main/MemberList.up"
 							onclick="toggleBold(this); showContent('my-info')"
 							class="sidebar-options">나의 정보</a></li>
-						<!-- 나의 정보창 -->
+						<!-- 여기에 주문 취소랑 주소 변경 등 넣기-->
 						<li><a href="/ordered.my"
 							onclick="toggleBold(this); showContent('orders')"
 							class="sidebar-options">주문 내역</a></li>
-						<!-- 여기에 주문 취소랑 주소 변경 등 넣기-->
+						<!-- 여기에 멤버십 포인트나 할인 이벤트 등 넣기 -->
 						<li><a href="#"
 							onclick="toggleBold(this); showContent('membership')"
 							class="sidebar-options">멤버십</a></li>
-						<!-- 여기에 멤버십 포인트나 할인 이벤트 등 넣기 -->
+						<!-- 고객센터 페이지-->
 						<li><a href="#"
 							onclick="toggleBold(this); showContent('helpcenter')"
 							class="sidebar-options">고객센터</a></li>
-						<!-- 고객센터 페이지 만들기(같은 페이지임)-->
+						<!-- 환불 및 교환 페이지 -->
 						<li><a href="/refund.my"
 							onclick="toggleBold(this); showContent('refunds')"
 							class="sidebar-options">환불 및 교환</a></li>
-						<!-- 환불 및 교환 페이지 만들기(같은 페이지임) -->
+						<!-- 이벤트 -->
 						<li><a href="#"
 							onclick="toggleBold(this); showContent('events')"
 							class="sidebar-options">이벤트</a></li>
-						<!-- 이벤트 나오는 페이지 만들기 -->
+						<!-- 공지사항 페이지 -->
 						<li><a href="#"
 							onclick="toggleBold(this); showContent('announcement')"
 							class="sidebar-options">공지사항</a></li>
-						<!-- 공지사항 페이지 만들기 -->
+						<!-- 회원 탈퇴 페이지 -->
 						<li><a href="#"
 							onclick="toggleBold(this); showContent('byebye')"
 							class="sidebar-options">회원 탈퇴</a></li>
-						<!-- 이건 나중에 DB에서 delete 문 날리고 새로운 페이지에서 성공했습니다 뜨게 하기 -->
 
 						<li><a href="#" onclick="toggleBold(this); showContent('')"
 							class="sidebar-options"></a></li>
 						<!-- ('') 안쪽에 더 추가해서 화면 더 만들기 -->
 
 					</ul>
-
+					<%-- 로그 아웃 버튼 --%>
 					<button style="font-weight: bold; color: red;" onclick="logout()">로그
 						아웃</button>
 
