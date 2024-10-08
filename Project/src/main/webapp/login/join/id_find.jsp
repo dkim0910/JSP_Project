@@ -114,7 +114,7 @@
 			</div>
 				
 			<div class="input_row">
-				<input type="submit" value="아이디 찾기" class="btn"/> 
+				<input type="submit" value="아이디 찾기" class="btn" id="submitButton"/> 
 			</div>
 			<!-- 하단 링크 (비밀번호 찾기, 회원가입, 회원가입) -->
 	        <div class="join">
@@ -145,6 +145,8 @@
 				input.value = value;
 			}
 		}
+		
+		
 	</script>
 </body>
 </html>
