@@ -32,6 +32,7 @@ public class CartFrontController extends HttpServlet{
 		if(requestURI.equals("/cart.ca")) { 
 			forward = new CartListAction().execute(req, resp);
 		}
+		// 선택한 상품 구매하기 페이지로 보내기
 		else if(requestURI.equals("/purchaseItems.ca")) { 
 			forward = new PurchaseAction().execute(req, resp);
 		}

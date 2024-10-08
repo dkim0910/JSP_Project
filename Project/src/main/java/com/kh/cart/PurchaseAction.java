@@ -2,6 +2,7 @@ package com.kh.cart;
 
 import java.util.List;
 
+import com.kh.category.GoodsDTO;
 import com.kh.login.UserDTO;
 import com.kh.web.action.ActionForward;
 
@@ -13,6 +14,7 @@ public class PurchaseAction {
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response)  {
 		ActionForward forward = new ActionForward();
 		CartDAO cdao = new CartDAO();
+		GoodsDTO gdto = new GoodsDTO();
 		
 		String itemIdsParam = request.getParameter("itemIds");
 		// itemIds를 콤마로 분리하여 배열로 변환
@@ -20,8 +22,9 @@ public class PurchaseAction {
         if (itemIdsParam != null && !itemIdsParam.isEmpty()) {
             itemIdsArray = itemIdsParam.split(",");
         }
-        
-        request.setAttribute("cartList", itemIdsArray);
+		List<GoodsDTO> cartList = cdao.searchByList(itemIdsArray);
+
+        request.setAttribute("cartList", cartList);
         
         forward.setRedirect(true);
 		forward.setPath("/order/order_form.jsp");
