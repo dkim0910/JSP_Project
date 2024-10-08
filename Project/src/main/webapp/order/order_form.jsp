@@ -35,6 +35,7 @@ boolean isLoggedIn = (session != null && session.getAttribute("member") != null)
 	<c:set var="totalPrice_amount" value="0" />
 	<c:set var="totalPrice_original" value="0" />
 	<c:set var="productList" value="${requestScope.goods }" />
+	<%-- <c:set var="productList2" value="${requestScope.cartList }" /> --%>
 
 	<%-- 상품 리스트를 반복하며 가격 계산 --%>
 	<%-- <c:forEach var="product" items="${productList}"> --%>

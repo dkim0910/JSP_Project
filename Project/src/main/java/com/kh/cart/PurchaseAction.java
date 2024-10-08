@@ -1,0 +1,31 @@
+package com.kh.cart;
+
+import java.util.List;
+
+import com.kh.login.UserDTO;
+import com.kh.web.action.ActionForward;
+
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
+
+public class PurchaseAction {
+	public ActionForward execute(HttpServletRequest request, HttpServletResponse response)  {
+		ActionForward forward = new ActionForward();
+		CartDAO cdao = new CartDAO();
+		
+		String itemIdsParam = request.getParameter("itemIds");
+		// itemIds를 콤마로 분리하여 배열로 변환
+        String[] itemIdsArray = null;
+        if (itemIdsParam != null && !itemIdsParam.isEmpty()) {
+            itemIdsArray = itemIdsParam.split(",");
+        }
+        
+        request.setAttribute("cartList", itemIdsArray);
+        
+        forward.setRedirect(true);
+		forward.setPath("/order/order_form.jsp");
+
+		return forward;
+	}
+}

@@ -31,7 +31,10 @@ public class CartFrontController extends HttpServlet{
 		// 장바구니에 저장된 상품 정보 불러오기
 		if(requestURI.equals("/cart.ca")) { 
 			forward = new CartListAction().execute(req, resp);
-		} 
+		}
+		else if(requestURI.equals("/purchaseItems.ca")) { 
+			forward = new PurchaseAction().execute(req, resp);
+		}
 		
 		if(forward != null) {
 			// true, redirect 방식으로 페이지 이동할 경우

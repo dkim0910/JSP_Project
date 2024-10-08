@@ -13,8 +13,10 @@ function deleteSelectedItems() {
 function purchaseItems() {
     const selectedItems = document.querySelectorAll('.item-checkbox:checked');
     if (selectedItems.length > 0) {
+		// 체크된 항목들을 배열에 저장
         let itemIds = Array.from(selectedItems).map(item => item.value);
-        window.location.href = `purchaseItems.jsp?itemIds=${itemIds.join(",")}`;
+		// 배열의 값들을 문자열 형태로 변환
+        window.location.href = `purchaseItems.ca?itemIds=${itemIds.join(",")}`;
     } else {
         alert('구매할 항목을 선택하세요.');
     }
