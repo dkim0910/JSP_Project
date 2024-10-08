@@ -116,7 +116,7 @@
 							</c:if>
 							<!-- 만약 세션에 user_name 이 없는 경우 -->
 							<c:if test="${empty member}">
-								<span>비회원님 어서오세요</span>
+								<span>비회원님 로그인 해주세요</span>
 							</c:if>
 
 						</p>
@@ -138,10 +138,10 @@
 					<br />
 
 					<!-- 메인페이지 내용 페이지-->
+					<!--  -->
 					<div id="maincontents" class="content-section"
 						style="display: <c:out value="${empty showMyInfo ? 'block' : 'none'}" />;">
 
-						<!-- 나중에 여기에다가 주문현황 박스 만들기 박스 3개 정도 만들어서 가로로 해서 왼쪽은 주문형황 중간은 주문현황 오른쪽은 고객센터 이렇게 만들기 아래는 후기-->
 						<div class="main-container">
 							<div class="tracking">
 								<h2 class="bold">주문현황</h2>
@@ -205,6 +205,7 @@
 
                             </div> -->
 
+							<!-- 후기 페이지랑 연결? -->
 							<div class="main-box">
 								<h2 class="bold">후기</h2>
 								<hr class="line" />
@@ -219,15 +220,13 @@
 					</div>
 
 					<!-- 나의 정보 내용 페이지 -->
+					<!--  -->
 					<div id="my-info" class="content-section"
 						style="display: <c:out value="${not empty showMyInfo ? 'block' : 'none'}" />;">
 						<div class="profile-container">
 							<h2 class="bold" id="myInformation">나의 정보</h2>
-							<!-- h2 태그 말고 class 줘서 크기 조절하기 다른 페이지도 같이 쓰게 (폰트랑 굵기 등 추가) -->
 							<p></p>
 							<div class="profile-info">
-								<!-- span 태그 안에 jsp 넣어서 db에서 나중에 select 해 올거 넣기 -->
-
 								<!-- 나의 정보 -->
 								<div class="profile-info">
 									<label for="user-name">이름 : ${member.user_name }</label>
@@ -238,7 +237,7 @@
 								<div class="profile-info">
 									<!-- 나중에 ${member.user_pw } 부분을 *로 수정하기 -->
 									<label for="user-pw"></label>비밀번호 : <span id="user-pw">비밀번호는
-										보안을 위해 표시되지 않습니다.</span>
+										보안을 위해 표시되지 않습니다</span>
 								</div>
 								<div class="profile-info">
 									<label for="phone">전화번호 : ${member.user_phone }</label>
@@ -263,10 +262,7 @@
 
 							</div>
 
-
 						</div>
-
-
 
 					</div>
 
