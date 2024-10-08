@@ -75,7 +75,7 @@ table {
 			</tr>
 		</table>
 		<table border="1" 
-				style="border-collapse: collapse;border-spacing: 0;width: 900px;" >
+				style="border-collapse: separate;border-spacing: 0;width: 900px;" >
 			<tr align="center" valign="middle">
 				<th width="8%">번호</th>
 				<th width="50%">제목</th>

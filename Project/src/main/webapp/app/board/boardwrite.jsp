@@ -12,7 +12,14 @@
 table {
 	margin: 0 auto;
 	width: 900px;
+	border: 1px solid black;
+	border-radius: 10px;
 }
+
+tr a {
+ color: white;
+}
+
 
 .top > td {
 	font-weight: bold;
@@ -39,6 +46,10 @@ a:hover {
 	color: black;
 }
 </style>
+
+<!-- 테일윈드 css 불러오기 -->
+<script src="https://cdn.tailwindcss.com"></script>
+
 <body>
 	<c:if test="${not param.flag and not empty param.flag }">
 		<script>
@@ -52,7 +63,7 @@ a:hover {
                <td><h3>REVIEW</h3></td>
             </tr>
          </table>
-         <table border="1" style="border-collapse:collapse;">
+         <table border="1" style="border-collapse:separate;">
             <tr height="30px">
                <th align="center" width="150px">
                   제 목
@@ -66,7 +77,7 @@ a:hover {
                   글쓴이
                </th>
                <td>
-                  <input name="username" size="10" maxlength="20" value="" placeholder="이름을 입력하세요">
+                  <input name="username" size="20" maxlength="20" value="" placeholder="이름을 입력하세요">
                </td>
             </tr>
             <tr height="300px">
