@@ -126,7 +126,7 @@ boolean isLoggedIn = (session != null && session.getAttribute("member") != null)
 											<div class="sheet-order-product-information">
 												<a class="sheet-order-product-brand">${product2.BRAND}</a> <br />
 												<a class="sheet-order-product-name">${product2.PRODUCT_NAME}</a>
-												<br /> <span class="sheet-order-product-option"></span>
+												<br />
 												<div class="sheet-order-product-price-box">
 													<strong class="sheet-order-product-price-origin">
 														<fmt:formatNumber value="${product2.NORMAL_PRICE}"
@@ -170,7 +170,7 @@ boolean isLoggedIn = (session != null && session.getAttribute("member") != null)
 											<div class="sheet-order-product-information">
 												<a class="sheet-order-product-brand">${product.BRAND}</a> <br />
 												<a class="sheet-order-product-name">${product.PRODUCT_NAME}</a>
-												<br /> <span class="sheet-order-product-option"></span>
+												<br />
 												<div class="sheet-order-product-price-box">
 													<strong class="sheet-order-product-price-origin">
 														<fmt:formatNumber value="${product.NORMAL_PRICE}"
