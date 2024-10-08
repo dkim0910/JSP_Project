@@ -38,5 +38,6 @@ public class ReplyDTO {
 		this.boardnum = boardnum;
 	}
 	
-	
 }
+	
+

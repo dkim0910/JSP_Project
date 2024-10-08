@@ -1,6 +1,7 @@
 package com.kh.app.board;
 
 import java.io.IOException;
+import java.util.Iterator;
 
 import com.kh.web.action.ActionForward;
 
@@ -12,27 +13,30 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 @WebServlet("*.bo")
-public class boardFrontController extends HttpServlet {
-	// doGet, do Post, doProcess
+public class BoardFrontController extends HttpServlet{
+	// doGet, doPost, doProcess
 	// /board/BoardList.bo 요청으로 왔을때 (request)
-	// /app/board/boardlist.jsp 페이지 응답 보내주기 (response)
+	// /app/board/boardlist.jsp 페이지 응답으로 보내주기 (response)
+	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		doProcess(req, resp);
+		doProcess(req,resp);
+		
 	}
-
+	
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		doProcess(req, resp);
+		doProcess(req,resp);
+		
 	}
-
-	protected void doProcess(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
+	
+	protected void doProcess(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		String requestURI = req.getRequestURI();
 		ActionForward forward = null;
 
-		switch (requestURI) {
+		switch(requestURI) {
 		case "/board/BoardList.bo":
-			// forward = new ActionForward(true, "/app/board/boardlist.jsp");
+//			forward = new ActionForward(true, req.getContextPath() + "/app/board/boardlist.jsp");
 			forward = new BoardListAction().execute(req, resp);
 			break;
 		case "/board/BoardWrite.bo":
@@ -45,19 +49,41 @@ public class boardFrontController extends HttpServlet {
 			forward = new BoardViewAction().execute(req, resp);
 			break;
 		case "/board/AddReply.bo":
-			// insert
+			// insert 
 			forward = new AddReplyAction().execute(req, resp);
 			break;
+		case "/board/UpdateReply.bo":
+			forward = new UpdateReplyAction().execute(req, resp);
+			break;
+		case "/board/DeleteReply.bo":
+			forward = new DeleteReplyAction().execute(req, resp);
+			break;
 		}
-
-		if (forward != null) {
-			if (forward.isRedirect()) {
-				resp.sendRedirect(forward.getPath());
-			} else {
-				RequestDispatcher disp = req.getRequestDispatcher(forward.getPath());
-				disp.forward(req, resp);
-			}
-		}
+			
+		// 페이지로 이동
+		if(forward != null) {
+	         if(forward.isRedirect()) {
+	            resp.sendRedirect(forward.getPath());
+	         }else {
+	            RequestDispatcher disp = req.getRequestDispatcher(forward.getPath());
+	            disp.forward(req, resp);
+	         }
+	      }
+		
+		
 	}
-
+	
+	
 }
+
+
+
+
+
+
+
+
+
+
+
+

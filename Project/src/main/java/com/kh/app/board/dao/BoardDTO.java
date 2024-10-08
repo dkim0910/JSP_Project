@@ -5,7 +5,7 @@ public class BoardDTO {
 	private String boardtitle;
 	private String boardcontents;
 	private String username;
-	private String boarddata;
+	private String boarddate;	// date 를 string 타입으로 가지고 올 수 있나? 된다고 하네
 	private int boardreadcount;
 	
 	public int getBoardnum() {
@@ -32,11 +32,11 @@ public class BoardDTO {
 	public void setUsername(String username) {
 		this.username = username;
 	}
-	public String getBoarddata() {
-		return boarddata;
+	public String getBoarddate() {
+		return boarddate;
 	}
-	public void setBoarddata(String boarddata) {
-		this.boarddata = boarddata;
+	public void setBoarddate(String boarddate) {
+		this.boarddate = boarddate;
 	}
 	public int getBoardreadcount() {
 		return boardreadcount;
