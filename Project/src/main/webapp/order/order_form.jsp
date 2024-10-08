@@ -113,9 +113,27 @@ boolean isLoggedIn = (session != null && session.getAttribute("member") != null)
 						<h2 class="sheet-title-count">주문 상품</h2>
 					</div>
 					<div class="sheet-order-product">
-						<%-- <c:forEach var="productList" items="${requestScope.goods}"> --%>
 						<div class="sheet-order-product-cartItem">
-							<div class="sheet-order-product-box">
+							<c:forEach var="product2" items="${productList2}">
+								<div class="sheet-order-product-box">
+									<div class="sheet-order-product-image-box">
+										<img class="sheet-order-product-image"
+											src="${product2.IMAGE_URL}" alt="">
+									</div>
+									<div class="sheet-order-product-information">
+										<a class="sheet-order-product-brand">${product2.BRAND}</a> <br />
+										<a class="sheet-order-product-name">${product2.PRODUCT_NAME }</a>
+										<br /> <span class="sheet-order-product-option"></span>
+										<div class="sheet-order-product-price-box">
+											<strong class="sheet-order-product-price-origin"><fmt:formatNumber
+													value="${product2.NORMAL_PRICE }" pattern="#,###" /> 원</strong> <br />
+											<span class="sheet-order-product-price-sale"><fmt:formatNumber
+													value="${product2.PRICE_AMOUNT }" pattern="#,###" /> 원</span>
+										</div>
+									</div>
+								</div>
+							</c:forEach>
+							<%-- <div class="sheet-order-product-box">
 								<div class="sheet-order-product-image-box">
 									<img class="sheet-order-product-image"
 										src="${productList.IMAGE_URL}" alt="">
@@ -131,7 +149,7 @@ boolean isLoggedIn = (session != null && session.getAttribute("member") != null)
 												value="${productList.PRICE_AMOUNT }" pattern="#,###" /> 원</span>
 									</div>
 								</div>
-							</div>
+							</div> --%>
 						</div>
 						<%-- </c:forEach> --%>
 					</div>

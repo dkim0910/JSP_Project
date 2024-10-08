@@ -22,7 +22,9 @@ public class CartDAO {
 	}
 
 	public List<GoodsDTO> searchByList(String[] itemIdsArray) {
+		System.out.println("db start");
 		List<GoodsDTO> result = session.selectList("Cart.searchbylist", itemIdsArray);
+		System.out.println("db end");
 		return result;
 	}
 }

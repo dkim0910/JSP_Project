@@ -85,7 +85,7 @@
 	            <button class="delete-selected" onclick="deleteSelectedItems()">선택삭제</button>
 	        </div>
 	        <!-- 구매하기 버튼 -->
-	        <a href = "./order_form.jsp" class="purchase-button" onclick="purchaseItems()">구매하기</a>
+			<button class="purchase-button" onclick="purchaseItems()">구매하기</button>
 	    </div>
 	
 	    <!-- 장바구니 항목 리스트 -->
