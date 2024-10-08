@@ -11,7 +11,7 @@
 table {
 	margin: 0 auto;
 	width: 900px;
-	border: 1px solid black;
+	border: 1px solid #eee;
 	border-radius: 10px;
 }
 
@@ -28,6 +28,7 @@ h3 {
 	background-color: black;
 	color: white;
 	height: 40px;
+	border-radius: 10px;
 }
 
 a {
@@ -48,8 +49,33 @@ a:hover {
 	border: 1px solid #e5e7eb;
 	border-radius: 5px;
 }
+
+.bottom-btn {
+	margin-top: 5px;
+	text-align: right;
+}
+
+
+.comment-btn {
+	background-color: black;
+	color: white;
+	font-weight: bold;
+	border-radius: 7px;
+	padding: 0 7px;
+}
+
+.comment-section {
+	display: none; /* 처음에는 댓글 섹션을 숨김 */
+}
+
+.comment-section.active {
+	display: block; /* active 클래스가 있을 때 보임 */
+}
 </style>
 </head>
+
+<!-- 제이쿼리 불러오기  -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
 <!-- 테일윈드 css 불러오기 -->
 <script src="https://cdn.tailwindcss.com"></script>
@@ -63,7 +89,7 @@ a:hover {
             <td><h3>REVIEW</h3></td>
          </tr>
       </table>
-      <table class="table2"  style="border-collapse: separate;">
+      <table style="border-collapse: separate;">
          <tr height="30px">
             <th align="center" width="150px">제 목</th>
             <td>
@@ -74,7 +100,7 @@ a:hover {
             </td>
          </tr>
          <tr height="30px">
-            <th align="center" width="150px">글쓴이</th>
+            <th align="center" width="150px">작성자</th>
             <td>${board.username }</td>
          </tr>
          <tr height="300px">
@@ -84,14 +110,18 @@ a:hover {
             </td>
          </tr>
       </table>
-      <table style="border:0px;">
+      <table class="bottom-btn" style="border:0px;">
          <tr align="right" valign="middle">
-            <td><a href="/board/BoardList.bo">목록</a></td>
+         	<td style="text-align: right;">
+         		<button class="comment-btn toggleCommentSection">댓글</button>
+         		<a href="/board/BoardList.bo">목록</a>
+         	</td>
          </tr>
       </table>
       
       <!-- 댓글 -->
-      <form name="replyForm" action="/board/AddReply.bo" method="post">
+     <div class="comment-section">
+     	 <form name="replyForm" action="/board/AddReply.bo" method="post">
          <input type="hidden" name="boardnum" value="${board.boardnum}">
          <table class="replyFormTable">
             <tr>
@@ -106,9 +136,7 @@ a:hover {
                </td>
             </tr>
          </table>
-      
-      <!-- 댓글 리스트 -->
-      <hr>
+           <!-- 댓글 리스트 -->
          <table>
 	         <c:choose>
 	         	<c:when test="${replylist != null and fn:length(replylist) > 0 }">
@@ -135,6 +163,9 @@ a:hover {
 	            </c:otherwise>
 	         </c:choose>   
          </table>
+     </div>
+      
+      <hr>   
       </form>
    </div>
    <script>
@@ -166,6 +197,14 @@ a:hover {
 			}
 			
    		}
+   		
+   		function comment__init() {
+   		    $('.toggleCommentSection').on('click', function() {
+   		        $('.comment-section').toggleClass('active'); // 댓글 섹션의 active 클래스 토글
+   		    });
+   		}
+
+   		comment__init() 
    		
    </script>
 </body>
