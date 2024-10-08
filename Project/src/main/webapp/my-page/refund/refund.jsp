@@ -69,8 +69,8 @@ boolean isLoggedIn = (session != null && session.getAttribute("member") != null)
 				<c:if test="${status.index < 1}">
 					<c:if
 						test="${not empty refund.refunded_date || not empty refund.refund_status}">
-					</c:if>
 					<h2>환불할 제품이 없습니다</h2>
+					</c:if>
 				</c:if>
 			</c:forEach>
 		</section>
