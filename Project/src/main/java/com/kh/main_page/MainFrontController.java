@@ -36,7 +36,6 @@ public class MainFrontController extends HttpServlet {
 			System.out.println("here2");
 			forward = new GetAllItems().execute(req, resp);
 			break;
-		
 		}
 //		my-page/refund/finish-refund.jsp
 		if (forward != null) {
