@@ -11,6 +11,12 @@
 table {
 	margin: 0 auto;
 	width: 900px;
+	border: 1px solid black;
+	border-radius: 10px;
+}
+
+tr a {
+ color: white;
 }
 
 .top > td {
@@ -28,7 +34,6 @@ a {
 	text-decoration: none;
 	background-color: black;
 	border-radius: 7px;
-	color: white;
 	font-weight: bold;
 	padding: 0 5px;
 	transition: all .3s;
@@ -38,8 +43,17 @@ a:hover {
 	background-color: #eee;
 	color: black;
 }
+
+.replyFormTable input {
+	border: 1px solid #e5e7eb;
+	border-radius: 5px;
+}
 </style>
 </head>
+
+<!-- 테일윈드 css 불러오기 -->
+<script src="https://cdn.tailwindcss.com"></script>
+
 <body>
 	<c:set var="board" value="${requestScope.board }"/>
 	<c:set var="replylist" value="${requestScope.replylist }"/>
@@ -49,7 +63,7 @@ a:hover {
             <td><h3>REVIEW</h3></td>
          </tr>
       </table>
-      <table border="1" style="border-collapse: collapse;">
+      <table class="table2"  style="border-collapse: separate;">
          <tr height="30px">
             <th align="center" width="150px">제 목</th>
             <td>
@@ -79,7 +93,7 @@ a:hover {
       <!-- 댓글 -->
       <form name="replyForm" action="/board/AddReply.bo" method="post">
          <input type="hidden" name="boardnum" value="${board.boardnum}">
-         <table>
+         <table class="replyFormTable">
             <tr>
                <td align="center" width="200px">
                   댓 글<br><hr>

@@ -36,6 +36,10 @@ public class CartFrontController extends HttpServlet{
 		else if(requestURI.equals("/purchaseItems.ca")) { 
 			forward = new PurchaseAction().execute(req, resp);
 		}
+		// 선택한 상품 장바구니에서 빼기
+		else if(requestURI.equals("/deleteItems.ca")) { 
+			forward = new DeleteAction().execute(req, resp);
+		}
 		
 		if(forward != null) {
 			// true, redirect 방식으로 페이지 이동할 경우

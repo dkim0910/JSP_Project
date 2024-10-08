@@ -99,7 +99,7 @@ th {
     justify-content: center; 	/* 가로 중앙 정렬 */
     padding: 0; 				/* 기본 패딩 제거 */
     line-height: 1; 			/* 줄 높이 설정 */
-  text-decoration: none; 		/* 밑줄 제거 */
+  	text-decoration: none; 		/* 밑줄 제거 */
 }
 
 .header {
@@ -141,7 +141,21 @@ body {
     display: flex;
     justify-content: space-between;
 }
+.Title{
+	flex-grow: 1; 
+	text-align: center;
+}
 
+.main{
+	padding-top: 20px;
+	padding-bottom: 20px;
+	height: 530px;
+}
+.keepshoping{
+	border-radius: 5px;
+	right: 0;
+	background-color: black;
+}
 .cart {
     padding: 20px;
 }
@@ -173,10 +187,6 @@ button {
     margin-left: 10px;
 }
 
-button:hover {
-    background-color: black;
-}
-
 /* 구매하기 버튼 스타일 */
 .purchase-button {
     padding: 10px 20px;
@@ -188,7 +198,13 @@ button:hover {
 }
 
 .purchase-button:hover {
-    background-color: #0056b3;
+    background-color: rgb(79, 79, 79);
+    
+}
+
+/* 삭제하기 버튼 스타일 */
+.delete-selected{
+	border-radius: 5px;
 }
 
 /* 모달 스타일 */

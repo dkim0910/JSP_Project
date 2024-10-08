@@ -1,16 +1,16 @@
 package com.kh.cart;
 
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.List;
 
 import com.kh.category.GoodsDTO;
-import com.kh.login.UserDTO;
 import com.kh.web.action.ActionForward;
 
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import jakarta.servlet.http.HttpSession;
 
-public class PurchaseAction {
+public class DeleteAction {
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response)  {
 		ActionForward forward = new ActionForward();
 		CartDAO cdao = new CartDAO();
@@ -21,11 +21,14 @@ public class PurchaseAction {
         if (itemIdsParam != null && !itemIdsParam.isEmpty()) {
             itemIdsArray = itemIdsParam.split(",");
         }
-		List<GoodsDTO> cartList = cdao.searchByList(itemIdsArray);
-        request.setAttribute("cartList", cartList);
-        
-        forward.setRedirect(false);
-		forward.setPath("/order/order_form.jsp");
+        // 장바구니에서 선택한 상품 빼기 성공시
+        if(cdao.deleteItem(itemIdsArray)) {
+        	forward.setRedirect(true);
+        	forward.setPath("/cart.ca");
+        }else {
+        	forward.setRedirect(true);
+        	forward.setPath("/cart.ca");
+        }
 		return forward;
 	}
 }

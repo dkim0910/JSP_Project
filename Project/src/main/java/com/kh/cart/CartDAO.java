@@ -25,4 +25,12 @@ public class CartDAO {
 		List<GoodsDTO> result = session.selectList("Cart.searchbylist", itemIdsArray);
 		return result;
 	}
+
+	public boolean deleteItem(String[] itemIdsArray) {
+		boolean result = false;
+		if(session.delete("Cart.deleteitem", itemIdsArray) == 1) {
+			result = true;
+		}
+		return result;
+	}
 }

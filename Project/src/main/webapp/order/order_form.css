@@ -130,6 +130,18 @@ button{
     display: flex;
     position: relative;
 }
+.sheet-address-title-label{
+    background-color: #8A8A8A1A;
+    color: #666;
+    border-radius: 2px;
+    margin-left: 4px;
+    margin-right: auto;
+    padding: 1px 4px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 14px;
+    overflow: hidden;
+}
 .sheet-address-title-button{
     border: 1px solid #e0e0e0;
     box-sizing: border-box;
@@ -142,6 +154,7 @@ button{
     line-height: 18px;
     
 }
+
 .sheet-message-text{
     font-size: 14px;
     justify-content: space-between;
@@ -260,81 +273,53 @@ h2{
     margin: 0 16px;
     position: relative;
 }
-.sheet-order-product-box{
-    gap: 0 12px;
-    display: flex;
-    margin-top: 8px;
+.sheet-order-product-box {
+    display: flex; /* Flexbox로 자식 요소를 수평 정렬 */
+    margin-bottom: 15px; /* 각 상품 박스 간의 간격 */
 }
-.sheet-order-product-image{
-    object-fit: contain;
-    align-self: flex-start;
-    width: 120px;
-    height: 160px;
+
+.sheet-order-product-image-box {
+    width: 130px; /* 이미지 박스 폭 고정 */
+    flex-shrink: 0; /* 크기가 줄어들지 않도록 설정 */
 }
-.sheet-order-product-information{
-	margin-top: 15px;
+
+.sheet-order-product-image {
+    width: 100%; /* 이미지가 박스를 가득 채우도록 */
+    height: auto; /* 비율 유지 */
 }
-.sheet-order-product-brand{
-    grid-area: brand;
-    font-size: 18px;
+
+.sheet-order-product-information {
+    flex-grow: 1; /* 남은 공간을 차지하도록 설정 */
+    padding-left: 15px; /* 이미지와 정보 간의 간격 */
+}
+
+.sheet-order-product-brand {
+    font-size: 16px;
     font-weight: 600;
     line-height: 30px;
+    margin-bottom: 5px; /* 요소 간 간격 */
 }
-.sheet-order-product-name{
-    grid-area: name;
+
+.sheet-order-product-name {
     margin-top: 2px;
-    font-size: 17px;
+    font-size: 15px;
     font-weight: 400;
     line-height: 27px;
+    margin-bottom: 5px; /* 요소 간 간격 */
 }
-.sheet-order-product-option{
+.sheet-order-product-price-origin {
     color: #666;
-    grid-area: option;
-    margin-top: 2px;
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 35px;
-}
-.sheet-order-product-price-origin{
-    color: #666;
-    font-size: 16px;
+    font-size: 13px;
     font-weight: 400;
     line-height: 25px;
     text-decoration: line-through;
 }
-.sheet-order-product-price-sale{
+
+.sheet-order-product-price-sale {
     color: black;
-    grid-area: final;
-    font-size: 18px;
+    font-size: 15px;
     font-weight: 600;
     line-height: 10px;
-}
-.sheet-order-product-coupon{
-    box-sizing: border-box;
-    border: 1px solid #e0e0e0;
-    background-color: white;
-    border-radius: 4px;
-    justify-content: center;
-    align-items: center;
-    width: 60%;
-    height: 36px;
-    margin-top: 12px;
-    font-size: 16px;
-    font-weight: 500;
-    line-height: 18px;
-    display: flex;
-}
-.sheet-address-title-label{
-    background-color: #8A8A8A1A;
-    color: #666;
-    border-radius: 2px;
-    margin-left: 4px;
-    margin-right: auto;
-    padding: 1px 4px;
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 14px;
-    overflow: hidden;
 }
 /* ------주문 상품------ */
 
