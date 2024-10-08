@@ -7,8 +7,13 @@
 		resultType="mydto">
 		SELECT * FROM PRODUCTS WHERE product_id = #{product_id}
 	</select>
-	<insert id="insertOrderedList" parameterType="hashmap">
-		INSERT INTO ORDERED (ORDERED_NUM, USER_ID, PRODUCT_ID, ordered_date)
-		VALUES (ordered_seq.nextval, #{user_id}, #{product_id}, SYSDATE)
+	<insert id="insertOrder" parameterType="map">
+		INSERT INTO ORDERS (ORDERED_NUM, USER_ID, ORDER_DATE)
+		VALUES (ordered_seq.nextval, #{user_id}, SYSDATE)
+	</insert>
+
+	<insert id="insertOrderedList" parameterType="map">
+		INSERT INTO ORDERED (ORDERED_NUM, USER_ID, PRODUCT_ID, ORDERED_DATE)
+		VALUES (#{ordered_num}, #{user_id}, #{product_id}, SYSDATE)
 	</insert>
 </mapper>

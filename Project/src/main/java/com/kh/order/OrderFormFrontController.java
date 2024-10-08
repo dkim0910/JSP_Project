@@ -32,11 +32,12 @@ public class OrderFormFrontController extends HttpServlet{
 		
 //		 결제창
 		if(requestURI.equals("/order/order_form.or")) {
+			System.out.println("사용중?");
 			forward = new OrderAction().execute(req, resp);
-
+		} else if(requestURI.equals("/order/order_after.or")) {
+			forward = new OrderAfterAction().execute(req, resp);
 		}
-		
-		
+
 		if(forward != null) {
 			// true, redirect 방식으로 페이지 이동할 경우
 			if(forward.isRedirect()) {
