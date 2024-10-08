@@ -28,8 +28,7 @@
 	</header>
 	
 	<div class="main" >
-		<a href = "../category/category.jsp" class="keepshoping">쇼핑 계속하기</a>
-		<button class="keepshoping" onclick="purchaseItems()">구매하기</button>
+		<button class="keepshoping" onclick="window.location.href='../category/category.jsp'">쇼핑 계속하기</button>
 		<table class = "table table-hover">
 			<tr>	
 				<th>선택</th>
@@ -64,7 +63,6 @@
     			<th colspan="2" id="cart_final_price">0원</th>
 			</tr>
 		</table>
-		<!-- <a href = "../category/category.jsp" class="btn btn -secondary">쇼핑 계속하기</a> -->
 	</div>
 
 	<!-- 장바구니 항목 전체 선택 및 삭제 -->
