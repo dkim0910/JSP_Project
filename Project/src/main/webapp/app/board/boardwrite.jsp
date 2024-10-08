@@ -12,14 +12,13 @@
 table {
 	margin: 0 auto;
 	width: 900px;
-	border: 1px solid black;
+	border: 1px solid #eee;
 	border-radius: 10px;
 }
 
 tr a {
  color: white;
 }
-
 
 .top > td {
 	font-weight: bold;
@@ -30,6 +29,7 @@ h3 {
 	background-color: black;
 	color: white;
 	height: 40px;
+	border-radius: 10px;
 }
 
 a {
@@ -46,6 +46,9 @@ a:hover {
 	color: black;
 }
 </style>
+
+<!-- 제이쿼리 불러오기  -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
 <!-- 테일윈드 css 불러오기 -->
 <script src="https://cdn.tailwindcss.com"></script>
