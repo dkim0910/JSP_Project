@@ -65,47 +65,63 @@ function sendit() {
 }
 
 function login() {
-    let frm = document.frm;
-    let useridElement = frm.userid;  // 아이디 입력 필드
-    let userpw = frm.userpw.value;   // 비밀번호 입력 필드
-    let userid = useridElement.value;
+	let frm = document.frm;
+	let useridElement = frm.userid;  // 아이디 입력 필드
+	let userpw = frm.userpw.value;   // 비밀번호 입력 필드
+	let userid = useridElement.value;
 
-    // 아이디 빈값 체크
-    if (userid == "") {
-        alert("아이디를 입력하세요!");
-        useridElement.focus();
-        return false;
-    }
+	// 아이디 빈값 체크
+	if (userid == "") {
+		alert("아이디를 입력하세요!");
+		useridElement.focus();
+		return false;
+	}
 
-    // 비밀번호 빈값 체크
-    if (userpw == "") {
-        alert("비밀번호를 입력하세요!");
-        frm.userpw.focus();
-        return false;
-    }
+	// 비밀번호 빈값 체크
+	if (userpw == "") {
+		alert("비밀번호를 입력하세요!");
+		frm.userpw.focus();
+		return false;
+	}
 
-    // Ajax로 로그인 요청
-    let xhr = new XMLHttpRequest();
-    xhr.open("POST", "/join/userlogin.fr", true);
-    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+	// Ajax로 로그인 요청
+	let xhr = new XMLHttpRequest();
+	xhr.open("POST", "/join/userlogin.fr", true);
+	xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
 
-    // 요청 보낼 데이터 설정
-    xhr.send("user_id=" + encodeURIComponent(userid) + "&user_pw=" + encodeURIComponent(userpw));
-    
-    xhr.onreadystatechange = function() {
-        if (xhr.status == 200 && xhr.readyState == XMLHttpRequest.DONE) {
-            // 서버에서 보낸 응답 처리
-            let response = xhr.responseText.trim();
-            if (response === "success") {
-                // 로그인 성공 시, 메인 페이지로 리디렉션
-                window.location.href = "/main-page/main.jsp"; 
-            } else {
-                // 로그인 실패 시 alert 표시
-                alert("아이디 또는 비밀번호가 잘못되었습니다.");
-            }
-        }
-    };
+	// 요청 보낼 데이터 설정
+	xhr.send("user_id=" + encodeURIComponent(userid) + "&user_pw=" + encodeURIComponent(userpw));
+
+	xhr.onreadystatechange = function() {
+		if (xhr.status == 200 && xhr.readyState == XMLHttpRequest.DONE) {
+			// 서버에서 보낸 응답 처리
+			let response = xhr.responseText.trim();
+			if (response === "success") {
+				// 로그인 성공 시, 메인 페이지로 리디렉션
+				window.location.href = "/main-page/main.jsp";
+			} else {
+				// 로그인 실패 시 alert 표시
+				alert("아이디 또는 비밀번호가 잘못되었습니다.");
+			}
+		}
+	};
 }
+
+// 엔터 키 입력 시 로그인 함수 호출
+document.addEventListener('keydown', function(event) {
+	if (event.key === 'Enter') {
+		event.preventDefault();  // 폼 제출 방지
+		login();  // 로그인 함수 호출
+	}
+});
+
+// 엔터 키 입력 시 (아이디 혹은 비밀번호)찾기 버튼 클릭
+document.addEventListener('keydown', function(event) {
+	if (event.key === 'Enter') {
+		event.preventDefault();  // 폼 제출 방지
+		document.getElementById('submitButton').click();  // 버튼 클릭
+	}
+});
 
 // 주소 입력
 function new_execDaumPostcode() {
