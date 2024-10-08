@@ -2,6 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@page import="com.kh.login.UserDTO"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -30,23 +31,18 @@
 	src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
 
 <!-- css 연결 -->
-<link rel="stylesheet" href="style/style.css">
+<link rel="stylesheet" href="/main-page/style/style.css">
 
 <!-- 공통 js 연결 -->
 <script defer src="script/script.js"></script>
+
+<!-- jquery 불러오기 -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
 <%
 boolean isLoggedIn = (session != null && session.getAttribute("member") != null);
 %>
 <body>
-	<!-- 메인 페이지 로딩 되면 가지고 오는 펑션 -->
-	<script>
-		function gomain() {
-			console.log('here');
-			fetch('/getAllItems.main'); // 서버로 요청을 보내는 함수
-		}
-		window.onload = gomain; // 페이지가 로드되면 gomain 함수를 호출
-	</script>
-
 	<header>
 		<div class="con mx-auto">
 			<div class="pc-top-bar flex">
@@ -91,13 +87,6 @@ boolean isLoggedIn = (session != null && session.getAttribute("member") != null)
 						data-tab="tab5">세일</a></li>
 				</ul>
 			</nav>
-
-			<c:forEach var="products" items="${getAllProducts}" varStatus="status">
-				<!-- 3개까지만 표시 -->
-				<c:if test="${status.index < 3}">
-					<h3>${products.product_name}</h3>
-				</c:if>
-			</c:forEach>
 
 			<div id="tab-content">
 				<div class="tab-content" id="tab1">
@@ -860,6 +849,15 @@ boolean isLoggedIn = (session != null && session.getAttribute("member") != null)
 			</div>
 		</div>
 	</header>
+	<div>2222222
+	
+		<c:forEach var="products" items="${requestScope.getAllProducts}">
+			<h3>${products.brand}</h3>
+		</c:forEach>
+	</div>
+
+
+
 	<footer>
 		<div class="con mx-auto">
 			<nav class="bottom-menu">

@@ -12,7 +12,7 @@ import com.kh.mypage.refund.Beans_DAO_DTO.MyDTO;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
-public class GetAllItems implements Action{
+public class GetAllItems_Json implements Action{
 
 	@Override
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) {
@@ -21,13 +21,28 @@ public class GetAllItems implements Action{
 		MainDAO maindao = new MainDAO();
 		System.out.println("here3");
 		List<MyDTO> getAllProducts = maindao.getAllProducts();
-		request.setAttribute("getAllProducts", getAllProducts);
+//		request.setAttribute("getAllProducts", getAllProducts);
 		
-		forward.setRedirect(false);
-		forward.setPath("/main-page/main.jsp");
+		JSONObject products = new JSONObject();
+		products.put("product_name", getAllProducts.get(0).getProduct_name());
+		
+		System.out.println(getAllProducts.get(0).getBrand());
+		System.out.println(getAllProducts.get(1).getBrand());
+		System.out.println(getAllProducts.get(2).getBrand());
+		
+//		forward.setRedirect(false);
+//		forward.setPath("/main-page/main.jsp");
 		
 		System.out.println("here5");
-		return forward;
+		
+		try {
+			response.getWriter().write(products.toString());
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
+//		return forward;
+		return null;
 	}
 
 }
