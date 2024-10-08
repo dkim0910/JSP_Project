@@ -78,10 +78,28 @@
 	<update id="finishedRefund" parameterType="string">
 		UPDATE
 		ORDERED
-		SET refund_status = '환불 날짜',
+		SET
+		refund_status = '환불 날짜',
 		refunded_date = SYSDATE
 		WHERE
-		USER_ID = #{userid} AND ORDERED_NUM = #{ordernum}
+		USER_ID =
+		#{userid} AND ORDERED_NUM = #{ordernum}
 	</update>
+
+	<!-- 이벤트 가을 세일 할인 중이고 아웃터들만 가지고옴 -->
+	<select id="selectOuter" resultType="mydto">
+		SELECT * FROM PRODUCTS p
+		WHERE SALE_RATE != '0'
+		AND CATEGORY = '아우터'
+	</select>
+
+	<!-- 이벤트 3만원 이하의 제품들만 가지고옴 -->
+	<select id="underthree" resultType="mydto">
+		SELECT * FROM PRODUCTS p
+		WHERE PRICE_AMOUNT BETWEEN 10 AND 30000
+		AND p.CATEGORY IS NOT NULL
+		AND p.CATEGORY NOT IN ('키즈', '디지털/라이프')
+		AND IMAGE_URL != 'https://image.msscdn.net/mfile_s01/fb/share_musinsa.png' 
+	</select>
 
 </mapper>

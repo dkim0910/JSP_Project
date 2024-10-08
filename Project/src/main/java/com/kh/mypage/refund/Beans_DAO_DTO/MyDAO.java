@@ -70,6 +70,21 @@ public class MyDAO {
 		return refunds;
 	}
 
+	// 세일중인 아웃터 가지고 오기 (이벤트 페이지)
+	public List<MyDTO> getOuterSale() {
+		List<MyDTO> outers;
+		outers = session.selectList("MyMapper.selectOuter");
+		
+		return outers;
+	}
+
+	// 3만원 이하의 제품들 가지고 오기 (이벤트 페이지)
+	public List<MyDTO> underthree() {
+		List<MyDTO> underthree;
+		underthree = session.selectList("MyMapper.underthree");
+		return underthree;
+	}
+
     
     
     
