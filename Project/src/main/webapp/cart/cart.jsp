@@ -28,7 +28,14 @@
 	</header>
 	
 	<div class="main" >
-		<button class="keepshoping" onclick="window.location.href='../category/category.jsp'">쇼핑 계속하기</button>
+		<div class="main-top">
+			<div>
+	            <input type="checkbox" id="select-all" onClick="toggleSelectAll(this)">
+	            <label for="select-all">전체선택</label>
+	            <button class="delete-selected" onclick="deleteSelectedItems()">선택삭제</button>
+	        </div>
+			<button class="keepshoping" onclick="window.location.href='../category/category.jsp'">쇼핑 계속하기</button>
+		</div>
 		<table class = "table table-hover">
 			<tr>	
 				<th>선택</th>
@@ -39,25 +46,34 @@
 				<th>소계</th>
 				<th>비고</th>
 			</tr>
-			<c:forEach var="goods" items="${cartList }">
-				<tr class="cart-item">
-					<td><input type="checkbox" class="item-checkbox" value="${goods.PRODUCT_ID}"></td>
-					<td>${goods.PRODUCT_ID }</td>
-					<c:choose>
-					    <c:when test="${fn:length(goods.PRODUCT_NAME) > 30}">
-					        <td>${fn:substring(goods.PRODUCT_NAME, 0, 30)}...</td>
-					    </c:when>
-					    <c:otherwise>
-					        <td>${goods.PRODUCT_NAME}</td>
-					    </c:otherwise>
-					</c:choose>
-					<%-- <td>${goods.PRODUCT_NAME }</td> --%>
-					<td id="item-price" class="item-price">${goods.NORMAL_PRICE}원</td> 
-			        <td class="item-quantity">1</td> 
-			        <td id="item-subtotal" class="item-subtotal">0원</td>
-					<td>비고</td>
-				</tr>
-			</c:forEach>
+			<c:choose>
+			    <c:when test="${empty cartList}">
+			    	<tr>
+			        	<td colspan="7">장바구니에 상품이 존재하지 않습니다.</td>
+			        </tr>
+			    </c:when>
+			    <c:otherwise>
+					<c:forEach var="goods" items="${cartList }">
+						<tr class="cart-item">
+							<td><input type="checkbox" class="item-checkbox" value="${goods.PRODUCT_ID}"></td>
+							<td>${goods.PRODUCT_ID }</td>
+							<c:choose>
+							    <c:when test="${fn:length(goods.PRODUCT_NAME) > 30}">
+							        <td>${fn:substring(goods.PRODUCT_NAME, 0, 30)}...</td>
+							    </c:when>
+							    <c:otherwise>
+							        <td>${goods.PRODUCT_NAME}</td>
+							    </c:otherwise>
+							</c:choose>
+							<%-- <td>${goods.PRODUCT_NAME }</td> --%>
+							<td id="item-price" class="item-price">${goods.NORMAL_PRICE}원</td> 
+					        <td class="item-quantity">1</td> 
+					        <td id="item-subtotal" class="item-subtotal">0원</td>
+							<td>비고</td>
+						</tr>
+					</c:forEach>
+			    </c:otherwise>
+			</c:choose>
 			<tr>
 				<th colspan="5">총액</th>
     			<th colspan="2" id="cart_final_price">0원</th>
@@ -68,11 +84,6 @@
 	<!-- 장바구니 항목 전체 선택 및 삭제 -->
 	<div class="cart">
 	    <div class="cart-header">
-	        <div>
-	            <input type="checkbox" id="select-all" onClick="toggleSelectAll(this)">
-	            <label for="select-all">전체선택</label>
-	            <button class="delete-selected" onclick="deleteSelectedItems()">선택삭제</button>
-	        </div>
 	        <!-- 구매하기 버튼 -->
 			<button class="purchase-button" onclick="purchaseItems()">구매하기</button>
 	    </div>

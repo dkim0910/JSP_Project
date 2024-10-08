@@ -1,6 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ page import="java.util.List" %>
+<%@page import="java.text.DecimalFormat"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -26,8 +29,16 @@
                     <input type="text" id="search" placeholder="검색할 상품을 입력하세요" value="" />
                     <button type="button" id="search-button" >검색</button>
                 </div>
+                <!-- 메인페이지로 가기 -->
+            	<div class="back-button">
+            		<a href="/main-page/main.jsp" class="button-back-page" aria-label="이전 페이지로 이동">
+					    <svg width="35" height="35" viewBox="0 0 28 28" fill="none">
+					        <path d="M16.1004 21.7L8.61252 14.2122C8.49537 14.095 8.49537 13.9051 8.61252 13.7879L16.1004 6.30005"
+					            stroke="currentColor" stroke-width="1.4"></path>
+					    </svg>
+					</a>
+            	</div>
                 <div class="top-menu">
-                	
 		            <!-- 로그인 상태인 경우 -->
 		            <a href="<%= isLoggedIn ? "../my-page/my-main/my-page-main.jsp" : "../login/join/login_view.jsp" %>" class="menu-button">
 		                <img src="./img/마이.png">
