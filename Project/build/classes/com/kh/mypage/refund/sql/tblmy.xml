@@ -78,7 +78,7 @@
 	<update id="finishedRefund" parameterType="string">
 		UPDATE
 		ORDERED
-		SET refund_status = '환불 완료',
+		SET refund_status = '환불 날짜',
 		refunded_date = SYSDATE
 		WHERE
 		USER_ID = #{userid} AND ORDERED_NUM = #{ordernum}

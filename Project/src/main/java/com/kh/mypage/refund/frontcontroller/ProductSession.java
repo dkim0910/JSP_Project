@@ -25,7 +25,7 @@ public class ProductSession implements Action{
 		session.setAttribute("order_number", order_number);
 		
 		forward.setRedirect(false);
-		forward.setPath("/finishedRefund.my");
+		forward.setPath("/my-page/refund/finish-refund.jsp");
 		
 		return forward;
 	}
