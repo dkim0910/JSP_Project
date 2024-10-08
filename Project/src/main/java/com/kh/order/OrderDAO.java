@@ -7,6 +7,7 @@ import org.apache.catalina.tribes.util.Arrays;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 
+import com.kh.cart.CartDTO;
 import com.kh.category.GoodsDTO;
 import com.kh.mybatis.SqlMapConfig;
 import com.kh.mypage.refund.Beans_DAO_DTO.MyDTO;
@@ -58,6 +59,24 @@ public class OrderDAO {
 		}
 
 		return result; // 모든 삽입이 성공했으면 true 반환
+	}
+	// 장바구니 db 내의 상품 리스트 가져오기
+	public List<CartDTO> searchCart(String user_id) {
+		List<CartDTO> result = session.selectList("Order.carttoorder",user_id);
+		return result;
+	}
+	// 장바구니 db의 상품 리스트를 주문 db로 보내기
+	public void cartToOrder(String user_id, List<CartDTO> cartlist) {
+		HashMap<String, Object> datas = new HashMap<String, Object>();
+		datas.put("user_id", user_id);
+		for(CartDTO cartgoods : cartlist) {
+			datas.put("cartgoods", cartgoods);
+			session.insert("Order.insertToOrdered",datas);
+		}
+	}
+
+	public void deleteCart(String user_id) {
+		session.delete("Order.deletecart",user_id);
 	}
 
 }
