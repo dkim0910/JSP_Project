@@ -77,7 +77,7 @@ a:hover {
             </tr>
             <tr height="30px">
                <th align="center" width="150px">
-                  글쓴이
+                  작성자
                </th>
                <td>
                   <input name="username" size="20" maxlength="20" value="" placeholder="이름을 입력하세요">
