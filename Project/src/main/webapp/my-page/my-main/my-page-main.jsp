@@ -127,7 +127,7 @@
 							</p>
 							<p id="user-member-point" class="right" style="cursor: pointer;"
 								onclick="showContent('membership')">
-								잔여 포인트: <span style="color: gray">1045</span> p
+								보유 포인트: <span style="color: gray">750</span> p
 							</p>
 						</div>
 					</div>
@@ -357,37 +357,37 @@
 
 									<!-- 이벤트 카드 1 -->
 									<div class="event-card">
-										<img src="https://via.placeholder.com/500x200" alt="이벤트 1 이미지">
+										<img src="https://img.pikbest.com/backgrounds/20190730/warm-color-autumn-discount-coupon-1_5723639.jpg!sw800" alt="이벤트 1 이미지">
 										<div class="event-card-content">
 											<h3>가을 시즌 할인</h3>
-											<p>가을을 맞이 제품 할인중! 지금 바로 쇼핑하세요.</p>
-											<a href="" class="all-button">할인 상품 보러가기</a>
+											<p>가을을 맞이 아웃터 할인중! 지금 바로 쇼핑하세요.</p>
+											<a href="/selectouter.my" class="all-button">가을 할인 제품</a>
 										</div>
 									</div>
 
 									<!-- 이벤트 카드 2 -->
 									<div class="event-card">
-										<img src="https://via.placeholder.com/500x200" alt="이벤트 2 이미지">
+										<img src="/my-page/events/images/DALL·E-2024-10-08-13.59_1.jpg" alt="이벤트 2 이미지">
 										<div class="event-card-content">
-											<h3>신규 회원 웰컴 쿠폰</h3>
-											<p>신규 회원 가입 시 10% 할인 쿠폰을 드립니다!</p>
-											<a href="#" class="all-button">이벤트 참여하기</a>
+											<h3>3만원의 행복 이벤트</h3>
+											<p>3만원으로 구매할 수 있는 상품 판매중! 지금 바로 쇼핑하세요.</p>
+											<a href="/selectUnderthree.my" class="all-button">3만원의 행복</a>
 										</div>
 									</div>
 
 									<!-- 이벤트 카드 3 -->
 									<div class="event-card">
-										<img src="https://via.placeholder.com/500x200" alt="이벤트 3 이미지">
+										<img src="https://marketplace.canva.com/EAGEK6RPm58/1/0/1600w/canva-%EB%B3%B4%EB%9D%BC%EC%83%89-%EB%B0%94%ED%83%95-%EB%8F%84%ED%98%95-%EC%9D%BC%EB%9F%AC%EC%8A%A4%ED%8A%B8-%EC%8B%A0%EA%B7%9C-%EA%B0%80%EC%9E%85-%EC%BF%A0%ED%8F%B0-%EC%9D%B4%EB%B2%A4%ED%8A%B8-instagram-%EA%B2%8C%EC%8B%9C%EB%AC%BC-y9QtJNhIw38.jpg" alt="이벤트 3 이미지">
 										<div class="event-card-content">
-											<h3>무료 배송 이벤트</h3>
-											<p>특정 금액 이상 구매 시, 무료 배송 혜택을 드립니다.</p>
+											<h3>신규 회원 웰컴 쿠폰</h3>
+											<p>신규 회원 가입 시 할인 쿠폰을 드립니다!</p>
 											<a href="#" class="all-button">이벤트 참여하기</a>
 										</div>
 									</div>
 
 									<!-- 이벤트 카드 4 -->
 									<div class="event-card">
-										<img src="https://via.placeholder.com/500x200" alt="이벤트 4 이미지">
+										<img src="https://img.freepik.com/free-vector/gradient-vip-invitation-card-template_23-2150996118.jpg" alt="이벤트 4 이미지">
 										<div class="event-card-content">
 											<h3>VIP 전용 프로모션</h3>
 											<p>VIP 고객님들만을 위한 특별한 혜택을 누려보세요.</p>
@@ -434,7 +434,7 @@
 									<div class="event-card">
 										<div class="event-card-content">
 											<h3>공지 3</h3>
-											<p>DB 설게 잘못한듯</p>
+											<p>DB 설게 어렵네</p>
 										</div>
 									</div>
 
@@ -442,7 +442,7 @@
 									<div class="event-card">
 										<div class="event-card-content">
 											<h3>공지 4</h3>
-											<p>섭종합니다.</p>
+											<p>섭종합니다</p>
 										</div>
 									</div>
 

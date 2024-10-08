@@ -59,6 +59,16 @@ public class FrontController extends HttpServlet {
 		case "/setSessionForProductsAtFinished-Refund.my":
 			forward = new ProductSession().execute(req, resp);
 			break;
+		case "/selectouter.my":
+		// 이벤트 / 가을 맞이 세일 
+			forward = new OuterSale().execute(req, resp);
+			break;
+		// 이벤트 / 3만원 이하의 제품 소개 세일
+		case "/selectUnderthree.my":
+			forward = new Underthree().execute(req, resp);
+			break;
+			
+			
 		}
 //		my-page/refund/finish-refund.jsp
 		if (forward != null) {
