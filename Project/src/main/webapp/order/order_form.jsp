@@ -146,12 +146,10 @@ boolean isLoggedIn = (session != null && session.getAttribute("member") != null)
 
 					<c:if test="${not empty productList}">
 						<%-- 상세페이지에서 바로 구매할 경우 --%>
-						<c:forEach var="product" items="${productList}">
 							<c:set var="totalPrice_amount"
-								value="${totalPrice_amount + product.PRICE_AMOUNT}" />
+								value="${totalPrice_amount + productList.PRICE_AMOUNT}" />
 							<c:set var="totalPrice_original"
-								value="${totalPrice_original + product.NORMAL_PRICE}" />
-						</c:forEach>
+								value="${totalPrice_original + productList.NORMAL_PRICE}" />
 
 						<c:set var="savePoint" value="${totalPrice_amount * 0.02}" />
 
@@ -161,46 +159,30 @@ boolean isLoggedIn = (session != null && session.getAttribute("member") != null)
 							</div>
 							<div class="sheet-order-product">
 								<div class="sheet-order-product-cartItem">
-									<c:forEach var="product" items="${productList}">
 										<div class="sheet-order-product-box">
 											<div class="sheet-order-product-image-box">
 												<img class="sheet-order-product-image"
-													src="${product.IMAGE_URL}" alt="">
+													src="${productList.IMAGE_URL}" alt="">
 											</div>
 											<div class="sheet-order-product-information">
-												<a class="sheet-order-product-brand">${product.BRAND}</a> <br />
-												<a class="sheet-order-product-name">${product.PRODUCT_NAME}</a>
+												<a class="sheet-order-product-brand">${productList.BRAND}</a> <br />
+												<a class="sheet-order-product-name">${productList.PRODUCT_NAME}</a>
 												<br />
 												<div class="sheet-order-product-price-box">
 													<strong class="sheet-order-product-price-origin">
-														<fmt:formatNumber value="${product.NORMAL_PRICE}"
+														<fmt:formatNumber value="${productList.NORMAL_PRICE}"
 															pattern="#,###" /> 원
 													</strong> <br /> <span class="sheet-order-product-price-sale">
-														<fmt:formatNumber value="${product.PRICE_AMOUNT}"
+														<fmt:formatNumber value="${productList.PRICE_AMOUNT}"
 															pattern="#,###" /> 원
 													</span>
 												</div>
 											</div>
 										</div>
-									</c:forEach>
 								</div>
 							</div>
 						</section>
 					</c:if>
-
-					<%-- 확인용 --%>
-					<%-- <div>
-						<h1>
-							<fmt:formatNumber value="${totalPrice_amount}" pattern="#,###" />
-							원,
-							<fmt:formatNumber value="${totalPrice_original}" pattern="#,###" />
-							원,
-							<fmt:formatNumber
-								value="${totalPrice_original - totalPrice_amount}"
-								pattern="#,###" />
-							원
-						</h1>
-					</div> --%>
 
 				</section>
 				<br />
