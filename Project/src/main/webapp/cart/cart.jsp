@@ -20,25 +20,16 @@
 	<header class="header">
 		<a href="../../my-page/my-main/my-page-main.jsp" class="button-back-page" aria-label="이전 페이지로 이동">
 		    <svg width="35" height="35" viewBox="0 0 28 28" fill="none">
-		        <path
-		            d="M16.1004 21.7L8.61252 14.2122C8.49537 14.095 8.49537 13.9051 8.61252 13.7879L16.1004 6.30005"
+		        <path d="M16.1004 21.7L8.61252 14.2122C8.49537 14.095 8.49537 13.9051 8.61252 13.7879L16.1004 6.30005"
 		            stroke="currentColor" stroke-width="1.4"></path>
 		    </svg>
 		</a>
-		<h1 style="flex-grow: 1; text-align: center;">장바구니</h1>
+		<h1 class="Title">장바구니</h1>
 	</header>
-
-	<!-- <div class = "container">
-		<div class = "row">
-			<table width = 100%>
-				<tr>
-					<td align = "left">삭제하기</a></td>
-				</tr>
-			</table>
-		</div>
-	</div> -->
 	
-	<div style="padding-top: 50px">
+	<div class="main" >
+		<a href = "../category/category.jsp" class="keepshoping">쇼핑 계속하기</a>
+		<button class="keepshoping" onclick="purchaseItems()">구매하기</button>
 		<table class = "table table-hover">
 			<tr>	
 				<th>선택</th>
@@ -73,7 +64,7 @@
     			<th colspan="2" id="cart_final_price">0원</th>
 			</tr>
 		</table>
-		<a href = "../category/category.jsp" class="btn btn -secondary">쇼핑 계속하기</a>
+		<!-- <a href = "../category/category.jsp" class="btn btn -secondary">쇼핑 계속하기</a> -->
 	</div>
 
 	<!-- 장바구니 항목 전체 선택 및 삭제 -->
@@ -87,19 +78,6 @@
 	        <!-- 구매하기 버튼 -->
 			<button class="purchase-button" onclick="purchaseItems()">구매하기</button>
 	    </div>
-	
-	    <!-- 장바구니 항목 리스트 -->
-	    <c:forEach var="item" items="${cartItems}">
-	        <div class="cart-item">
-	            <input type="checkbox" class="item-checkbox" value="${item.id}">
-	            <div class="item-details">
-	                <p>${item.name}</p>
-	                <p>가격: ${item.price}</p>
-	                <button class="option-change" onclick="openOptionModal(${item.id})">옵션변경</button>
-	                <button class="coupon-apply" onclick="openCouponModal(${item.id})">쿠폰사용</button>
-	            </div>
-	        </div>
-	    </c:forEach>
 	</div>
 	
 	<!-- 옵션 변경 모달 -->
@@ -116,20 +94,6 @@
 	    </div>
 	</div> -->
 	
-	<!-- 쿠폰 사용 모달 -->
-	<!-- <div id="couponModal" class="modal">
-	    <div class="modal-content">
-	        <span class="close" onclick="closeModal('couponModal')">&times;</span>
-	        <h2>쿠폰 사용</h2>
-	        <form action="applyCoupon.jsp" method="post">
-	            <input type="hidden" id="couponItemId" name="itemId">
-	            <label for="couponCode">쿠폰 코드:</label>
-	            <input type="text" id="couponCode" name="couponCode">
-	            <button type="submit">적용</button>
-	        </form>
-	    </div>
-	</div> -->
- 
 	<footer class="footer">
 	    <p>고객 지원 센터: 1234-5678 | 이메일: shoppinghajo@samjo.com</p>
 	    <p>운영 시간: 월-금, 09:00-18:00 (주말 및 공휴일 휴무)</p>

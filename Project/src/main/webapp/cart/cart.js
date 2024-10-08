@@ -2,8 +2,13 @@
 function deleteSelectedItems() {
     const selectedItems = document.querySelectorAll('.item-checkbox:checked');
     if (selectedItems.length > 0) {
-        let itemIds = Array.from(selectedItems).map(item => item.value);
-        window.location.href = `deleteSelectedItems.jsp?itemIds=${itemIds.join(",")}`;
+        // 삭제 확인 메시지
+        if (confirm('선택한 항목을 삭제하시겠습니까?')) {
+            // 체크된 항목들을 배열에 저장
+            let itemIds = Array.from(selectedItems).map(item => item.value);
+            // 배열의 값들을 문자열 형태로 변환하여 URL로 전달
+            window.location.href = `deleteItems.ca?itemIds=${itemIds.join(",")}`;
+        }
     } else {
         alert('삭제할 항목을 선택하세요.');
     }

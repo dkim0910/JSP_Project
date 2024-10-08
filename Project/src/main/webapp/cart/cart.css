@@ -141,7 +141,18 @@ body {
     display: flex;
     justify-content: space-between;
 }
+.Title{
+	flex-grow: 1; 
+	text-align: center;
+}
 
+.main{
+	padding-top: 50px;
+	height: 530px;
+}
+.keepshoping{
+	right: 0;
+}
 .cart {
     padding: 20px;
 }
@@ -189,6 +200,11 @@ button:hover {
 
 .purchase-button:hover {
     background-color: #0056b3;
+}
+
+/* 삭제하기 버튼 스타일 */
+.delete-selected{
+	border-radius: 5px;
 }
 
 /* 모달 스타일 */

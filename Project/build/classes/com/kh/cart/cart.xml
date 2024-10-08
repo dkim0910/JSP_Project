@@ -16,4 +16,10 @@
         	#{itemIdsArray}
     	</foreach>
     </select>
+    <delete id="deleteitem">
+    	DELETE FROM CART WHERE PRODUCT_ID IN
+    	<foreach item="itemIdsArray" collection="array" open="(" separator="," close=")">
+        	#{itemIdsArray}
+    	</foreach>
+    </delete>
   </mapper>
