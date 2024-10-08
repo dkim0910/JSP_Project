@@ -10,4 +10,10 @@
 		LEFT OUTER JOIN PRODUCTS p ON c.PRODUCT_ID = p.PRODUCT_ID 
 		WHERE USER_ID = #{user_id}
     </select>
+    <select id="searchbylist" parameterType="list" resultType="goodsdto">
+    	SELECT * FROM PRODUCTS WHERE PRODUCT_ID IN
+    	<foreach item="productId" collection="list" open="(" separator="," close=")">
+        	#{productId}
+    	</foreach>
+    </select>
   </mapper>

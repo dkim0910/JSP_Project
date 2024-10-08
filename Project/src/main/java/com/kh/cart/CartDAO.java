@@ -17,9 +17,12 @@ public class CartDAO {
 	}
 
 	public List<CartDTO> searchcartgoods(String user_id) {
-		List<CartDTO> result = null;
-		result = session.selectList("Cart.searchgoods", user_id);
+		List<CartDTO> result = session.selectList("Cart.searchgoods", user_id);
+		return result;
+	}
 
+	public List<GoodsDTO> searchByList(String[] itemIdsArray) {
+		List<GoodsDTO> result = session.selectList("Cart.searchbylist", itemIdsArray);
 		return result;
 	}
 }
