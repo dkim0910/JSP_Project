@@ -112,21 +112,6 @@ th {
     position: relative; 				/* 절대 위치 요소를 포함하기 위해 설정 */
     padding-right: 130px; 				/* 오른쪽 패딩 */
 }
-
-.refund-button {
-    background-color: black;
-    color: #ffffff;
-    padding: 10px 20px;
-    border-radius: 20px;
-    text-align: center;
-}
-
-.refund-form-section {
-    padding: 40px 20px 55px;
-    display: none;
-    background-color: #f7f7f7;
-    border-top: 2px solid #ff4d4d;
-}
     
 /* 기본 스타일링 */
 body {
@@ -149,12 +134,19 @@ body {
 .main{
 	padding-top: 20px;
 	padding-bottom: 20px;
-	height: 530px;
+	min-height: 540px;
+}
+.main-top{
+	display: flex;
+    justify-content: space-between;
+    align-items: center; /* 세로 중앙 정렬 */
+    margin-left: 35px 
 }
 .keepshoping{
 	border-radius: 5px;
 	right: 0;
 	background-color: black;
+	margin: 10px;
 }
 .cart {
     padding: 20px;
@@ -163,7 +155,7 @@ body {
 .cart-header {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-end;
 }
 
 .cart-item {
@@ -193,7 +185,7 @@ button {
     background-color: black;
     color: white;
     border-radius: 5px;
-    font-size: 16px;
+    font-size: 20px;
     cursor: pointer;
 }
 
