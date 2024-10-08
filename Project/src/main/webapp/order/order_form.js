@@ -105,7 +105,7 @@ document.querySelectorAll('.card-selection-input').forEach((input) => {
 		}
 	});
 });
-
+/*
 // 결제하기 버튼
 function purchaseItem(productId, userId) {
     const form = document.createElement('form');
@@ -129,7 +129,7 @@ function purchaseItem(productId, userId) {
     document.body.appendChild(form);
     form.submit(); // 폼 전송
 }
-
+*/
 // 바텀바 2차메뉴 클릭 기능
 $(document).ready(function() {
 	$('.toggle-icon, .toggle-menu').click(function(event) {

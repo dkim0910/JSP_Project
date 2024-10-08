@@ -26,8 +26,12 @@ public class OrderConfirmedFrontController extends HttpServlet{
 		ActionForward forward = null;
 	
 		
-//		결제 완료창
-		if(requestURI.equals("/order/order_confirmed.or_c")) {
+		// 장바구니의 상품 구매하기
+		if(requestURI.equals("/order/cart_to_order.or_c")) {
+			forward = new CartToOrderAction().execute(req, resp);
+		}
+		// 구매하기 버튼으로 가져온 1개의 상품 구매하기
+		else if(requestURI.equals("/order/order_confirmed.or_c")) {
 			forward = new OrderConfirmedAction().execute(req, resp);
 		}
 		

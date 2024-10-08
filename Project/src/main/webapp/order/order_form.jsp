@@ -414,11 +414,13 @@ boolean isLoggedIn = (session != null && session.getAttribute("member") != null)
 							<br />
 							<%-- 장바구니에서 구매할 경우 --%>
 							<c:if test="${not empty productList2}">
-								<button type="button" class="sheet-purchase-button-price"
-									onclick="purchaseItems()">
-									<fmt:formatNumber value="${totalPrice_amount}" pattern="#,###" />
-									원 결제하기
-								</button>
+								<form action="/order/cart_to_order.or_c">
+									<input type="hidden" name="purchaseGoodsList" value="${productList2 }">
+									<button type="submit" class="sheet-purchase-button-price">
+										<fmt:formatNumber value="${totalPrice_amount}" pattern="#,###" />
+										원 결제하기
+									</button>
+								</form>
 							</c:if>
 
 							<%-- 상세페이지에서 구매할 경우 --%>
