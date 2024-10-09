@@ -7,22 +7,24 @@
 		resultType="mydto">
 		SELECT * FROM PRODUCTS WHERE product_id = #{product_id}
 	</select>
-	<insert id="insertOrder" parameterType="map">
-		INSERT INTO ORDERS (ORDERED_NUM, USER_ID, ORDER_DATE)
-		VALUES (ordered_seq.nextval, #{user_id}, SYSDATE)
+	<insert id="insertOrderedList" parameterType="hashmap">
+		INSERT INTO ORDERED
+		(ORDERED_NUM, USER_ID, PRODUCT_ID, ordered_date)
+		VALUES
+		(ordered_seq.nextval, #{user_id}, #{product_id}, SYSDATE)
 	</insert>
-	<insert id="insertOrderedList" parameterType="map">
-		INSERT INTO ORDERED (ORDERED_NUM, USER_ID, PRODUCT_ID, ORDERED_DATE)
-		VALUES (#{ordered_num}, #{user_id}, #{product_id}, SYSDATE)
-	</insert>
-	
-	<select id="carttoorder" parameterType="string" resultType="cartdto">
+
+	<select id="carttoorder" parameterType="string"
+		resultType="cartdto">
 		SELECT * FROM CART WHERE USER_ID = #{user_id}
 	</select>
 	<insert id="insertToOrdered" parameterType="map">
-		INSERT INTO ORDERED VALUES (ordered_seq.nextval, #{user_id}, #{cartgoods}, sysdate, null, null)
+		INSERT INTO ORDERED
+		VALUES (ordered_seq.nextval, #{user_id}, #{cartgoods}, sysdate, null,
+		null)
 	</insert>
 	<delete id="deletecart" parameterType="string">
-		DELETE FROM CART WHERE USER_ID = 
+		DELETE FROM CART WHERE
+		USER_ID =
 	</delete>
 </mapper>

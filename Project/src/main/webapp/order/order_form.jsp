@@ -430,8 +430,8 @@ boolean isLoggedIn = (session != null && session.getAttribute("member") != null)
 									method="post">
 									<div class="sheet-purchase-button"
 										onclick="document.getElementById('sheet-purchase-button').submit()">
-										<input type="hidden" name="PRODUCT_ID[]"
-											value="${cartList.PRODUCT_ID}"> <input type="hidden"
+										<input type="hidden" name="PRODUCT_ID"
+											value="${goods.PRODUCT_ID}"> <input type="hidden"
 											name="quantity" id="quantityInput" value="1"> <input
 											type="hidden" name="user_id" value="${member.user_id}">
 										<button type="submit" class="sheet-purchase-button-price">
