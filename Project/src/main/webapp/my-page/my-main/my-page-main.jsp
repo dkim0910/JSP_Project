@@ -56,6 +56,7 @@
 					</div>
 					<ul>
 						<!-- 나의 정보창 -->
+						<!-- 이거만 refund 컨트롤러 안가고 마이페이지 컨트롤러감 ...? -->
 						<li><a href="/my-main/MemberList.up"
 							onclick="toggleBold(this); showContent('my-info')"
 							class="sidebar-options">나의 정보</a></li>

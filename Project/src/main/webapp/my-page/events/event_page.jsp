@@ -10,72 +10,8 @@
 <title>이벤트 | 쇼핑하조</title>
 <!-- 페이지 제목 옆의 아이콘 -->
 <link href="https://i.ibb.co/X4b9F9N/logo.png" rel="icon">
-<style>
-html, body {
-	height: 100%;
-	margin: 0;
-}
-
-body {
-	display: flex;
-	flex-direction: column;
-	min-height: 100vh;
-}
-
-.container {
-	flex: 1;
-	display: flex;
-	flex-direction: column;
-	max-width: 1600px;
-	margin: 0 auto;
-	padding: 0 40px 20px;
-	background-color: #fff;
-	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-}
-
-.header {
-	display: flex;
-	align-items: center;
-	padding: 20px;
-	background-color: black;
-	color: #ffffff;
-	border-bottom: 2px solid #ff4d4d;
-	position: relative;
-}
-
-.content {
-	flex: 1;
-	/* Take up available space */
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	text-align: center;
-	padding: 20px;
-}
-
-.footer {
-	text-align: center;
-	padding: 20px;
-	background-color: black;
-	color: #999999;
-	border-top: 2px solid #ff4d4d;
-}
-
-.footer p {
-	margin: 5px 0;
-}
-
-.all-button {
-	background-color: black;
-	color: #ffffff;
-	padding: 10px 20px;
-	border-radius: 20px;
-	text-align: center;
-	cursor: pointer;
-	text-decoration: none;
-	/* Ensure no underline */
-}
-</style>
+<!-- 이벤트 css -->
+<link rel="stylesheet" type="text/css" href="my-page/events/events_style.css">
 </head>
 <body>
 	<div class="container">

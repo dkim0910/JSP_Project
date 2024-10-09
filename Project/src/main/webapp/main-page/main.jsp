@@ -89,17 +89,6 @@ boolean isLoggedIn = (session != null && session.getAttribute("member") != null)
 				</ul>
 			</nav>
 
-			<%-- <div>
-				<c:forEach var="products" items="${requestScope.getAllProducts}"
-					varStatus="status">
-					<c:if test="${status.index < 3}">
-						<h3>${products.brand}</h3>
-					</c:if>
-				</c:forEach>
-
-			</div> --%>
-
-
 			<div id="tab-content">
 				<div class="tab-content" id="tab1">
 					<section class="section-slider">
@@ -130,7 +119,7 @@ boolean isLoggedIn = (session != null && session.getAttribute("member") != null)
 						<div class="con mx-auto">
 							<nav class="prod-menu">
 								<div class="title">
-									<span> 비슷한 연령대 인기 카테고리 트렌드 <br> 상의 추천
+									<span> 인기 카테고리 트렌드 <br> 상의 추천
 									</span> <a href="/category/category.jsp"> 더보기 </a>
 								</div>
 								<ul class="flex-grid">
@@ -157,7 +146,7 @@ boolean isLoggedIn = (session != null && session.getAttribute("member") != null)
 						<div class="con mx-auto">
 							<nav class="prod-menu">
 								<div class="title">
-									<span> 고객이 찾는 캐주얼 스타일 <br> 팬츠
+									<span> 고객이 찾는 캐주얼 스타일 <br> 조거팬츠
 									</span> <a href="/category/category.jsp"> 더보기 </a>
 								</div>
 								<ul class="flex-grid">
