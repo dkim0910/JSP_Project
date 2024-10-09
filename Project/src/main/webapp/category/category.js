@@ -36,11 +36,6 @@ window.addEventListener('scroll', () => {
     });
 });
 
-// 검색 버튼 클릭 시 검색
-$('#search-button').on('click', function() {
-    search();  // 검색 함수 실행
-});
-
 // 엔터 키를 눌렀을 시 검색
 $('#search').on('keydown', function(event) {
     if (event.key === 'Enter') {  // 엔터 키를 눌렀는지 확인

@@ -27,7 +27,7 @@
             <header id="commonLayoutHeader">
                 <div class="top-search-bar">
                     <input type="text" id="search" placeholder="검색할 상품을 입력하세요" value="" />
-                    <button type="button" id="search-button" >검색</button>
+                    <button type="button" id="search-button" onclick="search()">검색</button>
                 </div>
                 <!-- 카테고리 페이지로 가기 -->
             	<div class="back-button">

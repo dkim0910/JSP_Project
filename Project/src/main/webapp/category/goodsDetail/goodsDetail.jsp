@@ -68,7 +68,7 @@
     
     <!-- 상품 상세 이미지 -->
     <div class="product-detail-img">
-        <img src="/category/detail/img/101-2.jpg" alt="상품 상세 이미지">
+        <img src="/category/img/상품상세.jpg" alt="상품 상세 이미지">
     </div>
 
     <div class="bottom-parchase-buttons">
