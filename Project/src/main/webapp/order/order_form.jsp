@@ -119,6 +119,7 @@ boolean isLoggedIn = (session != null && session.getAttribute("member") != null)
 								<div class="sheet-order-product-cartItem">
 									<c:forEach var="product2" items="${productList2}">
 										<div class="sheet-order-product-box">
+											<input type="hidden" class="item-purchase-list" value="${product2.PRODUCT_ID}">
 											<div class="sheet-order-product-image-box">
 												<img class="sheet-order-product-image"
 													src="${product2.IMAGE_URL}" alt="">
@@ -518,22 +519,14 @@ boolean isLoggedIn = (session != null && session.getAttribute("member") != null)
 	<footer>
 		<%-- 장바구니에서 구매할 경우 --%>
 		<c:if test="${not empty productList2}">
-			<form action="/order/order_confirmed.or_c"
-				class="sheet-purchase-button-bottom" id="sheet-purchase-button2"
-				method="post">
-				<div class="sheet-purchase-button"
-					onclick="document.getElementById('display-result-pay-amount').click()">
-					<input type="hidden" name="PRODUCT_ID[]"
-						value="${cartList.PRODUCT_ID}"> <input type="hidden"
-						name="user_id" value="${member.user_id}"> <input
-						type="hidden" name="quantity" id="quantityInput" value="1">
-					<button type="submit" class="sheet-purchase-button-price"
-						id="display-result-pay-amount">
-						<fmt:formatNumber value="${totalPrice_amount}" pattern="#,###" />
-						원 결제하기
-					</button>
-				</div>
-			</form>
+			<div class="sheet-purchase-button" >
+				<!-- <input type="hidden" name="quantity" id="quantityInput" value="1"> -->
+				<button type="button" class="sheet-purchase-button-price"
+					id="display-result-pay-amount" onclick="purchasecartItems()">
+					<fmt:formatNumber value="${totalPrice_amount}" pattern="#,###" />
+					원 결제하기
+				</button>
+			</div>
 		</c:if>
 
 		<%-- 상세페이지에서 구매할 경우 --%>

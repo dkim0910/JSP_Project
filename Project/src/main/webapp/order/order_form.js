@@ -130,6 +130,16 @@ function purchaseItem(productId, userId) {
     form.submit(); // 폼 전송
 }
 */
+// 장바구니 상품 결제하기
+// 선택된 항목 구매
+function purchasecartItems() {
+    const selectedItems = document.querySelectorAll('.item-purchase-list');
+		// 구매할 상품ID들을 배열에 저장
+        let itemIds = Array.from(selectedItems).map(item => item.value);
+		// 배열의 값들을 문자열 형태로 변환하고 전송
+        window.location.href = `/order/cart_to_order.or_c?itemIds=${itemIds.join(",")}`;
+}
+
 // 바텀바 2차메뉴 클릭 기능
 $(document).ready(function() {
 	$('.toggle-icon, .toggle-menu').click(function(event) {

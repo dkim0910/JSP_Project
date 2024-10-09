@@ -19,12 +19,12 @@
 		SELECT * FROM CART WHERE USER_ID = #{user_id}
 	</select>
 	<insert id="insertToOrdered" parameterType="map">
-		INSERT INTO ORDERED
-		VALUES (ordered_seq.nextval, #{user_id}, #{cartgoods}, sysdate, null,
-		null)
+		INSERT INTO ORDERED VALUES (ordered_seq.nextval, #{user_id}, #{itemID}, sysdate, null, null)
 	</insert>
-	<delete id="deletecart" parameterType="string">
-		DELETE FROM CART WHERE
-		USER_ID =
+	<delete id="deletecart">
+		DELETE FROM CART WHERE PRODUCT_ID IN
+		<foreach item="itemIdsArray" collection="array" open="(" separator="," close=")">
+        	#{itemIdsArray}
+    	</foreach>
 	</delete>
 </mapper>

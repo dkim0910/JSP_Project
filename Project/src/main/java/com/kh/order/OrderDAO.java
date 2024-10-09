@@ -78,19 +78,28 @@ public class OrderDAO {
 		List<CartDTO> result = session.selectList("Order.carttoorder", user_id);
 		return result;
 	}
-
-	// 장바구니 db의 상품 리스트를 주문 db로 보내기
-	public void cartToOrder(String user_id, List<CartDTO> cartlist) {
-		HashMap<String, Object> datas = new HashMap<String, Object>();
-		datas.put("user_id", user_id);
-		for (CartDTO cartgoods : cartlist) {
-			datas.put("cartgoods", cartgoods);
-			session.insert("Order.insertToOrdered", datas);
+	
+	// 장바구니(cart) db에서 구매할 상품 삭제
+	public boolean deleteCart(String[] itemIdsArray) {
+		boolean result = false;
+		if(session.delete("Order.deletecart", itemIdsArray) == 1) {
+			result = true;
 		}
+		return result;
 	}
-
-	public void deleteCart(String user_id) {
-		session.delete("Order.deletecart", user_id);
+		
+	// 주문내역(ordered) db에 구매한 상품 추가
+	public boolean cartToOrder(String user_id, String itemID) {
+		boolean result = false;
+		HashMap<String, String> datas = new HashMap<String, String>();
+		datas.put("user_id", user_id);
+		datas.put("itemID", itemID);
+		
+		if(session.insert("Order.insertToOrdered", datas) == 1) {
+			result = true;
+		}
+		return result;
 	}
+	
 
 }
