@@ -18,7 +18,6 @@ public class MainDAO {
 
     // 전체 테이블 검색
     public List<MyDTO> getAllProducts() {
-    	System.out.println("here4");
         List<MyDTO> products;
         products = session.selectList("MainMapper.getAllProducts"); // MyBatis Mapper XML에서 정의된 쿼리 호출
         return products;

@@ -14,6 +14,6 @@
 			window.location.href = '/getAllItems.main';
 		}
 	</script>
-	????
+
 </body>
 </html>

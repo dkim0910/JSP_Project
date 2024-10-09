@@ -130,23 +130,58 @@ boolean isLoggedIn = (session != null && session.getAttribute("member") != null)
 						<div class="con mx-auto">
 							<nav class="prod-menu">
 								<div class="title">
-									<span> 비슷한 연령대 인기 카테고리 트렌드 <br> 상의 추천
-									</span> <a href="/category/category.jsp"> 더보기 </a>
+									<span> 비슷한 연령대 인기 카테고리 트렌드 <br> 티셔츠 추천
+									</span> <a href="#"> 더보기 </a>
 								</div>
 								<ul class="flex-grid">
-									<c:forEach var="product" items="${requestScope.getAllProducts}"
-										varStatus="status">
-										<c:if test="${status.index >= 7 && status.index < 13}">
-											<li><a
-												href="/scg.product?PRODUCT_ID=${product.product_id }"
-												class="block"> <img class="w-full block"
-													src="${product.image_url }" alt="">
-											</a> <a href="#" class="block text-center">${product.product_name }</a>
-												<div>
-													<span>${product.price_amount }</span>
-												</div>
-										</c:if>
-									</c:forEach>
+									<li><a href="" class="block"> <img
+											class="w-full block"
+											src="https://image.msscdn.net/images/goods_img/20240809/4316817/4316817_17231977575753_500.jpg"
+											alt="">
+									</a> <a href="#" class="block text-center">러브이즈트루</a>
+										<div>
+											<span>89,000</span>
+										</div></li>
+									<li><a href="#" class="block"> <img
+											class="w-full block"
+											src="https://image.msscdn.net/images/goods_img/20240809/4316843/4316843_17235406432386_500.jpg"
+											alt="">
+									</a> <a href="#" class="block text-center">스타터</a>
+										<div>
+											<span>89,100</span>
+										</div></li>
+									<li><a href="#" class="block"> <img
+											class="w-full block"
+											src="https://image.msscdn.net/images/goods_img/20240809/4316937/4316937_17242152034233_500.jpg"
+											alt="">
+									</a> <a href="#" class="block text-center">인사일런스 우먼</a>
+										<div>
+											<span>256,000</span>
+										</div></li>
+									<li><a href="#" class="block"> <img
+											class="w-full block"
+											src="https://image.msscdn.net/images/goods_img/20240809/4316949/4316949_17232010403691_500.jpg"
+											alt="">
+									</a> <a href="#" class="block text-center">슈퍼드라이</a>
+										<div>
+											<span>69,000</span>
+										</div></li>
+									<li><a href="#" class="block"> <img
+											class="w-full block"
+											src="https://image.msscdn.net/images/goods_img/20240809/4316988/4316988_17233802347410_500.jpg"
+											alt="">
+									</a> <a href="#" class="block text-center">유우프</a>
+										<div>
+											<span>65,000</span>
+										</div></li>
+									<li><a href="#" class="block"> <img
+											class="w-full block"
+											src="https://image.msscdn.net/images/goods_img/20240809/4316962/4316962_17232048056711_500.jpg"
+											alt="">
+									</a> <a href="#" class="block text-center">비터</a>
+										<div>
+											<span>33,000</span>
+										</div></li>
 								</ul>
 							</nav>
 						</div>
@@ -158,36 +193,71 @@ boolean isLoggedIn = (session != null && session.getAttribute("member") != null)
 							<nav class="prod-menu">
 								<div class="title">
 									<span> 고객이 찾는 캐주얼 스타일 <br> 팬츠
-									</span> <a href="/category/category.jsp"> 더보기 </a>
+									</span> <a href="#"> 더보기 </a>
 								</div>
 								<ul class="flex-grid">
-									<c:forEach var="product" items="${requestScope.getAllProducts}"
-										varStatus="status">
-										<c:if test="${status.index >= 494 && status.index <= 499}">
-											<li><a
-												href="/scg.product?PRODUCT_ID=${product.product_id }"
-												class="block"> <img class="w-full block"
-													src="${product.image_url }" alt="">
-											</a> <a href="#" class="block text-center">${product.product_name }</a>
-												<div>
-													<span>${product.price_amount }</span>
-												</div>
-										</c:if>
-									</c:forEach>
+									<li><a href="#" class="block"> <img
+											class="w-full block"
+											src="https://image.msscdn.net/images/goods_img/20240809/4316952/4316952_17234473779019_500.jpg"
+											alt="">
+									</a> <a href="#" class="block text-center">씨알티원</a>
+										<div>
+											<span>45,000</span>
+										</div></li>
+									<li><a href="#" class="block"> <img
+											class="w-full block"
+											src="https://image.msscdn.net/images/goods_img/20240809/4316885/4316885_17253244074662_500.jpg"
+											alt="">
+									</a> <a href="#" class="block text-center">인사일런스 우먼</a>
+										<div>
+											<span>129,000</span>
+										</div></li>
+									<li><a href="#" class="block"> <img
+											class="w-full block"
+											src="https://image.msscdn.net/images/goods_img/20240809/4316913/4316913_17242247351528_500.jpg"
+											alt="">
+									</a> <a href="#" class="block text-center">인사일런스 우먼</a>
+										<div>
+											<span>177,000</span>
+										</div></li>
+									<li><a href="#" class="block"> <img
+											class="w-full block"
+											src="https://image.msscdn.net/images/goods_img/20240809/4316816/4316816_17231977679300_500.jpg"
+											alt="">
+									</a> <a href="#" class="block text-center">비긴202</a>
+										<div>
+											<span>116,100</span>
+										</div></li>
+									<li><a href="#" class="block"> <img
+											class="w-full block"
+											src="https://image.msscdn.net/images/goods_img/20240809/4316989/4316989_17240569811986_500.jpg"
+											alt="">
+									</a> <a href="#" class="block text-center">셋업이엑스이</a>
+										<div>
+											<span>158,000</span>
+										</div></li>
+									<li><a href="#" class="block"> <img
+											class="w-full block"
+											src="https://image.msscdn.net/images/goods_img/20240809/4316996/4316996_17240564866278_500.jpg"
+											alt="">
+									</a> <a href="#" class="block text-center">셋업이엑스이</a>
+										<div>
+											<span>122,000</span>
+										</div></li>
 								</ul>
 							</nav>
 						</div>
 					</section>
 				</div>
-
 				<div class="tab-content hidden" id="tab2">
 					<section class="section-img">
 						<div class="con mx-auto">
 							<div class="logo-box">
-								<a href="/category/category.jsp"> <img src="" alt="">
+								<a href="#"> <img
+									src="main-page/images/brand/musinsastandard.png" alt="">
 								</a>
 							</div>
-							<h2 class="tit text-[40px] font-bold">쿠콥</h2>
+							<h2 class="tit text-[40px] font-bold">무신사 스탠다드</h2>
 							<div class="swiper-btn-box">
 								<div class="swiper-btn swiper-btn__prev swiper-btn__prev-1">
 									<span> <img src="/main-page/images/brand/sl_arrow.svg"
@@ -204,20 +274,71 @@ boolean isLoggedIn = (session != null && session.getAttribute("member") != null)
 						</div>
 						<div class="swiper swiper-con swiper-con1 section-img-swiper">
 							<ul class="swiper-wrapper">
-								<c:forEach var="product" items="${requestScope.getAllProducts}"
-									varStatus="status">
-									<c:if test="${status.index >= 364 && status.index <= 371}">
-										<li class="swiper-slide"><a
-											href="/scg.product?PRODUCT_ID=${product.product_id }">
-												<div class="img-box">
-													<img src="${product.image_url }" alt="">
-												</div>
-												<div class="content">
-													<p class="category">${product.product_name }</p>
-												</div>
-										</a>
-									</c:if>
-								</c:forEach>
+								<li class="swiper-slide"><a href="#">
+										<div class="img-box">
+											<img src="/main-page/images/brand/ms1.jpg" alt="">
+										</div>
+										<div class="content">
+											<p class="category">무신사 스탠다드 24 F/W 아우터 페스티벌</p>
+										</div>
+								</a></li>
+								<li class="swiper-slide"><a href="#">
+										<div class="img-box">
+											<img src="/main-page/images/brand/ms2.jfif" alt="">
+										</div>
+										<div class="content">
+											<p class="category">무신사 스탠다드 24 가을 캠페인</p>
+										</div>
+								</a></li>
+								<li class="swiper-slide"><a href="#">
+										<div class="img-box">
+											<img src="/main-page/images/brand/ms3.jpg" alt="">
+										</div>
+										<div class="content">
+											<p class="category">무신사 스탠다드 세미 와이드 히든 밴딩 슬랙스 [블랙]</p>
+											<p class="price">31,890원</p>
+										</div>
+								</a></li>
+								<li class="swiper-slide"><a href="#">
+										<div class="img-box">
+											<img src="/main-page/images/brand/ms4.jpg" alt="">
+										</div>
+										<div class="content">
+											<p class="category">무신사 스탠다드 릴렉스드 베이식 블레이저 [블랙]</p>
+										</div>
+								</a></li>
+								<li class="swiper-slide"><a href="#">
+										<div class="img-box">
+											<img src="/main-page/images/brand/ms5.jpg" alt="">
+										</div>
+										<div class="content">
+											<p class="category">무신사 스탠다드 레이어드 크루 넥 반팔 티셔츠_일반 기장 [화이트]</p>
+										</div>
+								</a></li>
+								<li class="swiper-slide"><a href="#">
+										<div class="img-box">
+											<img src="/main-page/images/brand/ms6.jpg" alt="">
+										</div>
+										<div class="content">
+											<p class="category">무신사 스탠다드 와이드 히든 밴딩 슬랙스 [블랙]</p>
+										</div>
+								</a></li>
+								<li class="swiper-slide"><a href="#">
+										<div class="img-box">
+											<img src="/main-page/images/brand/ms7.jpg" alt="">
+										</div>
+										<div class="content">
+											<p class="category">무신사 스탠다드 오버사이즈 블레이저 [블랙]</p>
+										</div>
+								</a></li>
+								<li class="swiper-slide"><a href="#">
+										<div class="img-box">
+											<img src="/main-page/images/brand/ms8.jpg" alt="">
+										</div>
+										<div class="content">
+											<p class="category">무신사 스탠다드 캔버스 워크 재킷 [블랙]</p>
+										</div>
+								</a></li>
 							</ul>
 						</div>
 						<div class="section-img__bg"></div>
@@ -226,10 +347,11 @@ boolean isLoggedIn = (session != null && session.getAttribute("member") != null)
 					<section class="section-img section-img-2">
 						<div class="con mx-auto">
 							<div class="logo-box">
-								<a href="/category/category.jsp"> <img src="" alt="">
+								<a href="#"> <img src="/main-page/images/brand/nike.png"
+									alt="">
 								</a>
 							</div>
-							<h2 class="tit text-[40px] font-bold">알에스에스씨</h2>
+							<h2 class="tit text-[40px] font-bold">나이키</h2>
 							<div class="swiper-btn-box">
 								<div class="swiper-btn swiper-btn__prev swiper-btn__prev-2">
 									<span> <img src="/main-page/images/brand/sl_arrow.svg"
@@ -246,20 +368,70 @@ boolean isLoggedIn = (session != null && session.getAttribute("member") != null)
 						</div>
 						<div class="swiper swiper-con swiper-con2 section-img-2-swiper">
 							<ul class="swiper-wrapper">
-								<c:forEach var="product" items="${requestScope.getAllProducts}"
-									varStatus="status">
-									<c:if test="${status.index >= 450 && status.index <= 457}">
-										<li class="swiper-slide"><a
-											href="/scg.product?PRODUCT_ID=${product.product_id }">
-												<div class="img-box">
-													<img src="${product.image_url }" alt="">
-												</div>
-												<div class="content">
-													<p class="category">${product.product_name }</p>
-												</div>
-										</a></li>
-									</c:if>
-								</c:forEach>
+								<li class="swiper-slide"><a href="#">
+										<div class="img-box">
+											<img src="/main-page/images/brand/n1.jpg" alt="">
+										</div>
+										<div class="content">
+											<p class="category">스니커즈 에디터가 선보이는 원 슈즈, 투 코디</p>
+										</div>
+								</a></li>
+								<li class="swiper-slide"><a href="#">
+										<div class="img-box">
+											<img src="/main-page/images/brand/n2.jpg" alt="">
+										</div>
+										<div class="content">
+											<p class="category">나이키 에어 포스 1 07 M - 블랙 / CW2288-001</p>
+										</div>
+								</a></li>
+								<li class="swiper-slide"><a href="#">
+										<div class="img-box">
+											<img src="/main-page/images/brand/n3.jpg" alt="">
+										</div>
+										<div class="content">
+											<p class="category">나이키 에어 포스 1 07 M - 화이트 / CW2288-111</p>
+										</div>
+								</a></li>
+								<li class="swiper-slide"><a href="#">
+										<div class="img-box">
+											<img src="/main-page/images/brand/n4.jpg" alt="">
+										</div>
+										<div class="content">
+											<p class="category">나이키 V2K 런 W - 라이트 오어우드 브라운:카키</p>
+										</div>
+								</a></li>
+								<li class="swiper-slide"><a href="#">
+										<div class="img-box">
+											<img src="/main-page/images/brand/n5.jpg" alt="">
+										</div>
+										<div class="content">
+											<p class="category">나이키 V2K 런 M - 블랙:앤트럴사이트:다크 스모크:그레이</p>
+										</div>
+								</a></li>
+								<li class="swiper-slide"><a href="#">
+										<div class="img-box">
+											<img src="/main-page/images/brand/n6.jpg" alt="">
+										</div>
+										<div class="content">
+											<p class="category">나이키 덩크 로우 레트로 M - 블랙:화이트</p>
+										</div>
+								</a></li>
+								<li class="swiper-slide"><a href="#">
+										<div class="img-box">
+											<img src="/main-page/images/brand/n7.jpg" alt="">
+										</div>
+										<div class="content">
+											<p class="category">나이키 덩크 로우 레트로 M - 그레이 포그:화이트</p>
+										</div>
+								</a></li>
+								<li class="swiper-slide"><a href="#">
+										<div class="img-box">
+											<img src="/main-page/images/brand/n8.jpg" alt="">
+										</div>
+										<div class="content">
+											<p class="category">나이키 ACG 써마 핏 플리스 풀오버 후디</p>
+										</div>
+								</a></li>
 							</ul>
 						</div>
 						<div class="section-img__bg"></div>
@@ -268,11 +440,11 @@ boolean isLoggedIn = (session != null && session.getAttribute("member") != null)
 					<section class="section-img section-img-3">
 						<div class="con mx-auto">
 							<div class="logo-box">
-								<a href="/category/category.jsp"> <img
-									src="" alt="">
+								<a href="#"> <img
+									src="/main-page/images/brand/newbalance.png" alt="">
 								</a>
 							</div>
-							<h2 class="tit text-[40px] font-bold">디프</h2>
+							<h2 class="tit text-[40px] font-bold">뉴발란스</h2>
 							<div class="swiper-btn-box">
 								<div class="swiper-btn swiper-btn__prev swiper-btn__prev-3">
 									<span> <img src="/main-page/images/brand/sl_arrow.svg"
@@ -289,25 +461,75 @@ boolean isLoggedIn = (session != null && session.getAttribute("member") != null)
 						</div>
 						<div class="swiper swiper-con swiper-con3 section-img-3-swiper">
 							<ul class="swiper-wrapper">
-							<c:forEach var="product" items="${requestScope.getAllProducts}"
-									varStatus="status">
-									<c:if test="${status.index >= 510 && status.index <= 517}">
-								<li class="swiper-slide"><a href="/scg.product?PRODUCT_ID=${product.product_id }">
+								<li class="swiper-slide"><a href="#">
 										<div class="img-box">
-											<img src="${product.image_url }" alt="">
+											<img src="/main-page/images/brand/nb1.jpg" alt="">
 										</div>
 										<div class="content">
-											<p class="category">${product.product_name }</p>
+											<p class="category">뉴발란스 2002</p>
 										</div>
 								</a></li>
-								</c:if>
-								</c:forEach>
+								<li class="swiper-slide"><a href="#">
+										<div class="img-box">
+											<img src="/main-page/images/brand/nb2.jfif" alt="">
+										</div>
+										<div class="content">
+											<p class="category">레거시 컬렉션</p>
+										</div>
+								</a></li>
+								<li class="swiper-slide"><a href="#">
+										<div class="img-box">
+											<img src="/main-page/images/brand/nb3.jpg" alt="">
+										</div>
+										<div class="content">
+											<p class="category">뉴발란스 NBPDEF704W/ MR530SG (WHITE)</p>
+										</div>
+								</a></li>
+								<li class="swiper-slide"><a href="#">
+										<div class="img-box">
+											<img src="/main-page/images/brand/nb4.jpg" alt="">
+										</div>
+										<div class="content">
+											<p class="category">뉴발란스 NBP7EF771N / M2002RCK (BLACK)</p>
+										</div>
+								</a></li>
+								<li class="swiper-slide"><a href="#">
+										<div class="img-box">
+											<img src="/main-page/images/brand/nb5.jpg" alt="">
+										</div>
+										<div class="content">
+											<p class="category">뉴발란스 NBPDEF707G / MR530CK (GRAY)</p>
+										</div>
+								</a></li>
+								<li class="swiper-slide"><a href="#">
+										<div class="img-box">
+											<img src="/main-page/images/brand/nb6.jpg" alt="">
+										</div>
+										<div class="content">
+											<p class="category">뉴발란스 NBP7EF757G / M2002RNM (GRAY)</p>
+										</div>
+								</a></li>
+								<li class="swiper-slide"><a href="#">
+										<div class="img-box">
+											<img src="/main-page/images/brand/nb7.jpg" alt="">
+										</div>
+										<div class="content">
+											<p class="category">뉴발란스 NBPDES169C / MR530LG (WHITE)</p>
+										</div>
+								</a></li>
+								<li class="swiper-slide"><a href="#">
+										<div class="img-box">
+											<img src="/main-page/images/brand/nb8.jpg" alt="">
+										</div>
+										<div class="content">
+											<p class="category">뉴발란스 NBP7EF738B / U574LGRA (BLACK)</p>
+										</div>
+								</a></li>
 							</ul>
 						</div>
 						<div class="section-img__bg"></div>
 					</section>
 				</div>
-				
 				<div class="tab-content hidden" id="tab3">
 					<section class="section-img section-img-4">
 						<div class="con mx-auto">

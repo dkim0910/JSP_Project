@@ -19,14 +19,12 @@ public class GetAllItems implements Action{
 		ActionForward forward = new ActionForward();
 		
 		MainDAO maindao = new MainDAO();
-		System.out.println("here3");
 		List<MyDTO> getAllProducts = maindao.getAllProducts();
 		request.setAttribute("getAllProducts", getAllProducts);
 		
 		forward.setRedirect(false);
 		forward.setPath("/main-page/main.jsp");
 		
-		System.out.println("here5");
 		return forward;
 	}
 
