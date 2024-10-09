@@ -23,48 +23,12 @@ function toggleBold(selectedElement) {
 	// 클릭한 요소에 'bold' 클래스를 추가
 	selectedElement.classList.add('bold');
 	// 클릭한 메뉴를 localStorage에 저장
-    localStorage.setItem('activeMenu', selectedElement.innerText);
+	localStorage.setItem('activeMenu', selectedElement.innerText);
 }
 
-window.onload = function() {
-    let showMyInfo = '<c:out value="${showMyInfo}" />'; // 세션에서 showMyInfo 값을 가져옴
-
-    if (showMyInfo === 'true') {
-        // '나의 정보'가 선택된 상태라면 localStorage 값을 유지
-        let activeMenu = localStorage.getItem('activeMenu');
-        const options = document.querySelectorAll('.sidebar-options');
-        options.forEach(option => {
-            if (option.innerText === activeMenu) {
-                option.classList.add('bold');
-            }
-        });
-    } else {
-        // '나의 정보'가 선택되지 않은 상태라면 localStorage 초기화
-        localStorage.removeItem('activeMenu');
-
-        // 모든 sidebar-options 요소에서 'bold' 클래스를 제거
-        const options = document.querySelectorAll('.sidebar-options');
-        options.forEach(option => {
-            option.classList.remove('bold');
-        });
-    }
-};
-
-
-
 // 배달 현황 바 나오는 평션
+// 버튼 누룰때 마다 1일 씩 줄어들어서 0이되면 배송 완료 나옴 그리고 리셋
 
-document.getElementById('track-button').addEventListener('click', function() {
-	const orderNumber = document.getElementById('order-number').value;
-
-	// Display the tracking info
-	document.getElementById('display-order-number').innerText = orderNumber;
-	document.getElementById('tracking-info').style.display = 'block'; // Show tracking info
-
-	// Update the progress bar (example: halfway for demo purposes)
-	const progressBar = document.querySelector('.progress-bar');
-	progressBar.style.width = '50%'; // Adjust as needed for the actual status
-});
 
 
 // 멤버십 바 올라가는거 평션
@@ -117,6 +81,31 @@ function logout() {
 	// 사용자가 "아니요"를 클릭한 경우 아무 작업도 하지 않음
 }
 
+// 정보 수정 
+window.onload = function() {
+	let showMyInfo = '<c:out value="${showMyInfo}" />'; // 세션에서 showMyInfo 값을 가져옴
 
+	if (showMyInfo === 'true') {
+		// '나의 정보'가 선택된 상태라면 localStorage 값을 유지
+		let activeMenu = localStorage.getItem('activeMenu');
+		const options = document.querySelectorAll('.sidebar-options');
+		options.forEach(option => {
+			if (option.innerText === activeMenu) {
+				option.classList.add('bold');
+			}
+		});
+	} else {
+		// '나의 정보'가 선택되지 않은 상태라면 localStorage 초기화
+		localStorage.removeItem('activeMenu');
+
+		// 모든 sidebar-options 요소에서 'bold' 클래스를 제거
+		const options = document.querySelectorAll('.sidebar-options');
+		options.forEach(option => {
+			option.classList.remove('bold');
+		});
+	}
+};
+
+// 정보 수정 텍스트 박스 클릭해도 넘어가지는거 방지하는 평션 (나만 오류남?)
 
 

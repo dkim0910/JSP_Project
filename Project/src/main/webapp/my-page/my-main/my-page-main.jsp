@@ -150,7 +150,7 @@
 								<h2 class="bold">주문현황</h2>
 								<hr class="line" />
 
-
+								<!-- 배송 추적 시스템 -->
 								<div class="tracking-container">
 									<header class="tracking-header">
 										<h1 class="bold">배송 추적하기</h1>
@@ -160,8 +160,8 @@
 									<div class="tracking-box" style="border-radius: 5px;">
 										<h2 class="bold">주문 번호를 입력하세요:</h2>
 										<form id="tracking-form">
-											<input type="text" id="order-number"
-												placeholder="예: 123456789" required />
+											<input type="text" id="order-number" placeholder="예: 123"
+												required />
 											<button type="button" class="all-button" id="track-button">추적하기</button>
 										</form>
 
@@ -175,8 +175,6 @@
 											<div class="progress-container">
 												<div class="progress-bar"></div>
 											</div>
-
-											<!-- 이 아래가 추적하기 누루면 나오는 내용 나중엔 DB쪽에서 가지고 오기 색은 저거 바를 칸으로 나눠서 한개 될때 마다 칸 채우기(?) 가능한가? 시간 많이 남으면 하기 -->
 											<div class="progress-labels">
 												<span>주문 접수</span> <span>배송 준비중</span> <span>배송 중</span> <span>배송
 													완료</span>
@@ -185,10 +183,12 @@
 												<strong>현재 위치:</strong> 물류센터 A
 											</p>
 											<p>
-												<strong>예상 도착일:</strong> 5일 후
+												<strong>예상 도착일:</strong> <span id="expected-delivery-date">5일
+													후</span>
 											</p>
 										</div>
 									</div>
+
 
 								</div>
 
@@ -502,8 +502,8 @@
 										name="user-Name" placeholder="현재 이름 : ${member.user_name }">
 
 									<label for="user-Pw">비밀번호</label> <input type="text" id=""
-										name="user-Pw" placeholder="현재 비밀번호 : ${member.user_pw }">
-
+										name="user-Pw"
+										placeholder="현재 비밀번호 : 비밀번호는 보안을 위해 표시되지 않습니다">
 									<label for="user_address">주소</label> <input type="text" id=""
 										name="user_address"
 										placeholder="현재 주소 : ${member.user_address }"> <label
