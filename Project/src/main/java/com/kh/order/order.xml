@@ -8,12 +8,8 @@
 		SELECT * FROM PRODUCTS WHERE product_id = #{product_id}
 	</select>
 	<insert id="insertOrderedList" parameterType="hashmap">
-		INSERT INTO ORDERED
-		(ORDERED_NUM, USER_ID, PRODUCT_ID, ordered_date)
-		VALUES
-		(ordered_seq.nextval, #{user_id}, #{product_id}, SYSDATE)
+		INSERT INTO ORDERED VALUES (ordered_seq.nextval, #{user_id}, #{product_id}, sysdate, null, null)
 	</insert>
-
 	<select id="carttoorder" parameterType="string"
 		resultType="cartdto">
 		SELECT * FROM CART WHERE USER_ID = #{user_id}
