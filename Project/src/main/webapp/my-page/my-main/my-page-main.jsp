@@ -57,7 +57,8 @@
 					<ul>
 						<!-- 나의 정보창 -->
 						<!-- 이거만 refund 컨트롤러 안가고 마이페이지 컨트롤러감 ...? -->
-						<li><a href="/MemberList.my"
+						<!-- <li><a href="/MemberList.my" -->
+						<li><a href="/my-main/MemberList.up"
 							onclick="toggleBold(this); showContent('my-info')"
 							class="sidebar-options">나의 정보</a></li>
 						<!-- 여기에 주문 취소랑 주소 변경 등 넣기-->
@@ -451,39 +452,34 @@
 
 										<!-- 공지1 -->
 										<div class="event-card">
-											<a href="">
-												<div class="event-card-content">
-													<h3>공지 1</h3>
-													<p>배송 추적하는거 만들 시간이 없다</p>
-												</div>
-											</a>
+											<div class="event-card-content">
+												<h3>공지 1</h3>
+												<p>배송 추적하는거 만들 시간이 없다</p>
+											</div>
 										</div>
 
 										<!-- 공지 2 -->
 										<div class="event-card">
-											<a href="">
-												<div class="event-card-content">
-													<h3>공지 2</h3>
-													<p>멤버십 포인트 있는거 만들 시간이 없다</p>
-												</div>
+											<div class="event-card-content">
+												<h3>공지 2</h3>
+												<p>멤버십 포인트 있는거 만들 시간이 없다</p>
+											</div>
 										</div>
 
 										<!-- 공지 3 -->
 										<div class="event-card">
-											<a href="">
-												<div class="event-card-content">
-													<h3>공지 3</h3>
-													<p>DB 설게 어렵네</p>
-												</div>
+											<div class="event-card-content">
+												<h3>공지 3</h3>
+												<p>DB 설게 어렵네</p>
+											</div>
 										</div>
 
 										<!-- 공지 4 -->
 										<div class="event-card">
-											<a href="">
-												<div class="event-card-content">
-													<h3>공지 4</h3>
-													<p>섭종합니다</p>
-												</div>
+											<div class="event-card-content">
+												<h3>공지 4</h3>
+												<p>섭종합니다</p>
+											</div>
 										</div>
 
 									</section>
@@ -522,38 +518,33 @@
 						<div id="edit-my-info" class="content-section"
 							style="display: none;">
 							<div class="profile-container">
-								<div class="">
-									<h1 style="font-weight: bold;">정보 수정하기</h1>
-									<br />
+								<h1 style="font-weight: bold;">정보 수정하기</h1>
+								<br />
 
-									<form action="/my-main/MemberUpdate.up">
-										<label for="user-Name">이름</label> <input type="text" id=""
-											name="user-Name" placeholder="현재 이름 : ${member.user_name }">
+								<form action="/my-main/MemberUpdate.up">
+									<label for="user-Name">이름</label> <input type="text" id=""
+										name="user-Name" placeholder="현재 이름 : ${member.user_name }">
 
-										<label for="user-Pw">비밀번호</label> <input type="text" id=""
-											name="user-Pw" placeholder="현재 비밀번호 : 비밀번호는 보안을 위해 표시되지 않습니다">
-										<label for="user_address">주소</label> <input type="text" id=""
-											name="user_address"
-											placeholder="현재 주소 : ${member.user_address }"> <label
-											for="user_phone">전화번호</label> <input type="tel" id=""
-											name="user_phone"
-											placeholder="현재 전화번호 : ${member.user_phone }"> <label
-											for="user-Gender">성별</label>
-										<div style="padding-top: 12px;">
-											<input type="radio" id="male" name="user-Gender" value="M">
-											<label for="male">남</label> <input type="radio" id="female"
-												name="user-Gender" value="W"> <label for="female">여</label>
-										</div>
-										<div style="padding-top: 20px;">
-											<input type="submit" value="수정하기" class="all-button"
-												onclick="showContent('my-info')" />
-										</div>
-									</form>
-
-								</div>
-
+									<label for="user-Pw">비밀번호</label> <input type="text" id=""
+										name="user-Pw" placeholder="현재 비밀번호 : 비밀번호는 보안을 위해 표시되지 않습니다">
+									<label for="user_address">주소</label> <input type="text" id=""
+										name="user_address"
+										placeholder="현재 주소 : ${member.user_address }"> <label
+										for="user_phone">전화번호</label> <input type="tel" id=""
+										name="user_phone"
+										placeholder="현재 전화번호 : ${member.user_phone }"> <label
+										for="user-Gender">성별</label>
+									<div style="padding-top: 12px;">
+										<input type="radio" id="male" name="user-Gender" value="M">
+										<label for="male">남</label> <input type="radio" id="female"
+											name="user-Gender" value="W"> <label for="female">여</label>
+									</div>
+									<div style="padding-top: 20px;">
+										<input type="submit" value="수정하기" class="all-button"
+											onclick="showContent('my-info')" />
+									</div>
+								</form>
 							</div>
-
 
 						</div>
 
