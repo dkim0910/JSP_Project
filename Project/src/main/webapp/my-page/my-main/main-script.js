@@ -177,7 +177,44 @@ window.onload = function() {
 		});
 	}
 };
-
 // 정보 수정 텍스트 박스 클릭해도 넘어가지는거 방지하는 평션 (나만 오류남?)
 
+// 정보 수정 시 빈 값 체크
+function infocheck() {
+	let frm = document.infoEditForm;
+	let user_name = frm["user-Name"].value;  			// 이름 입력 필드
+	let user_pw = frm["user-Pw"].value;   				// 비밀번호 입력 필드
+	let user_address = frm["user_address"].value;   	// 주소 입력 필드
+	let user_phone = frm["user_phone"].value;   		// 전화번호 입력 필드
+
+	// 이름 빈값 체크
+	if (user_name == "") {
+		alert("이름을 입력하세요");
+		frm["user-Name"].focus();
+		return false;
+	}
+
+	// 비밀번호 빈값 체크
+	if (user_pw == "") {
+		alert("비밀번호를 입력하세요");
+		frm["user-Pw"].focus();
+		return false;
+	}
+
+	// 주소 빈값 체크
+	if (user_address == "") {
+		alert("주소를 입력하세요");
+		frm["user_address"].focus();
+		return false;
+	}
+
+	// 전화번호 빈값 체크
+	if (user_phone == "") {
+		alert("전화번호를 입력하세요");
+		frm["user_phone"].focus();
+		return false;
+	}
+	frm.submit();
+	showContent('my-info');
+}
 

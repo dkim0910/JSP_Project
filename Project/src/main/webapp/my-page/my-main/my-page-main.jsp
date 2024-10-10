@@ -511,8 +511,6 @@
 
 						</div>
 
-
-
 						<!-- 정보 수정하기 페이지 -->
 						<!-- DB 가서 update 문으로 바꾸고 옴 -->
 						<div id="edit-my-info" class="content-section"
@@ -521,42 +519,42 @@
 								<h1 style="font-weight: bold;">정보 수정하기</h1>
 								<br />
 
-								<form action="/my-main/MemberUpdate.up">
-									<label for="user-Name">이름</label> <input type="text" id=""
-										name="user-Name" placeholder="현재 이름 : ${member.user_name }">
+								<form action="/my-main/MemberUpdate.up" name="infoEditForm">
+									<label for="user-Name">이름</label> 
+									<input type="text" id="" name="user-Name" id="user-Name"
+										placeholder="현재 이름 : ${member.user_name }" >
 
-									<label for="user-Pw">비밀번호</label> <input type="text" id=""
-										name="user-Pw" placeholder="현재 비밀번호 : 비밀번호는 보안을 위해 표시되지 않습니다">
-									<label for="user_address">주소</label> <input type="text" id=""
-										name="user_address"
-										placeholder="현재 주소 : ${member.user_address }"> <label
-										for="user_phone">전화번호</label> <input type="tel" id=""
-										name="user_phone"
-										placeholder="현재 전화번호 : ${member.user_phone }"> <label
-										for="user-Gender">성별</label>
+									<label for="user-Pw">비밀번호</label> 
+									<input type="text" id="" name="user-Pw" id="user-Pw"
+										placeholder="현재 비밀번호 : 비밀번호는 보안을 위해 표시되지 않습니다" >
+										
+									<label for="user_address">주소</label> 
+									<input type="text" id="" name="user_address" id="user_address"
+										placeholder="현재 주소 : ${member.user_address }" > 
+										
+									<label for="user_phone">전화번호</label> 
+									<input type="tel" id="" name="user_phone" id="user_phone"
+										placeholder="현재 전화번호 : ${member.user_phone }" > 
+										 
+									<label for="user-Gender">성별</label>
 									<div style="padding-top: 12px;">
-										<input type="radio" id="male" name="user-Gender" value="M">
-										<label for="male">남</label> <input type="radio" id="female"
-											name="user-Gender" value="W"> <label for="female">여</label>
+										<input type="radio" id="male" name="user-Gender" value="M" checked>
+										<label for="male">남</label> 
+										
+										<input type="radio" id="female" name="user-Gender" value="W"> 
+										<label for="female">여</label>
 									</div>
 									<div style="padding-top: 20px;">
-										<input type="submit" value="수정하기" class="all-button"
-											onclick="showContent('my-info')" />
+										<input type="button" value="수정하기" class="all-button"
+											onclick="infocheck();" />
 									</div>
 								</form>
 							</div>
 
 						</div>
-
-
-
 						<!-- 더 추가할 페이지들 -->
 				</main>
-
-
-
 			</div>
-
 		</div>
 </body>
 <script src="/my-page/my-main/main-script.js"></script>
