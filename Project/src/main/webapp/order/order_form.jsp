@@ -250,26 +250,26 @@ boolean isLoggedIn = (session != null && session.getAttribute("member") != null)
 						<div id="other-payment-options" class="paymentMethod-others"
 							style="display: none;">
 							<ul class="paymentMethod-others-list">
-								<li id="box-payment-method-type-CARD">
-									<button type="button" id="button-payment-CARD"
+								<li class = "payment-others" id="box-payment-method-type-CARD">
+									<button type="button" id="button-payment"
 										onclick="togglePaymentCard(true)">
 										<span class="paymentMethod-others-text">카드</span>
 									</button>
 								</li>
-								<li id="box-payment-method-type-VACCOUNT">
-									<button type="button" id="button-payment-VACCOUNT"
+								<li class = "payment-others" id="box-payment-method-type-VACCOUNT">
+									<button type="button" id="button-payment"
 										onclick="togglePaymentCard(false)">
 										<span class="paymentMethod-others-text">가상계좌</span>
 									</button>
 								</li>
-								<li id="box-payment-method-type-PHONE">
-									<button type="button" id="button-payment-PHONE"
+								<li class = "payment-others" id="box-payment-method-type-PHONE">
+									<button type="button" id="button-payment"
 										onclick="togglePaymentCard(false)">
 										<span class="paymentMethod-others-text">휴대폰</span>
 									</button>
 								</li>
-								<li id="box-payment-method-type-NAVERPAY">
-									<button type="button" id="button-payment-NAVERPAY"
+								<li class = "payment-others" id="box-payment-method-type-NAVERPAY">
+									<button type="button" id="button-payment"
 										onclick="togglePaymentCard(false)">
 										<span class="paymentMethod-others-text">네이버페이</span>
 									</button>

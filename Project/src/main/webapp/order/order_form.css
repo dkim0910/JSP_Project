@@ -453,9 +453,9 @@ a, div{
     overflow: hidden;   
     float: left;
 }
-#box-payment-method-type-CARD:checked+label, #box-payment-method-type-VACCOUNT:checked+label, #box-payment-method-type-PHONE:checked+label, #box-payment-method-type-NAVERPAY:checked+label {
+/* #box-payment-method-type-CARD:checked+label, #box-payment-method-type-VACCOUNT:checked+label, #box-payment-method-type-PHONE:checked+label, #box-payment-method-type-NAVERPAY:checked+label {
     border: 1px solid black;
-}
+} */
 paymentMethod-others > li :checked{
     border: 1px solid black;
     box-sizing: border-box;
