@@ -94,26 +94,15 @@ function togglePaymentCard(show) {
 		listPayments.style.display = 'none';
 	}
 }
-/*//기타 -> 카드결제 클릭 부분
-document.querySelectorAll('.card-selection-input').forEach((input) => {
-	input.addEventListener('change', function() {
-		document.querySelectorAll('.list-payment-label').forEach((label) => {
-			label.style.border = '1px solid #eee';  // 모든 label을 초기화
-		});
-		if (this.checked) {
-			this.parentElement.style.border = '1px solid black';  // 선택된 label에 테두리 적용
-		}
-	});
-});*/
 
 // 장바구니 상품 결제하기
 // 선택된 항목 구매
 function purchasecartItems() {
-    const selectedItems = document.querySelectorAll('.item-purchase-list');
-		// 구매할 상품ID들을 배열에 저장
-        let itemIds = Array.from(selectedItems).map(item => item.value);
-		// 배열의 값들을 문자열 형태로 변환하고 전송
-        window.location.href = `/order/cart_to_order.or_c?itemIds=${itemIds.join(",")}`;
+	const selectedItems = document.querySelectorAll('.item-purchase-list');
+	// 구매할 상품ID들을 배열에 저장
+	let itemIds = Array.from(selectedItems).map(item => item.value);
+	// 배열의 값들을 문자열 형태로 변환하고 전송
+	window.location.href = `/order/cart_to_order.or_c?itemIds=${itemIds.join(",")}`;
 }
 
 // 바텀바 2차메뉴 클릭 기능
@@ -125,25 +114,35 @@ $(document).ready(function() {
 	});
 });
 
-function setupOtherPaymentSelection() {
-	$('#button-payment').on('click', function() {
-		// 모든 결제방법의 border를 초기화
-		$('.paymentMethod-others-list li').css('border', '1px solid #e0e0e0');
+$(document).ready(function() {
+    // 기타 결제 버튼 클릭 기능
+    $('#other-payment-options button').on('click', function() {
+        // 모든 버튼의 border를 초기화
+        $('#other-payment-options button').css('border', '2px solid #e0e0e0');
 
-		// 선택된 카드의 border를 변경
-				$(this).closest('li').css('border', '1px solid black');
-	});
-}
+        // 클릭된 버튼의 border를 검은색으로 변경
+        $(this).css('border', '2px solid black');
 
-function setupCardSelection() {
-	$('.card-selection-input').on('click', function() {
-		// 모든 카드의 border를 초기화
-		$('.list-payment li').css('border', '1px solid #eee');
+        // 모든 li의 border를 초기화
+        $('#other-payment-options li').css('border', 'none');
 
-		// 선택된 카드의 border를 변경
-		$(this).closest('li').css('border', '1px solid black');
-	});
-}
+        // 클릭된 버튼이 포함된 li의 border를 검은색으로 변경
+        $(this).closest('li').css('border', '1px solid black');
+    });
 
-// 함수 호출
-setupCardSelection();
+    // 카드 결제 버튼 클릭 기능
+    $('.card-selection-input').on('click', function() {
+        // 모든 li의 border를 초기화
+        $('li').css('border', '1px solid #e0e0e0');
+
+        // 클릭된 input의 조상인 label의 부모 li의 border를 검은색으로 변경
+        $(this).closest('label').parent('li').css('border', '1px solid black');
+        
+        // 선택된 버튼의 border를 검은색으로 유지
+        $('#other-payment-options button').each(function() {
+            if ($(this).css('border') === '2px solid black') {
+                $(this).css('border', '2px solid black');
+            }
+        });
+    });
+});

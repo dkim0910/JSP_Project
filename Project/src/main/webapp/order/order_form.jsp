@@ -210,9 +210,9 @@ boolean isLoggedIn = (session != null && session.getAttribute("member") != null)
 								disabled value="최소 5000원 이상 보유시 사용 가능" />
 						</div>
 						<ul class="sheet-point-input-text">
-							<li class="sheet-point-limit-input-text">적용한도(10%)</li>
-							<li class="sheet-point-input-price">10,000원 /</li>
-							<li class="sheet-point-input-own">보유 4,100원</li>
+							<span class="sheet-point-limit-input-text">적용한도(10%)</span>
+							<span class="sheet-point-input-price">10,000원 /</span>
+							<span class="sheet-point-input-own">보유 4,100원</span>
 
 						</ul>
 					</div>
@@ -250,25 +250,25 @@ boolean isLoggedIn = (session != null && session.getAttribute("member") != null)
 						<div id="other-payment-options" class="paymentMethod-others"
 							style="display: none;">
 							<ul class="paymentMethod-others-list">
-								<li class = "payment-others" id="box-payment-method-type-CARD">
+								<li id="box-payment-method-type-CARD">
 									<button type="button" id="button-payment"
 										onclick="togglePaymentCard(true)">
 										<span class="paymentMethod-others-text">카드</span>
 									</button>
 								</li>
-								<li class = "payment-others" id="box-payment-method-type-VACCOUNT">
+								<li id="box-payment-method-type-VACCOUNT">
 									<button type="button" id="button-payment"
 										onclick="togglePaymentCard(false)">
 										<span class="paymentMethod-others-text">가상계좌</span>
 									</button>
 								</li>
-								<li class = "payment-others" id="box-payment-method-type-PHONE">
+								<li id="box-payment-method-type-PHONE">
 									<button type="button" id="button-payment"
 										onclick="togglePaymentCard(false)">
 										<span class="paymentMethod-others-text">휴대폰</span>
 									</button>
 								</li>
-								<li class = "payment-others" id="box-payment-method-type-NAVERPAY">
+								<li id="box-payment-method-type-NAVERPAY">
 									<button type="button" id="button-payment"
 										onclick="togglePaymentCard(false)">
 										<span class="paymentMethod-others-text">네이버페이</span>
