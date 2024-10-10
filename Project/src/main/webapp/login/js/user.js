@@ -98,7 +98,7 @@ function login() {
 			let response = xhr.responseText.trim();
 			if (response === "success") {
 				// 로그인 성공 시, 메인 페이지로 리디렉션
-				window.location.href = "/main-page/main.jsp";
+				window.location.href = "/index.jsp";
 			} else {
 				// 로그인 실패 시 alert 표시
 				alert("아이디 또는 비밀번호가 잘못되었습니다.");
