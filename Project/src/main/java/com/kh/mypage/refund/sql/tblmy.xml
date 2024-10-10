@@ -55,7 +55,7 @@
 		WHERE
 		o.USER_ID = #{userid}
 		ORDER BY
-		o.ordered_date DESC
+		o.ORDERED_NUM DESC
 	</select>
 
 	<!-- 회원 삭제 -->
