@@ -25,7 +25,7 @@
 	<c:set var="showMyInfo" value="${requestScope.showMyInfo}" />
 	<div class="header-container">
 		<header class="header">
-			<a href="../../main-page/main.jsp" class=""
+			<a href="/index.jsp" class=""
 				aria-label="이전 페이지로 이동 (로그인 후의 메인 페이지)"> <svg width="35"
 					height="35" viewBox="0 0 28 28" fill="none">
                     <path

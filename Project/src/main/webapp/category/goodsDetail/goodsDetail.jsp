@@ -51,12 +51,12 @@
             </div>
             
             <div class="product-parchase-buttons" >
-                <form id="buyForm" action="<%= isLoggedIn ? "/purchase.product" : "../../login/join/login_view.jsp" %>" method="post">
+                <form id="buyForm" action="<%= isLoggedIn ? "/purchase.product" : "/login/join/login_view.jsp" %>" method="post">
 					<input type="hidden" name="PRODUCT_ID" value="${goods.PRODUCT_ID}">
 					<input type="hidden" name="quantity" id="quantityInput" value="1">
                     <button type="button" class="buy-now" onclick="submitPurchaseForm()">바로 구매</button>
                 </form>
-                <form id="addForm" action="<%= isLoggedIn ? "/add.product" : "../../login/join/login_view.jsp" %>" method="post">
+                <form id="addForm" action="<%= isLoggedIn ? "/add.product" : "/login/join/login_view.jsp" %>" method="post">
                 	<input type="hidden" name="PRODUCT_ID" value="${goods.PRODUCT_ID}">
                 	<input type="hidden" name="user_id" value="${member.user_id}">
 					<input type="hidden" name="quantity" id="quantityInput" value="1">
