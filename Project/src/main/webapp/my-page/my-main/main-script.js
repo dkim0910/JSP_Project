@@ -26,6 +26,13 @@ function toggleBold(selectedElement) {
 	localStorage.setItem('activeMenu', selectedElement.innerText);
 }
 
+// 추적하기 엔터 눌러도 바로 추적하기 버튼 눌린거 처럼 하는거
+document.getElementById('order-number').addEventListener('keydown', function(event) {
+    if (event.key === 'Enter') {
+        document.getElementById('track-button').click(); // 버튼 클릭 이벤트 호출	
+    }
+});
+
 // 배달 현황 바 나오는 평션
 // 버튼 누룰때 마다 1일 씩 줄어들어서 0이되면 배송 완료 나옴 그리고 리셋
 document.getElementById('track-button').addEventListener('click', function() {
@@ -95,10 +102,6 @@ document.getElementById('track-button').addEventListener('click', function() {
 		}
 	}, 1500); // 1.5초에 한번씩 진행바 올라감
 });
-
-
-
-
 
 // 멤버십 바 올라가는거 평션
 

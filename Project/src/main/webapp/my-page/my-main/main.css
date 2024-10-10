@@ -473,3 +473,19 @@ input[type="tel"] {
   border-radius: 8px;
   text-align: center;
 }
+
+/* 별점 별 색 */
+/* 왜 여기는 적용이 안되냐? */
+.rating {
+    color: gold; /* 별색 */
+    font-size: 1.5em; /* 별 크기 */
+}
+
+.star {
+    margin-right: 2px; /* 별 사이의 간격 */
+    color: inherit; /* 부모의 색상으로 상속 */
+}
+.review-text {
+    margin-top: 5px; /* 별과 후기에 간격 추가 */
+}
+

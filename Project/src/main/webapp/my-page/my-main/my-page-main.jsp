@@ -178,10 +178,8 @@
 												<div class="progress-bar"></div>
 											</div>
 											<div class="progress-labels">
-												<span>주문 접수</span> 
-												<span>배송 준비중</span> 
-												<span>배송 중</span> 
-												<span>배송 완료</span>
+												<span>주문 접수</span> <span>배송 준비중</span> <span>배송 중</span> <span>배송
+													완료</span>
 											</div>
 											<p>
 												<strong>현재 위치:</strong> <span id="current-location">물류센터
@@ -212,15 +210,43 @@
                             </div> -->
 
 								<!-- 후기 페이지랑 연결? -->
+								<!-- 시간이 없다 -->
 								<div class="main-box">
-									<h2 class="bold">후기</h2>
+									<h2 class="bold">나의 후기</h2>
 									<hr class="line" />
-									<p>후기1</p>
+									<div>
+										<strong>${member.user_name}</strong>
+										<div class="rating">
+											<span class="star">★</span> <span class="star">★</span> <span
+												class="star">★</span> <span class="star">★</span> <span
+												class="star">★</span>
+										</div>
+										<p class="review-text">최근에 운동복을 구매했는데, 가격 대비 품질이 정말 뛰어나요!
+											운동할 때 착용하기 좋은 스타일이었고, 고객 서비스도 친절해서 만족스러웠습니다.</p>
+									</div>
 									<br />
-									<p>후기2</p>
+									<div>
+										<div class="rating">
+											<span class="star">★</span> <span class="star">★</span> <span
+												class="star">★</span> <span class="star">★</span> <span
+												class="star">★</span>
+										</div>
+										<p class="review-text">제가 좋아하는 브랜드의 운동복을 할인된 가격에 구매할 수 있어서
+											기뻤어요! 품질이 뛰어나고, 소재가 부드러워서 착용감이 아주 좋습니다. 앞으로 자주 이용할 것 같습니다</p>
+									</div>
 									<br />
-									<p>후기3</p>
+									<div class="rating">
+										<span class="star">★</span> <span class="star">★</span> <span
+											class="star">★</span> <span class="star">★</span> <span
+											class="star">★</span>
+									</div>
+									<p class="review-text">저는 요가를 자주 하는데, 이곳에서 산 레깅스는 정말 대단해요!
+										착용감이 뛰어나고 디자인도 예뻐서 운동할 때마다 기분이 좋아지네요. 특히 허리 부분이 너무 편해서 장시간 입고
+										있어도 불편함이 없어요. 친구들에게도 추천하고 싶어요!</p>
 								</div>
+
+
+
 							</div>
 
 						</div>
