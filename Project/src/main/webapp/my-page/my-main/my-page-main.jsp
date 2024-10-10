@@ -186,12 +186,12 @@
 													완료</span>
 											</div>
 											<p>
-												<strong>현재 위치:</strong> <span id="current-location"> 쇼핑하조 물류센터
-													</span>
+												<strong>현재 위치:</strong> <span id="current-location">
+													쇼핑하조 물류센터 </span>
 											</p>
 											<p>
-												<strong>예상 도착일:</strong> <span id="expected-delivery-date"> 준비중
-													</span>
+												<strong>예상 도착일:</strong> <span id="expected-delivery-date">
+													준비중 </span>
 											</p>
 										</div>
 									</div>
@@ -239,8 +239,7 @@
 										<p class="review-text">제가 좋아하는 브랜드의 운동복을 할인된 가격에 구매할 수 있어서
 											기뻤어요! 품질이 뛰어나고, 소재가 부드러워서 착용감이 아주 좋습니다. 앞으로 자주 이용할 것 같습니다</p>
 									</div>
-									<br /> 
-									<strong>${member.user_name}</strong>
+									<br /> <strong>${member.user_name}</strong>
 									<div class="rating">
 										<span class="star">★</span> <span class="star">★</span> <span
 											class="star">★</span> <span class="star">★</span> <span
@@ -528,17 +527,12 @@
 									placeholder="현재 이름 : ${member.user_name }"> <label
 									for="user-Pw">비밀번호</label> <input type="text" id=""
 									name="user-Pw" id="user-Pw"
-									placeholder="현재 비밀번호 : 비밀번호는 보안을 위해 표시되지 않습니다"> <label
-<<<<<<< HEAD
-									for="user_address">주소</label> <input type="text" id=""
-									name="user_address" id="user_address"
-=======
-									for="user_address">주소</label>
+									placeholder="현재 비밀번호 : 비밀번호는 보안을 위해 표시되지 않습니다"> 
+									<label for="user_address">주소</label>
 								<button class="sheet-address-title-button" type="button"
 									id="button-address-change" onclick="new_execDaumPostcode()">
-									배송지 변경</button>
+									주소 변경</button>
 								<input type="text" id="" name="user_address" id="input_address"
->>>>>>> branch 'main' of https://github.com/dkim0910/JSP_Project.git
 									placeholder="현재 주소 : ${member.user_address }"> <label
 									for="user_phone">전화번호</label> <input type="tel" id=""
 									name="user_phone" id="user_phone"
