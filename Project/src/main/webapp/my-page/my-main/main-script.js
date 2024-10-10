@@ -29,60 +29,71 @@ function toggleBold(selectedElement) {
 // 배달 현황 바 나오는 평션
 // 버튼 누룰때 마다 1일 씩 줄어들어서 0이되면 배송 완료 나옴 그리고 리셋
 document.getElementById('track-button').addEventListener('click', function() {
-    const orderNumber = document.getElementById('order-number').value;
-    const displayOrderNumber = document.getElementById('display-order-number');
-    const trackingInfo = document.getElementById('tracking-info');
-    const warningMessage = document.getElementById('warning-message');
+	const orderNumber = document.getElementById('order-number').value;
+	const displayOrderNumber = document.getElementById('display-order-number');
+	const trackingInfo = document.getElementById('tracking-info');
+	const warningMessage = document.getElementById('warning-message');
 
-    let progress = 0; // 배송 현황 바를 0으로 시작
+	let progress = 0; // 배송 현황 바를 0으로 시작
 	let expectedDays = 5; // 5일후 도착
-	
-    // 주문번호가 숫자 인지를 확인
-    const isNumeric = /^\d+$/.test(orderNumber); // 정규 표현식으로 숫자 체크
 
-    // 주문 번호가 비어있을 경우 경고 메시지 표시
-    if (orderNumber == '') {
-        warningMessage.style.display = 'block';
-        warningMessage.textContent = '주문 번호를 입력해주세요';
-        warningMessage.style.color = 'black';
-        return; // 함수 종료
-    } else if (!isNumeric) {
-        // 숫자가 아닌 경우 경고 메시지 표시
-        warningMessage.style.display = 'block';
-        warningMessage.textContent = '주문 번호는 숫자만 입력할 수 있습니다';
-        warningMessage.style.color = 'black';
-        return; // 함수 종료
-    } else {
-        warningMessage.textContent = ''; // 경고 메시지 초기화
-    }
+	// 주문번호가 숫자 인지를 확인
+	const isNumeric = /^\d+$/.test(orderNumber); // 정규 표현식으로 숫자 체크
 
-    trackingInfo.style.display = 'block';
-    displayOrderNumber.textContent = orderNumber;
+	// 주문 번호가 비어있을 경우 경고 메시지 표시
+	if (orderNumber == '') {
+		warningMessage.style.display = 'block';
+		warningMessage.textContent = '주문 번호를 입력해주세요';
+		warningMessage.style.color = 'black';
+		return; // 함수 종료
+	} else if (!isNumeric) {
+		// 숫자가 아닌 경우 경고 메시지 표시
+		warningMessage.style.display = 'block';
+		warningMessage.textContent = '주문 번호는 숫자만 입력할 수 있습니다';
+		warningMessage.style.color = 'black';
+		return; // 함수 종료
+	} else {
+		warningMessage.textContent = ''; // 경고 메시지 초기화
+	}
 
-    const progressBar = document.querySelector('.progress-bar');
-    const currentLocation = document.getElementById('current-location');
-    const expectedDeliveryDate = document.getElementById('expected-delivery-date');
+	trackingInfo.style.display = 'block';
+	displayOrderNumber.textContent = orderNumber;
 
-    // 처음엔 5일로 시작
-    expectedDeliveryDate.textContent = `${expectedDays}일 후`;
-    progressBar.style.width = '0%'; // 초기값 설정
+	const progressBar = document.querySelector('.progress-bar');
+	const currentLocation = document.getElementById('current-location');
+	const expectedDeliveryDate = document.getElementById('expected-delivery-date');
 
-    const interval = setInterval(() => {
-        if (progress < 100) {
-            progress += 25; // 25 씩 증가함 
-            expectedDays -= 1; // 도착일을 하루씩 줄임
-            
-            progressBar.style.width = progress + '%';
-            expectedDeliveryDate.textContent = `${expectedDays}일 후`;	// 1씩 줄어드는거 표시하는거
+	// 처음엔 5일로 시작
+	expectedDeliveryDate.textContent = `${expectedDays}일 후`;
+	progressBar.style.width = '0%'; // 초기값 설정
 
-            // 100 이면 배송 완료 나옴
-            if (progress >= 100) {
-                expectedDeliveryDate.textContent = '배송 완료';
-                currentLocation.textContent = '집';
-                clearInterval(interval); // 타이머 중지
-            }
-        }
-    }, 1500); // 1.5초에 한번씩 진행바 올라감
+	const interval = setInterval(() => {
+		if (progress < 100) {
+			progress += 25; // 25 씩 증가함 
+			expectedDays -= 1; // 도착일을 하루씩 줄임
+
+			progressBar.style.width = progress + '%';
+
+			expectedDeliveryDate.textContent = `${expectedDays}일 후`;	// 1씩 줄어드는거 표시하는거
+
+			if (expectedDays == 4) {
+				currentLocation.textContent = '물류센터 B';
+			}
+			if (expectedDays == 3) {
+				currentLocation.textContent = '물류센터 C';
+			}
+			if (expectedDays == 2) {
+				currentLocation.textContent = '물류센터 D';
+			}
+
+			// 100 이면 배송 완료 나옴
+			if (progress >= 100) {
+				expectedDeliveryDate.textContent = '배송 완료';
+				currentLocation.textContent = '집';
+				clearInterval(interval); // 타이머 중지
+			}
+		}
+	}, 1500); // 1.5초에 한번씩 진행바 올라감
 });
 
 
