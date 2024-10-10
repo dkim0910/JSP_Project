@@ -197,6 +197,7 @@ input[type="tel"] {
     box-sizing: border-box;
     color: black;
     border-radius: 4px;
+    margin-left: 20px;
     margin-right: 40%;
     padding: 3px 6px;
     font-size: 19px;
