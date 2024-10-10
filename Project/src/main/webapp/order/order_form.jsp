@@ -42,7 +42,7 @@ boolean isLoggedIn = (session != null && session.getAttribute("member") != null)
 <body style="overflow: unset">
 	<header>
 		<div class="order_form-headline">
-			<a href="../cart/cart.jsp">
+			<a href="#" onclick="history.back(); return false;">
 				<button type="button" aria-label="이전 페이지로 이동"
 					class="button-back-page">
 					<svg width="28" height="28" viewBox="0 0 28 28" fill="none">
