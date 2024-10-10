@@ -21,13 +21,16 @@
 <!-- 테일윈드 css 불러오기 -->
 <script src="https://cdn.tailwindcss.com"></script>
 
+<!-- 주소 변경 -->
+<script defer
+	src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+
 <body style="cursor: default;">
 	<c:set var="showMyInfo" value="${requestScope.showMyInfo}" />
 	<div class="header-container">
 		<header class="header">
-			<a href="/index.jsp" class=""
-				aria-label="이전 페이지로 이동 (로그인 후의 메인 페이지)"> <svg width="35"
-					height="35" viewBox="0 0 28 28" fill="none">
+			<a href="/index.jsp" class="" aria-label="이전 페이지로 이동 (로그인 후의 메인 페이지)">
+				<svg width="35" height="35" viewBox="0 0 28 28" fill="none">
                     <path
 						d="M16.1004 21.7L8.61252 14.2122C8.49537 14.095 8.49537 13.9051 8.61252 13.7879L16.1004 6.30005"
 						stroke="currentColor" stroke-width="1.4"></path>
@@ -252,307 +255,303 @@
 
 						</div>
 					</div>
-						<!-- 나의 정보 내용 페이지 -->
-						<!--  -->
-						<div id="my-info" class="content-section"
-							style="display: <c:out value="${not empty showMyInfo ? 'block' : 'none'}" />;">
-							<div class="profile-container">
-								<h2 class="bold" id="myInformation">나의 정보</h2>
-								<p></p>
+					<!-- 나의 정보 내용 페이지 -->
+					<!--  -->
+					<div id="my-info" class="content-section"
+						style="display: <c:out value="${not empty showMyInfo ? 'block' : 'none'}" />;">
+						<div class="profile-container">
+							<h2 class="bold" id="myInformation">나의 정보</h2>
+							<p></p>
+							<div class="profile-info">
+								<!-- 나의 정보 -->
 								<div class="profile-info">
-									<!-- 나의 정보 -->
-									<div class="profile-info">
-										<label for="user-name">이름 : ${member.user_name }</label>
-									</div>
-									<div class="profile-info">
-										<label for="user-id">아이디 : ${member.user_id }</label>
-									</div>
-									<div class="profile-info">
-										<!-- 나중에 ${member.user_pw } 부분을 *로 수정하기 -->
-										<label for="user-pw"></label>비밀번호 : <span id="user-pw">비밀번호는
-											보안을 위해 표시되지 않습니다</span>
-									</div>
-									<div class="profile-info">
-										<label for="phone">전화번호 : ${member.user_phone }</label>
-									</div>
-									<div class="profile-info">
-										<label for="address">주소 : ${member.user_address }</label>
-									</div>
-									<div class="profile-info">
-										<label for="user-gender">성별 : ${member.user_gender }</label>
+									<label for="user-name">이름 : ${member.user_name }</label>
+								</div>
+								<div class="profile-info">
+									<label for="user-id">아이디 : ${member.user_id }</label>
+								</div>
+								<div class="profile-info">
+									<!-- 나중에 ${member.user_pw } 부분을 *로 수정하기 -->
+									<label for="user-pw"></label>비밀번호 : <span id="user-pw">비밀번호는
+										보안을 위해 표시되지 않습니다</span>
+								</div>
+								<div class="profile-info">
+									<label for="phone">전화번호 : ${member.user_phone }</label>
+								</div>
+								<div class="profile-info">
+									<label for="address">주소 : ${member.user_address }</label>
+								</div>
+								<div class="profile-info">
+									<label for="user-gender">성별 : ${member.user_gender }</label>
 
-									</div>
+								</div>
 
-									<!-- edit-my-info 와서 보여주는거 -->
-									<div style="width: 100%;">
-										<a href="#" onclick="showContent('edit-my-info')"> 
-										<input type="button" id="" class="all-button" value="정보 수정하기" style="width: 100%;" />
-										</a>
-									</div>
-
+								<!-- edit-my-info 와서 보여주는거 -->
+								<div style="width: 100%;">
+									<a href="#" onclick="showContent('edit-my-info')"> <input
+										type="button" id="" class="all-button" value="정보 수정하기"
+										style="width: 100%;" />
+									</a>
 								</div>
 
 							</div>
 
 						</div>
 
+					</div>
 
 
-						<!-- 나의 멤버십 페이지 -->
 
-						<!-- 현재 포인트 섹션 -->
-						<!-- 지금은 그냥 숫자 넣는데 나중에 바꾸기? -->
-						<div id="membership" class="content-section"
-							style="display: none;">
-							<section class="bold" style="text-align: center;">
-								<h2>
-									현재 보유 포인트: <span id="current-points">750</span> P
-								</h2>
-								<div class="membership-bar-container">
-									<div class="membership-bar" id="membership-bar"></div>
-								</div>
-								<p id="points-left-text">다음 등급까지 250 포인트가 남았습니다!</p>
-							</section>
+					<!-- 나의 멤버십 페이지 -->
 
-							<!-- 멤버십 단계 -->
-							<section class="membership-levels">
-								<div class="membership-level">
-									<h3>Basic</h3>
-									<p>0 - 199,999 포인트</p>
-									<ul>
-										<li>신규 가입 시 5% 할인 쿠폰</li>
-										<li>포인트 적립: 구매 금액의 1%</li>
-										<li>무료 배송 (일정 금액 이상 구매 시)</li>
-									</ul>
-								</div>
+					<!-- 현재 포인트 섹션 -->
+					<!-- 지금은 그냥 숫자 넣는데 나중에 바꾸기? -->
+					<div id="membership" class="content-section" style="display: none;">
+						<section class="bold" style="text-align: center;">
+							<h2>
+								현재 보유 포인트: <span id="current-points">750</span> P
+							</h2>
+							<div class="membership-bar-container">
+								<div class="membership-bar" id="membership-bar"></div>
+							</div>
+							<p id="points-left-text">다음 등급까지 250 포인트가 남았습니다!</p>
+						</section>
 
-								<div class="membership-level">
-									<h3>Premium</h3>
-									<p>200,000 - 499,999 포인트</p>
-									<ul>
-										<li>10% 할인 쿠폰</li>
-										<li>포인트 적립: 구매 금액의 5%</li>
-										<li>무료 배송</li>
-										<li>생일 축하 쿠폰</li>
-									</ul>
-								</div>
+						<!-- 멤버십 단계 -->
+						<section class="membership-levels">
+							<div class="membership-level">
+								<h3>Basic</h3>
+								<p>0 - 199,999 포인트</p>
+								<ul>
+									<li>신규 가입 시 5% 할인 쿠폰</li>
+									<li>포인트 적립: 구매 금액의 1%</li>
+									<li>무료 배송 (일정 금액 이상 구매 시)</li>
+								</ul>
+							</div>
 
-								<div class="membership-level">
-									<h3>VIP</h3>
-									<p>500,000 포인트 이상</p>
-									<ul>
-										<li>20% 할인 쿠폰</li>
-										<li>포인트 적립: 구매 금액의 10%</li>
-										<li>전 제품 무료 배송</li>
-										<li>생일 축하 쿠폰</li>
-										<li>한정판 상품 사전 예약 기회</li>
-									</ul>
-								</div>
-							</section>
+							<div class="membership-level">
+								<h3>Premium</h3>
+								<p>200,000 - 499,999 포인트</p>
+								<ul>
+									<li>10% 할인 쿠폰</li>
+									<li>포인트 적립: 구매 금액의 5%</li>
+									<li>무료 배송</li>
+									<li>생일 축하 쿠폰</li>
+								</ul>
+							</div>
 
-						</div>
+							<div class="membership-level">
+								<h3>VIP</h3>
+								<p>500,000 포인트 이상</p>
+								<ul>
+									<li>20% 할인 쿠폰</li>
+									<li>포인트 적립: 구매 금액의 10%</li>
+									<li>전 제품 무료 배송</li>
+									<li>생일 축하 쿠폰</li>
+									<li>한정판 상품 사전 예약 기회</li>
+								</ul>
+							</div>
+						</section>
+
+					</div>
 
 
-						<!-- 고객센터 상담 페이지 -->
-						<div id="helpcenter" class="content-section"
-							style="display: none;">
-							<div class="profile-container">
-								<h2 class="bold">고객 지원 센터 센터</h2>
-								<div>
-									고객 지원 센터: 1234-5678 | 이메일: shoppinghajo@samjo.com<br /> 운영 시간:
-									월-금, 09:00-18:00 (주말 및 공휴일 휴무)<br />
-								</div>
-								<br /> <a href="https://chatgpt.com/" target="_blank">
-									<p class="all-button">AI 챗 봇이랑 대화하기</p>
-								</a>
+					<!-- 고객센터 상담 페이지 -->
+					<div id="helpcenter" class="content-section" style="display: none;">
+						<div class="profile-container">
+							<h2 class="bold">고객 지원 센터 센터</h2>
+							<div>
+								고객 지원 센터: 1234-5678 | 이메일: shoppinghajo@samjo.com<br /> 운영 시간:
+								월-금, 09:00-18:00 (주말 및 공휴일 휴무)<br />
+							</div>
+							<br /> <a href="https://chatgpt.com/" target="_blank">
+								<p class="all-button">AI 챗 봇이랑 대화하기</p>
+							</a>
 
-								<!-- <hr class="line" />
+							<!-- <hr class="line" />
                     1 : 1 상담 버튼 추가 -> 상담하고 그 내역 전송
                     (전송된거 받는 페이지 or DB) 안보임
                     상담 내역 추가 - 장바구니 나 주문내역 에서 for 문 돌린거 처럼 추가 하면 될듯 (아직은 for문 없음)
 
                     박스 2개 있음 좌우로 한개는 상담 하기 내용 한개는 상담 한 후의 내용 / 내역 -->
 
-							</div>
 						</div>
+					</div>
 
-						<!-- 이벤트 페이지 -->
-						<div id="events" class="content-section" style="display: none;">
-							<div>
+					<!-- 이벤트 페이지 -->
+					<div id="events" class="content-section" style="display: none;">
+						<div>
 
-								<!-- 스크롤 가능한 이벤트 카드 섹션 -->
-								<div class="events-section-wrapper">
-									<section class="events-section">
+							<!-- 스크롤 가능한 이벤트 카드 섹션 -->
+							<div class="events-section-wrapper">
+								<section class="events-section">
 
-										<!-- 이벤트 카드 1 -->
-										<div class="event-card">
-											<img
-												src="https://img.pikbest.com/backgrounds/20190730/warm-color-autumn-discount-coupon-1_5723639.jpg!sw800"
-												alt="이벤트 1 이미지">
-											<div class="event-card-content">
-												<h3>가을 시즌 할인</h3>
-												<p>가을을 맞이 아웃터 할인중! 지금 바로 쇼핑하세요.</p>
-												<a href="/selectouter.my" class="all-button">가을 할인 제품</a>
-											</div>
+									<!-- 이벤트 카드 1 -->
+									<div class="event-card">
+										<img
+											src="https://img.pikbest.com/backgrounds/20190730/warm-color-autumn-discount-coupon-1_5723639.jpg!sw800"
+											alt="이벤트 1 이미지">
+										<div class="event-card-content">
+											<h3>가을 시즌 할인</h3>
+											<p>가을을 맞이 아웃터 할인중! 지금 바로 쇼핑하세요.</p>
+											<a href="/selectouter.my" class="all-button">가을 할인 제품</a>
 										</div>
-
-										<!-- 이벤트 카드 2 -->
-										<div class="event-card">
-											<img
-												src="/my-page/events/images/DALL·E-2024-10-08-13.59_1.jpg"
-												alt="이벤트 2 이미지">
-											<div class="event-card-content">
-												<h3>3만원의 행복 이벤트</h3>
-												<p>3만원으로 구매할 수 있는 상품 판매중! 지금 바로 쇼핑하세요.</p>
-												<a href="/selectUnderthree.my" class="all-button">3만원의
-													행복</a>
-											</div>
-										</div>
-
-										<!-- 이벤트 카드 3 -->
-										<div class="event-card">
-											<img
-												src="https://marketplace.canva.com/EAGEK6RPm58/1/0/1600w/canva-%EB%B3%B4%EB%9D%BC%EC%83%89-%EB%B0%94%ED%83%95-%EB%8F%84%ED%98%95-%EC%9D%BC%EB%9F%AC%EC%8A%A4%ED%8A%B8-%EC%8B%A0%EA%B7%9C-%EA%B0%80%EC%9E%85-%EC%BF%A0%ED%8F%B0-%EC%9D%B4%EB%B2%A4%ED%8A%B8-instagram-%EA%B2%8C%EC%8B%9C%EB%AC%BC-y9QtJNhIw38.jpg"
-												alt="이벤트 3 이미지">
-											<div class="event-card-content">
-												<h3>신규 회원 웰컴 쿠폰</h3>
-												<p>신규 회원 가입 시 할인 쿠폰을 드립니다!</p>
-												<a href="#" class="all-button">이벤트 참여하기</a>
-											</div>
-										</div>
-
-										<!-- 이벤트 카드 4 -->
-										<div class="event-card">
-											<img
-												src="https://img.freepik.com/free-vector/gradient-vip-invitation-card-template_23-2150996118.jpg"
-												alt="이벤트 4 이미지">
-											<div class="event-card-content">
-												<h3>VIP 전용 프로모션</h3>
-												<p>VIP 고객님들만을 위한 특별한 혜택을 누려보세요.</p>
-												<a href="#" class="all-button">이벤트 참여하기</a>
-											</div>
-										</div>
-
-									</section>
-								</div>
-
-							</div>
-						</div>
-
-
-						<!-- 공지사항 페이지 -->
-						<div id="announcement" class="content-section"
-							style="display: none;">
-							<div class="profile-container">
-
-								<!-- 공지 누루면 바로 공지 페이지로 이동 가능 하게끔 만들기 -->
-
-								<div class="events-section-wrapper">
-									<section class="events-section">
-
-										<!-- 공지1 -->
-										<div class="event-card">
-											<div class="event-card-content">
-												<h3>공지 1</h3>
-												<p>배송 추적하는거 만들 시간이 없다</p>
-											</div>
-										</div>
-
-										<!-- 공지 2 -->
-										<div class="event-card">
-											<div class="event-card-content">
-												<h3>공지 2</h3>
-												<p>멤버십 포인트 있는거 만들 시간이 없다</p>
-											</div>
-										</div>
-
-										<!-- 공지 3 -->
-										<div class="event-card">
-											<div class="event-card-content">
-												<h3>공지 3</h3>
-												<p>DB 설게 어렵네</p>
-											</div>
-										</div>
-
-										<!-- 공지 4 -->
-										<div class="event-card">
-											<div class="event-card-content">
-												<h3>공지 4</h3>
-												<p>섭종합니다</p>
-											</div>
-										</div>
-
-									</section>
-								</div>
-
-							</div>
-
-						</div>
-
-
-
-						<!-- 회원 탈퇴 -->
-						<!-- DB가서 전체 회원 정보랑 카트에 담긴 물품 주문 내역 등 다 삭제함 -->
-						<div id="byebye" class="content-section" style="display: none;">
-							<div class="profile-container">
-
-								<button onclick="showModal()" class="all-button">회원 탈퇴</button>
-
-								<div id="modal">
-									<div id="modalContent">
-										<h2>회원 탈퇴 확인</h2>
-										<p>회원 탈퇴하시겠습니까?</p>
-										<button class="all-button" onclick="confirmWithdrawal(true)">네</button>
-										<button class="all-button" onclick="confirmWithdrawal(false)">아니오</button>
 									</div>
+
+									<!-- 이벤트 카드 2 -->
+									<div class="event-card">
+										<img
+											src="/my-page/events/images/DALL·E-2024-10-08-13.59_1.jpg"
+											alt="이벤트 2 이미지">
+										<div class="event-card-content">
+											<h3>3만원의 행복 이벤트</h3>
+											<p>3만원으로 구매할 수 있는 상품 판매중! 지금 바로 쇼핑하세요.</p>
+											<a href="/selectUnderthree.my" class="all-button">3만원의 행복</a>
+										</div>
+									</div>
+
+									<!-- 이벤트 카드 3 -->
+									<div class="event-card">
+										<img
+											src="https://marketplace.canva.com/EAGEK6RPm58/1/0/1600w/canva-%EB%B3%B4%EB%9D%BC%EC%83%89-%EB%B0%94%ED%83%95-%EB%8F%84%ED%98%95-%EC%9D%BC%EB%9F%AC%EC%8A%A4%ED%8A%B8-%EC%8B%A0%EA%B7%9C-%EA%B0%80%EC%9E%85-%EC%BF%A0%ED%8F%B0-%EC%9D%B4%EB%B2%A4%ED%8A%B8-instagram-%EA%B2%8C%EC%8B%9C%EB%AC%BC-y9QtJNhIw38.jpg"
+											alt="이벤트 3 이미지">
+										<div class="event-card-content">
+											<h3>신규 회원 웰컴 쿠폰</h3>
+											<p>신규 회원 가입 시 할인 쿠폰을 드립니다!</p>
+											<a href="#" class="all-button">이벤트 참여하기</a>
+										</div>
+									</div>
+
+									<!-- 이벤트 카드 4 -->
+									<div class="event-card">
+										<img
+											src="https://img.freepik.com/free-vector/gradient-vip-invitation-card-template_23-2150996118.jpg"
+											alt="이벤트 4 이미지">
+										<div class="event-card-content">
+											<h3>VIP 전용 프로모션</h3>
+											<p>VIP 고객님들만을 위한 특별한 혜택을 누려보세요.</p>
+											<a href="#" class="all-button">이벤트 참여하기</a>
+										</div>
+									</div>
+
+								</section>
+							</div>
+
+						</div>
+					</div>
+
+
+					<!-- 공지사항 페이지 -->
+					<div id="announcement" class="content-section"
+						style="display: none;">
+						<div class="profile-container">
+
+							<!-- 공지 누루면 바로 공지 페이지로 이동 가능 하게끔 만들기 -->
+
+							<div class="events-section-wrapper">
+								<section class="events-section">
+
+									<!-- 공지1 -->
+									<div class="event-card">
+										<div class="event-card-content">
+											<h3>공지 1</h3>
+											<p>배송 추적하는거 만들 시간이 없다</p>
+										</div>
+									</div>
+
+									<!-- 공지 2 -->
+									<div class="event-card">
+										<div class="event-card-content">
+											<h3>공지 2</h3>
+											<p>멤버십 포인트 있는거 만들 시간이 없다</p>
+										</div>
+									</div>
+
+									<!-- 공지 3 -->
+									<div class="event-card">
+										<div class="event-card-content">
+											<h3>공지 3</h3>
+											<p>DB 설게 어렵네</p>
+										</div>
+									</div>
+
+									<!-- 공지 4 -->
+									<div class="event-card">
+										<div class="event-card-content">
+											<h3>공지 4</h3>
+											<p>섭종합니다</p>
+										</div>
+									</div>
+
+								</section>
+							</div>
+
+						</div>
+
+					</div>
+
+
+
+					<!-- 회원 탈퇴 -->
+					<!-- DB가서 전체 회원 정보랑 카트에 담긴 물품 주문 내역 등 다 삭제함 -->
+					<div id="byebye" class="content-section" style="display: none;">
+						<div class="profile-container">
+
+							<button onclick="showModal()" class="all-button">회원 탈퇴</button>
+
+							<div id="modal">
+								<div id="modalContent">
+									<h2>회원 탈퇴 확인</h2>
+									<p>회원 탈퇴하시겠습니까?</p>
+									<button class="all-button" onclick="confirmWithdrawal(true)">네</button>
+									<button class="all-button" onclick="confirmWithdrawal(false)">아니오</button>
 								</div>
-
 							</div>
 
 						</div>
 
-						<!-- 정보 수정하기 페이지 -->
-						<!-- DB 가서 update 문으로 바꾸고 옴 -->
-						<div id="edit-my-info" class="content-section"
-							style="display: none;">
-							<div class="profile-container">
-								<h1 style="font-weight: bold;">정보 수정하기</h1>
-								<br />
+					</div>
 
-								<form action="/my-main/MemberUpdate.up" name="infoEditForm">
-									<label for="user-Name">이름</label> 
-									<input type="text" id="" name="user-Name" id="user-Name"
-										placeholder="현재 이름 : ${member.user_name }" >
+					<!-- 정보 수정하기 페이지 -->
+					<!-- DB 가서 update 문으로 바꾸고 옴 -->
+					<div id="edit-my-info" class="content-section"
+						style="display: none;">
+						<div class="profile-container">
+							<h1 style="font-weight: bold;">정보 수정하기</h1>
+							<br />
 
-									<label for="user-Pw">비밀번호</label> 
-									<input type="text" id="" name="user-Pw" id="user-Pw"
-										placeholder="현재 비밀번호 : 비밀번호는 보안을 위해 표시되지 않습니다" >
-										
-									<label for="user_address">주소</label> 
-									<input type="text" id="" name="user_address" id="user_address"
-										placeholder="현재 주소 : ${member.user_address }" > 
-										
-									<label for="user_phone">전화번호</label> 
-									<input type="tel" id="" name="user_phone" id="user_phone"
-										placeholder="현재 전화번호 : ${member.user_phone }" > 
-										 
-									<label for="user-Gender">성별</label>
-									<div style="padding-top: 12px;">
-										<input type="radio" id="male" name="user-Gender" value="M" checked>
-										<label for="male">남</label> 
-										
-										<input type="radio" id="female" name="user-Gender" value="W"> 
-										<label for="female">여</label>
-									</div>
-									<div style="padding-top: 20px;">
-										<input type="button" value="수정하기" class="all-button"
-											onclick="infocheck();" />
-									</div>
-								</form>
-							</div>
-
+							<form action="/my-main/MemberUpdate.up" name="infoEditForm">
+								<label for="user-Name">이름</label> <input type="text" id=""
+									name="user-Name" id="user-Name"
+									placeholder="현재 이름 : ${member.user_name }"> <label
+									for="user-Pw">비밀번호</label> <input type="text" id=""
+									name="user-Pw" id="user-Pw"
+									placeholder="현재 비밀번호 : 비밀번호는 보안을 위해 표시되지 않습니다"> <label
+									for="user_address">주소</label>
+								<button class="sheet-address-title-button" type="button"
+									id="button-address-change" onclick="new_execDaumPostcode()">
+									배송지 변경</button>
+								<input type="text" id="" name="user_address" id="input_address"
+									placeholder="현재 주소 : ${member.user_address }"> <label
+									for="user_phone">전화번호</label> <input type="tel" id=""
+									name="user_phone" id="user_phone"
+									placeholder="현재 전화번호 : ${member.user_phone }"> <label
+									for="user-Gender">성별</label>
+								<div style="padding-top: 12px;">
+									<input type="radio" id="male" name="user-Gender" value="M"
+										checked> <label for="male">남</label> <input
+										type="radio" id="female" name="user-Gender" value="W">
+									<label for="female">여</label>
+								</div>
+								<div style="padding-top: 20px;">
+									<input type="button" value="수정하기" class="all-button"
+										onclick="infocheck();" />
+								</div>
+							</form>
 						</div>
-						<!-- 더 추가할 페이지들 -->
+
+					</div>
+					<!-- 더 추가할 페이지들 -->
 				</main>
 			</div>
 		</div>

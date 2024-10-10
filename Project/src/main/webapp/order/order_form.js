@@ -46,7 +46,6 @@ function new_execDaumPostcode() {
 	}).open();
 }
 
-
 // 배송 메세지 선택 selectbox
 document.addEventListener('DOMContentLoaded', () => {
 	const btn = document.querySelector(".sheet-message-text");
