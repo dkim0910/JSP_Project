@@ -68,9 +68,6 @@ public class FrontController extends HttpServlet {
 			forward = new Underthree().execute(req, resp);
 			break;
 			
-		case "/my-main/TrackOrder.my":
-			forward = new TrackOrder().execute(req, resp);
-			break;	
 		}
 
 		

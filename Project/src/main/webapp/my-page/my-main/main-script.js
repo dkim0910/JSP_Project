@@ -34,6 +34,9 @@ document.getElementById('track-button').addEventListener('click', function() {
     const trackingInfo = document.getElementById('tracking-info');
     const warningMessage = document.getElementById('warning-message');
 
+    let progress = 0; // 배송 현황 바를 0으로 시작
+	let expectedDays = 5; // 5일후 도착
+	
     // 주문번호가 숫자 인지를 확인
     const isNumeric = /^\d+$/.test(orderNumber); // 정규 표현식으로 숫자 체크
 
@@ -53,19 +56,16 @@ document.getElementById('track-button').addEventListener('click', function() {
         warningMessage.textContent = ''; // 경고 메시지 초기화
     }
 
-    // 여기서부터 정상적인 로직 진행
     trackingInfo.style.display = 'block';
     displayOrderNumber.textContent = orderNumber;
-
-    let progress = 0;	// 0으로 시작
-    let expectedDays = 5; // 5일후 도착
 
     const progressBar = document.querySelector('.progress-bar');
     const currentLocation = document.getElementById('current-location');
     const expectedDeliveryDate = document.getElementById('expected-delivery-date');
 
-    // 도착일 줄어드는거
+    // 처음엔 5일로 시작
     expectedDeliveryDate.textContent = `${expectedDays}일 후`;
+    progressBar.style.width = '0%'; // 초기값 설정
 
     const interval = setInterval(() => {
         if (progress < 100) {
@@ -73,7 +73,7 @@ document.getElementById('track-button').addEventListener('click', function() {
             expectedDays -= 1; // 도착일을 하루씩 줄임
             
             progressBar.style.width = progress + '%';
-            expectedDeliveryDate.textContent = `${expectedDays}일 후`;
+            expectedDeliveryDate.textContent = `${expectedDays}일 후`;	// 1씩 줄어드는거 표시하는거
 
             // 100 이면 배송 완료 나옴
             if (progress >= 100) {
@@ -84,6 +84,7 @@ document.getElementById('track-button').addEventListener('click', function() {
         }
     }, 1500); // 1.5초에 한번씩 진행바 올라감
 });
+
 
 
 
