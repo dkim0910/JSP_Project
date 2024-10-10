@@ -63,7 +63,7 @@ boolean isLoggedIn = (session != null && session.getAttribute("member") != null)
 							<div class="user">
 								<c:set var="member" value="${sessionScope.member}" />
 								<c:if test="${not empty member}">
-									<p>${member.user_name}님환영합니다!</p>
+									<p>${member.user_name}님 환영합니다!</p>
 								</c:if>
 							</div>
 							<a
