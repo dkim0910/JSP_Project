@@ -318,20 +318,20 @@
 							<section class="membership-levels">
 								<div class="membership-level">
 									<h3>Basic</h3>
-									<p>0 - 999 포인트</p>
+									<p>0 - 199,999 포인트</p>
 									<ul>
 										<li>신규 가입 시 5% 할인 쿠폰</li>
-										<li>포인트 적립: 구매 금액의 5%</li>
+										<li>포인트 적립: 구매 금액의 1%</li>
 										<li>무료 배송 (일정 금액 이상 구매 시)</li>
 									</ul>
 								</div>
 
 								<div class="membership-level">
 									<h3>Premium</h3>
-									<p>1000 - 4999 포인트</p>
+									<p>200,000 - 499,999 포인트</p>
 									<ul>
 										<li>10% 할인 쿠폰</li>
-										<li>포인트 적립: 구매 금액의 10%</li>
+										<li>포인트 적립: 구매 금액의 5%</li>
 										<li>무료 배송</li>
 										<li>생일 축하 쿠폰</li>
 									</ul>
@@ -339,10 +339,10 @@
 
 								<div class="membership-level">
 									<h3>VIP</h3>
-									<p>5000 포인트 이상</p>
+									<p>500,000 포인트 이상</p>
 									<ul>
 										<li>20% 할인 쿠폰</li>
-										<li>포인트 적립: 구매 금액의 20%</li>
+										<li>포인트 적립: 구매 금액의 10%</li>
 										<li>전 제품 무료 배송</li>
 										<li>생일 축하 쿠폰</li>
 										<li>한정판 상품 사전 예약 기회</li>
