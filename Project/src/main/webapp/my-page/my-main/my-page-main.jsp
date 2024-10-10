@@ -518,7 +518,7 @@
 					<div id="edit-my-info" class="content-section"
 						style="display: none;">
 						<div class="profile-container">
-							<h1 style="font-weight: bold;">정보 수정하기</h1>
+							<h1 style="font-size: 26px; font-weight: bold;">정보 수정하기</h1>
 							<br />
 
 							<form action="/my-main/MemberUpdate.up" name="infoEditForm">
@@ -532,7 +532,7 @@
 								<button class="sheet-address-title-button" type="button"
 									id="button-address-change" onclick="new_execDaumPostcode()">
 									주소 변경</button>
-								<input type="text" id="" name="user_address" id="input_address"
+								<input type="text" id="input_address" name="user_address"
 									placeholder="현재 주소 : ${member.user_address }"> <label
 									for="user_phone">전화번호</label> <input type="tel" id=""
 									name="user_phone" id="user_phone"
