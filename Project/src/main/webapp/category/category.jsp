@@ -130,7 +130,7 @@
                         <h2 class="goods-category-index" >가방</h2>
                         <div class="goods-category-real">
                             <a href="/cg.product?category=가방&subcategory=캐리어" class="goods" name="캐리어">
-                                <img src="https://image.msscdn.net/images/category_img/men/ITEM_004005_17164419848078_big.png"  >
+                                <img src="https://image.msscdn.net/images/category_img/men/ITEM_004009_17164419860999_big.png"  >
                                 <span>캐리어</span>
                             </a>
                             <a href="/cg.product?category=가방&subcategory=백팩" class="goods" name="백팩">
@@ -138,7 +138,7 @@
                                 <span>백팩</span>
                             </a>
                             <a href="/cg.product?category=가방&subcategory=지갑/머니클립" class="goods" name="지갑/머니클립">
-								<img src="https://image.msscdn.net/images/category_img/men/ITEM_004002_17164419842177_big.png"  >
+								<img src="https://image.msscdn.net/images/category_img/men/ITEM_004016_17164419876335_big.png"  >
 								<span>지갑/머니클립</span>
 							</a>
                             <a href="/cg.product?category=가방&subcategory=숄더백" class="goods" name="숄더백">
@@ -176,11 +176,11 @@
 								<span>후드 티셔츠</span>
 							</a>
                             <a href="/cg.product?category=상의&subcategory=민소매 티셔츠" class="goods" name="민소매 티셔츠">
-								<img src="https://image.msscdn.net/images/category_img/women/ITEM_001013_17164419666010_big.png"  >
+								<img src="https://image.msscdn.net/images/category_img/men/ITEM_001011_17164419742970_big.png"  >
 								<span>민소매 티셔츠</span>
 							</a>
                             <a href="/cg.product?category=상의&subcategory=니트/스웨터" class="goods" name="니트/스웨터">
-								<img src="https://image.msscdn.net/images/category_img/men/ITEM_001008_17164419738108_big.png" >
+								<img src="https://image.msscdn.net/images/category_img/men/ITEM_001006_17164419735311_big.png" >
 								<span>니트/스웨터</span>
 							</a>
                         </div>
@@ -202,11 +202,11 @@
 								<span>코튼 팬츠</span>
 							</a>
                             <a href="/cg.product?category=바지&subcategory=트레이닝/조거 팬츠" class="goods" name="트레이닝/조거 팬츠">
-								<img src="https://image.msscdn.net/images/category_img/women/ITEM_003005_17164419688488_big.png"  >
+								<img src="https://image.msscdn.net/images/category_img/men/ITEM_003004_17164419817276_big.png"  >
 								<span>트레이닝/조거 팬츠</span>
 							</a>
                             <a href="/cg.product?category=바지&subcategory=슈트 팬츠/슬랙스" class="goods" name="슈트 팬츠/슬랙스">
-								<img src="https://image.msscdn.net/images/category_img/men/ITEM_003011_17164419836529_big.png"  >
+								<img src="https://image.msscdn.net/images/category_img/men/ITEM_003008_17164419828375_big.png"  >
 								<span>슈트 팬츠/슬랙스</span>
 							</a>
                             <a href="/cg.product?category=바지&subcategory=기타 바지" class="goods" name="기타 바지">

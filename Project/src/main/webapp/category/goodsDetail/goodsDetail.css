@@ -67,6 +67,7 @@ body {
     position: relative; /* 하위 요소의 절대 위치 기준을 상위 요소로 설정 */
     margin-top: 50px;
     margin-left: 100px;
+    min-width: 418px;
 }
 
 /* 상품 하단 상세정보 */
