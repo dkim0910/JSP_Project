@@ -556,6 +556,7 @@
 				</main>
 			</div>
 		</div>
+	</div>
 </body>
 <script src="/my-page/my-main/main-script.js"></script>
 
