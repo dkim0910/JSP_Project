@@ -250,7 +250,7 @@
 							</div>
 
 						</div>
-
+					</div>
 						<!-- 나의 정보 내용 페이지 -->
 						<!--  -->
 						<div id="my-info" class="content-section"
