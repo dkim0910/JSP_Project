@@ -57,7 +57,7 @@
 					<ul>
 						<!-- 나의 정보창 -->
 						<!-- 이거만 refund 컨트롤러 안가고 마이페이지 컨트롤러감 ...? -->
-						<li><a href="/my-main/MemberList.up"
+						<li><a href="/MemberList.my"
 							onclick="toggleBold(this); showContent('my-info')"
 							class="sidebar-options">나의 정보</a></li>
 						<!-- 여기에 주문 취소랑 주소 변경 등 넣기-->
@@ -284,9 +284,9 @@
 
 									<!-- edit-my-info 와서 보여주는거 -->
 									<div style="width: 100%;">
-										<a href="#" onclick="showContent('edit-my-info')"> <input
-											type="button" id="" class="all-button" value="정보 수정하기"
-											style="width: 100%;" /></a>
+										<a href="#" onclick="showContent('edit-my-info')"> 
+										<input type="button" id="" class="all-button" value="정보 수정하기" style="width: 100%;" />
+										</a>
 									</div>
 
 								</div>
