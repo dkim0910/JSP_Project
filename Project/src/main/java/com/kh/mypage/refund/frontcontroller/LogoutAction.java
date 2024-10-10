@@ -28,7 +28,7 @@ public class LogoutAction implements Action{
 		session.removeAttribute("showMyInfo");
 		
 		forward.setRedirect(true);
-	    forward.setPath("/main-page/main.jsp");
+	    forward.setPath("/index.jsp");
 		
 		return forward;
 	}
