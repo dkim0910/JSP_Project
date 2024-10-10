@@ -94,7 +94,7 @@ function togglePaymentCard(show) {
 		listPayments.style.display = 'none';
 	}
 }
-//기타 -> 카드결제 클릭 부분
+/*//기타 -> 카드결제 클릭 부분
 document.querySelectorAll('.card-selection-input').forEach((input) => {
 	input.addEventListener('change', function() {
 		document.querySelectorAll('.list-payment-label').forEach((label) => {
@@ -104,32 +104,8 @@ document.querySelectorAll('.card-selection-input').forEach((input) => {
 			this.parentElement.style.border = '1px solid black';  // 선택된 label에 테두리 적용
 		}
 	});
-});
-/*
-// 결제하기 버튼
-function purchaseItem(productId, userId) {
-    const form = document.createElement('form');
-    form.action = '/order/order_confirmed.or_c';
-    form.method = 'post';
+});*/
 
-    // PRODUCT_ID 추가
-    const productIdInput = document.createElement('input');
-    productIdInput.type = 'hidden';
-    productIdInput.name = 'PRODUCT_ID[]'; // 배열 형태로 전송
-    productIdInput.value = productId;
-    form.appendChild(productIdInput);
-
-    // 사용자 ID 추가
-    const userIdInput = document.createElement('input');
-    userIdInput.type = 'hidden';
-    userIdInput.name = 'user_id';
-    userIdInput.value = userId; // JSP 변수 사용
-    form.appendChild(userIdInput);
-
-    document.body.appendChild(form);
-    form.submit(); // 폼 전송
-}
-*/
 // 장바구니 상품 결제하기
 // 선택된 항목 구매
 function purchasecartItems() {
@@ -149,6 +125,15 @@ $(document).ready(function() {
 	});
 });
 
+function setupOtherPaymentSelection() {
+	$('#button-payment').on('click', function() {
+		// 모든 결제방법의 border를 초기화
+		$('.paymentMethod-others-list li').css('border', '1px solid #e0e0e0');
+
+		// 선택된 카드의 border를 변경
+				$(this).closest('li').css('border', '1px solid black');
+	});
+}
 
 function setupCardSelection() {
 	$('.card-selection-input').on('click', function() {
