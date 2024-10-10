@@ -136,8 +136,9 @@ body {
 
 		<!-- 로그인 폼 컨테이너 -->
 		<div class="form-container">
+		<!-- 뒤로가기 버튼 -->
 			<div class="back_button">
-				<a href="/main-page/main.jsp">
+				<a href="/index.jsp">
 					<button type="button" aria-label="이전 페이지로 이동(메인 페이지)"
 						class="button-back-page">
 						<svg fill="#000000" height="28" width="28" version="1.1"
