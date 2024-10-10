@@ -59,7 +59,7 @@ button, input {
 .input_style {
 	width: 98.5%;
 	height: 46px; /* 입력창 크기 증가 */
-	font-size: 16px;
+	font-size: 18px;
 	border: 1px solid #ddd; /* 테두리 스타일 */
 	border-radius: 8px;
 	outline: none;
@@ -77,7 +77,7 @@ button, input {
 .btn {
 	width: 100%;
 	height: 48px;
-	font-size: 16px;
+	font-size: 18px;
 	border: none;
 	color: white;
 	border-radius: 8px;
