@@ -77,7 +77,7 @@ button, input {
 .btn {
 	width: 100%;
 	height: 48px;
-	font-size: 18px;
+	font-size: 17px;
 	border: none;
 	color: white;
 	border-radius: 8px;
