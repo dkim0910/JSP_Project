@@ -142,6 +142,7 @@ button{
     line-height: 14px;
     overflow: hidden;
 }
+
 .sheet-address-title-button{
     border: 1px solid #e0e0e0;
     box-sizing: border-box;
@@ -151,8 +152,7 @@ button{
     padding: 3px 6px;
     font-size: 15px;
     font-weight: 500;
-    line-height: 18px;
-    
+    line-height: 18px; 
 }
 
 .sheet-message-text{

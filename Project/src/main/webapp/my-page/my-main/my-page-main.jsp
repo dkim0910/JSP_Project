@@ -21,6 +21,10 @@
 <!-- 테일윈드 css 불러오기 -->
 <script src="https://cdn.tailwindcss.com"></script>
 
+<!-- 주소 변경 -->
+<script defer
+	src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+
 <body style="cursor: default;">
 	<c:set var="showMyInfo" value="${requestScope.showMyInfo}" />
 	<div class="header-container">
@@ -525,8 +529,16 @@
 									for="user-Pw">비밀번호</label> <input type="text" id=""
 									name="user-Pw" id="user-Pw"
 									placeholder="현재 비밀번호 : 비밀번호는 보안을 위해 표시되지 않습니다"> <label
+<<<<<<< HEAD
 									for="user_address">주소</label> <input type="text" id=""
 									name="user_address" id="user_address"
+=======
+									for="user_address">주소</label>
+								<button class="sheet-address-title-button" type="button"
+									id="button-address-change" onclick="new_execDaumPostcode()">
+									배송지 변경</button>
+								<input type="text" id="" name="user_address" id="input_address"
+>>>>>>> branch 'main' of https://github.com/dkim0910/JSP_Project.git
 									placeholder="현재 주소 : ${member.user_address }"> <label
 									for="user_phone">전화번호</label> <input type="tel" id=""
 									name="user_phone" id="user_phone"
