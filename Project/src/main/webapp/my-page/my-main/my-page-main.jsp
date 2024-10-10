@@ -164,7 +164,7 @@
 												required />
 											<button type="button" class="all-button" id="track-button">추적하기</button>
 										</form>
-										<span id="warning-message" style="color: red; display: none;">ㅁㅁ</span>
+										<span id="warning-message" style="color: red; display: none;">~~~</span>
 										<!-- 경고 메시지 표시를 위한 요소 -->
 
 										<div id="tracking-info" class="tracking-info"

@@ -49,13 +49,13 @@ document.getElementById('track-button').addEventListener('click', function() {
 
 	// 주문 번호가 비어있을 경우 경고 메시지 표시
 	if (orderNumber == '') {
-		warningMessage.style.display = 'block';
+		/*warningMessage.style.display = 'block';*/
 		warningMessage.textContent = '주문 번호를 입력해주세요';
 		warningMessage.style.color = 'black';
 		return; // 함수 종료
 	} else if (!isNumeric) {
 		// 숫자가 아닌 경우 경고 메시지 표시
-		warningMessage.style.display = 'block';
+		/*warningMessage.style.display = 'block';*/
 		warningMessage.textContent = '주문 번호는 숫자만 입력할 수 있습니다';
 		warningMessage.style.color = 'black';
 		return; // 함수 종료
@@ -63,7 +63,7 @@ document.getElementById('track-button').addEventListener('click', function() {
 		warningMessage.textContent = ''; // 경고 메시지 초기화
 	}
 
-	trackingInfo.style.display = 'block';
+	/*trackingInfo.style.display = 'block';*/
 	displayOrderNumber.textContent = orderNumber;
 
 	const progressBar = document.querySelector('.progress-bar');
