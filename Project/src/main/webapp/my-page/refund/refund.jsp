@@ -33,11 +33,10 @@ boolean isLoggedIn = (session != null && session.getAttribute("member") != null)
 
 		<section class="products-section" id="remove-style"
 			style="min-height: 100vh; display: flex; flex-direction: column;">
+					<h2>환불 제품 목록</h2>
 			<c:forEach var="refund" items="${Refunded}" varStatus="status">
-
 				<c:if
 					test="${empty refund.refunded_date || empty refund.refund_status}">
-					<h2>환불 제품 목록</h2>
 				</c:if>
 			</c:forEach>
 			<ul class="product-list">

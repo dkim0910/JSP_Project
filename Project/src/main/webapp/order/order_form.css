@@ -142,6 +142,7 @@ button{
     line-height: 14px;
     overflow: hidden;
 }
+
 .sheet-address-title-button{
     border: 1px solid #e0e0e0;
     box-sizing: border-box;
@@ -151,8 +152,7 @@ button{
     padding: 3px 6px;
     font-size: 15px;
     font-weight: 500;
-    line-height: 18px;
-    
+    line-height: 18px; 
 }
 
 .sheet-message-text{
@@ -234,6 +234,7 @@ button{
     background-color: #eee;
     border-radius: 4px;
 }
+
 button{
     cursor: pointer;
 }
@@ -331,6 +332,17 @@ h2{
    border: none;
 }
 
+:disabled{
+    cursor: default;
+}
+input{
+    vertical-align: middle;
+}
+.sheet-point-input{
+    box-sizing: border-box;
+    width: 100%;
+    padding: 4px 16px 12px;
+}
 .sheet-point-input-input-disabled{
     box-sizing: border-box;
     background-color: #f5f5f5;
@@ -343,17 +355,6 @@ h2{
     font-weight: 400;
     line-height: 20px;
     display: flex;
-}
-:disabled{
-    cursor: default;
-}
-input{
-    vertical-align: middle;
-}
-.sheet-point-input{
-    box-sizing: border-box;
-    width: 100%;
-    padding: 4px 16px 12px;
 }
 .sheet-point-input-text{
     margin-top: 8px;
@@ -442,7 +443,7 @@ a, div{
     font-size: 15px;
 }
 #box-payment-method-type-CARD, #box-payment-method-type-VACCOUNT, #box-payment-method-type-PHONE, #box-payment-method-type-NAVERPAY{
-    border: 1px solid #e0e0e0;
+    /* border: 1px solid #e0e0e0; */
     box-sizing: border-box;
     background-color: white;
     border-radius: 4px;
@@ -453,26 +454,13 @@ a, div{
     overflow: hidden;   
     float: left;
 }
-/* #box-payment-method-type-CARD:checked+label, #box-payment-method-type-VACCOUNT:checked+label, #box-payment-method-type-PHONE:checked+label, #box-payment-method-type-NAVERPAY:checked+label {
-    border: 1px solid black;
-} */
-paymentMethod-others > li :checked{
-    border: 1px solid black;
-    box-sizing: border-box;
-    background-color: white;
-    border-radius: 4px;
-    justify-content: center;
-    align-items: center;
-    height: 36px;
-    display: flex;
-    overflow: hidden;   
-    float: left;
-}
-#button-payment-CARD, #button-payment-VACCOUNT, #button-payment-PHONE, #button-payment-NAVERPAY{
-  border: none;  
+
+#button-payment{
+  border: 1px solid #e0e0e0;  
+  border-radius: 4px;
   display: inline-block;
   width: 100%;
-  height: auto;
+  height: 36px;
 }
 
 .card-selection-input{
@@ -604,6 +592,7 @@ ul{
 }
 
 .bottom-menu ul li {
+	border:none;
 	margin: 15px 0;
 }
 

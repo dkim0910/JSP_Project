@@ -38,7 +38,7 @@ public class DeleteUserAction implements Action {
 		mydao.deleteUser(userid);
 
 		forward.setRedirect(true);
-		forward.setPath("/main-page/main.jsp");
+		forward.setPath("/index.jsp");
 
 		return forward;
 

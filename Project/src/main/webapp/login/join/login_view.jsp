@@ -5,14 +5,27 @@
 <head>
 <meta charset="UTF-8">
 <title>로그인 | 쇼핑하조</title>
- <!-- 페이지 제목 옆의 아이콘 -->
-    <link href="https://i.ibb.co/X4b9F9N/logo.png" rel="icon">
+<!-- 페이지 제목 옆의 아이콘 -->
+<link href="https://i.ibb.co/X4b9F9N/logo.png" rel="icon">
 <style>
+@charset "UTF-8";
+
+@font-face {
+	font-family: "GmarketSansMedium";
+	src:
+		url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff")
+		format("woff");
+	font-weight: normal;
+	font-style: normal;
+}
 /* 페이지 기본 설정 */
 body {
 	margin: 0;
 	background-color: #f4f4f4;
-	font-family: Arial, sans-serif;
+	font-family: 'GmarketSansMedium';
+}
+button, input {
+	font-family: 'GmarketSansMedium';
 }
 
 /* 상단 영역 (여백 추가) */
@@ -24,6 +37,7 @@ body {
 .back_button {
 	margin: -30px 0 0 -45px;
 }
+
 .button-back-page {
 	background-color: white;
 	border: none;
@@ -136,7 +150,7 @@ body {
 
 		<!-- 로그인 폼 컨테이너 -->
 		<div class="form-container">
-		<!-- 뒤로가기 버튼 -->
+			<!-- 뒤로가기 버튼 -->
 			<div class="back_button">
 				<a href="/index.jsp">
 					<button type="button" aria-label="이전 페이지로 이동(메인 페이지)"

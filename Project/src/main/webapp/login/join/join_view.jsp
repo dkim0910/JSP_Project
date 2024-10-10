@@ -5,16 +5,28 @@
 <head>
 <meta charset="UTF-8">
 <title>회원가입 | 쇼핑하조</title>
- <!-- 페이지 제목 옆의 아이콘 -->
-    <link href="https://i.ibb.co/X4b9F9N/logo.png" rel="icon">
+<!-- 페이지 제목 옆의 아이콘 -->
+<link href="https://i.ibb.co/X4b9F9N/logo.png" rel="icon">
 <style>
+@charset "UTF-8";
+
+@font-face {
+	font-family: "GmarketSansMedium";
+	src:
+		url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff")
+		format("woff");
+	font-weight: normal;
+	font-style: normal;
+}
 /* 페이지 기본 설정 */
 body {
 	margin: 0;
 	background-color: #f4f4f4;
-	font-family: Arial, sans-serif;
+	font-family: 'GmarketSansMedium';
 }
-
+button, input {
+	font-family: 'GmarketSansMedium';
+}
 /* 상단 영역 (여백 추가) */
 .top-section {
 	height: 100px;
@@ -55,7 +67,7 @@ body {
 }
 
 /* 중복확인 버튼 스타일 */
-.check_button, .addressFind_button  {
+.check_button, .addressFind_button {
 	width: 100px;
 	height: 46px;
 	font-size: 16px;
@@ -67,6 +79,7 @@ body {
 	transition: background-color 0.3s;
 	float: right;
 }
+
 .check_button:hover {
 	background-color: #555;
 }
@@ -167,41 +180,49 @@ body {
 			<!-- 아이디 입력 필드 -->
 			<div class="input_row" id="input_userid">
 				<p id="text"></p>
-				<input id="userid" class="input_style" type="text" name="user_id" placeholder="아이디"> 
-				<input type="button" value="중복확인" class="check_button" onclick="checkId();" />
+				<input id="userid" class="input_style" type="text" name="user_id"
+					placeholder="아이디"> <input type="button" value="중복확인"
+					class="check_button" onclick="checkId();" />
 			</div>
 			<!-- 비밀번호 입력 필드 -->
 			<div class="input_row">
-				<input id="userpw" class="input_style" type="password" name="user_pw" placeholder="비밀번호">
+				<input id="userpw" class="input_style" type="password"
+					name="user_pw" placeholder="비밀번호">
 			</div>
 			<!-- 비밀번호 확인 필드 -->
 			<div class="input_row">
-				<input id="userpw_re" class="input_style" type="password" name="userpw_re" placeholder="비밀번호 확인">
+				<input id="userpw_re" class="input_style" type="password"
+					name="userpw_re" placeholder="비밀번호 확인">
 			</div>
 			<!-- 이름 입력 필드 -->
 			<div class="input_row">
-				<input id="username" class="input_style" type="text" name="user_name" placeholder="이름">
+				<input id="username" class="input_style" type="text"
+					name="user_name" placeholder="이름">
 			</div>
 			<!-- 휴대폰 번호 입력 필드 -->
 			<div class="input_row" id="input_userphone">
-				<input id="userphone" class="input_style" type="text" name="user_phone" placeholder="휴대폰 번호" oninput="formatPhoneNumber(this)" maxlength="13" />
-				<input type="button" value="주소 찾기" class="addressFind_button" onclick="new_execDaumPostcode()" />			
+				<input id="userphone" class="input_style" type="text"
+					name="user_phone" placeholder="휴대폰 번호"
+					oninput="formatPhoneNumber(this)" maxlength="13" /> <input
+					type="button" value="주소 찾기" class="addressFind_button"
+					onclick="new_execDaumPostcode()" />
 			</div>
 			<!-- 주소 입력 필드 -->
 			<div class="input_row">
-				<input id="useraddress" class="input_style" type="text" name="user_address" placeholder="주소">
+				<input id="useraddress" class="input_style" type="text"
+					name="user_address" placeholder="주소">
 			</div>
 			<br />
 			<!-- 성별 선택 필드 -->
 			<div class="input_row gender_section">
 				<input id="male" type="radio" name="user_gender" value="M" checked>
-				<label for="male">남자</label> 
-				<input id="female" type="radio" name="user_gender" value="W"> 
-				<label for="female">여자</label>
+				<label for="male">남자</label> <input id="female" type="radio"
+					name="user_gender" value="W"> <label for="female">여자</label>
 			</div>
 			<!-- 회원가입 버튼 -->
 			<div class="input_row">
-				<input type="button" value="회원가입" class="submit_button" onclick="sendit()" />
+				<input type="button" value="회원가입" class="submit_button"
+					onclick="sendit()" />
 			</div>
 			<!-- 하단 링크 (로그인, 아이디/비밀번호 찾기) -->
 			<div class="join">
@@ -223,7 +244,8 @@ body {
 
 			// 전화번호 형식 적용
 			if (value.length === 11) {
-				input.value = value.replace(/^(\d{3})(\d{4})(\d{4})$/, '$1-$2-$3');
+				input.value = value.replace(/^(\d{3})(\d{4})(\d{4})$/,
+						'$1-$2-$3');
 			} else if (value.length > 7) {
 				input.value = value.replace(/^(\d{3})(\d{4})$/, '$1-$2');
 			} else if (value.length > 3) {
