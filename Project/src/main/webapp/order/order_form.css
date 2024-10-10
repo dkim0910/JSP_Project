@@ -82,7 +82,7 @@ button{
 .sheet-purchase-button{
     background-color: black;
     color: #f5f5f5;
-    font: 16px ;
+    font: 17px ;
     text-align: center;
     width: 100%;
     cursor: pointer;
@@ -537,29 +537,32 @@ ul{
     display: flex;
 }
 .sheet-save-point-additional, .sheet-save-point-level {
-    font-size: 13px;
+    font-size: 14px;
     font-weight: 400;
     line-height: 18px;
 }
+.sheet-save-point-level-text-bold {
+	font-weight: bold;
+}
 .sheet-payment-price-subject-text, .sheet-payment-price-subject-price {
-    font-size: 13px;
+    font-size: 14px;
     font-weight: 400;
     line-height: 18px;
 }
 .subject-payment-price-subject-price{
     color: blue;
-    font-size: 13px;
+    font-size: 14px;
     font-weight: 400;
     line-height: 18px;
 }
 .sheet-payment-price-total-text{
-    font-size: 14px;
+    font-size: 15px;
     font-weight: 600;
     line-height: 20px;
 }
 .subject-payment-price-total-price{
     margin-left: 4px;
-    font-size: 14px;
+    font-size: 15px;
     font-weight: 600;
     line-height: 20px;
 }

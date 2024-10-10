@@ -36,7 +36,7 @@ boolean isLoggedIn = (session != null && session.getAttribute("member") != null)
 	<c:set var="totalPrice_original" value="0" />
 	<c:set var="productList" value="${requestScope.goods }" />
 	<c:set var="productList2" value="${requestScope.cartList }" />
-	<c:set var="savePoint" value="${totalPrice_amount * 0.02}" />
+	<c:set var="savePoint" value="${totalPrice_amount * 0.1}" />
 <head>
 </head>
 <body style="overflow: unset">
@@ -109,7 +109,7 @@ boolean isLoggedIn = (session != null && session.getAttribute("member") != null)
 								value="${totalPrice_original + product2.NORMAL_PRICE}" />
 						</c:forEach>
 
-						<c:set var="savePoint" value="${totalPrice_amount * 0.02}" />
+						<c:set var="savePoint" value="${totalPrice_amount * 0.1}" />
 
 						<section class="sheet-section" id="sheet-section-product">
 							<div class="sheet-title">
@@ -119,7 +119,8 @@ boolean isLoggedIn = (session != null && session.getAttribute("member") != null)
 								<div class="sheet-order-product-cartItem">
 									<c:forEach var="product2" items="${productList2}">
 										<div class="sheet-order-product-box">
-											<input type="hidden" class="item-purchase-list" value="${product2.PRODUCT_ID}">
+											<input type="hidden" class="item-purchase-list"
+												value="${product2.PRODUCT_ID}">
 											<div class="sheet-order-product-image-box">
 												<img class="sheet-order-product-image"
 													src="${product2.IMAGE_URL}" alt="">
@@ -152,7 +153,7 @@ boolean isLoggedIn = (session != null && session.getAttribute("member") != null)
 						<c:set var="totalPrice_original"
 							value="${totalPrice_original + productList.NORMAL_PRICE}" />
 
-						<c:set var="savePoint" value="${totalPrice_amount * 0.02}" />
+						<c:set var="savePoint" value="${totalPrice_amount * 0.1}" />
 
 						<section class="sheet-section" id="sheet-section-product">
 							<div class="sheet-title">
@@ -171,10 +172,10 @@ boolean isLoggedIn = (session != null && session.getAttribute("member") != null)
 											<br />
 											<div class="sheet-order-product-price-box">
 												<strong class="sheet-order-product-price-origin"> <fmt:formatNumber
-														value="${productList.NORMAL_PRICE}" pattern="#,###" /> 원
+														value="${productList.NORMAL_PRICE}" pattern="#,###" />원
 												</strong> <br /> <span class="sheet-order-product-price-sale">
 													<fmt:formatNumber value="${productList.PRICE_AMOUNT}"
-														pattern="#,###" /> 원
+														pattern="#,###" />원
 												</span>
 											</div>
 										</div>
@@ -365,20 +366,17 @@ boolean isLoggedIn = (session != null && session.getAttribute("member") != null)
 						</div>
 						<div class="sheet-save-point">
 							<div class="sheet-save-point-level">
-								<span class="sheet-save-point-level-text"> LV.5 실버 : 2%
-									적립 </span> <strong class="sheet-save-point-level-subject-price">
-									<fmt:formatNumber value="${savePoint}" pattern="#,###" />원
+								<div class="sheet-save-point-level-text">
+									<span class="sheet-save-point-level-text-bold">
+										${member.user_name }님</span> 의 등급 : <span
+										class="sheet-save-point-level-text-bold">VIP</span>
+								</div>
+							</div>
+							<div class="sheet-save-point-level">
+								<span class="sheet-save-point-level-text"> VIP 10% 적립 : </span>
+								<strong class="sheet-save-point-level-subject-price"> <fmt:formatNumber
+										value="${savePoint}" pattern="#,###" />원
 								</strong>
-							</div>
-							<div class="sheet-save-point-level">
-								<span class="sheet-save-point-additional-text"> 구매 추가 적립
-								</span> <strong class="sheet-save-point-level-subject-price">
-									100원 </strong>
-							</div>
-							<div class="sheet-save-point-level">
-								<span class="sheet-save-point-review-text"> 후기 적립금 </span> <strong
-									class="sheet-save-point-level-subject-price"> 최대
-									3,500원 </strong>
 							</div>
 						</div>
 					</section>
@@ -415,12 +413,11 @@ boolean isLoggedIn = (session != null && session.getAttribute("member") != null)
 							<br />
 							<%-- 장바구니에서 구매할 경우 --%>
 							<c:if test="${not empty productList2}">
-								<div class="sheet-purchase-button" >
+								<div class="sheet-purchase-button">
 									<!-- <input type="hidden" name="quantity" id="quantityInput" value="1"> -->
 									<button type="button" class="sheet-purchase-button-price"
 										id="display-result-pay-amount" onclick="purchasecartItems()">
-										<fmt:formatNumber value="${totalPrice_amount}" pattern="#,###" />
-										원 결제하기
+										<fmt:formatNumber value="${totalPrice_amount}" pattern="#,###" />원 결제하기
 									</button>
 								</div>
 							</c:if>
@@ -438,8 +435,7 @@ boolean isLoggedIn = (session != null && session.getAttribute("member") != null)
 											type="hidden" name="user_id" value="${member.user_id}">
 										<button type="submit" class="sheet-purchase-button-price">
 											<fmt:formatNumber value="${totalPrice_amount}"
-												pattern="#,###" />
-											원 결제하기
+												pattern="#,###" />원 결제하기
 										</button>
 									</div>
 								</form>
@@ -520,12 +516,11 @@ boolean isLoggedIn = (session != null && session.getAttribute("member") != null)
 	<footer>
 		<%-- 장바구니에서 구매할 경우 --%>
 		<c:if test="${not empty productList2}">
-			<div class="sheet-purchase-button" >
+			<div class="sheet-purchase-button">
 				<!-- <input type="hidden" name="quantity" id="quantityInput" value="1"> -->
 				<button type="button" class="sheet-purchase-button-price"
 					id="display-result-pay-amount" onclick="purchasecartItems()">
-					<fmt:formatNumber value="${totalPrice_amount}" pattern="#,###" />
-					원 결제하기
+					<fmt:formatNumber value="${totalPrice_amount}" pattern="#,###" />원 결제하기
 				</button>
 			</div>
 		</c:if>
@@ -542,8 +537,7 @@ boolean isLoggedIn = (session != null && session.getAttribute("member") != null)
 					<input type="hidden" name="quantity" id="quantityInput" value="1">
 					<button type="submit" class="sheet-purchase-button-price"
 						id="display-result-pay-amount">
-						<fmt:formatNumber value="${totalPrice_amount}" pattern="#,###" />
-						원 결제하기
+						<fmt:formatNumber value="${totalPrice_amount}" pattern="#,###" />원 결제하기
 					</button>
 				</div>
 			</form>
