@@ -31,7 +31,7 @@
                 </div>
                 <!-- 메인페이지로 가기 -->
             	<div class="back-button">
-            		<a href="/main-page/main.jsp" class="button-back-page" aria-label="이전 페이지로 이동">
+            		<a href="/index.jsp" class="button-back-page" aria-label="이전 페이지로 이동">
 					    <svg width="35" height="35" viewBox="0 0 28 28" fill="none">
 					        <path d="M16.1004 21.7L8.61252 14.2122C8.49537 14.095 8.49537 13.9051 8.61252 13.7879L16.1004 6.30005"
 					            stroke="black" stroke-width="1.4"></path>
@@ -40,13 +40,13 @@
             	</div>
                 <div class="top-menu">
 		            <!-- 로그인 상태인 경우 -->
-		            <a href="<%= isLoggedIn ? "../my-page/my-main/my-page-main.jsp" : "../login/join/login_view.jsp" %>" class="menu-button">
+		            <a href="<%= isLoggedIn ? "/my-page/my-main/my-page-main.jsp" : "/login/join/login_view.jsp" %>" class="menu-button">
 		                <img src="./img/마이.png">
 		            </a>
-		            <a href="<%= isLoggedIn ? "/cart.ca" : "../login/join/login_view.jsp" %>" class="menu-button">
+		            <a href="<%= isLoggedIn ? "/cart.ca" : "/login/join/login_view.jsp" %>" class="menu-button">
 		                <img src="./img/카트.png">
 		            </a>
-                    <a href="../main-page/main.jsp" class="menu-button">
+                    <a href="/index.jsp" class="menu-button">
 						<img src="./img/홈.png"  >
 					</a>
                 </div>

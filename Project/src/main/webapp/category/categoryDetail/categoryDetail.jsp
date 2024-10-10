@@ -26,8 +26,6 @@
             <!-- 상단 검색창 영역 -->
             <header id="commonLayoutHeader">
                 <div class="top-search-bar">
-                    <input type="text" id="search" placeholder="검색할 상품을 입력하세요" value="" />
-                    <button type="button" id="search-button" onclick="search()">검색</button>
                 </div>
                 <!-- 카테고리 페이지로 가기 -->
             	<div class="back-button">
@@ -39,15 +37,15 @@
 					</a>
             	</div>
                 <div class="top-menu">
-                	<a href="<%= isLoggedIn ? "../../my-page/my-main/my-page-main.jsp" : "../../login/join/login_view.jsp" %>" class="menu-button">
+                	<a href="<%= isLoggedIn ? "/my-page/my-main/my-page-main.jsp" : "/login/join/login_view.jsp" %>" class="menu-button">
 					<!-- <a href="../../my-page/my-main/my-page-main.jsp" class="menu-button"> -->
 						<img src="/category/img/마이.png"  >
 					</a>
-					<a href="<%= isLoggedIn ? "/cart.ca" : "../../login/join/login_view.jsp" %>" class="menu-button">
+					<a href="<%= isLoggedIn ? "/cart.ca" : "/login/join/login_view.jsp" %>" class="menu-button">
                     <!-- <a href="/cart.ca" class="menu-button"> -->
 						<img src="/category/img/카트.png"  >
                     </a>
-                    <a href="../../main-page/main.jsp" class="menu-button">
+                    <a href="/index.jsp" class="menu-button">
 						<img src="/category/img/홈.png"  >
 					</a>
                 </div>
