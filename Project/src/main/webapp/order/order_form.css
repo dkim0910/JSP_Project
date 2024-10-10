@@ -343,6 +343,19 @@ input{
     width: 100%;
     padding: 4px 16px 12px;
 }
+.sheet-point-input-input-disabled{
+    box-sizing: border-box;
+    background-color: #f5f5f5;
+    border-color: #ebebeb;
+    color: #ccc;
+    border-radius: 4px;
+    width: 100%;
+    padding: 6px 8px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    display: flex;
+}
 .sheet-point-input-text{
     margin-top: 8px;
     font-size: 14px;
