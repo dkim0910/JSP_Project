@@ -119,7 +119,7 @@ boolean isLoggedIn = (session != null && session.getAttribute("member") != null)
 						<div class="con mx-auto">
 							<nav class="prod-menu">
 								<div class="title">
-									<span> 인기 카테고리 트렌드 <br> 상의 추천
+									<span> 인기 카테고리 트렌드 <br> 인기 카테고리 추천
 									</span> <a href="/category/category.jsp"> 더보기 </a>
 								</div>
 								<ul class="flex-grid">
