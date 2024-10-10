@@ -593,6 +593,7 @@ ul{
     font-weight: 400;
     line-height: 18px;
     display: block;
+    word-break: keep-all;
 }
 /* ------결제 금액------ */
 
