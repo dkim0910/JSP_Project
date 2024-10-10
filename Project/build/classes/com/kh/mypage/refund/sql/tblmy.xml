@@ -30,6 +30,7 @@
 		WHERE
 		o.USER_ID = #{userid}
 		ORDER BY
+		o.ORDERED_NUM DESC,
 		o.ordered_date DESC
 	</select>
 
@@ -55,7 +56,8 @@
 		WHERE
 		o.USER_ID = #{userid}
 		ORDER BY
-		o.ORDERED_NUM DESC
+		o.ORDERED_NUM DESC,
+		o.ordered_date DESC
 	</select>
 
 	<!-- 회원 삭제 -->
