@@ -28,9 +28,9 @@ function toggleBold(selectedElement) {
 
 // 추적하기 엔터 눌러도 바로 추적하기 버튼 눌린거 처럼 하는거
 document.getElementById('order-number').addEventListener('keydown', function(event) {
-    if (event.key === 'Enter') {
-        document.getElementById('track-button').click(); // 버튼 클릭 이벤트 호출	
-    }
+	if (event.key === 'Enter') {
+		document.getElementById('track-button').click(); // 버튼 클릭 이벤트 호출	
+	}
 });
 
 // 배달 현황 바 나오는 평션
@@ -83,6 +83,9 @@ document.getElementById('track-button').addEventListener('click', function() {
 
 			expectedDeliveryDate.textContent = `${expectedDays}일 후`;	// 1씩 줄어드는거 표시하는거
 
+			if (expectedDays == 5) {
+				currentLocation.textContent = '물류센터 A';
+			}
 			if (expectedDays == 4) {
 				currentLocation.textContent = '물류센터 B';
 			}
