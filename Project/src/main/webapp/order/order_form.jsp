@@ -211,7 +211,7 @@ boolean isLoggedIn = (session != null && session.getAttribute("member") != null)
 						</div>
 						<ul class="sheet-point-input-text">
 							<span class="sheet-point-limit-input-text">적용한도(10%)</span>
-							<span class="sheet-point-input-price">10,000원 /</span>
+							<span class="sheet-point-input-price"><fmt:formatNumber value="${totalPrice_amount * 0.1}" pattern="#,###" />원 /</span>
 							<span class="sheet-point-input-own">보유 4,100원</span>
 
 						</ul>
