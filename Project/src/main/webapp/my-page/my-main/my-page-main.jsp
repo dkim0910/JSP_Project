@@ -531,7 +531,7 @@
 									placeholder="현재 주소 : ${member.user_address }"> <label
 									for="user_phone">전화번호</label> <input type="tel" id=""
 									name="user_phone" id="user_phone"
-									placeholder="현재 전화번호 : ${member.user_phone }"> <label
+									placeholder="현재 전화번호 : ${member.user_phone }" oninput="formatPhoneNumber(this)" maxlength="13" > <label
 									for="user-Gender">성별</label>
 								<div style="padding-top: 12px;">
 									<input type="radio" id="male" name="user-Gender" value="M"
