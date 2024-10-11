@@ -592,7 +592,7 @@ ul{
 }
 
 .bottom-menu ul li {
-	border:none;
+	border:none !important;
 	margin: 15px 0;
 }
 
