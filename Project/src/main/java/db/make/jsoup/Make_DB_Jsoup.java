@@ -23,7 +23,7 @@ public class Make_DB_Jsoup {
         try (Connection conn = DriverManager.getConnection(jdbcUrl, user, password)) {
             System.out.println("데이터베이스에 연결되었습니다.");
 
-//          500개를 조회후 DB에 insert
+//          000개를 조회후 DB에 insert
             int i_start = 0;
             int i_end = 1000;
             for (int i = i_start; i < i_end; i++) {
@@ -39,6 +39,7 @@ public class Make_DB_Jsoup {
                     String normalPrice = doc.select("meta[property=product:price:normal_price]").attr("content");
                     String saleRate = doc.select("meta[property=product:price:sale_rate]").attr("content");
                     String imageUrl = doc.select("meta[property=og:image]").attr("content"); // 이미지 URL 추출
+                    // 카테고리 및 서브 카테고리 불러오기
                     String ogDescription = doc.select("meta[property=og:description]").attr("content"); // og:description 추출
 
                     // "ALL 제품 : " 뒤의 내용 추출
