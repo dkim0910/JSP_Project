@@ -18,14 +18,14 @@ public class OrderAfterAction implements Action {
 		GoodsDTO gdto = new GoodsDTO();
 		String itemIdsParam = req.getParameter("itemIds");
 		// itemIds를 콤마로 분리하여 배열로 변환
-        String[] itemIdsArray = null;
-        if (itemIdsParam != null && !itemIdsParam.isEmpty()) {
-            itemIdsArray = itemIdsParam.split(",");
-        }
+		String[] itemIdsArray = null;
+		if (itemIdsParam != null && !itemIdsParam.isEmpty()) {
+			itemIdsArray = itemIdsParam.split(",");
+		}
 		List<GoodsDTO> cartList = odao.getByList(itemIdsArray);
-        req.setAttribute("cartList", cartList);
-        
-        forward.setRedirect(false);
+		req.setAttribute("cartList", cartList);
+
+		forward.setRedirect(false);
 		forward.setPath("/order/order_confirmed.jsp");
 		return forward;
 	}

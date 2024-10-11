@@ -36,9 +36,6 @@ public class OrderDAO {
 		data.put("product_id", product_id);
 		data.put("user_id", user_id);
 		session.insert("Order.insertOrderedList", data);
-		/*
-		 * if( session.insert("list.insertOrderedList", data) == 1 ) { result = true; }
-		 */
 		return result;
 	}
 
@@ -47,28 +44,27 @@ public class OrderDAO {
 		List<CartDTO> result = session.selectList("Order.carttoorder", user_id);
 		return result;
 	}
-	
+
 	// 장바구니(cart) db에서 구매할 상품 삭제
 	public boolean deleteCart(String[] itemIdsArray) {
 		boolean result = false;
-		if(session.delete("Order.deletecart", itemIdsArray) == 1) {
+		if (session.delete("Order.deletecart", itemIdsArray) == 1) {
 			result = true;
 		}
 		return result;
 	}
-		
+
 	// 주문내역(ordered) db에 구매한 상품 추가
 	public boolean cartToOrder(String user_id, String itemID) {
 		boolean result = false;
 		HashMap<String, String> datas = new HashMap<String, String>();
 		datas.put("user_id", user_id);
 		datas.put("itemID", itemID);
-		
-		if(session.insert("Order.insertToOrdered", datas) == 1) {
+
+		if (session.insert("Order.insertToOrdered", datas) == 1) {
 			result = true;
 		}
 		return result;
 	}
-	
 
 }

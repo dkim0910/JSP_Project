@@ -114,34 +114,34 @@ $(document).ready(function() {
 });
 
 $(document).ready(function() {
-    // 기타 결제 버튼 클릭 기능
-    $('#other-payment-options button').on('click', function() {
-        // 모든 버튼의 border를 초기화
-        $('#other-payment-options button').css('border', '2px solid #e0e0e0');
+	// 기타 결제 버튼 클릭 기능
+	$('#other-payment-options button').on('click', function() {
+		// 모든 버튼의 border를 초기화
+		$('#other-payment-options button').css('border', '2px solid #e0e0e0');
 
-        // 클릭된 버튼의 border를 검은색으로 변경
-        $(this).css('border', '2px solid black');
+		// 클릭된 버튼의 border를 검은색으로 변경
+		$(this).css('border', '2px solid black');
 
-        // 모든 li의 border를 초기화
-        $('#other-payment-options li').css('border', 'none');
+		// 모든 li의 border를 초기화
+		$('#other-payment-options li').css('border', 'none');
 
-        // 클릭된 버튼이 포함된 li의 border를 검은색으로 변경
-        $(this).closest('li').css('border', '1px solid black');
-    });
+		// 클릭된 버튼이 포함된 li의 border를 검은색으로 변경
+		$(this).closest('li').css('border', '1px solid black');
+	});
 
-    // 카드 결제 버튼 클릭 기능
-    $('.card-selection-input').on('click', function() {
-        // 모든 li의 border를 초기화
-        $('li').css('border', '1px solid #e0e0e0');
+	// 카드 결제 버튼 클릭 기능
+	$('.card-selection-input').on('click', function() {
+		// 모든 li의 border를 초기화
+		$('li').css('border', '1px solid #e0e0e0');
 
-        // 클릭된 input의 조상인 label의 부모 li의 border를 검은색으로 변경
-        $(this).closest('label').parent('li').css('border', '1px solid black');
-        
-        // 선택된 버튼의 border를 검은색으로 유지
-        $('#other-payment-options button').each(function() {
-            if ($(this).css('border') === '2px solid black') {
-                $(this).css('border', '2px solid black');
-            }
-        });
-    });
+		// 클릭된 input의 조상인 label의 부모 li의 border를 검은색으로 변경
+		$(this).closest('label').parent('li').css('border', '1px solid black');
+
+		// 선택된 버튼의 border를 검은색으로 유지
+		$('#other-payment-options button').each(function() {
+			if ($(this).css('border') === '2px solid black') {
+				$(this).css('border', '2px solid black');
+			}
+		});
+	});
 });

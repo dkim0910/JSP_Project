@@ -417,7 +417,8 @@ boolean isLoggedIn = (session != null && session.getAttribute("member") != null)
 									<!-- <input type="hidden" name="quantity" id="quantityInput" value="1"> -->
 									<button type="button" class="sheet-purchase-button-price"
 										id="display-result-pay-amount" onclick="purchasecartItems()">
-										<fmt:formatNumber value="${totalPrice_amount}" pattern="#,###" />원 결제하기
+										<fmt:formatNumber value="${totalPrice_amount}" pattern="#,###" />
+										원 결제하기
 									</button>
 								</div>
 							</c:if>
@@ -435,7 +436,8 @@ boolean isLoggedIn = (session != null && session.getAttribute("member") != null)
 											type="hidden" name="user_id" value="${member.user_id}">
 										<button type="submit" class="sheet-purchase-button-price">
 											<fmt:formatNumber value="${totalPrice_amount}"
-												pattern="#,###" />원 결제하기
+												pattern="#,###" />
+											원 결제하기
 										</button>
 									</div>
 								</form>
@@ -520,7 +522,8 @@ boolean isLoggedIn = (session != null && session.getAttribute("member") != null)
 				<!-- <input type="hidden" name="quantity" id="quantityInput" value="1"> -->
 				<button type="button" class="sheet-purchase-button-price"
 					id="display-result-pay-amount" onclick="purchasecartItems()">
-					<fmt:formatNumber value="${totalPrice_amount}" pattern="#,###" />원 결제하기
+					<fmt:formatNumber value="${totalPrice_amount}" pattern="#,###" />
+					원 결제하기
 				</button>
 			</div>
 		</c:if>
@@ -537,7 +540,8 @@ boolean isLoggedIn = (session != null && session.getAttribute("member") != null)
 					<input type="hidden" name="quantity" id="quantityInput" value="1">
 					<button type="submit" class="sheet-purchase-button-price"
 						id="display-result-pay-amount">
-						<fmt:formatNumber value="${totalPrice_amount}" pattern="#,###" />원 결제하기
+						<fmt:formatNumber value="${totalPrice_amount}" pattern="#,###" />
+						원 결제하기
 					</button>
 				</div>
 			</form>
