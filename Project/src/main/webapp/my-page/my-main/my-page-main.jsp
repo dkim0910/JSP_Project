@@ -443,52 +443,47 @@
 
 
 					<!-- 공지사항 페이지 -->
-					<div id="announcement" class="content-section"
-						style="display: none;">
-						<div class="profile-container">
-
-							<!-- 공지 누루면 바로 공지 페이지로 이동 가능 하게끔 만들기 -->
-
-							<div class="events-section-wrapper">
-								<section class="events-section">
-
-									<!-- 공지1 -->
-									<div class="event-card">
-										<div class="event-card-content">
-											<h3>공지 1</h3>
-											<p>배송 추적하는거 만들 시간이 없다</p>
-										</div>
-									</div>
-
-									<!-- 공지 2 -->
-									<div class="event-card">
-										<div class="event-card-content">
-											<h3>공지 2</h3>
-											<p>멤버십 포인트 있는거 만들 시간이 없다</p>
-										</div>
-									</div>
-
-									<!-- 공지 3 -->
-									<div class="event-card">
-										<div class="event-card-content">
-											<h3>공지 3</h3>
-											<p>DB 설게 어렵네</p>
-										</div>
-									</div>
-
-									<!-- 공지 4 -->
-									<div class="event-card">
-										<div class="event-card-content">
-											<h3>공지 4</h3>
-											<p>섭종합니다</p>
-										</div>
-									</div>
-
-								</section>
-							</div>
-
-						</div>
-
+					<div id="announcement" class="content-section" style="display: none;">
+					    <div class="profile-container">
+					        <!-- 공지 누르면 바로 공지 페이지로 이동 가능하게끔 만들기 -->
+					        <div class="events-section-wrapper">
+					            <section class="events-section">
+					
+					                <!-- 공지1: 신규 상품 출시 -->
+					                <div class="event-card">
+					                    <div class="event-card-content">
+					                        <h3>공지 1: 2024 가을/겨울 신상품 출시!</h3>
+					                        <p>쇼핑하조와 함께하는 2024 가을/겨울 신상품이 출시되었습니다! 한정 기간 동안 특별 할인도 제공되니 놓치지 마세요.</p>
+					                    </div>
+					                </div>
+					
+					                <!-- 공지 2: 배송 안내 -->
+					                <div class="event-card">
+					                    <div class="event-card-content">
+					                        <h3>공지 2: 배송 지연 안내</h3>
+					                        <p>현재 주문량 증가로 인해 배송이 2~3일 지연되고 있습니다. 고객님의 너그러운 양해 부탁드립니다.</p>
+					                    </div>
+					                </div>
+					
+					                <!-- 공지 3: 멤버십 혜택 변경 -->
+					                <div class="event-card">
+					                    <div class="event-card-content">
+					                        <h3>공지 3: 멤버십 혜택 업데이트</h3>
+					                        <p>2024년부터 새로운 멤버십 등급과 혜택이 도입됩니다. 더 많은 포인트 적립과 할인 혜택을 누려보세요!</p>
+					                    </div>
+					                </div>
+					
+					                <!-- 공지 4: 연말 이벤트 -->
+					                <div class="event-card">
+					                    <div class="event-card-content">
+					                        <h3>공지 4: 연말 감사 이벤트 안내</h3>
+					                        <p>올 한 해 동안 사랑해주신 고객님들께 감사의 마음을 담아 특별 연말 이벤트를 준비했습니다. 다양한 상품을 할인된 가격에 만나보세요.</p>
+					                    </div>
+					                </div>
+					
+					            </section>
+					        </div>
+					    </div>
 					</div>
 
 
